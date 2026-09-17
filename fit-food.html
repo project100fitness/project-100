@@ -84,11 +84,43 @@
   .log-body h4{ font-family:'Oswald',sans-serif; font-size:.96rem; margin:7px 0 9px; line-height:1.25; text-transform:none; letter-spacing:0; }
   .log-body .stats{ margin-top:auto; display:flex; gap:14px; color:var(--text-dim); font-size:.78rem; padding-top:8px; }
   .log-body .watch{ margin-top:10px; font-size:.76rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:6px; }
-  @media (max-width:900px){ .log-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){
-    .log-grid{ display:grid; grid-auto-flow:column; grid-template-rows:1fr; grid-auto-columns:62vw; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; margin:0 -20px; padding:0 20px 8px; }
-    .log-grid::-webkit-scrollbar{ display:none; }
-    .log-card{ width:62vw; flex:none; }
+  .carousel-wrap{ position:relative; }
+  .log-swipe-hint{ display:none; font-size:.78rem; color:var(--text-dim); margin:-14px 0 16px; }
+  .carousel-arrow{
+    display:none; position:absolute; top:50%; transform:translateY(-50%);
+    width:36px; height:36px; border-radius:50%; z-index:5;
+    background:rgba(10,11,13,.78); border:1px solid var(--border); color:#fff;
+    align-items:center; justify-content:center; cursor:pointer;
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    transition:opacity .15s ease; padding:0;
+  }
+  .carousel-arrow svg{ width:18px; height:18px; }
+  .carousel-arrow.left{ left:2px; }
+  .carousel-arrow.right{ right:2px; }
+  .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
+  @media (hover:hover){ .carousel-arrow:hover{ background:var(--red); border-color:var(--red); } }
+  @media (max-width:900px){
+    .log-grid{
+      display:grid; grid-auto-flow:column; grid-template-rows:1fr; grid-auto-columns:46vw; gap:10px;
+      overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -20px; padding:0 20px 14px;
+      scroll-snap-type:x proximity; scrollbar-width:auto; scrollbar-color:var(--red) var(--surface);
+    }
+    .log-grid::-webkit-scrollbar{ height:9px; }
+    .log-grid::-webkit-scrollbar-track{ background:var(--surface); border-radius:5px; }
+    .log-grid::-webkit-scrollbar-thumb{ background:var(--red); border-radius:5px; }
+    .log-card{ width:46vw; flex:none; scroll-snap-align:start; }
+    .log-swipe-hint{ display:block; }
+    .carousel-arrow{ display:flex; }
+  }
+  @media (max-width:480px){
+    .log-grid{ grid-auto-columns:47vw; gap:8px; }
+    .log-card{ width:47vw; }
+    .log-body{ padding:9px 10px 11px; }
+    .log-body .date{ font-size:.6rem; }
+    .log-body h4{ font-size:.78rem; margin:5px 0 6px; line-height:1.22; }
+    .log-body .stats{ font-size:.66rem; gap:8px; padding-top:6px; }
+    .log-body .watch{ font-size:.66rem; margin-top:6px; gap:4px; }
+    .log-tag{ font-size:.58rem; padding:4px 8px; top:6px; left:6px; }
   }
 
   footer{ padding:40px 0; }
@@ -169,7 +201,12 @@
       <h2>The Food Reels</h2>
       <p>Every food-related reel from the training log, moved here where it belongs. Tap through to watch any of them on Instagram.</p>
     </div>
-    <div class="log-grid">
+    <p class="log-swipe-hint">← Swipe to browse more →</p>
+    <div class="carousel-wrap">
+      <button type="button" class="carousel-arrow left hidden" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="log-grid">
       <a class="log-card" href="https://www.instagram.com/p/DdCRC82AhaT/" target="_blank" rel="noopener">
         <div class="log-media"><img src="assets/img/protein-wrap-trio.jpg" alt="Post-Workout Protein Wrap" loading="lazy"><span class="log-tag">Nutrition</span></div>
         <div class="log-body"><div class="date">Sep 8, 2026</div><h4>Post-Workout Protein Wrap</h4><div class="stats"><span>♥ 24</span><span>💬 10</span></div><div class="watch">▶ Watch on Instagram</div></div>
@@ -198,6 +235,10 @@
         <div class="log-media"><img src="assets/img/post-workout-air-fry-meals.jpg" alt="Post-Workout Air Fry Meals" loading="lazy"><span class="log-tag">Nutrition</span></div>
         <div class="log-body"><div class="date">Jul 25, 2026</div><h4>Post-Workout Air Fry Meals</h4><div class="stats"><span>♥ 30</span><span>💬 7</span></div><div class="watch">▶ Watch on Instagram</div></div>
       </a>
+      </div>
+      <button type="button" class="carousel-arrow right" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -206,5 +247,30 @@
   <div class="wrap foot-fine">Project 100 — Fit Food page. Being built now. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
+<script>
+// left/right arrow buttons for the carousel — manual navigation for mouse/trackpad users
+(function(){
+  document.querySelectorAll('.carousel-wrap').forEach(function(wrap){
+    const grid = wrap.querySelector('.log-grid');
+    const prevBtn = wrap.querySelector('.carousel-arrow.left');
+    const nextBtn = wrap.querySelector('.carousel-arrow.right');
+    if(!grid || !prevBtn || !nextBtn) return;
+    const step = () => {
+      const card = grid.querySelector('.log-card');
+      return (card ? card.getBoundingClientRect().width + 10 : grid.clientWidth * 0.5) * 2;
+    };
+    const update = () => {
+      const max = grid.scrollWidth - grid.clientWidth;
+      prevBtn.classList.toggle('hidden', grid.scrollLeft <= 4);
+      nextBtn.classList.toggle('hidden', max <= 4 || grid.scrollLeft >= max - 4);
+    };
+    prevBtn.addEventListener('click', () => grid.scrollBy({left: -step(), behavior:'smooth'}));
+    nextBtn.addEventListener('click', () => grid.scrollBy({left: step(), behavior:'smooth'}));
+    grid.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    setTimeout(update, 300);
+  });
+})();
+</script>
 </body>
 </html>

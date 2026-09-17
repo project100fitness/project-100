@@ -257,25 +257,50 @@
   .log-body h4{ font-family:'Oswald',sans-serif; font-size:1.02rem; margin:8px 0 10px; line-height:1.25; text-transform:none; letter-spacing:0; }
   .log-body .stats{ margin-top:auto; display:flex; gap:14px; color:var(--text-dim); font-size:.8rem; padding-top:10px; }
   .log-body .watch{ margin-top:12px; font-size:.78rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:6px; }
-  /* Mobile/tablet: horizontal snap carousel (2 rows) instead of an endless
-     single-column stack — fixes the huge black "ghost space" caused by
-     dozens of unloaded 9:16 lazy images stacking vertically on phones. */
+  /* Mobile/tablet: a compact 2-per-row carousel (2 rows tall, scrolls
+     sideways for more) instead of one huge card filling the screen —
+     cards are sized so a full pair is visible, with a visible scrollbar
+     and side arrows so it's obvious there's more to browse. */
+  .carousel-wrap{ position:relative; }
   @media (max-width:900px){
     .log-grid{
       display:grid; grid-auto-flow:column; grid-template-rows:repeat(2, auto);
-      grid-auto-columns:62vw; gap:14px; overflow-x:auto; overflow-y:hidden;
-      padding-bottom:10px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
-      scrollbar-width:none; margin:0 -20px; padding-left:20px; padding-right:20px;
+      grid-auto-columns:46vw; gap:10px; overflow-x:auto; overflow-y:hidden;
+      padding-bottom:14px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
+      margin:0 -20px; padding-left:20px; padding-right:20px;
+      scrollbar-width:auto; scrollbar-color:var(--red) var(--surface);
     }
-    .log-grid::-webkit-scrollbar{ display:none; }
-    .log-card{ scroll-snap-align:start; width:62vw; flex:none; }
+    .log-grid::-webkit-scrollbar{ height:9px; }
+    .log-grid::-webkit-scrollbar-track{ background:var(--surface); border-radius:5px; }
+    .log-grid::-webkit-scrollbar-thumb{ background:var(--red); border-radius:5px; }
+    .log-card{ scroll-snap-align:start; width:46vw; flex:none; }
     .log-swipe-hint{ display:block; }
+    .carousel-arrow{ display:flex; }
   }
-  @media (max-width:600px){
-    .log-grid{ grid-auto-columns:72vw; }
-    .log-card{ width:72vw; }
+  @media (max-width:480px){
+    .log-grid{ grid-auto-columns:47vw; gap:8px; }
+    .log-card{ width:47vw; }
+    .log-body{ padding:9px 10px 11px; }
+    .log-body .date{ font-size:.6rem; }
+    .log-body h4{ font-size:.78rem; margin:5px 0 6px; line-height:1.22; }
+    .log-body .stats{ font-size:.66rem; gap:8px; padding-top:6px; }
+    .log-body .watch{ font-size:.66rem; margin-top:6px; gap:4px; }
+    .log-tag{ font-size:.58rem; padding:4px 8px; top:6px; left:6px; }
   }
   .log-swipe-hint{ display:none; font-size:.78rem; color:var(--text-dim); margin:-14px 0 16px; }
+  .carousel-arrow{
+    display:none; position:absolute; top:50%; transform:translateY(-50%);
+    width:36px; height:36px; border-radius:50%; z-index:5;
+    background:rgba(10,11,13,.78); border:1px solid var(--border); color:#fff;
+    align-items:center; justify-content:center; cursor:pointer;
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    transition:opacity .15s ease; padding:0;
+  }
+  .carousel-arrow svg{ width:18px; height:18px; }
+  .carousel-arrow.left{ left:2px; }
+  .carousel-arrow.right{ right:2px; }
+  .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
+  @media (hover:hover){ .carousel-arrow:hover{ background:var(--red); border-color:var(--red); } }
 
   .log-more{ text-align:center; margin-top:34px; }
 
@@ -626,8 +651,16 @@
     </div>
     <p class="log-swipe-hint">← Swipe to browse — auto-scrolls slowly, tap to pause →</p>
 
-    <div class="log-grid" id="logGrid">
-      <!-- cards injected by JS from LOG_DATA -->
+    <div class="carousel-wrap">
+      <button type="button" class="carousel-arrow left hidden" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="log-grid" id="logGrid">
+        <!-- cards injected by JS from LOG_DATA -->
+      </div>
+      <button type="button" class="carousel-arrow right" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -773,6 +806,31 @@ document.querySelectorAll('.filter').forEach(f => {
     const next = grid.scrollLeft + 1.1;
     grid.scrollLeft = next >= max ? 0 : next;
   }, 40);
+})();
+
+// left/right arrow buttons for the carousel(s) — manual navigation for mouse/trackpad users
+(function(){
+  document.querySelectorAll('.carousel-wrap').forEach(function(wrap){
+    const grid = wrap.querySelector('.log-grid');
+    const prevBtn = wrap.querySelector('.carousel-arrow.left');
+    const nextBtn = wrap.querySelector('.carousel-arrow.right');
+    if(!grid || !prevBtn || !nextBtn) return;
+    const step = () => {
+      const card = grid.querySelector('.log-card');
+      return (card ? card.getBoundingClientRect().width + 10 : grid.clientWidth * 0.5) * 2;
+    };
+    const update = () => {
+      const max = grid.scrollWidth - grid.clientWidth;
+      prevBtn.classList.toggle('hidden', grid.scrollLeft <= 4);
+      nextBtn.classList.toggle('hidden', max <= 4 || grid.scrollLeft >= max - 4);
+    };
+    prevBtn.addEventListener('click', () => grid.scrollBy({left: -step(), behavior:'smooth'}));
+    nextBtn.addEventListener('click', () => grid.scrollBy({left: step(), behavior:'smooth'}));
+    grid.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    new MutationObserver(update).observe(grid, {childList:true});
+    setTimeout(update, 300);
+  });
 })();
 
 // scrollspy: highlight the nav link for whichever section is currently in view
