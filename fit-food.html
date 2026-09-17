@@ -71,8 +71,8 @@
     transition:transform .18s ease, border-color .18s ease; box-shadow:0 2px 12px rgba(0,0,0,.25);
   }
   .log-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
-  .log-media{ aspect-ratio:9/16; position:relative; overflow:hidden; background:#000; }
-  .log-media img{ width:100%; height:100%; object-fit:contain; object-position:center; background:#000; }
+  .log-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
+  .log-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
   .log-media .noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:linear-gradient(135deg,#123326,#08150f); }
   .log-tag{
     position:absolute; top:10px; left:10px; font-size:.68rem; font-weight:700; letter-spacing:.06em;
@@ -93,6 +93,31 @@
 
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
+
+  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
+  @media (max-width:640px){
+    .wrap{ padding:0 14px; }
+    nav .wrap{ padding:10px 14px; }
+    .brand{ font-size:.92rem; }
+    .navcta{ gap:6px; }
+    .navcta .btn{ padding:7px 12px; font-size:.72rem; }
+    .page-tabs .wrap{ padding:8px 14px; gap:6px; }
+    .page-tab{ padding:6px 12px; font-size:.68rem; }
+    .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
+    .cat-tabs a{ font-size:.64rem; }
+    .page-tabs, .cat-tabs{
+      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+    }
+    .placeholder-hero{ padding:48px 0 52px; }
+    .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
+    .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
+    .placeholder-hero p{ font-size:.94rem; margin:0 auto 24px; }
+    .reels-blk{ padding:36px 0 44px; }
+    .reels-blk .sec-head{ margin-bottom:20px; }
+    .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
+    .log-body{ padding:12px 14px 14px; }
+  }
 </style>
 </head>
 <body>

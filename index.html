@@ -359,6 +359,38 @@
   .hub-btn.primary .ic{ color:#fff; }
   .hub-btn.primary .lbl small{ color:rgba(255,255,255,.78); }
   .hub-btn.primary:active{ background:var(--red-dim); }
+
+  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
+  @media (max-width:640px){
+    .wrap{ padding:0 14px; }
+    nav .wrap{ padding:10px 14px; }
+    .brand{ font-size:.92rem; }
+    .navcta{ gap:6px; }
+    .navcta .btn{ padding:7px 12px; font-size:.72rem; }
+    .page-tabs .wrap{ padding:8px 14px; gap:6px; }
+    .page-tab{ padding:6px 12px; font-size:.68rem; }
+    .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
+    .cat-tabs a{ font-size:.64rem; }
+    .page-tabs, .cat-tabs{
+      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+    }
+    .hero{ min-height:auto; }
+    .hero-inner{ padding:34px 14px 32px; }
+    .hero h1{ font-size:clamp(2rem, 9vw, 2.7rem); line-height:1.02; margin:10px 0 12px; }
+    .hero p.lead{ font-size:.98rem; margin-bottom:20px; }
+    .motto{ font-size:.68rem; letter-spacing:.22em; margin-bottom:14px; }
+    .chips{ gap:7px; margin-bottom:22px; }
+    .chip{ padding:7px 11px; font-size:.74rem; }
+    section{ padding:44px 0; }
+    .sec-head{ margin-bottom:26px; }
+    .sec-head h2{ font-size:clamp(1.5rem, 6.5vw, 2rem); margin-top:6px; }
+    .filters{ gap:7px; margin-bottom:20px; }
+    .filter{ padding:6px 12px; font-size:.76rem; }
+    .stat-card{ padding:18px 16px; }
+    .law-card{ padding:15px 16px; }
+    .phase{ padding:18px 16px; }
+  }
 </style>
 </head>
 <body>

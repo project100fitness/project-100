@@ -139,6 +139,39 @@
   .foot-links{ text-align:center; margin-top:10px; font-size:.85rem; }
   .foot-links a{ text-decoration:none; color:var(--text-dim); }
   .foot-links a:hover{ color:var(--purple); }
+
+  .tbl-swipe-hint{ display:none; font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.04em; color:var(--text-dim); margin:0 0 8px; }
+  @media (max-width:640px){ .tbl-swipe-hint{ display:block; } }
+
+  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
+  @media (max-width:640px){
+    .wrap{ padding:0 14px; }
+    nav .wrap{ padding:10px 14px; }
+    .brand{ font-size:.92rem; }
+    .navcta{ gap:6px; }
+    .navcta .btn{ padding:7px 12px; font-size:.72rem; }
+    .page-tabs .wrap{ padding:8px 14px; gap:6px; }
+    .page-tab{ padding:6px 12px; font-size:.68rem; }
+    .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
+    .cat-tabs a{ font-size:.64rem; }
+    .page-tabs, .cat-tabs{
+      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+    }
+    .hero{ padding:40px 0 30px; }
+    .hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:12px 0 12px; }
+    .hero p.lead{ font-size:.96rem; margin-bottom:18px; }
+    .chips{ gap:7px; margin-bottom:20px; }
+    .chip{ padding:7px 11px; font-size:.76rem; }
+    section.blk{ padding:36px 0; }
+    .sec-head{ margin-bottom:20px; }
+    .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
+    .card{ padding:16px; }
+    .pipe-step{ padding:14px 10px; }
+    .stat{ padding:14px; }
+    .tier{ padding:14px; }
+    .callout, .callout-critical{ padding:13px 14px; }
+  }
 </style>
 </head>
 <body>
@@ -265,6 +298,7 @@
       <span class="eyebrow">Batch Scaling</span>
       <h2>One Pint or a Full Pitcher</h2>
     </div>
+    <p class="tbl-swipe-hint">&larr; Swipe to see full table &rarr;</p>
     <div class="tbl-wrap">
       <table>
         <tr><th>Batch</th><th>Water</th><th>Broth / Collagen</th><th>Milk</th><th>Egg Whites</th><th>Protein</th><th>Sweetener</th><th>Gum</th><th>Salt</th></tr>
@@ -296,6 +330,7 @@
       <h2>18 Zero-Sugar Permutations</h2>
       <p>Texture runs by protein base: <b>Hexapro Vanilla</b> → dense, custardy soft-serve. <b>PVL Isogold</b> → dense gelato. <b>Syntha-6</b> → premium ultra-creamy overrun.</p>
     </div>
+    <p class="tbl-swipe-hint">&larr; Swipe to see full table &rarr;</p>
     <div class="tbl-wrap">
       <table>
         <tr><th>Flavor</th><th>Protein Base</th><th>Flavor Core Agents</th></tr>
