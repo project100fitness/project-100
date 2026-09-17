@@ -53,17 +53,35 @@
   .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
   .btn-ghost:hover{ border-color:var(--text-dim); }
 
-  /* NAV */
+  /* SITE HEAD — nav + page-tab bar scroll together as one fixed unit */
+  .site-head{ position:sticky; top:0; z-index:50; }
   nav{
-    position:sticky; top:0; z-index:50; background:rgba(10,11,13,.85); backdrop-filter:blur(10px);
+    position:relative; background:rgba(10,11,13,.85); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
   }
+  .page-tabs{
+    background:var(--bg-2); border-bottom:1px solid var(--border);
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .page-tabs::-webkit-scrollbar{ display:none; }
+  .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
+  .page-tab{
+    flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif;
+    font-size:.76rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+    text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
+  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); } }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
   .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text);}
   .brand b{ color:var(--red); }
   .navlinks{ display:flex; gap:26px; font-size:.85rem; font-weight:600; }
-  .navlinks a{ text-decoration:none; color:var(--text-dim); }
+  .navlinks a{ text-decoration:none; color:var(--text-dim); position:relative; padding-bottom:4px; }
   .navlinks a:hover{ color:var(--text); }
+  .navlinks a.active{ color:var(--text); }
+  .navlinks a.active::after{ content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:var(--red); border-radius:2px; }
+  nav.open .navlinks a.active{ color:var(--red); }
   .navcta{ display:flex; gap:10px; }
   .navcta .btn{ padding:9px 16px; font-size:.8rem; }
   .burger{ display:none; background:none; border:1px solid var(--border); border-radius:6px; padding:8px 10px; color:var(--text);}
@@ -328,6 +346,7 @@
 </head>
 <body>
 
+<header class="site-head">
 <nav id="nav">
   <div class="wrap">
     <a href="#top" class="brand"><b>PROJECT</b> 100</a>
@@ -341,11 +360,21 @@
     </div>
     <div class="navcta">
       <a class="btn btn-ghost" href="#connect">All Links</a>
-      <a class="btn btn-primary" href="https://claude.ai/artifact/XLwtMf1o3KeznqstKHfu4D" target="_blank" rel="noopener">Full Protocol</a>
+      <a class="btn btn-primary" href="encyclopedia.html">Full Protocol</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
 </nav>
+<nav class="page-tabs" aria-label="Project 100 pages">
+  <div class="wrap">
+    <a class="page-tab current" href="index.html">Project 100</a>
+    <a class="page-tab" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-food.html">Fit Food</a>
+    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
+    <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
+  </div>
+</nav>
+</header>
 
 <section class="hero" id="top">
   <div class="hero-bg"><img src="assets/img/hero.jpg" alt="Bogdan mid-lift, PROJECT 100 training log"></div>
@@ -363,7 +392,7 @@
     </div>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Watch the Journey ↗</a>
-      <a class="btn btn-ghost" href="https://claude.ai/artifact/XLwtMf1o3KeznqstKHfu4D" target="_blank" rel="noopener">Read the Full Protocol ↗</a>
+      <a class="btn btn-ghost" href="encyclopedia.html">Read the Full Protocol ↗</a>
       <a class="btn btn-ghost" href="#connect">All My Links ↓</a>
     </div>
   </div>
@@ -409,16 +438,17 @@
   <div class="wrap origin-grid reveal">
     <div class="origin-copy">
       <span class="eyebrow">Origins</span>
-      <h2 style="text-transform:none;letter-spacing:0;font-family:'Oswald',sans-serif;font-size:2.1rem;margin:12px 0 20px;">Every serious system begins twice.</h2>
-      <p>Once in ambition. Once in correction. The first build of Project 100 ran on acceleration — escalating metrics, aggressive optimization. It worked. Then life happened: from 2018 to 2025, daily mechanical resistance disappeared, and structure dissolved gradually, not catastrophically. Sleep shifted. Neural stimulation moved from iron to screen.</p>
-      <p class="pullquote">"The Pivot occurred at 45. The data were clear: 197.1 lb total body weight, 88.2 lb skeletal muscle mass, 22.9% body fat. These numbers didn't indicate dysfunction — they indicated equilibrium. The adapted baseline of a body conditioned by reduced mechanical demand."</p>
-      <p>Documentation began in 2013. The journey itself began in 2019. The interruption spanned 2018–2025. The rebirth phase began in 2025 — and this time, it's built for permanence, not just peak performance.</p>
+      <h2 style="text-transform:none;letter-spacing:0;font-family:'Oswald',sans-serif;font-size:2.1rem;margin:12px 0 20px;">Sixteen years in the making — not two.</h2>
+      <p>This didn't start in 2019, and it didn't start with a photo. It started in 2010, at 30 years old — zero real knowledge of training, nutrition, or structure, and years of learning still ahead of the first logged meal. Everything documented publicly since 2013 is the visible record of a system that was already three years in the making.</p>
       <div class="timeline-mini">
-        <div class="tm-item"><div class="yr">2013</div><div class="lb">Documentation begins — meal logs, training, photo progression</div></div>
-        <div class="tm-item"><div class="yr">2018–25</div><div class="lb">The interruption — structure dissolves, equilibrium resets</div></div>
-        <div class="tm-item"><div class="yr">2025</div><div class="lb">The rebirth phase begins — Project 100 restarts</div></div>
-        <div class="tm-item"><div class="yr">2026</div><div class="lb">Live protocol, version-audited, logged daily on @fudge_fit</div></div>
+        <div class="tm-item"><div class="yr">2010–13</div><div class="lb">The Beginning — learning from zero, no documentation yet</div></div>
+        <div class="tm-item"><div class="yr">2013–16</div><div class="lb">Progressing — documentation begins; habits and structure built around gym + work</div></div>
+        <div class="tm-item"><div class="yr">2016–18</div><div class="lb">The Golden Era — deeper knowledge, technical precision, best shape of his life to that point</div></div>
+        <div class="tm-item"><div class="yr">2018–25</div><div class="lb">The Dark Stage — the interruption, structure dissolves, equilibrium resets</div></div>
+        <div class="tm-item"><div class="yr">2025–26+</div><div class="lb">The Comeback — reset, restructure, rebuild, with more knowledge and precision than any era before it</div></div>
       </div>
+      <p class="pullquote">"The Pivot occurred at 45. The data were clear: 197.1 lb total body weight, 88.2 lb skeletal muscle mass, 22.9% body fat. These numbers didn't indicate dysfunction — they indicated equilibrium. The adapted baseline of a body conditioned by reduced mechanical demand."</p>
+      <p>The rebuild running now isn't a repeat of any earlier era — it runs on more knowledge, more discipline, and far tighter execution than the version of this that existed in his 20s or 30s. Supplement timing, macro ceilings, and mineral windows are calculated to the gram and synced to circadian synergy, not guessed at. Measured against most men of the same age and training history — and against the spinal, nerve, digestive, and dermal constraints documented in the Encyclopedia — this is less a comeback story than a running, dated record: a personal portfolio, and the evidence behind it.</p>
     </div>
     <div class="origin-photos">
       <img class="tall" src="assets/img/gym-selfie-black-shirt.jpg" alt="Bogdan, gym mirror check before a session">
@@ -579,7 +609,7 @@
     </div>
 
     <div style="text-align:center;margin-top:36px;">
-      <a class="btn btn-primary" href="https://claude.ai/artifact/XLwtMf1o3KeznqstKHfu4D" target="_blank" rel="noopener">Read the Full Protocol — 13 Chapters ↗</a>
+      <a class="btn btn-primary" href="encyclopedia.html">Read the Full Protocol — 13 Chapters ↗</a>
     </div>
   </div>
 </section>
@@ -591,7 +621,7 @@
   <p>New training blocks, recovery meals, and protocol updates post to @fudge_fit as they happen. Eat. Sleep. Train. Repeat. The full, version-audited protocol lives in the archive.</p>
   <div class="cta-btns">
     <a class="btn btn-primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
-    <a class="btn btn-ghost" href="https://claude.ai/artifact/XLwtMf1o3KeznqstKHfu4D" target="_blank" rel="noopener">Open the Encyclopedia ↗</a>
+    <a class="btn btn-ghost" href="encyclopedia.html">Open the Encyclopedia ↗</a>
   </div>
 </div>
 
@@ -699,6 +729,27 @@ document.querySelectorAll('.filter').forEach(f => {
     const next = grid.scrollLeft + 1.1;
     grid.scrollLeft = next >= max ? 0 : next;
   }, 40);
+})();
+
+// scrollspy: highlight the nav link for whichever section is currently in view
+(function(){
+  const navLinks = document.querySelectorAll('.navlinks a[href^="#"]');
+  const sections = [];
+  navLinks.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if(sec) sections.push({sec, id});
+  });
+  if(!sections.length) return;
+  const setActive = (id) => {
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+  try{
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(({sec}) => io.observe(sec));
+  }catch(e){ /* nav still works without highlighting */ }
 })();
 
 // burger menu
