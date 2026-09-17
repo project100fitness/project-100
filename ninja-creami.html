@@ -33,20 +33,29 @@
   .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
 
   .site-head{ position:sticky; top:0; z-index:50; }
-  nav{ position:relative; background:rgba(255,255,255,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  nav{ position:relative; background:rgba(10,11,13,.92); backdrop-filter:blur(10px); border-bottom:1px solid #272b35; }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
-  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text);}
-  .brand b{ color:var(--purple); }
+  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:#eef0f4; text-transform:uppercase;}
+  .brand b{ color:#e6273f; }
   .navcta{ display:flex; gap:10px; }
   .navcta .btn{ padding:9px 16px; font-size:.8rem; }
-  @media (max-width:860px){ .navcta{ display:none; } }
+  .navcta .site-btn-ghost{ background:transparent; color:#eef0f4; border:1px solid #272b35; }
+  .navcta .site-btn-primary{ background:#e6273f; color:#fff; border:1px solid #e6273f; box-shadow:none; }
+  @media (max-width:860px){ .navcta .site-btn-ghost{ display:none; } }
 
-  .page-tabs{ background:var(--bg-2); border-bottom:1px solid var(--border); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .page-tabs{ background:#0d0e11; border-bottom:1px solid #272b35; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
   .page-tabs::-webkit-scrollbar{ display:none; }
   .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
-  .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
-  .page-tab.current{ background:var(--purple); border-color:var(--purple); color:#fff; }
-  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--slate); color:var(--text); } }
+  .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; border:1px solid #272b35; white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
+  .page-tab.current{ background:#e6273f; border-color:#e6273f; color:#fff; }
+  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:#9aa1b0; color:#fff; } }
+
+  /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
+  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .cat-tabs::-webkit-scrollbar{ display:none; }
+  .cat-tabs .wrap{ display:flex; gap:18px; padding:9px 20px; }
+  .cat-tabs a{ flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease; }
+  .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
 
   /* ---- hero ---- */
   .hero{ padding:70px 0 56px; border-bottom:1px solid var(--border); }
@@ -135,8 +144,8 @@
   <div class="wrap">
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
-      <a class="btn btn-ghost" href="index.html#connect">All Links</a>
-      <a class="btn btn-primary" href="encyclopedia.html#ch13">Full Protocol</a>
+      <a class="btn site-btn-ghost" href="index.html#connect">All Links</a>
+      <a class="btn site-btn-primary" href="encyclopedia.html#ch13">Full Protocol</a>
     </div>
   </div>
 </nav>
@@ -147,6 +156,14 @@
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab current" href="ninja-creami.html">Ninja CREAMi</a>
+  </div>
+</nav>
+<nav class="cat-tabs" aria-label="Section jump links">
+  <div class="wrap">
+    <a href="#workflow">WORKFLOW</a>
+    <a href="#formula">BASE FORMULA</a>
+    <a href="#flavors">FLAVOR MATRIX</a>
+    <a href="#safety">SAFETY</a>
   </div>
 </nav>
 </header>
@@ -189,7 +206,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk" id="formula">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">The Universal Structural Base Formula</span>
@@ -319,7 +336,7 @@
   </div>
 </section>
 
-<section class="blk">
+<section class="blk" id="safety">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Hardware &amp; Safety</span>

@@ -89,21 +89,28 @@
   .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
 
   /* ============ SITE-WIDE HEADER (shared with index.html) ============ */
-  .wrap2{max-width:1180px;margin:0 auto;padding:0 20px;}
+  .wrap2{max-width:1120px;margin:0 auto;padding:0 20px;}
   .site-head{position:sticky;top:0;z-index:60;}
-  #siteNav{position:relative;background:rgba(10,11,13,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);}
+  #siteNav{position:relative;background:rgba(10,11,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);}
   #siteNav .wrap2{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
-  .site-brand{font-family:var(--font-display);font-weight:700;font-size:1.02rem;letter-spacing:.04em;text-decoration:none;color:var(--text);}
+  .site-brand{font-family:var(--font-display);font-weight:700;font-size:1.02rem;letter-spacing:.04em;text-decoration:none;color:var(--text);text-transform:uppercase;}
   .site-brand b{color:#e6273f;}
   .site-navcta{display:flex;gap:10px;}
-  .site-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-weight:700;font-size:.78rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:var(--text);}
+  .site-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;font-weight:700;font-size:.78rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:#eceef0;}
   .site-btn-primary{background:#e6273f;border-color:#e6273f;color:#fff;}
-  @media(max-width:860px){.site-navcta{display:none;}}
-  .page-tabs{background:var(--surface);border-bottom:1px solid var(--border-soft);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  @media(max-width:860px){.site-navcta .site-btn:not(.site-btn-primary){display:none;}}
+  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .page-tabs::-webkit-scrollbar{display:none;}
   .page-tabs .wrap2{display:flex;gap:8px;padding:9px 20px;}
-  .page-tab{flex:none;padding:7px 14px;border-radius:100px;font-family:var(--font-display);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--text-dim);border:1px solid var(--border);white-space:nowrap;}
-  .page-tab.current{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);}
+  .page-tab{flex:none;padding:7px 14px;border-radius:100px;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1ab;border:1px solid #2b2f36;white-space:nowrap;}
+  .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
+
+  /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
+  .cat-tabs{background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .cat-tabs::-webkit-scrollbar{display:none;}
+  .cat-tabs .wrap2{display:flex;gap:18px;padding:9px 20px;}
+  .cat-tabs a{flex:none;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;white-space:nowrap;padding:4px 2px;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease;}
+  .cat-tabs a:hover,.cat-tabs a.active{color:#fff;border-bottom-color:#e6273f;}
 
   /* ============ ARCHIVE TOP BAR (this page's own controls) ============ */
   .topbar{
@@ -305,6 +312,13 @@
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
+  </div>
+</nav>
+<nav class="cat-tabs" aria-label="Section jump links">
+  <div class="wrap2">
+    <a href="#origins">ORIGINS</a>
+    <a href="#ch1">CHAPTERS</a>
+    <a href="#quickref">QUICK REFERENCE</a>
   </div>
 </nav>
 </header>

@@ -56,10 +56,10 @@
   .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
   .btn-ghost:hover{ border-color:var(--text-dim); }
 
-  /* SITE HEAD — nav + page-tab bar scroll together as one fixed unit */
+  /* SITE HEAD — nav + page-tab bar + category sub-menu scroll together as one fixed unit */
   .site-head{ position:sticky; top:0; z-index:50; }
   nav{
-    position:relative; background:rgba(10,11,13,.85); backdrop-filter:blur(10px);
+    position:relative; background:rgba(10,11,13,.92); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
   }
   .page-tabs{
@@ -70,30 +70,29 @@
   .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
   .page-tab{
     flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif;
-    font-size:.76rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+    font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
     text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap;
     transition:border-color .15s ease, color .15s ease;
   }
   .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
   @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); } }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
-  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text);}
+  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text); text-transform:uppercase;}
   .brand b{ color:var(--red); }
-  .navlinks{ display:flex; gap:26px; font-size:.85rem; font-weight:600; }
-  .navlinks a{ text-decoration:none; color:var(--text-dim); position:relative; padding-bottom:4px; }
-  .navlinks a:hover{ color:var(--text); }
-  .navlinks a.active{ color:var(--text); }
-  .navlinks a.active::after{ content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:var(--red); border-radius:2px; }
-  nav.open .navlinks a.active{ color:var(--red); }
   .navcta{ display:flex; gap:10px; }
   .navcta .btn{ padding:9px 16px; font-size:.8rem; }
-  .burger{ display:none; background:none; border:1px solid var(--border); border-radius:6px; padding:8px 10px; color:var(--text);}
-  @media (max-width:860px){
-    .navlinks, .navcta{ display:none; }
-    .burger{ display:block; }
-    nav.open .navlinks{ display:flex; flex-direction:column; gap:14px; position:absolute; top:100%; left:0; right:0; background:var(--bg-2); padding:20px; border-bottom:1px solid var(--border); }
-    nav.open .navcta{ display:flex; position:absolute; top:calc(100% + 248px); left:0; right:0; background:var(--bg-2); padding:0 20px 20px; }
+  @media (max-width:860px){ .navcta .btn-ghost{ display:none; } }
+
+  /* TIER 3 — category / section jump-links, always directly under the page tabs */
+  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .cat-tabs::-webkit-scrollbar{ display:none; }
+  .cat-tabs .wrap{ display:flex; gap:18px; padding:9px 20px; }
+  .cat-tabs a{
+    flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px;
+    border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease;
   }
+  .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
 
   /* HERO */
   .hero{
@@ -239,16 +238,20 @@
   .log-media .noimg{
     width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.4rem;
   }
-  .cat-training .noimg{ background:linear-gradient(135deg,#3a0d16,#1a0509); }
-  .cat-nutrition .noimg{ background:linear-gradient(135deg,#123326,#08150f); }
-  .cat-protocol .noimg{ background:linear-gradient(135deg,#0d2333,#051119); }
+  .cat-resistance-bands .noimg{ background:linear-gradient(135deg,#0d3231,#051615); }
+  .cat-arms .noimg{ background:linear-gradient(135deg,#3a2c0d,#1a1305); }
+  .cat-chest-shoulders .noimg{ background:linear-gradient(135deg,#3a0d16,#1a0509); }
+  .cat-heavy-weight .noimg{ background:linear-gradient(135deg,#3a1d0d,#1a0d05); }
+  .cat-full-body .noimg{ background:linear-gradient(135deg,#251a3a,#0f0a1a); }
   .log-tag{
     position:absolute; top:10px; left:10px; font-size:.68rem; font-weight:700; letter-spacing:.06em;
     text-transform:uppercase; padding:5px 10px; border-radius:100px; backdrop-filter:blur(6px);
   }
-  .cat-training .log-tag{ background:rgba(230,39,63,.85); color:#fff; }
-  .cat-nutrition .log-tag{ background:rgba(63,215,144,.85); color:#06170f; }
-  .cat-protocol .log-tag{ background:rgba(63,180,215,.85); color:#04141c; }
+  .cat-resistance-bands .log-tag{ background:rgba(63,215,208,.9); color:#04201f; }
+  .cat-arms .log-tag{ background:rgba(232,182,76,.9); color:#241a04; }
+  .cat-chest-shoulders .log-tag{ background:rgba(230,39,63,.85); color:#fff; }
+  .cat-heavy-weight .log-tag{ background:rgba(255,122,69,.9); color:#210c02; }
+  .cat-full-body .log-tag{ background:rgba(155,140,255,.9); color:#120c2b; }
   .log-body{ padding:16px 18px 18px; flex:1; display:flex; flex-direction:column; }
   .log-body .date{ font-size:.72rem; color:var(--text-dim); letter-spacing:.06em; text-transform:uppercase; font-weight:700; }
   .log-body h4{ font-family:'Oswald',sans-serif; font-size:1.02rem; margin:8px 0 10px; line-height:1.25; text-transform:none; letter-spacing:0; }
@@ -319,7 +322,7 @@
 
   footer{ padding:40px 20px 60px; }
   .foot-grid{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; }
-  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:.85rem; }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
   .foot-links a{ text-decoration:none; color:var(--text-dim); }
   .foot-links a:hover{ color:var(--text); }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; margin-top:26px; border-top:1px solid var(--border); padding-top:20px; }
@@ -364,19 +367,10 @@
 <nav id="nav">
   <div class="wrap">
     <a href="#top" class="brand"><b>PROJECT</b> 100</a>
-    <div class="navlinks">
-      <a href="#story">Story</a>
-      <a href="#mission">Mission</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#log">Training Log</a>
-      <a href="#protocol">Protocol</a>
-      <a href="#connect">Connect</a>
-    </div>
     <div class="navcta">
       <a class="btn btn-ghost" href="#connect">All Links</a>
       <a class="btn btn-primary" href="encyclopedia.html">Full Protocol</a>
     </div>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
 </nav>
 <nav class="page-tabs" aria-label="Project 100 pages">
@@ -386,6 +380,16 @@
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
+  </div>
+</nav>
+<nav class="cat-tabs" aria-label="Section jump links">
+  <div class="wrap">
+    <a href="#story">STORY</a>
+    <a href="#mission">MISSION</a>
+    <a href="#roadmap">ROADMAP</a>
+    <a href="#log">TRAINING LOG</a>
+    <a href="#protocol">PROTOCOL</a>
+    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -577,13 +581,16 @@
     <div class="sec-head">
       <span class="eyebrow">Straight From @fudge_fit</span>
       <h2>The last 60 days, unfiltered.</h2>
-      <p>Pulled directly from the Reels feed — every training block, every protocol drop, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-food.html" style="color:var(--cyan);text-decoration:none;">Fit Food</a> · gym photo drops live on <a href="fit-gear.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
+      <p>Pulled directly from the Reels feed — every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-food.html" style="color:var(--cyan);text-decoration:none;">Fit Food</a> · gym photo drops live on <a href="fit-gear.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a> · the full Vector protocol diagrams live below in <a href="#protocol" style="color:var(--cyan);text-decoration:none;">The Protocol</a>.</p>
     </div>
 
     <div class="filters">
       <div class="filter active" data-filter="all">All</div>
-      <div class="filter" data-filter="training">Training</div>
-      <div class="filter" data-filter="protocol">Protocol Drops</div>
+      <div class="filter" data-filter="resistance-bands">Resistance Bands</div>
+      <div class="filter" data-filter="arms">Arms</div>
+      <div class="filter" data-filter="chest-shoulders">Chest &amp; Shoulders</div>
+      <div class="filter" data-filter="heavy-weight">Heavy Weight</div>
+      <div class="filter" data-filter="full-body">Full Body &amp; Core</div>
     </div>
     <p class="log-swipe-hint">← Swipe to browse — auto-scrolls slowly, tap to pause →</p>
 
@@ -668,31 +675,26 @@
 <script>
 // ---- Training log data: pulled from @fudge_fit, last ~60 days ----
 const LOG_DATA = [
-  {date:"Sep 14, 2026", title:"Don't Know What To Do", cat:"training", likes:37, comments:13, url:"https://www.instagram.com/p/DdR_XpSgDYi/", img:"cat-meme.jpg"},
-  {date:"Sep 12, 2026", title:"Resistance Band Series 003", cat:"training", likes:43, comments:11, url:"https://www.instagram.com/p/DdMne2YgV6-/", img:"resistance-band-003.jpg"},
-  {date:"Sep 11, 2026", title:"Plyosoft Box Core 001", cat:"training", likes:25, comments:2, url:"https://www.instagram.com/p/DdKAEe7SKLR/", img:"plyosoft-core-001.jpg"},
-  {date:"Sep 10, 2026", title:"Shoulder Push Series 001", cat:"training", likes:59, comments:12, url:"https://www.instagram.com/p/DdHvmJYg9nU/", img:"shoulder-push-001.jpg"},
-  {date:"Sep 6, 2026", title:"Arms Blast Series 001", cat:"training", likes:40, comments:4, url:"https://www.instagram.com/p/Dc9W-wdgIeO/", img:"arms-blast-001.jpg"},
-  {date:"Sep 5, 2026", title:"Resistance Band Series 002", cat:"training", likes:33, comments:6, url:"https://www.instagram.com/p/Dc4114iM8jj/", img:"resistance-band-002.jpg"},
-  {date:"Aug 30, 2026", title:"Arm Blaster 6x6x6", cat:"training", likes:82, comments:21, url:"https://www.instagram.com/p/DcrcpkXg0no/", img:"arm-blaster-6x6x6.jpg"},
-  {date:"Aug 25, 2026", title:"Warmups & Stretch Series 001", cat:"training", likes:74, comments:35, url:"https://www.instagram.com/p/Dcet4xlgZWK/", img:"warmups-stretch-001.jpg"},
-  {date:"Aug 22, 2026", title:"Resistance Band Series 001", cat:"training", likes:175, comments:37, url:"https://www.instagram.com/p/DcW-IV9AC7G/", img:"resistance-band-001.jpg"},
-  {date:"Aug 20, 2026", title:"Chest Series 001", cat:"training", likes:125, comments:32, url:"https://www.instagram.com/p/DcR6GXrArM1/", img:"chest-series-001.jpg"},
-  {date:"Aug 14, 2026", title:"Hypertrophy Friday", cat:"training", likes:149, comments:27, url:"https://www.instagram.com/p/DcCcx4WAniY/", img:"hypertrophy-friday.jpg"},
-  {date:"Aug 10, 2026", title:"Supplements Stack 2026", cat:"protocol", likes:100, comments:3, url:"https://www.instagram.com/p/Db3_1YcgQTH/", img:"supplements-stack-2026.jpg"},
-  {date:"Aug 2, 2026", title:"Liquid Intake Vectors", cat:"protocol", likes:71, comments:4, url:"https://www.instagram.com/p/DbjcDwpgS1g/", img:"liquid-intake-vectors.jpg"},
-  {date:"Jul 30, 2026", title:"Shoulders Up Sessions", cat:"training", likes:56, comments:12, url:"https://www.instagram.com/p/Dbbgp67AH8p/", img:"shoulders-up-sessions.jpg"},
-  {date:"Jul 27, 2026", title:"Sweat Sundays", cat:"training", likes:51, comments:5, url:"https://www.instagram.com/p/DbT1Zf_Akak/", img:"sweat-sundays.jpg"},
-  {date:"Jul 24, 2026", title:"Strength Fridays", cat:"training", likes:50, comments:5, url:"https://www.instagram.com/p/DbMHiilgEj_/", img:"strength-fridays.jpg"},
-  {date:"Jul 22, 2026", title:"Biceps & Back Workout", cat:"training", likes:22, comments:6, url:"https://www.instagram.com/p/DbGNAuKsi9m/", img:"biceps-back-workout.jpg"},
-  {date:"Jul 22, 2026", title:"V185.99: Daily Liquid Vector & Synergy Protocols", cat:"protocol", likes:16, comments:0, url:"https://www.instagram.com/p/DbG_wQeia8d/", img:"diagram-v185.jpg"},
-  {date:"Jul 22, 2026", title:"Performance Intake Diagrams (V185.80)", cat:"protocol", likes:14, comments:0, url:"https://www.instagram.com/p/DbG_YGTif09/", img:"diagram-vectors80.jpg"},
-  {date:"Jul 22, 2026", title:"Daily Vitamin & Mineral Timing", cat:"protocol", likes:22, comments:0, url:"https://www.instagram.com/p/DbHBHH_iWyx/", img:"diagram-matrix.jpg"},
-  {date:"Jul 16, 2026", title:"Calibrated Hypertrophy // Session Complete", cat:"training", likes:146, comments:2, url:"https://www.instagram.com/p/Da1TMJhgl1p/", img:"story-6.jpg"},
+  {date:"Sep 14, 2026", title:"Don't Know What To Do", cat:"full-body", likes:37, comments:13, url:"https://www.instagram.com/p/DdR_XpSgDYi/", img:"cat-meme.jpg"},
+  {date:"Sep 12, 2026", title:"Resistance Band Series 003", cat:"resistance-bands", likes:43, comments:11, url:"https://www.instagram.com/p/DdMne2YgV6-/", img:"resistance-band-003.jpg"},
+  {date:"Sep 11, 2026", title:"Plyosoft Box Core 001", cat:"full-body", likes:25, comments:2, url:"https://www.instagram.com/p/DdKAEe7SKLR/", img:"plyosoft-core-001.jpg"},
+  {date:"Sep 10, 2026", title:"Shoulder Push Series 001", cat:"chest-shoulders", likes:59, comments:12, url:"https://www.instagram.com/p/DdHvmJYg9nU/", img:"shoulder-push-001.jpg"},
+  {date:"Sep 6, 2026", title:"Arms Blast Series 001", cat:"arms", likes:40, comments:4, url:"https://www.instagram.com/p/Dc9W-wdgIeO/", img:"arms-blast-001.jpg"},
+  {date:"Sep 5, 2026", title:"Resistance Band Series 002", cat:"resistance-bands", likes:33, comments:6, url:"https://www.instagram.com/p/Dc4114iM8jj/", img:"resistance-band-002.jpg"},
+  {date:"Aug 30, 2026", title:"Arm Blaster 6x6x6", cat:"arms", likes:82, comments:21, url:"https://www.instagram.com/p/DcrcpkXg0no/", img:"arm-blaster-6x6x6.jpg"},
+  {date:"Aug 25, 2026", title:"Warmups & Stretch Series 001", cat:"full-body", likes:74, comments:35, url:"https://www.instagram.com/p/Dcet4xlgZWK/", img:"warmups-stretch-001.jpg"},
+  {date:"Aug 22, 2026", title:"Resistance Band Series 001", cat:"resistance-bands", likes:175, comments:37, url:"https://www.instagram.com/p/DcW-IV9AC7G/", img:"resistance-band-001.jpg"},
+  {date:"Aug 20, 2026", title:"Chest Series 001", cat:"chest-shoulders", likes:125, comments:32, url:"https://www.instagram.com/p/DcR6GXrArM1/", img:"chest-series-001.jpg"},
+  {date:"Aug 14, 2026", title:"Hypertrophy Friday", cat:"heavy-weight", likes:149, comments:27, url:"https://www.instagram.com/p/DcCcx4WAniY/", img:"hypertrophy-friday.jpg"},
+  {date:"Jul 30, 2026", title:"Shoulders Up Sessions", cat:"chest-shoulders", likes:56, comments:12, url:"https://www.instagram.com/p/Dbbgp67AH8p/", img:"shoulders-up-sessions.jpg"},
+  {date:"Jul 27, 2026", title:"Sweat Sundays", cat:"full-body", likes:51, comments:5, url:"https://www.instagram.com/p/DbT1Zf_Akak/", img:"sweat-sundays.jpg"},
+  {date:"Jul 24, 2026", title:"Strength Fridays", cat:"heavy-weight", likes:50, comments:5, url:"https://www.instagram.com/p/DbMHiilgEj_/", img:"strength-fridays.jpg"},
+  {date:"Jul 22, 2026", title:"Biceps & Back Workout", cat:"arms", likes:22, comments:6, url:"https://www.instagram.com/p/DbGNAuKsi9m/", img:"biceps-back-workout.jpg"},
+  {date:"Jul 16, 2026", title:"Calibrated Hypertrophy // Session Complete", cat:"heavy-weight", likes:146, comments:2, url:"https://www.instagram.com/p/Da1TMJhgl1p/", img:"story-6.jpg"},
 ];
 
-const CAT_LABEL = { training:"Training", nutrition:"Nutrition", protocol:"Protocol Drop" };
-const CAT_ICON = { training:"🏋️", nutrition:"🥤", protocol:"⚡" };
+const CAT_LABEL = { "resistance-bands":"Resistance Bands", arms:"Arms", "chest-shoulders":"Chest & Shoulders", "heavy-weight":"Heavy Weight", "full-body":"Full Body & Core" };
+const CAT_ICON = { "resistance-bands":"🎗️", arms:"💪", "chest-shoulders":"🔺", "heavy-weight":"🏋️", "full-body":"⭐" };
 
 function renderLog(filter){
   const grid = document.getElementById('logGrid');
@@ -743,7 +745,7 @@ document.querySelectorAll('.filter').forEach(f => {
 
 // scrollspy: highlight the nav link for whichever section is currently in view
 (function(){
-  const navLinks = document.querySelectorAll('.navlinks a[href^="#"]');
+  const navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
   const sections = [];
   navLinks.forEach(a => {
     const id = a.getAttribute('href').slice(1);
@@ -761,11 +763,6 @@ document.querySelectorAll('.filter').forEach(f => {
     sections.forEach(({sec}) => io.observe(sec));
   }catch(e){ /* nav still works without highlighting */ }
 })();
-
-// burger menu
-const burger = document.getElementById('burger');
-const navEl = document.getElementById('nav');
-burger.addEventListener('click', () => navEl.classList.toggle('open'));
 
 // scroll reveal (pure enhancement — content is visible by default via CSS,
 // so if IntersectionObserver is unsupported or this throws, nothing is ever hidden)
