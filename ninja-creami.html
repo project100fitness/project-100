@@ -107,6 +107,31 @@
   .callout-critical b.badge{ display:inline-block; color:#fff; background:var(--bad); text-transform:uppercase; letter-spacing:.04em; font-size:.7rem; font-weight:800; padding:2px 8px; border-radius:4px; margin:0 2px 6px 0; }
   .callout-critical p, .callout p{ margin:0; color:var(--text); }
 
+  /* ===== FOCUS POINT — site-wide "field note" callout, red·black·neon, carried
+     over from index.html/encyclopedia.html so the brand identity stays
+     consistent even inside this page's own purple accent theme. ===== */
+  .focus-point{
+    position:relative; margin:0 0 16px; padding:16px 18px 16px 19px;
+    background:linear-gradient(135deg, #1c0f12 0%, #101114 100%);
+    border:1px solid #272b35; border-left:4px solid #e6273f; border-radius:0 10px 10px 0;
+    box-shadow:0 4px 18px rgba(230,39,63,.12);
+  }
+  .focus-point .fp-tag{
+    display:inline-block; font-family:'Oswald',sans-serif; font-size:.68rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:#ff6b81;
+    background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.35);
+    padding:3px 10px; border-radius:100px; margin:0 0 10px;
+  }
+  .focus-point p{
+    margin:0; font-family:'Inter',sans-serif; text-transform:uppercase;
+    letter-spacing:.01em; font-size:.92rem; line-height:1.55; color:#f2f3f5; font-weight:650;
+  }
+  .focus-point--cyan{ border-left-color:#3fd7d0; box-shadow:0 4px 18px rgba(63,215,208,.12); }
+  .focus-point--cyan .fp-tag{ color:#3fd7d0; background:rgba(63,215,208,.13); border-color:rgba(63,215,208,.34); }
+  .focus-point--gold{ border-left-color:#e8b64c; box-shadow:0 4px 18px rgba(232,182,76,.12); }
+  .focus-point--gold .fp-tag{ color:#e8b64c; background:rgba(232,182,76,.13); border-color:rgba(232,182,76,.32); }
+  @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
+
   /* ---- flavor matrix table ---- */
   .tbl-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:10px; background:var(--surface); box-shadow:0 2px 12px rgba(0,0,0,.25); }
   table{ width:100%; border-collapse:collapse; font-size:.86rem; }
@@ -240,6 +265,10 @@
       <div class="pipe-step"><div class="n">06</div><h4>Spin</h4><p>Lite Ice Cream / Sorbet program, with re-spin logic</p></div>
       <div class="pipe-step"><div class="n">07</div><h4>Flush</h4><p>Hot-water spindle flush, every single time</p></div>
     </div>
+    <div class="focus-point">
+      <span class="fp-tag">Engineered, Not Improvised</span>
+      <p>Seven steps, 0.1g scale accuracy. Standard ice-cream machines aren't built for a zero-fat, high-protein matrix — this workflow exists because the shortcut version freezes into an unspinnable brick and risks the hardware itself.</p>
+    </div>
   </div>
 </section>
 
@@ -306,6 +335,10 @@
         <tr><td><b>Mega (68oz pitcher, 3×)</b></td><td>450–600ml</td><td>3 scoops each</td><td>750ml</td><td>300g</td><td>4.5 scoops</td><td>9–12 tbsp</td><td>¾ tsp</td><td>3 pinches</td></tr>
       </table>
     </div>
+    <div class="focus-point focus-point--cyan" style="margin-top:16px;">
+      <span class="fp-tag">Scales By The Same Ratio</span>
+      <p>One pint or a 68oz pitcher — the mega batch is exactly a 3x multiple of the individual recipe, ratio for ratio, gram for gram. Nothing gets eyeballed even when the batch gets bigger.</p>
+    </div>
   </div>
 </section>
 
@@ -353,6 +386,10 @@
         <tr><td>Zero-Sugar Caramel Crunch</td><td>—</td><td>V198.2 FINAL addition</td></tr>
         <tr><td>Zero-Sugar Chocolate Swirl</td><td>—</td><td>V198.2 FINAL addition</td></tr>
       </table>
+    </div>
+    <div class="focus-point focus-point--gold" style="margin-top:16px;">
+      <span class="fp-tag">18 Flavors, One System</span>
+      <p>Three protein bases, eighteen permutations, zero added sugar. Every flavor is built by swapping the flavor-core agents on top of the same structural base — not eighteen different recipes to memorize.</p>
     </div>
   </div>
 </section>
@@ -412,6 +449,10 @@
       <div class="mistake"><span class="x">✕</span><span>Wrong-size hard Tier-1 inclusions</span></div>
       <div class="mistake"><span class="x">✕</span><span>Skipping the perimeter-ice scrape</span></div>
       <div class="mistake"><span class="x">✕</span><span>Skipping the warm-water thermal bath before leveling</span></div>
+    </div>
+    <div class="focus-point" style="margin-top:16px;">
+      <span class="fp-tag">Logged, Not Guessed</span>
+      <p>Twelve documented mistakes, every one of them made and fixed in real testing before this page existed — the same forensic-log approach the Encyclopedia's Failure Analysis Matrix runs on.</p>
     </div>
   </div>
 </section>

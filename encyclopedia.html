@@ -249,6 +249,36 @@
     letter-spacing:.04em; font-size:.72rem; font-weight:800; padding:2px 7px; border-radius:4px;
     margin:0 2px 4px 0; vertical-align:1px;
   }
+
+  /* ===== FOCUS POINT — the site-wide "field note" callout, one per chapter.
+     Companion to the Focus Point boxes on index.html and the other pages:
+     always dark/neon-styled regardless of the light/dark toggle above, so
+     the red·black·neon accent reads the same everywhere on the site. Sits
+     alongside .callout/.audit/.callout-critical rather than replacing them —
+     those stay tied to the page's own accent tokens; this one carries the
+     site brand identity into every chapter. ===== */
+  .focus-point{
+    position:relative; margin:1.4em 0; padding:16px 18px 16px 19px;
+    background:linear-gradient(135deg, #1c0f12 0%, #101114 100%);
+    border:1px solid #2b2f36; border-left:4px solid #e6273f; border-radius:0 10px 10px 0;
+    box-shadow:0 4px 18px rgba(230,39,63,.12);
+  }
+  .focus-point .fp-tag{
+    display:inline-block; font-family:var(--font-display); font-size:.68rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:#ff6b81;
+    background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.35);
+    padding:3px 10px; border-radius:100px; margin:0 0 10px;
+  }
+  .focus-point p{
+    margin:0; font-family:var(--font-body); text-transform:uppercase;
+    letter-spacing:.01em; font-size:.92rem; line-height:1.55; color:#f2f3f5; font-weight:650;
+  }
+  .focus-point--cyan{ border-left-color:#3fd7d0; box-shadow:0 4px 18px rgba(63,215,208,.12); }
+  .focus-point--cyan .fp-tag{ color:#3fd7d0; background:rgba(63,215,208,.13); border-color:rgba(63,215,208,.34); }
+  .focus-point--gold{ border-left-color:#e8b64c; box-shadow:0 4px 18px rgba(232,182,76,.12); }
+  .focus-point--gold .fp-tag{ color:#e8b64c; background:rgba(232,182,76,.13); border-color:rgba(232,182,76,.32); }
+  @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
+
   .chapter-body mark{background:color-mix(in srgb, var(--accent) 35%, transparent); color:var(--text); padding:.05em .15em; border-radius:3px; font-weight:650;}
 
   table{width:100%; border-collapse:collapse; margin:1em 0; font-size:.88rem;}
@@ -422,6 +452,10 @@
           <h3>2025–2026 and Beyond — The Comeback</h3>
           <p>This is not a repeat of the 2016 build. The version of this system running now carries more knowledge, more precision, and more self-correction than any earlier era — including the years lost to the interruption, and mistakes made even during the productive years before it. Supplement timing, macro ceilings, and mineral synergy windows are calculated exactly, not estimated. On a 5'7" frame, the difference between 90 lb and 100 lb of skeletal muscle mass is structural, not cosmetic. An additional 10 lb of contractile tissue alters leverage, glycogen storage capacity, resting metabolic rate, and force potential. The objective became explicit: 100 lb skeletal muscle mass sustained below 15% body fat, with endocrine stability and connective durability preserved — permanence, not just peak performance.</p>
           <div class="callout"><b>Why the timeline matters</b> this isn't a two-year story. Measured against most men of the same age and training profile — and against the permanent spinal, nerve, digestive, and dermal constraints documented in Ch.3 — the fifteen years before the current rebuild are load-bearing context, not backstory. This record functions as both a personal portfolio and a dated, evidence-based account of the process and the person behind it.</div>
+          <div class="focus-point">
+            <span class="fp-tag">Fifteen-Year Arc</span>
+            <p>Fifteen years, not two. 2010 to now, across five distinct eras — not a comeback story that starts at the Pivot, but one that was already three years deep before the first log was ever written in 2013.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -455,6 +489,10 @@
           <div class="callout"><b>The Calorie Rent Rule</b> every calorie must pay rent. If training intensity drops, fuel intake scales back immediately. No filler calories.</div>
           <h3>The Paradigm of Excavation: Revealing the Granite</h3>
           <p>This is not a masterpiece built from scratch — it's one already built, being excavated. The marble is the current 197.1 lbs; the statue is the 100 lbs of muscle hidden inside. The mission: chip away ~23% stored body fat through nutrient timing while forcing SMM upward, respecting four permanent constraints — <b>L4–S1 spinal integrity</b>, <b>ulnar nerve protection</b>, <b>bile-less digestion</b>, and <b>dermal/scar protection</b>.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Operating Law</span>
+            <p>Train like 2, eat for 2. Intensity built for a 200 lb frame, fuel that supports both the man training today and the 100 lb SMM target being built — every calorie has to pay rent, or it doesn't get spent.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -482,6 +520,10 @@
           </ul>
           <h3>The Code: Absolute Adherence</h3>
           <p>This is an engineering code operating at the ceiling of natural potential — zero margin for missed supplement windows or solvent-rule violations. Deviation doesn't produce moral failure, it produces predictable biology: cement gut, afternoon dizziness, nerve irritation. The system doesn't hope for results — it calculates them.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Mindset Shift</span>
+            <p>Excavation, not construction. At 197.1 lbs, the 100+ lb target isn't being built from nothing — it's already there, buried under roughly 23% stored fat, waiting to be chiseled out one precise session at a time.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -523,6 +565,10 @@
           <p>FFMI above 25.0 is traditionally the natural limit. Reaching 25.71 at 45 requires near-perfect execution — no margin for missed timing or mineral-separation windows.</p>
           <h3>The Visual Objective: The Monolithic Cube</h3>
           <p>Maximum muscular density per cubic inch of height — extreme thickness, width, a dense "thick-skinned" look. 100 lbs of SMM on this frame is a structural threshold, not a cosmetic milestone.</p>
+          <div class="focus-point">
+            <span class="fp-tag">0.1% Rule</span>
+            <p>+35 lbs over baseline. The average build at 5'7" carries roughly 64–68 lbs of skeletal muscle. The 100 lb target sits in IFBB 212 territory — the top of the range, not just "in shape."</p>
+          </div>
         </div>
       </details>
     </section>
@@ -567,6 +613,10 @@
             <li><b>Halo II headband</b> worn during all high-bracing sets — controls sweat runoff into the gel layer.</li>
           </ul>
           <p>No chemical/supplement component — a pure hardware/topical protocol, non-negotiable on any glute-lock or heavy-bracing day.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Hardware Locks</span>
+            <p>Four permanent constraints, zero exceptions. No gallbladder, a fused L4–S1 disc, an unstable ulnar nerve, and scar tissue that scars twice as easily — every rep and every meal is engineered around all four, not in spite of them.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -596,6 +646,10 @@
           <div class="callout"><b>Reconciliation</b> this replaces the old twice-daily schedule entirely (see Ch.8/9 for the single-session training structure). The multivitamin swap (PureGenomics, zero biotin) remains current. Beef/steak is confirmed fine at Meal 3.</div>
           <h3>Tactical Alert: The Biotin Interference Warning</h3>
           <p>High-dose biotin distorts streptavidin-biotin lab assays (thyroid panels, sex hormones) in either direction depending on assay format. Current multivitamin is biotin-free, but <b>cease all multivitamins, gummies, and vitamin-spiked collagen for 72 hours before any blood draw</b> regardless.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Timed To The Minute</span>
+            <p>05:00 to 20:30, nothing left to chance. Every dosing window is built around when the body can actually absorb it — because zinc, calcium, and iron sharing one window means most of the dose gets wasted.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -658,6 +712,10 @@
             <tr><td>Multivitamin</td><td><span class="tag good">PureGenomics</span> zero iron/biotin</td><td>Naka Platinum (300mcg biotin) — non-testing periods only</td></tr>
           </table></div>
           <p>The AncientKeto purge is grounds-based: documented heavy-metal contamination (lead, cadmium) and poor protein digestibility. The whey/Syntha-6 purge follows the same logic — slow, lactose-heavy fillers drive "hard gut" and divert blood flow from muscle to digestion. AllPro is kept in reserve for the emergency reset (Ch.10).</p>
+          <div class="focus-point">
+            <span class="fp-tag">Built By Elimination</span>
+            <p>Every compound earns its place. AncientKeto was purged for documented heavy-metal contamination, whey for gut-slowing fillers. What survives the audit is what's proven to work for this exact chassis — nothing stays out of habit.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -687,6 +745,10 @@
           <p>Non-heme iron (Fe³⁺) from eggs/plants is poorly absorbed and blocked by dairy calcium. Hot hibiscus tisane's vitamin C chemically reduces it to soluble Fe²⁺ — forcing near-heme absorption efficiency.</p>
           <h3>The Solvent Pitcher</h3>
           <p>Water + cucumber ribbons + citrus. Cucumber for diuretic effect against storage edema; citrus acidifies the stomach for enzyme function. <b>Room temperature or warm only</b> — ice-cold water solidifies dietary fat.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Fat-Corrected</span>
+            <p>252g protein, 69g fat — a hard ceiling, not a goal. Past 69g of fat the body can't emulsify the load without a gallbladder to buffer it, so the cap isn't a diet rule, it's a mechanical one.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -713,6 +775,10 @@
           <p><b>Solubility:</b> HCL dissolves more completely, needs less fluid, lowers gut-bloat risk without a gallbladder. <b>Micro-dosing:</b> splitting the daily load across three pulses (Vector 4 at 10:30, Vector 5 at 16:30, Vector 10 at 20:30) maintains ATP saturation without overloading kidney filtration in one pass.</p>
           <h3>Note on Vector Numbering</h3>
           <p>The vectors are deliberately numbered non-sequentially (1, 2, 3, 4, 5, then 10) across every source document — there is no Vector 6, 7, 8, or 9 in the current protocol. Independently re-verified against the full V185.99 document during the version-truth audit.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Liquid Delivery</span>
+            <p>Seven vectors, zero mechanical churning. Liquid delivery pierces the metabolic window without solid digestion in the way — a real metabolic tax on a system running without a gallbladder.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -755,6 +821,10 @@
             <li><b>Anti-slip yoga mat</b> — locks scapula in retraction during pressing.</li>
             <li><b>MANUEKLEAR forearm webbing</b> — pushdowns/extensions, prevents internal humeral rotation.</li>
           </ul>
+          <div class="focus-point">
+            <span class="fp-tag">Real Gear, Real Bans</span>
+            <p>No floor deadlifts. No floor squats. Ever. Every heavy pull happens above the knee, every press stops 5% short of lockout — permanent kinetic bans, not caution, protecting an L4–S1 disc that doesn't get a second chance.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -776,6 +846,10 @@
           <p><b>Phase II</b> — the primary growth engine: the single-session "Heavy Steel" block for high mechanical tension, bracketed by the Vector schedule (Ch.4), plus a lighter evening resistance-band flush (20–30 reps, 19:30 Pump shaker) rather than a second full session. <span class="tag new">updated</span> The "silent rep" (3-second eccentric) is prioritized since tendon resilience lags strength gains past 45.</p>
           <p><b>Phase III</b> — hardens what's built. If body fat is still &gt;20% by month 9, an 18-hour Sunday hyper-fast flushes visceral water. Heavier reliance on the Hibiscus Iron Key and Solvent Pitcher for oxygenation.</p>
           <div class="callout-critical"><b>System Governance</b> every Friday is a complete shutdown (no lifting, no bands) to reset the CNS. If PM dizziness or frothy urine persists past 48h, progression pauses for a 7-day maintenance bridge at 200g protein.</div>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Micro-Loading</span>
+            <p>+2.5 lbs every 3 weeks, not 20 in a day. Three phases, twelve months, one rule: if the elbow clicks or the tailbone shifts, the load was too heavy — no negotiating.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -797,6 +871,10 @@
             <details class="light"><summary><span class="dot"></span><span><span class="lbl">Stalled Fat Loss</span><span class="code mono">ERR_METAB_01</span></span></summary><div class="ld"><b>Cause:</b> hidden calories / "ghost sugars."<br><b>Fix:</b> weekend audit — purge honey, BBQ sauce, ketchup, breading. Return to the Solid Fuel Matrix.</div></details>
           </div>
           <div class="callout"><b>The Ghost Sugar audit</b> honey glazes, ketchups, and breading spike insulin right when Growth Hormone should be peaking — insulin is GH's direct antagonist. Sugar-free syrup is the sanctioned sweet substitute.</div>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Diagnostic, Not Defeat</span>
+            <p>Every symptom is data. Frothy urine, PM dizziness, cement gut — each one has a documented cause and a fix, because a system built this precisely treats the check-engine light as information, not failure.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -831,6 +909,10 @@
             <tr><td>2 (evening)</td><td>Pump</td><td class="mono">19:30</td><td>Zero-salt fascial stretch</td></tr>
             <tr><td>10</td><td>Shutdown Slurry</td><td class="mono">20:30</td><td>Oxidative-stress mitigation + repair</td></tr>
           </table></div>
+          <div class="focus-point">
+            <span class="fp-tag">The Physics Behind It</span>
+            <p>360 lbs of band tension, zero lbs through the spine. Variable Linear Resistance loads the lift the way the body actually gets strong through a rep, without a single pound of vertical compression through the L4–S1 disc.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -851,6 +933,10 @@
             <tr><td><b>Total</b></td><td></td><td class="mono"><b>~$8.30 CAD/day</b></td></tr>
           </table></div>
           <p><b>Weekly: ~$58.10 CAD. Monthly: ~$249 CAD.</b> Morning Ignition alone is 58% of the daily budget — TestoFX Xtreme and the post-flush probiotic — the single highest-leverage place to look first if the budget needs to shrink.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Priced Like Everything Else</span>
+            <p>~$8.30 a day. ~$249 a month. Precision isn't free — it's tracked with the same rigor as every rep and every gram of protein, and Morning Ignition alone is 58% of the bill.</p>
+          </div>
         </div>
       </details>
     </section>
@@ -901,6 +987,10 @@
           <p>Never process below -22°C unthawed (produces an unspinnable "cement brick"). Never exceed Max Fill. Surface must be 100% level before spinning. Flush the spindle with hot water immediately after every use.</p>
           <h3>The "Hall of Mistakes" (12-Point Error Log)</h3>
           <p>Under-freezing · overfilling · wrong program mode · unnecessary liquid before a dry re-spin · blender/frother misuse · extract omission · dumping dry into liquid without whisking · stabilizer omission · machine-mixing soft inclusions · wrong-size hard inclusions · skipping the perimeter-ice scrape · skipping the warm-water thermal bath.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">18 Flavors, Zero Sugar</span>
+            <p>380 to 610 kcal, up to 92.5g protein — per pint. A dessert engineered the same way the training is: seven steps, 0.1g scale accuracy, and a formula built because standard ice-cream machines can't handle a zero-fat, high-protein matrix.</p>
+          </div>
         </div>
       </details>
     </section>

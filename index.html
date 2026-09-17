@@ -322,6 +322,7 @@
   /* object-fit:contain so these diagram/vector graphics show in full
      (they have text/labels near the edges that object-fit:cover was cutting off) */
   .diag-card img{ width:100%; height:180px; object-fit:contain; object-position:center; background:var(--bg-2); }
+  .diag-card video{ width:100%; height:180px; object-fit:cover; object-position:center; background:var(--bg-2); }
   .diag-card .cap{ padding:12px 16px; font-size:.82rem; color:var(--text-dim); }
   @media (max-width:820px){ .diag-grid{ grid-template-columns:1fr; } }
 
@@ -381,7 +382,7 @@
     border-bottom:1px solid var(--border);
   }
   .cta-bg{ position:absolute; inset:0; z-index:0; }
-  .cta-bg img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+  .cta-bg img, .cta-bg video{ width:100%; height:100%; object-fit:cover; object-position:center; }
   .cta-bg::after{
     content:""; position:absolute; inset:0;
     background:
@@ -457,45 +458,26 @@
   .field-note--red .fn-tag{ color:#ff6b81; background:rgba(230,39,63,.14); border-color:rgba(230,39,63,.35); }
   @media (max-width:640px){ .field-note{ padding:16px 18px; } .field-note p{ font-size:.92rem; } }
 
-  /* ===== FEATURED CLIPS — click-to-play video grid. Videos are never
-     downloaded until tapped (poster image only), then open in the shared
-     lightbox with sound + controls. ===== */
-  .feature-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;
+  /* ===== Ambient accent video — the same silent-loop treatment as the hero,
+     dropped into a few cards/bands around the page instead of a separate
+     gallery, so each clip sits next to the content it actually matches. ===== */
+  .law-card{ position:relative; overflow:hidden; }
+  .law-card video{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:.28; z-index:0;
   }
-  .feature-card{
-    position:relative; border-radius:14px; overflow:hidden; cursor:pointer;
-    aspect-ratio:4/5; background:#000; border:1px solid var(--border);
+  .law-card::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:linear-gradient(175deg, rgba(22,24,30,.55) 0%, rgba(22,24,30,.92) 78%);
   }
-  .feature-card--wide{ grid-column:span 2; aspect-ratio:16/9; }
-  .feature-card img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; }
-  @media (hover:hover){ .feature-card:hover img{ transform:scale(1.04); } }
-  .feature-card::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.88) 100%);
-  }
-  .feature-play{
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:56px; height:56px; border-radius:50%; z-index:2;
-    background:rgba(230,39,63,.9); border:2px solid rgba(255,255,255,.85); color:#fff;
-    display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0;
-    transition:transform .15s ease, background .15s ease;
-  }
-  .feature-play svg{ width:22px; height:22px; margin-left:3px; }
-  @media (hover:hover){ .feature-card:hover .feature-play{ transform:translate(-50%,-50%) scale(1.1); background:var(--red); } }
-  .feature-cap{
-    position:absolute; left:0; right:0; bottom:0; z-index:2; padding:14px 16px;
-    color:#fff;
-  }
-  .feature-cap b{ display:block; font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:.92rem; letter-spacing:.02em; }
-  .feature-cap span{ display:block; color:#d3d6de; font-size:.78rem; margin-top:3px; }
-  @media (max-width:900px){
-    .feature-grid{ grid-template-columns:repeat(2,1fr); }
-    .feature-card--wide{ grid-column:span 2; }
-  }
-  @media (max-width:560px){
-    .feature-grid{ grid-template-columns:1fr; gap:12px; }
-    .feature-card--wide{ grid-column:span 1; }
+  .law-card h3, .law-card p{ position:relative; z-index:1; }
+
+  .vector-card.vector-card--video{ position:relative; aspect-ratio:1/1; }
+  .vector-card.vector-card--video video{ width:100%; height:100%; object-fit:cover; display:block; }
+  .vector-card.vector-card--video .vc-tag{
+    position:absolute; left:8px; bottom:8px; z-index:1; font-family:'Oswald',sans-serif;
+    font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:#fff; background:rgba(10,11,13,.72); padding:4px 8px; border-radius:100px;
   }
 
   /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
@@ -555,7 +537,6 @@
 <nav class="cat-tabs" aria-label="Section jump links">
   <div class="wrap">
     <a href="#story">STORY</a>
-    <a href="#featured">FEATURED</a>
     <a href="#mission">MISSION</a>
     <a href="#roadmap">ROADMAP</a>
     <a href="#log">TRAINING LOG</a>
@@ -628,53 +609,6 @@
   </div>
 </section>
 
-<section id="featured">
-  <div class="wrap reveal">
-    <div class="sec-head">
-      <span class="eyebrow">Featured Clips</span>
-      <h2>Watch the work.</h2>
-      <p>Edited and produced before the Instagram account even existed — the original proof-of-concept reel for Project 100. Tap any card to watch with sound.</p>
-    </div>
-
-    <div class="field-note field-note--cyan">
-      <span class="fn-tag">Field Note</span>
-      <p>THESE CLIPS PREDATE THE PAGE. Before @fudge_fit had a single post, this footage already existed — proof the system was running long before anyone was watching.</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature-card feature-card--wide" data-video="assets/video/featured-plyo-protocol.mp4" data-poster="assets/img/featured-plyo-protocol.jpg" tabindex="0" role="button" aria-label="Play: The Singularity Protocol">
-        <img src="assets/img/featured-plyo-protocol.jpg" alt="PROJECT 100 — the fudge_fit augmented-reality vision clip" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>The Singularity Protocol</b><span>The vision, rendered — where Project 100 is headed</span></div>
-      </div>
-      <div class="feature-card" data-video="assets/video/featured-gear-setup.mp4" data-poster="assets/img/featured-gear-setup.jpg" tabindex="0" role="button" aria-label="Play: My Fitness Goals">
-        <img src="assets/img/featured-gear-setup.jpg" alt="Bogdan setting up the plyo box, PROJECT 100: My Fitness Goals" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>My Fitness Goals</b><span>Gear setup — the warm-up before the work</span></div>
-      </div>
-      <div class="feature-card" data-video="assets/video/featured-fuel-check.mp4" data-poster="assets/img/featured-fuel-check.jpg" tabindex="0" role="button" aria-label="Play: Fuel Check">
-        <img src="assets/img/featured-fuel-check.jpg" alt="Bogdan holding a shaker bottle mid-session" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>Fuel Check</b><span>Every session gets its own load-in vector</span></div>
-      </div>
-      <div class="feature-card" data-video="assets/video/featured-preworkout-mix.mp4" data-poster="assets/img/featured-preworkout-mix.jpg" tabindex="0" role="button" aria-label="Play: Bench Reset">
-        <img src="assets/img/featured-preworkout-mix.jpg" alt="Bogdan seated on a bench between sets, golden-hour light" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>Bench Reset</b><span>Between sets is still part of the protocol</span></div>
-      </div>
-      <div class="feature-card" data-video="assets/video/featured-greens-scoop.mp4" data-poster="assets/img/featured-greens-scoop.jpg" tabindex="0" role="button" aria-label="Play: Micronutrient Vector">
-        <img src="assets/img/featured-greens-scoop.jpg" alt="Measuring a scoop of greens powder" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>Micronutrient Vector</b><span>Measured, not guessed — every scoop counted</span></div>
-      </div>
-      <div class="feature-card" data-video="assets/video/featured-focus-check.mp4" data-poster="assets/img/featured-focus-check.jpg" tabindex="0" role="button" aria-label="Play: Locked In">
-        <img src="assets/img/featured-focus-check.jpg" alt="Close-up of a shaker bottle mid-grip" loading="lazy">
-        <button type="button" class="feature-play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="feature-cap"><b>Locked In</b><span>The pre-set focus — the part no one posts</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="story">
   <div class="wrap origin-grid reveal">
@@ -764,21 +698,30 @@
 
     <div class="law-band">
       <div class="law-card">
+        <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-fuel-check.jpg" aria-hidden="true"><source src="assets/video/featured-fuel-check.mp4" type="video/mp4"></video>
         <h3>EAT</h3>
         <p>Fuel delivered for two biological entities at once: the current self (maintenance, repair) and the future self — the 100+ lb target not yet revealed. Every calorie pays rent.</p>
       </div>
       <div class="law-card">
+        <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-preworkout-mix.jpg" aria-hidden="true"><source src="assets/video/featured-preworkout-mix.mp4" type="video/mp4"></video>
         <h3>SLEEP</h3>
         <p>Deep sleep and nervous-system decompression to reset biological readiness for the next training wave. Growth isn't signed off in the gym — it's signed off at 20:30, Vector 10, lights out.</p>
       </div>
       <div class="law-card">
+        <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-gear-setup.jpg" aria-hidden="true"><source src="assets/video/featured-gear-setup.mp4" type="video/mp4"></video>
         <h3>TRAIN</h3>
         <p>Training intensity sufficient to provide the mechanical signal and neural drive required for the growth of a 200 lb frame — not a 197 lb one.</p>
       </div>
       <div class="law-card">
+        <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-focus-check.jpg" aria-hidden="true"><source src="assets/video/featured-focus-check.mp4" type="video/mp4"></video>
         <h3>REPEAT</h3>
         <p>Standardized habit architecture, zero decision fatigue. The formula never changes: eat, sleep, train, repeat — the unbroken loop is the whole system.</p>
       </div>
+    </div>
+
+    <div class="field-note">
+      <span class="fn-tag">The Four Laws</span>
+      <p>FOUR WORDS, ZERO EXCEPTIONS. Eat, sleep, train, repeat isn't a slogan — it's the entire operating system. Break one law and the other three stop compounding.</p>
     </div>
   </div>
 </section>
@@ -790,6 +733,12 @@
       <h2>The 12-month excavation.</h2>
       <p>Not an open-ended "fitness journey" — a linear progression algorithm, built to respect the 46-year-old recovery curve while forcing 11.8 lbs of contractile tissue onto the frame across three phases.</p>
     </div>
+
+    <div class="field-note field-note--red">
+      <span class="fn-tag">Non-Negotiable</span>
+      <p>+2.5 LBS EVERY 3 WEEKS, NOT 20 IN A DAY. Micro-loading, not ego-loading — if a joint clicks or form shifts, the weight was too heavy, full stop.</p>
+    </div>
+
     <div class="roadmap">
       <div class="phase">
         <div class="num">I</div>
@@ -906,6 +855,10 @@
           <img class="zoomable" src="assets/img/protocol-24hr-clock.jpg" alt="Project 100 24-Hour Kinetic Revolution clock — the full daily vector cycle">
           <div class="cap">The 24HR Kinetic Revolution — the full daily cycle, 06:30 to 20:30, zero gaps</div>
         </div>
+        <div class="diag-card">
+          <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-greens-scoop.jpg" aria-label="Measuring the micronutrient vector"><source src="assets/video/featured-greens-scoop.mp4" type="video/mp4"></video>
+          <div class="cap">The Micronutrient Vector, in practice — measured, not guessed, every session</div>
+        </div>
       </div>
     </div>
 
@@ -916,6 +869,11 @@
       <div class="vector-card"><img class="zoomable" src="assets/img/vector-reload.jpg" alt="Vector 4, Reload, 10:30 AM formula card"></div>
       <div class="vector-card"><img class="zoomable" src="assets/img/vector-transport.jpg" alt="Vector 5, Transport, 04:30 PM formula card"></div>
       <div class="vector-card"><img class="zoomable" src="assets/img/vector-shutdown.jpg" alt="Vector 10, Shutdown Slurry, 08:30 PM formula card"></div>
+    </div>
+
+    <div class="field-note field-note--red">
+      <span class="fn-tag">By Design</span>
+      <p>VECTORS 1 THROUGH 5, THEN 10. NO 6, 7, 8, OR 9 — ON PURPOSE. The numbering isn't a typo, it's a fingerprint: independently re-verified against the source protocol during the version-truth audit.</p>
     </div>
 
     <div class="motto-band">
@@ -930,7 +888,12 @@
 </section>
 
 <div class="cta-band">
-  <div class="cta-bg"><img src="assets/img/gym-equipment-wide.jpg" alt="The rig — plyo box, resistance bands, the actual gear"></div>
+  <div class="cta-bg">
+    <video autoplay muted loop playsinline poster="assets/img/featured-plyo-protocol.jpg" aria-label="The Singularity Protocol — the Project 100 vision, rendered">
+      <source src="assets/video/featured-plyo-protocol.mp4" type="video/mp4">
+      <img src="assets/img/gym-equipment-wide.jpg" alt="The rig — plyo box, resistance bands, the actual gear">
+    </video>
+  </div>
   <span class="eyebrow">Follow the Excavation</span>
   <h2>88.2 lbs down.<br>11.8 to go.</h2>
   <p>New training blocks, recovery meals, and protocol updates post to @fudge_fit as they happen. Eat. Sleep. Train. Repeat. The full, version-audited protocol lives in the archive.</p>
@@ -945,7 +908,6 @@
     <a href="#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="foot-links">
       <a href="#story">Story</a>
-      <a href="#featured">Featured</a>
       <a href="#mission">Mission</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#log">Training Log</a>
@@ -1067,10 +1029,10 @@ document.querySelectorAll('.filter').forEach(f => {
   });
 })();
 
-// ===== Lightbox: click any static "zoomable" image to pop it out bigger, or
-// any "Featured Clips" video card to play it full-size with sound. Auto-closes
-// if the page is scrolled/swiped, closes on backdrop click, the X button, or
-// Escape — like a normal photo/video viewer. =====
+// ===== Lightbox: click any static "zoomable" image, or any small ambient
+// background video ("av-zoomable" — law-band cards, the protocol clip), to
+// pop it out bigger. Auto-closes if the page is scrolled/swiped, closes on
+// backdrop click, the X button, or Escape — like a normal photo/video viewer. =====
 (function(){
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
@@ -1126,10 +1088,18 @@ document.querySelectorAll('.filter').forEach(f => {
   document.querySelectorAll('img.zoomable').forEach(img => {
     img.addEventListener('click', () => openImage(img.currentSrc || img.src, img.alt));
   });
-  document.querySelectorAll('.feature-card').forEach(card => {
-    const play = () => openVideo(card.dataset.video);
-    card.addEventListener('click', play);
-    card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } });
+  // ambient background videos (law-band, protocol) double as click-to-enlarge,
+  // same as the static zoomable images — tap one to watch it big, with sound
+  document.querySelectorAll('video.av-zoomable').forEach(video => {
+    video.style.cursor = 'zoom-in';
+    const play = () => openVideo(video.currentSrc || video.querySelector('source')?.src);
+    video.addEventListener('click', play);
+    const card = video.closest('.law-card, .diag-card');
+    if(card){
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.addEventListener('keydown', (e) => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); play(); } });
+    }
   });
   // once a video actually starts playing, stop auto-closing on scroll —
   // the person is clearly watching, not accidentally brushing the page
