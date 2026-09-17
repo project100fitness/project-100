@@ -262,6 +262,20 @@
      cards are sized so a full pair is visible, with a visible scrollbar
      and side arrows so it's obvious there's more to browse. */
   .carousel-wrap{ position:relative; }
+  .log-swipe-hint{ display:none; font-size:.78rem; color:var(--text-dim); margin:-14px 0 16px; }
+  .carousel-arrow{
+    display:none; position:absolute; top:50%; transform:translateY(-50%);
+    width:36px; height:36px; border-radius:50%; z-index:5;
+    background:rgba(10,11,13,.78); border:1px solid var(--border); color:#fff;
+    align-items:center; justify-content:center; cursor:pointer;
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    transition:opacity .15s ease; padding:0;
+  }
+  .carousel-arrow svg{ width:18px; height:18px; }
+  .carousel-arrow.left{ left:2px; }
+  .carousel-arrow.right{ right:2px; }
+  .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
+  @media (hover:hover){ .carousel-arrow:hover{ background:var(--red); border-color:var(--red); } }
   @media (max-width:900px){
     .log-grid{
       display:grid; grid-auto-flow:column; grid-template-rows:repeat(2, auto);
@@ -287,20 +301,6 @@
     .log-body .watch{ font-size:.66rem; margin-top:6px; gap:4px; }
     .log-tag{ font-size:.58rem; padding:4px 8px; top:6px; left:6px; }
   }
-  .log-swipe-hint{ display:none; font-size:.78rem; color:var(--text-dim); margin:-14px 0 16px; }
-  .carousel-arrow{
-    display:none; position:absolute; top:50%; transform:translateY(-50%);
-    width:36px; height:36px; border-radius:50%; z-index:5;
-    background:rgba(10,11,13,.78); border:1px solid var(--border); color:#fff;
-    align-items:center; justify-content:center; cursor:pointer;
-    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
-    transition:opacity .15s ease; padding:0;
-  }
-  .carousel-arrow svg{ width:18px; height:18px; }
-  .carousel-arrow.left{ left:2px; }
-  .carousel-arrow.right{ right:2px; }
-  .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
-  @media (hover:hover){ .carousel-arrow:hover{ background:var(--red); border-color:var(--red); } }
 
   .log-more{ text-align:center; margin-top:34px; }
 
