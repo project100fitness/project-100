@@ -3,36 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ninja CREAMi — PROJECT 100</title>
-<meta name="description" content="Bogdan's Ninja CREAMi protein ice cream project — recipes, macros, and processing steps.">
+<title>Ninja CREAMi XL System — PROJECT 100</title>
+<meta name="description" content="The full zero-sugar, high-protein Ninja CREAMi XL system — 7-step workflow, base formula, 18-flavor matrix, batch scaling, and the 12-point Hall of Mistakes. Straight from the PROJECT 100 kitchen.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍨</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
-    --text:#eef0f4; --text-dim:#9aa1b0; --red:#e6273f; --red-dim:#a91d30; --cyan:#3fd7d0; --gold:#e8b64c;
+    --bg:#f6f4fa; --bg-2:#ffffff; --surface:#ffffff; --surface-2:#efebf7; --border:#e1dcec;
+    --text:#1d1b24; --text-dim:#68627a; --purple:#7c3aed; --purple-deep:#5b21b6; --purple-soft:#efe7fc;
+    --slate:#5b5866; --bad:#c0293d;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Inter',system-ui,-apple-system,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  h1,h2,h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.02em; margin:0; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Inter',system-ui,-apple-system,sans-serif; font-size:16.5px; font-weight:450; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  p{font-weight:450;}
+  strong, b{font-weight:700;}
+  h1,h2,h3,h4{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.02em; margin:0; }
   a{color:inherit;}
   img{max-width:100%; display:block;}
   .wrap{ max-width:1120px; margin:0 auto; padding:0 20px; }
-  .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.18em; color:var(--red); text-transform:uppercase; font-weight:600; }
-  .eyebrow::before{ content:""; width:20px; height:2px; background:var(--red); display:inline-block;}
+  .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.18em; color:var(--purple); text-transform:uppercase; font-weight:600; }
+  .eyebrow::before{ content:""; width:20px; height:2px; background:var(--purple); display:inline-block;}
+  .eyebrow.cy{color:var(--slate);} .eyebrow.cy::before{background:var(--slate);}
   .btn{ display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:6px; font-weight:700; font-size:.92rem; text-decoration:none; letter-spacing:.02em; transition:transform .15s ease; border:1px solid transparent; cursor:pointer; }
   .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 8px 22px rgba(230,39,63,.35);}
+  .btn-primary{ background:var(--purple); color:#fff; box-shadow:0 8px 22px rgba(124,58,237,.28);}
   .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
 
   .site-head{ position:sticky; top:0; z-index:50; }
-  nav{ position:relative; background:rgba(10,11,13,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  nav{ position:relative; background:rgba(255,255,255,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
   .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text);}
-  .brand b{ color:var(--red); }
+  .brand b{ color:var(--purple); }
   .navcta{ display:flex; gap:10px; }
   .navcta .btn{ padding:9px 16px; font-size:.8rem; }
   @media (max-width:860px){ .navcta{ display:none; } }
@@ -41,18 +45,87 @@
   .page-tabs::-webkit-scrollbar{ display:none; }
   .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
   .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
-  .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
-  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); } }
+  .page-tab.current{ background:var(--purple); border-color:var(--purple); color:#fff; }
+  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--slate); color:var(--text); } }
 
-  .placeholder-hero{ padding:90px 0 100px; text-align:center; border-bottom:1px solid var(--border); }
-  .placeholder-hero .tag{ display:inline-block; background:var(--surface); border:1px solid var(--border); color:var(--cyan); font-family:'Oswald',sans-serif; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:22px; }
-  .placeholder-hero h1{ font-size:clamp(2.2rem,6vw,3.6rem); margin:0 0 18px; }
-  .placeholder-hero h1 span{ color:var(--red); }
-  .placeholder-hero p{ max-width:560px; margin:0 auto 34px; color:var(--text-dim); font-size:1.05rem; }
-  .placeholder-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  /* ---- hero ---- */
+  .hero{ padding:70px 0 56px; border-bottom:1px solid var(--border); }
+  .hero h1{ font-size:clamp(2rem,5.4vw,3.3rem); margin:16px 0 16px; }
+  .hero h1 span{ color:var(--purple); }
+  .hero p.lead{ max-width:680px; color:var(--text-dim); font-size:1.1rem; font-weight:460; margin:0 0 26px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+  .chip{ background:var(--surface); border:1px solid var(--border); padding:9px 14px; border-radius:8px; font-size:.82rem; color:var(--text-dim); box-shadow:0 2px 10px rgba(30,20,50,.05); }
+  .chip b{ color:var(--text); }
+  .hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; }
 
-  footer{ padding:40px 0; }
+  /* ---- section shell ---- */
+  section.blk{ padding:56px 0; border-bottom:1px solid var(--border); }
+  section.blk:last-of-type{ border-bottom:none; }
+  .sec-head{ margin-bottom:30px; max-width:760px; }
+  .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .sec-head p{ color:var(--text-dim); font-size:1.02rem; font-weight:460; margin:0; }
+
+  /* ---- workflow pipeline ---- */
+  .pipeline{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; counter-reset:step; }
+  .pipe-step{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 14px; text-align:center; position:relative; box-shadow:0 2px 10px rgba(30,20,50,.05); }
+  .pipe-step .n{ font-family:'IBM Plex Mono',monospace; color:var(--purple); font-size:.72rem; letter-spacing:.08em; }
+  .pipe-step h4{ font-size:.95rem; margin:8px 0 6px; }
+  .pipe-step p{ font-size:.78rem; color:var(--text-dim); margin:0; font-weight:450; }
+  @media(min-width:760px){
+    .pipeline{ grid-template-columns:repeat(7,1fr); gap:0; }
+    .pipe-step{ border-radius:0; border-right:none; box-shadow:none; }
+    .pipe-step:first-child{ border-radius:10px 0 0 10px; }
+    .pipe-step:last-child{ border-radius:0 10px 10px 0; border-right:1px solid var(--border); }
+  }
+
+  /* ---- formula cards ---- */
+  .grid3{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px; box-shadow:0 2px 12px rgba(30,20,50,.05); }
+  .card .tag-sm{ font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--purple); }
+  .card h3{ font-size:1.05rem; margin:8px 0 10px; text-transform:none; letter-spacing:0; }
+  .card p{ font-size:.9rem; color:var(--text-dim); margin:0; }
+  .card p b{ color:var(--text); }
+  .card.tier2 .tag-sm{ color:var(--purple-deep); }
+
+  /* ---- callouts ---- */
+  .callout{ background:linear-gradient(135deg, var(--purple-soft), var(--surface)); border-left:4px solid var(--slate); border-radius:0 8px 8px 0; padding:16px 18px; margin:0 0 16px; font-size:.94rem; box-shadow:0 3px 14px rgba(30,20,50,.06); }
+  .callout b.badge{ display:inline-block; color:#fff; background:var(--slate); text-transform:uppercase; letter-spacing:.04em; font-size:.7rem; font-weight:800; padding:2px 8px; border-radius:4px; margin:0 2px 6px 0; }
+  .callout-critical{ background:linear-gradient(135deg, rgba(192,41,61,.08), var(--surface)); border-left:4px solid var(--bad); border-radius:0 8px 8px 0; padding:16px 18px; margin:0 0 16px; font-size:.94rem; box-shadow:0 3px 14px rgba(192,41,61,.08); }
+  .callout-critical b.badge{ display:inline-block; color:#fff; background:var(--bad); text-transform:uppercase; letter-spacing:.04em; font-size:.7rem; font-weight:800; padding:2px 8px; border-radius:4px; margin:0 2px 6px 0; }
+  .callout-critical p, .callout p{ margin:0; color:var(--text); }
+
+  /* ---- flavor matrix table ---- */
+  .tbl-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:10px; background:var(--surface); box-shadow:0 2px 12px rgba(30,20,50,.05); }
+  table{ width:100%; border-collapse:collapse; font-size:.86rem; }
+  th,td{ text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); vertical-align:top; white-space:nowrap; }
+  td:nth-child(3){ white-space:normal; }
+  th{ font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); background:var(--surface-2); }
+  tr:last-child td{ border-bottom:none; }
+  tr:hover td{ background:var(--surface-2); }
+
+  /* ---- macro stat strip ---- */
+  .stat-strip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; }
+  .stat{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px; text-align:center; box-shadow:0 2px 10px rgba(30,20,50,.05); }
+  .stat .v{ font-family:'Oswald',sans-serif; font-size:1.5rem; color:var(--purple-deep); }
+  .stat .l{ font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-dim); margin-top:4px; }
+
+  /* ---- mistakes grid ---- */
+  .mistakes{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; }
+  .mistake{ display:flex; gap:10px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px; font-size:.88rem; color:var(--text-dim); box-shadow:0 2px 8px rgba(30,20,50,.04); }
+  .mistake .x{ color:var(--bad); font-weight:800; flex:0 0 auto; }
+
+  /* ---- inclusion tiers ---- */
+  .tier-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .tier{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px; box-shadow:0 2px 10px rgba(30,20,50,.05); }
+  .tier .num{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--purple); letter-spacing:.06em; }
+  .tier h4{ font-size:1rem; margin:6px 0 8px; text-transform:none; letter-spacing:0; }
+  .tier p{ font-size:.86rem; color:var(--text-dim); margin:0; }
+
+  footer{ padding:44px 0 40px; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
+  .foot-links{ text-align:center; margin-top:10px; font-size:.85rem; }
+  .foot-links a{ text-decoration:none; color:var(--text-dim); }
+  .foot-links a:hover{ color:var(--purple); }
 </style>
 </head>
 <body>
@@ -63,7 +136,7 @@
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
       <a class="btn btn-ghost" href="index.html#connect">All Links</a>
-      <a class="btn btn-primary" href="encyclopedia.html">Full Protocol</a>
+      <a class="btn btn-primary" href="encyclopedia.html#ch13">Full Protocol</a>
     </div>
   </div>
 </nav>
@@ -78,21 +151,231 @@
 </nav>
 </header>
 
-<section class="placeholder-hero">
+<section class="hero">
   <div class="wrap">
-    <span class="tag">Under Construction</span>
-    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Frozen Protocol</span>
-    <h1>Protein Ice Cream.<br><span>Engineered.</span></h1>
-    <p>Velvet Banana Cream, Strawberry Cream Profile, and the rest of the CREAMi recipe system — landing here shortly.</p>
-    <div class="placeholder-ctas">
-      <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
+    <span class="eyebrow">Ch.13 · The Ninja Creami XL System</span>
+    <h1>Zero-Sugar.<br><span>90g+ Protein.</span> Velvet Texture.</h1>
+    <p class="lead">A dedicated processing system for turning ultra-high-protein bases into velvet-textured frozen desserts on a Ninja CREAMi XL. Standard ice-cream machines aren't built for zero-fat, high-protein matrices — mishandled, they freeze into an unspinnable block and risk the hardware itself. This is the full engineered workaround: the workflow, the formula, and the 18-flavor matrix.</p>
+    <div class="chips">
+      <span class="chip"><b>7-step</b> master workflow</span>
+      <span class="chip"><b>18</b> zero-sugar flavors</span>
+      <span class="chip"><b>~41g</b> protein per base</span>
+      <span class="chip"><b>380–610</b> kcal per pint</span>
+      <span class="chip"><b>up to 92.5g</b> protein per recipe</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#workflow">See the Workflow ↓</a>
+      <a class="btn btn-ghost" href="#flavors">Jump to Flavor Matrix ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow cy">The Master Workflow</span>
+      <h2>Prep → Emulsify → Settle → Freeze → Level → Spin → Flush</h2>
+      <p>0.1g digital-scale accuracy on the dry matrix. A hot/cold thermal-phase vortex blend. A 15-minute settle. Lid-off freeze for 2–4h, then lid-on for 16–24h at -18°C to -20°C. A Deiss masher plus warm-water bath to level the surface. A Lite Ice Cream / Sorbet spin with re-spin logic. Hot-water spindle flush after every single use — no exceptions.</p>
+    </div>
+    <div class="pipeline">
+      <div class="pipe-step"><div class="n">01</div><h4>Prep</h4><p>0.1g scale accuracy on every dry ingredient</p></div>
+      <div class="pipe-step"><div class="n">02</div><h4>Emulsify</h4><p>Hot/cold thermal-phase vortex blend</p></div>
+      <div class="pipe-step"><div class="n">03</div><h4>Settle</h4><p>15-minute rest before pouring into the pint</p></div>
+      <div class="pipe-step"><div class="n">04</div><h4>Freeze</h4><p>Lid-off 2–4h, then lid-on 16–24h at -18° to -20°C</p></div>
+      <div class="pipe-step"><div class="n">05</div><h4>Level</h4><p>Deiss masher + warm-water bath to flatten the surface</p></div>
+      <div class="pipe-step"><div class="n">06</div><h4>Spin</h4><p>Lite Ice Cream / Sorbet program, with re-spin logic</p></div>
+      <div class="pipe-step"><div class="n">07</div><h4>Flush</h4><p>Hot-water spindle flush, every single time</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Universal Structural Base Formula</span>
+      <h2>Three Phases. One Base.</h2>
+      <p>Every flavor in the matrix below starts from this same structural base — only the flavor-core agents change.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag-sm">Thermal Phase</span>
+        <h3>Hot Bloom</h3>
+        <p>150–200ml boiling water<br><b>+</b> bone broth<br><b>+</b> marine collagen</p>
+      </div>
+      <div class="card">
+        <span class="tag-sm">Cold Phase</span>
+        <h3>Dairy &amp; Egg</h3>
+        <p>250ml Kirkland Ultra-Filtered 2% Milk<br><b>+</b> 100g liquid egg whites</p>
+      </div>
+      <div class="card">
+        <span class="tag-sm">Dry Matrix</span>
+        <h3>Protein &amp; Structure</h3>
+        <p>1.5 scoops protein<br><b>+</b> 3–4 tbsp allulose / monk fruit<br><b>+</b> ¼ tsp xanthan / tara / guar gum<br><b>+</b> pink salt, pinch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow cy">The Lipid / Fat Matrix</span>
+      <h2>The Kirkland 2% Rule</h2>
+      <p>The base milk alone supplies 5.0g of native butterfat. Dial texture richness up from there in two controlled tiers.</p>
+    </div>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag-sm">Tier 1 · Micro-Dose</span>
+        <h3>Light Texture Lift</h3>
+        <p>1 tsp almond butter<br><b>+2.7g fat / +33 kcal</b></p>
+      </div>
+      <div class="card tier2">
+        <span class="tag-sm">Tier 2 · Max-Dose</span>
+        <h3>Full Richness</h3>
+        <p>1 tbsp almond butter<br><b>+8g fat / +100 kcal</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Batch Scaling</span>
+      <h2>One Pint or a Full Pitcher</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Batch</th><th>Water</th><th>Broth / Collagen</th><th>Milk</th><th>Egg Whites</th><th>Protein</th><th>Sweetener</th><th>Gum</th><th>Salt</th></tr>
+        <tr><td><b>Individual (24oz pint)</b></td><td>150–200ml</td><td>Standard SOP</td><td>250ml</td><td>100g</td><td>1.5 scoops</td><td>3–4 tbsp</td><td>¼ tsp</td><td>1 pinch</td></tr>
+        <tr><td><b>Mega (68oz pitcher, 3×)</b></td><td>450–600ml</td><td>3 scoops each</td><td>750ml</td><td>300g</td><td>4.5 scoops</td><td>9–12 tbsp</td><td>¾ tsp</td><td>3 pinches</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow cy">Inclusion Architecture</span>
+      <h2>Three Tiers. One Rule Each.</h2>
+    </div>
+    <div class="tier-row">
+      <div class="tier"><div class="num">TIER 1</div><h4>Machine Mix-In</h4><p>Hard items — drill a borehole into the frozen base and run the Mix-In program.</p></div>
+      <div class="tier"><div class="num">TIER 2</div><h4>Hand-Fold</h4><p>Soft items — fold in by hand after spinning. <b>Never</b> machine mix-in soft inclusions.</p></div>
+      <div class="tier"><div class="num">TIER 3</div><h4>Manual Knife-Swirl</h4><p>Ribbons and drizzles, worked in by hand post-spin for a marbled finish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="flavors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Flavor Matrix</span>
+      <h2>18 Zero-Sugar Permutations</h2>
+      <p>Texture runs by protein base: <b>Hexapro Vanilla</b> → dense, custardy soft-serve. <b>PVL Isogold</b> → dense gelato. <b>Syntha-6</b> → premium ultra-creamy overrun.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Flavor</th><th>Protein Base</th><th>Flavor Core Agents</th></tr>
+        <tr><td>Lemon Chiffon</td><td>Hexapro Vanilla</td><td>LorAnn Lemon Emulsion + Vanillux Paste</td></tr>
+        <tr><td>Strawberry Cream</td><td>Hexapro Vanilla</td><td>LorAnn Strawberry Emulsion + Vanillux Paste</td></tr>
+        <tr><td>Blueberry Muffin</td><td>Hexapro Vanilla</td><td>LorAnn Blueberry Emulsion + Bakery Cinnamon</td></tr>
+        <tr><td>Classic Vanilla Bean</td><td>Hexapro Vanilla</td><td>Vanillux Vanilla Bean Paste</td></tr>
+        <tr><td>Velvet Banana Cream</td><td>Hexapro Vanilla</td><td>LorAnn Banana Cream + Butter Vanilla</td></tr>
+        <tr><td>Spiced Chai Latte</td><td>Hexapro Vanilla</td><td>Ceylon Cinnamon + Cardamom + Instant Tea</td></tr>
+        <tr><td>Pistachio Biscotti</td><td>Hexapro Vanilla</td><td>LorAnn Pistachio + Almond Extract</td></tr>
+        <tr><td>Midnight Mocha</td><td>PVL Isogold (Iced Mocha)</td><td>LorAnn Coffee Emulsion + Cafe Bustelo</td></tr>
+        <tr><td>Triple Mint Chip</td><td>PVL Isogold (Triple Choc)</td><td>LorAnn Peppermint Emulsion</td></tr>
+        <tr><td>Dark Chocolate Oreo</td><td>PVL Isogold (Triple Choc)</td><td>Black Cocoa + Vanillux Paste</td></tr>
+        <tr><td>Peanut Butter Twist</td><td>PVL Isogold (Iced Mocha)</td><td>PB &amp; Me Defatted Peanut Powder</td></tr>
+        <tr><td>Birthday Cake</td><td>BSN Syntha-6 (Vanilla)</td><td>LorAnn Butter Vanilla + Vanillux Paste</td></tr>
+        <tr><td>Cinnamon Roll Glaze</td><td>Syntha-6 (Vanilla)</td><td>Cinnamon + Butter Vanilla + Maple Emulsion</td></tr>
+        <tr><td>Maple Walnut Cream</td><td>Syntha-6 (Vanilla)</td><td>LorAnn Maple Emulsion + Almond Extract</td></tr>
+        <tr><td>PB Fudge Crunch</td><td>Hexapro Vanilla</td><td>Defatted PB Powder + Cacao Nibs</td></tr>
+        <tr><td>Zero-Sugar Cookie Dough</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+        <tr><td>Zero-Sugar Caramel Crunch</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+        <tr><td>Zero-Sugar Chocolate Swirl</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow cy">Macronutrient Ledger</span>
+      <h2>What's Actually In The Pint</h2>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><div class="v">~240</div><div class="l">Base kcal</div></div>
+      <div class="stat"><div class="v">~41g</div><div class="l">Base protein</div></div>
+      <div class="stat"><div class="v">5.0g</div><div class="l">Base fat</div></div>
+      <div class="stat"><div class="v">6.0g</div><div class="l">Base net carbs</div></div>
+      <div class="stat"><div class="v">380–610</div><div class="l">Finished kcal range</div></div>
+      <div class="stat"><div class="v">74–92.5g</div><div class="l">Finished protein range</div></div>
+    </div>
+    <p style="color:var(--text-dim); font-size:.92rem; margin-top:16px;">Richest: <b style="color:var(--text)">PB Fudge Crunch</b> — 610 kcal / 92.5g protein. Leanest: <b style="color:var(--text)">Midnight Mocha</b> — 380 kcal.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Hardware &amp; Safety</span>
+      <h2>Don't Skip These</h2>
+    </div>
+    <div class="callout-critical">
+      <b class="badge">Critical Hardware Limits</b>
+      <p>Never process below -22°C unthawed — it produces an unspinnable "cement brick" that can strain the motor. Never exceed the Max Fill line. The surface must be 100% level before spinning. Flush the spindle with hot water immediately after every single use.</p>
+    </div>
+    <div class="callout">
+      <b class="badge">Re-Spin Logic</b>
+      <p>If the first spin leaves the base under-processed, a short dry re-spin (no added liquid) almost always finishes the job — adding liquid before a re-spin is one of the most common mistakes in the log below.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow cy">The Hall of Mistakes</span>
+      <h2>12-Point Error Log</h2>
+      <p>Every one of these has actually happened in testing. Read it once before your first batch.</p>
+    </div>
+    <div class="mistakes">
+      <div class="mistake"><span class="x">✕</span><span>Under-freezing before the spin cycle</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Overfilling past the Max Fill line</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Running the wrong program mode</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Adding unnecessary liquid before a dry re-spin</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Blender or frother misuse during emulsify</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Extract / flavor-core omission</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Dumping dry matrix into liquid without whisking first</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Stabilizer (gum) omission</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Machine-mixing soft Tier-2 inclusions</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Wrong-size hard Tier-1 inclusions</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Skipping the perimeter-ice scrape</span></div>
+      <div class="mistake"><span class="x">✕</span><span>Skipping the warm-water thermal bath before leveling</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow" style="justify-content:center;">Want The Full Forensic Detail?</span>
+    <h2 style="margin:14px 0 18px; font-size:clamp(1.4rem,3vw,1.9rem);">This page is the field guide.<br>The Encyclopedia is the full audit trail.</h2>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a class="btn btn-primary" href="encyclopedia.html#ch13">Read Ch.13 in the Encyclopedia ↗</a>
+      <a class="btn btn-ghost" href="fit-food.html">See All Fit Food ↗</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap foot-fine">Project 100 — Ninja CREAMi page. Being built now. Eat. Sleep. Train. Repeat.</div>
+  <div class="wrap">
+    <div class="foot-fine">Project 100 — The Ninja Creami XL System. Zero sugar. Full protein. Every batch logged.</div>
+    <div class="foot-links"><a href="index.html">Project 100</a> · <a href="encyclopedia.html">Encyclopedia</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="index.html#connect">All Links</a></div>
+  </div>
 </footer>
 
 </body>

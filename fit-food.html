@@ -51,6 +51,38 @@
   .placeholder-hero p{ max-width:560px; margin:0 auto 34px; color:var(--text-dim); font-size:1.05rem; }
   .placeholder-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
+  /* REELS GRID — video boxes, anchored to the bottom of the page */
+  .reels-blk{ padding:56px 0 64px; }
+  .reels-blk .sec-head{ max-width:680px; margin-bottom:30px; }
+  .reels-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .reels-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+  .log-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .log-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+    display:flex; flex-direction:column; text-decoration:none; color:var(--text);
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .log-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
+  .log-media{ aspect-ratio:9/16; position:relative; overflow:hidden; background:#000; }
+  .log-media img{ width:100%; height:100%; object-fit:contain; object-position:center; background:#000; }
+  .log-media .noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:linear-gradient(135deg,#123326,#08150f); }
+  .log-tag{
+    position:absolute; top:10px; left:10px; font-size:.68rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; padding:5px 10px; border-radius:100px; backdrop-filter:blur(6px);
+    background:rgba(63,215,144,.85); color:#06170f;
+  }
+  .log-body{ padding:14px 16px 16px; flex:1; display:flex; flex-direction:column; }
+  .log-body .date{ font-size:.7rem; color:var(--text-dim); letter-spacing:.06em; text-transform:uppercase; font-weight:700; }
+  .log-body h4{ font-family:'Oswald',sans-serif; font-size:.96rem; margin:7px 0 9px; line-height:1.25; text-transform:none; letter-spacing:0; }
+  .log-body .stats{ margin-top:auto; display:flex; gap:14px; color:var(--text-dim); font-size:.78rem; padding-top:8px; }
+  .log-body .watch{ margin-top:10px; font-size:.76rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:6px; }
+  @media (max-width:900px){ .log-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){
+    .log-grid{ display:grid; grid-auto-flow:column; grid-template-rows:1fr; grid-auto-columns:62vw; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; margin:0 -20px; padding:0 20px 8px; }
+    .log-grid::-webkit-scrollbar{ display:none; }
+    .log-card{ width:62vw; flex:none; }
+  }
+
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
 </style>
@@ -87,6 +119,46 @@
     <div class="placeholder-ctas">
       <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="reels-blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Straight From @fudge_fit</span>
+      <h2>The Food Reels</h2>
+      <p>Every food-related reel from the training log, moved here where it belongs. Tap through to watch any of them on Instagram.</p>
+    </div>
+    <div class="log-grid">
+      <a class="log-card" href="https://www.instagram.com/p/DdCRC82AhaT/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/protein-wrap-trio.jpg" alt="Post-Workout Protein Wrap" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Sep 8, 2026</div><h4>Post-Workout Protein Wrap</h4><div class="stats"><span>♥ 24</span><span>💬 10</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/Dc_n4SHAEnb/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/choco-blueberry-recovery.jpg" alt="Dark Choco Blueberry Recovery" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Sep 7, 2026</div><h4>Dark Choco Blueberry Recovery</h4><div class="stats"><span>♥ 19</span><span>💬 6</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DcwahczACPq/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/carnivore-omelette.jpg" alt="Post-Workout Carnivore Omelette" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Sep 1, 2026</div><h4>Post-Workout Carnivore Omelette</h4><div class="stats"><span>♥ 26</span><span>💬 4</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DckF9_4gIe0/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/protein-berries-smoothie.jpg" alt="Protein Berries Smoothie" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Aug 28, 2026</div><h4>Protein Berries Smoothie</h4><div class="stats"><span>♥ 48</span><span>💬 12</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/Db13qBAAji5/" target="_blank" rel="noopener">
+        <div class="log-media"><div class="noimg">🥤</div><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Aug 10, 2026</div><h4>Protein Choco Fudge</h4><div class="stats"><span>♥ 88</span><span>💬 18</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DbrMLlegGOL/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/anabolic-recovery-bowl.jpg" alt="Anabolic Recovery Bowl" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Aug 5, 2026</div><h4>Anabolic Recovery Bowl</h4><div class="stats"><span>♥ 54</span><span>💬 2</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DbOragtABpa/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/post-workout-air-fry-meals.jpg" alt="Post-Workout Air Fry Meals" loading="lazy"><span class="log-tag">Nutrition</span></div>
+        <div class="log-body"><div class="date">Jul 25, 2026</div><h4>Post-Workout Air Fry Meals</h4><div class="stats"><span>♥ 30</span><span>💬 7</span></div><div class="watch">▶ Watch on Instagram</div></div>
+      </a>
     </div>
   </div>
 </section>
