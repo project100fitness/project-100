@@ -708,6 +708,7 @@
         <p>Deep sleep and nervous-system decompression to reset biological readiness for the next training wave. Growth isn't signed off in the gym — it's signed off at 20:30, Vector 10, lights out.</p>
       </div>
       <div class="law-card">
+        <video class="av-zoomable" autoplay muted loop playsinline poster="assets/img/featured-plyo-protocol.jpg" aria-hidden="true"><source src="assets/video/featured-plyo-protocol.mp4" type="video/mp4"></video>
         <h3>TRAIN</h3>
         <p>Training intensity sufficient to provide the mechanical signal and neural drive required for the growth of a 200 lb frame — not a 197 lb one.</p>
       </div>
@@ -1125,10 +1126,27 @@ document.querySelectorAll('.filter').forEach(f => {
   const setActive = (id) => {
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
   };
+  // Always show something highlighted, even before any section has crossed
+  // the observer's trigger band — this is what was leaving tabs with no
+  // underline at all when a page/section was entered without scrolling
+  // through the (narrow) band first.
+  setActive(sections[0].id);
+  const visible = new Set();
+  const pickActive = () => {
+    if(!visible.size) return;
+    // Pick the last section in document order that's currently visible —
+    // tracks whichever one the user is actually reading.
+    let chosen = sections[0].id;
+    sections.forEach(({id}) => { if(visible.has(id)) chosen = id; });
+    setActive(chosen);
+  };
   try{
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if(e.isIntersecting) setActive(e.target.id); });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+      entries.forEach(e => {
+        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
+      });
+      pickActive();
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
     sections.forEach(({sec}) => io.observe(sec));
   }catch(e){ /* nav still works without highlighting */ }
 })();

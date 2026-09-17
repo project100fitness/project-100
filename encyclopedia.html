@@ -1210,6 +1210,38 @@
   backTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 
 })();
+
+// scrollspy: highlight the nav link for whichever section is currently in view
+(function(){
+  var navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sections.push({sec: sec, id: id});
+  });
+  if(!sections.length) return;
+  var setActive = function(id){
+    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+  };
+  setActive(sections[0].id);
+  var visible = new Set();
+  var pickActive = function(){
+    if(!visible.size) return;
+    var chosen = sections[0].id;
+    sections.forEach(function(s){ if(visible.has(s.id)) chosen = s.id; });
+    setActive(chosen);
+  };
+  try{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
+      });
+      pickActive();
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(s){ io.observe(s.sec); });
+  }catch(e){ /* nav still works without highlighting */ }
+})();
 </script>
 
 </body></html>

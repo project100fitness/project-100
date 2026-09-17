@@ -302,6 +302,38 @@
     setTimeout(update, 300);
   });
 })();
+
+// scrollspy: highlight the nav link for whichever section is currently in view
+(function(){
+  const navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
+  const sections = [];
+  navLinks.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if(sec) sections.push({sec, id});
+  });
+  if(!sections.length) return;
+  const setActive = (id) => {
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+  setActive(sections[0].id);
+  const visible = new Set();
+  const pickActive = () => {
+    if(!visible.size) return;
+    let chosen = sections[0].id;
+    sections.forEach(({id}) => { if(visible.has(id)) chosen = id; });
+    setActive(chosen);
+  };
+  try{
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
+      });
+      pickActive();
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(({sec}) => io.observe(sec));
+  }catch(e){ /* nav still works without highlighting */ }
+})();
 </script>
 </body>
 </html>
