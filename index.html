@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/carousel.css">
 <style>
   :root{
     --bg:#0a0b0d;
@@ -259,50 +260,10 @@
   .log-body h4{ font-family:'Oswald',sans-serif; font-size:1.02rem; margin:8px 0 10px; line-height:1.25; text-transform:none; letter-spacing:0; }
   .log-body .stats{ margin-top:auto; display:flex; gap:14px; color:var(--text-dim); font-size:.8rem; padding-top:10px; }
   .log-body .watch{ margin-top:12px; font-size:.78rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:6px; }
-  /* Desktop: #logGrid is the real grid (3 columns). The row wrappers below
-     are display:contents on desktop so they add no box of their own — every
-     card flattens straight into this one 3-column grid, same as before. */
-  #logGrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .carousel-wrap{ display:contents; }
-  .log-row{ display:contents; }
-
-  /* Mobile/tablet: instead of one shared carousel, each row of cards becomes
-     its OWN independent horizontally-scrolling strip, with its OWN visible
-     scrollbar and its OWN left/right arrows — no more one shared control for
-     multiple stacked rows. */
-  .log-swipe-hint{ display:none; font-size:.78rem; color:var(--text-dim); margin:-14px 0 16px; }
-  .carousel-arrow{
-    display:none; position:absolute; top:50%; transform:translateY(-50%);
-    width:34px; height:34px; border-radius:50%; z-index:5;
-    background:rgba(10,11,13,.78); border:1px solid var(--border); color:#fff;
-    align-items:center; justify-content:center; cursor:pointer;
-    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
-    transition:opacity .15s ease; padding:0;
-  }
-  .carousel-arrow svg{ width:16px; height:16px; }
-  .carousel-arrow.left{ left:2px; }
-  .carousel-arrow.right{ right:2px; }
-  .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
-  @media (hover:hover){ .carousel-arrow:hover{ background:var(--red); border-color:var(--red); } }
-  @media (max-width:900px){
-    #logGrid{ display:flex; flex-direction:column; gap:14px; }
-    .carousel-wrap{ display:block; position:relative; }
-    .log-row{
-      display:flex; gap:10px; overflow-x:auto; overflow-y:hidden;
-      padding-bottom:14px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
-      margin:0 -20px; padding-left:20px; padding-right:20px;
-      scrollbar-width:auto; scrollbar-color:var(--red) var(--surface);
-    }
-    .log-row::-webkit-scrollbar{ height:9px; }
-    .log-row::-webkit-scrollbar-track{ background:var(--surface); border-radius:5px; }
-    .log-row::-webkit-scrollbar-thumb{ background:var(--red); border-radius:5px; }
-    .log-card{ scroll-snap-align:start; width:46vw; flex:none; }
-    .log-swipe-hint{ display:block; }
-    .carousel-arrow{ display:flex; }
-  }
+  /* #logGrid's carousel-row layout (max 3 cards visible per row, at every
+     screen size) now lives in the shared assets/css/carousel.css so every
+     page's card galleries stay standardized. */
   @media (max-width:480px){
-    .log-row{ gap:8px; }
-    .log-card{ width:47vw; }
     .log-body{ padding:9px 10px 11px; }
     .log-body .date{ font-size:.6rem; }
     .log-body h4{ font-size:.78rem; margin:5px 0 6px; line-height:1.22; }
@@ -791,14 +752,12 @@
       <p>EVERY REP IS ON THE RECORD. No highlight reel, no filtered wins — this is the actual training log, real dates and real engagement, pulled straight from the feed.</p>
     </div>
 
-    <p class="log-swipe-hint">← Swipe each row to browse — auto-scrolls slowly, tap to pause →</p>
-
-    <div id="logGrid">
+    <div id="logGrid" class="carousel-grid" data-carousel data-carousel-max="3">
       <div class="carousel-wrap">
         <button type="button" class="carousel-arrow left hidden" aria-label="Scroll row 1 left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <div class="log-row" data-row="0">
+        <div class="carousel-row" data-row="0">
           <!-- cards injected by JS from LOG_DATA -->
         </div>
         <button type="button" class="carousel-arrow right" aria-label="Scroll row 1 right">
@@ -809,7 +768,7 @@
         <button type="button" class="carousel-arrow left hidden" aria-label="Scroll row 2 left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <div class="log-row" data-row="1">
+        <div class="carousel-row" data-row="1">
           <!-- cards injected by JS from LOG_DATA -->
         </div>
         <button type="button" class="carousel-arrow right" aria-label="Scroll row 2 right">
@@ -820,7 +779,7 @@
         <button type="button" class="carousel-arrow left hidden" aria-label="Scroll row 3 left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
-        <div class="log-row" data-row="2">
+        <div class="carousel-row" data-row="2">
           <!-- cards injected by JS from LOG_DATA -->
         </div>
         <button type="button" class="carousel-arrow right" aria-label="Scroll row 3 right">
@@ -923,6 +882,7 @@
   <div class="wrap foot-fine">Project 100 — The Singularity Archive. Version-Truth-Audited Edition, September 2026. Built and logged by Bogdan. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
+<script src="assets/js/carousel.js"></script>
 <script>
 // ---- Training log data: pulled from @fudge_fit, last ~60 days ----
 const LOG_DATA = [
@@ -951,7 +911,7 @@ const CAT_ICON = { "resistance-bands":"🎗️", arms:"💪", "chest-shoulders":
 // mobile, so filtered results are dealt round-robin across all rows instead
 // of piling into a single shared strip.
 function renderLog(filter){
-  const rows = Array.from(document.querySelectorAll('#logGrid .log-row'));
+  const rows = Array.from(document.querySelectorAll('#logGrid .carousel-row'));
   if(!rows.length) return;
   rows.forEach(r => r.innerHTML = '');
   const filtered = LOG_DATA.filter(d => filter === 'all' || d.cat === filter);
@@ -975,6 +935,7 @@ function renderLog(filter){
   });
 }
 renderLog('all');
+window.ProjectCarousel && window.ProjectCarousel.init();
 
 document.querySelectorAll('.filter').forEach(f => {
   f.addEventListener('click', () => {
@@ -984,13 +945,14 @@ document.querySelectorAll('.filter').forEach(f => {
   });
 });
 
-// gentle auto-scroll for the mobile/tablet training-log carousel — each row
-// scrolls independently and pauses on touch/wheel within that row only
+// gentle auto-scroll for the training-log carousel (mobile/tablet only) —
+// each row scrolls independently and pauses on touch/wheel/manual-arrow-nav
+// within that row only
 (function(){
-  document.querySelectorAll('#logGrid .log-row').forEach(function(grid){
+  document.querySelectorAll('#logGrid .carousel-row').forEach(function(grid){
     let paused = false, resumeTimer;
     const pause = () => { paused = true; clearTimeout(resumeTimer); resumeTimer = setTimeout(()=>{ paused = false; }, 4000); };
-    ['touchstart','pointerdown','wheel','rowpause'].forEach(ev => grid.addEventListener(ev, pause, {passive:true}));
+    ['touchstart','pointerdown','wheel','carousel:nav'].forEach(ev => grid.addEventListener(ev, pause, {passive:true}));
     setInterval(() => {
       if(paused || window.innerWidth > 900) return;
       const max = grid.scrollWidth - grid.clientWidth;
@@ -998,34 +960,6 @@ document.querySelectorAll('.filter').forEach(f => {
       const next = grid.scrollLeft + 1.1;
       grid.scrollLeft = next >= max ? 0 : next;
     }, 40);
-  });
-})();
-
-// left/right arrow buttons — each row's own carousel-wrap has its own pair,
-// scoped so row 1's arrows only ever move row 1, etc.
-(function(){
-  document.querySelectorAll('#logGrid .carousel-wrap').forEach(function(wrap){
-    const grid = wrap.querySelector('.log-row');
-    const prevBtn = wrap.querySelector('.carousel-arrow.left');
-    const nextBtn = wrap.querySelector('.carousel-arrow.right');
-    if(!grid || !prevBtn || !nextBtn) return;
-    const step = () => {
-      const card = grid.querySelector('.log-card');
-      return (card ? card.getBoundingClientRect().width + 10 : grid.clientWidth * 0.5) * 2;
-    };
-    const update = () => {
-      const max = grid.scrollWidth - grid.clientWidth;
-      prevBtn.classList.toggle('hidden', grid.scrollLeft <= 4);
-      nextBtn.classList.toggle('hidden', max <= 4 || grid.scrollLeft >= max - 4);
-    };
-    const goPrev = () => { grid.dispatchEvent(new Event('rowpause')); grid.scrollBy({left: -step(), behavior:'smooth'}); };
-    const goNext = () => { grid.dispatchEvent(new Event('rowpause')); grid.scrollBy({left: step(), behavior:'smooth'}); };
-    prevBtn.addEventListener('click', goPrev);
-    nextBtn.addEventListener('click', goNext);
-    grid.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update);
-    new MutationObserver(update).observe(grid, {childList:true});
-    setTimeout(update, 300);
   });
 })();
 

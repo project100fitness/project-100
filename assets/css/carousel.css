@@ -1,0 +1,69 @@
+/* ===================================================================
+   PROJECT 100 — Standardized Carousel Row System (site-wide)
+
+   Used for every photo/video "card gallery" on the site (training
+   log, gear drops, food drops, and any future carousel placement).
+   Rule: max 3 card-holders visible per row, at every screen size.
+   If a row has more cards than fit, that row scrolls horizontally on
+   its own — drag/swipe, its own visible scrollbar, or its own pair
+   of left/right arrow buttons — instead of just wrapping onto a new
+   plain grid row.
+
+   Markup contract (see assets/js/carousel.js):
+     <div class="carousel-grid" data-carousel data-carousel-max="3">
+       ...either flat card elements (auto-chunked into rows by JS)...
+       ...or pre-built rows:
+       <div class="carousel-wrap">
+         <button class="carousel-arrow left hidden">...</button>
+         <div class="carousel-row"> ...cards... </div>
+         <button class="carousel-arrow right">...</button>
+       </div>
+     </div>
+   =================================================================== */
+
+.carousel-grid{ display:flex; flex-direction:column; gap:22px; }
+
+.carousel-wrap{ position:relative; }
+
+.carousel-row{
+  display:flex; gap:18px; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
+  padding-bottom:6px;
+  scrollbar-width:auto; scrollbar-color:var(--red,#e6273f) var(--surface,#16181e);
+}
+.carousel-row::-webkit-scrollbar{ height:9px; }
+.carousel-row::-webkit-scrollbar-track{ background:var(--surface,#16181e); border-radius:5px; }
+.carousel-row::-webkit-scrollbar-thumb{ background:var(--red,#e6273f); border-radius:5px; }
+
+/* Max 3 visible per row on desktop/tablet-wide */
+.carousel-row > *{
+  flex:0 0 calc((100% - 36px)/3);
+  min-width:0;
+  scroll-snap-align:start;
+}
+
+.carousel-arrow{
+  display:flex; position:absolute; top:50%; transform:translateY(-50%);
+  width:36px; height:36px; border-radius:50%; z-index:5; padding:0;
+  background:rgba(10,11,13,.82); border:1px solid var(--border,#272b35); color:#fff;
+  align-items:center; justify-content:center; cursor:pointer;
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  transition:opacity .15s ease, background .15s ease, border-color .15s ease;
+}
+.carousel-arrow svg{ width:16px; height:16px; }
+.carousel-arrow.left{ left:2px; }
+.carousel-arrow.right{ right:2px; }
+.carousel-arrow.hidden{ opacity:0; pointer-events:none; }
+@media (hover:hover){
+  .carousel-arrow:hover{ background:var(--red,#e6273f); border-color:var(--red,#e6273f); }
+}
+
+/* Tablet: ~2 cards visible + a peek of the next */
+@media (max-width:900px){
+  .carousel-row > *{ flex:0 0 46vw; }
+}
+/* Phone: ~1 card visible + a peek of the next */
+@media (max-width:480px){
+  .carousel-row{ gap:8px; }
+  .carousel-row > *{ flex:0 0 47vw; }
+}
