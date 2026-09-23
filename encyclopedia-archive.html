@@ -1,0 +1,1252 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:16.5px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Full Archive — Encyclopedia — PROJECT 100</title>
+<meta name="description" content="The Singularity Archive — the full, unabridged forensic reference behind Project 100: training, fuel, timing, supplementation, and the failure protocols. See encyclopedia.html for the condensed Protocol Deck.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ TOKENS — dark-first (tactical dossier) ============ */
+  :root{
+    --bg:#0a0b0d;
+    --surface:#16181c;
+    --surface-2:#1e2126;
+    --surface-3:#25292f;
+    --border:#2b2f36;
+    --border-soft:#20232a;
+    --text:#eceef0;
+    --text-dim:#9aa1ab;
+    --text-faint:#666d78;
+    --accent:#f5a623;
+    --accent-ink:#1a1200;
+    --accent-dim:#7a5615;
+    --accent-2:#7fa8d9;
+    --good:#4caf7d;
+    --good-ink:#0c1f16;
+    --bad:#e0575a;
+    --bad-ink:#2a0d0d;
+    --code-bg:#101215;
+    --shadow: 0 8px 24px rgba(0,0,0,.35);
+    --font-display:'Oswald',"Arial Narrow",sans-serif;
+    --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#eef0f2;
+      --surface:#ffffff;
+      --surface-2:#e6e9ec;
+      --surface-3:#dadee3;
+      --border:#d3d7dd;
+      --border-soft:#dfe2e7;
+      --text:#14171b;
+      --text-dim:#4b5158;
+      --text-faint:#767c85;
+      --accent:#b56a0e;
+      --accent-ink:#ffffff;
+      --accent-dim:#e3ad63;
+      --accent-2:#2f6fb0;
+      --good:#217a51;
+      --good-ink:#ffffff;
+      --bad:#b7373a;
+      --bad-ink:#ffffff;
+      --code-bg:#eef0f2;
+      --shadow: 0 8px 24px rgba(20,23,27,.08);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef0f2; --surface:#ffffff; --surface-2:#e6e9ec; --surface-3:#dadee3;
+    --border:#d3d7dd; --border-soft:#dfe2e7; --text:#14171b; --text-dim:#4b5158;
+    --text-faint:#767c85; --accent:#b56a0e; --accent-ink:#ffffff; --accent-dim:#e3ad63;
+    --accent-2:#2f6fb0; --good:#217a51; --good-ink:#ffffff; --bad:#b7373a; --bad-ink:#ffffff;
+    --code-bg:#eef0f2; --shadow: 0 8px 24px rgba(20,23,27,.08);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0b0d; --surface:#16181c; --surface-2:#1e2126; --surface-3:#25292f;
+    --border:#2b2f36; --border-soft:#20232a; --text:#eceef0; --text-dim:#9aa1ab;
+    --text-faint:#666d78; --accent:#f5a623; --accent-ink:#1a1200; --accent-dim:#7a5615;
+    --accent-2:#7fa8d9; --good:#4caf7d; --good-ink:#0c1f16; --bad:#e0575a; --bad-ink:#2a0d0d;
+    --code-bg:#101215; --shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:16.5px;
+    font-weight:450;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;font-weight:600;margin:0;}
+  .chapter-body{font-weight:450;}
+  .chapter-body strong, .chapter-body b{font-weight:650;}
+  a{color:var(--accent-2);}
+  code, .mono{font-family:var(--font-mono);}
+  ::selection{background:var(--accent);color:var(--accent-ink);}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* ============ SITE-WIDE HEADER (shared with index.html) ============ */
+  .wrap2{max-width:1120px;margin:0 auto;padding:0 20px;}
+  .site-head{position:sticky;top:0;z-index:60;}
+  #siteNav{position:relative;background:rgba(10,11,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);}
+  #siteNav .wrap2{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+  .site-brand{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-decoration:none;color:#eceef0;text-transform:uppercase;}
+  .site-brand b{color:#e6273f;}
+  .site-navcta{display:flex;gap:10px;}
+  .site-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-weight:700;font-size:.8rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:#eceef0;}
+  .site-btn-primary{background:#e6273f;border-color:#e6273f;color:#fff;}
+  @media(max-width:860px){.site-navcta .site-btn:not(.site-btn-primary){display:none;}}
+  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .page-tabs::-webkit-scrollbar{display:none;}
+  .page-tabs .wrap2{display:flex;gap:8px;padding:10px 20px;}
+  .page-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1ab;border:1px solid #2b2f36;white-space:nowrap;}
+  .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
+
+  /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
+  .cat-tabs{background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .cat-tabs::-webkit-scrollbar{display:none;}
+  .cat-tabs .wrap2{display:flex;gap:18px;padding:9px 20px;}
+  .cat-tabs a{flex:none;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;white-space:nowrap;padding:4px 2px;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease;}
+  .cat-tabs a:hover,.cat-tabs a.active{color:#fff;border-bottom-color:#e6273f;}
+
+  /* ============ ARCHIVE TOP BAR (this page's own controls) ============ */
+  .topbar{
+    position:static; z-index:40;
+    display:flex; align-items:center; gap:12px;
+    padding:10px 16px; background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .topbar .brand{display:flex;align-items:baseline;gap:8px;flex:0 0 auto;}
+  .topbar .brand .mark{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.06em;}
+  .topbar .brand .tag{font-family:var(--font-mono);font-size:.62rem;color:var(--text-faint);letter-spacing:.08em;display:none;}
+  @media(min-width:640px){.topbar .brand .tag{display:inline;}}
+  .topbar .spacer{flex:1;}
+  .search-wrap{position:relative;width:min(280px,40vw);}
+  .search-wrap input{
+    width:100%; background:var(--surface-2); border:1px solid var(--border);
+    color:var(--text); border-radius:6px; padding:7px 10px 7px 30px;
+    font-family:var(--font-mono); font-size:.78rem;
+  }
+  .search-wrap input:focus{outline:2px solid var(--accent); outline-offset:1px;}
+  .search-wrap svg{position:absolute; left:9px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--text-faint);}
+  .icon-btn{
+    background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+    width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; flex:0 0 auto;
+  }
+  .icon-btn:focus-visible, button:focus-visible, summary:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .icon-btn svg{width:16px;height:16px;}
+  #navToggle{display:flex;}
+  @media(min-width:960px){#navToggle{display:none;}}
+
+  /* ============ SHELL / LAYOUT ============ */
+  .shell{display:flex; align-items:flex-start; max-width:1180px; margin:0 auto;}
+  .sidebar{
+    width:250px; flex:0 0 250px; position:sticky; top:calc(100px + env(safe-area-inset-top,0px));
+    max-height:calc(100vh - 100px - env(safe-area-inset-top,0px));
+    overflow-y:auto; padding:18px 10px 40px 16px; display:none;
+  }
+  @media(min-width:960px){.sidebar{display:block;}}
+  .sidebar nav a{
+    display:block; padding:5px 10px; border-radius:5px; color:var(--text-dim);
+    text-decoration:none; font-size:.86rem; border-left:2px solid transparent; font-weight:700;
+  }
+  .sidebar nav a:hover{color:var(--text); background:var(--surface-2);}
+  .sidebar nav a.active{color:var(--accent); border-left-color:var(--accent); background:var(--surface-2); font-weight:800;}
+  .sidebar nav .grp-label{font-family:var(--font-mono); font-size:.62rem; letter-spacing:.1em; color:var(--text-faint); margin:16px 10px 4px; text-transform:uppercase;}
+  .sidebar nav .grp-label:first-child{margin-top:4px;}
+
+  .drawer-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:69; opacity:0; pointer-events:none; transition:opacity .18s;}
+  .drawer-backdrop.open{opacity:1; pointer-events:auto;}
+  .drawer{
+    position:fixed; top:0; bottom:0; left:0; width:min(320px,84vw); z-index:70;
+    background:var(--surface); border-right:1px solid var(--border);
+    transform:translateX(-105%); transition:transform .22s ease; padding:16px;
+    padding-top:calc(16px + env(safe-area-inset-top,0px));
+    overflow-y:auto;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer nav a{display:block; padding:8px 8px; border-radius:5px; color:var(--text-dim); text-decoration:none; font-size:.92rem; font-weight:700;}
+  .drawer nav a.active{color:var(--accent); background:var(--surface-2); font-weight:800;}
+  .drawer .grp-label{font-family:var(--font-mono); font-size:.62rem; letter-spacing:.1em; color:var(--text-faint); margin:14px 8px 4px; text-transform:uppercase;}
+  @media(min-width:960px){.drawer,.drawer-backdrop{display:none;}}
+
+  main{flex:1; min-width:0; padding:22px 18px 80px;}
+  @media(min-width:640px){main{padding:32px 32px 100px;}}
+
+  /* ============ HERO ============ */
+  .hero{padding:14px 0 30px; border-bottom:1px solid var(--border-soft); margin-bottom:34px;}
+  .hero .eyebrow{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; color:var(--accent); text-transform:uppercase;}
+  .hero h1{font-size:clamp(2.1rem,7vw,3.2rem); margin:.3em 0 .12em; line-height:1.02;}
+  .hero .sub{font-family:var(--font-mono); font-size:.82rem; color:var(--text-dim); letter-spacing:.03em; margin-bottom:18px;}
+  .hero p.lede{max-width:62ch; color:var(--text-dim); font-size:1.02rem;}
+
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:22px;}
+  @media(max-width:560px){.stat-row{grid-template-columns:1fr;}}
+  .stat-tile{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px;}
+  .stat-tile .k{font-family:var(--font-mono); font-size:.66rem; letter-spacing:.09em; color:var(--text-faint); text-transform:uppercase;}
+  .stat-tile .v{font-family:var(--font-display); font-size:1.5rem; margin:.2em 0 .1em; font-variant-numeric:tabular-nums;}
+  .stat-tile .v .arrow{color:var(--text-faint); font-size:1rem; margin:0 .2em;}
+  .stat-tile .v .tgt{color:var(--accent);}
+  .bar{height:5px; border-radius:3px; background:var(--surface-3); overflow:hidden; margin-top:8px;}
+  .bar i{display:block; height:100%; background:var(--accent);}
+
+  /* ============ CHAPTER SECTIONS ============ */
+  .kicker{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; color:var(--text-faint); text-transform:uppercase; margin-bottom:26px; padding-top:2px;}
+  section.chapter{scroll-margin-top:112px; margin-bottom:14px;}
+  details.chapter-box{border:1px solid var(--border); background:var(--surface); border-radius:10px; overflow:hidden;}
+  details.chapter-box + details.chapter-box{margin-top:10px;}
+  details.chapter-box summary{
+    list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; gap:14px;
+  }
+  details.chapter-box summary::-webkit-details-marker{display:none;}
+  details.chapter-box summary .num{
+    font-family:var(--font-mono); font-size:.72rem; color:var(--accent); flex:0 0 auto;
+    border:1px solid var(--accent-dim); border-radius:4px; padding:2px 6px;
+  }
+  details.chapter-box summary h2{font-size:1.05rem; flex:1; margin:0;}
+  details.chapter-box summary .chev{flex:0 0 auto; color:var(--text-faint); transition:transform .15s;}
+  details.chapter-box[open] summary .chev{transform:rotate(90deg);}
+  details.chapter-box[open] summary{border-bottom:1px solid var(--border-soft);}
+  .chapter-body{padding:6px 20px 24px; max-width:74ch;}
+  .chapter-body h3{font-family:var(--font-body); font-weight:600; font-size:1.15rem; text-transform:none; letter-spacing:0; color:var(--text); margin:1.6em 0 .5em;}
+  .chapter-body h3:first-child{margin-top:1.2em;}
+  .chapter-body p{margin:.85em 0; color:var(--text);}
+  .chapter-body ul{padding-left:1.3em; margin:.8em 0;}
+  .chapter-body li{margin:.5em 0;}
+  .chapter-body strong{color:var(--text);}
+  .callout{
+    background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, var(--surface-2)), var(--surface-2));
+    border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:14px 16px 14px 15px;
+    margin:1.25em 0; font-size:.95rem; box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative;
+  }
+  .callout b{
+    display:inline-block; color:var(--accent-ink); background:var(--accent); text-transform:uppercase;
+    letter-spacing:.04em; font-size:.72rem; font-weight:800; padding:2px 7px; border-radius:4px;
+    margin:0 2px 4px 0; vertical-align:1px;
+  }
+  .audit{
+    background:linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 16%, var(--surface-2)), var(--surface-2));
+    border-left:4px solid var(--accent-2); border-radius:0 8px 8px 0; padding:14px 16px 14px 15px;
+    margin:1.25em 0; font-size:.9rem; color:var(--text-dim); box-shadow:0 4px 16px rgba(0,0,0,.2); position:relative;
+  }
+  .audit b{
+    display:inline-block; color:#fff; background:var(--accent-2); text-transform:uppercase;
+    letter-spacing:.04em; font-size:.72rem; font-weight:800; padding:2px 7px; border-radius:4px;
+    margin:0 2px 4px 0; vertical-align:1px;
+  }
+  .callout-critical{
+    background:linear-gradient(135deg, color-mix(in srgb, var(--bad) 18%, var(--surface-2)), var(--surface-2));
+    border-left:4px solid var(--bad); border-radius:0 8px 8px 0; padding:14px 16px 14px 15px;
+    margin:1.25em 0; font-size:.95rem; box-shadow:0 4px 16px rgba(224,87,90,.15); position:relative;
+  }
+  .callout-critical b{
+    display:inline-block; color:#fff; background:var(--bad); text-transform:uppercase;
+    letter-spacing:.04em; font-size:.72rem; font-weight:800; padding:2px 7px; border-radius:4px;
+    margin:0 2px 4px 0; vertical-align:1px;
+  }
+
+  /* ===== FOCUS POINT — the site-wide "field note" callout, one per chapter.
+     Companion to the Focus Point boxes on index.html and the other pages:
+     always dark/neon-styled regardless of the light/dark toggle above, so
+     the red·black·neon accent reads the same everywhere on the site. Sits
+     alongside .callout/.audit/.callout-critical rather than replacing them —
+     those stay tied to the page's own accent tokens; this one carries the
+     site brand identity into every chapter. ===== */
+  .focus-point{
+    position:relative; margin:1.4em 0; padding:16px 18px 16px 19px;
+    background:linear-gradient(135deg, #1c0f12 0%, #101114 100%);
+    border:1px solid #2b2f36; border-left:4px solid #e6273f; border-radius:0 10px 10px 0;
+    box-shadow:0 4px 18px rgba(230,39,63,.12);
+  }
+  .focus-point .fp-tag{
+    display:inline-block; font-family:var(--font-display); font-size:.68rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:#ff6b81;
+    background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.35);
+    padding:3px 10px; border-radius:100px; margin:0 0 10px;
+  }
+  .focus-point p{
+    margin:0; font-family:var(--font-body); text-transform:uppercase;
+    letter-spacing:.01em; font-size:.92rem; line-height:1.55; color:#f2f3f5; font-weight:650;
+  }
+  .focus-point--cyan{ border-left-color:#3fd7d0; box-shadow:0 4px 18px rgba(63,215,208,.12); }
+  .focus-point--cyan .fp-tag{ color:#3fd7d0; background:rgba(63,215,208,.13); border-color:rgba(63,215,208,.34); }
+  .focus-point--gold{ border-left-color:#e8b64c; box-shadow:0 4px 18px rgba(232,182,76,.12); }
+  .focus-point--gold .fp-tag{ color:#e8b64c; background:rgba(232,182,76,.13); border-color:rgba(232,182,76,.32); }
+  @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
+
+  .chapter-body mark{background:color-mix(in srgb, var(--accent) 35%, transparent); color:var(--text); padding:.05em .15em; border-radius:3px; font-weight:650;}
+
+  table{width:100%; border-collapse:collapse; margin:1em 0; font-size:.88rem;}
+  .tbl-wrap{overflow-x:auto; margin:1.1em 0; border:1px solid var(--border); border-radius:8px;}
+  .tbl-wrap table{margin:0;}
+  th,td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--border-soft); vertical-align:top;}
+  th{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); background:var(--surface-2); white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  td .mono{color:var(--text-dim);}
+
+  .tag{display:inline-block; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; text-transform:uppercase;}
+  .tag.good{background:var(--good); color:var(--good-ink);}
+  .tag.bad{background:var(--bad); color:var(--bad-ink);}
+  .tag.new{background:var(--accent-2); color:#08131f;}
+
+  /* Chronometer pills */
+  .chrono{display:flex; flex-wrap:wrap; gap:8px; margin:1.2em 0;}
+  .chrono details{background:var(--surface-2); border:1px solid var(--border); border-radius:7px; flex:1 1 150px;}
+  .chrono summary{list-style:none; cursor:pointer; padding:9px 11px;}
+  .chrono summary::-webkit-details-marker{display:none;}
+  .chrono summary .t{font-family:var(--font-mono); font-size:.72rem; color:var(--accent); display:block;}
+  .chrono summary .p{font-family:var(--font-display); font-size:.85rem; letter-spacing:.02em; margin-top:2px;}
+  .chrono details[open] summary{border-bottom:1px solid var(--border);}
+  .chrono .cd{padding:9px 11px 12px; font-size:.85rem; color:var(--text-dim);}
+  .chrono .cd b{color:var(--text);}
+
+  /* Failure matrix lights */
+  .lights{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; margin:1.2em 0;}
+  .light{background:var(--surface-2); border:1px solid var(--border); border-radius:8px; overflow:hidden;}
+  .light summary{list-style:none; cursor:pointer; padding:12px 14px; display:flex; align-items:center; gap:10px;}
+  .light summary::-webkit-details-marker{display:none;}
+  .light .dot{width:9px; height:9px; border-radius:50%; background:var(--accent); flex:0 0 auto; box-shadow:0 0 8px var(--accent);}
+  .light summary .lbl{font-family:var(--font-display); font-size:.88rem;}
+  .light summary .code{font-family:var(--font-mono); font-size:.62rem; color:var(--text-faint); display:block;}
+  .light[open]{border-color:var(--accent-dim);}
+  .light .ld{padding:0 14px 14px; font-size:.85rem; color:var(--text-dim);}
+  .light .ld b{color:var(--text);}
+
+  footer{border-top:1px solid var(--border-soft); margin-top:40px; padding-top:22px; font-size:.8rem; color:var(--text-faint); font-family:var(--font-mono);}
+
+  .backtotop{position:fixed; right:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px)); z-index:30; opacity:0; pointer-events:none; transition:opacity .2s;}
+  .backtotop.show{opacity:1; pointer-events:auto;}
+
+  .noresults{display:none; color:var(--text-faint); font-family:var(--font-mono); font-size:.85rem; padding:20px 0;}
+
+  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
+  @media (max-width:640px){
+    .wrap2{ padding:0 14px; }
+    #siteNav .wrap2{ padding:10px 14px; }
+    .site-brand{ font-size:.92rem; }
+    .site-navcta{ gap:6px; }
+    .site-btn{ padding:7px 12px; font-size:.72rem; }
+    .page-tabs .wrap2{ padding:8px 14px; gap:6px; }
+    .page-tab{ padding:6px 12px; font-size:.68rem; }
+    .cat-tabs .wrap2{ padding:7px 14px; gap:13px; }
+    .cat-tabs a{ font-size:.64rem; }
+    .page-tabs, .cat-tabs{
+      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
+    }
+    .topbar{ padding:9px 12px; gap:8px; }
+    .search-wrap{ width:min(200px,34vw); }
+    main{ padding:16px 14px 60px; }
+    .hero{ padding:10px 0 22px; margin-bottom:22px; }
+    .hero h1{ font-size:clamp(1.7rem, 8.5vw, 2.3rem); }
+    .hero p.lede{ font-size:.92rem; }
+    .stat-row{ gap:8px; margin-top:16px; }
+    .stat-tile{ padding:11px 13px; }
+    details.chapter-box summary{ padding:13px 14px; gap:10px; }
+    details.chapter-box summary h2{ font-size:.95rem; }
+    .chapter-body{ padding:4px 14px 18px; }
+  }
+</style>
+
+<header class="site-head">
+<nav id="siteNav">
+  <div class="wrap2">
+    <a href="index.html#top" class="site-brand"><b>PROJECT</b> 100</a>
+    <div class="site-navcta">
+      <a class="site-btn" href="index.html#connect">All Links</a>
+      <a class="site-btn site-btn-primary" href="index.html">Back to Project 100</a>
+    </div>
+  </div>
+</nav>
+<nav class="page-tabs" aria-label="Project 100 pages">
+  <div class="wrap2">
+    <a class="page-tab" href="index.html">Project 100</a>
+    <a class="page-tab" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-food.html">Fit Food</a>
+    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
+    <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
+  </div>
+</nav>
+<nav class="cat-tabs" aria-label="Section jump links">
+  <div class="wrap2">
+    <a href="#origins">ORIGINS</a>
+    <a href="#ch1">CHAPTERS</a>
+    <a href="#quickref">QUICK REFERENCE</a>
+  </div>
+</nav>
+</header>
+
+<div style="background:linear-gradient(135deg,#1c0f12,#101114);border-bottom:1px solid #2b2f36;padding:10px 16px;text-align:center;font-family:'Inter',sans-serif;font-size:.85rem;color:#f2f3f5;">
+  You're viewing the <b>Full Technical Archive</b> (all 13 chapters, unabridged). Prefer a fast, visual walkthrough? →
+  <a href="encyclopedia.html" style="color:#f5a623;font-weight:700;text-decoration:none;">Open the new Protocol Deck</a>
+</div>
+
+<div class="topbar">
+  <button id="navToggle" class="icon-btn" aria-label="Open chapter navigation" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <div class="brand"><span class="tag">SINGULARITY ARCHIVE · VERSION-AUDITED</span></div>
+  <div class="spacer"></div>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="searchBox" type="search" placeholder="Search the archive…" aria-label="Search chapters">
+  </div>
+  <button id="themeToggle" class="icon-btn" aria-label="Toggle color theme">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="drawer" id="drawer">
+  <nav id="drawerNav" aria-label="Chapter navigation (mobile)"></nav>
+</div>
+
+<div class="shell">
+  <aside class="sidebar">
+    <nav id="sideNav" aria-label="Chapter navigation"></nav>
+  </aside>
+
+  <main id="mainContent">
+
+    <div class="hero">
+      <div class="eyebrow">Forensic Bio-Tactical Reference · Est. 2010 · Documented 2013 · Rebuilt 2025–2026</div>
+      <h1>The Singularity Archive</h1>
+      <div class="sub">KERNEL V185.99 · RECONCILED WITH V185.88 · STATUS: <span style="color:var(--accent)">ACTIVE</span> · VERSION-TRUTH-AUDITED SEP 2026</div>
+      <p class="lede">The forensic excavation of a 100+ lb skeletal muscle mass masterpiece, on a 5'7" frame, at age 46. Every chapter below is the operating system this runs on — training, fuel, timing, supplementation, and the failure protocols for when something goes wrong.</p>
+
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="k">Skeletal Muscle Mass</div>
+          <div class="v">88.2<span class="arrow">→</span><span class="tgt">100.0</span> lb</div>
+          <div class="bar"><i style="width:82%"></i></div>
+        </div>
+        <div class="stat-tile">
+          <div class="k">Body Fat</div>
+          <div class="v">22.9<span class="arrow">→</span><span class="tgt">&lt;15.0</span>%</div>
+          <div class="bar"><i style="width:65%"></i></div>
+        </div>
+        <div class="stat-tile">
+          <div class="k">FFMI</div>
+          <div class="v">23.86<span class="arrow">→</span><span class="tgt">25.71</span></div>
+          <div class="bar"><i style="width:93%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORIGINS -->
+    <section class="chapter" id="origins" data-title="Origins: The Architecture of Return" data-group="Front Matter">
+      <details class="chapter-box" open>
+        <summary><span class="num mono">i</span><h2>Origins: The Architecture of Return</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> corrected Sep 17, 2026. The origin date in every prior edition (2019) was wrong — the true starting point, confirmed directly by the source, is 2010. This chapter is rebuilt around five distinct eras rather than a single "before/after the interruption" split, and the three separate origin dates — when the work began, when it started being documented, and when the current rebuild began — are no longer conflated.</div>
+          <p>The system now called Project 100 has three points of origin, not one: the year the learning began, the year documentation began, and the year the current rebuild began. Collapsing them into a single "2019" start erased fifteen years of process. They are kept separate here, across five eras.</p>
+          <h3>2010–2013 — The Beginning</h3>
+          <p>The starting point was 2010, at 30 years old — not a training program, but the decision to become someone who trains. There is no documentation from this window: no logs, no photographs, no structured plan. It was pure acquisition — learning the fundamentals of lifting, nutrition, and recovery from a standing start, mostly through trial, error, and self-directed study.</p>
+          <h3>2013–2016 — Progressing</h3>
+          <p>2013 marks the start of documentation, not the start of the journey — the first meal logs, training records, and photographic progression archives. This era is where habits solidified: life began to structure itself around gym and work, and fitness became a stated, primary goal rather than an occasional pursuit.</p>
+          <h3>2016–2018 — The Golden Era</h3>
+          <p>Knowledge deepened and technique sharpened. This is the highest-output window of the first build — pushing limits and boundaries, and reaching what remains, on record, the best physical condition of the pre-interruption years. The first construction of Project 100 was built on acceleration — escalating metrics, aggressive optimization, progressive control over intake, load, and structural discipline. Skeletal muscle mass increased. Partitioning tightened. Mechanical strength advanced. It was precise, documented, and ambitious.</p>
+          <h3>2018–2025 — The Dark Stage</h3>
+          <p>But ambition alone does not create permanence. The interruption between 2018 and 2025 did not destroy the system; it exposed its vulnerabilities. When daily mechanical resistance was removed, structure dissolved gradually — not catastrophically, incrementally. The absence of consistent training altered endocrine rhythm. Sleep architecture shifted. Neural stimulation moved from iron to screen. Muscle protein turnover slowed. Basal metabolic rate recalibrated downward.</p>
+          <p>The Pivot occurred at 45 years of age. The data were clear: 197.1 lb total body weight, 88.2 lb skeletal muscle mass, and 22.9% body fat. These numbers did not indicate dysfunction. They indicated equilibrium — the adapted baseline of a body conditioned by reduced mechanical demand.</p>
+          <h3>2025–2026 and Beyond — The Comeback</h3>
+          <p>This is not a repeat of the 2016 build. The version of this system running now carries more knowledge, more precision, and more self-correction than any earlier era — including the years lost to the interruption, and mistakes made even during the productive years before it. Supplement timing, macro ceilings, and mineral synergy windows are calculated exactly, not estimated. On a 5'7" frame, the difference between 90 lb and 100 lb of skeletal muscle mass is structural, not cosmetic. An additional 10 lb of contractile tissue alters leverage, glycogen storage capacity, resting metabolic rate, and force potential. The objective became explicit: 100 lb skeletal muscle mass sustained below 15% body fat, with endocrine stability and connective durability preserved — permanence, not just peak performance.</p>
+          <div class="callout"><b>Why the timeline matters</b> this isn't a two-year story. Measured against most men of the same age and training profile — and against the permanent spinal, nerve, digestive, and dermal constraints documented in Ch.3 — the fifteen years before the current rebuild are load-bearing context, not backstory. This record functions as both a personal portfolio and a dated, evidence-based account of the process and the person behind it.</div>
+          <div class="focus-point">
+            <span class="fp-tag">Fifteen-Year Arc</span>
+            <p>Fifteen years, not two. 2010 to now, across five distinct eras — not a comeback story that starts at the Pivot, but one that was already three years deep before the first log was ever written in 2013.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- PREFACE -->
+    <section class="chapter" id="preface" data-title="Preface: The Forensic Manifesto" data-group="Front Matter">
+      <details class="chapter-box">
+        <summary><span class="num mono">ii</span><h2>Preface: The Forensic Manifesto</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <h3>The Pivot (Age 45): The Biological Event Horizon</h3>
+          <p>Chronological age forty-five represents a definitive physiological demarcation known as <b>The Pivot</b> — the juncture where the biological margin for operational error reaches a zero-tolerance threshold.</p>
+          <ul>
+            <li><b>The Legacy Buffer:</b> during the second and third decades of life, the chassis operates under "Hormonal Forgiveness" — mass can be moved through brute force alone.</li>
+            <li><b>The Zero-Tolerance Reality:</b> at The Pivot, that buffer is permanently deleted. Generic "fitness" and "bodybuilding" methodology are now legacy failures.</li>
+            <li><b>Bio-Engineering Transition:</b> at 45, the body no longer responds to "more"; it responds only to "better."</li>
+          </ul>
+          <p>The operating directive is absolute: precision is king. We do not guess. We do not hope. We execute a mathematical code designed to reveal the Monolithic Singularity.</p>
+          <h3>The Singularity Threshold: Armor of the Titan</h3>
+          <p>Ground truth: 197.1 lbs total mass, 88.2 lbs SMM. Mission: breach the 100.0 lb SMM barrier on a 5'7" (170cm) frame.</p>
+          <ul>
+            <li><b>Geometric Mass Stacking:</b> 100 lbs of SMM on a 6'2" frame reads as lean; on a 5'7" frame it is <i>armor</i>.</li>
+            <li><b>The Cube Visual:</b> maximum thickness and density per cubic inch of height.</li>
+            <li><b>The Statistical Anomaly:</b> requires an FFMI of 25.71 — 35 lbs of tissue over the population baseline, at the natural ceiling of human potential.</li>
+          </ul>
+          <h3>The Operating Law: "Train Like 2, Eat for 2"</h3>
+          <p>The legacy "Eat Big to Get Big" (3,300+ kcal) doctrine is purged — it ignores the hardware constraint of a chassis without a gallbladder.</p>
+          <ul>
+            <li><b>Train Like 2:</b> intensity sufficient for the growth of a 200 lb frame — tactical blitzing and heavy-load simulation to force adaptation against aging.</li>
+            <li><b>Eat for 2:</b> fuel supports the current self (maintenance, repair) and the future self (the 100+ lb target).</li>
+          </ul>
+          <div class="callout"><b>The Calorie Rent Rule</b> every calorie must pay rent. If training intensity drops, fuel intake scales back immediately. No filler calories.</div>
+          <h3>The Paradigm of Excavation: Revealing the Granite</h3>
+          <p>This is not a masterpiece built from scratch — it's one already built, being excavated. The marble is the current 197.1 lbs; the statue is the 100 lbs of muscle hidden inside. The mission: chip away ~23% stored body fat through nutrient timing while forcing SMM upward, respecting four permanent constraints — <b>L4–S1 spinal integrity</b>, <b>ulnar nerve protection</b>, <b>bile-less digestion</b>, and <b>dermal/scar protection</b>.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Operating Law</span>
+            <p>Train like 2, eat for 2. Intensity built for a 200 lb frame, fuel that supports both the man training today and the 100 lb SMM target being built — every calorie has to pay rent, or it doesn't get spent.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="kicker">The Thirteen Chapters</div>
+
+    <!-- CH1 -->
+    <section class="chapter" id="ch1" data-title="The Predator Manifesto" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">01</span><h2>The Predator Manifesto</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <h3>The Philosophy of Excavation: The Statue Within</h3>
+          <p>The fundamental shift is from a mindset of <i>building</i> to a mindset of <i>excavation</i>. Most operatives at 45 fail because they try to add more volume and more calories to a chassis already physiologically crowded — treating the body like empty land when it's already a high-performance engine buried under decades of metabolic noise.</p>
+          <ul>
+            <li><b>The Marble and the Granite:</b> the current 197.1 lbs at 88.2 lbs baseline SMM is the raw marble; the 100+ lb target already exists, encased within ~23% stored fat.</li>
+            <li><b>The Act of Revelation:</b> every training session is a strike of the chisel; every nutrition window is dust blown away.</li>
+            <li><b>Zero Marginal Waste:</b> if a calorie doesn't serve a contraction or a repair, it's metabolic waste.</li>
+          </ul>
+          <h3>The Rejection of "More" for the Adoption of "Better"</h3>
+          <p>At 45, "more is better" is a liability, not just obsolete. High-volume, low-precision training produces inflammation, joint degradation, burnout.</p>
+          <ul>
+            <li><b>The Precision Mandate:</b> generic volume replaced with forensic precision.</li>
+            <li><b>Molecular Integration:</b> food as substrate delivery — enzymatic optimization and lipid substitution maximize gastric emptying.</li>
+            <li><b>Blood Flow Allocation:</b> removing heavy fats keeps blood flow on muscle, not digestion.</li>
+          </ul>
+          <h3>The Code: Absolute Adherence</h3>
+          <p>This is an engineering code operating at the ceiling of natural potential — zero margin for missed supplement windows or solvent-rule violations. Deviation doesn't produce moral failure, it produces predictable biology: cement gut, afternoon dizziness, nerve irritation. The system doesn't hope for results — it calculates them.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Mindset Shift</span>
+            <p>Excavation, not construction. At 197.1 lbs, the 100+ lb target isn't being built from nothing — it's already there, buried under roughly 23% stored fat, waiting to be chiseled out one precise session at a time.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH2 -->
+    <section class="chapter" id="ch2" data-title="The Metric Analysis" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">02</span><h2>The Metric Analysis — The "212" Standard</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Correction, Sep 17 2026</b> born September 5, 1980. Confirmed 45 at the Pivot scan (Dec 2, 2025 InBody 380 — the "February 2026" label on the ground-truth scan below was a dating error; the true test date is Dec 2, 2025). As of this edition he has passed his September birthday and is now <b>46</b>, running the Comeback era in his 46th year.</div>
+          <h3>Biometric Ground Truth — InBody 380, December 2, 2025</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Parameter</th><th>Value</th></tr>
+            <tr><td>Height</td><td>5'7" (170 cm)</td></tr>
+            <tr><td>Total body mass</td><td>197.1 lbs</td></tr>
+            <tr><td>Skeletal Muscle Mass (SMM)</td><td>88.2 lbs</td></tr>
+            <tr><td>Body fat (PBF)</td><td>22.9%</td></tr>
+            <tr><td>FFMI (current)</td><td>23.86 — "Elite Natural"</td></tr>
+            <tr><td>SMM target</td><td>100.0 lbs</td></tr>
+            <tr><td>Accretion required</td><td>+11.8 lbs</td></tr>
+            <tr><td>Body fat target</td><td>&lt; 15.0%</td></tr>
+            <tr><td>FFMI target</td><td>25.71 — natural ceiling</td></tr>
+          </table></div>
+          <p>Not "bulking" — stripping the ~23% stored fat to reveal the structure underneath while forcing SMM upward. The narrow path where mass meets definition at the natural ceiling of human capability.</p>
+          <h3>Biometric History — The Two-Decade Arc <span class="tag new">new</span></h3>
+          <p>Three dated scans, pulled directly from source printouts, turn the five-era timeline (Ch. Origins) into hard measured evidence rather than narrative alone — the body's own record of the Golden Era, the Dark Stage, and the start of the Comeback.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Date</th><th>Weight</th><th>SMM</th><th>Body Fat</th><th>Era Context</th></tr>
+            <tr><td class="mono">May 27, 2018</td><td>173.7 lbs</td><td>86.6 lbs</td><td>14.4%</td><td>Tail end of the Golden Era — the leanest documented point on record</td></tr>
+            <tr><td class="mono">Jun 28, 2025</td><td>197.3 lbs</td><td>82.0 lbs</td><td>27.4%</td><td>Depth of the Dark Stage — GYM FIT FORME / InBody 380 scan, before the reset</td></tr>
+            <tr><td class="mono">Dec 2, 2025</td><td>197.1 lbs</td><td>88.2 lbs</td><td>22.9%</td><td>The Pivot — InBody 380 scan; SMM already climbing, PBF already falling</td></tr>
+          </table></div>
+          <p>Read as a line, not three isolated points: seven years of erosion (2018 → mid-2025, SMM −4.6 lbs, PBF nearly doubled) reversed in five months (mid-2025 → Dec 2025, SMM +6.2 lbs, PBF −4.5 points) the moment structured training resumed. That inflection is the Pivot — not a hope, a measured reversal already in progress before this edition was even written.</p>
+          <h3>The Population Anomaly: The 0.1% Rule</h3>
+          <p>Average male at 5'7" carries ~64–68 lbs of SMM. At 88.2 lbs, that's already +20 lbs over average — top 1% of muscularity. At the 100 lb target, that's +35 lbs over baseline — the physiological territory of the professional IFBB 212 division.</p>
+          <h3>The IFBB Mathematics: Density vs. Athleticism</h3>
+          <p>Density = SMM / Height. On a taller frame, 100 lbs of SMM reads as "fit." On a 5'7" frame, that mass is armor — muscle bellies expand horizontally and through depth rather than elongating: geometric stacking, the "Pocket Hercules" visual.</p>
+          <h3>The FFMI Ceiling: The Natural Limit</h3>
+          <p>FFMI above 25.0 is traditionally the natural limit. Reaching 25.71 at 45 requires near-perfect execution — no margin for missed timing or mineral-separation windows.</p>
+          <h3>The Visual Objective: The Monolithic Cube</h3>
+          <p>Maximum muscular density per cubic inch of height — extreme thickness, width, a dense "thick-skinned" look. 100 lbs of SMM on this frame is a structural threshold, not a cosmetic milestone.</p>
+          <div class="focus-point">
+            <span class="fp-tag">0.1% Rule</span>
+            <p>+35 lbs over baseline. The average build at 5'7" carries roughly 64–68 lbs of skeletal muscle. The 100 lb target sits in IFBB 212 territory — the top of the range, not just "in shape."</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH3 -->
+    <section class="chapter" id="ch3" data-title="The Medical Patches (Hardware Locks)" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">03</span><h2>The Medical Patches — Hardware Locks</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> updated to the V185.88 "Reconciled Hardware Firewalls" (May 17, 2026). The prior edition only carried three of these; the fourth (Lock 4) was confirmed missing in the September 2026 audit and is restored here.</div>
+          <p>High-performance programming can't run on compromised hardware without specific patches. Four anatomical/dermatological constraints are permanent here — ignoring them produces immediate system failure, whether acute injury, metabolic toxicity, or lasting scar damage.</p>
+          <h3>Lock 1 — The Spinal Fuse (L4–S1 Pathophysiology)</h3>
+          <p><b>The failure:</b> an L4–S1 disc herniation creates extreme vulnerability to anterior shear force. Risk: nerve-root compression and "guarding" — involuntary splinting that deactivates lower-body neural drive.</p>
+          <ul>
+            <li><b>Kinetic bans:</b> floor-based deadlifts and squats permanently banned.</li>
+            <li><b>Rack-pull override:</b> all heavy pulls originate above the knee, converting shear into safe axial compression (Wolff's Law).</li>
+            <li><b>The glute lock:</b> on leg press, hips are actively pulled into the seat — any tailbone deviation ends the set.</li>
+            <li><b>Structural reinforcement:</b> Marine Collagen + Vitamin C in the morning window.</li>
+            <li><b>Chemical decompression:</b> Magnesium Bisglycinate at 20:30 (Vector 10 Shutdown Slurry) relaxes paraspinal stabilizers overnight.</li>
+          </ul>
+          <h3>Lock 2 — The Neural Bridge (Ulnar Nerve Bypass)</h3>
+          <p><b>The failure:</b> cubital tunnel involvement — "elbow clicking," distal numbness — worsened by grip intensity and supination.</p>
+          <ul>
+            <li><b>Neutral is law:</b> supination under load banned; hammer grip default.</li>
+            <li><b>Open-hand protocol:</b> HXD-ERGO / Angles90 grips mandatory on pressing <span class="tag new">real gear</span>.</li>
+            <li><b>Hook protocol:</b> MANUEKLEAR forearm webbing on pulling/pressing — bypasses the hand grip entirely, resting the elbow tendons directly.</li>
+          </ul>
+          <h3>Lock 3 — The Digestive Bypass (Cholecystectomy Protocol)</h3>
+          <p><b>The failure:</b> no gallbladder means no bile-storage capacity — continuous dilute drip instead of a concentrated surge, causing overnight pooling and under-emulsified fat ("cement gut").</p>
+          <ul>
+            <li><b>The bile sponge:</b> Metamucil + greens, first thing, binds pooled bile acids.</li>
+            <li><b>The prosthetic enzyme:</b> every solid meal paired with lipase + protease.</li>
+            <li><b>The thermal solvent rule:</b> no cold liquids with saturated fat.</li>
+            <li><b>The iron key:</b> hot hibiscus tisane with Meals 1 and 3.</li>
+            <li><b>The Blue Anchor protocol:</b> Danish Blue cheese — mold-pre-digested fat, pairs with the Meal 3 protein.</li>
+          </ul>
+          <h3>Lock 4 — Zone 1 Dermal Shield (Scar &amp; Skin Protection) <span class="tag new">restored</span></h3>
+          <p><b>The failure:</b> the glute lock and 360° intra-abdominal bracing (Ch.8) generates sustained capillary pressure at the abdominal scar sites from the cholecystectomy. Repeated pressure spikes risk scar hyperpigmentation and tissue damage at "Zone 1."</p>
+          <ul>
+            <li><b>CytoDerma silicone gel</b>, applied to the Zone 1 scar band before every training session.</li>
+            <li><b>Mineral SPF 35</b>, layered over the gel — scar tissue is disproportionately vulnerable to UV-driven hyperpigmentation.</li>
+            <li><b>Halo II headband</b> worn during all high-bracing sets — controls sweat runoff into the gel layer.</li>
+          </ul>
+          <p>No chemical/supplement component — a pure hardware/topical protocol, non-negotiable on any glute-lock or heavy-bracing day.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Hardware Locks</span>
+            <p>Four permanent constraints, zero exceptions. No gallbladder, a fused L4–S1 disc, an unstable ulnar nerve, and scar tissue that scars twice as easily — every rep and every meal is engineered around all four, not in spite of them.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH4 -->
+    <section class="chapter" id="ch4" data-title="The Master Chronometer" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">04</span><h2>The Master Chronometer</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> rebuilt to the single-session structure (V185.80 → V185.99, May–Aug 2026), confirmed as current. This replaces the earlier twice-daily (AM/PM) schedule — see the standalone Version Truth Audit.</div>
+          <p>Time is a biological substrate. Nutrients are delivered on the circadian hormonal cascade and specific absorption windows — strictly avoiding <b>transporter conflict</b>, the competition for shared mineral gateways (zinc, calcium, iron share transporters — timed together, most of the dose is wasted).</p>
+          <p class="callout">Tap any time below for the full window detail.</p>
+          <div class="chrono">
+            <details><summary><span class="t mono">05:00</span><span class="p">Vacuum Pulse</span></summary><div class="cd"><b>3x TestoFX Xtreme + 1x Zinc Supreme + LactoBif 100 + 2x New Roots Boron (6mg).</b> Fasted endocrine pulse — boron unbinds testosterone from SHBG; 1-hour void lock before fiber.</div></details>
+            <details><summary><span class="t mono">06:00</span><span class="p">Biliary Sponge</span></summary><div class="cd"><b>Niyama "You've Gut This" + 1 tsp Metamucil + 500ml water.</b> Traps overnight biliary pooling; must clear gut before solid food.</div></details>
+            <details><summary><span class="t mono">06:15</span><span class="p">Meal 1</span></summary><div class="cd"><b>Oats + Beef Isolate + Almond Butter, 2x Kyolic 104, NMN (175mg), NAC (900mg), CGN Complete Enzyme</b> + hot black tea (60–65°C, mandatory). Hepatic prosthesis; NAD+ spike; nitrogen drip.</div></details>
+            <details><summary><span class="t mono">06:30</span><span class="p">Vector 3 — Recovery</span></summary><div class="cd"><b>Carnivor Isolate + Marine Collagen + Black Maca + L-Carnitine.</b> Fasted-state MPS trigger; connective-tissue scaffolding.</div></details>
+            <details><summary><span class="t mono">07:00</span><span class="p">Vector 1 — Ignition (pre-workout)</span></summary><div class="cd"><b>2x Impact Igniter Xtreme 2.0 + MuscleEAA + PeakO2 + 2500mg Betaine Anhydrous.</b> CNS drive; hypertrophy-signal cellular swelling.</div></details>
+            <details><summary><span class="t mono">09:30</span><span class="p">Vector 2 — Refuel</span></summary><div class="cd"><b>HyperClear BCAA + electrolytes + pink salt + 2–3 Medjool dates.</b> mTOR trigger mid-set; controlled-insulin glycogen restoration.</div></details>
+            <details><summary><span class="t mono">10:30</span><span class="p">Vector 4 — Reload</span></summary><div class="cd"><b>300mg R-ALA + 0.5x BioSteel + Beetroot + 750mg Creatine HCL + pink salt.</b> NO vasodilation continuation; ~45min pre-Meal 2.</div></details>
+            <details><summary><span class="t mono">11:15</span><span class="p">Meal 2</span></summary><div class="cd"><b>High-Protein Wrap + Guacamole, PureGenomics Multi, Calcium Malate, Omega 800, Liver Care, 2x UriCare, Curcumin 500+Bioperine.</b> Renal &amp; mineral defense — the only safe window for heavy minerals.</div></details>
+            <details><summary><span class="t mono">15:30</span><span class="p">Meal 3</span></summary><div class="cd"><b>Kinetic Chassis Steak + Whole Eggs, Beef Liver, Ligament Restore, Copper Glycinate (1mg).</b> Zero zinc/calcium. Hematopoiesis lock; myelin repair.</div></details>
+            <details><summary><span class="t mono">16:30</span><span class="p">Vector 5 — Transport</span></summary><div class="cd"><b>750mg Creatine HCL + Marine Collagen + L-Carnitine + pink salt.</b> Sustained phosphocreatine saturation through the afternoon.</div></details>
+            <details><summary><span class="t mono">19:30</span><span class="p">Vector 2 (evening) — Pump</span></summary><div class="cd"><b>Impact Pump matrix, cold water, zero salt/stim.</b> Evening resistance-flush; fascial hydraulic stretch.</div></details>
+            <details><summary><span class="t mono">20:30</span><span class="p">Vector 10 — Shutdown Slurry</span></summary><div class="cd"><b>800ml Hot Hibiscus Tea + Medi-C Plus + Creatine HCL + L-Glutamine + Hey Relax + BioSteel</b> + night pills (Magnesium Bisglycinate, Tart Cherry, Milk Thistle) + Fusion 2A Casein Load. Cortisol reduction; overnight repair; REM induction.</div></details>
+          </div>
+          <div class="callout"><b>Reconciliation</b> this replaces the old twice-daily schedule entirely (see Ch.8/9 for the single-session training structure). The multivitamin swap (PureGenomics, zero biotin) remains current. Beef/steak is confirmed fine at Meal 3.</div>
+          <h3>Tactical Alert: The Biotin Interference Warning</h3>
+          <p>High-dose biotin distorts streptavidin-biotin lab assays (thyroid panels, sex hormones) in either direction depending on assay format. Current multivitamin is biotin-free, but <b>cease all multivitamins, gummies, and vitamin-spiked collagen for 72 hours before any blood draw</b> regardless.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Timed To The Minute</span>
+            <p>05:00 to 20:30, nothing left to chance. Every dosing window is built around when the body can actually absorb it — because zinc, calcium, and iron sharing one window means most of the dose gets wasted.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH5 -->
+    <section class="chapter" id="ch5" data-title="The Molecular Arsenal" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">05</span><h2>The Molecular Arsenal — Supplement Taxonomy</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> rebuilt to the V185.88/V185.99 stack. Several compounds were renamed/upgraded between March and May (e.g. "Impact Igniter 2.0" → "Impact Igniter Xtreme 2.0"). The newer name is treated as current.</div>
+          <p>Every compound here earns its place against one of four problems — L4–S1 pathology, ulnar entrapment, digestive insufficiency, dermal/scar protection — or against the hormonal/recovery math in Chapters 2 and 4.</p>
+          <h3>Compartment I — Hormonal Ignition (05:00–07:00)</h3>
+          <ul>
+            <li><b>TestoFX Xtreme (Allmax)</b> — testosterone liberator. Empty stomach only, 05:00.</li>
+            <li><b>Zinc Supreme + New Roots Boron</b> — the SHBG-unbinding pair.</li>
+            <li><b>LactoBif 100 (100B CFU)</b> — microbiome reseed, fasted pulse.</li>
+            <li><b>NMN (175mg)</b> — NAD+ precursor; ATP output and cellular repair.</li>
+            <li><b>Kyolic 104 (2x)</b> — cardiovascular shield and lecithin surfactant.</li>
+            <li><b>NAC (900mg)</b> — systemic filtration, CNS shielding, with Meal 1.</li>
+            <li><b>CGN Complete Enzyme</b> — prosthetic digestion for Meal 1 fats.</li>
+            <li><b>Marine Collagen + Black Maca + L-Carnitine (Vector 3, 06:30)</b> — disc/tendon reinforcement, endocrine modulation, fat oxidation.</li>
+            <li><b>Impact Igniter Xtreme 2.0 + MuscleEAA + PeakO2 + Betaine Anhydrous (Vector 1, 07:00)</b> — CNS drive, hypertrophy-signal swelling.</li>
+          </ul>
+          <h3>Compartment II — The Mineral Window (10:30–11:15)</h3>
+          <ul>
+            <li><b>BioSteel + Beetroot + Creatine HCL + Pink Salt (Vector 4)</b> — insulin bridge, NO continuation.</li>
+            <li><b>R-ALA (300mg)</b> — glucose-priming matrix, separate dose.</li>
+            <li><b>PureGenomics Multi</b> — zero iron, zero biotin.</li>
+            <li><b>CanPrev Calcium Malate + D3/K2</b> — bone density; K2 routes calcium to bone, not arteries.</li>
+            <li><b>Fish Oil Omega 800</b> — inflammation firewall.</li>
+            <li><b>Liver Care + Himalaya UriCare (2x)</b> — hepatoprotection and renal-shield rationale.</li>
+            <li><b>Pumpkin Seed Oil (2x) + Curcumin 500+Bioperine</b> — systemic inflammation firewall.</li>
+          </ul>
+          <h3>Compartment III — The Iron Lock (15:30)</h3>
+          <ul>
+            <li><b>Beef Liver caps (3x)</b> — heme-iron and B-vitamin density.</li>
+            <li><b>Ligament Restore (2 caps)</b> — connective-tissue structural support.</li>
+            <li><b>Copper Glycinate (1mg)</b> — counters zinc-induced copper depletion / myelin degradation.</li>
+            <li><b>CGN Complete Enzyme</b> — proteolytic focus.</li>
+            <li><b>Vector 5 (16:30)</b> — 750mg Creatine HCL + Marine Collagen + L-Carnitine + pink salt.</li>
+          </ul>
+          <div class="callout">Zero zinc, zero calcium in this window — both compete with the heme-iron absorption this meal is built around.</div>
+          <h3>Compartment IV — The Shutdown (19:30–20:30)</h3>
+          <ul>
+            <li><b>Impact Pump matrix (Vector 2 evening, 19:30)</b> — cold water, zero salt/stim.</li>
+            <li><b>Vector 10 Shutdown Slurry (20:30)</b> — hibiscus tea + Medi-C Plus + Creatine HCL + L-Glutamine + Hey Relax + BioSteel.</li>
+            <li><b>Magnesium Bisglycinate (2 caps)</b> — neural release; relaxes L4–S1 guarding.</li>
+            <li><b>Montmorency Tart Cherry 10X</b> — sleep anchor; supports nocturnal GH release.</li>
+            <li><b>Milk Thistle (80% Silymarin)</b> — final daily hepatoprotection dose.</li>
+            <li><b>Fusion 2A Casein Load</b> — slow-digesting overnight protein.</li>
+          </ul>
+          <h3>Critical Safety Audit: Biotin Interference</h3>
+          <p>Avoid "hair/skin/nails" gummies and biotin-spiked collagen SKUs. Cease all multivitamins/gummies 72 hours before any clinical blood draw.</p>
+          <h3>Inventory Whitelist</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Category</th><th>Approved</th><th>Banned / Restricted</th></tr>
+            <tr><td>Protein</td><td>Carnivor Isolate, HydroBEEF, Allmax AllPro (emergency reset)</td><td><span class="tag bad">Syntha-6</span> generic whey</td></tr>
+            <tr><td>Performance</td><td>Impact Igniter Xtreme 2.0 / Impact Pump, BioSteel, Creatine HCL</td><td><span class="tag bad">AncientKeto</span> high-dose biotin</td></tr>
+            <tr><td>Support</td><td>Milk Thistle, Liver Care, LactoBif, CGN Complete Enzyme</td><td>dairy-heavy "keto" oils</td></tr>
+            <tr><td>Multivitamin</td><td><span class="tag good">PureGenomics</span> zero iron/biotin</td><td>Naka Platinum (300mcg biotin) — non-testing periods only</td></tr>
+          </table></div>
+          <p>The AncientKeto purge is grounds-based: documented heavy-metal contamination (lead, cadmium) and poor protein digestibility. The whey/Syntha-6 purge follows the same logic — slow, lactose-heavy fillers drive "hard gut" and divert blood flow from muscle to digestion. AllPro is kept in reserve for the emergency reset (Ch.10).</p>
+          <div class="focus-point">
+            <span class="fp-tag">Built By Elimination</span>
+            <p>Every compound earns its place. AncientKeto was purged for documented heavy-metal contamination, whey for gut-slowing fillers. What survives the audit is what's proven to work for this exact chassis — nothing stays out of habit.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH6 -->
+    <section class="chapter" id="ch6" data-title="The Solid Fuel Codex" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">06</span><h2>The Solid Fuel Codex — Fat-Corrected</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <h3>The Macro Calculus: "Eat for 2" Mathematics</h3>
+          <p>Target: <b>2,780 kcal</b>. <b>Protein ceiling — 252g</b> (saturates MPS roughly every 3 hours while protecting kidney filtration without a gallbladder buffer). <b>Fat cap — 69g</b>, hard ceiling — past it, the body can't emulsify the load and it produces malabsorption.</p>
+          <h3>The Solid Fuel Matrix — Current Menu</h3>
+          <p class="callout">Confirmed current against the Ch.4 chronometer: Meal 1 = LOAD_1B, Meal 2 = MATRIX_1A, Meal 3 = KINETIC_2A.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Code</th><th>Name</th><th>Composition</th><th>Solvent</th></tr>
+            <tr><td class="mono">LOAD_1A</td><td>Coco-Ignition</td><td>Oats + coconut oil + SF syrup + beef iso</td><td>Hot tea (mandatory)</td></tr>
+            <tr><td class="mono">LOAD_1B</td><td>Almond Drive <span class="tag good">Meal 1</span></td><td>Oats + almond butter + SF syrup + beef iso</td><td>Hot tea 60–65°C</td></tr>
+            <tr><td class="mono">MATRIX_1A</td><td>Anabolic Barrel <span class="tag good">Meal 2</span></td><td>Wrap + 6oz chicken + guacamole</td><td>Water + enzyme</td></tr>
+            <tr><td class="mono">MATRIX_1B</td><td>Fiber Sponge</td><td>Wrap + tuna + tofu spread</td><td>Water + enzyme</td></tr>
+            <tr><td class="mono">KINETIC_2A</td><td>Kinetic Chassis <span class="tag good">Meal 3</span></td><td>Whole eggs + 6oz steak + Blue Anchor + guac</td><td>Hot hibiscus (iron key)</td></tr>
+            <tr><td class="mono">FUSION_2A</td><td>Dark Matter</td><td>Hexapro + bran buds + Skyr + berries</td><td>Liquid (mandatory)</td></tr>
+            <tr><td class="mono">FUSION_3A</td><td>White Light</td><td>AllPro + berries + banana + glutamine</td><td>Emergency reset only</td></tr>
+          </table></div>
+          <h3>The "Blue Anchor" Protocol</h3>
+          <p>Meal 3's fat source is Danish Blue cheese, not tallow — mold-inoculated (<i>Penicillium roqueforti</i>) during aging, so lipolytic/proteolytic enzymes pre-digest the fats externally. Bio-available without a bile surge, paired alongside the steak/eggs.</p>
+          <h3>The "Iron Key" Protocol</h3>
+          <p>Non-heme iron (Fe³⁺) from eggs/plants is poorly absorbed and blocked by dairy calcium. Hot hibiscus tisane's vitamin C chemically reduces it to soluble Fe²⁺ — forcing near-heme absorption efficiency.</p>
+          <h3>The Solvent Pitcher</h3>
+          <p>Water + cucumber ribbons + citrus. Cucumber for diuretic effect against storage edema; citrus acidifies the stomach for enzyme function. <b>Room temperature or warm only</b> — ice-cold water solidifies dietary fat.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Fat-Corrected</span>
+            <p>252g protein, 69g fat — a hard ceiling, not a goal. Past 69g of fat the body can't emulsify the load without a gallbladder to buffer it, so the cap isn't a diet rule, it's a mechanical one.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH7 -->
+    <section class="chapter" id="ch7" data-title="The Vector Protocols" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">07</span><h2>The Vector Protocols — Liquid Delivery</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> rebuilt to the V185.99 (Aug 2, 2026) vector matrix, cross-checked against V185.88 for anything V185.99 might have dropped (it changed only naming/timing, not formulas).</div>
+          <p>"Vector" = a high-velocity liquid delivery system, piercing metabolic windows with zero mechanical churning — solid digestion without a gallbladder is a real metabolic tax.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Vector</th><th>Timing</th><th>Formula</th><th>Function</th></tr>
+            <tr><td>3 — Recovery</td><td class="mono">06:30</td><td>Carnivor Isolate + Marine Collagen + Black Maca + L-Carnitine</td><td>Fasted MPS trigger; connective-tissue scaffolding</td></tr>
+            <tr><td>1 — Ignition</td><td class="mono">07:00</td><td>Impact Igniter Xtreme 2.0 + MuscleEAA + PeakO2 + Betaine Anhydrous</td><td>CNS drive; hypertrophy-signal swelling</td></tr>
+            <tr><td>2 — Refuel</td><td class="mono">09:30</td><td>HyperClear BCAA + electrolytes + pink salt + Medjool dates</td><td>mTOR trigger; glycogen restoration</td></tr>
+            <tr><td>4 — Reload</td><td class="mono">10:30</td><td>BioSteel + Beetroot + Creatine HCL + pink salt</td><td>Insulin bridge; NO vasodilation</td></tr>
+            <tr><td>5 — Transport</td><td class="mono">16:30</td><td>Creatine HCL + Marine Collagen + L-Carnitine + pink salt</td><td>Sustained phosphocreatine saturation</td></tr>
+            <tr><td>2 (evening) — Pump</td><td class="mono">19:30</td><td>Impact Pump matrix, cold water, zero salt/stim</td><td>Fascial hydraulic stretch</td></tr>
+            <tr><td>10 — Shutdown Slurry</td><td class="mono">20:30</td><td>Hibiscus tea + Medi-C Plus + Creatine HCL + L-Glutamine + Hey Relax + BioSteel</td><td>Oxidative-stress mitigation; overnight repair</td></tr>
+          </table></div>
+          <div class="callout"><b>Note</b> Vector 2 now runs mid-morning as a refuel (09:30), not an evening pump. The evening non-stim pump shaker is retained separately at 19:30 for resistance-band conditioning.</div>
+          <h3>Why Creatine HCL, Not Monohydrate</h3>
+          <p><b>Solubility:</b> HCL dissolves more completely, needs less fluid, lowers gut-bloat risk without a gallbladder. <b>Micro-dosing:</b> splitting the daily load across three pulses (Vector 4 at 10:30, Vector 5 at 16:30, Vector 10 at 20:30) maintains ATP saturation without overloading kidney filtration in one pass.</p>
+          <h3>Note on Vector Numbering</h3>
+          <p>The vectors are deliberately numbered non-sequentially (1, 2, 3, 4, 5, then 10) across every source document — there is no Vector 6, 7, 8, or 9 in the current protocol. Independently re-verified against the full V185.99 document during the version-truth audit.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Liquid Delivery</span>
+            <p>Seven vectors, zero mechanical churning. Liquid delivery pierces the metabolic window without solid digestion in the way — a real metabolic tax on a system running without a gallbladder.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH8 -->
+    <section class="chapter" id="ch8" data-title="The Training Scripture" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">08</span><h2>The Training Scripture — Biomechanical Engineering</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> your real gear replaces the invented "Hex-Grid Arsenal" codenames (per the GYM GEAR Visual Recognition Database, Jul 14 2026), and the 14-day training architecture (Jun 19 2026, locked to "V185.61 and higher") is now folded in.</div>
+          <h3>Variable Linear Resistance (VLR)</h3>
+          <p>Free weight is heaviest at the bottom of a rep — greatest mechanical disadvantage and risk. Bands (F = kx) increase load linearly with stretch: light at the vulnerable bottom, heaviest at lockout — matching the human strength curve and allowing large density signals without dead-stop shear risk.</p>
+          <h3>The Gear Database (Real Equipment) <span class="tag new">real gear</span></h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Unit</th><th>Peak Load</th><th>Notes</th></tr>
+            <tr><td>KUZARO Pure Triad Tubing Set</td><td>360 lbs</td><td>Color-coded 35–85 lbs, gray→black gradient</td></tr>
+            <tr><td>HPYGN Heavy-Duty Compression System</td><td>330 lbs</td><td>Incl. "2x 65lb doubled" 130lb low-anchor protocol</td></tr>
+          </table></div>
+          <p><b>Kinetic grip accessories:</b> BLUSLM Tricep Rope, HXD-ERGO Handles, INNSTAR Stirrup Handles, Angles90 Camo Pull-Up Grips, THEFITGUY Single-Arm Rope, MANUEKLEAR Neoprene Multi-Grip Handles.<br>
+          <b>Modular bars/harnesses:</b> Tribe Lifting Modular Resistance Bar, HPYGN Pilates Bar, THEFITGUY Sled Pulling Belt.<br>
+          <b>Connections:</b> Oak-Sports Carabiners (25kN/5,600lb), JRSGS 25kN Rock Locking Clips.<br>
+          <b>Anchors:</b> VEHICLEX Axle Tie-Down Straps, NILIGHT Soft Loop Anchor Straps.<br>
+          <b>Recovery:</b> jooeer 3-in-1 Nested Foam Roller Set.</p>
+          <p><b>Hardware integrity:</b> Oak-Sports carabiners and JRSGS locking clips rated to 25kN (~18:1 safety factor); cloth tape on metal-latex contacts; mandatory pre-session inspection of every carabiner, lock clip, and webbing point.</p>
+          <h3>The 14-Day High-Frequency Training Architecture <span class="tag new">new</span></h3>
+          <p>A continuous 14-day block: 6 training days/week + 1 recovery day, 4–5 hour session windows. No rigid body-part calendar — daily structural variation with consecutive-overlap prevention (auto-regulated against the previous day's log, always leaving 24–48h recovery). Pre-workout carb source: buckwheat groats, for gastric-emptying optimization.</p>
+          <p><b>Physical setup:</b> variable-resistance bands layered on barbell sleeves, routed to low-anchor points at the power rack base.</p>
+          <h3>Kinetic Bans &amp; Mechanical Injury Mitigation</h3>
+          <p><b>Spinal defense:</b> no floor deadlifts. All heavy pulls above the knee. Glute lock on leg press — any tailbone deviation ends the set.</p>
+          <ul>
+            <li><b>Hardware-Enforced Grip Bypass:</b> velcro cuffs banned. MANUEKLEAR forearm webbing bypasses the hand grip on compound push/pull/fly work; Vulken Dual-Length Rope for wrist-load shifting.</li>
+            <li><b>Anatomical Cable Adjustments:</b> Angles90 grips remove twisting shear on rows/pulls; HXD-ERGO handles reduce crush-force on presses. Every press/extension rep stops 5% short of hard lockout.</li>
+            <li><b>Active Joint Flushing:</b> end-of-session or post-aggravation, 100 fast light-band reps flush blood/joint fluid through avascular connective tissue.</li>
+          </ul>
+          <h3>The Core Stabilizer: "The Stack"</h3>
+          <p>A full, hard exhale before every heavy lift or core set — obliques engage, ribs pull down, intra-abdominal pressure cushions the spine. This bracing is what makes the Zone 1 Dermal Shield (§3, Lock 4) necessary.</p>
+          <h3>Gear Manual</h3>
+          <ul>
+            <li><b>Angles90 / HXD-ERGO grips</b> — mandatory on pressing; ergonomic geometry forces an open-hand grip, deactivating flexors pulling on the ulnar nerve.</li>
+            <li><b>Anti-slip yoga mat</b> — locks scapula in retraction during pressing.</li>
+            <li><b>MANUEKLEAR forearm webbing</b> — pushdowns/extensions, prevents internal humeral rotation.</li>
+          </ul>
+          <div class="focus-point">
+            <span class="fp-tag">Real Gear, Real Bans</span>
+            <p>No floor deadlifts. No floor squats. Ever. Every heavy pull happens above the knee, every press stops 5% short of lockout — permanent kinetic bans, not caution, protecting an L4–S1 disc that doesn't get a second chance.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH9 -->
+    <section class="chapter" id="ch9" data-title="The 12-Month Excavation Roadmap" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">09</span><h2>The 12-Month Excavation Roadmap</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <h3>The Progression Engine</h3>
+          <p>Micro-loading, not 10–20 lb jumps: <b>Rack pulls</b> +2.5 lbs / 3 weeks. <b>Smith press</b> +1.25 lbs / 2 weeks. If elbow click returns, or the tailbone shifts on a glute lock, the load is too heavy — no negotiating.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Phase</th><th>Months</th><th>Forensic Focus</th><th>SMM Target</th><th>Visual Marker</th></tr>
+            <tr><td>I — Neuro-Priming</td><td>1–3</td><td>Osmotic pressure / salt transport</td><td>+2.0 lbs</td><td>Enhanced vascularity</td></tr>
+            <tr><td>II — Mechanical Tension</td><td>4–8</td><td>Linear overload / rack pulls</td><td>+6.0 lbs</td><td>Extreme thickness</td></tr>
+            <tr><td>III — Excavation</td><td>9–12</td><td>Fat-edema removal / hardening</td><td>+3.8 lbs</td><td>The monolithic Cube</td></tr>
+          </table></div>
+          <p><b>Phase I</b> — the diagnostic marker is pump quality: a skin-splitting pump within 10 minutes. If weak, scale Pink Salt in Vector 4 up 1/16 tsp per session. Neural re-education on the Rib Flare Stack and Glute Lock.</p>
+          <p><b>Phase II</b> — the primary growth engine: the single-session "Heavy Steel" block for high mechanical tension, bracketed by the Vector schedule (Ch.4), plus a lighter evening resistance-band flush (20–30 reps, 19:30 Pump shaker) rather than a second full session. <span class="tag new">updated</span> The "silent rep" (3-second eccentric) is prioritized since tendon resilience lags strength gains past 45.</p>
+          <p><b>Phase III</b> — hardens what's built. If body fat is still &gt;20% by month 9, an 18-hour Sunday hyper-fast flushes visceral water. Heavier reliance on the Hibiscus Iron Key and Solvent Pitcher for oxygenation.</p>
+          <div class="callout-critical"><b>System Governance</b> every Friday is a complete shutdown (no lifting, no bands) to reset the CNS. If PM dizziness or frothy urine persists past 48h, progression pauses for a 7-day maintenance bridge at 200g protein.</div>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Micro-Loading</span>
+            <p>+2.5 lbs every 3 weeks, not 20 in a day. Three phases, twelve months, one rule: if the elbow clicks or the tailbone shifts, the load was too heavy — no negotiating.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH10 -->
+    <section class="chapter" id="ch10" data-title="The Failure Analysis Matrix" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">10</span><h2>The Failure Analysis Matrix — Check Engine Light</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <p>Symptoms are diagnostic data, not obstacles to push through. Identify the code, execute the override.</p>
+          <div class="lights">
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Cement Gut</span><span class="code mono">ERR_DIGEST_01</span></span></summary><div class="ld"><b>Cause:</b> fiber overload or missing active enzyme.<br><b>Fix:</b> cease solid food 24h; deploy Fusion 3A (White Light) — 2 scoops AllPro + liquid egg whites + berries + glutamine. Pineapple/bromelain for a hard, distended stomach.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Hard Gut Sludge</span><span class="code mono">ERR_LIPID_01</span></span></summary><div class="ld"><b>Cause:</b> fat-cap breach, over 69g.<br><b>Fix:</b> solvent flush — 2× hot ACV tea + 24h zero-fat protein isolate.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Elbow Click</span><span class="code mono">ERR_ULNAR_01</span></span></summary><div class="ld"><b>Cause:</b> grip too tight or supination breach.<br><b>Fix:</b> deploy HXD-ERGO/Angles90 grips immediately; switch to 3-second silent eccentrics.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Back Stiffness</span><span class="code mono">ERR_L4S1_01</span></span></summary><div class="ld"><b>Cause:</b> compression / disc guarding reflex.<br><b>Fix:</b> 60-second dead hang + increase 20:30 magnesium.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Frothy Urine</span><span class="code mono">ERR_RENAL_01</span></span></summary><div class="ld"><b>Cause:</b> protein-ceiling breach, kidney stress.<br><b>Fix:</b> nitrogen dump — drop protein to 200g for 48h; +1.0L water; rebuild to 252g in 10g/day increments.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">PM Dizziness</span><span class="code mono">ERR_HYPO_01</span></span></summary><div class="ld"><b>Cause:</b> hypoglycemia.<br><b>Fix:</b> emergency shuttle — 0.5 scoop BioSteel or 1 banana immediately.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Morning Sludge</span><span class="code mono">ERR_BILE_01</span></span></summary><div class="ld"><b>Cause:</b> overnight bile accumulation.<br><b>Fix:</b> increase Metamucil/greens dose 25% at 06:00.</div></details>
+            <details class="light"><summary><span class="dot"></span><span><span class="lbl">Stalled Fat Loss</span><span class="code mono">ERR_METAB_01</span></span></summary><div class="ld"><b>Cause:</b> hidden calories / "ghost sugars."<br><b>Fix:</b> weekend audit — purge honey, BBQ sauce, ketchup, breading. Return to the Solid Fuel Matrix.</div></details>
+          </div>
+          <div class="callout"><b>The Ghost Sugar audit</b> honey glazes, ketchups, and breading spike insulin right when Growth Hormone should be peaking — insulin is GH's direct antagonist. Sugar-free syrup is the sanctioned sweet substitute.</div>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">Diagnostic, Not Defeat</span>
+            <p>Every symptom is data. Frothy urine, PM dizziness, cement gut — each one has a documented cause and a fix, because a system built this precisely treats the check-engine light as information, not failure.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH11 -->
+    <section class="chapter" id="ch11" data-title="Operational Annexes" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">11</span><h2>Operational Annexes</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <h3>Annex A — The Gear Database (Physics Reference) <span class="tag new">real gear</span></h3>
+          <p>Variable Linear Resistance (F = kx) — light at the bottom of the rep, heaviest at lockout. A 360-lb KUZARO Pure Triad Tubing setup runs without 360 lbs of vertical compression through the L4–S1 disc.</p>
+          <h3>Annex B — The Resistance Flush</h3>
+          <p>20–30 reps at 19:30 create deep-tissue hyperemia — an internal massage clearing lactic acid and ammonia, reducing renal load, enabling the 14-day high-frequency block (Ch.8) to stay sustainable.</p>
+          <h3>Annex C — The Sunday Turf Zone</h3>
+          <p><b>Backward sled drag (10 min):</b> VMO strengthening, zero axial load. <b>Lymphatic flushing:</b> 100+ band pull-aparts, resetting scapular retraction.</p>
+          <h3>Annex D — The Tactical Gear Manual</h3>
+          <ul>
+            <li><b>Angles90 Camo Pull-Up Grips</b> — rotational-freedom grips for rows/pulls, removing twisting shear on elbow insertions.</li>
+            <li><b>HXD-ERGO Handles</b> — crush-force reduction on presses; every rep stops 5% short of lockout.</li>
+            <li><b>MANUEKLEAR forearm webbing</b> — bypasses the hand grip entirely on compound push/pull/fly work.</li>
+            <li><b>Heavy belt XL</b> — ab support, not back support; breathe 360° into it. CytoDerma gel + SPF 35 goes on under it (§3, Lock 4) before heavy-bracing sessions.</li>
+            <li><b>Anti-slip yoga mat</b> — scapular lock during pressing.</li>
+          </ul>
+          <h3>Annex E — Intake Vectors Quick Card</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Vector</th><th>Name</th><th>Timing</th><th>Function</th></tr>
+            <tr><td>3</td><td>Recovery</td><td class="mono">06:30</td><td>Fasted MPS trigger</td></tr>
+            <tr><td>1</td><td>Ignition</td><td class="mono">07:00</td><td>CNS drive &amp; O2 saturation</td></tr>
+            <tr><td>2</td><td>Refuel</td><td class="mono">09:30</td><td>mTOR trigger + glycogen restoration</td></tr>
+            <tr><td>4</td><td>Reload</td><td class="mono">10:30</td><td>Insulin bridge — creatine shuttle</td></tr>
+            <tr><td>5</td><td>Transport</td><td class="mono">16:30</td><td>Sustained phosphocreatine saturation</td></tr>
+            <tr><td>2 (evening)</td><td>Pump</td><td class="mono">19:30</td><td>Zero-salt fascial stretch</td></tr>
+            <tr><td>10</td><td>Shutdown Slurry</td><td class="mono">20:30</td><td>Oxidative-stress mitigation + repair</td></tr>
+          </table></div>
+          <div class="focus-point">
+            <span class="fp-tag">The Physics Behind It</span>
+            <p>360 lbs of band tension, zero lbs through the spine. Variable Linear Resistance loads the lift the way the body actually gets strong through a rep, without a single pound of vertical compression through the L4–S1 disc.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH12 -->
+    <section class="chapter" id="ch12" data-title="The Fiscal Forensic Audit" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">12</span><h2>The Fiscal Forensic Audit</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>Version-audit note</b> replaced with the real V185.88 Financial Pharmacology Matrix — the figure this chapter had was a Feb 2026 estimate against an older, thinner stack, and V185.99 dropped it entirely. Confirmed restored in the September 2026 audit.</div>
+          <p>Precision has a price tag — tracked the same as everything else.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Window</th><th>Major Constituents</th><th>Share of Budget</th></tr>
+            <tr><td>Morning Ignition (05:00–07:00)</td><td>TestoFX Xtreme, Zinc Supreme, LactoBif, NMN, Kyolic, Impact Igniter Xtreme 2.0, MuscleEAA, PeakO2</td><td class="mono"><b>58%</b> (~$4.75/day)</td></tr>
+            <tr><td>Afternoon Mineral Window (10:30–11:15)</td><td>BioSteel, Creatine HCL, PureGenomics, Calcium Malate, Omega 800, Liver Care, UriCare, Curcumin</td><td class="mono">22% (~$1.80/day)</td></tr>
+            <tr><td>Evening Iron Lock (15:30–16:30)</td><td>Beef Liver, Ligament Restore, Copper Glycinate, Creatine HCL, Marine Collagen</td><td class="mono">10% (~$0.78/day)</td></tr>
+            <tr><td>Night Shutdown (19:30–20:30)</td><td>Impact Pump, Medi-C Plus, Hey Relax, Magnesium Bisglycinate, Tart Cherry, Milk Thistle</td><td class="mono">10% (~$0.79/day)</td></tr>
+            <tr><td><b>Total</b></td><td></td><td class="mono"><b>~$8.30 CAD/day</b></td></tr>
+          </table></div>
+          <p><b>Weekly: ~$58.10 CAD. Monthly: ~$249 CAD.</b> Morning Ignition alone is 58% of the daily budget — TestoFX Xtreme and the post-flush probiotic — the single highest-leverage place to look first if the budget needs to shrink.</p>
+          <div class="focus-point focus-point--cyan">
+            <span class="fp-tag">Priced Like Everything Else</span>
+            <p>~$8.30 a day. ~$249 a month. Precision isn't free — it's tracked with the same rigor as every rep and every gram of protein, and Morning Ignition alone is 58% of the bill.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- CH13 -->
+    <section class="chapter" id="ch13" data-title="The Ninja Creami XL System" data-group="The Thirteen Chapters">
+      <details class="chapter-box">
+        <summary><span class="num mono">13</span><h2>The Ninja Creami XL System</h2><span class="chev">▸</span><span class="tag new" style="margin-left:auto">new chapter</span></summary>
+        <div class="chapter-body">
+          <div class="audit"><b>New chapter</b> this subsystem didn't exist in the March 2026 edition. Built from V198.2 FINAL (Jul 29, 2026), cross-checked against its full lineage back to V185.61 (Jul 10).</div>
+          <p>A dedicated processing system for turning ultra-high-protein bases into velvet-textured frozen desserts on a Ninja Creami XL. Standard ice-cream machines aren't engineered for zero-fat, high-protein matrices — they behave as solid crystalline blocks, and mishandling them risks the hardware itself.</p>
+          <h3>The Master Workflow Pipeline (7 Steps)</h3>
+          <p><b>Prep → Emulsify → Settle → Freeze → Level → Spin → Flush.</b> 0.1g digital-scale accuracy on the dry matrix; hot/cold thermal-phase vortex blend; 15-minute settle; lid-off 2–4h then lid-on 16–24h at -18°C to -20°C; Deiss masher + warm-water bath to level; Lite Ice Cream/Sorbet spin with re-spin logic; hot-water spindle flush after every use.</p>
+          <h3>The Universal Structural Base Formula</h3>
+          <p><b>Thermal phase:</b> 150–200ml boiling water + bone broth + marine collagen. <b>Cold phase:</b> 250ml Kirkland Ultra-Filtered 2% Milk + 100g liquid egg whites. <b>Dry matrix:</b> 1.5 scoops protein, 3–4 tbsp allulose/monk fruit, 1/4 tsp xanthan/tara/guar gum, pink salt pinch.</p>
+          <h3>The Lipid/Fat Matrix (Kirkland 2% Rule)</h3>
+          <p>Base milk supplies 5.0g native butterfat. <b>Tier 1 (micro-dose):</b> 1 tsp almond butter, +2.7g fat/+33kcal. <b>Tier 2 (max-dose):</b> 1 tbsp, +8g fat/+100kcal.</p>
+          <h3>Batch Scaling</h3>
+          <p><b>Individual 24oz pint:</b> standard SOP. <b>Mega 68oz pitcher (3x):</b> 450–600ml water, 3 scoops broth/collagen each, 750ml milk, 300g egg whites, 4.5 scoops protein, 9–12 tbsp sweetener, 3/4 tsp gum, 3 pinches salt.</p>
+          <h3>Inclusion Architecture (3 Tiers)</h3>
+          <p><b>Tier 1 (machine mix-in):</b> hard items — drill a borehole, run Mix-In. <b>Tier 2 (hand-fold):</b> soft items — never machine mix-in. <b>Tier 3 (manual knife-swirl):</b> ribbons/drizzles post-spin.</p>
+          <h3>The 18 Zero-Sugar Flavor Permutation Matrix</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Flavor</th><th>Protein Base</th><th>Flavor Core Agents</th></tr>
+            <tr><td>Lemon Chiffon</td><td>Hexapro Vanilla</td><td>LorAnn Lemon Emulsion + Vanillux Paste</td></tr>
+            <tr><td>Strawberry Cream</td><td>Hexapro Vanilla</td><td>LorAnn Strawberry Emulsion + Vanillux Paste</td></tr>
+            <tr><td>Blueberry Muffin</td><td>Hexapro Vanilla</td><td>LorAnn Blueberry Emulsion + Bakery Cinnamon</td></tr>
+            <tr><td>Classic Vanilla Bean</td><td>Hexapro Vanilla</td><td>Vanillux Vanilla Bean Paste</td></tr>
+            <tr><td>Velvet Banana Cream</td><td>Hexapro Vanilla</td><td>LorAnn Banana Cream + Butter Vanilla</td></tr>
+            <tr><td>Spiced Chai Latte</td><td>Hexapro Vanilla</td><td>Ceylon Cinnamon + Cardamom + Instant Tea</td></tr>
+            <tr><td>Pistachio Biscotti</td><td>Hexapro Vanilla</td><td>LorAnn Pistachio + Almond Extract</td></tr>
+            <tr><td>Midnight Mocha</td><td>PVL Isogold (Iced Mocha)</td><td>LorAnn Coffee Emulsion + Cafe Bustelo</td></tr>
+            <tr><td>Triple Mint Chip</td><td>PVL Isogold (Triple Choc)</td><td>LorAnn Peppermint Emulsion</td></tr>
+            <tr><td>Dark Chocolate Oreo</td><td>PVL Isogold (Triple Choc)</td><td>Black Cocoa + Vanillux Paste</td></tr>
+            <tr><td>Peanut Butter Twist</td><td>PVL Isogold (Iced Mocha)</td><td>PB &amp; Me Defatted Peanut Powder</td></tr>
+            <tr><td>Birthday Cake</td><td>BSN Syntha-6 (Vanilla)</td><td>LorAnn Butter Vanilla + Vanillux Paste</td></tr>
+            <tr><td>Cinnamon Roll Glaze</td><td>Syntha-6 (Vanilla)</td><td>Cinnamon + Butter Vanilla + Maple Emulsion</td></tr>
+            <tr><td>Maple Walnut Cream</td><td>Syntha-6 (Vanilla)</td><td>LorAnn Maple Emulsion + Almond Extract</td></tr>
+            <tr><td>PB Fudge Crunch</td><td>Hexapro Vanilla</td><td>Defatted PB Powder + Cacao Nibs</td></tr>
+            <tr><td>Zero-Sugar Cookie Dough</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+            <tr><td>Zero-Sugar Caramel Crunch</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+            <tr><td>Zero-Sugar Chocolate Swirl</td><td>—</td><td>V198.2 FINAL addition</td></tr>
+          </table></div>
+          <p><i>Texture: Hexapro → dense custardy soft-serve. PVL Isogold → dense gelato. Syntha-6 → premium ultra-creamy overrun.</i></p>
+          <h3>Macronutrient Ledger</h3>
+          <p>Base: ~240kcal / 41g protein / 5.0g fat / 6.0g net carbs. Finished recipes: 380–610 kcal, 74–92.5g protein, 6–19g fat, 8–22g net carbs. Richest: PB Fudge Crunch (610kcal/92.5g). Leanest: Midnight Mocha (380kcal).</p>
+          <h3>Critical Hardware Safety Limits</h3>
+          <p>Never process below -22°C unthawed (produces an unspinnable "cement brick"). Never exceed Max Fill. Surface must be 100% level before spinning. Flush the spindle with hot water immediately after every use.</p>
+          <h3>The "Hall of Mistakes" (12-Point Error Log)</h3>
+          <p>Under-freezing · overfilling · wrong program mode · unnecessary liquid before a dry re-spin · blender/frother misuse · extract omission · dumping dry into liquid without whisking · stabilizer omission · machine-mixing soft inclusions · wrong-size hard inclusions · skipping the perimeter-ice scrape · skipping the warm-water thermal bath.</p>
+          <div class="focus-point focus-point--gold">
+            <span class="fp-tag">18 Flavors, Zero Sugar</span>
+            <p>380 to 610 kcal, up to 92.5g protein — per pint. A dessert engineered the same way the training is: seven steps, 0.1g scale accuracy, and a formula built because standard ice-cream machines can't handle a zero-fat, high-protein matrix.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div class="kicker" id="quickref-kicker">Quick Reference</div>
+    <section class="chapter" id="quickref" data-title="Golden Data Recap (Quick Reference)" data-group="Quick Reference">
+      <details class="chapter-box">
+        <summary><span class="num mono">QR</span><h2>Golden Data Recap</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <p>One page, fast lookup — everything above, distilled. Built for checking mid-day, not reading start to finish.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Parameter</th><th>Baseline</th><th>Target</th></tr>
+            <tr><td>SMM</td><td>88.2 lbs</td><td>100.0 lbs</td></tr>
+            <tr><td>Body fat</td><td>22.9%</td><td>&lt;15.0%</td></tr>
+            <tr><td>FFMI</td><td>23.86</td><td>25.71</td></tr>
+          </table></div>
+          <p>Full schedule → <a href="#ch4">Ch.4 Master Chronometer</a>. Full menu → <a href="#ch6">Ch.6 Solid Fuel Codex</a>. Full arsenal → <a href="#ch5">Ch.5 Molecular Arsenal</a>. Full diagnostics → <a href="#ch10">Ch.10 Failure Matrix</a>. Full hardware → <a href="#ch8">Ch.8 Training Scripture</a>. Ninja Creami → <a href="#ch13">Ch.13</a>. Cost → <a href="#ch12">Ch.12 Fiscal Audit</a>.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="changelog" data-title="Changelog" data-group="Quick Reference">
+      <details class="chapter-box">
+        <summary><span class="num mono">§</span><h2>Changelog</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <div class="tbl-wrap"><table>
+            <tr><th>Version</th><th>Date</th><th>Change</th></tr>
+            <tr><td>V30.0/V117.0/V126.0 — 100 lbs Club origin trio</td><td class="mono">Jan 9–17 2026</td><td>Earliest drafts; different stack entirely. Historical only.</td></tr>
+            <tr><td>Definitive Lifetime Edition</td><td class="mono">Feb 16 2026</td><td>First full 12-chapter draft (Gemini)</td></tr>
+            <tr><td>V185.34 — Master Intake Matrix</td><td class="mono">Feb 28 2026</td><td>Granular brand-level supplement protocol</td></tr>
+            <tr><td>V185.31 — Singularity Archive</td><td class="mono">Mar 6 2026</td><td>Full rewrite; Part VI/VII annexes; <code>SYSTEM STATE: LOCKED</code></td></tr>
+            <tr><td>Consolidated Edition</td><td class="mono">Sep 2026 (early)</td><td>Merged duplicate chapters, reconciled the beef conflict, folded in Intake Matrix detail, added Ch.12. <b>Never updated past the March 6 lock.</b></td></tr>
+            <tr><td>V185.80 → V185.81 → V185.88</td><td class="mono">May 17 2026</td><td>Major protocol upgrade: single-session chronometer, expanded stack, 4 Hardware Firewalls, Financial Matrix. <b>Not incorporated until the Sep 2026 audit.</b></td></tr>
+            <tr><td>Resistance Training 14-Day Protocol</td><td class="mono">Jun 19 2026</td><td>New training architecture, locked to "V185.61 and higher"</td></tr>
+            <tr><td>Ninja Creami XL (→ V198.2 FINAL)</td><td class="mono">Jul 9–29 2026</td><td>New protein-ice-cream subsystem — 9 chapters, 18-flavor matrix</td></tr>
+            <tr><td>GYM GEAR Visual Recognition DB</td><td class="mono">Jul 14 2026</td><td>Real brand/model resistance-gear database</td></tr>
+            <tr><td>V185.99 — Master Intake Matrix</td><td class="mono">Aug 2 2026</td><td>Updates the 6 liquid Vectors only. <b>Confirmed to silently drop the Financial Matrix and 4 Firewalls from V185.88.</b></td></tr>
+            <tr><td><b>Version-Truth-Audited Edition</b></td><td class="mono"><b>Sep 16 2026</b></td><td>Full dated audit of every source document. Rebuilt Ch.4/5/7 to the May–Aug 2026 protocol; restored the 4th firewall + Financial Matrix; replaced Ch.8 gear codenames with real GYM GEAR database; added Ch.13 (Ninja Creami) and the 14-day training architecture; confirmed the 100 lbs Club trio as historical-only.</td></tr>
+            <tr><td><b>Historical Timeline Correction</b></td><td class="mono"><b>Sep 17 2026</b></td><td>Corrected the Origins chapter's founding date — every prior edition wrongly stated 2019. True start is 2010 (age 30). Rebuilt around five distinct eras (2010–13 Beginning, 2013–16 Progressing, 2016–18 Golden Era, 2018–25 Dark Stage, 2025–26+ The Comeback) instead of a single before/after split. Matching correction applied to the website's Origins section.</td></tr>
+            <tr><td><b>Age &amp; Biometric History Correction (this edition)</b></td><td class="mono"><b>Sep 17 2026</b></td><td>Corrected age to 46 (born Sep 5, 1980) — the Pivot occurred at 45, but the edition had drifted to describing the present as 45 as well. Fixed the Ch.2 ground-truth date (Dec 2, 2025, not "February 2026"). Added a dated Biometric History table (May 2018 / Jun 2025 / Dec 2025 InBody &amp; GYM FIT FORME scans) as measured evidence behind the five-era timeline. Moved "A Note on This Edition" to the end so the archive now opens on Origins. Body font switched from Source Serif 4 to Inter at a larger, bolder weight for mobile legibility.</td></tr>
+          </table></div>
+          <p style="color:var(--text-faint); font-size:.88rem;">Log new protocol changes, biometric re-audits, and product swaps here going forward, dated, and restate whatever they touch in full — the exact failure mode this edition corrected.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- NOTE ON EDITION (moved to the end, Sep 17 2026 — reader should hit Origins first, not front matter) -->
+    <section class="chapter" id="note" data-title="A Note on This Edition" data-group="Quick Reference">
+      <details class="chapter-box">
+        <summary><span class="num mono">N</span><h2>A Note on This Edition</h2><span class="chev">▸</span></summary>
+        <div class="chapter-body">
+          <p>Project 100 has been built across two systems — Google Gemini and now Claude — across drafting passes running from January through August 2026. This edition adds one new discipline the earlier editions didn't have: <b>a full, dated version-truth audit of every source document</b>, run in September 2026 specifically because later Gemini drafts were found to silently drop content earlier drafts had — not supersede it, lose it.</p>
+          <div class="callout"><b>What changed in this pass</b>
+            <ul>
+              <li>The chronometer, molecular arsenal, and vector protocols were rebuilt to the true latest version (May–Aug 2026, not the March 6 lock this book previously used) — a single-session daily structure, not the twice-daily structure this book previously described.</li>
+              <li>A missing 4th hardware firewall (Zone 1 Dermal Shield) and the full Financial Pharmacology Matrix were restored — V185.99 (Aug 2) turned out to be a partial document that silently dropped both.</li>
+              <li>Invented gear codenames ("Juggernaut," "Twin Cobras") were replaced with your real GYM GEAR equipment database.</li>
+              <li>Two new subsystems were added: the Ninja Creami XL system (Ch.13) and the 14-day high-frequency training architecture (Ch.8).</li>
+              <li>The historical timeline was corrected (true origin 2010, not 2019), the age corrected to 46, and InBody scans from 2018/2025 were integrated as measured evidence in Ch.2.</li>
+            </ul>
+          </div>
+          <p>This is a living document. Log new protocol changes, biometric re-audits, and product swaps in the <a href="#changelog">Changelog</a> as they happen — and restate whatever they touch in full, not partially, the exact failure mode this edition corrected.</p>
+        </div>
+      </details>
+    </section>
+
+    <p class="noresults" id="noResults">No sections match your search.</p>
+
+    <footer>
+      Project 100 — The Singularity Archive · Version-Truth-Audited Edition · Built from the full Jan–Aug 2026 source archive · Last reconciled September 17, 2026
+      <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="index.html#connect">All Links</a></div>
+    </footer>
+  </main>
+</div>
+
+<button class="icon-btn backtotop" id="backTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- THEME TOGGLE ----
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  function getStored(){ try{ return localStorage.getItem('p100-theme'); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem('p100-theme', v); }catch(e){} }
+  var stored = getStored();
+  if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
+  themeBtn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme');
+    var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var effective = current || (sysDark ? 'dark' : 'light');
+    var next = effective === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    setStored(next);
+  });
+
+  // ---- BUILD NAV FROM SECTIONS ----
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section.chapter'));
+  var sideNav = document.getElementById('sideNav');
+  var drawerNav = document.getElementById('drawerNav');
+  var groups = {};
+  sections.forEach(function(sec){
+    var g = sec.getAttribute('data-group');
+    groups[g] = groups[g] || [];
+    groups[g].push(sec);
+  });
+  function buildNav(container){
+    Object.keys(groups).forEach(function(g){
+      var label = document.createElement('div');
+      label.className = 'grp-label';
+      label.textContent = g;
+      container.appendChild(label);
+      groups[g].forEach(function(sec){
+        var a = document.createElement('a');
+        a.href = '#' + sec.id;
+        a.textContent = sec.getAttribute('data-title');
+        a.dataset.navFor = sec.id;
+        container.appendChild(a);
+      });
+    });
+  }
+  buildNav(sideNav);
+  buildNav(drawerNav);
+
+  // ---- MOBILE DRAWER ----
+  var navToggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('drawer');
+  var backdrop = document.getElementById('drawerBackdrop');
+  function openDrawer(){ drawer.classList.add('open'); backdrop.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); }
+  function closeDrawer(){ drawer.classList.remove('open'); backdrop.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
+  navToggle.addEventListener('click', function(){ drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  backdrop.addEventListener('click', closeDrawer);
+  drawerNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ closeDrawer(); }
+  });
+
+  // ---- NAV CLICK: open target + scroll ----
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if(target){
+      var box = target.querySelector(':scope > details.chapter-box');
+      if(box) box.open = true;
+    }
+  });
+
+  // ---- SCROLLSPY ----
+  var allNavLinks = function(){ return Array.prototype.slice.call(document.querySelectorAll('#sideNav a, #drawerNav a')); };
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
+        allNavLinks().forEach(function(l){
+          l.classList.toggle('active', l.dataset.navFor === id);
+        });
+      }
+    });
+  }, {rootMargin:'-10% 0px -70% 0px'});
+  sections.forEach(function(s){ io.observe(s); });
+
+  // ---- SEARCH FILTER ----
+  var searchBox = document.getElementById('searchBox');
+  var noResults = document.getElementById('noResults');
+  searchBox.addEventListener('input', function(){
+    var q = searchBox.value.trim().toLowerCase();
+    var visible = 0;
+    sections.forEach(function(sec){
+      var text = sec.textContent.toLowerCase();
+      var match = !q || text.indexOf(q) !== -1;
+      sec.style.display = match ? '' : 'none';
+      if(match) visible++;
+      var link = document.querySelector('#sideNav a[data-nav-for="'+sec.id+'"]') || document.querySelector('#sideNav a[href="#'+sec.id+'"]');
+    });
+    // hide/show nav links & group labels to match
+    allNavLinks().forEach(function(l){
+      var id = l.dataset.navFor;
+      var sec = document.getElementById(id);
+      l.style.display = (sec && sec.style.display !== 'none') ? '' : 'none';
+    });
+    [sideNav, drawerNav].forEach(function(container){
+      Array.prototype.slice.call(container.children).forEach(function(child){
+        if(child.classList.contains('grp-label')){
+          var next = child.nextElementSibling, anyVisible = false;
+          while(next && !next.classList.contains('grp-label')){
+            if(next.style.display !== 'none') anyVisible = true;
+            next = next.nextElementSibling;
+          }
+          child.style.display = anyVisible ? '' : 'none';
+        }
+      });
+    });
+    if(q && visible === 0){
+      // auto-expand matches isn't needed since none; show message
+    }
+    document.getElementById('noResults').style.display = (q && visible === 0) ? 'block' : 'none';
+    // auto-open matching chapters when searching
+    if(q){
+      sections.forEach(function(sec){
+        if(sec.style.display !== 'none'){
+          var box = sec.querySelector(':scope > details.chapter-box');
+          if(box) box.open = true;
+        }
+      });
+    }
+  });
+
+  // ---- BACK TO TOP ----
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    backTop.classList.toggle('show', window.scrollY > 600);
+  }, {passive:true});
+  backTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+})();
+
+// scrollspy: highlight the nav link for whichever section is currently in view
+(function(){
+  var navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sections.push({sec: sec, id: id});
+  });
+  if(!sections.length) return;
+  var setActive = function(id){
+    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + id); });
+  };
+  setActive(sections[0].id);
+  var visible = new Set();
+  var pickActive = function(){
+    if(!visible.size) return;
+    var chosen = sections[0].id;
+    sections.forEach(function(s){ if(visible.has(s.id)) chosen = s.id; });
+    setActive(chosen);
+  };
+  try{
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
+      });
+      pickActive();
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(s){ io.observe(s.sec); });
+  }catch(e){ /* nav still works without highlighting */ }
+})();
+</script>
+
+</body></html>
