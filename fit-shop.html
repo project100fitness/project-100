@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fit Gear — PROJECT 100</title>
-<meta name="description" content="The real gym equipment and home-gym setup behind the PROJECT 100 training log.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
+<title>Fit Shop — PROJECT 100</title>
+<meta name="description" content="Used gym gear from the PROJECT 100 setup, plus purchase links for the Fit Protocol guide book.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,9 +60,9 @@
   .placeholder-hero p{ max-width:560px; margin:0 auto 34px; color:var(--text-dim); font-size:1.05rem; }
   .placeholder-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
-  /* ===== FOCUS POINT — same site-wide "field note" callout as index.html /
-     encyclopedia.html / ninja-creami.html, red·black·neon, dropped in here
-     while the full gear database build-out is underway. ===== */
+  /* ===== FOCUS POINT — same site-wide "field note" callout used on every
+     other page, red·black·neon, doubling here as the build-out notice for
+     the placeholder listings below. ===== */
   .focus-point-wrap{ padding:0 0 8px; }
   .focus-point{
     position:relative; margin:0 auto; max-width:640px; padding:16px 18px 16px 19px; text-align:left;
@@ -82,29 +82,49 @@
   }
   @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
 
-  /* PHOTO GRID — static image boxes, anchored to the bottom of the page */
-  .reels-blk{ padding:56px 0 64px; }
-  .reels-blk .sec-head{ max-width:680px; margin-bottom:30px; }
-  .reels-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
-  .reels-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
-  .log-card{
+  /* USED GEAR — for-sale cards, same card language as the training-log /
+     gear-photo grids elsewhere on the site. */
+  .shop-blk{ padding:56px 0 20px; }
+  .shop-blk .sec-head{ max-width:680px; margin-bottom:30px; }
+  .shop-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .shop-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+  .shop-card{
     background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; overflow:hidden;
     display:flex; flex-direction:column; text-decoration:none; color:var(--text);
     transition:transform .18s ease, border-color .18s ease; box-shadow:0 2px 12px rgba(0,0,0,.25);
   }
-  .log-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
-  .log-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
-  .log-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
-  .log-tag{
+  .shop-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
+  .shop-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
+  .shop-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
+  .shop-tag{
     position:absolute; top:6px; left:6px; font-size:.58rem; font-weight:700; letter-spacing:.05em;
     text-transform:uppercase; padding:4px 8px; border-radius:100px; backdrop-filter:blur(6px);
     background:rgba(230,39,63,.85); color:#fff;
   }
-  .log-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
-  .log-body .date{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
-  .log-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
-  .log-body .stats{ margin-top:auto; display:flex; gap:8px; color:var(--text-dim); font-size:.66rem; padding-top:6px; }
-  .log-body .watch{ margin-top:6px; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
+  .shop-price{
+    position:absolute; top:6px; right:6px; font-size:.66rem; font-weight:700; letter-spacing:.02em;
+    padding:4px 9px; border-radius:100px; backdrop-filter:blur(6px);
+    background:rgba(12,13,16,.78); color:var(--gold); border:1px solid rgba(232,182,76,.4);
+  }
+  .shop-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
+  .shop-body .cond{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
+  .shop-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
+  .shop-body .note{ color:var(--text-dim); font-size:.72rem; margin:0 0 8px; }
+  .shop-body .watch{ margin-top:auto; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
+
+  /* GUIDE BOOK CTA — one strong block linking to Fit Protocol / a purchase link */
+  .guide-blk{ padding:36px 0 56px; }
+  .guide-card{
+    max-width:820px; margin:0 auto; display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+    background:linear-gradient(135deg, rgba(230,39,63,.14), rgba(10,11,13,0) 60%), var(--surface);
+    border:1px solid var(--border); border-radius:16px; padding:26px;
+  }
+  .guide-card .gc-ic{ flex:0 0 auto; width:54px; height:54px; border-radius:12px; background:var(--red); display:flex; align-items:center; justify-content:center; }
+  .guide-card .gc-ic svg{ width:28px; height:28px; color:#fff; }
+  .guide-card .gc-body{ flex:1; min-width:220px; }
+  .guide-card h3{ font-size:1.15rem; margin:0 0 6px; text-transform:none; letter-spacing:0; }
+  .guide-card p{ margin:0; color:var(--text-dim); font-size:.92rem; }
+  .guide-card .gc-ctas{ display:flex; gap:10px; flex-wrap:wrap; }
 
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
@@ -146,9 +166,11 @@
     .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
     .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
     .placeholder-hero p{ font-size:.94rem; margin:0 auto 24px; }
-    .reels-blk{ padding:36px 0 44px; }
-    .reels-blk .sec-head{ margin-bottom:20px; }
-    .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
+    .shop-blk{ padding:36px 0 12px; }
+    .shop-blk .sec-head{ margin-bottom:20px; }
+    .shop-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
+    .guide-blk{ padding:24px 0 44px; }
+    .guide-card{ padding:20px; gap:16px; }
     .connect-section{ padding:36px 0 44px; }
   }
 </style>
@@ -171,15 +193,16 @@
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab current" href="fit-gear.html">Fit Gear</a>
-    <a class="page-tab" href="fit-shop.html">Fit Shop</a>
+    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
+    <a class="page-tab current" href="fit-shop.html">Fit Shop</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
   </div>
 </nav>
 <nav class="cat-tabs" aria-label="Section jump links">
   <div class="wrap">
     <a href="#top">OVERVIEW</a>
-    <a href="#reels">GYM PHOTOS</a>
+    <a href="#for-sale">FOR SALE</a>
+    <a href="#guide">GUIDE BOOK</a>
     <a href="#connect">CONNECT</a>
   </div>
 </nav>
@@ -188,9 +211,9 @@
 <section class="placeholder-hero" id="top">
   <div class="wrap">
     <span class="tag">Under Construction</span>
-    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Rig</span>
-    <h1>Real Gear.<br><span>Real Setup.</span></h1>
-    <p>The actual equipment database — racks, bands, plyo boxes, and everything else in the gym. Being built now.</p>
+    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Shop</span>
+    <h1>Used Gear.<br><span>Real Prices.</span></h1>
+    <p>Equipment I've retired from the rig, sold direct — plus purchase links for the Fit Protocol guide book. Being built now.</p>
     <div class="placeholder-ctas">
       <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
@@ -200,31 +223,53 @@
 
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
   <div class="focus-point">
-    <span class="fp-tag">The Physics Behind It</span>
-    <p>The full gear database is still being built here. The short version, straight from Fit Protocol: 360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout — matching the human strength curve instead of fighting it.</p>
+    <span class="fp-tag">Build Note</span>
+    <p>This page is a placeholder scaffold — the listing cards below are examples, not real inventory yet. Swap in real photos, condition, price, and a buy/message link for each item you're actually selling.</p>
   </div>
 </div>
 
-<section class="reels-blk" id="reels">
+<section class="shop-blk" id="for-sale">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Straight From @fudge_fit</span>
-      <h2>Static Gym Photo Drops</h2>
-      <p>The real, still-image posts from the gym — not reels — moved here where they belong. Tap through to view any of them on Instagram.</p>
+      <span class="eyebrow">Used Equipment</span>
+      <h2>Gear I'm Done With</h2>
+      <p>Everything here has been through real training blocks — nothing's brand new, everything still works. DM @fudge_fit on Instagram to buy or ask a question about condition.</p>
     </div>
-    <div class="log-grid carousel-grid" data-carousel data-carousel-max="3">
-      <a class="log-card" href="https://www.instagram.com/p/Dbk17oYHJ9m/" target="_blank" rel="noopener">
-        <div class="log-media"><img src="assets/img/monday-mornings-locker-room.jpg" alt="Monday Mornings" loading="lazy"><span class="log-tag">Gym Photo</span></div>
-        <div class="log-body"><div class="date">Aug 3, 2026</div><h4>Monday Mornings</h4><div class="stats"><span>♥ 78</span><span>💬 9</span></div><div class="watch">▶ View on Instagram</div></div>
+    <!-- PLACEHOLDER LISTINGS — replace image, title, condition, price, and
+         href (a direct buy link or an Instagram DM link) for each real item -->
+    <div class="shop-grid carousel-grid" data-carousel data-carousel-max="4">
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/gym-equipment-wide.jpg" alt="Placeholder listing — resistance band set" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
       </a>
-      <a class="log-card" href="https://www.instagram.com/p/DbVe1q3HBZ8/" target="_blank" rel="noopener">
-        <div class="log-media"><img src="assets/img/story-5.jpg" alt="Upper Body" loading="lazy"><span class="log-tag">Gym Photo</span></div>
-        <div class="log-body"><div class="date">Jul 28, 2026</div><h4>Upper Body</h4><div class="stats"><span>♥ 62</span><span>💬 4</span></div><div class="watch">▶ View on Instagram</div></div>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/gym-bench-closeup.jpg" alt="Placeholder listing — bench" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
       </a>
-      <a class="log-card" href="https://www.instagram.com/p/DbDf9sSnAzR/" target="_blank" rel="noopener">
-        <div class="log-media"><img src="assets/img/story-2.jpg" alt="Chest & Triceps" loading="lazy"><span class="log-tag">Gym Photo</span></div>
-        <div class="log-body"><div class="date">Jul 21, 2026</div><h4>Chest &amp; Triceps</h4><div class="stats"><span>♥ 20</span><span>💬 0</span></div><div class="watch">▶ View on Instagram</div></div>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/kinetic-rig-architecture.jpg" alt="Placeholder listing — rack" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Fair</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
       </a>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/arm-blaster-6x6x6.jpg" alt="Placeholder listing — accessory" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Like New</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="guide-blk" id="guide">
+  <div class="wrap">
+    <div class="guide-card">
+      <div class="gc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"/></svg></div>
+      <div class="gc-body">
+        <h3>The Fit Protocol Guide Book</h3>
+        <p>The full training system — six vectors, one clock, every chapter audited — as a reference you can keep. Purchase link goes here once it's live; for now it opens the free on-site version.</p>
+      </div>
+      <div class="gc-ctas">
+        <a class="btn btn-primary" href="fit-protocol.html">Read Fit Protocol ↗</a>
+        <a class="btn btn-ghost" href="#" onclick="return false;" aria-disabled="true">Buy the Guide (add link)</a>
+      </div>
     </div>
   </div>
 </section>
@@ -292,7 +337,7 @@
 </section>
 
 <footer>
-  <div class="wrap foot-fine">Project 100 — Fit Gear page. Being built now. Eat. Sleep. Train. Repeat.</div>
+  <div class="wrap foot-fine">Project 100 — Fit Shop page. Being built now. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
 <script src="assets/js/carousel.js"></script>

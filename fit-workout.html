@@ -129,28 +129,18 @@
   .connect-section{ padding:52px 0 60px; border-top:1px solid var(--border); }
   .connect-section .sec-head{ text-align:center; max-width:520px; margin:0 auto 30px; }
   .connect-section .eyebrow{ justify-content:center; width:100%; }
-  .link-hub{ display:flex; flex-direction:column; gap:12px; max-width:560px; margin:0 auto; }
-  @media (min-width:640px){
-    .link-hub{ flex-direction:row; flex-wrap:wrap; max-width:none; justify-content:center; }
-    .link-hub .hub-btn{ flex:1 1 250px; max-width:340px; }
-  }
-  .hub-btn{
-    display:flex; align-items:center; gap:14px; width:100%; min-height:52px;
-    padding:13px 18px; border-radius:10px; background:var(--surface);
-    border:1px solid var(--border); color:var(--text); text-decoration:none;
-    transition:transform .12s ease, background .15s ease, border-color .15s ease;
-  }
-  .hub-btn .ic{ flex:0 0 auto; width:26px; height:26px; color:var(--text-dim); }
-  .hub-btn .ic svg{ width:100%; height:100%; }
-  .hub-btn .lbl{ flex:1; min-width:0; }
-  .hub-btn .lbl b{ display:block; font-family:'Oswald',sans-serif; font-size:.92rem; letter-spacing:.02em; text-transform:uppercase; }
-  .hub-btn .lbl small{ display:block; color:var(--text-dim); font-size:.78rem; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .hub-btn:active{ transform:scale(.97); background:var(--surface-2); }
-  @media (hover:hover){ .hub-btn:hover{ border-color:var(--text-dim); transform:translateY(-2px); } }
-  .hub-btn.primary{ background:var(--red); border-color:var(--red-dim); }
-  .hub-btn.primary .ic{ color:#fff; }
-  .hub-btn.primary .lbl small{ color:rgba(255,255,255,.78); }
-  .hub-btn.primary:active{ background:var(--red-dim); }
+  .link-ticker{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); }
+  .link-ticker-track{ display:flex; align-items:center; gap:10px; width:max-content; padding:2px 4px; animation:tickerScroll 26s linear infinite; }
+  .link-ticker:hover .link-ticker-track, .link-ticker:focus-within .link-ticker-track{ animation-play-state:paused; }
+  @keyframes tickerScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion:reduce){ .link-ticker-track{ animation:none; overflow-x:auto; -webkit-overflow-scrolling:touch; } .link-ticker{ -webkit-mask-image:none; mask-image:none; } }
+  .tick-btn{ display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; white-space:nowrap; padding:9px 16px; border-radius:999px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:.03em; text-transform:uppercase; transition:border-color .15s ease, transform .12s ease; }
+  .tick-btn .ic{ flex:0 0 auto; width:16px; height:16px; color:var(--text-dim); }
+  .tick-btn .ic svg{ width:100%; height:100%; }
+  .tick-btn:active{ transform:scale(.96); }
+  @media (hover:hover){ .tick-btn:hover{ border-color:var(--text-dim); } }
+  .tick-btn.primary{ background:var(--red); border-color:var(--red-dim); color:#fff; }
+  .tick-btn.primary .ic{ color:#fff; }
 
   @media (max-width:640px){
     .wrap{ padding:0 14px; }
@@ -185,17 +175,18 @@
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
       <a class="btn btn-ghost" href="#connect">All Links</a>
-      <a class="btn btn-primary" href="encyclopedia.html">Full Protocol</a>
+      <a class="btn btn-primary" href="fit-protocol.html">Fit Protocol</a>
     </div>
   </div>
 </nav>
 <nav class="page-tabs" aria-label="Project 100 pages">
   <div class="wrap">
     <a class="page-tab" href="index.html">Project 100</a>
-    <a class="page-tab" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab current" href="fit-workout.html">Fit Workout</a>
-    <a class="page-tab" href="fit-food.html">Fit Food</a>
+    <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
+    <a class="page-tab" href="fit-shop.html">Fit Shop</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
   </div>
 </nav>
@@ -224,7 +215,7 @@
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
   <div class="focus-point">
     <span class="fp-tag">The System Behind It</span>
-    <p>Every block below runs on a timed six-vector intake system — 06:30 ignition to 20:30 shutdown. The full clock, the formula cards, and the master matrix live in the Encyclopedia's Protocol Deck. <a href="encyclopedia.html#s-clock" style="color:var(--cyan);">Open the Master Chronometer ↗</a></p>
+    <p>Every block below runs on a timed six-vector intake system — 06:30 ignition to 20:30 shutdown. The full clock, the formula cards, and the master matrix live in Fit Protocol. <a href="fit-protocol.html#s-clock" style="color:var(--cyan);">Open the Master Chronometer ↗</a></p>
   </div>
 </div>
 
@@ -233,7 +224,7 @@
     <div class="sec-head">
       <span class="eyebrow">The Last 60 Days, Unfiltered</span>
       <h2>Training Log</h2>
-      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-food.html" style="color:var(--cyan);text-decoration:none;">Fit Food</a> · gym photo drops live on <a href="fit-gear.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
+      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="fit-gear.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
     </div>
 
     <div class="filters">
@@ -284,31 +275,57 @@
       <h2>One Link. Every Channel.</h2>
       <p>Training logs, live streams, and the full protocol — pick your platform.</p>
     </div>
-    <div class="link-hub">
-      <a class="hub-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
-        <span class="lbl"><b>Instagram</b><small>@fudge_fit — daily training log</small></span>
-      </a>
-      <a class="hub-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
-        <span class="lbl"><b>Facebook</b><small>facebook.com/fudge.fit</small></span>
-      </a>
-      <a class="hub-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
-        <span class="lbl"><b>TikTok</b><small>@bogdan_dospi</small></span>
-      </a>
-      <a class="hub-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
-        <span class="lbl"><b>Twitch</b><small>Live streams — cyberk1llaTTV</small></span>
-      </a>
-      <a class="hub-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
-        <span class="lbl"><b>YouTube</b><small>Training series — @FUDGE_fit</small></span>
-      </a>
-      <a class="hub-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
-        <span class="lbl"><b>Gym Playlist 2026</b><small>Open in Spotify</small></span>
-      </a>
+    <div class="link-ticker" role="region" aria-label="Find me on every platform — auto-scrolling links">
+      <div class="link-ticker-track">
+        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
+          <span class="lbl">Instagram</span>
+        </a>
+        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
+          <span class="lbl">Facebook</span>
+        </a>
+        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
+          <span class="lbl">TikTok</span>
+        </a>
+        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
+          <span class="lbl">Twitch</span>
+        </a>
+        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
+          <span class="lbl">YouTube</span>
+        </a>
+        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
+          <span class="lbl">Spotify Playlist</span>
+        </a>
+        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
+          <span class="lbl">Instagram</span>
+        </a>
+        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
+          <span class="lbl">Facebook</span>
+        </a>
+        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
+          <span class="lbl">TikTok</span>
+        </a>
+        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
+          <span class="lbl">Twitch</span>
+        </a>
+        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
+          <span class="lbl">YouTube</span>
+        </a>
+        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
+          <span class="lbl">Spotify Playlist</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
