@@ -165,6 +165,35 @@
   .foot-links a{ text-decoration:none; color:var(--text-dim); }
   .foot-links a:hover{ color:var(--purple); }
 
+  /* CONNECT / FIND ME — identical block on every page, always the last
+     section before the footer (uses this page's purple accent instead
+     of the site-wide red for its primary button). */
+  .connect-section{ padding:52px 0 60px; border-top:1px solid var(--border); }
+  .connect-section .sec-head{ text-align:center; max-width:520px; margin:0 auto 30px; }
+  .connect-section .eyebrow{ justify-content:center; width:100%; }
+  .link-hub{ display:flex; flex-direction:column; gap:12px; max-width:560px; margin:0 auto; }
+  @media (min-width:640px){
+    .link-hub{ flex-direction:row; flex-wrap:wrap; max-width:none; justify-content:center; }
+    .link-hub .hub-btn{ flex:1 1 250px; max-width:340px; }
+  }
+  .hub-btn{
+    display:flex; align-items:center; gap:14px; width:100%; min-height:52px;
+    padding:13px 18px; border-radius:10px; background:var(--surface);
+    border:1px solid var(--border); color:var(--text); text-decoration:none;
+    transition:transform .12s ease, background .15s ease, border-color .15s ease;
+  }
+  .hub-btn .ic{ flex:0 0 auto; width:26px; height:26px; color:var(--text-dim); }
+  .hub-btn .ic svg{ width:100%; height:100%; }
+  .hub-btn .lbl{ flex:1; min-width:0; }
+  .hub-btn .lbl b{ display:block; font-family:'Oswald',sans-serif; font-size:.92rem; letter-spacing:.02em; text-transform:uppercase; }
+  .hub-btn .lbl small{ display:block; color:var(--text-dim); font-size:.78rem; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hub-btn:active{ transform:scale(.97); background:var(--surface-2); }
+  @media (hover:hover){ .hub-btn:hover{ border-color:var(--text-dim); transform:translateY(-2px); } }
+  .hub-btn.primary{ background:var(--purple); border-color:var(--purple); }
+  .hub-btn.primary .ic{ color:#1a1030; }
+  .hub-btn.primary .lbl b, .hub-btn.primary .lbl small{ color:#1a1030; }
+  .hub-btn.primary:active{ background:var(--purple-deep); }
+
   .tbl-swipe-hint{ display:none; font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.04em; color:var(--text-dim); margin:0 0 8px; }
   @media (max-width:640px){ .tbl-swipe-hint{ display:block; } }
 
@@ -196,6 +225,7 @@
     .stat{ padding:14px; }
     .tier{ padding:14px; }
     .callout, .callout-critical{ padding:13px 14px; }
+    .connect-section{ padding:36px 0 44px; }
   }
 </style>
 </head>
@@ -206,7 +236,7 @@
   <div class="wrap">
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
-      <a class="btn btn-ghost" href="index.html#connect">All Links</a>
+      <a class="btn btn-ghost" href="#connect">All Links</a>
       <a class="btn btn-primary" href="encyclopedia.html#ch13">Full Protocol</a>
     </div>
   </div>
@@ -215,6 +245,7 @@
   <div class="wrap">
     <a class="page-tab" href="index.html">Project 100</a>
     <a class="page-tab" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab current" href="ninja-creami.html">Ninja CREAMi</a>
@@ -226,6 +257,7 @@
     <a href="#formula">BASE FORMULA</a>
     <a href="#flavors">FLAVOR MATRIX</a>
     <a href="#safety">SAFETY</a>
+    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -468,10 +500,46 @@
   </div>
 </section>
 
+<section class="connect-section" id="connect">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;max-width:520px;margin:0 auto 30px;">
+      <span class="eyebrow" style="justify-content:center;">Find Me Everywhere</span>
+      <h2>One Link. Every Channel.</h2>
+      <p>Training logs, live streams, and the full protocol — pick your platform.</p>
+    </div>
+    <div class="link-hub">
+      <a class="hub-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
+        <span class="lbl"><b>Instagram</b><small>@fudge_fit — daily training log</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
+        <span class="lbl"><b>Facebook</b><small>facebook.com/fudge.fit</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
+        <span class="lbl"><b>TikTok</b><small>@bogdan_dospi</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
+        <span class="lbl"><b>Twitch</b><small>Live streams — cyberk1llaTTV</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
+        <span class="lbl"><b>YouTube</b><small>Training series — @FUDGE_fit</small></span>
+      </a>
+      <a class="hub-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
+        <span class="lbl"><b>Gym Playlist 2026</b><small>Open in Spotify</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-fine">Project 100 — The Ninja Creami XL System. Zero sugar. Full protein. Every batch logged.</div>
-    <div class="foot-links"><a href="index.html">Project 100</a> · <a href="encyclopedia.html">Encyclopedia</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="index.html#connect">All Links</a></div>
+    <div class="foot-links"><a href="index.html">Project 100</a> · <a href="encyclopedia.html">Encyclopedia</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="#connect">All Links</a></div>
   </div>
 </footer>
 

@@ -2,15 +2,18 @@
    PROJECT 100 — Standardized Carousel Row System (site-wide)
 
    Used for every photo/video "card gallery" on the site (training
-   log, gear drops, food drops, and any future carousel placement).
-   Rule: max 3 card-holders visible per row, at every screen size.
-   If a row has more cards than fit, that row scrolls horizontally on
-   its own — drag/swipe, its own visible scrollbar, or its own pair
-   of left/right arrow buttons — instead of just wrapping onto a new
-   plain grid row.
+   log / Fit Workout, gear drops, food drops, the homepage "Explore"
+   preview, and any future carousel placement).
+
+   Cards sit COMPACT by default — small footprint, first-view friendly,
+   nothing sprawling — and grow on hover like a magnifying glass
+   (scale up in place, lift above neighbors) without reflowing the row,
+   so the row stays scannable while still surfacing full detail on
+   demand. Each row scrolls horizontally on its own — drag/swipe, its
+   own visible scrollbar, or its own pair of left/right arrow buttons.
 
    Markup contract (see assets/js/carousel.js):
-     <div class="carousel-grid" data-carousel data-carousel-max="3">
+     <div class="carousel-grid" data-carousel data-carousel-max="6">
        ...either flat card elements (auto-chunked into rows by JS)...
        ...or pre-built rows:
        <div class="carousel-wrap">
@@ -21,36 +24,56 @@
      </div>
    =================================================================== */
 
-.carousel-grid{ display:flex; flex-direction:column; gap:22px; }
+.carousel-grid{ display:flex; flex-direction:column; gap:16px; }
 
 .carousel-wrap{ position:relative; }
 
 .carousel-row{
-  display:flex; gap:18px; overflow-x:auto; overflow-y:hidden;
+  display:flex; gap:14px; overflow-x:auto; overflow-y:hidden;
   scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
-  padding-bottom:6px;
+  /* generous top/bottom padding so the hover-magnified card (scale 1.32,
+     see below) has room to grow without its top/bottom edge being cut
+     off by this row's own scroll clipping */
+  padding:58px 6px 40px;
   scrollbar-width:auto; scrollbar-color:var(--red,#e6273f) var(--surface,#16181e);
 }
 .carousel-row::-webkit-scrollbar{ height:9px; }
 .carousel-row::-webkit-scrollbar-track{ background:var(--surface,#16181e); border-radius:5px; }
 .carousel-row::-webkit-scrollbar-thumb{ background:var(--red,#e6273f); border-radius:5px; }
 
-/* Max 3 visible per row on desktop/tablet-wide */
+/* Compact by default — a small, enclosed tile, not a big block — so the
+   first view of a carousel stays short and scannable. */
 .carousel-row > *{
-  flex:0 0 calc((100% - 36px)/3);
+  flex:0 0 168px;
   min-width:0;
   scroll-snap-align:start;
+  position:relative;
+  transform:scale(1);
+  transform-origin:center center;
+  transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease;
+}
+
+/* Magnifying-glass hover: the single card scales up and lifts above its
+   neighbors, in place, revealing full detail — the row itself never
+   reflows or jumps. Desktop/pointer devices only (hover:hover), so touch
+   scrolling on mobile stays untouched. */
+@media (hover:hover) and (pointer:fine){
+  .carousel-row > *:hover{
+    transform:scale(1.32);
+    z-index:40;
+    box-shadow:0 22px 46px rgba(0,0,0,.6);
+  }
 }
 
 .carousel-arrow{
   display:flex; position:absolute; top:50%; transform:translateY(-50%);
-  width:36px; height:36px; border-radius:50%; z-index:5; padding:0;
+  width:34px; height:34px; border-radius:50%; z-index:45; padding:0;
   background:rgba(10,11,13,.82); border:1px solid var(--border,#272b35); color:#fff;
   align-items:center; justify-content:center; cursor:pointer;
   backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
   transition:opacity .15s ease, background .15s ease, border-color .15s ease;
 }
-.carousel-arrow svg{ width:16px; height:16px; }
+.carousel-arrow svg{ width:15px; height:15px; }
 .carousel-arrow.left{ left:2px; }
 .carousel-arrow.right{ right:2px; }
 .carousel-arrow.hidden{ opacity:0; pointer-events:none; }
@@ -58,12 +81,13 @@
   .carousel-arrow:hover{ background:var(--red,#e6273f); border-color:var(--red,#e6273f); }
 }
 
-/* Tablet: ~2 cards visible + a peek of the next */
+/* Tablet: a touch narrower still, keeps 2–3 in view */
 @media (max-width:900px){
-  .carousel-row > *{ flex:0 0 46vw; }
+  .carousel-row > *{ flex:0 0 148px; }
 }
-/* Phone: ~1 card visible + a peek of the next */
+/* Phone: compact single-hand-scroll width; hover effect is inert here
+   anyway (no fine pointer), so no zoom to worry about clipping */
 @media (max-width:480px){
-  .carousel-row{ gap:8px; }
-  .carousel-row > *{ flex:0 0 47vw; }
+  .carousel-row{ gap:10px; padding:6px 4px 16px; }
+  .carousel-row > *{ flex:0 0 42vw; }
 }

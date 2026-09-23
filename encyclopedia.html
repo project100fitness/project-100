@@ -184,6 +184,26 @@
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
 
   footer.deck-foot{border-top:1px solid var(--border-soft);margin-top:24px;padding-top:18px;font-size:.78rem;color:var(--text-faint);font-family:var(--font-mono);}
+
+  /* CONNECT / FIND ME — same link-hub used everywhere on the site, dropped
+     into the deck's final slide so it's always the last thing reached,
+     re-themed to this page's own accent + light/dark tokens. */
+  .connect-block{margin:28px 0 8px;}
+  .connect-block .sec-head{text-align:center;max-width:480px;margin:0 auto 22px;}
+  .connect-block .sec-head h3{font-family:var(--font-display);text-transform:uppercase;font-size:1.15rem;margin:6px 0;color:var(--text);}
+  .connect-block .sec-head p{color:var(--text-dim);font-size:.88rem;margin:0;}
+  .connect-block .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:.68rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;font-weight:600;justify-content:center;width:100%;}
+  .connect-block .eyebrow::before{content:"";width:18px;height:2px;background:var(--accent);display:inline-block;}
+  .link-hub{display:flex;flex-direction:column;gap:9px;max-width:520px;margin:0 auto;}
+  @media(min-width:640px){ .link-hub{flex-direction:row;flex-wrap:wrap;max-width:none;justify-content:center;} .link-hub .hub-btn{flex:1 1 220px;max-width:290px;} }
+  .hub-btn{display:flex;align-items:center;gap:11px;width:100%;min-height:46px;padding:11px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text);text-decoration:none;font-family:var(--font-body);}
+  .hub-btn .ic{flex:0 0 auto;width:22px;height:22px;color:var(--text-dim);}
+  .hub-btn .ic svg{width:100%;height:100%;}
+  .hub-btn .lbl{flex:1;min-width:0;}
+  .hub-btn .lbl b{display:block;font-family:var(--font-display);font-size:.8rem;letter-spacing:.02em;text-transform:uppercase;}
+  .hub-btn .lbl small{display:block;color:var(--text-dim);font-size:.7rem;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .hub-btn.primary{background:var(--accent);border-color:var(--accent);}
+  .hub-btn.primary .ic,.hub-btn.primary .lbl b,.hub-btn.primary .lbl small{color:var(--accent-ink);}
   footer.deck-foot a{color:var(--text-dim);}
 
   /* mobile compaction */
@@ -207,7 +227,7 @@
   <div class="wrap">
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
-      <a class="btn" href="index.html#connect">All Links</a>
+      <a class="btn" href="#s-recap" id="connectBtn">All Links</a>
       <a class="btn btn-primary" href="index.html">Back to Project 100</a>
     </div>
   </div>
@@ -216,6 +236,7 @@
   <div class="wrap">
     <a class="page-tab" href="index.html">Project 100</a>
     <a class="page-tab current" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
@@ -532,9 +553,44 @@
         <div class="stat-tile"><div class="k">FFMI</div><div class="v">23.86<span class="arrow">→</span><span class="tgt">25.71</span></div></div>
       </div>
       <p style="color:var(--text-dim);font-size:.92rem;max-width:60ch;">Want the full unabridged reference — every protocol, every table, every audit note? <a href="encyclopedia-archive.html">Open the Full Technical Archive ↗</a></p>
+
+      <div class="connect-block" id="connect">
+        <div class="sec-head">
+          <span class="eyebrow">Find Me Everywhere</span>
+          <h3>One Link. Every Channel.</h3>
+          <p>Training logs, live streams, and the full protocol — pick your platform.</p>
+        </div>
+        <div class="link-hub">
+          <a class="hub-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
+            <span class="lbl"><b>Instagram</b><small>@fudge_fit</small></span>
+          </a>
+          <a class="hub-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
+            <span class="lbl"><b>Facebook</b><small>facebook.com/fudge.fit</small></span>
+          </a>
+          <a class="hub-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
+            <span class="lbl"><b>TikTok</b><small>@bogdan_dospi</small></span>
+          </a>
+          <a class="hub-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
+            <span class="lbl"><b>Twitch</b><small>cyberk1llaTTV</small></span>
+          </a>
+          <a class="hub-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
+            <span class="lbl"><b>YouTube</b><small>@FUDGE_fit</small></span>
+          </a>
+          <a class="hub-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
+            <span class="lbl"><b>Gym Playlist 2026</b><small>Open in Spotify</small></span>
+          </a>
+        </div>
+      </div>
+
       <footer class="deck-foot">
         Project 100 — Protocol Deck · Version-Truth-Audited Edition · Condensed from the full Jan–Aug 2026 source archive · Last reconciled September 17, 2026
-        <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="encyclopedia-archive.html">Full Archive</a></div>
+        <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-workout.html">Fit Workout</a> · <a href="fit-food.html">Fit Food</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="encyclopedia-archive.html">Full Archive</a></div>
       </footer>
     </div>
   </section>
@@ -605,6 +661,18 @@
   function goTo(slide){
     if(!slide) return;
     slide.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // "All Links" nav button jumps straight to the Find Me block inside the
+  // deck's final slide, instead of a bare hash that can't scroll an
+  // internally-scrolling deck.
+  var connectBtn = document.getElementById('connectBtn');
+  if(connectBtn){
+    connectBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      goTo(document.getElementById('s-recap'));
+      closeDrawer();
+    });
   }
 
   [drawerNav, dotNav].forEach(function(container){

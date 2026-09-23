@@ -96,26 +96,46 @@
   .log-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
   .log-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
   .log-tag{
-    position:absolute; top:10px; left:10px; font-size:.68rem; font-weight:700; letter-spacing:.06em;
-    text-transform:uppercase; padding:5px 10px; border-radius:100px; backdrop-filter:blur(6px);
+    position:absolute; top:6px; left:6px; font-size:.58rem; font-weight:700; letter-spacing:.05em;
+    text-transform:uppercase; padding:4px 8px; border-radius:100px; backdrop-filter:blur(6px);
     background:rgba(230,39,63,.85); color:#fff;
   }
-  .log-body{ padding:14px 16px 16px; flex:1; display:flex; flex-direction:column; }
-  .log-body .date{ font-size:.7rem; color:var(--text-dim); letter-spacing:.06em; text-transform:uppercase; font-weight:700; }
-  .log-body h4{ font-family:'Oswald',sans-serif; font-size:.96rem; margin:7px 0 9px; line-height:1.25; text-transform:none; letter-spacing:0; }
-  .log-body .stats{ margin-top:auto; display:flex; gap:14px; color:var(--text-dim); font-size:.78rem; padding-top:8px; }
-  .log-body .watch{ margin-top:10px; font-size:.76rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:6px; }
-  @media (max-width:480px){
-    .log-body{ padding:9px 10px 11px; }
-    .log-body .date{ font-size:.6rem; }
-    .log-body h4{ font-size:.78rem; margin:5px 0 6px; line-height:1.22; }
-    .log-body .stats{ font-size:.66rem; gap:8px; padding-top:6px; }
-    .log-body .watch{ font-size:.66rem; margin-top:6px; gap:4px; }
-    .log-tag{ font-size:.58rem; padding:4px 8px; top:6px; left:6px; }
-  }
+  .log-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
+  .log-body .date{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
+  .log-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
+  .log-body .stats{ margin-top:auto; display:flex; gap:8px; color:var(--text-dim); font-size:.66rem; padding-top:6px; }
+  .log-body .watch{ margin-top:6px; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
 
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
+
+  /* CONNECT / FIND ME — identical block on every page, always the last
+     section before the footer. */
+  .connect-section{ padding:52px 0 60px; border-top:1px solid var(--border); }
+  .connect-section .sec-head{ text-align:center; max-width:520px; margin:0 auto 30px; }
+  .connect-section .eyebrow{ justify-content:center; width:100%; }
+  .link-hub{ display:flex; flex-direction:column; gap:12px; max-width:560px; margin:0 auto; }
+  @media (min-width:640px){
+    .link-hub{ flex-direction:row; flex-wrap:wrap; max-width:none; justify-content:center; }
+    .link-hub .hub-btn{ flex:1 1 250px; max-width:340px; }
+  }
+  .hub-btn{
+    display:flex; align-items:center; gap:14px; width:100%; min-height:52px;
+    padding:13px 18px; border-radius:10px; background:var(--surface);
+    border:1px solid var(--border); color:var(--text); text-decoration:none;
+    transition:transform .12s ease, background .15s ease, border-color .15s ease;
+  }
+  .hub-btn .ic{ flex:0 0 auto; width:26px; height:26px; color:var(--text-dim); }
+  .hub-btn .ic svg{ width:100%; height:100%; }
+  .hub-btn .lbl{ flex:1; min-width:0; }
+  .hub-btn .lbl b{ display:block; font-family:'Oswald',sans-serif; font-size:.92rem; letter-spacing:.02em; text-transform:uppercase; }
+  .hub-btn .lbl small{ display:block; color:var(--text-dim); font-size:.78rem; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .hub-btn:active{ transform:scale(.97); background:var(--surface-2); }
+  @media (hover:hover){ .hub-btn:hover{ border-color:var(--text-dim); transform:translateY(-2px); } }
+  .hub-btn.primary{ background:var(--red); border-color:var(--red-dim); }
+  .hub-btn.primary .ic{ color:#fff; }
+  .hub-btn.primary .lbl small{ color:rgba(255,255,255,.78); }
+  .hub-btn.primary:active{ background:var(--red-dim); }
 
   /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
   @media (max-width:640px){
@@ -139,7 +159,7 @@
     .reels-blk{ padding:36px 0 44px; }
     .reels-blk .sec-head{ margin-bottom:20px; }
     .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
-    .log-body{ padding:12px 14px 14px; }
+    .connect-section{ padding:36px 0 44px; }
   }
 </style>
 </head>
@@ -150,7 +170,7 @@
   <div class="wrap">
     <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
     <div class="navcta">
-      <a class="btn btn-ghost" href="index.html#connect">All Links</a>
+      <a class="btn btn-ghost" href="#connect">All Links</a>
       <a class="btn btn-primary" href="encyclopedia.html">Full Protocol</a>
     </div>
   </div>
@@ -159,6 +179,7 @@
   <div class="wrap">
     <a class="page-tab" href="index.html">Project 100</a>
     <a class="page-tab" href="encyclopedia.html">Encyclopedia</a>
+    <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-food.html">Fit Food</a>
     <a class="page-tab current" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
@@ -168,6 +189,7 @@
   <div class="wrap">
     <a href="#top">OVERVIEW</a>
     <a href="#reels">GYM PHOTOS</a>
+    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -211,6 +233,42 @@
       <a class="log-card" href="https://www.instagram.com/p/DbDf9sSnAzR/" target="_blank" rel="noopener">
         <div class="log-media"><img src="assets/img/story-2.jpg" alt="Chest & Triceps" loading="lazy"><span class="log-tag">Gym Photo</span></div>
         <div class="log-body"><div class="date">Jul 21, 2026</div><h4>Chest &amp; Triceps</h4><div class="stats"><span>♥ 20</span><span>💬 0</span></div><div class="watch">▶ View on Instagram</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="connect-section" id="connect">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Find Me Everywhere</span>
+      <h2>One Link. Every Channel.</h2>
+      <p>Training logs, live streams, and the full protocol — pick your platform.</p>
+    </div>
+    <div class="link-hub">
+      <a class="hub-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
+        <span class="lbl"><b>Instagram</b><small>@fudge_fit — daily training log</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
+        <span class="lbl"><b>Facebook</b><small>facebook.com/fudge.fit</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
+        <span class="lbl"><b>TikTok</b><small>@bogdan_dospi</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
+        <span class="lbl"><b>Twitch</b><small>Live streams — cyberk1llaTTV</small></span>
+      </a>
+      <a class="hub-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
+        <span class="lbl"><b>YouTube</b><small>Training series — @FUDGE_fit</small></span>
+      </a>
+      <a class="hub-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
+        <span class="lbl"><b>Gym Playlist 2026</b><small>Open in Spotify</small></span>
       </a>
     </div>
   </div>
