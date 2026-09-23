@@ -48,6 +48,13 @@
   .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
   .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; border:1px solid #272b35; white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
   .page-tab.current{ background:#e6273f; border-color:#e6273f; color:#fff; }
+  .page-tab .lc-i{text-transform:lowercase;}
+  .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
+  .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
+  @media (hover:hover){
+    .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
+    .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
+  }
   @media (hover:hover){ .page-tab:not(.current):hover{ border-color:#9aa1b0; color:#fff; } }
 
   /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
@@ -233,13 +240,13 @@
 </nav>
 <nav class="page-tabs" aria-label="Project 100 pages">
   <div class="wrap">
-    <a class="page-tab" href="index.html">Project 100</a>
+    <a class="page-tab tab-home" href="index.html">Project 100</a>
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="fit-shop.html">Fit Shop</a>
-    <a class="page-tab current" href="ninja-creami.html">Ninja CREAMi</a>
+    <a class="page-tab tab-creami current" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
 <nav class="cat-tabs" aria-label="Section jump links">

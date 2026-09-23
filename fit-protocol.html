@@ -67,6 +67,14 @@
   .page-tabs .wrap{display:flex;gap:8px;padding:10px 20px;}
   .page-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;border:1px solid #272b35;white-space:nowrap;}
   .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
+  .page-tab .lc-i{text-transform:lowercase;}
+  .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
+  .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
+  @media (hover:hover){
+    .page-tab:not(.current):hover{border-color:var(--text-dim,#9aa1b0);color:var(--text,#eef0f4);}
+    .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
+    .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
+  }
 
   /* ============ DECK TOOLBAR (this page's own controls — same box model as .cat-tabs on the other pages) ============ */
   .deckbar{display:flex;align-items:center;gap:10px;padding:9px 20px;background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);}
@@ -135,6 +143,19 @@
   .info-card .ic-body{font-size:.87rem;color:var(--text-dim);line-height:1.5;}
   .info-card .ic-body b{color:var(--text);}
   .info-card .ic-meta{margin-top:10px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);border-top:1px solid var(--border-soft);padding-top:8px;}
+
+  /* full vector detail blocks: payload + mechanisms + firewall */
+  .vector-full{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
+  .vector-full .vf-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 10px;}
+  .vector-full .vf-name{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.01em;}
+  .vector-full .vf-time{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--accent);white-space:nowrap;}
+  .vector-full .vf-scope{font-size:.82rem;color:var(--text-faint);font-style:italic;margin:4px 0 12px;}
+  .vector-full .vf-label{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin:0 0 6px;}
+  .vector-full .vf-list{font-size:.85rem;color:var(--text-dim);line-height:1.55;margin:0 0 12px;padding-left:18px;}
+  .vector-full .vf-list:last-child{margin-bottom:0;}
+  .vector-full .vf-list li b{color:var(--text);}
+  .vector-full .vf-firewall{border-top:1px dashed var(--border-soft);padding-top:10px;margin-top:2px;}
+  .vector-full .vf-firewall .vf-label{color:var(--bad);}
 
   /* stat strip */
   .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
@@ -236,13 +257,13 @@
 </nav>
 <nav class="page-tabs" aria-label="Project 100 pages">
   <div class="wrap">
-    <a class="page-tab" href="index.html">Project 100</a>
+    <a class="page-tab tab-home" href="index.html">Project 100</a>
     <a class="page-tab current" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
     <a class="page-tab" href="fit-gear.html">Fit Gear</a>
     <a class="page-tab" href="fit-shop.html">Fit Shop</a>
-    <a class="page-tab" href="ninja-creami.html">Ninja CREAMi</a>
+    <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
 <div class="deckbar">
@@ -325,7 +346,7 @@
   </section>
 
   <!-- 03 NUMBERS -->
-  <section class="slide" id="s-numbers" data-title="The Metric Analysis" data-group="The Protocol">
+  <section class="slide" id="s-numbers" data-title="The Metric Analysis" data-group="Baseline & Constraints">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">03</span>Ground Truth</div>
       <h2 class="slide-title">The Metric Analysis — The "212" Standard</h2>
@@ -347,7 +368,7 @@
   </section>
 
   <!-- 04 LOCKS -->
-  <section class="slide" id="s-locks" data-title="The Hardware Locks" data-group="The Protocol">
+  <section class="slide" id="s-locks" data-title="The Hardware Locks" data-group="Baseline & Constraints">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">04</span>Permanent Constraints</div>
       <h2 class="slide-title">The Medical Patches — Hardware Locks</h2>
@@ -363,7 +384,7 @@
   </section>
 
   <!-- 05 CLOCK -->
-  <section class="slide" id="s-clock" data-title="The Master Chronometer" data-group="The Protocol">
+  <section class="slide" id="s-clock" data-title="The Master Chronometer" data-group="Timing & Fuel">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">05</span>Timed To The Minute</div>
       <h2 class="slide-title">The Master Chronometer</h2>
@@ -387,7 +408,7 @@
   </section>
 
   <!-- 06 ARSENAL -->
-  <section class="slide" id="s-arsenal" data-title="The Molecular Arsenal" data-group="The Protocol">
+  <section class="slide" id="s-arsenal" data-title="The Molecular Arsenal" data-group="Timing & Fuel">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">06</span>Supplement Taxonomy</div>
       <h2 class="slide-title">The Molecular Arsenal</h2>
@@ -403,7 +424,7 @@
   </section>
 
   <!-- 07 FUEL -->
-  <section class="slide" id="s-fuel" data-title="The Solid Fuel Codex" data-group="The Protocol">
+  <section class="slide" id="s-fuel" data-title="The Solid Fuel Codex" data-group="Timing & Fuel">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">07</span>Fat-Corrected</div>
       <h2 class="slide-title">The Solid Fuel Codex</h2>
@@ -425,7 +446,7 @@
   </section>
 
   <!-- 08 VECTORS -->
-  <section class="slide" id="s-vectors" data-title="The Vector Protocols" data-group="The Protocol">
+  <section class="slide" id="s-vectors" data-title="The Vector Protocols" data-group="Timing & Fuel">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery</div>
       <h2 class="slide-title">The Vector Protocols</h2>
@@ -440,11 +461,203 @@
         <div class="pill"><span class="t">20:30 · V10</span><b>Shutdown Slurry</b></div>
       </div>
       <div class="focus-point focus-point--gold"><span class="fp-tag">Why HCL, Not Monohydrate</span><p>HCL dissolves more completely and needs less fluid. Split across three daily pulses (V4, V5, V10) instead of one dose.</p></div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 3 — Recovery</span><span class="vf-time">06:30 AM</span></div>
+        <p class="vf-scope">Scope: Fasted Awakening &amp; Connective Tissue Scaffolding</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>1x Scoop Carnivor Beef Protein Isolate</li>
+          <li>1x Scoop Hydrolyzed Marine Collagen Peptides</li>
+          <li>5g Gelatinized Black Maca Root Powder</li>
+          <li>15ml Liquid L-Carnitine 1500 (Blue Raspberry)</li>
+          <li>Standalone flush: 30ml NAKA VitaGreens, separate glass</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>Fasted MPS Trigger</b> — hydrolyzed beef peptides instantly halt overnight muscle catabolism.</li>
+          <li><b>Fascial Masonry</b> — Type I collagen peptides supply hydroxyproline to rebuild tendons and L4–S1 disc fascia.</li>
+          <li><b>Mitochondrial Lipid Shuttle</b> — L-Carnitine primes CPT-1 to oxidize fatty acids for fuel while sparing glycogen.</li>
+          <li><b>Endocrine Stability</b> — black maca modulates the HPA axis to buffer morning cortisol spikes.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Green Extraction Firewall</b> — VitaGreens isolated to a separate water flush post-shake so plant fiber and phytic acid can't bind free collagen peptides.</li>
+            <li><b>Zero Nitrates / Zero Lipids</b> — 0g dietary fat for smooth GI transit without a gallbladder bile dump.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 1 — Ignition</span><span class="vf-time">07:00 AM</span></div>
+        <p class="vf-scope">Scope: Maximal CNS Arousal &amp; Endothelial NO Priming</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>2x Scoops Impact Igniter Xtreme 2.0</li>
+          <li>1x Scoop ALLMAX MuscleEAA Matrix</li>
+          <li>1x Scoop PeakO2 Adaptogenic Matrix</li>
+          <li>2,500mg Betaine Anhydrous Osmolyte</li>
+          <li>6.0g ALLMAX Citrulline Malate 2:1</li>
+          <li>2,000mg ALLMAX Taurine Powder</li>
+          <li>250mg AOR Xerenoos Citicoline</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>eNOS Arterial Dilation</b> — mega-dose citrulline floods plasma arginine for continuous pump.</li>
+          <li><b>Cellular Oxygenation</b> — PeakO2 elevates VO2 max and anaerobic capacity under heavy loads.</li>
+          <li><b>Neuromuscular Ignition</b> — citicoline fuels acetylcholine firing; betaine induces fluid swelling.</li>
+          <li><b>Plasma Amino Flood</b> — saturates the bloodstream with all 9 EAAs prior to mechanical strain.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Zero Creatine Firewall</b> — strictly 0g Creatine HCL here to eliminate vasoconstriction and protect capillary blood flow.</li>
+            <li><b>Bile-Independent Transit</b> — low-viscosity fluid clears the duodenum rapidly without requiring gallbladder bile.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 2 — Refuel</span><span class="vf-time">09:30 AM · T+2h</span></div>
+        <p class="vf-scope">Scope: Intra-Workout Glycogen Drip &amp; Motor Unit Preservation</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>1x Scoop Perfect Sports BCAA HyperClear (Blue Raspberry)</li>
+          <li>1x Serving Clean Electrolyte Complex (Sodium/Potassium)</li>
+          <li>1/16 tsp Pink Himalayan Salt</li>
+          <li>2–3 Whole Organic Medjool Dates</li>
+          <li>600–750ml Cold Filtered Water Base</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>SGLT1 Cotransport</b> — date glucose paired with sodium drives rapid cellular water and amino uptake.</li>
+          <li><b>GLUT5 Hepatic Replenishment</b> — fruit fructose restores liver glycogen to blunt CNS fatigue.</li>
+          <li><b>mTORC1 Resynthesis</b> — free-form leucine halts intra-workout muscle protein breakdown.</li>
+          <li><b>Membrane Re-Polarization</b> — potassium and sodium restore muscular contraction velocity.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Biphasic T+2h Timing</b> — scheduled at hour 2 to blunt cortisol spikes and sustain blood glucose.</li>
+            <li><b>Zero Lipid Acceleration</b> — 0g dietary fats guarantee instant gastric transit with no bile dependency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 4 — Reload</span><span class="vf-time">10:30 AM</span></div>
+        <p class="vf-scope">Scope: Post-Workout Insulin Bridge &amp; Nitric Oxide Shuttling</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>0.5x Scoop BioSteel Sports Hydration / Protein</li>
+          <li>1x Scoop (7g) Pure Organic Beetroot Powder</li>
+          <li>750mg Proline Creatine HCL (Pulse 1)</li>
+          <li>1/16 tsp Pink Himalayan Salt</li>
+          <li>Standalone oral dose: 1x Capsule R-ALA (300mg)</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>Endothelial Extension</b> — beetroot nitrates sustain 3-hour post-workout microvascular blood flow.</li>
+          <li><b>SLC6A8 Symporter</b> — pink salt sodium gradient forces creatine into depleted myofibrils.</li>
+          <li><b>GLUT4 Translocation</b> — R-ALA primes cellular insulin receptors 45 minutes pre-meal.</li>
+          <li><b>Rapid ATP Resynthesis</b> — micro-dosed Creatine HCL restores cellular phosphocreatine pools.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>R-ALA Polymerization Firewall</b> — never mix R-ALA into liquid; water and minerals cause ring degradation. Swallow dry.</li>
+            <li><b>Sodium Gradient</b> — trace sodium powers active creatine transport without gastric distress.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 5 — Transport</span><span class="vf-time">16:30 PM</span></div>
+        <p class="vf-scope">Scope: Intracellular Osmotic Volumization &amp; Connective Tissue Priming</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>750mg Proline Creatine HCL (Micro-Dose Pulse 2)</li>
+          <li>1x Scoop Hydrolyzed Marine Collagen Peptides</li>
+          <li>15ml ALLMAX Liquid L-Carnitine 1500 (Blue Raspberry)</li>
+          <li>1/16 tsp Pink Himalayan Salt</li>
+          <li>Cold Filtered Water Base</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>Intramyocellular Swelling</b> — the second creatine pulse sustains phosphocreatine pool saturation for non-stop cell hydration.</li>
+          <li><b>Fascial Remodeling Wave</b> — Type I collagen peptides supply circulating hydroxyproline to L4–S1 disc and ulnar sheath recovery.</li>
+          <li><b>Mitochondrial Lipid Shuttle</b> — L-Carnitine upregulates CPT-1 for clean energy production without stimulants.</li>
+          <li><b>Osmotic Hydraulic Drive</b> — the sodium-driven extracellular gradient pulls water into myofibrils to trigger hypertrophy.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Iron Lock Firewall</b> — hardlocked exactly 60 minutes post-Meal 3 to avoid competing with heme-iron or copper at DMT1 transporters.</li>
+            <li><b>Stimulant-Free / SLC6A8 Coupling</b> — 0mg caffeine; trace sodium powers the sodium-dependent creatine transporter without fluid retention.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 2 — Pump Shaker</span><span class="vf-time">19:30 PM</span></div>
+        <p class="vf-scope">Scope: Non-Stim Mechanical Hyperemia &amp; Hydraulic Fascial Stretch</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>1x Scoop ALLMAX Impact Pump Powder (Non-Stimulant)</li>
+          <li>1x Scoop Perfect Sports BCAA HyperClear</li>
+          <li>1x Scoop PeakO2 Adaptogenic Matrix</li>
+          <li>Cold Filtered Water Base</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>Hydraulic Fascial Expansion</b> — stimulant-free nitric oxide pathway expands localized blood volume during band loading.</li>
+          <li><b>Hypoxic Buffering</b> — PeakO2 optimizes cellular oxygen uptake under continuous variable tension.</li>
+          <li><b>Anti-Catabolic Preservation</b> — circulating BCAAs sustain nitrogen balance during evening sets.</li>
+          <li><b>Neural Sparing</b> — delivers deep muscular fullness without central nervous system stress.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Zero Sodium Firewall</b> — strictly 0mg added salt to protect nighttime blood pressure and prevent fluid retention.</li>
+            <li><b>Zero Stimulant Shield</b> — 100% caffeine-free to preserve nocturnal melatonin production and sleep architecture.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vector-full">
+        <div class="vf-head"><span class="vf-name">Vector 10 — Shutdown Slurry</span><span class="vf-time">20:30 PM</span></div>
+        <p class="vf-scope">Scope: Thermal Down-Regulation, Mucosal Sealing &amp; Spinal Unclamp</p>
+        <div class="vf-label">Payload Matrix</div>
+        <ul class="vf-list">
+          <li>800ml Hot Hibiscus Tisane Solvent (brewed strictly 60–65°C)</li>
+          <li>1x Scoop Medi-C Plus (2,000mg Vitamin C + 1,300mg L-Lysine)</li>
+          <li>750mg Proline Creatine HCL (Pulse 3)</li>
+          <li>5g Fermented L-Glutamine Gut Barrier Powder</li>
+          <li>1x Scoop Niyama Hey Relax Sleep Support Powder</li>
+          <li>1.0x Scoop BioSteel Sports Electrolyte Powder</li>
+        </ul>
+        <div class="vf-label">Biological Mechanisms</div>
+        <ul class="vf-list">
+          <li><b>Vascular Relaxation</b> — hibiscus anthocyanins inhibit ACE enzymes to lower systemic blood pressure.</li>
+          <li><b>Enterocyte Regeneration</b> — fermented glutamine seals gut tight junctions and the intestinal mucosal lining.</li>
+          <li><b>Solvent Drag Acceleration</b> — creatine HCL and electrolytes drive aminos into cells for deep fascial remodeling.</li>
+          <li><b>Neuromuscular Unclamping</b> — magnesium bisglycinate delivers NMDA antagonism to release paraspinal guarding on the L4–S1 disc.</li>
+        </ul>
+        <div class="vf-firewall">
+          <div class="vf-label">Pharmacokinetic Firewall</div>
+          <ul class="vf-list">
+            <li><b>Thermal Solvent Rule (60–65°C)</b> — under 60°C congeals upcoming casein fats ("cement gut"); over 65°C denatures ascorbic acid and glutamine.</li>
+            <li><b>Zero Prebiotic Fiber Lock</b> — never mix psyllium or acacia into the hot slurry; heat turns fiber into a dense gel that traps active aminos.</li>
+            <li><b>Nocturnal GH Release</b> — enforces a three-hour digestive clearance gap so nighttime growth hormone can peak uninhibited.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- 09 TRAINING -->
-  <section class="slide" id="s-training" data-title="The Training Scripture" data-group="The Protocol">
+  <section class="slide" id="s-training" data-title="The Training Scripture" data-group="Training & Progression">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">09</span>Biomechanical Engineering</div>
       <h2 class="slide-title">The Training Scripture</h2>
@@ -461,7 +674,7 @@
   </section>
 
   <!-- 10 ROADMAP -->
-  <section class="slide" id="s-roadmap" data-title="The 12-Month Roadmap" data-group="The Protocol">
+  <section class="slide" id="s-roadmap" data-title="The 12-Month Roadmap" data-group="Training & Progression">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">10</span>12 Months</div>
       <h2 class="slide-title">The 12-Month Excavation Roadmap</h2>
@@ -476,7 +689,7 @@
   </section>
 
   <!-- 11 FAILURES -->
-  <section class="slide" id="s-failures" data-title="The Failure Matrix" data-group="The Protocol">
+  <section class="slide" id="s-failures" data-title="The Failure Matrix" data-group="Troubleshooting & Reference">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">11</span>Check Engine Light</div>
       <h2 class="slide-title">The Failure Analysis Matrix</h2>
@@ -496,7 +709,7 @@
   </section>
 
   <!-- 12 ANNEXES -->
-  <section class="slide" id="s-annexes" data-title="Field Annexes" data-group="The Protocol">
+  <section class="slide" id="s-annexes" data-title="Field Annexes" data-group="Troubleshooting & Reference">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">12</span>Operational Annexes</div>
       <h2 class="slide-title">Field Reference Annexes</h2>
@@ -512,7 +725,7 @@
   </section>
 
   <!-- 13 BUDGET -->
-  <section class="slide" id="s-budget" data-title="The Fiscal Audit" data-group="The Protocol">
+  <section class="slide" id="s-budget" data-title="The Fiscal Audit" data-group="Troubleshooting & Reference">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">13</span>Fiscal Forensic Audit</div>
       <h2 class="slide-title">Priced Like Everything Else</h2>
@@ -529,7 +742,7 @@
   </section>
 
   <!-- 14 CREAMI -->
-  <section class="slide" id="s-creami" data-title="Ninja Creami XL" data-group="The Protocol">
+  <section class="slide" id="s-creami" data-title="Ninja Creami XL" data-group="Troubleshooting & Reference">
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">14</span><span class="tag new">New Chapter</span></div>
       <h2 class="slide-title">The Ninja Creami XL System</h2>
@@ -800,14 +1013,24 @@
       pickActive();
     }
   }
+  // Single scroll handler doing both jobs. Combining the horizontal-scroll
+  // correction and the reveal debounce into ONE listener (instead of two
+  // separate ones) matters: our own corrective "scrollLeft = 0" write fires
+  // its own scroll event, and a second independent listener would treat
+  // that as a fresh user scroll, re-arming its 120ms debounce timer over
+  // and over — starving revealCentered() from ever getting a quiet enough
+  // moment to fire when the horizontal glitch and a slide change happen
+  // close together. The ignoreNextScroll flag stops that self-triggered
+  // event from re-arming the debounce.
+  var ignoreNextScroll = false;
   deck.addEventListener('scroll', function(){
+    if(ignoreNextScroll){ ignoreNextScroll = false; return; }
+    if(deck.scrollLeft !== 0){
+      ignoreNextScroll = true;
+      deck.scrollLeft = 0;
+    }
     if(settleTimer) clearTimeout(settleTimer);
     settleTimer = setTimeout(revealCentered, 120);
-  }, { passive: true });
-  // also reset any stray horizontal scroll position picked up from a
-  // diagonal swipe, so text never sits clipped against the left edge
-  deck.addEventListener('scroll', function(){
-    if(deck.scrollLeft !== 0) deck.scrollLeft = 0;
   }, { passive: true });
   revealCentered();
 
