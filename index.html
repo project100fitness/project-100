@@ -77,7 +77,7 @@
   }
   .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
   @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); } }
-  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
+  #nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
   .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text); text-transform:uppercase;}
   .brand b{ color:var(--red); }
   .navcta{ display:flex; gap:10px; }
@@ -444,7 +444,7 @@
   /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
   @media (max-width:640px){
     .wrap{ padding:0 14px; }
-    nav .wrap{ padding:10px 14px; }
+    #nav .wrap{ padding:10px 14px; }
     .brand{ font-size:.92rem; }
     .navcta{ gap:6px; }
     .navcta .btn{ padding:7px 12px; font-size:.72rem; }
