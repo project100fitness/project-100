@@ -202,6 +202,10 @@
     border:1px solid var(--border); border-radius:14px; padding:24px 26px;
     display:flex; align-items:center; gap:24px; flex-wrap:wrap;
   }
+  .anomaly .badge-patch{
+    flex:0 0 auto; width:78px; height:78px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--gold); box-shadow:0 6px 18px rgba(232,182,76,.25);
+  }
   .anomaly .big{ font-family:'Oswald',sans-serif; font-size:2.8rem; color:var(--red); line-height:1; }
   .anomaly .txt{ color:var(--text-dim); max-width:520px; font-size:.94rem; }
   .anomaly .txt b{ color:var(--text); }
@@ -371,6 +375,7 @@
     .sec-head h2{ font-size:clamp(1.5rem, 6.5vw, 2rem); margin-top:6px; }
     .stat-card{ padding:18px 16px; }
     .phase{ padding:18px 16px; }
+    .anomaly .badge-patch{ width:58px; height:58px; }
   }
 </style>
 </head>
@@ -502,6 +507,7 @@
     </div>
 
     <div class="anomaly">
+      <img class="badge-patch zoomable" src="assets/img/smm-badge.png" alt="Project 100 skeletal-muscle-mass milestone patch, from the encyclopedia archive">
       <div class="big">+<span class="stat-num" data-count-to="35" data-suffix=" lbs">0 lbs</span></div>
       <div class="txt">The average 5'7" male carries ~64–68 lbs of skeletal muscle mass. At 88.2 lbs, that's already <b>+20 lbs over the population average</b> — top 1%. At the 100 lb target, it's <b>+35 lbs over baseline</b>: the physiological territory of the professional IFBB 212 division.</div>
     </div>

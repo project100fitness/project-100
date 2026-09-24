@@ -157,6 +157,30 @@
   .shop-body .note{ color:var(--text-dim); font-size:.72rem; margin:0 0 8px; }
   .shop-body .watch{ margin-top:auto; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
 
+  /* THE ARMORY — real gear database, pulled from the Project 100 visual
+     recognition manifest. A photo pair up top (the actual rig), then a
+     categorized spec list below — name, capacity/spec, what it's for. */
+  .armory-blk{ padding:56px 0 20px; }
+  .armory-blk .sec-head{ max-width:680px; margin-bottom:26px; }
+  .armory-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .armory-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+  .armory-photos{ display:grid; grid-template-columns:1.3fr 1fr; gap:14px; margin-bottom:34px; }
+  .armory-photos .ap-shot{ position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--border); aspect-ratio:4/3; background:#000; }
+  .armory-photos .ap-shot img{ width:100%; height:100%; object-fit:cover; }
+  .armory-photos .ap-cap{ position:absolute; left:0; right:0; bottom:0; padding:10px 12px; background:linear-gradient(0deg,rgba(0,0,0,.82),transparent); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; }
+  @media (max-width:640px){ .armory-photos{ grid-template-columns:1fr; } }
+  .armory-groups{ display:grid; gap:22px; }
+  .armory-group{ background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; padding:20px 22px; }
+  .armory-group h3{ font-size:.86rem; letter-spacing:.08em; color:var(--gold); margin:0 0 14px; display:flex; align-items:center; gap:8px; }
+  .armory-group h3::before{ content:""; width:16px; height:2px; background:var(--gold); display:inline-block; }
+  .armory-list{ display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
+  .armory-item{ padding:12px 0; border-top:1px solid var(--border); }
+  .armory-list .armory-item:nth-child(-n+2){ border-top:none; }
+  @media (max-width:640px){ .armory-list{ grid-template-columns:1fr; } .armory-list .armory-item:nth-child(-n+2){ border-top:1px solid var(--border); } .armory-list .armory-item:first-child{ border-top:none; } }
+  .armory-item .ai-name{ font-family:'Oswald',sans-serif; font-size:.86rem; font-weight:700; letter-spacing:.01em; text-transform:uppercase; color:var(--text); }
+  .armory-item .ai-spec{ display:inline-block; margin-left:8px; font-size:.64rem; font-weight:700; letter-spacing:.04em; color:var(--cyan); background:rgba(63,215,208,.12); border:1px solid rgba(63,215,208,.3); padding:2px 8px; border-radius:100px; vertical-align:middle; }
+  .armory-item p{ margin:6px 0 0; color:var(--text-dim); font-size:.82rem; line-height:1.5; }
+
   /* GUIDE BOOK CTA — one strong block linking to Fit Protocol / a purchase link */
   .guide-blk{ padding:36px 0 56px; }
   .guide-card{
@@ -226,6 +250,7 @@
 <nav class="cat-tabs" aria-label="Section jump links">
   <div class="wrap">
     <a href="#top">OVERVIEW</a>
+    <a href="#armory">THE ARMORY</a>
     <a href="#reels">GYM PHOTOS</a>
     <a href="#for-sale">FOR SALE</a>
     <a href="#guide">GUIDE BOOK</a>
@@ -235,10 +260,10 @@
 
 <section class="placeholder-hero" id="top">
   <div class="wrap">
-    <span class="tag">Under Construction</span>
+    <span class="tag">The Real Setup</span>
     <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Rig &amp; The Shop</span>
     <h1>Real Gear.<br><span>Real Setup. Real Prices.</span></h1>
-    <p>The actual equipment database — racks, bands, plyo boxes — plus gear I&#8217;ve retired, sold direct, and purchase links for the Fit Protocol guide book. One page, being built now.</p>
+    <p>The actual equipment database — racks, bands, handles, harnesses — plus gear I&#8217;ve retired, sold direct, and purchase links for the Fit Protocol guide book.</p>
     <div class="placeholder-ctas">
       <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
@@ -249,9 +274,68 @@
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
   <div class="focus-point">
     <span class="fp-tag">The Physics Behind It</span>
-    <p>Fit Gear and Fit Shop now live together here, one page instead of two nav tabs. The full gear database is still being built — the short version, straight from Fit Protocol: 360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout, matching the human strength curve instead of fighting it. The listings below are placeholder scaffolds, not real inventory yet.</p>
+    <p>360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout, matching the human strength curve instead of fighting it. The full rig database is below — the used-gear listings and guide book are still being built.</p>
   </div>
 </div>
+
+<section class="armory-blk" id="armory">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Real Inventory</span>
+      <h2>The Armory</h2>
+      <p>The actual rig, band-by-band and handle-by-handle — straight from the Project 100 equipment manifest, not stock photos.</p>
+    </div>
+
+    <div class="armory-photos">
+      <div class="ap-shot"><img src="assets/img/gear-rope-carabiners.jpg" alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" loading="lazy"><span class="ap-cap">The Rig — Bands, Clips &amp; Rope Handle</span></div>
+      <div class="ap-shot"><img src="assets/img/gear-rig-setup.jpg" alt="Full kinetic rig with plyo box and kettlebells" loading="lazy"><span class="ap-cap">Full Kinetic Rig</span></div>
+    </div>
+
+    <div class="armory-groups">
+      <div class="armory-group">
+        <h3>High-Tensile Resistance</h3>
+        <div class="armory-list">
+          <div class="armory-item"><span class="ai-name">KUZARO Pure Triad Tubing Set</span><span class="ai-spec">35–85 LBS</span><p>The core band system — six tubes on a strict color-to-tension gradient, light gray at 35 lbs up to deep solid black at the 85 lb top end.</p></div>
+          <div class="armory-item"><span class="ai-name">HPYGN Heavy-Duty Compression Set</span><span class="ai-spec">330 LBS</span><p>Twin multi-layered resistance lines. Doubled and shortened at the rig's lowest anchor point, it runs a constant 130 lb baseline tension.</p></div>
+          <div class="armory-item"><span class="ai-name">Tribe Lifting Modular Resistance Bar</span><span class="ai-spec">Chrome</span><p>Knurled 3-piece threaded bar with independent 360° swivel rings on each end — tangle-free band loading.</p></div>
+          <div class="armory-item"><span class="ai-name">HPYGN Heavy Pilates Bar</span><span class="ai-spec">Padded</span><p>Foam-padded steel core bar with red-stitched nylon terminal straps for band-resisted presses and rows.</p></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Grip &amp; Handle Accessories</h3>
+        <div class="armory-list">
+          <div class="armory-item"><span class="ai-name">Angles90 (A90) Pull-Up Grips</span><span class="ai-spec">Rotating</span><p>Bright orange crescent-shaped handles on a nylon sling — lets the wrist rotate naturally through a pull instead of locking it flat.</p></div>
+          <div class="armory-item"><span class="ai-name">MANUEKLEAR Neoprene Multi-Grip Handle</span><span class="ai-spec">3-Zone</span><p>Wide neoprene strap with three stitched grip zones (upper/mid/lower) for fast range-of-motion changes mid-set, single D-ring anchor.</p></div>
+          <div class="armory-item"><span class="ai-name">HXD-ERGO Biomechanical Handles</span><span class="ai-spec">Curved</span><p>Asymmetrical curved grip molds built into a fixed-carabiner nylon strap — matches the natural hand angle under load.</p></div>
+          <div class="armory-item"><span class="ai-name">INNSTAR Stirrup Handles</span><span class="ai-spec">Honeycomb</span><p>Classic stirrup layout wrapped in an anti-slip silicone honeycomb texture for wet-hand grip security.</p></div>
+          <div class="armory-item"><span class="ai-name">THEFITGUY Single-Arm Tricep Rope</span><span class="ai-spec">16.5&quot;</span><p>Isolated single-arm rope with a bright red bell-shaped rubber stop — the handle visible in the rig photo above.</p></div>
+          <div class="armory-item"><span class="ai-name">BLUSLM Ergonomic Tricep Rope</span><span class="ai-spec">Dual-Arm</span><p>Extra-long braided rope terminating in molded rubber palm-flare shields — no round-ball slippage.</p></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Harnesses, Straps &amp; Anchors</h3>
+        <div class="armory-list">
+          <div class="armory-item"><span class="ai-name">THEFITGUY Sled Pulling Belt &amp; Straps</span><span class="ai-spec">9.8 ft ×2</span><p>Padded neoprene waist harness with two heavy-duty D-rings and matching pulling straps for sled/band drags.</p></div>
+          <div class="armory-item"><span class="ai-name">THEFITGUY Ultimate Extension Straps</span><span class="ai-spec">Dual</span><p>Flat nylon extension straps with steel D-ring terminals — extends band anchor points around the rig.</p></div>
+          <div class="armory-item"><span class="ai-name">VEHICLEX Axle Tie-Down Straps</span><span class="ai-spec">Industrial</span><p>Car-hauling-grade webbing repurposed as a heavy anchor strap, triangular steel D-rings at both ends.</p></div>
+          <div class="armory-item"><span class="ai-name">NILIGHT Soft Loop Anchor Straps</span><span class="ai-spec">1.7&quot;×17&quot;</span><p>Short choke-loop straps rigged directly around structural gym bars for a quick, non-marking anchor point.</p></div>
+          <div class="armory-item"><span class="ai-name">Oak-Sports / JRSGS Carabiners</span><span class="ai-spec">25kN</span><p>The yellow- and red-gated locking clips visible throughout the rig — rated to 5,600 lbs, one on nearly every band end.</p></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Recovery &amp; Logistics</h3>
+        <div class="armory-list">
+          <div class="armory-item"><span class="ai-name">jooeer 3-in-1 Nested Foam Roller</span><span class="ai-spec">18&quot;</span><p>Three nested tiers — a spiked trigger-point outer roller, a ribbed neon-orange mid roller, and a core massage stick.</p></div>
+          <div class="armory-item"><span class="ai-name">Neoprene Bundle Management Sleeves</span><span class="ai-spec">1.5&quot;</span><p>Hook-and-loop cylindrical wraps that keep multi-band arrays from tangling or friction-wearing against each other.</p></div>
+          <div class="armory-item"><span class="ai-name">MIAOKE Tactical Hardware Duffel</span><span class="ai-spec">Gear Bag</span><p>Ruggedized utility duffel with a separate clear-panel travel organizer for the small stuff — clips, chalk, bands.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="reels-blk" id="reels">
   <div class="wrap">
