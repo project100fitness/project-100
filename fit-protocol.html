@@ -70,6 +70,8 @@
   .page-tab .lc-i{text-transform:lowercase;}
   .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
+  .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
+  .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
   @media (hover:hover){
     .page-tab:not(.current):hover{border-color:var(--text-dim,#9aa1b0);color:var(--text,#eef0f4);}
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
@@ -122,7 +124,12 @@
 
   /* ============ DECK / SLIDES ============ */
   .deck{flex:1 1 auto;min-height:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
-  .slide{min-height:100%;width:100%;max-width:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:center;padding:34px 20px 46px;position:relative;border-bottom:1px solid var(--border-soft);overflow-x:hidden;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+  /* top-anchored, not centered: a slide with light content (e.g. a short
+     reference note) used to float dead-center in a full-screen box, which
+     read as a big empty gap when scrolling past it. Anchoring to the top
+     with generous breathing room keeps every slide's rhythm consistent
+     whether it holds two lines or two screens of content. */
+  .slide{min-height:100%;width:100%;max-width:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:flex-start;padding:64px 20px 46px;position:relative;border-bottom:1px solid var(--border-soft);overflow-x:hidden;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
   .slide.in-view{opacity:1;transform:translateY(0);}
   .slide-inner{max-width:1080px;margin:0 auto;width:100%;overflow-x:hidden;}
   .slide-kicker{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:10px;}
@@ -161,10 +168,20 @@
   @media (hover:hover){.vector-full .vf-media:hover{transform:scale(1.04);}}
   .vector-full .vf-head{align-items:center;}
 
-  /* protocol reference images: clock, systemic-fueling anatomy, capsule matrix */
-  .protocol-fig{margin:18px 0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);cursor:zoom-in;}
-  .protocol-fig img{width:100%;display:block;}
+  /* protocol reference images: clock, systemic-fueling anatomy, capsule matrix.
+     These are plain white/clinical-diagram source images — a raw full-bleed
+     image dropped into a dark HUD looked like a pasted-in scan. Framing them
+     as a "reference plate" (dark mat border + mono eyebrow header) makes the
+     mismatch read as an intentional design choice instead of a clash. */
+  .protocol-fig{margin:22px 0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);cursor:zoom-in;}
+  .protocol-fig .pf-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--surface-2,var(--surface));border-bottom:1px solid var(--border-soft);font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+  .protocol-fig .pf-head .pf-lbl{display:flex;align-items:center;gap:7px;}
+  .protocol-fig .pf-head .pf-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);flex:none;}
+  .protocol-fig .pf-head .pf-zoom{color:var(--text-faint);}
+  .protocol-fig .pf-frame{padding:14px;background:#0a0b0d;}
+  .protocol-fig .pf-frame img{width:100%;display:block;border-radius:7px;filter:contrast(1.05) saturate(.9);}
   .protocol-fig figcaption{padding:10px 14px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--text-faint);border-top:1px solid var(--border-soft);}
+  @media(max-width:640px){.protocol-fig .pf-frame{padding:10px;}}
 
   /* lightbox for zoomable protocol images */
   .lightbox-overlay{position:fixed;inset:0;z-index:999;background:rgba(6,7,9,.92);display:flex;align-items:center;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .2s ease;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
@@ -258,7 +275,7 @@
     .page-tabs .wrap{padding:8px 14px;gap:6px;}
     .page-tab{padding:6px 12px;font-size:.68rem;}
     .deckbar{padding:7px 14px;gap:8px;}
-    .slide{padding:22px 15px 34px;}
+    .slide{padding:44px 15px 34px;}
     .info-card{padding:13px 14px;}
   }
 </style>
@@ -291,7 +308,7 @@
   </button>
   <span class="tag">PROTOCOL DECK · VERSION-AUDITED</span>
   <div class="spacer"></div>
-  <span class="counter"><span id="curIdx">01</span><span class="of"> / 16</span></span>
+  <span class="counter"><span id="curIdx">01</span><span class="of" id="curTotal"> / 16</span></span>
   <a class="archive-link" href="fit-protocol-archive.html"><span class="full">Full Archive</span><span aria-hidden="true">↗</span></a>
   <button id="themeToggle" class="icon-btn" aria-label="Toggle color theme">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -320,7 +337,7 @@
       <div class="cover-eyebrow">Forensic Bio-Tactical Reference · Est. 2010 · Rebuilt 2025–2026</div>
       <h1 class="cover-title">The Singularity<br>Archive</h1>
       <div class="cover-sub">KERNEL V185.99 · STATUS: <span style="color:var(--accent)">ACTIVE</span> · VERSION-TRUTH-AUDITED SEP 2026</div>
-      <p class="slide-lede">The forensic excavation of a 100+ lb skeletal muscle mass build, on a 5'7" frame, at age 46. Sixteen slides — training, fuel, timing, supplementation, and the failure protocols for when something goes wrong. Swipe or scroll to move through it like a deck.</p>
+      <p class="slide-lede">The forensic excavation of a 100+ lb skeletal muscle mass build, on a 5'7" frame, at age 46. Training, fuel, timing, supplementation, and the failure protocols for when something goes wrong — one focused slide at a time. Swipe or scroll to move through it like a deck.</p>
       <div class="stat-strip">
         <div class="stat-tile"><div class="k">Skeletal Muscle Mass</div><div class="v">88.2<span class="arrow">→</span><span class="tgt">100.0</span> lb</div><div class="bar"><i style="width:82%"></i></div></div>
         <div class="stat-tile"><div class="k">Body Fat</div><div class="v">22.9<span class="arrow">→</span><span class="tgt">&lt;15.0</span>%</div><div class="bar"><i style="width:65%"></i></div></div>
@@ -423,8 +440,9 @@
         <div class="pill"><span class="t">20:30</span><b>Vector 10 · Shutdown Slurry</b></div>
       </div>
       <figure class="protocol-fig" data-lightbox="assets/img/protocol-24hr-clock.jpg">
-        <img src="assets/img/protocol-24hr-clock.jpg" alt="24-hour Kinetic Revolution clock — all vectors plotted by time" loading="lazy">
-        <figcaption>The 24HR Kinetic Revolution — tap to zoom</figcaption>
+        <div class="pf-head"><span class="pf-lbl"><span class="pf-dot"></span>Reference Plate · 24HR Chronometer</span><span class="pf-zoom">Tap to zoom</span></div>
+        <div class="pf-frame"><img src="assets/img/protocol-24hr-clock.jpg" alt="24-hour Kinetic Revolution clock — all vectors plotted by time" loading="lazy"></div>
+        <figcaption>The 24HR Kinetic Revolution — every vector plotted by time</figcaption>
       </figure>
       <div class="focus-point focus-point--gold"><span class="fp-tag">Biotin Alert</span><p>Stop all multivitamins, gummies, and vitamin-spiked collagen 72 hours before any blood draw — biotin distorts hormone/thyroid lab assays.</p></div>
     </div>
@@ -473,7 +491,7 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery</div>
       <h2 class="slide-title">The Vector Protocols</h2>
-      <p class="slide-lede">Seven vectors, zero mechanical churning — solid digestion is a real metabolic tax without a gallbladder.</p>
+      <p class="slide-lede">Seven vectors, zero mechanical churning — solid digestion is a real metabolic tax without a gallbladder. Each vector gets its own slide next — swipe or scroll through.</p>
       <div class="pill-row">
         <div class="pill"><span class="t">06:30 · V3</span><b>Recovery</b></div>
         <div class="pill"><span class="t">07:00 · V1</span><b>Ignition</b></div>
@@ -486,10 +504,17 @@
       <div class="focus-point focus-point--gold"><span class="fp-tag">Why HCL, Not Monohydrate</span><p>HCL dissolves more completely and needs less fluid. Split across three daily pulses (V4, V5, V10) instead of one dose.</p></div>
 
       <figure class="protocol-fig" data-lightbox="assets/img/protocol-systemic-fueling.jpg">
-        <img src="assets/img/protocol-systemic-fueling.jpg" alt="Systemic Fueling — all six vectors mapped to the body" loading="lazy">
-        <figcaption>Systemic Fueling — every vector mapped to where it acts — tap to zoom</figcaption>
+        <div class="pf-head"><span class="pf-lbl"><span class="pf-dot"></span>Reference Plate · Systemic Map</span><span class="pf-zoom">Tap to zoom</span></div>
+        <div class="pf-frame"><img src="assets/img/protocol-systemic-fueling.jpg" alt="Systemic Fueling — conceptual map of where each vector acts in the body" loading="lazy"></div>
+        <figcaption>Systemic Fueling — a conceptual map of where each vector acts in the body. Payloads shown here are a simplified snapshot — the exact, current Payload Matrix for each vector is on its own slide next.</figcaption>
       </figure>
+    </div>
+  </section>
 
+  <!-- 08.1 VECTOR — RECOVERY -->
+  <section class="slide" id="s-vec-recovery" data-title="Vector 3 — Recovery" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 1 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-recovery.jpg"><img src="assets/img/vector-recovery.jpg" alt="Vector 3 Recovery formula card" loading="lazy"></span><span class="vf-name">Vector 3 — Recovery</span><span class="vf-time">06:30 AM</span></div>
         <p class="vf-scope">Scope: Fasted Awakening &amp; Connective Tissue Scaffolding</p>
@@ -516,7 +541,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.2 VECTOR — IGNITION -->
+  <section class="slide" id="s-vec-ignition" data-title="Vector 1 — Ignition" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 2 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-ignition.jpg"><img src="assets/img/vector-ignition.jpg" alt="Vector 1 Ignition formula card" loading="lazy"></span><span class="vf-name">Vector 1 — Ignition</span><span class="vf-time">07:00 AM</span></div>
         <p class="vf-scope">Scope: Maximal CNS Arousal &amp; Endothelial NO Priming</p>
@@ -545,7 +576,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.3 VECTOR — REFUEL -->
+  <section class="slide" id="s-vec-refuel" data-title="Vector 2 — Refuel" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 3 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-refuel.jpg"><img src="assets/img/vector-refuel.jpg" alt="Vector 2 Refuel formula card" loading="lazy"></span><span class="vf-name">Vector 2 — Refuel</span><span class="vf-time">09:30 AM · T+2h</span></div>
         <p class="vf-scope">Scope: Intra-Workout Glycogen Drip &amp; Motor Unit Preservation</p>
@@ -572,7 +609,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.4 VECTOR — RELOAD -->
+  <section class="slide" id="s-vec-reload" data-title="Vector 4 — Reload" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 4 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-reload.jpg"><img src="assets/img/vector-reload.jpg" alt="Vector 4 Reload formula card" loading="lazy"></span><span class="vf-name">Vector 4 — Reload</span><span class="vf-time">10:30 AM</span></div>
         <p class="vf-scope">Scope: Post-Workout Insulin Bridge &amp; Nitric Oxide Shuttling</p>
@@ -599,7 +642,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.5 VECTOR — TRANSPORT -->
+  <section class="slide" id="s-vec-transport" data-title="Vector 5 — Transport" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 5 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-transport.jpg"><img src="assets/img/vector-transport.jpg" alt="Vector 5 Transport formula card" loading="lazy"></span><span class="vf-name">Vector 5 — Transport</span><span class="vf-time">16:30 PM</span></div>
         <p class="vf-scope">Scope: Intracellular Osmotic Volumization &amp; Connective Tissue Priming</p>
@@ -626,7 +675,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.6 VECTOR — PUMP SHAKER -->
+  <section class="slide" id="s-vec-pump" data-title="Vector 2 — Pump Shaker" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 6 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-pump.jpg"><img src="assets/img/vector-pump.jpg" alt="Vector 2 Pump Shaker formula card" loading="lazy"></span><span class="vf-name">Vector 2 — Pump Shaker</span><span class="vf-time">19:30 PM</span></div>
         <p class="vf-scope">Scope: Non-Stim Mechanical Hyperemia &amp; Hydraulic Fascial Stretch</p>
@@ -652,7 +707,13 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.7 VECTOR — SHUTDOWN SLURRY -->
+  <section class="slide" id="s-vec-shutdown" data-title="Vector 10 — Shutdown Slurry" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 7 of 7</div>
       <div class="vector-full">
         <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-shutdown.jpg"><img src="assets/img/vector-shutdown.jpg" alt="Vector 10 Shutdown Slurry formula card" loading="lazy"></span><span class="vf-name">Vector 10 — Shutdown Slurry</span><span class="vf-time">20:30 PM</span></div>
         <p class="vf-scope">Scope: Thermal Down-Regulation, Mucosal Sealing &amp; Spinal Unclamp</p>
@@ -681,10 +742,19 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- 08.8 VECTORS — CAPSULE MATRIX REFERENCE -->
+  <section class="slide" id="s-vec-matrix" data-title="Encapsulated Intake Matrix" data-group="Timing & Fuel">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · Reference</div>
+      <h2 class="slide-title">The Encapsulated Intake Matrix</h2>
+      <p class="slide-lede">A separate layer that runs alongside the seven liquid vectors above — the capsule/pill schedule, not another shake.</p>
       <figure class="protocol-fig" data-lightbox="assets/img/diagram-matrix.jpg">
-        <img src="assets/img/diagram-matrix.jpg" alt="V185.83 Encapsulated Intake Matrix — the capsule/pill schedule" loading="lazy">
-        <figcaption>Reference · V185.83 — The Encapsulated Intake Matrix (the pill/capsule layer that runs alongside the seven vectors) — tap to zoom</figcaption>
+        <div class="pf-head"><span class="pf-lbl"><span class="pf-dot"></span>Reference Plate · V185.83</span><span class="pf-zoom">Tap to zoom</span></div>
+        <div class="pf-frame"><img src="assets/img/diagram-matrix.jpg" alt="V185.83 Encapsulated Intake Matrix — the capsule/pill schedule" loading="lazy"></div>
+        <figcaption>V185.83 — The Encapsulated Intake Matrix, the capsule/pill layer that runs alongside the seven vectors.</figcaption>
       </figure>
     </div>
   </section>
@@ -996,6 +1066,11 @@
 
   // ---- ACTIVE SLIDE TRACKING (scrollspy) ----
   var curIdxEl = document.getElementById('curIdx');
+  var curTotalEl = document.getElementById('curTotal');
+  // computed from the actual slide count rather than hardcoded, so the
+  // "of N" total can't silently drift out of sync when slides are added
+  // or split (as happened here — the deck grew from 16 to 24 slides).
+  if(curTotalEl) curTotalEl.textContent = ' / ' + String(total).padStart(2,'0');
   var railFill = document.getElementById('railFill');
   var prevBtn = document.getElementById('prevSlide');
   var nextBtn = document.getElementById('nextSlide');

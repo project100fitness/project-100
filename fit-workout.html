@@ -46,6 +46,8 @@
   .page-tab .lc-i{text-transform:lowercase;}
   .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
+  .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
+  .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
   @media (hover:hover){
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
     .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
@@ -368,14 +370,22 @@ const CAT_ICON = { "resistance-bands":"🎗️", arms:"💪", "chest-shoulders":
 
 // Each row (data-row="0/1/2") is its own independent horizontal carousel on
 // mobile, so filtered results are dealt round-robin across all rows instead
-// of piling into a single shared strip.
+// of piling into a single shared strip. A category filter can leave very
+// few cards — dealing those across all 3 rows left some rows with just one
+// card (nothing to scroll, so that row's arrows/scrollbar never show while
+// its neighbors' do — looked broken). Instead, only use as many rows as
+// have enough cards to actually need scrolling, and hide the rest.
+const MIN_PER_ROW = 4;
 function renderLog(filter){
-  const rows = Array.from(document.querySelectorAll('#logGrid .carousel-row'));
+  const wraps = Array.from(document.querySelectorAll('#logGrid .carousel-wrap'));
+  const rows = wraps.map(w => w.querySelector('.carousel-row'));
   if(!rows.length) return;
   rows.forEach(r => r.innerHTML = '');
   const filtered = LOG_DATA.filter(d => filter === 'all' || d.cat === filter);
+  const activeRows = filtered.length === 0 ? 1 : Math.max(1, Math.min(rows.length, Math.ceil(filtered.length / MIN_PER_ROW)));
+  wraps.forEach((w, i) => { w.style.display = i < activeRows ? '' : 'none'; });
   filtered.forEach((d, i) => {
-    const row = rows[i % rows.length];
+    const row = rows[i % activeRows];
     const a = document.createElement('a');
     a.className = `log-card cat-${d.cat}`;
     a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
