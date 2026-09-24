@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/float-connect.css">
+<link rel="stylesheet" href="assets/css/fixonic.css">
 <style>
   /* ============ TOKENS — matches the rest of Project 100 ============ */
   :root{
@@ -79,9 +80,9 @@
   .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-weight:700;font-size:.8rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:#eceef0;}
   .btn-primary{background:#e6273f;border-color:#e6273f;color:#fff;}
   @media(max-width:860px){.navcta .btn:not(.btn-primary){display:none;}}
-  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .page-tabs::-webkit-scrollbar{display:none;}
-  .page-tabs .wrap{display:flex;gap:8px;padding:10px 20px;}
+  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);}
+  .page-tabs .wrap::-webkit-scrollbar{display:none;}
+  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex;gap:8px;padding:10px 20px; }
   .page-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;border:1px solid #272b35;white-space:nowrap;}
   .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
   .page-tab .lc-i{text-transform:lowercase;}
@@ -1298,5 +1299,6 @@
 </script>
 </div>
 <script src="assets/js/float-connect.js"></script>
+<script src="assets/js/fixonic.js"></script>
 <script>window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </body></html>

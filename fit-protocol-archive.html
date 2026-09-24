@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/float-connect.css">
+<link rel="stylesheet" href="assets/css/fixonic.css">
 <style>
   /* ============ TOKENS — dark-first (tactical dossier) ============ */
   :root{
@@ -102,9 +103,9 @@
   .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-weight:700;font-size:.8rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:#eceef0;}
   .btn-primary{background:#e6273f;border-color:#e6273f;color:#fff;}
   @media(max-width:860px){.navcta .btn:not(.btn-primary){display:none;}}
-  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .page-tabs::-webkit-scrollbar{display:none;}
-  .page-tabs .wrap{display:flex;gap:8px;padding:10px 20px;}
+  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);}
+  .page-tabs .wrap::-webkit-scrollbar{display:none;}
+  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex;gap:8px;padding:10px 20px; }
   .page-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1ab;border:1px solid #2b2f36;white-space:nowrap;}
   .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
   .page-tab .lc-i{text-transform:lowercase;}
@@ -125,9 +126,9 @@
   }
 
   /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
-  .cat-tabs{background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .cat-tabs::-webkit-scrollbar{display:none;}
-  .cat-tabs .wrap{display:flex;gap:18px;padding:9px 20px;}
+  .cat-tabs{background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);}
+  .cat-tabs .wrap::-webkit-scrollbar{display:none;}
+  .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex;gap:18px;padding:9px 20px; }
   .cat-tabs a{flex:none;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;white-space:nowrap;padding:4px 2px;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease;}
   .cat-tabs a:hover,.cat-tabs a.active{color:#fff;border-bottom-color:#e6273f;}
 
@@ -376,10 +377,6 @@
     .page-tab{ padding:6px 12px; font-size:.68rem; }
     .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
     .cat-tabs a{ font-size:.64rem; }
-    .page-tabs, .cat-tabs{
-      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-    }
     .topbar{ padding:9px 12px; gap:8px; }
     .search-wrap{ width:min(200px,34vw); }
     main{ padding:16px 14px 60px; }
@@ -1296,6 +1293,7 @@
 
 <script src="assets/js/connect.js"></script>
 <script src="assets/js/float-connect.js"></script>
+<script src="assets/js/fixonic.js"></script>
 <script>window.ProjectConnect && window.ProjectConnect.init();window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </div>
 </body></html>

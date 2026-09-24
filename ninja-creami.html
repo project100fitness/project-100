@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/connect.css">
 <link rel="stylesheet" href="assets/css/float-connect.css">
+<link rel="stylesheet" href="assets/css/fixonic.css">
 <style>
   :root{
     --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
@@ -46,9 +47,9 @@
   .navcta .btn-primary{ background:#e6273f; color:#fff; border-color:#e6273f; box-shadow:none; }
   @media (max-width:860px){ .navcta .btn-ghost{ display:none; } }
 
-  .page-tabs{ background:#0d0e11; border-bottom:1px solid #272b35; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .page-tabs::-webkit-scrollbar{ display:none; }
-  .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
+  .page-tabs{ background:#0d0e11; border-bottom:1px solid #272b35; }
+  .page-tabs .wrap::-webkit-scrollbar{ display:none; }
+  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:8px; padding:10px 20px; }
   .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; border:1px solid #272b35; white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
   .page-tab.current{ background:#e6273f; border-color:#e6273f; color:#fff; }
   .page-tab .lc-i{text-transform:lowercase;}
@@ -71,9 +72,9 @@
   }
 
   /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
-  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .cat-tabs::-webkit-scrollbar{ display:none; }
-  .cat-tabs .wrap{ display:flex; gap:18px; padding:9px 20px; }
+  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); }
+  .cat-tabs .wrap::-webkit-scrollbar{ display:none; }
+  .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:18px; padding:9px 20px; }
   .cat-tabs a{ flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease; }
   .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
 
@@ -254,10 +255,6 @@
     .page-tab{ padding:6px 12px; font-size:.68rem; }
     .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
     .cat-tabs a{ font-size:.64rem; }
-    .page-tabs, .cat-tabs{
-      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-    }
     .hero{ padding:30px 0 24px; }
     .hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:12px 0 12px; }
     .hero p.lead{ font-size:.96rem; margin-bottom:18px; }
@@ -779,6 +776,7 @@
 </script>
 <script src="assets/js/connect.js"></script>
 <script src="assets/js/float-connect.js"></script>
+<script src="assets/js/fixonic.js"></script>
 <script>window.ProjectConnect && window.ProjectConnect.init();window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </div>
 </body>

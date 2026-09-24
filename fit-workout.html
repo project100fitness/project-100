@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="assets/css/carousel.css">
 <link rel="stylesheet" href="assets/css/connect.css">
 <link rel="stylesheet" href="assets/css/float-connect.css">
+<link rel="stylesheet" href="assets/css/fixonic.css">
 <style>
   :root{
     --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
@@ -41,9 +42,9 @@
   .navcta .btn{ padding:9px 16px; font-size:.8rem; }
   @media (max-width:860px){ .navcta .btn-ghost{ display:none; } }
 
-  .page-tabs{ background:var(--bg-2); border-bottom:1px solid var(--border); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .page-tabs::-webkit-scrollbar{ display:none; }
-  .page-tabs .wrap{ display:flex; gap:8px; padding:10px 20px; }
+  .page-tabs{ background:var(--bg-2); border-bottom:1px solid var(--border); }
+  .page-tabs .wrap::-webkit-scrollbar{ display:none; }
+  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:8px; padding:10px 20px; }
   .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
   .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
   .page-tab .lc-i{text-transform:lowercase;}
@@ -65,9 +66,9 @@
     .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{ border-color:var(--red); color:var(--red); }
   }
 
-  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .cat-tabs::-webkit-scrollbar{ display:none; }
-  .cat-tabs .wrap{ display:flex; gap:18px; padding:9px 20px; }
+  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); }
+  .cat-tabs .wrap::-webkit-scrollbar{ display:none; }
+  .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:18px; padding:9px 20px; }
   .cat-tabs a{ flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease; }
   .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
 
@@ -158,10 +159,6 @@
     .page-tab{ padding:6px 12px; font-size:.68rem; }
     .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
     .cat-tabs a{ font-size:.64rem; }
-    .page-tabs, .cat-tabs{
-      -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-      mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
-    }
     .placeholder-hero{ padding:34px 0 28px; }
     .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
     .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
@@ -228,7 +225,7 @@
     <div class="sec-head">
       <span class="eyebrow">The Last 60 Days, Unfiltered</span>
       <h2>Training Log</h2>
-      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="gear-shop.html" style="color:var(--cyan);text-decoration:none;">Gear Shop</a>.</p>
+      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap a cover to play it right here, or open it on YouTube Shorts. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="gear-shop.html" style="color:var(--cyan);text-decoration:none;">Gear Shop</a>.</p>
     </div>
 
     <div class="filters">
@@ -285,25 +282,31 @@
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/connect.js"></script>
 <script src="assets/js/float-connect.js"></script>
+<script src="assets/js/fixonic.js"></script>
 <script>
 // ---- Training log data: pulled from @fudge_fit, last ~60 days ----
+// yt: YouTube Shorts video ID (from youtube.com/@FUDGE_fit/shorts) — when
+// present the card plays inline (click-to-play lite embed) and links out
+// to YouTube instead of Instagram. Entry #1 has no Shorts equivalent (a
+// meme post, no training footage was ever posted to YouTube) so it keeps
+// its original Instagram link as a fallback.
 const LOG_DATA = [
   {date:"Sep 14, 2026", title:"Don't Know What To Do", cat:"full-body", likes:37, comments:13, url:"https://www.instagram.com/p/DdR_XpSgDYi/", img:"cat-meme.jpg"},
-  {date:"Sep 12, 2026", title:"Resistance Band Series 003", cat:"resistance-bands", likes:43, comments:11, url:"https://www.instagram.com/p/DdMne2YgV6-/", img:"resistance-band-003.jpg"},
-  {date:"Sep 11, 2026", title:"Plyosoft Box Core 001", cat:"full-body", likes:25, comments:2, url:"https://www.instagram.com/p/DdKAEe7SKLR/", img:"plyosoft-core-001.jpg"},
-  {date:"Sep 10, 2026", title:"Shoulder Push Series 001", cat:"chest-shoulders", likes:59, comments:12, url:"https://www.instagram.com/p/DdHvmJYg9nU/", img:"shoulder-push-001.jpg"},
-  {date:"Sep 6, 2026", title:"Arms Blast Series 001", cat:"arms", likes:40, comments:4, url:"https://www.instagram.com/p/Dc9W-wdgIeO/", img:"arms-blast-001.jpg"},
-  {date:"Sep 5, 2026", title:"Resistance Band Series 002", cat:"resistance-bands", likes:33, comments:6, url:"https://www.instagram.com/p/Dc4114iM8jj/", img:"resistance-band-002.jpg"},
-  {date:"Aug 30, 2026", title:"Arm Blaster 6x6x6", cat:"arms", likes:82, comments:21, url:"https://www.instagram.com/p/DcrcpkXg0no/", img:"arm-blaster-6x6x6.jpg"},
-  {date:"Aug 25, 2026", title:"Warmups & Stretch Series 001", cat:"full-body", likes:74, comments:35, url:"https://www.instagram.com/p/Dcet4xlgZWK/", img:"warmups-stretch-001.jpg"},
-  {date:"Aug 22, 2026", title:"Resistance Band Series 001", cat:"resistance-bands", likes:175, comments:37, url:"https://www.instagram.com/p/DcW-IV9AC7G/", img:"resistance-band-001.jpg"},
-  {date:"Aug 20, 2026", title:"Chest Series 001", cat:"chest-shoulders", likes:125, comments:32, url:"https://www.instagram.com/p/DcR6GXrArM1/", img:"chest-series-001.jpg"},
-  {date:"Aug 14, 2026", title:"Hypertrophy Friday", cat:"heavy-weight", likes:149, comments:27, url:"https://www.instagram.com/p/DcCcx4WAniY/", img:"hypertrophy-friday.jpg"},
-  {date:"Jul 30, 2026", title:"Shoulders Up Sessions", cat:"chest-shoulders", likes:56, comments:12, url:"https://www.instagram.com/p/Dbbgp67AH8p/", img:"shoulders-up-sessions.jpg"},
-  {date:"Jul 27, 2026", title:"Sweat Sundays", cat:"full-body", likes:51, comments:5, url:"https://www.instagram.com/p/DbT1Zf_Akak/", img:"sweat-sundays.jpg"},
-  {date:"Jul 24, 2026", title:"Strength Fridays", cat:"heavy-weight", likes:50, comments:5, url:"https://www.instagram.com/p/DbMHiilgEj_/", img:"strength-fridays.jpg"},
-  {date:"Jul 22, 2026", title:"Biceps & Back Workout", cat:"arms", likes:22, comments:6, url:"https://www.instagram.com/p/DbGNAuKsi9m/", img:"biceps-back-workout.jpg"},
-  {date:"Jul 16, 2026", title:"Calibrated Hypertrophy // Session Complete", cat:"resistance-bands", likes:146, comments:2, url:"https://www.instagram.com/p/Da1TMJhgl1p/", img:"kinetic-rig-architecture.jpg"},
+  {date:"Sep 12, 2026", title:"Resistance Band Series 003", cat:"resistance-bands", likes:43, comments:11, yt:"SbHGM5nfLRc", img:"resistance-band-003.jpg"},
+  {date:"Sep 11, 2026", title:"Plyosoft Box Core 001", cat:"full-body", likes:25, comments:2, yt:"RaW2ZAIzwdA", img:"plyosoft-core-001.jpg"},
+  {date:"Sep 10, 2026", title:"Shoulder Push Series 001", cat:"chest-shoulders", likes:59, comments:12, yt:"31t0xfwXRAk", img:"shoulder-push-001.jpg"},
+  {date:"Sep 6, 2026", title:"Arms Blast Series 001", cat:"arms", likes:40, comments:4, yt:"4plvyFfGNrM", img:"arms-blast-001.jpg"},
+  {date:"Sep 5, 2026", title:"Resistance Band Series 002", cat:"resistance-bands", likes:33, comments:6, yt:"W2Ch3JMrpc8", img:"resistance-band-002.jpg"},
+  {date:"Aug 30, 2026", title:"Arm Blaster 6x6x6", cat:"arms", likes:82, comments:21, yt:"UjrWypoH5Jk", img:"arm-blaster-6x6x6.jpg"},
+  {date:"Aug 25, 2026", title:"Warmups & Stretch Series 001", cat:"full-body", likes:74, comments:35, yt:"zDGZIdUpeyc", img:"warmups-stretch-001.jpg"},
+  {date:"Aug 22, 2026", title:"Resistance Band Series 001", cat:"resistance-bands", likes:175, comments:37, yt:"XV3qG3NiTro", img:"resistance-band-001.jpg"},
+  {date:"Aug 20, 2026", title:"Chest Series 001", cat:"chest-shoulders", likes:125, comments:32, yt:"9MNZCM7HPLw", img:"chest-series-001.jpg"},
+  {date:"Aug 14, 2026", title:"Hypertrophy Friday", cat:"heavy-weight", likes:149, comments:27, yt:"NzxGnu_x6eA", img:"hypertrophy-friday.jpg"},
+  {date:"Jul 30, 2026", title:"Shoulders Up Sessions", cat:"chest-shoulders", likes:56, comments:12, yt:"wuEp4gqe9Jo", img:"shoulders-up-sessions.jpg"},
+  {date:"Jul 27, 2026", title:"Sweat Sundays", cat:"full-body", likes:51, comments:5, yt:"aRGoGec4kH4", img:"sweat-sundays.jpg"},
+  {date:"Jul 24, 2026", title:"Strength Fridays", cat:"heavy-weight", likes:50, comments:5, yt:"M9xnlk3bT44", img:"strength-fridays.jpg"},
+  {date:"Jul 22, 2026", title:"Biceps & Back Workout", cat:"arms", likes:22, comments:6, yt:"jBu9RBWmXWk", img:"biceps-back-workout.jpg"},
+  {date:"Jul 16, 2026", title:"Calibrated Hypertrophy // Session Complete", cat:"resistance-bands", likes:146, comments:2, yt:"Z-H0Uj9K3ew", img:"kinetic-rig-architecture.jpg"},
 ];
 
 const CAT_LABEL = { "resistance-bands":"Resistance Bands", arms:"Arms", "chest-shoulders":"Chest & Shoulders", "heavy-weight":"Heavy Weight", "full-body":"Full Body & Core" };
@@ -327,21 +330,60 @@ function renderLog(filter){
   wraps.forEach((w, i) => { w.style.display = i < activeRows ? '' : 'none'; });
   filtered.forEach((d, i) => {
     const row = rows[i % activeRows];
-    const a = document.createElement('a');
-    a.className = `log-card cat-${d.cat}`;
-    a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
     const media = d.img
       ? `<img src="assets/img/${d.img}" alt="${d.title}" loading="lazy">`
       : `<div class="noimg">${CAT_ICON[d.cat]}</div>`;
-    a.innerHTML = `
-      <div class="log-media">${media}<span class="log-tag">${CAT_LABEL[d.cat]}</span></div>
-      <div class="log-body">
-        <div class="date">${d.date}</div>
-        <h4>${d.title}</h4>
-        <div class="stats"><span>♥ ${d.likes}</span><span>💬 ${d.comments}</span></div>
-        <div class="watch">▶ Watch on Instagram</div>
-      </div>`;
-    row.appendChild(a);
+
+    if(d.yt){
+      // YouTube Shorts entry: click-to-play lite embed (no iframe loaded
+      // until tapped, so 15+ cards never load 15+ YouTube players up
+      // front) + a normal outbound link to watch on YouTube itself.
+      const card = document.createElement('div');
+      card.className = `log-card yt-card cat-${d.cat}`;
+      card.innerHTML = `
+        <div class="log-media" data-yt="${d.yt}">
+          ${media}
+          <span class="log-tag">${CAT_LABEL[d.cat]}</span>
+          <span class="yt-play" aria-hidden="true">
+            <svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+          </span>
+        </div>
+        <div class="log-body">
+          <div class="date">${d.date}</div>
+          <h4>${d.title}</h4>
+          <div class="stats"><span>♥ ${d.likes}</span><span>💬 ${d.comments}</span></div>
+          <a class="watch-yt" href="https://www.youtube.com/shorts/${d.yt}" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+        </div>`;
+      const mediaEl = card.querySelector('.log-media');
+      mediaEl.addEventListener('click', function(e){
+        if(mediaEl.classList.contains('yt-active')) return;
+        e.preventDefault();
+        mediaEl.classList.add('yt-active');
+        const ifr = document.createElement('iframe');
+        ifr.src = `https://www.youtube.com/embed/${d.yt}?autoplay=1&playsinline=1&rel=0`;
+        ifr.title = d.title;
+        ifr.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+        ifr.setAttribute('allowfullscreen', '');
+        ifr.loading = 'lazy';
+        mediaEl.appendChild(ifr);
+      });
+      row.appendChild(card);
+    } else {
+      // No YouTube Shorts equivalent for this one (meme post, never
+      // posted as training footage) — keep the original Instagram link.
+      const a = document.createElement('a');
+      a.className = `log-card cat-${d.cat}`;
+      a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML = `
+        <div class="log-media">${media}<span class="log-tag">${CAT_LABEL[d.cat]}</span></div>
+        <div class="log-body">
+          <div class="date">${d.date}</div>
+          <h4>${d.title}</h4>
+          <div class="stats"><span>♥ ${d.likes}</span><span>💬 ${d.comments}</span></div>
+          <div class="watch">▶ Watch on Instagram</div>
+        </div>`;
+      row.appendChild(a);
+    }
   });
 }
 renderLog('all');

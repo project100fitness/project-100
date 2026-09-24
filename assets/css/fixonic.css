@@ -1,0 +1,182 @@
+/* ===================================================================
+   PROJECT 100 — "Fixonic" design-system layer (site-wide)
+
+   Adds a Fixonic-Webflow-inspired layer of motion/polish on TOP of the
+   existing shell/carousel/connect system — nothing here replaces those
+   files, it only adds new components + upgrades the nav so every page
+   that links this file + fixonic.js gets the same modern treatment
+   with zero markup rewrite required (nav-scroll arrows + sticky-condense
+   are injected by fixonic.js at runtime).
+
+   Load order on every page:
+     <link rel="stylesheet" href="assets/css/shell.css">
+     <link rel="stylesheet" href="assets/css/carousel.css">
+     <link rel="stylesheet" href="assets/css/connect.css">
+     <link rel="stylesheet" href="assets/css/float-connect.css">
+     <link rel="stylesheet" href="assets/css/fixonic.css">   <!-- new, last -->
+     ...page's own <style> block...
+     <script src="assets/js/fixonic.js"></script>            <!-- new -->
+   =================================================================== */
+
+/* ---------- 1. Nav scroll-affordance (page-tabs / cat-tabs) ---------- */
+/* fixonic.js injects <button class="tab-arrow arrow-l/r"> as the last
+   children of every .page-tabs / .cat-tabs <nav>, and toggles can-l/can-r
+   on that nav's .wrap based on real scroll position. Works whether or not
+   a page already has its own static mask-image rule — these rules are
+   more specific (nav.wrap.can-*) and load after page <style>, so they win. */
+.page-tabs, .cat-tabs{ position:relative; }
+
+.tab-arrow{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:6;
+  width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background:rgba(10,11,13,.94); border:1px solid rgba(255,255,255,.18); color:#eef0f4;
+  font-size:.74rem; line-height:1; cursor:pointer; padding:0;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+}
+.tab-arrow.arrow-l{ left:3px; }
+.tab-arrow.arrow-r{ right:3px; }
+.page-tabs .wrap.can-l ~ .tab-arrow.arrow-l,
+.cat-tabs .wrap.can-l ~ .tab-arrow.arrow-l,
+.page-tabs .wrap.can-r ~ .tab-arrow.arrow-r,
+.cat-tabs .wrap.can-r ~ .tab-arrow.arrow-r{
+  opacity:1; visibility:visible; pointer-events:auto;
+}
+@media (hover:hover){
+  .tab-arrow:hover{ border-color:var(--red,#e6273f); color:var(--red,#e6273f); background:rgba(10,11,13,1); }
+}
+@media (max-width:900px){
+  .page-tabs .wrap, .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .page-tabs .wrap::-webkit-scrollbar, .cat-tabs .wrap::-webkit-scrollbar{ display:none; }
+}
+.page-tabs .wrap.can-l.can-r, .cat-tabs .wrap.can-l.can-r{
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 22px,#000 calc(100% - 22px),transparent);
+}
+.page-tabs .wrap.can-r:not(.can-l), .cat-tabs .wrap.can-r:not(.can-l){
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);
+}
+.page-tabs .wrap.can-l:not(.can-r), .cat-tabs .wrap.can-l:not(.can-r){
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 22px);
+  mask-image:linear-gradient(90deg,transparent,#000 22px);
+}
+.page-tabs .wrap:not(.can-l):not(.can-r), .cat-tabs .wrap:not(.can-l):not(.can-r){
+  -webkit-mask-image:none; mask-image:none;
+}
+
+/* ---------- 2. Sticky condensed nav on scroll ---------- */
+.site-head{ transition:box-shadow .25s ease; }
+.site-head.condensed #nav .wrap{ padding-top:8px; padding-bottom:8px; }
+.site-head.condensed .brand{ font-size:.92rem; }
+.site-head.condensed{ box-shadow:0 6px 20px rgba(0,0,0,.35); }
+#nav .wrap{ transition:padding .2s ease; }
+.brand{ transition:font-size .2s ease; }
+
+/* ---------- 3. Animated stat counters ---------- */
+.stat-num{ font-variant-numeric:tabular-nums; }
+.stat-num.counting::after{ content:""; }
+
+/* ---------- 4. Service-card grid (hover-lift + icon glow) ---------- */
+.fx-card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+.fx-card{
+  position:relative; display:block; padding:22px 20px 20px; border-radius:14px;
+  background:linear-gradient(160deg,var(--surface,#16181e),var(--surface-2,#1d2029));
+  border:1px solid var(--border,#272b35); text-decoration:none; color:var(--text,#eef0f4);
+  overflow:hidden; transition:transform .25s cubic-bezier(.22,1,.36,1), border-color .25s ease, box-shadow .25s ease;
+}
+.fx-card::before{
+  content:""; position:absolute; inset:0; opacity:0; pointer-events:none;
+  background:radial-gradient(circle at 30% 20%, rgba(230,39,63,.22), transparent 60%);
+  transition:opacity .25s ease;
+}
+.fx-card .fx-icon{
+  width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+  background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.3); font-size:1.3rem; margin-bottom:14px;
+  transition:transform .25s ease, background .25s ease;
+}
+.fx-card h3{ font-family:'Oswald',sans-serif; font-size:1.02rem; margin:0 0 8px; text-transform:uppercase; letter-spacing:.02em; }
+.fx-card p{ margin:0; color:var(--text-dim,#9aa1b0); font-size:.86rem; line-height:1.5; }
+.fx-card .fx-go{ display:inline-flex; align-items:center; gap:5px; margin-top:14px; font-family:'Oswald',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red,#e6273f); }
+@media (hover:hover){
+  .fx-card:hover{ transform:translateY(-6px); border-color:rgba(230,39,63,.45); box-shadow:0 16px 34px rgba(0,0,0,.45); }
+  .fx-card:hover::before{ opacity:1; }
+  .fx-card:hover .fx-icon{ transform:scale(1.1); background:rgba(230,39,63,.24); }
+}
+
+/* ---------- 5. Before / after comparison slider ---------- */
+.ba-slider{
+  position:relative; max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden;
+  aspect-ratio:4/5; background:#000; border:1px solid var(--border,#272b35);
+  box-shadow:0 18px 40px rgba(0,0,0,.45); touch-action:pan-y;
+  user-select:none; -webkit-user-select:none;
+}
+.ba-slider img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+.ba-slider .ba-after-wrap{ position:absolute; inset:0; overflow:hidden; clip-path:inset(0 50% 0 0); }
+.ba-slider .ba-after-wrap img{ position:absolute; inset:0; }
+.ba-slider .ba-handle{
+  position:absolute; top:0; bottom:0; left:50%; width:3px; background:#fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.3); transform:translateX(-50%); cursor:ew-resize; z-index:5;
+}
+.ba-slider .ba-handle::after{
+  content:"◂ ▸"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:40px; height:40px; border-radius:50%; background:#fff; color:#111;
+  display:flex; align-items:center; justify-content:center; font-size:.7rem; letter-spacing:.1em;
+  box-shadow:0 4px 14px rgba(0,0,0,.4);
+}
+.ba-slider input[type="range"]{
+  position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; z-index:6;
+}
+.ba-tag{
+  position:absolute; top:10px; font-family:'Oswald',sans-serif; font-size:.66rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:100px;
+  background:rgba(10,11,13,.78); border:1px solid rgba(255,255,255,.18); color:#fff; z-index:4;
+}
+.ba-tag.ba-before-tag{ left:10px; }
+.ba-tag.ba-after-tag{ right:10px; }
+
+/* ---------- 6. Gallery lightbox ---------- */
+.fx-gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; }
+.fx-gallery button{
+  all:unset; display:block; cursor:zoom-in; border-radius:10px; overflow:hidden; aspect-ratio:1;
+  border:1px solid var(--border,#272b35); position:relative;
+}
+.fx-gallery img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
+@media (hover:hover){ .fx-gallery button:hover img{ transform:scale(1.08); } }
+
+.fx-lightbox{
+  position:fixed; inset:0; z-index:200; background:rgba(4,4,6,.94); display:none;
+  align-items:center; justify-content:center; padding:40px 16px;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+}
+.fx-lightbox.open{ display:flex; }
+.fx-lightbox img{ max-width:min(90vw,900px); max-height:80vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+.fx-lightbox .fx-lb-close, .fx-lightbox .fx-lb-nav{
+  position:absolute; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); color:#fff;
+  width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:1.1rem; transition:background .15s ease;
+}
+.fx-lightbox .fx-lb-close{ top:18px; right:18px; }
+.fx-lightbox .fx-lb-nav.prev{ left:14px; top:50%; transform:translateY(-50%); }
+.fx-lightbox .fx-lb-nav.next{ right:14px; top:50%; transform:translateY(-50%); }
+@media (hover:hover){ .fx-lightbox .fx-lb-close:hover, .fx-lightbox .fx-lb-nav:hover{ background:var(--red,#e6273f); border-color:var(--red,#e6273f); } }
+@media (max-width:640px){
+  .fx-lightbox .fx-lb-nav{ width:36px; height:36px; }
+  .fx-card{ padding:18px 16px 16px; }
+}
+
+/* ---------- 7. Scroll-reveal (used by stat strips / cards entering view) ---------- */
+.fx-reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+.fx-reveal.fx-in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){ .fx-reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ---------- 8. YouTube lite-embed card (fit-workout training log) ---------- */
+.log-card.yt-card{ cursor:pointer; }
+.log-media .yt-play{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:2;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);
+}
+.log-media .yt-play svg{ width:40px; height:40px; filter:drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+.log-media.yt-active .yt-play{ display:none; }
+.log-media iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; z-index:3; }
+.log-body .watch-yt{ margin-top:6px; font-size:.66rem; font-weight:700; color:#ff4444; display:flex; align-items:center; gap:4px; text-decoration:none; }
