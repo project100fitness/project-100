@@ -1,0 +1,49 @@
+/* ===================================================================
+   PROJECT 100 — Page Shell (boxed desktop layout)
+
+   On a wide browser window the whole page used to be full-bleed —
+   nav bars, hero backgrounds, and section borders all ran edge to
+   edge of the browser, with only the TEXT constrained to a centered
+   column inside. This made big screens feel like the content was
+   spilling everywhere instead of sitting in one contained place.
+
+   .page-shell wraps the entire page (header through footer) in one
+   visible, boxed vertical column — background, borders and all —
+   the way Facebook's desktop feed sits in a contained center column
+   against a distinct page canvas, rather than a website that bleeds
+   wall to wall.
+
+   Below 900px this collapses back to full-bleed edge-to-edge, which
+   is exactly how the site already behaves on phones (and matches a
+   mobile app feed, which doesn't box itself either) — so mobile is
+   visually unchanged by this file.
+   =================================================================== */
+/* !important here is deliberate: this is the outer canvas color, a
+   layout concern that must win over any page's own body{background:var(--bg)}
+   rule (declared later in that page's own <style> block) or theme
+   toggle, so the boxed column always has a consistent dark frame
+   around it regardless of what an individual page does with its own
+   content background. */
+html{ background:#000 !important; }
+body{ background:#000 !important; }
+
+.page-shell{
+  max-width:980px;
+  margin:0 auto;
+  min-height:100vh;
+  background:var(--bg);
+  border-left:1px solid var(--border);
+  border-right:1px solid var(--border);
+  box-shadow:0 0 70px rgba(0,0,0,.65);
+  position:relative;
+}
+
+@media (max-width:900px){
+  .page-shell{
+    max-width:none;
+    border-left:none;
+    border-right:none;
+    box-shadow:none;
+  }
+  html, body{ background:var(--bg) !important; }
+}

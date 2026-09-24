@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fit Nutrition — PROJECT 100</title>
-<meta name="description" content="Bogdan's real recipes, meals, and nutrition protocol — straight from the PROJECT 100 kitchen.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<title>Gear Shop — PROJECT 100</title>
+<meta name="description" content="The real gym equipment and home-gym setup behind PROJECT 100 — plus used gear for sale and the Fit Protocol guide book.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,58 +73,31 @@
 
   /* ===== FOCUS POINT — same site-wide "field note" callout as index.html /
      encyclopedia.html / ninja-creami.html, red·black·neon, dropped in here
-     while the full recipe build-out is underway. ===== */
+     while the full gear database build-out is underway. ===== */
   .focus-point-wrap{ padding:0 0 8px; }
   .focus-point{
     position:relative; margin:0 auto; max-width:640px; padding:16px 18px 16px 19px; text-align:left;
     background:linear-gradient(135deg, #1c0f12 0%, #101114 100%);
-    border:1px solid var(--border); border-left:4px solid var(--red); border-radius:0 10px 10px 0;
-    box-shadow:0 4px 18px rgba(230,39,63,.12);
+    border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:0 10px 10px 0;
+    box-shadow:0 4px 18px rgba(232,182,76,.12);
   }
   .focus-point .fp-tag{
     display:inline-block; font-family:'Oswald',sans-serif; font-size:.68rem; font-weight:700;
-    letter-spacing:.14em; text-transform:uppercase; color:#ff6b81;
-    background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.35);
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold);
+    background:rgba(232,182,76,.13); border:1px solid rgba(232,182,76,.32);
     padding:3px 10px; border-radius:100px; margin:0 0 10px;
   }
   .focus-point p{
     margin:0; font-family:'Inter',sans-serif; text-transform:uppercase;
     letter-spacing:.01em; font-size:.92rem; line-height:1.55; color:#f2f3f5; font-weight:650;
   }
-  .focus-point--cyan{ border-left-color:var(--cyan); box-shadow:0 4px 18px rgba(63,215,208,.12); }
-  .focus-point--cyan .fp-tag{ color:var(--cyan); background:rgba(63,215,208,.13); border-color:rgba(63,215,208,.34); }
   @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
 
-  /* MEAL ROWS — Netflix-style: one titled carousel row per food/meal
-     category, each independently scrollable. Rows with real content
-     first, "coming soon" rows (empty categories, placeholder cards)
-     last, so the page always reads honest about what's live vs. planned. */
+  /* PHOTO GRID — static image boxes, anchored to the bottom of the page */
   .reels-blk{ padding:56px 0 64px; }
-  .reels-blk .sec-head{ max-width:680px; margin-bottom:22px; }
+  .reels-blk .sec-head{ max-width:680px; margin-bottom:30px; }
   .reels-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
   .reels-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
-
-  /* quick-jump pill bar — scrolls to a category row, doesn't filter/hide anything */
-  .meal-jump{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:34px; }
-  .meal-jump a{
-    padding:7px 14px; border-radius:100px; border:1px solid var(--border); background:var(--surface);
-    font-size:.78rem; font-weight:600; color:var(--text-dim); text-decoration:none;
-    font-family:'Oswald',sans-serif; letter-spacing:.02em; transition:border-color .15s ease, color .15s ease;
-  }
-  .meal-jump a:hover{ border-color:var(--cyan); color:var(--text); }
-
-  .food-row{ margin-bottom:40px; }
-  .food-row:last-child{ margin-bottom:0; }
-  .food-row .fr-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:2px; scroll-margin-top:150px; }
-  .food-row .fr-head h3{ font-family:'Oswald',sans-serif; font-size:1.08rem; letter-spacing:.02em; text-transform:none; color:var(--text); margin:0; }
-  .food-row .fr-count{ font-size:.72rem; color:var(--text-dim); font-weight:600; }
-  .food-row.fr-empty .fr-head h3{ color:var(--text-dim); }
-  .food-row .fr-soon{
-    display:inline-block; font-family:'Oswald',sans-serif; font-size:.6rem; font-weight:700; letter-spacing:.08em;
-    text-transform:uppercase; color:var(--gold); background:rgba(232,182,76,.13); border:1px solid rgba(232,182,76,.34);
-    padding:2px 9px; border-radius:100px; margin-left:2px;
-  }
-
   .log-card{
     background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; overflow:hidden;
     display:flex; flex-direction:column; text-decoration:none; color:var(--text);
@@ -133,21 +106,62 @@
   .log-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
   .log-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
   .log-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
-  .log-media .noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:linear-gradient(135deg,#123326,#08150f); }
   .log-tag{
     position:absolute; top:6px; left:6px; font-size:.58rem; font-weight:700; letter-spacing:.05em;
     text-transform:uppercase; padding:4px 8px; border-radius:100px; backdrop-filter:blur(6px);
-    background:rgba(63,215,144,.85); color:#06170f;
+    background:rgba(230,39,63,.85); color:#fff;
   }
-  .log-card.fr-placeholder{ opacity:.68; }
-  .log-card.fr-placeholder .log-media{ display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#1a1d24,#101218); }
-  .log-card.fr-placeholder .log-tag{ background:rgba(154,161,176,.85); color:#0d0e11; }
   .log-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
   .log-body .date{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
   .log-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
   .log-body .stats{ margin-top:auto; display:flex; gap:8px; color:var(--text-dim); font-size:.66rem; padding-top:6px; }
   .log-body .watch{ margin-top:6px; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
 
+  /* USED GEAR — for-sale cards, same card language as the training-log /
+     gear-photo grids elsewhere on the site. */
+  .shop-blk{ padding:56px 0 20px; }
+  .shop-blk .sec-head{ max-width:680px; margin-bottom:30px; }
+  .shop-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .shop-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+  .shop-card{
+    background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; overflow:hidden;
+    display:flex; flex-direction:column; text-decoration:none; color:var(--text);
+    transition:transform .18s ease, border-color .18s ease; box-shadow:0 2px 12px rgba(0,0,0,.25);
+  }
+  .shop-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
+  .shop-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
+  .shop-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
+  .shop-tag{
+    position:absolute; top:6px; left:6px; font-size:.58rem; font-weight:700; letter-spacing:.05em;
+    text-transform:uppercase; padding:4px 8px; border-radius:100px; backdrop-filter:blur(6px);
+    background:rgba(230,39,63,.85); color:#fff;
+  }
+  .shop-price{
+    position:absolute; top:6px; right:6px; font-size:.66rem; font-weight:700; letter-spacing:.02em;
+    padding:4px 9px; border-radius:100px; backdrop-filter:blur(6px);
+    background:rgba(12,13,16,.78); color:var(--gold); border:1px solid rgba(232,182,76,.4);
+  }
+  .shop-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
+  .shop-body .cond{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
+  .shop-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
+  .shop-body .note{ color:var(--text-dim); font-size:.72rem; margin:0 0 8px; }
+  .shop-body .watch{ margin-top:auto; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
+
+  /* GUIDE BOOK CTA — one strong block linking to Fit Protocol / a purchase link */
+  .guide-blk{ padding:36px 0 56px; }
+  .guide-card{
+    max-width:820px; margin:0 auto; display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+    background:linear-gradient(135deg, rgba(230,39,63,.14), rgba(10,11,13,0) 60%), var(--surface);
+    border:1px solid var(--border); border-radius:16px; padding:26px;
+  }
+  .guide-card .gc-ic{ flex:0 0 auto; width:54px; height:54px; border-radius:12px; background:var(--red); display:flex; align-items:center; justify-content:center; }
+  .guide-card .gc-ic svg{ width:28px; height:28px; color:#fff; }
+  .guide-card .gc-body{ flex:1; min-width:220px; }
+  .guide-card h3{ font-size:1.15rem; margin:0 0 6px; text-transform:none; letter-spacing:0; }
+  .guide-card p{ margin:0; color:var(--text-dim); font-size:.92rem; }
+  .guide-card .gc-ctas{ display:flex; gap:10px; flex-wrap:wrap; }
+
+  
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
 
@@ -174,9 +188,6 @@
     .reels-blk{ padding:26px 0 34px; }
     .reels-blk .sec-head{ margin-bottom:20px; }
     .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
-    .meal-jump{ margin-bottom:26px; }
-    .food-row{ margin-bottom:30px; }
-    .food-row .fr-head{ scroll-margin-top:112px; }
   }
 </style>
 </head>
@@ -198,15 +209,17 @@
     <a class="page-tab tab-home" href="index.html">Project 100</a>
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
-    <a class="page-tab current" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab" href="gear-shop.html">Gear Shop</a>
+    <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
+    <a class="page-tab current" href="gear-shop.html">Gear Shop</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
 <nav class="cat-tabs" aria-label="Section jump links">
   <div class="wrap">
     <a href="#top">OVERVIEW</a>
-    <a href="#reels">MEALS</a>
+    <a href="#reels">GYM PHOTOS</a>
+    <a href="#for-sale">FOR SALE</a>
+    <a href="#guide">GUIDE BOOK</a>
     <a href="#connect">CONNECT</a>
   </div>
 </nav>
@@ -215,9 +228,9 @@
 <section class="placeholder-hero" id="top">
   <div class="wrap">
     <span class="tag">Under Construction</span>
-    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">Fuel For 2</span>
-    <h1>Recipes.<br><span>Meals.</span> Nutrition.</h1>
-    <p>Every meal, every macro, every recipe that fuels the excavation. Being built now.</p>
+    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Rig &amp; The Shop</span>
+    <h1>Real Gear.<br><span>Real Setup. Real Prices.</span></h1>
+    <p>The actual equipment database — racks, bands, plyo boxes — plus gear I&#8217;ve retired, sold direct, and purchase links for the Fit Protocol guide book. One page, being built now.</p>
     <div class="placeholder-ctas">
       <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
@@ -226,9 +239,9 @@
 </section>
 
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
-  <div class="focus-point focus-point--cyan">
-    <span class="fp-tag">Operating Law</span>
-    <p>Train like 2, eat for 2. The full macro breakdown is still being built here — the short version, straight from Fit Protocol, is a 252g protein ceiling and a hard 69g fat cap, timed meal by meal, not just totaled at the end of the day.</p>
+  <div class="focus-point">
+    <span class="fp-tag">The Physics Behind It</span>
+    <p>Fit Gear and Fit Shop now live together here, one page instead of two nav tabs. The full gear database is still being built — the short version, straight from Fit Protocol: 360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout, matching the human strength curve instead of fighting it. The listings below are placeholder scaffolds, not real inventory yet.</p>
   </div>
 </div>
 
@@ -236,88 +249,67 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Straight From @fudge_fit</span>
-      <h2>The Meals</h2>
-      <p>Every real recipe, sorted by category — a smoothie row, a wrap row, a meat row — so you can scan straight to what you're hungry for instead of scrolling one long feed. New meals get added into their row as they're posted.</p>
+      <h2>Static Gym Photo Drops</h2>
+      <p>The real, still-image posts from the gym — not reels — moved here where they belong. Tap through to view any of them on Instagram.</p>
     </div>
+    <div class="log-grid carousel-grid" data-carousel data-carousel-max="3">
+      <a class="log-card" href="https://www.instagram.com/p/Dbk17oYHJ9m/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/monday-mornings-locker-room.jpg" alt="Monday Mornings" loading="lazy"><span class="log-tag">Gym Photo</span></div>
+        <div class="log-body"><div class="date">Aug 3, 2026</div><h4>Monday Mornings</h4><div class="stats"><span>♥ 78</span><span>💬 9</span></div><div class="watch">▶ View on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DbVe1q3HBZ8/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/story-5.jpg" alt="Upper Body" loading="lazy"><span class="log-tag">Gym Photo</span></div>
+        <div class="log-body"><div class="date">Jul 28, 2026</div><h4>Upper Body</h4><div class="stats"><span>♥ 62</span><span>💬 4</span></div><div class="watch">▶ View on Instagram</div></div>
+      </a>
+      <a class="log-card" href="https://www.instagram.com/p/DbDf9sSnAzR/" target="_blank" rel="noopener">
+        <div class="log-media"><img src="assets/img/story-2.jpg" alt="Chest & Triceps" loading="lazy"><span class="log-tag">Gym Photo</span></div>
+        <div class="log-body"><div class="date">Jul 21, 2026</div><h4>Chest &amp; Triceps</h4><div class="stats"><span>♥ 20</span><span>💬 0</span></div><div class="watch">▶ View on Instagram</div></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <nav class="meal-jump" aria-label="Jump to a meal category">
-      <a href="#row-smoothies">Protein Smoothies</a>
-      <a href="#row-bowls">Recovery Bowls</a>
-      <a href="#row-wraps">Wraps &amp; Handhelds</a>
-      <a href="#row-meat">Meat &amp; Carnivore</a>
-      <a href="#row-treats">Treats &amp; Fat Bombs</a>
-      <a href="#row-salads">Mega Salads</a>
-    </nav>
+<section class="shop-blk" id="for-sale">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Used Equipment</span>
+      <h2>Gear I'm Done With</h2>
+      <p>Everything here has been through real training blocks — nothing's brand new, everything still works. DM @fudge_fit on Instagram to buy or ask a question about condition.</p>
+    </div>
+    <!-- PLACEHOLDER LISTINGS — replace image, title, condition, price, and
+         href (a direct buy link or an Instagram DM link) for each real item -->
+    <div class="shop-grid carousel-grid" data-carousel data-carousel-max="4">
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/gym-equipment-wide.jpg" alt="Placeholder listing — resistance band set" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
+      </a>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/gym-bench-closeup.jpg" alt="Placeholder listing — bench" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
+      </a>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/kinetic-rig-architecture.jpg" alt="Placeholder listing — rack" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Fair</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
+      </a>
+      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
+        <div class="shop-media"><img src="assets/img/arm-blaster-6x6x6.jpg" alt="Placeholder listing — accessory" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
+        <div class="shop-body"><div class="cond">Condition: Like New</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <div class="food-row" id="row-smoothies">
-      <div class="fr-head"><h3>Protein Smoothies</h3><span class="fr-count">1 item</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <a class="log-card" href="https://www.instagram.com/p/DckF9_4gIe0/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/protein-berries-smoothie.jpg" alt="Protein Berries Smoothie" loading="lazy"><span class="log-tag">Smoothie</span></div>
-          <div class="log-body"><div class="date">Aug 28, 2026</div><h4>Protein Berries Smoothie</h4><div class="stats"><span>♥ 48</span><span>💬 12</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
+<section class="guide-blk" id="guide">
+  <div class="wrap">
+    <div class="guide-card">
+      <div class="gc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"/></svg></div>
+      <div class="gc-body">
+        <h3>The Fit Protocol Guide Book</h3>
+        <p>The full training system — six vectors, one clock, every chapter audited — as a reference you can keep. Purchase link goes here once it's live; for now it opens the free on-site version.</p>
       </div>
-    </div>
-
-    <div class="food-row" id="row-bowls">
-      <div class="fr-head"><h3>Recovery Bowls</h3><span class="fr-count">2 items</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <a class="log-card" href="https://www.instagram.com/p/DbrMLlegGOL/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/anabolic-recovery-bowl.jpg" alt="Anabolic Recovery Bowl" loading="lazy"><span class="log-tag">Bowl</span></div>
-          <div class="log-body"><div class="date">Aug 5, 2026</div><h4>Anabolic Recovery Bowl</h4><div class="stats"><span>♥ 54</span><span>💬 2</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-        <a class="log-card" href="https://www.instagram.com/p/Dc_n4SHAEnb/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/choco-blueberry-recovery.jpg" alt="Dark Choco Blueberry Recovery" loading="lazy"><span class="log-tag">Bowl</span></div>
-          <div class="log-body"><div class="date">Sep 7, 2026</div><h4>Dark Choco Blueberry Recovery</h4><div class="stats"><span>♥ 19</span><span>💬 6</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-      </div>
-    </div>
-
-    <div class="food-row" id="row-wraps">
-      <div class="fr-head"><h3>Wraps &amp; Handhelds</h3><span class="fr-count">1 item</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <a class="log-card" href="https://www.instagram.com/p/DdCRC82AhaT/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/protein-wrap-trio.jpg" alt="Post-Workout Protein Wrap" loading="lazy"><span class="log-tag">Wrap</span></div>
-          <div class="log-body"><div class="date">Sep 8, 2026</div><h4>Post-Workout Protein Wrap</h4><div class="stats"><span>♥ 24</span><span>💬 10</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-      </div>
-    </div>
-
-    <div class="food-row" id="row-meat">
-      <div class="fr-head"><h3>Meat &amp; Carnivore</h3><span class="fr-count">2 items</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <a class="log-card" href="https://www.instagram.com/p/DcwahczACPq/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/carnivore-omelette.jpg" alt="Post-Workout Carnivore Omelette" loading="lazy"><span class="log-tag">Meat</span></div>
-          <div class="log-body"><div class="date">Sep 1, 2026</div><h4>Post-Workout Carnivore Omelette</h4><div class="stats"><span>♥ 26</span><span>💬 4</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-        <a class="log-card" href="https://www.instagram.com/p/DbOragtABpa/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/post-workout-air-fry-meals.jpg" alt="Post-Workout Air Fry Meals" loading="lazy"><span class="log-tag">Meat</span></div>
-          <div class="log-body"><div class="date">Jul 25, 2026</div><h4>Post-Workout Air Fry Meals</h4><div class="stats"><span>♥ 30</span><span>💬 7</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-      </div>
-    </div>
-
-    <div class="food-row" id="row-treats">
-      <div class="fr-head"><h3>Treats &amp; Fat Bombs</h3><span class="fr-count">1 item</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <a class="log-card" href="https://www.instagram.com/p/Db13qBAAji5/" target="_blank" rel="noopener">
-          <div class="log-media"><img src="assets/img/protein-choco-fudge.jpg" alt="Protein Choco Fudge" loading="lazy"><span class="log-tag">Treat</span></div>
-          <div class="log-body"><div class="date">Aug 10, 2026</div><h4>Protein Choco Fudge</h4><div class="stats"><span>♥ 88</span><span>💬 18</span></div><div class="watch">▶ Watch on Instagram</div></div>
-        </a>
-      </div>
-    </div>
-
-    <div class="food-row fr-empty" id="row-salads">
-      <div class="fr-head"><h3>Mega Salads</h3><span class="fr-soon">Coming Soon</span></div>
-      <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <div class="log-card fr-placeholder">
-          <div class="log-media"><div class="noimg">🥗</div><span class="log-tag">Coming Soon</span></div>
-          <div class="log-body"><div class="date">&nbsp;</div><h4>First mega salad recipe drops soon</h4><div class="stats">&nbsp;</div></div>
-        </div>
-        <div class="log-card fr-placeholder">
-          <div class="log-media"><div class="noimg">🥗</div><span class="log-tag">Coming Soon</span></div>
-          <div class="log-body"><div class="date">&nbsp;</div><h4>More rows get added as new meals get posted</h4><div class="stats">&nbsp;</div></div>
-        </div>
+      <div class="gc-ctas">
+        <a class="btn btn-primary" href="fit-protocol.html">Read Fit Protocol ↗</a>
+        <a class="btn btn-ghost" href="#" onclick="return false;" aria-disabled="true">Buy the Guide (add link)</a>
       </div>
     </div>
   </div>
@@ -326,7 +318,7 @@
 <section class="connect-section" id="connect" data-connect-mount></section>
 
 <footer>
-  <div class="wrap foot-fine">Project 100 — Fit Nutrition page. Being built now. Eat. Sleep. Train. Repeat.</div>
+  <div class="wrap foot-fine">Project 100 — Gear Shop page (gym gear + used equipment + guide book). Being built now. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
 <script src="assets/js/carousel.js"></script>

@@ -9,7 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/carousel.css">
+<link rel="stylesheet" href="assets/css/connect.css">
 <style>
   :root{
     --bg:#0a0b0d;
@@ -298,21 +300,6 @@
 
   /* CONNECT / LINK HUB — mobile-first tap targets, no hover dependency.
      Always the LAST section before the footer, on every page. */
-  .connect-section{ padding:52px 0 60px; }
-  .connect-section .sec-head{ text-align:center; max-width:520px; margin:0 auto 30px; }
-  .connect-section .eyebrow{ justify-content:center; width:100%; }
-  .link-ticker{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); }
-  .link-ticker-track{ display:flex; align-items:center; gap:10px; width:max-content; padding:2px 4px; animation:tickerScroll 26s linear infinite; }
-  .link-ticker:hover .link-ticker-track, .link-ticker:focus-within .link-ticker-track{ animation-play-state:paused; }
-  @keyframes tickerScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (prefers-reduced-motion:reduce){ .link-ticker-track{ animation:none; overflow-x:auto; -webkit-overflow-scrolling:touch; } .link-ticker{ -webkit-mask-image:none; mask-image:none; } }
-  .tick-btn{ display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; white-space:nowrap; padding:9px 16px; border-radius:999px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:.03em; text-transform:uppercase; transition:border-color .15s ease, transform .12s ease; }
-  .tick-btn .ic{ flex:0 0 auto; width:16px; height:16px; color:var(--text-dim); }
-  .tick-btn .ic svg{ width:100%; height:100%; }
-  .tick-btn:active{ transform:scale(.96); }
-  @media (hover:hover){ .tick-btn:hover{ border-color:var(--text-dim); } }
-  .tick-btn.primary{ background:var(--red); border-color:var(--red-dim); color:#fff; }
-  .tick-btn.primary .ic{ color:#fff; }
 
   /* ===== FIELD NOTE — short bold-caps callouts dropped into sections to
      surface a stat, milestone, or piece of mindset without breaking the
@@ -365,11 +352,11 @@
     .sec-head h2{ font-size:clamp(1.5rem, 6.5vw, 2rem); margin-top:6px; }
     .stat-card{ padding:18px 16px; }
     .phase{ padding:18px 16px; }
-    .connect-section{ padding:36px 0 44px; }
   }
 </style>
 </head>
 <body>
+<div class="page-shell">
 
 <header class="site-head">
 <nav id="nav">
@@ -387,8 +374,7 @@
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
-    <a class="page-tab" href="fit-shop.html">Fit Shop</a>
+    <a class="page-tab" href="gear-shop.html">Gear Shop</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
@@ -563,13 +549,9 @@
         <div class="ex-media"><img src="assets/img/protein-choco-fudge.jpg" alt="Fit Nutrition — recipes and meals" loading="lazy"><span class="ex-tag">Nutrition</span></div>
         <div class="ex-body"><h4>Fit Nutrition</h4><p>Real recipes, meals, and the macro protocol that fuels the excavation.</p><div class="ex-cta">See the meals →</div></div>
       </a>
-      <a class="explore-card" href="fit-gear.html">
-        <div class="ex-media"><img src="assets/img/gym-equipment-wide.jpg" alt="Fit Gear — the home gym setup" loading="lazy"><span class="ex-tag">Equipment</span></div>
-        <div class="ex-body"><h4>Fit Gear</h4><p>Racks, bands, plyo boxes — the actual equipment behind the training log.</p><div class="ex-cta">See the rig →</div></div>
-      </a>
-      <a class="explore-card" href="fit-shop.html">
-        <div class="ex-media"><img src="assets/img/featured-gear-setup.jpg" alt="Fit Shop — used gear and the guide book" loading="lazy"><span class="ex-tag">Shop</span></div>
-        <div class="ex-body"><h4>Fit Shop</h4><p>Used equipment I'm done with, plus purchase links for the guide book.</p><div class="ex-cta">Browse the shop →</div></div>
+      <a class="explore-card" href="gear-shop.html">
+        <div class="ex-media"><img src="assets/img/gym-equipment-wide.jpg" alt="Gear Shop — the home gym setup, used gear, and the guide book" loading="lazy"><span class="ex-tag">Gear</span></div>
+        <div class="ex-body"><h4>Gear Shop</h4><p>Racks, bands, plyo boxes, gear I'm done with, and purchase links for the guide book — one page.</p><div class="ex-cta">See the rig →</div></div>
       </a>
       <a class="explore-card" href="ninja-creami.html">
         <div class="ex-media"><img src="assets/img/protein-berries-smoothie.jpg" alt="Ninja CREAMi — high-protein dessert system" loading="lazy"><span class="ex-tag">Dessert</span></div>
@@ -599,67 +581,7 @@
   </div>
 </div>
 
-<section class="connect-section" id="connect">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Find Me Everywhere</span>
-      <h2>One Link. Every Channel.</h2>
-      <p>Training logs, live streams, and the full protocol — pick your platform.</p>
-    </div>
-    <div class="link-ticker" role="region" aria-label="Find me on every platform — auto-scrolling links">
-      <div class="link-ticker-track">
-        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
-          <span class="lbl">Instagram</span>
-        </a>
-        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">Facebook</span>
-        </a>
-        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
-          <span class="lbl">TikTok</span>
-        </a>
-        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
-          <span class="lbl">Twitch</span>
-        </a>
-        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">YouTube</span>
-        </a>
-        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
-          <span class="lbl">Spotify Playlist</span>
-        </a>
-        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
-          <span class="lbl">Instagram</span>
-        </a>
-        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">Facebook</span>
-        </a>
-        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
-          <span class="lbl">TikTok</span>
-        </a>
-        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
-          <span class="lbl">Twitch</span>
-        </a>
-        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">YouTube</span>
-        </a>
-        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
-          <span class="lbl">Spotify Playlist</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="connect-section" id="connect" data-connect-mount></section>
 
 <footer>
   <div class="wrap foot-grid">
@@ -681,8 +603,10 @@
 </footer>
 
 <script src="assets/js/carousel.js"></script>
+<script src="assets/js/connect.js"></script>
 <script>
 window.ProjectCarousel && window.ProjectCarousel.init();
+window.ProjectConnect && window.ProjectConnect.init();
 
 // ===== Lightbox: click any static "zoomable" image to pop it out bigger.
 // Auto-closes if the page is scrolled/swiped, closes on backdrop click,
@@ -770,5 +694,6 @@ try{
   document.querySelectorAll('.reveal').forEach(el => { el.classList.add('pre'); io.observe(el); });
 }catch(e){ /* .reveal is visible by default — nothing to do */ }
 </script>
+</div>
 </body>
 </html>

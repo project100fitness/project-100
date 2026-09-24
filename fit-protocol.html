@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shell.css">
 <style>
   /* ============ TOKENS — matches the rest of Project 100 ============ */
   :root{
@@ -44,6 +45,14 @@
   *{box-sizing:border-box;}
   html,body{height:100%;}
   body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16.5px;font-weight:450;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;display:flex;flex-direction:column;overflow:hidden;}
+  /* This page is a full-viewport app shell (header + an internally-
+     scrolling .deck), not a normal scrolling document — body itself is
+     the flex column that gives .deck its bounded, scrollable height.
+     The shared .page-shell boxed-layout wrapper (assets/css/shell.css)
+     sits between body and that structure now, so it has to pass the
+     flex chain straight through instead of blocking it, or .deck loses
+     its bounded height and the whole page stops scroll-snapping. */
+  .page-shell{ display:flex; flex-direction:column; height:100%; min-height:0; }
   h1,h2,h3,h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;font-weight:600;margin:0;}
   a{color:var(--accent-2);}
   code,.mono{font-family:var(--font-mono);}
@@ -129,8 +138,16 @@
      read as a big empty gap when scrolling past it. Anchoring to the top
      with generous breathing room keeps every slide's rhythm consistent
      whether it holds two lines or two screens of content. */
-  .slide{min-height:100%;width:100%;max-width:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:flex-start;padding:64px 20px 46px;position:relative;border-bottom:1px solid var(--border-soft);overflow-x:hidden;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+  .slide{min-height:0;width:100%;max-width:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:flex-start;padding:56px 20px 40px;position:relative;border-bottom:1px solid var(--border-soft);overflow-x:hidden;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
   .slide.in-view{opacity:1;transform:translateY(0);}
+  /* Every slide hugs its own content instead of being force-stretched to
+     fill the deck viewport. This used to be desktop-only (min-height:100%
+     on mobile, "one slide = one phone screen") but that meant every short
+     slide on a phone dragged 150-400px of dead empty space before the next
+     one, which read as heavy, scroll-intensive dead air — so mobile now
+     gets the same content-hugging behaviour as desktop. Scroll-snap and
+     top-anchoring are unaffected either way; slides are just shorter when
+     they're short, on any screen. */
   .slide-inner{max-width:1080px;margin:0 auto;width:100%;overflow-x:hidden;}
   .slide-kicker{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:10px;}
   .slide-kicker .n{border:1px solid var(--accent-dim);border-radius:4px;padding:2px 7px;}
@@ -151,22 +168,41 @@
   .info-card .ic-body b{color:var(--text);}
   .info-card .ic-meta{margin-top:10px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);border-top:1px solid var(--border-soft);padding-top:8px;}
 
-  /* full vector detail blocks: payload + mechanisms + firewall */
-  .vector-full{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
-  .vector-full .vf-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 10px;}
-  .vector-full .vf-name{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.01em;}
+  /* full vector detail blocks: payload + mechanisms + firewall.
+     Each vector now leads with a full hero photo (the real, high-resolution
+     formula-card art) instead of a tiny 88px thumbnail — the image itself
+     carries the payload/mechanism/firewall data as a beautiful reference,
+     the HTML text below it repeats the same data in accessible/scannable form. */
+  .vector-full{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0 0 20px;margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden;}
+  .vector-full .vf-hero{position:relative;margin:0;cursor:zoom-in;background:#0a0b0d;line-height:0;}
+  .vector-full .vf-hero img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;transition:transform .35s cubic-bezier(.22,1,.36,1);}
+  @media (hover:hover){.vector-full .vf-hero:hover img{transform:scale(1.035);}}
+  .vector-full .vf-hero figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 16px 12px;background:linear-gradient(0deg,rgba(6,7,9,.92),rgba(6,7,9,.55) 70%,transparent);}
+  .vector-full .vf-name{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.01em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);}
   .vector-full .vf-time{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--accent);white-space:nowrap;}
-  .vector-full .vf-scope{font-size:.82rem;color:var(--text-faint);font-style:italic;margin:4px 0 12px;}
+  .vector-full .vf-scope{font-size:.82rem;color:var(--text-faint);font-style:italic;margin:14px 18px 12px;}
   .vector-full .vf-label{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin:0 0 6px;}
   .vector-full .vf-list{font-size:.85rem;color:var(--text-dim);line-height:1.55;margin:0 0 12px;padding-left:18px;}
   .vector-full .vf-list:last-child{margin-bottom:0;}
   .vector-full .vf-list li b{color:var(--text);}
-  .vector-full .vf-firewall{border-top:1px dashed var(--border-soft);padding-top:10px;margin-top:2px;}
+  .vector-full .vf-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;padding:0 18px;}
+  .vector-full .vf-firewall{border-top:1px dashed var(--border-soft);padding:10px 18px 0;margin:2px 18px 0;}
   .vector-full .vf-firewall .vf-label{color:var(--bad);}
-  .vector-full .vf-media{width:88px;height:88px;flex:none;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--surface-2,var(--surface));order:-1;margin-right:2px;cursor:zoom-in;transition:transform .2s ease;}
-  .vector-full .vf-media img{width:100%;height:100%;object-fit:cover;display:block;}
-  @media (hover:hover){.vector-full .vf-media:hover{transform:scale(1.04);}}
-  .vector-full .vf-head{align-items:center;}
+  @media (max-width:640px){.vector-full .vf-cols{grid-template-columns:1fr;gap:0;}}
+
+  /* Encapsulated Intake Matrix — the capsule/pill schedule, built natively
+     from the reference chart's data instead of embedding the chart image. */
+  .matrix-timeline{display:flex;flex-direction:column;gap:12px;}
+  .mx-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);position:relative;border-left:3px solid var(--accent);}
+  .mx-block.mx-shutdown{border-left-color:var(--accent-2);}
+  .mx-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .mx-time{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--accent);white-space:nowrap;}
+  .mx-title{font-family:var(--font-display);font-size:1rem;letter-spacing:.01em;}
+  .mx-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
+  .mx-pill{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border:1px solid var(--border-soft);border-radius:100px;padding:5px 11px 5px 8px;font-size:.76rem;color:var(--text-dim);}
+  .mx-pill .qty{font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--accent-2);background:rgba(255,255,255,.06);border-radius:100px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .mx-note{font-size:.82rem;color:var(--text-faint);line-height:1.5;margin:0;}
+  .mx-note b{color:var(--text-dim);}
 
   /* protocol reference images: clock, systemic-fueling anatomy, capsule matrix.
      These are plain white/clinical-diagram source images — a raw full-bleed
@@ -191,7 +227,7 @@
   .lightbox-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .15s ease,transform .15s ease;}
   .lightbox-close:hover{background:rgba(230,39,63,.85);transform:scale(1.06);}
   .lightbox-close svg{width:20px;height:20px;}
-  @media (max-width:640px){.lightbox-overlay{padding:16px;}.lightbox-close{top:10px;right:10px;width:36px;height:36px;}.vector-full .vf-media{width:64px;height:64px;}}
+  @media (max-width:640px){.lightbox-overlay{padding:16px;}.lightbox-close{top:10px;right:10px;width:36px;height:36px;}}
 
   /* stat strip */
   .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
@@ -206,7 +242,8 @@
 
   /* pill row (timelines / quick vectors) */
   .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 16px;}
-  .pill{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:.82rem;}
+  .pill{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:.82rem;text-decoration:none;color:inherit;display:inline-block;transition:border-color .15s ease,transform .15s ease;}
+  a.pill:hover{border-color:var(--accent);transform:translateY(-1px);}
   .pill .t{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);display:block;margin-bottom:2px;}
   .pill b{display:block;font-family:var(--font-display);font-size:.85rem;letter-spacing:.01em;}
 
@@ -280,6 +317,7 @@
   }
 </style>
 </head><body>
+<div class="page-shell">
 
 <header class="site-head">
 <nav id="nav">
@@ -297,8 +335,7 @@
     <a class="page-tab current" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
-    <a class="page-tab" href="fit-shop.html">Fit Shop</a>
+    <a class="page-tab" href="gear-shop.html">Gear Shop</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
@@ -493,21 +530,16 @@
       <h2 class="slide-title">The Vector Protocols</h2>
       <p class="slide-lede">Seven vectors, zero mechanical churning — solid digestion is a real metabolic tax without a gallbladder. Each vector gets its own slide next — swipe or scroll through.</p>
       <div class="pill-row">
-        <div class="pill"><span class="t">06:30 · V3</span><b>Recovery</b></div>
-        <div class="pill"><span class="t">07:00 · V1</span><b>Ignition</b></div>
-        <div class="pill"><span class="t">09:30 · V2</span><b>Refuel</b></div>
-        <div class="pill"><span class="t">10:30 · V4</span><b>Reload</b></div>
-        <div class="pill"><span class="t">16:30 · V5</span><b>Transport</b></div>
-        <div class="pill"><span class="t">19:30 · V2pm</span><b>Pump</b></div>
-        <div class="pill"><span class="t">20:30 · V10</span><b>Shutdown Slurry</b></div>
+        <a class="pill" href="#s-vec-recovery"><span class="t">06:30 · V3</span><b>Recovery</b></a>
+        <a class="pill" href="#s-vec-ignition"><span class="t">07:00 · V1</span><b>Ignition</b></a>
+        <a class="pill" href="#s-vec-refuel"><span class="t">09:30 · V2</span><b>Refuel</b></a>
+        <a class="pill" href="#s-vec-reload"><span class="t">10:30 · V4</span><b>Reload</b></a>
+        <a class="pill" href="#s-vec-transport"><span class="t">16:30 · V5</span><b>Transport</b></a>
+        <a class="pill" href="#s-vec-pump"><span class="t">19:30 · V2pm</span><b>Pump</b></a>
+        <a class="pill" href="#s-vec-shutdown"><span class="t">20:30 · V10</span><b>Shutdown Slurry</b></a>
       </div>
+      <p class="vf-scope" style="margin:2px 0 0;">Tap any vector above to jump straight to its card — the 10-second version is this row; the full Payload Matrix, mechanisms and firewall for each one are one tap away.</p>
       <div class="focus-point focus-point--gold"><span class="fp-tag">Why HCL, Not Monohydrate</span><p>HCL dissolves more completely and needs less fluid. Split across three daily pulses (V4, V5, V10) instead of one dose.</p></div>
-
-      <figure class="protocol-fig" data-lightbox="assets/img/protocol-systemic-fueling.jpg">
-        <div class="pf-head"><span class="pf-lbl"><span class="pf-dot"></span>Reference Plate · Systemic Map</span><span class="pf-zoom">Tap to zoom</span></div>
-        <div class="pf-frame"><img src="assets/img/protocol-systemic-fueling.jpg" alt="Systemic Fueling — conceptual map of where each vector acts in the body" loading="lazy"></div>
-        <figcaption>Systemic Fueling — a conceptual map of where each vector acts in the body. Payloads shown here are a simplified snapshot — the exact, current Payload Matrix for each vector is on its own slide next.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -516,24 +548,24 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 1 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-recovery.jpg"><img src="assets/img/vector-recovery.jpg" alt="Vector 3 Recovery formula card" loading="lazy"></span><span class="vf-name">Vector 3 — Recovery</span><span class="vf-time">06:30 AM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-recovery.jpg"><img src="assets/img/vector-recovery.jpg" alt="Vector 3 Recovery formula card" loading="lazy"><figcaption><span class="vf-name">Vector 3 — Recovery</span><span class="vf-time">06:30 AM</span></figcaption></figure>
         <p class="vf-scope">Scope: Fasted Awakening &amp; Connective Tissue Scaffolding</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>1x Scoop Carnivor Beef Protein Isolate</li>
           <li>1x Scoop Hydrolyzed Marine Collagen Peptides</li>
           <li>5g Gelatinized Black Maca Root Powder</li>
           <li>15ml Liquid L-Carnitine 1500 (Blue Raspberry)</li>
           <li>Standalone flush: 30ml NAKA VitaGreens, separate glass</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>Fasted MPS Trigger</b> — hydrolyzed beef peptides instantly halt overnight muscle catabolism.</li>
           <li><b>Fascial Masonry</b> — Type I collagen peptides supply hydroxyproline to rebuild tendons and L4–S1 disc fascia.</li>
           <li><b>Mitochondrial Lipid Shuttle</b> — L-Carnitine primes CPT-1 to oxidize fatty acids for fuel while sparing glycogen.</li>
           <li><b>Endocrine Stability</b> — black maca modulates the HPA axis to buffer morning cortisol spikes.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Green Extraction Firewall</b> — VitaGreens isolated to a separate water flush post-shake so plant fiber and phytic acid can't bind free collagen peptides.</li>
@@ -549,10 +581,10 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 2 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-ignition.jpg"><img src="assets/img/vector-ignition.jpg" alt="Vector 1 Ignition formula card" loading="lazy"></span><span class="vf-name">Vector 1 — Ignition</span><span class="vf-time">07:00 AM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-ignition.jpg"><img src="assets/img/vector-ignition.jpg" alt="Vector 1 Ignition formula card" loading="lazy"><figcaption><span class="vf-name">Vector 1 — Ignition</span><span class="vf-time">07:00 AM</span></figcaption></figure>
         <p class="vf-scope">Scope: Maximal CNS Arousal &amp; Endothelial NO Priming</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>2x Scoops Impact Igniter Xtreme 2.0</li>
           <li>1x Scoop ALLMAX MuscleEAA Matrix</li>
           <li>1x Scoop PeakO2 Adaptogenic Matrix</li>
@@ -560,15 +592,15 @@
           <li>6.0g ALLMAX Citrulline Malate 2:1</li>
           <li>2,000mg ALLMAX Taurine Powder</li>
           <li>250mg AOR Xerenoos Citicoline</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>eNOS Arterial Dilation</b> — mega-dose citrulline floods plasma arginine for continuous pump.</li>
           <li><b>Cellular Oxygenation</b> — PeakO2 elevates VO2 max and anaerobic capacity under heavy loads.</li>
           <li><b>Neuromuscular Ignition</b> — citicoline fuels acetylcholine firing; betaine induces fluid swelling.</li>
           <li><b>Plasma Amino Flood</b> — saturates the bloodstream with all 9 EAAs prior to mechanical strain.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Zero Creatine Firewall</b> — strictly 0g Creatine HCL here to eliminate vasoconstriction and protect capillary blood flow.</li>
@@ -584,24 +616,24 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 3 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-refuel.jpg"><img src="assets/img/vector-refuel.jpg" alt="Vector 2 Refuel formula card" loading="lazy"></span><span class="vf-name">Vector 2 — Refuel</span><span class="vf-time">09:30 AM · T+2h</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-refuel.jpg"><img src="assets/img/vector-refuel.jpg" alt="Vector 2 Refuel formula card" loading="lazy"><figcaption><span class="vf-name">Vector 2 — Refuel</span><span class="vf-time">09:30 AM · T+2h</span></figcaption></figure>
         <p class="vf-scope">Scope: Intra-Workout Glycogen Drip &amp; Motor Unit Preservation</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>1x Scoop Perfect Sports BCAA HyperClear (Blue Raspberry)</li>
           <li>1x Serving Clean Electrolyte Complex (Sodium/Potassium)</li>
           <li>1/16 tsp Pink Himalayan Salt</li>
           <li>2–3 Whole Organic Medjool Dates</li>
           <li>600–750ml Cold Filtered Water Base</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>SGLT1 Cotransport</b> — date glucose paired with sodium drives rapid cellular water and amino uptake.</li>
           <li><b>GLUT5 Hepatic Replenishment</b> — fruit fructose restores liver glycogen to blunt CNS fatigue.</li>
           <li><b>mTORC1 Resynthesis</b> — free-form leucine halts intra-workout muscle protein breakdown.</li>
           <li><b>Membrane Re-Polarization</b> — potassium and sodium restore muscular contraction velocity.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Biphasic T+2h Timing</b> — scheduled at hour 2 to blunt cortisol spikes and sustain blood glucose.</li>
@@ -617,24 +649,24 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 4 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-reload.jpg"><img src="assets/img/vector-reload.jpg" alt="Vector 4 Reload formula card" loading="lazy"></span><span class="vf-name">Vector 4 — Reload</span><span class="vf-time">10:30 AM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-reload.jpg"><img src="assets/img/vector-reload.jpg" alt="Vector 4 Reload formula card" loading="lazy"><figcaption><span class="vf-name">Vector 4 — Reload</span><span class="vf-time">10:30 AM</span></figcaption></figure>
         <p class="vf-scope">Scope: Post-Workout Insulin Bridge &amp; Nitric Oxide Shuttling</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>0.5x Scoop BioSteel Sports Hydration / Protein</li>
           <li>1x Scoop (7g) Pure Organic Beetroot Powder</li>
           <li>750mg Proline Creatine HCL (Pulse 1)</li>
           <li>1/16 tsp Pink Himalayan Salt</li>
           <li>Standalone oral dose: 1x Capsule R-ALA (300mg)</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>Endothelial Extension</b> — beetroot nitrates sustain 3-hour post-workout microvascular blood flow.</li>
           <li><b>SLC6A8 Symporter</b> — pink salt sodium gradient forces creatine into depleted myofibrils.</li>
           <li><b>GLUT4 Translocation</b> — R-ALA primes cellular insulin receptors 45 minutes pre-meal.</li>
           <li><b>Rapid ATP Resynthesis</b> — micro-dosed Creatine HCL restores cellular phosphocreatine pools.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>R-ALA Polymerization Firewall</b> — never mix R-ALA into liquid; water and minerals cause ring degradation. Swallow dry.</li>
@@ -650,24 +682,24 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 5 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-transport.jpg"><img src="assets/img/vector-transport.jpg" alt="Vector 5 Transport formula card" loading="lazy"></span><span class="vf-name">Vector 5 — Transport</span><span class="vf-time">16:30 PM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-transport.jpg"><img src="assets/img/vector-transport.jpg" alt="Vector 5 Transport formula card" loading="lazy"><figcaption><span class="vf-name">Vector 5 — Transport</span><span class="vf-time">16:30 PM</span></figcaption></figure>
         <p class="vf-scope">Scope: Intracellular Osmotic Volumization &amp; Connective Tissue Priming</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>750mg Proline Creatine HCL (Micro-Dose Pulse 2)</li>
           <li>1x Scoop Hydrolyzed Marine Collagen Peptides</li>
           <li>15ml ALLMAX Liquid L-Carnitine 1500 (Blue Raspberry)</li>
           <li>1/16 tsp Pink Himalayan Salt</li>
           <li>Cold Filtered Water Base</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>Intramyocellular Swelling</b> — the second creatine pulse sustains phosphocreatine pool saturation for non-stop cell hydration.</li>
           <li><b>Fascial Remodeling Wave</b> — Type I collagen peptides supply circulating hydroxyproline to L4–S1 disc and ulnar sheath recovery.</li>
           <li><b>Mitochondrial Lipid Shuttle</b> — L-Carnitine upregulates CPT-1 for clean energy production without stimulants.</li>
           <li><b>Osmotic Hydraulic Drive</b> — the sodium-driven extracellular gradient pulls water into myofibrils to trigger hypertrophy.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Iron Lock Firewall</b> — hardlocked exactly 60 minutes post-Meal 3 to avoid competing with heme-iron or copper at DMT1 transporters.</li>
@@ -683,23 +715,23 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 6 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-pump.jpg"><img src="assets/img/vector-pump.jpg" alt="Vector 2 Pump Shaker formula card" loading="lazy"></span><span class="vf-name">Vector 2 — Pump Shaker</span><span class="vf-time">19:30 PM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-pump.jpg"><img src="assets/img/vector-pump.jpg" alt="Vector 2 Pump Shaker formula card" loading="lazy"><figcaption><span class="vf-name">Vector 2 — Pump Shaker</span><span class="vf-time">19:30 PM</span></figcaption></figure>
         <p class="vf-scope">Scope: Non-Stim Mechanical Hyperemia &amp; Hydraulic Fascial Stretch</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>1x Scoop ALLMAX Impact Pump Powder (Non-Stimulant)</li>
           <li>1x Scoop Perfect Sports BCAA HyperClear</li>
           <li>1x Scoop PeakO2 Adaptogenic Matrix</li>
           <li>Cold Filtered Water Base</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>Hydraulic Fascial Expansion</b> — stimulant-free nitric oxide pathway expands localized blood volume during band loading.</li>
           <li><b>Hypoxic Buffering</b> — PeakO2 optimizes cellular oxygen uptake under continuous variable tension.</li>
           <li><b>Anti-Catabolic Preservation</b> — circulating BCAAs sustain nitrogen balance during evening sets.</li>
           <li><b>Neural Sparing</b> — delivers deep muscular fullness without central nervous system stress.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Zero Sodium Firewall</b> — strictly 0mg added salt to protect nighttime blood pressure and prevent fluid retention.</li>
@@ -715,25 +747,25 @@
     <div class="slide-inner">
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · 7 of 7</div>
       <div class="vector-full">
-        <div class="vf-head"><span class="vf-media" data-lightbox="assets/img/vector-shutdown.jpg"><img src="assets/img/vector-shutdown.jpg" alt="Vector 10 Shutdown Slurry formula card" loading="lazy"></span><span class="vf-name">Vector 10 — Shutdown Slurry</span><span class="vf-time">20:30 PM</span></div>
+        <figure class="vf-hero" data-lightbox="assets/img/vector-shutdown.jpg"><img src="assets/img/vector-shutdown.jpg" alt="Vector 10 Shutdown Slurry formula card" loading="lazy"><figcaption><span class="vf-name">Vector 10 — Shutdown Slurry</span><span class="vf-time">20:30 PM</span></figcaption></figure>
         <p class="vf-scope">Scope: Thermal Down-Regulation, Mucosal Sealing &amp; Spinal Unclamp</p>
-        <div class="vf-label">Payload Matrix</div>
-        <ul class="vf-list">
+        <div class="vf-cols">
+          <div><div class="vf-label">Payload Matrix</div><ul class="vf-list">
           <li>800ml Hot Hibiscus Tisane Solvent (brewed strictly 60–65°C)</li>
           <li>1x Scoop Medi-C Plus (2,000mg Vitamin C + 1,300mg L-Lysine)</li>
           <li>750mg Proline Creatine HCL (Pulse 3)</li>
           <li>5g Fermented L-Glutamine Gut Barrier Powder</li>
           <li>1x Scoop Niyama Hey Relax Sleep Support Powder</li>
           <li>1.0x Scoop BioSteel Sports Electrolyte Powder</li>
-        </ul>
-        <div class="vf-label">Biological Mechanisms</div>
-        <ul class="vf-list">
+        </ul></div>
+          <div><div class="vf-label">Biological Mechanisms</div><ul class="vf-list">
           <li><b>Vascular Relaxation</b> — hibiscus anthocyanins inhibit ACE enzymes to lower systemic blood pressure.</li>
           <li><b>Enterocyte Regeneration</b> — fermented glutamine seals gut tight junctions and the intestinal mucosal lining.</li>
           <li><b>Solvent Drag Acceleration</b> — creatine HCL and electrolytes drive aminos into cells for deep fascial remodeling.</li>
           <li><b>Neuromuscular Unclamping</b> — magnesium bisglycinate delivers NMDA antagonism to release paraspinal guarding on the L4–S1 disc.</li>
-        </ul>
-        <div class="vf-firewall">
+        </ul></div>
+        </div>
+<div class="vf-firewall">
           <div class="vf-label">Pharmacokinetic Firewall</div>
           <ul class="vf-list">
             <li><b>Thermal Solvent Rule (60–65°C)</b> — under 60°C congeals upcoming casein fats ("cement gut"); over 65°C denatures ascorbic acid and glutamine.</li>
@@ -751,11 +783,62 @@
       <div class="slide-kicker"><span class="n">08</span>Liquid Delivery · Reference</div>
       <h2 class="slide-title">The Encapsulated Intake Matrix</h2>
       <p class="slide-lede">A separate layer that runs alongside the seven liquid vectors above — the capsule/pill schedule, not another shake.</p>
-      <figure class="protocol-fig" data-lightbox="assets/img/diagram-matrix.jpg">
-        <div class="pf-head"><span class="pf-lbl"><span class="pf-dot"></span>Reference Plate · V185.83</span><span class="pf-zoom">Tap to zoom</span></div>
-        <div class="pf-frame"><img src="assets/img/diagram-matrix.jpg" alt="V185.83 Encapsulated Intake Matrix — the capsule/pill schedule" loading="lazy"></div>
-        <figcaption>V185.83 — The Encapsulated Intake Matrix, the capsule/pill layer that runs alongside the seven vectors.</figcaption>
-      </figure>
+      <div class="matrix-timeline">
+        <div class="mx-block">
+          <div class="mx-head"><span class="mx-time">05:00 · Vacuum Pulse</span><span class="mx-title">Fasted Endocrine Pulse</span></div>
+          <div class="mx-pills">
+            <span class="mx-pill"><span class="qty">3×</span>TestoFX Xtreme</span>
+            <span class="mx-pill"><span class="qty">1×</span>Zinc Supreme</span>
+            <span class="mx-pill"><span class="qty">1×</span>LactoBif 100</span>
+            <span class="mx-pill"><span class="qty">2×</span>New Roots Boron (6mg)</span>
+          </div>
+          <p class="mx-note"><b>Void Lock</b> — a strict 1-hour fast is required before fiber intake, so free testosterone and SHBG signaling aren't blunted before it clears.</p>
+        </div>
+        <div class="mx-block">
+          <div class="mx-head"><span class="mx-time">06:15 · Meal 1</span><span class="mx-title">The Load</span></div>
+          <div class="mx-pills">
+            <span class="mx-pill"><span class="qty">2×</span>Kyolic 104</span>
+            <span class="mx-pill"><span class="qty">1×</span>MMN (175mg)</span>
+            <span class="mx-pill"><span class="qty">1×</span>NAC (600mg)</span>
+            <span class="mx-pill"><span class="qty">1×</span>CGN Complete Enzyme</span>
+          </div>
+          <p class="mx-note"><b>Hepatic Prosthesis &amp; NAD+ Spine</b> — solvent-locked to hot black tea (60–65°C); mandatory for lipid emulsification, ACV completely purged.</p>
+        </div>
+        <div class="mx-block">
+          <div class="mx-head"><span class="mx-time">11:15 · Meal 2</span><span class="mx-title">The DMZ Shield</span></div>
+          <div class="mx-pills">
+            <span class="mx-pill"><span class="qty">1×</span>Multivitamin</span>
+            <span class="mx-pill"><span class="qty">1×</span>Calcium Malate (200mg)</span>
+            <span class="mx-pill"><span class="qty">1×</span>Omega 800</span>
+            <span class="mx-pill"><span class="qty">1×</span>Liver Care</span>
+            <span class="mx-pill"><span class="qty">2×</span>Himalaya UriCare</span>
+            <span class="mx-pill"><span class="qty">2×</span>CGN Complete Enzyme</span>
+            <span class="mx-pill"><span class="qty">2×</span>Pumpkin Seed Oil Caps</span>
+            <span class="mx-pill"><span class="qty">1×</span>Curcumin 500 w/ Bioperine</span>
+          </div>
+          <p class="mx-note"><b>Renal Guard &amp; Mineral DMZ</b> — UriCare and pumpkin seed oil shield eGFR paths; Biperine manages 352gm full-body inflammatory turnover. Calcium Malate blocks zinc to protect copper status.</p>
+        </div>
+        <div class="mx-block">
+          <div class="mx-head"><span class="mx-time">15:30 · Meal 3</span><span class="mx-title">The Iron Lock</span></div>
+          <div class="mx-pills">
+            <span class="mx-pill"><span class="qty">3×</span>Beef Liver</span>
+            <span class="mx-pill"><span class="qty">2×</span>Ligament Restore</span>
+            <span class="mx-pill"><span class="qty">1×</span>Copper Glycinate (7mg)</span>
+            <span class="mx-pill"><span class="qty">1×</span>CGN Complete Enzyme</span>
+          </div>
+          <p class="mx-note"><b>Heme Purity Lock &amp; Myelin Repair</b> — Copper Glycinate counteracts zinc's effect to reverse left ulnar nerve entrapment risk; both Ligament Restore doses are locked here for absorption synergy, absolute isolation from zinc or calcium pathways.</p>
+        </div>
+        <div class="mx-block mx-shutdown">
+          <div class="mx-head"><span class="mx-time">20:30 · Shutdown Phase</span><span class="mx-title">The Hardware Lock</span></div>
+          <div class="mx-pills">
+            <span class="mx-pill"><span class="qty">2×</span>Magnesium Bisglycinate</span>
+            <span class="mx-pill"><span class="qty">1×</span>Tart Cherry 10X</span>
+            <span class="mx-pill"><span class="qty">1×</span>Naturopathic Labs Milk Thistle</span>
+            <span class="mx-pill"><span class="qty">1×</span>Vector 10 Shutdown Slurry</span>
+          </div>
+          <p class="mx-note"><b>Mandatory Hardware Lock</b> — strict 45-degree sleep elevation required for overnight disc rehydration. Thermal window: 60C–65C. Taken alongside the integrated nocturnal repair slurry — 800ml hot hibiscus tea base, 1x Medi-C Plus, 1x scoop creatine HCL, 1x Fermented L-Glutamine, 1x Scoop Hey Relax, 1.0x BioSteel electrolytes.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -935,7 +1018,7 @@
 
       <footer class="deck-foot">
         Project 100 — Protocol Deck · Version-Truth-Audited Edition · Condensed from the full Jan–Aug 2026 source archive · Last reconciled September 17, 2026
-        <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-workout.html">Fit Workout</a> · <a href="fit-nutrition.html">Fit Nutrition</a> · <a href="fit-gear.html">Fit Gear</a> · <a href="fit-shop.html">Fit Shop</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="fit-protocol-archive.html">Full Archive</a></div>
+        <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-workout.html">Fit Workout</a> · <a href="fit-nutrition.html">Fit Nutrition</a> · <a href="gear-shop.html">Gear Shop</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="fit-protocol-archive.html">Full Archive</a></div>
       </footer>
     </div>
   </section>
@@ -1196,4 +1279,5 @@
   }
 })();
 </script>
+</div>
 </body></html>

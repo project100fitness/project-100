@@ -9,7 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/carousel.css">
+<link rel="stylesheet" href="assets/css/connect.css">
 <style>
   :root{
     --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
@@ -133,23 +135,6 @@
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
 
-  /* CONNECT / FIND ME — identical block on every page, always the last
-     section before the footer. */
-  .connect-section{ padding:52px 0 60px; border-top:1px solid var(--border); }
-  .connect-section .sec-head{ text-align:center; max-width:520px; margin:0 auto 30px; }
-  .connect-section .eyebrow{ justify-content:center; width:100%; }
-  .link-ticker{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); }
-  .link-ticker-track{ display:flex; align-items:center; gap:10px; width:max-content; padding:2px 4px; animation:tickerScroll 26s linear infinite; }
-  .link-ticker:hover .link-ticker-track, .link-ticker:focus-within .link-ticker-track{ animation-play-state:paused; }
-  @keyframes tickerScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (prefers-reduced-motion:reduce){ .link-ticker-track{ animation:none; overflow-x:auto; -webkit-overflow-scrolling:touch; } .link-ticker{ -webkit-mask-image:none; mask-image:none; } }
-  .tick-btn{ display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; white-space:nowrap; padding:9px 16px; border-radius:999px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:.03em; text-transform:uppercase; transition:border-color .15s ease, transform .12s ease; }
-  .tick-btn .ic{ flex:0 0 auto; width:16px; height:16px; color:var(--text-dim); }
-  .tick-btn .ic svg{ width:100%; height:100%; }
-  .tick-btn:active{ transform:scale(.96); }
-  @media (hover:hover){ .tick-btn:hover{ border-color:var(--text-dim); } }
-  .tick-btn.primary{ background:var(--red); border-color:var(--red-dim); color:#fff; }
-  .tick-btn.primary .ic{ color:#fff; }
 
   @media (max-width:640px){
     .wrap{ padding:0 14px; }
@@ -165,18 +150,18 @@
       -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
       mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);
     }
-    .placeholder-hero{ padding:44px 0 36px; }
+    .placeholder-hero{ padding:34px 0 28px; }
     .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
     .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
     .placeholder-hero p{ font-size:.94rem; margin:0 auto 22px; }
-    .reels-blk{ padding:32px 0 40px; }
+    .reels-blk{ padding:24px 0 32px; }
     .reels-blk .sec-head{ margin-bottom:18px; }
     .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
-    .connect-section{ padding:40px 0 48px; }
   }
 </style>
 </head>
 <body>
+<div class="page-shell">
 
 <header class="site-head">
 <nav id="nav">
@@ -194,8 +179,7 @@
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab current" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab" href="fit-gear.html">Fit Gear</a>
-    <a class="page-tab" href="fit-shop.html">Fit Shop</a>
+    <a class="page-tab" href="gear-shop.html">Gear Shop</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
@@ -233,7 +217,7 @@
     <div class="sec-head">
       <span class="eyebrow">The Last 60 Days, Unfiltered</span>
       <h2>Training Log</h2>
-      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="fit-gear.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
+      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap through to watch any of them on Instagram. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="gear-shop.html" style="color:var(--cyan);text-decoration:none;">Gear Shop</a>.</p>
     </div>
 
     <div class="filters">
@@ -277,73 +261,14 @@
   </div>
 </section>
 
-<section class="connect-section" id="connect">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Find Me Everywhere</span>
-      <h2>One Link. Every Channel.</h2>
-      <p>Training logs, live streams, and the full protocol — pick your platform.</p>
-    </div>
-    <div class="link-ticker" role="region" aria-label="Find me on every platform — auto-scrolling links">
-      <div class="link-ticker-track">
-        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
-          <span class="lbl">Instagram</span>
-        </a>
-        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">Facebook</span>
-        </a>
-        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
-          <span class="lbl">TikTok</span>
-        </a>
-        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
-          <span class="lbl">Twitch</span>
-        </a>
-        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">YouTube</span>
-        </a>
-        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
-          <span class="lbl">Spotify Playlist</span>
-        </a>
-        <a class="tick-btn primary" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span>
-          <span class="lbl">Instagram</span>
-        </a>
-        <a class="tick-btn" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">Facebook</span>
-        </a>
-        <a class="tick-btn" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span>
-          <span class="lbl">TikTok</span>
-        </a>
-        <a class="tick-btn" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span>
-          <span class="lbl">Twitch</span>
-        </a>
-        <a class="tick-btn" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span>
-          <span class="lbl">YouTube</span>
-        </a>
-        <a class="tick-btn" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span>
-          <span class="lbl">Spotify Playlist</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="connect-section" id="connect" data-connect-mount></section>
 
 <footer>
   <div class="wrap foot-fine">Project 100 — Fit Workout page. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
 <script src="assets/js/carousel.js"></script>
+<script src="assets/js/connect.js"></script>
 <script>
 // ---- Training log data: pulled from @fudge_fit, last ~60 days ----
 const LOG_DATA = [
@@ -405,6 +330,7 @@ function renderLog(filter){
 }
 renderLog('all');
 window.ProjectCarousel && window.ProjectCarousel.init();
+window.ProjectConnect && window.ProjectConnect.init();
 
 document.querySelectorAll('.filter').forEach(f => {
   f.addEventListener('click', () => {
@@ -464,5 +390,6 @@ document.querySelectorAll('.filter').forEach(f => {
   }catch(e){ /* nav still works without highlighting */ }
 })();
 </script>
+</div>
 </body>
 </html>
