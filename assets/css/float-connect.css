@@ -90,3 +90,24 @@
   .fc-panel{ animation:none; }
   .fc-row{ animation:none; opacity:1; transform:none; }
 }
+
+/* ---- Floating "back to Project 100" button — stacks directly above
+   the "@" connect trigger; a rounded square keeps it visually
+   distinct from the round connect button. ---- */
+.fc-back{
+  position:fixed; left:16px; bottom:calc(82px + env(safe-area-inset-bottom,0px));
+  z-index:900; width:54px; height:54px; border-radius:14px;
+  background:var(--surface,#16181e); border:1px solid var(--border,#272b35); color:var(--text,#eef0f4);
+  display:flex; align-items:center; justify-content:center; text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,.4);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+}
+.fc-back svg{ width:22px; height:22px; }
+@media (hover:hover){
+  .fc-back:hover{ transform:scale(1.06); box-shadow:0 8px 26px rgba(0,0,0,.5); background:var(--red,#e6273f); border-color:var(--red,#e6273f); color:#fff; }
+}
+.fc-back:active{ transform:scale(.96); }
+@media (max-width:480px){
+  .fc-back{ left:12px; bottom:calc(74px + env(safe-area-inset-bottom,0px)); width:50px; height:50px; border-radius:12px; }
+  .fc-back svg{ width:20px; height:20px; }
+}
