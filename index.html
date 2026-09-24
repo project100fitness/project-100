@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/carousel.css">
 <link rel="stylesheet" href="assets/css/connect.css">
+<link rel="stylesheet" href="assets/css/float-connect.css">
 <style>
   :root{
     --bg:#0a0b0d;
@@ -83,11 +84,20 @@
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
   .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
   .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
+  /* the plain FIT-page pills (Fit Protocol/Workout/Nutrition/Gear Shop)
+     used to fall back to the same flat gray as the sub-menu text below
+     them — give them their own red-family tone (matching this site's
+     brand red, which is also what "current" turns them) so they read
+     as their own nav, with a solid-red hover to confirm they're links. */
+  .page-tab:not(.tab-home):not(.tab-creami):not(.current){ border-color:rgba(230,39,63,.4); color:#f19aa5; }
   @media (hover:hover){
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
     .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
   }
-  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); } }
+  @media (hover:hover){
+    .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); }
+    .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{ border-color:var(--red); color:var(--red); }
+  }
   #nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
   .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text); text-transform:uppercase;}
   .brand b{ color:var(--red); }
@@ -291,6 +301,12 @@
   .foot-links a{ text-decoration:none; color:var(--text-dim); }
   .foot-links a:hover{ color:var(--text); }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; margin-top:26px; border-top:1px solid var(--border); padding-top:20px; }
+  /* the contact email: visible and clickable, but one notch down from
+     the bold all-caps foot-links row so it reads as info, not another
+     nav item */
+  .foot-email{ display:inline-flex; align-items:center; gap:7px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.02em; color:var(--cyan); text-decoration:none; }
+  .foot-email svg{ width:15px; height:15px; flex:0 0 auto; }
+  .foot-email:hover{ text-decoration:underline; }
 
   /* Content is visible by default (never gated behind JS); IntersectionObserver
      below only adds a subtle enhancement class for browsers that support it. */
@@ -384,7 +400,6 @@
     <a href="#mission">MISSION</a>
     <a href="#roadmap">ROADMAP</a>
     <a href="#explore">EXPLORE</a>
-    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -598,15 +613,21 @@
       <a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a>
       <a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a>
     </div>
+    <a class="foot-email" href="mailto:project100@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+      project100@gmail.com
+    </a>
   </div>
   <div class="wrap foot-fine">Project 100 — The Singularity Archive. Version-Truth-Audited Edition, September 2026. Built and logged by Bogdan. Eat. Sleep. Train. Repeat.</div>
 </footer>
 
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/connect.js"></script>
+<script src="assets/js/float-connect.js"></script>
 <script>
 window.ProjectCarousel && window.ProjectCarousel.init();
 window.ProjectConnect && window.ProjectConnect.init();
+window.ProjectFloatConnect && window.ProjectFloatConnect.init();
 
 // ===== Lightbox: click any static "zoomable" image to pop it out bigger.
 // Auto-closes if the page is scrolled/swiped, closes on backdrop click,

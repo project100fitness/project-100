@@ -1,0 +1,92 @@
+/* ===================================================================
+   PROJECT 100 — Floating "@" Connect button (sitewide overlay)
+
+   A floating trigger, fixed bottom-left on every page (bottom-right is
+   already used on some pages by the deck controls / back-to-top
+   button), that opens a small anchored popover — not a full-screen
+   modal sheet — with the link rows cascading in one after another.
+   Click outside (an invisible full-viewport backdrop), the X, or
+   Escape closes it. Every link opens in a new tab (target="_blank"),
+   except the email row, which opens the visitor's mail app as normal.
+   =================================================================== */
+.fc-trigger{
+  position:fixed; left:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  z-index:900; width:54px; height:54px; border-radius:50%;
+  background:var(--red,#e6273f); border:1px solid var(--red,#e6273f); color:#fff;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.4); padding:0;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.fc-trigger svg{ width:24px; height:24px; }
+.fc-trigger:hover{ transform:scale(1.06); box-shadow:0 8px 26px rgba(0,0,0,.5); }
+.fc-trigger:active{ transform:scale(.96); }
+.fc-trigger.is-open{ background:var(--surface,#16181e); color:var(--text,#eef0f4); border-color:var(--border,#272b35); }
+
+/* invisible click-catcher, not a dimmed overlay — the menu should feel
+   like it's floating over the page, not blocking it */
+.fc-backdrop{ position:fixed; inset:0; z-index:898; background:transparent; }
+.fc-backdrop[hidden]{ display:none; }
+
+.fc-panel{
+  position:fixed; left:16px; bottom:calc(80px + env(safe-area-inset-bottom,0px));
+  z-index:899; width:min(88vw, 320px); max-height:min(70vh, 480px); overflow-y:auto;
+  background:var(--surface,#16181e); border:1px solid var(--border,#272b35); border-radius:16px;
+  box-shadow:0 16px 44px rgba(0,0,0,.5); padding:8px;
+  transform-origin:bottom left;
+  animation:fcPanelIn .18s ease both;
+}
+.fc-panel[hidden]{ display:none; }
+@keyframes fcPanelIn{ from{ opacity:0; transform:scale(.94) translateY(6px);} to{ opacity:1; transform:scale(1) translateY(0);} }
+
+.fc-head{ display:flex; align-items:center; gap:8px; padding:6px 8px 10px; }
+.fc-title{ font-family:'Oswald',var(--font-display,sans-serif); font-weight:700; font-size:.92rem; letter-spacing:.04em; text-transform:uppercase; color:var(--text,#eef0f4); }
+.fc-close{ order:2; margin-left:auto; width:28px; height:28px; border-radius:50%; border:1px solid var(--border,#272b35); background:transparent; color:var(--text-dim,#9aa1b0); display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; }
+.fc-close svg{ width:14px; height:14px; }
+.fc-close:hover{ color:var(--text,#eef0f4); border-color:var(--text-dim,#9aa1b0); }
+
+.fc-list{ display:flex; flex-direction:column; gap:6px; }
+.fc-row{
+  display:flex; align-items:center; gap:11px; padding:9px 10px; border-radius:11px;
+  background:var(--surface-2,#1d2029); text-decoration:none; color:var(--text,#eef0f4);
+  opacity:0; transform:translateY(6px);
+  animation:fcRowIn .28s ease forwards;
+}
+/* the cascade: each row's entrance is staggered a little after the last */
+.fc-list .fc-row:nth-child(1){ animation-delay:.03s; }
+.fc-list .fc-row:nth-child(2){ animation-delay:.08s; }
+.fc-list .fc-row:nth-child(3){ animation-delay:.13s; }
+.fc-list .fc-row:nth-child(4){ animation-delay:.18s; }
+.fc-list .fc-row:nth-child(5){ animation-delay:.23s; }
+.fc-list .fc-row:nth-child(6){ animation-delay:.28s; }
+.fc-list .fc-row:nth-child(7){ animation-delay:.33s; }
+@keyframes fcRowIn{ to{ opacity:1; transform:translateY(0); } }
+@media (hover:hover){ .fc-row:hover{ background:var(--surface-3,#25292f); } }
+
+.fc-row.fc-primary{ background:var(--red,#e6273f); }
+.fc-row.fc-primary .fc-ic{ background:rgba(255,255,255,.18); color:#fff; }
+.fc-row.fc-primary .fc-lbl, .fc-row.fc-primary .fc-url{ color:#fff; }
+.fc-row.fc-primary .fc-url{ opacity:.85; }
+
+.fc-ic{ flex:0 0 auto; width:34px; height:34px; border-radius:50%; background:var(--surface-3,#25292f); display:flex; align-items:center; justify-content:center; color:var(--text,#eef0f4); }
+.fc-ic svg{ width:18px; height:18px; }
+.fc-ic-instagram{ color:#e1306c; }
+.fc-ic-facebook{ color:#1877f2; }
+.fc-ic-tiktok{ color:#25f4ee; }
+.fc-ic-twitch{ color:#9146ff; }
+.fc-ic-youtube{ color:#ff0000; }
+.fc-ic-spotify{ color:#1db954; }
+
+.fc-txt{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+.fc-lbl{ font-family:'Oswald',var(--font-display,sans-serif); font-weight:700; font-size:.82rem; letter-spacing:.02em; text-transform:uppercase; }
+.fc-url{ font-family:var(--font-mono,monospace); font-size:.68rem; color:var(--text-dim,#9aa1b0); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+@media (max-width:480px){
+  .fc-trigger{ left:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); width:50px; height:50px; }
+  .fc-trigger svg{ width:22px; height:22px; }
+  .fc-panel{ left:12px; bottom:calc(72px + env(safe-area-inset-bottom,0px)); width:min(90vw, 300px); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .fc-panel{ animation:none; }
+  .fc-row{ animation:none; opacity:1; transform:none; }
+}

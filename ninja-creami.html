@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="stylesheet" href="assets/css/connect.css">
+<link rel="stylesheet" href="assets/css/float-connect.css">
 <style>
   :root{
     --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
@@ -55,11 +56,19 @@
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
   .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
   .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
+  /* the plain FIT-page pills used to fall back to the same flat gray as
+     the sub-menu text below them — give them their own red-family tone
+     (matching this site's brand red, which is also what "current" turns
+     them) so they read as their own nav, with a solid-red hover. */
+  .page-tab:not(.tab-home):not(.tab-creami):not(.current){ border-color:rgba(230,39,63,.4); color:#f19aa5; }
   @media (hover:hover){
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
     .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
   }
-  @media (hover:hover){ .page-tab:not(.current):hover{ border-color:#9aa1b0; color:#fff; } }
+  @media (hover:hover){
+    .page-tab:not(.current):hover{ border-color:#9aa1b0; color:#fff; }
+    .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{ border-color:#e6273f; color:#e6273f; }
+  }
 
   /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
   .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
@@ -224,6 +233,9 @@
   footer{ padding:44px 0 40px; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
   .foot-links{ text-align:center; margin-top:10px; font-size:.85rem; }
+  .foot-email{ display:inline-flex; align-items:center; gap:7px; justify-content:center; width:100%; margin-top:14px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.02em; color:var(--purple); text-decoration:none; }
+  .foot-email svg{ width:15px; height:15px; flex:0 0 auto; }
+  .foot-email:hover{ text-decoration:underline; }
   .foot-links a{ text-decoration:none; color:var(--text-dim); }
   .foot-links a:hover{ color:var(--purple); }
 
@@ -295,7 +307,6 @@
     <a href="#flavors">FLAVOR MATRIX</a>
     <a href="#spotlight">SPOTLIGHT</a>
     <a href="#safety">SAFETY</a>
-    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -700,6 +711,10 @@
   <div class="wrap">
     <div class="foot-fine">Project 100 — The Ninja Creami XL System. Zero sugar. Full protein. Every batch logged.</div>
     <div class="foot-links"><a href="index.html">Project 100</a> · <a href="fit-protocol.html">Fit Protocol</a> · <a href="fit-nutrition.html">Fit Nutrition</a> · <a href="gear-shop.html">Gear Shop</a> · <a href="#connect">All Links</a></div>
+    <a class="foot-email" href="mailto:project100@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+      project100@gmail.com
+    </a>
   </div>
 </footer>
 
@@ -763,7 +778,8 @@
 })();
 </script>
 <script src="assets/js/connect.js"></script>
-<script>window.ProjectConnect && window.ProjectConnect.init();</script>
+<script src="assets/js/float-connect.js"></script>
+<script>window.ProjectConnect && window.ProjectConnect.init();window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </div>
 </body>
 </html>

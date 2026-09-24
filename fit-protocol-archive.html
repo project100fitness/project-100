@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/float-connect.css">
 <style>
   /* ============ TOKENS — dark-first (tactical dossier) ============ */
   :root{
@@ -111,10 +112,16 @@
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
   .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
   .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
+  /* the plain FIT-page pills used to fall back to the same flat gray as
+     the sub-menu text below them — give them their own red-family tone
+     (matching this site's brand red, which is also what "current" turns
+     them) so they read as their own nav, with a solid-red hover. */
+  .page-tab:not(.tab-home):not(.tab-creami):not(.current){border-color:rgba(230,39,63,.4);color:#f19aa5;}
   @media (hover:hover){
     .page-tab:not(.current):hover{border-color:var(--text-dim,#9aa1b0);color:var(--text,#eef0f4);}
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
     .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
+    .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{border-color:#e6273f;color:#e6273f;}
   }
 
   /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
@@ -412,7 +419,6 @@
     <a href="#origins">ORIGINS</a>
     <a href="#ch1">CHAPTERS</a>
     <a href="#quickref">QUICK REFERENCE</a>
-    <a href="#connect">CONNECT</a>
   </div>
 </nav>
 </header>
@@ -1105,6 +1111,7 @@
     <footer>
       Project 100 — The Singularity Archive · Version-Truth-Audited Edition · Built from the full Jan–Aug 2026 source archive · Last reconciled September 17, 2026
       <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-workout.html">Fit Workout</a> · <a href="fit-nutrition.html">Fit Nutrition</a> · <a href="gear-shop.html">Gear Shop</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="#connect">All Links</a></div>
+      <div style="margin-top:10px;"><a href="mailto:project100@gmail.com">project100@gmail.com</a></div>
     </footer>
   </main>
 </div>
@@ -1288,6 +1295,7 @@
 </script>
 
 <script src="assets/js/connect.js"></script>
-<script>window.ProjectConnect && window.ProjectConnect.init();</script>
+<script src="assets/js/float-connect.js"></script>
+<script>window.ProjectConnect && window.ProjectConnect.init();window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </div>
 </body></html>

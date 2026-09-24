@@ -6,6 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/float-connect.css">
 <style>
   /* ============ TOKENS — matches the rest of Project 100 ============ */
   :root{
@@ -51,8 +52,15 @@
      The shared .page-shell boxed-layout wrapper (assets/css/shell.css)
      sits between body and that structure now, so it has to pass the
      flex chain straight through instead of blocking it, or .deck loses
-     its bounded height and the whole page stops scroll-snapping. */
-  .page-shell{ display:flex; flex-direction:column; height:100%; min-height:0; }
+     its bounded height and the whole page stops scroll-snapping.
+     min-width:0 matters just as much as min-height:0 here: as a flex
+     item, .page-shell's default min-width is "auto", which lets any
+     wide, non-wrapping descendant (the auto-scrolling link ticker's
+     max-content track, a wide table, etc.) bubble up and force the
+     WHOLE PAGE wider than the viewport — the exact "everything scrolls
+     sideways" bug. min-width:0 caps it at the viewport instead, so
+     that content clips/scrolls locally the way each piece intends. */
+  .page-shell{ display:flex; flex-direction:column; width:100%; height:100%; min-height:0; min-width:0; }
   h1,h2,h3,h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;font-weight:600;margin:0;}
   a{color:var(--accent-2);}
   code,.mono{font-family:var(--font-mono);}
@@ -81,10 +89,16 @@
   .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
   .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
   .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
+  /* the plain FIT-page pills used to fall back to the same flat gray as
+     the sub-menu text below them — give them their own red-family tone
+     (matching this site's brand red, which is also what "current" turns
+     them) so they read as their own nav, with a solid-red hover. */
+  .page-tab:not(.tab-home):not(.tab-creami):not(.current){border-color:rgba(230,39,63,.4);color:#f19aa5;}
   @media (hover:hover){
     .page-tab:not(.current):hover{border-color:var(--text-dim,#9aa1b0);color:var(--text,#eef0f4);}
     .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
     .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
+    .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{border-color:#e6273f;color:#e6273f;}
   }
 
   /* ============ DECK TOOLBAR (this page's own controls — same box model as .cat-tabs on the other pages) ============ */
@@ -132,7 +146,7 @@
   .deck-controls button:disabled{opacity:.35;cursor:default;}
 
   /* ============ DECK / SLIDES ============ */
-  .deck{flex:1 1 auto;min-height:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
+  .deck{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
   /* top-anchored, not centered: a slide with light content (e.g. a short
      reference note) used to float dead-center in a full-screen box, which
      read as a big empty gap when scrolling past it. Anchoring to the top
@@ -155,11 +169,13 @@
   .slide-lede{max-width:68ch;color:var(--text-dim);font-size:1rem;margin-bottom:22px;}
   .slide-lede b, .slide-lede strong{color:var(--text);}
 
-  /* horizontal card strip */
-  .card-strip{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 2px 14px;margin:0 -2px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);}
-  .card-strip::-webkit-scrollbar{display:none;}
-  .info-card{flex:0 0 auto;scroll-snap-align:start;width:min(78vw,270px);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 17px;box-shadow:var(--shadow);}
-  .info-card.wide{width:min(84vw,340px);}
+  /* card strip — was a horizontal-scroll-only strip (cards cut off at the
+     edge, needing a sideways swipe to see the rest). Now wraps onto as
+     many lines as it needs so every card is visible on first view, no
+     side-scrolling required, on any screen size. */
+  .card-strip{display:flex;flex-wrap:wrap;gap:12px;padding:2px 2px 14px;margin:0 -2px;}
+  .info-card{flex:0 0 auto;width:min(100%,270px);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 17px;box-shadow:var(--shadow);}
+  .info-card.wide{width:min(100%,340px);}
   .info-card .ic-tag{display:inline-block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb, var(--accent) 14%, transparent);border:1px solid var(--accent-dim);border-radius:100px;padding:2px 9px;margin-bottom:9px;}
   .info-card.bad .ic-tag{color:var(--bad);background:color-mix(in srgb, var(--bad) 16%, transparent);border-color:color-mix(in srgb, var(--bad) 50%, transparent);}
   .info-card.good .ic-tag{color:var(--good);background:color-mix(in srgb, var(--good) 16%, transparent);border-color:color-mix(in srgb, var(--good) 50%, transparent);}
@@ -1019,6 +1035,7 @@
       <footer class="deck-foot">
         Project 100 — Protocol Deck · Version-Truth-Audited Edition · Condensed from the full Jan–Aug 2026 source archive · Last reconciled September 17, 2026
         <div style="margin-top:10px;"><a href="index.html">Project 100</a> · <a href="fit-workout.html">Fit Workout</a> · <a href="fit-nutrition.html">Fit Nutrition</a> · <a href="gear-shop.html">Gear Shop</a> · <a href="ninja-creami.html">Ninja CREAMi</a> · <a href="fit-protocol-archive.html">Full Archive</a></div>
+        <div style="margin-top:10px;"><a href="mailto:project100@gmail.com">project100@gmail.com</a></div>
       </footer>
     </div>
   </section>
@@ -1280,4 +1297,6 @@
 })();
 </script>
 </div>
+<script src="assets/js/float-connect.js"></script>
+<script>window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
 </body></html>
