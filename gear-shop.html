@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gear Shop — PROJECT 100</title>
-<meta name="description" content="The real gym equipment and home-gym setup behind PROJECT 100 — plus used gear for sale and the Fit Protocol guide book.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+<title>Fit Gear — PROJECT 100</title>
+<meta name="description" content="Bogdan's actual gym, walked through station by station, plus the real training-gear database behind PROJECT 100 — racks, bands, handles, harnesses, not stock photos.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -127,6 +127,19 @@
   .log-body .stats{ margin-top:auto; display:flex; gap:8px; color:var(--text-dim); font-size:.66rem; padding-top:6px; }
   .log-body .watch{ margin-top:6px; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
 
+  /* GYM TOUR — real walkthrough Shorts from @FUDGE_fit, click-to-play
+     lite embed (same pattern as Fit Workout's training log). */
+  .gym-tour-blk{ padding:56px 0 64px; }
+  .gym-tour-blk .sec-head{ max-width:680px; margin-bottom:30px; }
+  .gym-tour-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .gym-tour-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+  .gym-tour-blk .log-media{ aspect-ratio:9/16; }
+  @media (max-width:640px){
+    .gym-tour-blk{ padding:26px 0 34px; }
+    .gym-tour-blk .sec-head{ margin-bottom:20px; }
+    .gym-tour-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
+  }
+
   /* USED GEAR — for-sale cards, same card language as the training-log /
      gear-photo grids elsewhere on the site. */
   .shop-blk{ padding:56px 0 20px; }
@@ -164,11 +177,14 @@
   .armory-blk .sec-head{ max-width:680px; margin-bottom:26px; }
   .armory-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
   .armory-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
-  .armory-photos{ display:grid; grid-template-columns:1.3fr 1fr; gap:14px; margin-bottom:34px; }
+  .armory-photos{ display:flex; flex-direction:column; margin-bottom:34px; }
+  .armory-photos .carousel-row > *{ flex:0 0 min(78vw,320px); }
+  .armory-photos .carousel-row.fx-gallery{ display:flex; gap:14px; }
   .armory-photos .ap-shot{ position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--border); aspect-ratio:4/3; background:#000; }
-  .armory-photos .ap-shot img{ width:100%; height:100%; object-fit:cover; }
-  .armory-photos .ap-cap{ position:absolute; left:0; right:0; bottom:0; padding:10px 12px; background:linear-gradient(0deg,rgba(0,0,0,.82),transparent); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; }
-  @media (max-width:640px){ .armory-photos{ grid-template-columns:1fr; } }
+  .armory-photos .ap-shot button{ all:unset; display:block; width:100%; height:100%; cursor:zoom-in; }
+  .armory-photos .ap-shot img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease; }
+  @media (hover:hover){ .armory-photos .ap-shot button:hover img{ transform:scale(1.06); } }
+  .armory-photos .ap-cap{ position:absolute; left:0; right:0; bottom:0; padding:10px 12px; background:linear-gradient(0deg,rgba(0,0,0,.82),transparent); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; pointer-events:none; }
   .armory-groups{ display:grid; gap:22px; }
   .armory-group{ background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; padding:20px 22px; }
   .armory-group h3{ font-size:.86rem; letter-spacing:.08em; color:var(--gold); margin:0 0 14px; display:flex; align-items:center; gap:8px; }
@@ -177,6 +193,12 @@
   .armory-item{ padding:12px 0; border-top:1px solid var(--border); }
   .armory-list .armory-item:nth-child(-n+2){ border-top:none; }
   @media (max-width:640px){ .armory-list{ grid-template-columns:1fr; } .armory-list .armory-item:nth-child(-n+2){ border-top:1px solid var(--border); } .armory-list .armory-item:first-child{ border-top:none; } }
+  .armory-item{ display:flex; gap:12px; align-items:flex-start; }
+  .armory-item .ai-thumb{ flex:0 0 58px; }
+  .armory-item .ai-thumb button{ width:58px; height:58px; padding:0; border:1px solid var(--border); border-radius:8px; overflow:hidden; background:#000; cursor:zoom-in; display:block; }
+  .armory-item .ai-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease; }
+  @media (hover:hover){ .armory-item .ai-thumb button:hover img{ transform:scale(1.14); } }
+  .armory-item .ai-text{ flex:1; min-width:0; }
   .armory-item .ai-name{ font-family:'Oswald',sans-serif; font-size:.86rem; font-weight:700; letter-spacing:.01em; text-transform:uppercase; color:var(--text); }
   .armory-item .ai-spec{ display:inline-block; margin-left:8px; font-size:.64rem; font-weight:700; letter-spacing:.04em; color:var(--cyan); background:rgba(63,215,208,.12); border:1px solid rgba(63,215,208,.3); padding:2px 8px; border-radius:100px; vertical-align:middle; }
   .armory-item p{ margin:6px 0 0; color:var(--text-dim); font-size:.82rem; line-height:1.5; }
@@ -194,8 +216,13 @@
   .guide-card h3{ font-size:1.15rem; margin:0 0 6px; text-transform:none; letter-spacing:0; }
   .guide-card p{ margin:0; color:var(--text-dim); font-size:.92rem; }
   .guide-card .gc-ctas{ display:flex; gap:10px; flex-wrap:wrap; }
+  .guide-grid{ max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+  .guide-grid .guide-card{ max-width:none; margin:0; }
+  .guide-card.encyclopedia-card{ background:linear-gradient(135deg, rgba(232,182,76,.16), rgba(10,11,13,0) 60%), var(--surface); }
+  .guide-card.encyclopedia-card .gc-ic{ background:var(--gold); }
+  .guide-card .gc-soon{ display:inline-block; margin-left:8px; font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); background:rgba(232,182,76,.12); border:1px solid rgba(232,182,76,.32); padding:2px 9px; border-radius:100px; vertical-align:middle; }
 
-  
+
   footer{ padding:40px 0; }
   .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
   .foot-email{ display:inline-flex; align-items:center; gap:7px; justify-content:center; width:100%; margin-top:12px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.02em; color:var(--cyan); text-decoration:none; }
@@ -243,16 +270,16 @@
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab current" href="gear-shop.html">Gear Shop</a>
+    <a class="page-tab current" href="gear-shop.html">Fit Gear</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
 <nav class="cat-tabs" aria-label="Section jump links">
   <div class="wrap">
     <a href="#top">OVERVIEW</a>
-    <a href="#armory">THE ARMORY</a>
+    <a href="#gym-tour">GYM TOUR</a>
     <a href="#reels">GYM PHOTOS</a>
-    <a href="#for-sale">FOR SALE</a>
+    <a href="#armory">THE ARMORY</a>
     <a href="#guide">GUIDE BOOK</a>
   </div>
 </nav>
@@ -261,9 +288,9 @@
 <section class="placeholder-hero" id="top">
   <div class="wrap">
     <span class="tag">The Real Setup</span>
-    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">The Rig &amp; The Shop</span>
-    <h1>Real Gear.<br><span>Real Setup. Real Prices.</span></h1>
-    <p>The actual equipment database — racks, bands, handles, harnesses — plus gear I&#8217;ve retired, sold direct, and purchase links for the Fit Protocol guide book.</p>
+    <span class="eyebrow" style="display:block;justify-content:center;margin-bottom:14px;">My Gym &amp; My Gear</span>
+    <h1>My Gym.<br><span>My Gear. My Setup.</span></h1>
+    <p>Gym Fit Forme Laval, walked through station by station — plus the actual training-gear database behind it, racks, bands, handles, harnesses, not stock photos.</p>
     <div class="placeholder-ctas">
       <a class="btn btn-primary" href="index.html">Back to Project 100 ↗</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Follow @fudge_fit ↗</a>
@@ -274,64 +301,89 @@
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
   <div class="focus-point">
     <span class="fp-tag">The Physics Behind It</span>
-    <p>360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout, matching the human strength curve instead of fighting it. The full rig database is below — the used-gear listings and guide book are still being built.</p>
+    <p>360 lbs of Variable Linear Resistance banding, light at the bottom of the rep and heaviest at lockout, matching the human strength curve instead of fighting it. The gym walkthrough and the full rig database are both below.</p>
   </div>
 </div>
 
-<section class="armory-blk" id="armory">
+<section class="gym-tour-blk" id="gym-tour">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">The Real Inventory</span>
-      <h2>The Armory</h2>
-      <p>The actual rig, band-by-band and handle-by-handle — straight from the Project 100 equipment manifest, not stock photos.</p>
+      <span class="eyebrow">Straight From @FUDGE_fit</span>
+      <h2>Gym Walkthrough</h2>
+      <p>Real walk-throughs of Gym Fit Forme Laval, station by station — tap any card to play it right here.</p>
     </div>
-
-    <div class="armory-photos">
-      <div class="ap-shot"><img src="assets/img/gear-rope-carabiners.jpg" alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" loading="lazy"><span class="ap-cap">The Rig — Bands, Clips &amp; Rope Handle</span></div>
-      <div class="ap-shot"><img src="assets/img/gear-rig-setup.jpg" alt="Full kinetic rig with plyo box and kettlebells" loading="lazy"><span class="ap-cap">Full Kinetic Rig</span></div>
-    </div>
-
-    <div class="armory-groups">
-      <div class="armory-group">
-        <h3>High-Tensile Resistance</h3>
-        <div class="armory-list">
-          <div class="armory-item"><span class="ai-name">KUZARO Pure Triad Tubing Set</span><span class="ai-spec">35–85 LBS</span><p>The core band system — six tubes on a strict color-to-tension gradient, light gray at 35 lbs up to deep solid black at the 85 lb top end.</p></div>
-          <div class="armory-item"><span class="ai-name">HPYGN Heavy-Duty Compression Set</span><span class="ai-spec">330 LBS</span><p>Twin multi-layered resistance lines. Doubled and shortened at the rig's lowest anchor point, it runs a constant 130 lb baseline tension.</p></div>
-          <div class="armory-item"><span class="ai-name">Tribe Lifting Modular Resistance Bar</span><span class="ai-spec">Chrome</span><p>Knurled 3-piece threaded bar with independent 360° swivel rings on each end — tangle-free band loading.</p></div>
-          <div class="armory-item"><span class="ai-name">HPYGN Heavy Pilates Bar</span><span class="ai-spec">Padded</span><p>Foam-padded steel core bar with red-stitched nylon terminal straps for band-resisted presses and rows.</p></div>
+    <div class="log-grid carousel-grid" data-carousel data-carousel-max="5">
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="teqGz04EqAU">
+          <img src="https://i.ytimg.com/vi/teqGz04EqAU/hqdefault.jpg" alt="Entrance & Main Floor Walkthrough — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
         </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Entrance &amp; Main Floor Walkthrough</h4><a class="watch-yt" href="https://www.youtube.com/shorts/teqGz04EqAU" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
       </div>
-
-      <div class="armory-group">
-        <h3>Grip &amp; Handle Accessories</h3>
-        <div class="armory-list">
-          <div class="armory-item"><span class="ai-name">Angles90 (A90) Pull-Up Grips</span><span class="ai-spec">Rotating</span><p>Bright orange crescent-shaped handles on a nylon sling — lets the wrist rotate naturally through a pull instead of locking it flat.</p></div>
-          <div class="armory-item"><span class="ai-name">MANUEKLEAR Neoprene Multi-Grip Handle</span><span class="ai-spec">3-Zone</span><p>Wide neoprene strap with three stitched grip zones (upper/mid/lower) for fast range-of-motion changes mid-set, single D-ring anchor.</p></div>
-          <div class="armory-item"><span class="ai-name">HXD-ERGO Biomechanical Handles</span><span class="ai-spec">Curved</span><p>Asymmetrical curved grip molds built into a fixed-carabiner nylon strap — matches the natural hand angle under load.</p></div>
-          <div class="armory-item"><span class="ai-name">INNSTAR Stirrup Handles</span><span class="ai-spec">Honeycomb</span><p>Classic stirrup layout wrapped in an anti-slip silicone honeycomb texture for wet-hand grip security.</p></div>
-          <div class="armory-item"><span class="ai-name">THEFITGUY Single-Arm Tricep Rope</span><span class="ai-spec">16.5&quot;</span><p>Isolated single-arm rope with a bright red bell-shaped rubber stop — the handle visible in the rig photo above.</p></div>
-          <div class="armory-item"><span class="ai-name">BLUSLM Ergonomic Tricep Rope</span><span class="ai-spec">Dual-Arm</span><p>Extra-long braided rope terminating in molded rubber palm-flare shields — no round-ball slippage.</p></div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="y_mCi9ECs68">
+          <img src="https://i.ytimg.com/vi/y_mCi9ECs68/hqdefault.jpg" alt="Full Strength Floor & Machine Lineup Tour — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
         </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Full Strength Floor &amp; Machine Lineup Tour</h4><a class="watch-yt" href="https://www.youtube.com/shorts/y_mCi9ECs68" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
       </div>
-
-      <div class="armory-group">
-        <h3>Harnesses, Straps &amp; Anchors</h3>
-        <div class="armory-list">
-          <div class="armory-item"><span class="ai-name">THEFITGUY Sled Pulling Belt &amp; Straps</span><span class="ai-spec">9.8 ft ×2</span><p>Padded neoprene waist harness with two heavy-duty D-rings and matching pulling straps for sled/band drags.</p></div>
-          <div class="armory-item"><span class="ai-name">THEFITGUY Ultimate Extension Straps</span><span class="ai-spec">Dual</span><p>Flat nylon extension straps with steel D-ring terminals — extends band anchor points around the rig.</p></div>
-          <div class="armory-item"><span class="ai-name">VEHICLEX Axle Tie-Down Straps</span><span class="ai-spec">Industrial</span><p>Car-hauling-grade webbing repurposed as a heavy anchor strap, triangular steel D-rings at both ends.</p></div>
-          <div class="armory-item"><span class="ai-name">NILIGHT Soft Loop Anchor Straps</span><span class="ai-spec">1.7&quot;×17&quot;</span><p>Short choke-loop straps rigged directly around structural gym bars for a quick, non-marking anchor point.</p></div>
-          <div class="armory-item"><span class="ai-name">Oak-Sports / JRSGS Carabiners</span><span class="ai-spec">25kN</span><p>The yellow- and red-gated locking clips visible throughout the rig — rated to 5,600 lbs, one on nearly every band end.</p></div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="yJK3VwO0A-A">
+          <img src="https://i.ytimg.com/vi/yJK3VwO0A-A/hqdefault.jpg" alt="Heavy Squat Rack & Barbell Lifting Station — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
         </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Heavy Squat Rack &amp; Barbell Lifting Station</h4><a class="watch-yt" href="https://www.youtube.com/shorts/yJK3VwO0A-A" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
       </div>
-
-      <div class="armory-group">
-        <h3>Recovery &amp; Logistics</h3>
-        <div class="armory-list">
-          <div class="armory-item"><span class="ai-name">jooeer 3-in-1 Nested Foam Roller</span><span class="ai-spec">18&quot;</span><p>Three nested tiers — a spiked trigger-point outer roller, a ribbed neon-orange mid roller, and a core massage stick.</p></div>
-          <div class="armory-item"><span class="ai-name">Neoprene Bundle Management Sleeves</span><span class="ai-spec">1.5&quot;</span><p>Hook-and-loop cylindrical wraps that keep multi-band arrays from tangling or friction-wearing against each other.</p></div>
-          <div class="armory-item"><span class="ai-name">MIAOKE Tactical Hardware Duffel</span><span class="ai-spec">Gear Bag</span><p>Ruggedized utility duffel with a separate clear-panel travel organizer for the small stuff — clips, chalk, bands.</p></div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="FfUnVGdAH7s">
+          <img src="https://i.ytimg.com/vi/FfUnVGdAH7s/hqdefault.jpg" alt="Free Weight & Bench Section Tour — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
         </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Free Weight &amp; Bench Section Tour</h4><a class="watch-yt" href="https://www.youtube.com/shorts/FfUnVGdAH7s" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+      </div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="_SiqcP7YJso">
+          <img src="https://i.ytimg.com/vi/_SiqcP7YJso/hqdefault.jpg" alt="Plate-Loaded Machines & Leg Press Section — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Plate-Loaded Machines &amp; Leg Press Section</h4><a class="watch-yt" href="https://www.youtube.com/shorts/_SiqcP7YJso" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+      </div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="hKYR2xUTeDA">
+          <img src="https://i.ytimg.com/vi/hKYR2xUTeDA/hqdefault.jpg" alt="Pull-Up Bar Rig & Overhead Cable Setup — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Pull-Up Bar Rig &amp; Overhead Cable Setup</h4><a class="watch-yt" href="https://www.youtube.com/shorts/hKYR2xUTeDA" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+      </div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="LjnzmgUm2rU">
+          <img src="https://i.ytimg.com/vi/LjnzmgUm2rU/hqdefault.jpg" alt="Cable Machine & Pulley Station Walkthrough — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Cable Machine &amp; Pulley Station Walkthrough</h4><a class="watch-yt" href="https://www.youtube.com/shorts/LjnzmgUm2rU" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+      </div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="5YAwfSyk2p0">
+          <img src="https://i.ytimg.com/vi/5YAwfSyk2p0/hqdefault.jpg" alt="Functional Turf Track & Rig Training Zone — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Functional Turf Track &amp; Rig Training Zone</h4><a class="watch-yt" href="https://www.youtube.com/shorts/5YAwfSyk2p0" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+      </div>
+      <div class="log-card yt-card">
+        <div class="log-media" data-yt="4V5NnxP2mIU">
+          <img src="https://i.ytimg.com/vi/4V5NnxP2mIU/hqdefault.jpg" alt="Training Accessories & Grip Station — frame from the video" loading="lazy">
+          <span class="log-tag">Gym Tour</span>
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </div>
+        <div class="log-body"><div class="date">Sep 24, 2026</div><h4>Training Accessories &amp; Grip Station</h4><a class="watch-yt" href="https://www.youtube.com/shorts/4V5NnxP2mIU" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
       </div>
     </div>
   </div>
@@ -361,47 +413,95 @@
   </div>
 </section>
 
-<section class="shop-blk" id="for-sale">
+<section class="armory-blk" id="armory">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Used Equipment</span>
-      <h2>Gear I'm Done With</h2>
-      <p>Everything here has been through real training blocks — nothing's brand new, everything still works. DM @fudge_fit on Instagram to buy or ask a question about condition.</p>
+      <span class="eyebrow">The Real Inventory</span>
+      <h2>The Armory</h2>
+      <p>The actual rig, band-by-band and handle-by-handle — straight from the Project 100 equipment manifest, not stock photos.</p>
     </div>
-    <!-- PLACEHOLDER LISTINGS — replace image, title, condition, price, and
-         href (a direct buy link or an Instagram DM link) for each real item -->
-    <div class="shop-grid carousel-grid" data-carousel data-carousel-max="4">
-      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-        <div class="shop-media"><img src="assets/img/gym-equipment-wide.jpg" alt="Placeholder listing — resistance band set" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
-        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
-      </a>
-      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-        <div class="shop-media"><img src="assets/img/gym-bench-closeup.jpg" alt="Placeholder listing — bench" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
-        <div class="shop-body"><div class="cond">Condition: Good</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
-      </a>
-      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-        <div class="shop-media"><img src="assets/img/kinetic-rig-architecture.jpg" alt="Placeholder listing — rack" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
-        <div class="shop-body"><div class="cond">Condition: Fair</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
-      </a>
-      <a class="shop-card" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">
-        <div class="shop-media"><img src="assets/img/arm-blaster-6x6x6.jpg" alt="Placeholder listing — accessory" loading="lazy"><span class="shop-tag">For Sale</span><span class="shop-price">$--</span></div>
-        <div class="shop-body"><div class="cond">Condition: Like New</div><h4>Add Your Item Name</h4><p class="note">Placeholder — replace with real photo, price, and details.</p><div class="watch">▶ Message to buy</div></div>
-      </a>
+
+    <div class="armory-photos carousel-grid" data-carousel data-carousel-max="7">
+      <div class="ap-shot"><button type="button" data-full="assets/img/gear-rope-carabiners.jpg" aria-label="The Rig — Bands, Clips &amp; Rope Handle"><img src="assets/img/gear-rope-carabiners.jpg" alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" loading="lazy"></button><span class="ap-cap">The Rig — Bands, Clips &amp; Rope Handle</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gear-rig-setup.jpg" aria-label="Full Kinetic Rig"><img src="assets/img/gear-rig-setup.jpg" alt="Full kinetic rig with plyo box and kettlebells" loading="lazy"></button><span class="ap-cap">Full Kinetic Rig</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-rig-bench.jpg" aria-label="Rig &amp; adjustable bench station"><img src="assets/img/gym-photo-rig-bench.jpg" alt="Rig and adjustable bench station on turf flooring" loading="lazy"></button><span class="ap-cap">Rig &amp; Bench Station</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-dumbbell-rack.jpg" aria-label="Dumbbell rack, full run"><img src="assets/img/gym-photo-dumbbell-rack.jpg" alt="Full dumbbell rack run at the gym" loading="lazy"></button><span class="ap-cap">The Dumbbell Wall</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-sled-harness.jpg" aria-label="Sled pulling harness, worn and in use"><img src="assets/img/gym-photo-sled-harness.jpg" alt="Sled pulling harness worn and in use" loading="lazy"></button><span class="ap-cap">Sled Harness — In Use</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-turf-dumbbells.jpg" aria-label="Turf floor setup near the dumbbells"><img src="assets/img/gym-photo-turf-dumbbells.jpg" alt="Turf floor training setup near the dumbbell rack" loading="lazy"></button><span class="ap-cap">Turf Floor Setup</span></div>
+      <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-machine-corner.jpg" aria-label="Machine corner of the gym"><img src="assets/img/gym-photo-machine-corner.jpg" alt="Machine corner of the gym floor" loading="lazy"></button><span class="ap-cap">Machine Corner</span></div>
+    </div>
+
+    <div class="armory-groups">
+      <div class="armory-group">
+        <h3>High-Tensile Resistance</h3>
+        <div class="armory-list">
+          <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-tubing.jpg" aria-label="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set"><img src="assets/img/gear-item-tubing.jpg" alt="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">KUZARO Pure Triad Tubing Set</span><span class="ai-spec">35–85 LBS</span><p>The core band system — six tubes on a strict color-to-tension gradient, light gray at 35 lbs up to deep solid black at the 85 lb top end.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">HPYGN Heavy-Duty Compression Set</span><span class="ai-spec">330 LBS</span><p>Twin multi-layered resistance lines. Doubled and shortened at the rig's lowest anchor point, it runs a constant 130 lb baseline tension.</p></div></div>
+          <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-resistance-bar.jpg" aria-label="Photo: the chrome modular resistance bar"><img src="assets/img/gear-item-resistance-bar.jpg" alt="Photo: the chrome modular resistance bar" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">Tribe Lifting Modular Resistance Bar</span><span class="ai-spec">Chrome</span><p>Knurled 3-piece threaded bar with independent 360° swivel rings on each end — tangle-free band loading.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">HPYGN Heavy Pilates Bar</span><span class="ai-spec">Padded</span><p>Foam-padded steel core bar with red-stitched nylon terminal straps for band-resisted presses and rows.</p></div></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Grip &amp; Handle Accessories</h3>
+        <div class="armory-list">
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">Angles90 (A90) Pull-Up Grips</span><span class="ai-spec">Rotating</span><p>Bright orange crescent-shaped handles on a nylon sling — lets the wrist rotate naturally through a pull instead of locking it flat.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">MANUEKLEAR Neoprene Multi-Grip Handle</span><span class="ai-spec">3-Zone</span><p>Wide neoprene strap with three stitched grip zones (upper/mid/lower) for fast range-of-motion changes mid-set, single D-ring anchor.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">HXD-ERGO Biomechanical Handles</span><span class="ai-spec">Curved</span><p>Asymmetrical curved grip molds built into a fixed-carabiner nylon strap — matches the natural hand angle under load.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">INNSTAR Stirrup Handles</span><span class="ai-spec">Honeycomb</span><p>Classic stirrup layout wrapped in an anti-slip silicone honeycomb texture for wet-hand grip security.</p></div></div>
+          <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-tricep-rope.jpg" aria-label="Photo: the red bell-handle single-arm tricep rope"><img src="assets/img/gear-item-tricep-rope.jpg" alt="Photo: the red bell-handle single-arm tricep rope" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">THEFITGUY Single-Arm Tricep Rope</span><span class="ai-spec">16.5&quot;</span><p>Isolated single-arm rope with a bright red bell-shaped rubber stop — the handle visible in the rig photo above.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">BLUSLM Ergonomic Tricep Rope</span><span class="ai-spec">Dual-Arm</span><p>Extra-long braided rope terminating in molded rubber palm-flare shields — no round-ball slippage.</p></div></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Harnesses, Straps &amp; Anchors</h3>
+        <div class="armory-list">
+          <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-sled-belt.jpg" aria-label="Photo: the padded neoprene harness hanging on the rig"><img src="assets/img/gear-item-sled-belt.jpg" alt="Photo: the padded neoprene harness hanging on the rig" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">THEFITGUY Sled Pulling Belt &amp; Straps</span><span class="ai-spec">9.8 ft ×2</span><p>Padded neoprene waist harness with two heavy-duty D-rings and matching pulling straps for sled/band drags.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">THEFITGUY Ultimate Extension Straps</span><span class="ai-spec">Dual</span><p>Flat nylon extension straps with steel D-ring terminals — extends band anchor points around the rig.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">VEHICLEX Axle Tie-Down Straps</span><span class="ai-spec">Industrial</span><p>Car-hauling-grade webbing repurposed as a heavy anchor strap, triangular steel D-rings at both ends.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">NILIGHT Soft Loop Anchor Straps</span><span class="ai-spec">1.7&quot;×17&quot;</span><p>Short choke-loop straps rigged directly around structural gym bars for a quick, non-marking anchor point.</p></div></div>
+          <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-carabiner.jpg" aria-label="Photo: a yellow locking carabiner on the rig"><img src="assets/img/gear-item-carabiner.jpg" alt="Photo: a yellow locking carabiner on the rig" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">Oak-Sports / JRSGS Carabiners</span><span class="ai-spec">25kN</span><p>The yellow- and red-gated locking clips visible throughout the rig — rated to 5,600 lbs, one on nearly every band end.</p></div></div>
+        </div>
+      </div>
+
+      <div class="armory-group">
+        <h3>Recovery &amp; Logistics</h3>
+        <div class="armory-list">
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">jooeer 3-in-1 Nested Foam Roller</span><span class="ai-spec">18&quot;</span><p>Three nested tiers — a spiked trigger-point outer roller, a ribbed neon-orange mid roller, and a core massage stick.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">Neoprene Bundle Management Sleeves</span><span class="ai-spec">1.5&quot;</span><p>Hook-and-loop cylindrical wraps that keep multi-band arrays from tangling or friction-wearing against each other.</p></div></div>
+          <div class="armory-item"><div class="ai-text"><span class="ai-name">MIAOKE Tactical Hardware Duffel</span><span class="ai-spec">Gear Bag</span><p>Ruggedized utility duffel with a separate clear-panel travel organizer for the small stuff — clips, chalk, bands.</p></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="guide-blk" id="guide">
   <div class="wrap">
-    <div class="guide-card">
-      <div class="gc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"/></svg></div>
-      <div class="gc-body">
-        <h3>The Fit Protocol Guide Book</h3>
-        <p>The full training system — six vectors, one clock, every chapter audited — as a reference you can keep. Purchase link goes here once it's live; for now it opens the free on-site version.</p>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="gc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"/></svg></div>
+        <div class="gc-body">
+          <h3>The Fit Protocol Guide Book</h3>
+          <p>The full training system — six vectors, one clock, every chapter audited — as a reference you can keep. Purchase link goes here once it's live; for now it opens the free on-site version.</p>
+        </div>
+        <div class="gc-ctas">
+          <a class="btn btn-primary" href="fit-protocol.html">Read Fit Protocol ↗</a>
+          <a class="btn btn-ghost" href="#" onclick="return false;" aria-disabled="true">Buy the Guide (add link)</a>
+        </div>
       </div>
-      <div class="gc-ctas">
-        <a class="btn btn-primary" href="fit-protocol.html">Read Fit Protocol ↗</a>
-        <a class="btn btn-ghost" href="#" onclick="return false;" aria-disabled="true">Buy the Guide (add link)</a>
+
+      <div class="guide-card encyclopedia-card" id="encyclopedia">
+        <div class="gc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4c-2.5-1.3-5.3-1.7-8-1v15c2.7-.7 5.5-.3 8 1 2.5-1.3 5.3-1.7 8-1V3c-2.7-.7-5.5-.3-8 1z"/><path d="M12 4v15"/></svg></div>
+        <div class="gc-body">
+          <h3>The Full Encyclopedia<span class="gc-soon">Coming Soon</span></h3>
+          <p>The entire manuscript — the Platinum &amp; Singularity Archive in full, every book, every law, every audited chapter — as a standalone eBook. Going up on Amazon's Kindle store; the on-site chapters here stay free either way.</p>
+        </div>
+        <div class="gc-ctas">
+          <a class="btn btn-primary" href="fit-protocol.html">Preview the Chapters ↗</a>
+          <a class="btn btn-ghost" href="#" onclick="return false;" aria-disabled="true">Get it on Kindle (add link)</a>
+        </div>
       </div>
     </div>
   </div>
@@ -410,7 +510,7 @@
 <section class="connect-section" id="connect" data-connect-mount></section>
 
 <footer>
-  <div class="wrap foot-fine">Project 100 — Gear Shop page (gym gear + used equipment + guide book). Being built now. Eat. Sleep. Train. Repeat.</div>
+  <div class="wrap foot-fine">Project 100 — Fit Gear page (the gym, the training-gear database, the guide book). Being built now. Eat. Sleep. Train. Repeat.</div>
   <a class="wrap foot-email" href="mailto:project100@gmail.com">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
     project100@gmail.com
@@ -425,6 +525,31 @@
 window.ProjectCarousel && window.ProjectCarousel.init();
 window.ProjectConnect && window.ProjectConnect.init();
 window.ProjectFloatConnect && window.ProjectFloatConnect.init();
+
+// Armory photo gallery: carousel.js just built .carousel-row inside
+// .armory-photos. Tag that row (not the outer container, and not the
+// prev/next arrow buttons beside it) as .fx-gallery so Fixonic's click-
+// to-zoom lightbox picks it up, then run the lightbox wiring now since
+// fixonic.js already finished its own pass before this ran.
+document.querySelectorAll('.armory-photos .carousel-row').forEach(function(row){ row.classList.add('fx-gallery'); });
+window.Fixonic && window.Fixonic.initGallery && window.Fixonic.initGallery();
+
+// Gym Tour: click-to-play lite embed, same pattern as Fit Workout's
+// training log — no iframe loaded until tapped.
+document.querySelectorAll('.gym-tour-blk .log-media[data-yt]').forEach(function(mediaEl){
+  mediaEl.addEventListener('click', function(){
+    if(mediaEl.classList.contains('yt-active')) return;
+    mediaEl.classList.add('yt-active');
+    var id = mediaEl.getAttribute('data-yt');
+    var ifr = document.createElement('iframe');
+    ifr.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&playsinline=1&rel=0';
+    ifr.title = mediaEl.closest('.log-card').querySelector('h4').textContent;
+    ifr.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+    ifr.setAttribute('allowfullscreen', '');
+    ifr.loading = 'lazy';
+    mediaEl.appendChild(ifr);
+  });
+});
 
 // scrollspy: highlight the nav link for whichever section is currently in view
 (function(){

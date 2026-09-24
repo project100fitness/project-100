@@ -1,41 +1,39 @@
-# PROJECT 100 — Landing Site
+# PROJECT 100 — Full Site
 
-A standalone, single-page site: the hype/story front door for Project 100, meant to sit at a short link in your Instagram/Facebook bio. It links out to the full 13-chapter encyclopedia for anyone who wants the deep protocol.
+This folder is the complete, current site — every page and asset it needs. Upload this whole folder to GitHub (replacing what's there) and everything stays linked correctly, since all the internal links are relative paths.
 
-Built from your real @fudge_fit Reels — captions, dates, likes/comments, and 7 of your own training photos and 3 of your own official Project 100 diagrams (Aug/Sep 2026).
+## Pages
 
-## What's in this folder
+- `index.html` — homepage
+- `fit-protocol.html` — the Fit Protocol deck (condensed)
+- `fit-protocol-archive.html` — the full Singularity Archive (unabridged)
+- `fit-workout.html` — training log
+- `fit-nutrition.html` — meals + supplement timeline
+- `gear-shop.html` — **Fit Gear** (gym walkthrough, gym photos, training-gear database, guide book)
+- `ninja-creami.html` — Ninja CREAMi recipes
 
-- `index.html` — the whole site (self-contained, no build step)
-- `assets/img/` — 10 images (~2 MB total): your training photos + your V185.80/83/99 protocol diagrams
+A few tiny redirect stubs (`fit-gear.html`, `fit-shop.html`, `encyclopedia.html`, `encyclopedia-archive.html`, `fit-food.html`) exist only so old links/bookmarks still land somewhere real — they instantly forward to the pages above. Keep them; they're harmless.
 
-## Publish it on GitHub Pages (free, ~5 minutes)
+## Assets
 
-1. On github.com, create a new **public** repository — e.g. `project-100`.
-2. Upload these files to it: either drag `index.html` and the `assets` folder into the GitHub web uploader, or from a terminal:
-   ```
-   cd project-100
-   git init
-   git add .
-   git commit -m "Project 100 landing site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/project-100.git
-   git push -u origin main
-   ```
-3. In the repo, go to **Settings → Pages**. Under "Build and deployment", set **Source** to "Deploy from a branch", branch `main`, folder `/ (root)`. Save.
-4. GitHub gives you a live URL in a minute or two, usually:
-   `https://<your-username>.github.io/project-100/`
+- `assets/css/` — stylesheets (shared across all pages)
+- `assets/js/` — carousel, connect widget, lightbox gallery, floating connect button
+- `assets/img/` — every photo used across the site (~80 files)
+- `assets/video/` — self-hosted background-loop clips (see note below)
+- `assets/partials/` — shared HTML snippets (the "connect" footer block)
+- `.nojekyll` — tells GitHub Pages not to run Jekyll processing on this (needed since some filenames/folders would otherwise get mangled)
 
-## Get a short link for your bio
+## Do you need to cut or compress any video?
 
-Once the GitHub Pages URL is live, shorten it with any link shortener — e.g. [bit.ly](https://bit.ly), [TinyURL](https://tinyurl.com), or [is.gd](https://is.gd). Paste the GitHub Pages URL in, and it hands you something like `bit.ly/project100` to drop straight into your Instagram and Facebook bios.
+**No — nothing needs cutting or compressing to upload this.** Two separate things live on the site, and both are already in good shape:
 
-(A custom domain works too, if you ever want `project100.fit` instead of a shortener — GitHub Pages supports that under Settings → Pages → Custom domain — but a shortener is the fastest path today.)
+1. **The Gym Tour walkthrough videos** (the 9 clips on the Fit Gear page) aren't files in this folder at all — they play straight from YouTube (your `@FUDGE_fit` channel), loaded only when someone taps a card. Nothing to compress; YouTube already handles that.
+2. **The 7 short looping background clips** in `assets/video/` are your hero/CTA-band loops. They're already small (672 KB – 1.2 MB each) and web-ready as-is.
 
-## Updating it later
+One thing worth knowing: only `featured-plyo-protocol.mp4` (and its poster image) is actually wired into a page right now — it's the homepage hero loop. The other 5 (`featured-focus-check`, `featured-fuel-check`, `featured-gear-setup`, `featured-greens-scoop`, `featured-preworkout-mix`) — plus their matching poster JPGs — are sitting in the folder unused. They're not hurting anything if you upload them (harmless, just unused), but if you want a leaner repo you could leave those 10 files out. Say the word if you'd like me to actually place them on a page instead of just carrying them around unused.
 
-Once this is pushed, updating is just editing `index.html` (or swapping files in `assets/img/`) and pushing again — GitHub Pages redeploys automatically within a minute or two. The training log grid near the bottom of the page is data-driven: look for the `LOG_DATA` array near the end of `index.html` to add new posts without touching any layout code.
+## Publishing (GitHub Pages)
 
-## A note on the images
+If this repo isn't set up yet: create a public GitHub repo, push this whole folder's contents to it, then in the repo go to **Settings → Pages**, set Source to "Deploy from a branch", branch `main`, folder `/ (root)`. GitHub gives you a live URL within a minute or two.
 
-Everything here is your own content — training photos and the official Project 100 diagrams pulled straight from your Reels. A few "hook" cover images seen on some of your carousels (recipe/nutrition graphics, generic muscle diagrams) were deliberately left out, since those slides were reposts from other creators rather than your own material — better to keep this site 100% yours.
+If the repo already exists: just replace everything in it with this folder's contents and push — GitHub Pages redeploys automatically.

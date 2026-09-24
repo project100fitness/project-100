@@ -138,11 +138,24 @@
   /* VECTOR TIMELINE — wide infographic cards (shaker/mug + full payload
      breakdown baked into the image itself), scrollable row, click to open
      full-size in the shared fx-lightbox. */
-  .vector-gallery{ display:flex; gap:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:8px; }
-  .vector-gallery::-webkit-scrollbar{ display:none; }
-  .vector-gallery button{ flex:0 0 auto; width:min(82vw,360px); aspect-ratio:16/9; border-radius:12px; border:1px solid var(--border); overflow:hidden; padding:0; background:#000; cursor:pointer; }
-  .vector-gallery img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
-  @media (hover:hover){ .vector-gallery button:hover img{ transform:scale(1.06); } }
+  /* Vector Timeline gallery rides the site's standard carousel-row
+     component (scrollbar + prev/next arrows, wired by carousel.js) —
+     only the card size is overridden here, up from the default 168px
+     tile to a wide 16:9 preview card. Explicit display:flex here wins
+     over .fx-gallery's display:grid (fixonic.css loads after
+     carousel.css, so without this override it would fight the
+     carousel-grid layout the JS builds). */
+  .vector-gallery{ display:flex; flex-direction:column; }
+  .vector-gallery .carousel-row > *{ flex:0 0 min(82vw,360px); }
+  /* The row itself (not the outer container) carries .fx-gallery — see
+     the inline script below — so the lightbox lookup never touches the
+     carousel's own prev/next arrow buttons (siblings of the row, not
+     descendants). .carousel-row.fx-gallery beats fx-gallery's own
+     display:grid by specificity, keeping the horizontal scroll layout. */
+  .vector-gallery .carousel-row.fx-gallery{ display:flex; gap:14px; }
+  .vector-gallery .carousel-row > button{ width:100%; aspect-ratio:16/9; border-radius:12px; border:1px solid var(--border); overflow:hidden; padding:0; background:#000; cursor:pointer; display:block; }
+  .vector-gallery .carousel-row > button img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
+  @media (hover:hover){ .vector-gallery .carousel-row > button:hover img{ transform:scale(1.06); } }
   .vector-note{ color:var(--text-dim); font-size:.82rem; margin:14px 0 0; }
 
   .log-card{
@@ -218,7 +231,7 @@
     <a class="page-tab" href="fit-protocol.html">Fit Protocol</a>
     <a class="page-tab" href="fit-workout.html">Fit Workout</a>
     <a class="page-tab current" href="fit-nutrition.html">Fit Nutrition</a>
-    <a class="page-tab" href="gear-shop.html">Gear Shop</a>
+    <a class="page-tab" href="gear-shop.html">Fit Gear</a>
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
@@ -258,7 +271,7 @@
       <h2>The Supplement Timeline</h2>
       <p>Five fixed checkpoints from the daily protocol — exactly what gets mixed, when, and the biological reasoning behind the timing. Tap any card to read the full payload breakdown full-size.</p>
     </div>
-    <div class="fx-gallery vector-gallery">
+    <div class="vector-gallery carousel-grid" data-carousel data-carousel-max="5">
       <button type="button" data-full="assets/img/vector-01-ignition.jpg" aria-label="Vector 1 — Ignition, 7:00 AM pre-training stack"><img src="assets/img/vector-01-ignition.jpg" alt="Vector 1 — Ignition (7:00 AM)" loading="lazy"></button>
       <button type="button" data-full="assets/img/vector-02-pump.jpg" aria-label="Vector 2 — Pump Shaker, evening training stack"><img src="assets/img/vector-02-pump.jpg" alt="Vector 2 — Pump Shaker (19:30 PM)" loading="lazy"></button>
       <button type="button" data-full="assets/img/vector-02-refuel.jpg" aria-label="Vector 2 — Refuel, intra-workout glycogen stack"><img src="assets/img/vector-02-refuel.jpg" alt="Vector 2 — Refuel (T+2h)" loading="lazy"></button>
@@ -344,16 +357,16 @@
       </div>
     </div>
 
-    <div class="food-row fr-empty" id="row-salads">
-      <div class="fr-head"><h3>Mega Salads</h3><span class="fr-soon">Coming Soon</span></div>
+    <div class="food-row" id="row-salads">
+      <div class="fr-head"><h3>Mega Salads</h3><span class="fr-count">2 items</span></div>
       <div class="carousel-grid" data-carousel data-carousel-max="6">
-        <div class="log-card fr-placeholder">
-          <div class="log-media"><div class="noimg">🥗</div><span class="log-tag">Coming Soon</span></div>
-          <div class="log-body"><div class="date">&nbsp;</div><h4>First mega salad recipe drops soon</h4><div class="stats">&nbsp;</div></div>
+        <div class="log-card">
+          <div class="log-media"><img src="assets/img/mega-salad-mango-chickpea.jpg" alt="Mega salad with mango, chickpeas, kale and feta" loading="lazy"><span class="log-tag">Salad</span></div>
+          <div class="log-body"><div class="date">From the kitchen</div><h4>Mango &amp; Chickpea Mega Salad</h4><div class="stats"><span>Kale · mango · chickpeas · feta</span></div></div>
         </div>
-        <div class="log-card fr-placeholder">
-          <div class="log-media"><div class="noimg">🥗</div><span class="log-tag">Coming Soon</span></div>
-          <div class="log-body"><div class="date">&nbsp;</div><h4>More rows get added as new meals get posted</h4><div class="stats">&nbsp;</div></div>
+        <div class="log-card">
+          <div class="log-media"><img src="assets/img/mega-salad-kale-tuna.jpg" alt="Mega salad with kale, tuna, beans and avocado dressing" loading="lazy"><span class="log-tag">Salad</span></div>
+          <div class="log-body"><div class="date">From the kitchen</div><h4>Kale &amp; Tuna Mega Salad</h4><div class="stats"><span>Kale · tuna · beans · avocado dressing</span></div></div>
         </div>
       </div>
     </div>
@@ -378,6 +391,14 @@
 window.ProjectCarousel && window.ProjectCarousel.init();
 window.ProjectConnect && window.ProjectConnect.init();
 window.ProjectFloatConnect && window.ProjectFloatConnect.init();
+
+// Vector Timeline gallery: carousel.js just built .carousel-row inside
+// .vector-gallery. Tag that row (not the outer container, and not the
+// prev/next arrow buttons beside it) as .fx-gallery so Fixonic's click-
+// to-zoom lightbox picks up the 5 cards, then run the lightbox wiring
+// now since fixonic.js already finished its own pass before this ran.
+document.querySelectorAll('.vector-gallery .carousel-row').forEach(function(row){ row.classList.add('fx-gallery'); });
+window.Fixonic && window.Fixonic.initGallery && window.Fixonic.initGallery();
 
 // scrollspy: highlight the nav link for whichever section is currently in view
 (function(){
