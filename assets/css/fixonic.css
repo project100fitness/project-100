@@ -360,4 +360,5 @@ html[data-theme="dark"] body[data-fx-theme="classic"]{
    once the rest of the page switches to light mode. ---------- */
 .hero, .cta-band{
   --text:#eef0f4; --text-dim:#9aa1b0; --border:#3a3f48; --cyan:#3fd7d0;
+  color:#eef0f4;
 }
