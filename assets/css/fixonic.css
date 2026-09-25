@@ -260,3 +260,19 @@
 @media (hover:hover){
   .fx-table tr:hover td{ box-shadow:inset 3px 0 0 var(--red,#e6273f); }
 }
+
+
+/* ---------- 17. Brand wordmark icon: small circular red-arrow mark that
+   precedes the PROJEK_100 logotype in the nav/footer .brand link. Pure
+   presentation — sits inline via vertical-align, so it needs no layout
+   change to the existing .brand anchor's own (per-page) CSS. ---------- */
+.brand-mark{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:22px; height:22px; border-radius:50%; background:#fff;
+  vertical-align:-6px; margin-right:7px; flex:0 0 auto;
+}
+.brand-mark svg{ width:13px; height:13px; color:#e6273f; display:block; }
+@media (max-width:640px){
+  .brand-mark{ width:19px; height:19px; margin-right:5px; vertical-align:-5px; }
+  .brand-mark svg{ width:11px; height:11px; }
+}
