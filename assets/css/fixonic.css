@@ -303,7 +303,7 @@ body[data-fx-theme="classic"]{ background:var(--bg) !important; }
   html:not([data-theme="dark"]) body[data-fx-theme="classic"]{
     --bg:#eef0f2; --bg-2:#e6e9ec; --surface:#ffffff; --surface-2:#e6e9ec;
     --border:#d3d7dd; --text:#14171b; --text-dim:#4b5158;
-    --red:#c81f34; --red-dim:#a91d30; --cyan:#0e9c95; --gold:#b8860b;
+    --red:#c81f34; --red-dim:#a91d30; --cyan:#086b66; --gold:#b8860b;
     --purple:#7c5cf0; --purple-deep:#5c3fd0; --purple-soft:#f1eefc;
     --slate:#5b6472; --bad:#b7373a;
   }
@@ -311,7 +311,7 @@ body[data-fx-theme="classic"]{ background:var(--bg) !important; }
 html[data-theme="light"] body[data-fx-theme="classic"]{
   --bg:#eef0f2; --bg-2:#e6e9ec; --surface:#ffffff; --surface-2:#e6e9ec;
   --border:#d3d7dd; --text:#14171b; --text-dim:#4b5158;
-  --red:#c81f34; --red-dim:#a91d30; --cyan:#0e9c95; --gold:#b8860b;
+  --red:#c81f34; --red-dim:#a91d30; --cyan:#086b66; --gold:#b8860b;
   --purple:#7c5cf0; --purple-deep:#5c3fd0; --purple-soft:#f1eefc;
   --slate:#5b6472; --bad:#b7373a;
 }
@@ -366,4 +366,84 @@ html[data-theme="dark"] body[data-fx-theme="classic"]{
 .hero, .cta-band{
   --text:#eef0f4; --text-dim:#9aa1b0; --border:#3a3f48; --cyan:#3fd7d0;
   color:#eef0f4;
+}
+
+/* ---------- 22. Light-mode contrast fixes ----------
+   The #nav brand/link bar keeps a permanently-dark glass background
+   (rgba(10,11,13,.92) — see each page's own <style>) exactly like the
+   .hero/.cta-band case in #21, but its .brand/.btn-ghost text still read
+   var(--text)/var(--red), which turn near-black in light mode and become
+   almost invisible against that dark bar. Pin nav text to dark-mode-style
+   colors here so it stays readable no matter which theme the rest of the
+   page is in. Scoped to the 5 "classic" pages only, same as #18. */
+body[data-fx-theme="classic"] #nav{
+  --text:#eef0f4; --text-dim:#9aa1b0; --border:#2a2e37; --red:#ff3b57;
+}
+/* The non-current Fit-page pills (Fit Protocol/Workout/Nutrition/Fit Gear)
+   use a hardcoded pink (#f19aa5) tuned for the dark page-tabs strip. In
+   light mode that strip turns light gray and the same pink washes out
+   almost to nothing — darken it for light mode specifically, site-wide
+   (not just the classic pages, fit-protocol/-archive share this rule too). */
+@media (prefers-color-scheme:light){
+  html:not([data-theme="dark"]) .page-tab:not(.tab-home):not(.tab-creami):not(.current){ color:#b02f4a; }
+}
+html[data-theme="light"] .page-tab:not(.tab-home):not(.tab-creami):not(.current){ color:#b02f4a; }
+
+/* ---------- 23. Obvious ON/OFF theme switch (replaces the small icon-btn).
+   A wide, equally-divided pill — left half = light/sun, right half =
+   dark/moon — with a sliding thumb that parks on whichever side is active.
+   Driven purely by html[data-theme] (or prefers-color-scheme as a fallback
+   before the user picks explicitly), which fixonic.js's initThemeToggle()
+   already sets on every page, including fit-protocol/-archive's own
+   separate token system — so no JS changes needed. ---------- */
+.theme-switch{
+  --ts-w:60px; --ts-h:30px; --ts-pad:3px;
+  position:relative; display:inline-flex; align-items:center; flex:0 0 auto;
+  width:var(--ts-w); height:var(--ts-h); padding:0; border-radius:100px; cursor:pointer;
+  border:1px solid rgba(255,255,255,.16); background:#12141a;
+  overflow:hidden; -webkit-tap-highlight-color:transparent;
+}
+.theme-switch .ts-track{ position:relative; display:flex; width:100%; height:100%; }
+.theme-switch .ts-icon{
+  flex:1 1 50%; display:flex; align-items:center; position:relative; z-index:1;
+  transition:opacity .2s ease;
+}
+.theme-switch .ts-icon svg{ width:14px; height:14px; display:block; }
+.theme-switch .ts-sun{ color:#e8b64c; justify-content:flex-start; padding-left:8px; }
+.theme-switch .ts-moon{ color:#c7ccd6; justify-content:flex-end; padding-right:8px; }
+.theme-switch .ts-thumb{
+  position:absolute; top:var(--ts-pad); left:var(--ts-pad);
+  width:calc(var(--ts-h) - (var(--ts-pad) * 2)); height:calc(var(--ts-h) - (var(--ts-pad) * 2));
+  border-radius:50%; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.4);
+  transition:transform .25s cubic-bezier(.4,0,.2,1), background .25s ease;
+  z-index:2; pointer-events:none;
+}
+.theme-switch:focus-visible{ outline:2px solid #ff3b57; outline-offset:2px; }
+@media(hover:hover){ .theme-switch:hover{ border-color:rgba(255,255,255,.32); } }
+
+/* dark = thumb parked right (moon side) */
+html[data-theme="dark"] .theme-switch .ts-thumb{ transform:translateX(calc(var(--ts-w) - var(--ts-h))); background:#1a1c22; }
+html[data-theme="dark"] .theme-switch .ts-sun{ opacity:.32; }
+html[data-theme="dark"] .theme-switch .ts-moon{ opacity:1; }
+/* light = thumb parked left (sun side), pill itself turns light so it still
+   reads as "on" against the nav's own always-dark background */
+html[data-theme="light"] .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
+html[data-theme="light"] .theme-switch .ts-thumb{ transform:translateX(0); background:#fff; }
+html[data-theme="light"] .theme-switch .ts-sun{ opacity:1; }
+html[data-theme="light"] .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
+/* no explicit choice made yet: follow system preference with the same states */
+@media (prefers-color-scheme:dark){
+  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateX(calc(var(--ts-w) - var(--ts-h))); background:#1a1c22; }
+  html:not([data-theme]) .theme-switch .ts-sun{ opacity:.32; }
+  html:not([data-theme]) .theme-switch .ts-moon{ opacity:1; }
+}
+@media (prefers-color-scheme:light){
+  html:not([data-theme]) .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
+  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateX(0); background:#fff; }
+  html:not([data-theme]) .theme-switch .ts-sun{ opacity:1; }
+  html:not([data-theme]) .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
+}
+@media (max-width:640px){
+  .theme-switch{ --ts-w:52px; --ts-h:26px; }
+  .theme-switch .ts-icon svg{ width:12px; height:12px; }
 }
