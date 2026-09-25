@@ -292,6 +292,12 @@
 }
 .icon-btn:focus-visible{ outline:2px solid var(--red,var(--accent,#e6273f)); outline-offset:2px; }
 .icon-btn svg{ width:15px; height:15px; }
+/* shell.css hardcodes body{background:#000} with equal specificity, which
+   wins the tie by load order over the page's own body{background:var(--bg)}
+   rule. Re-declare it here with a stronger selector so body's own bg
+   correctly tracks the theme (belt-and-suspenders — .page-shell already
+   paints over it in practice, but this keeps body itself honest too). */
+body[data-fx-theme="classic"]{ background:var(--bg); }
 @media(hover:hover){ .icon-btn:hover{ border-color:var(--red,var(--accent,#e6273f)); } }
 
 @media (prefers-color-scheme:light){
