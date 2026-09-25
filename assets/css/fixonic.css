@@ -252,3 +252,11 @@
    advances any [data-autoscroll] container's .carousel-row on a timer,
    pausing on hover/touch/manual-nav. Pure opt-in via the data attribute. ---------- */
 [data-autoscroll] .carousel-row{ scroll-behavior:smooth; }
+
+/* ---------- 16. Table row glow: a red left-accent stripe that lights up
+   the hovered row, layered on top of whatever hover background a page's
+   own table CSS already applies. Opt-in per table via class="fx-table". ---------- */
+.fx-table tr{ transition:box-shadow .2s ease; }
+@media (hover:hover){
+  .fx-table tr:hover td{ box-shadow:inset 3px 0 0 var(--red,#e6273f); }
+}
