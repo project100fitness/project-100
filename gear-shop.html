@@ -178,7 +178,6 @@
   .armory-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
   .armory-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
   .armory-photos{ display:flex; flex-direction:column; margin-bottom:34px; }
-  .armory-photos .carousel-row > *{ flex:0 0 min(78vw,320px); }
   .armory-photos .carousel-row.fx-gallery{ display:flex; gap:14px; }
   .armory-photos .ap-shot{ position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--border); aspect-ratio:4/3; background:#000; }
   .armory-photos .ap-shot button{ all:unset; display:block; width:100%; height:100%; cursor:zoom-in; }
@@ -190,9 +189,8 @@
   .armory-group h3{ font-size:.86rem; letter-spacing:.08em; color:var(--gold); margin:0 0 14px; display:flex; align-items:center; gap:8px; }
   .armory-group h3::before{ content:""; width:16px; height:2px; background:var(--gold); display:inline-block; }
   .armory-list{ display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
-  .armory-item{ padding:12px 0; border-top:1px solid var(--border); }
-  .armory-list .armory-item:nth-child(-n+2){ border-top:none; }
-  @media (max-width:640px){ .armory-list{ grid-template-columns:1fr; } .armory-list .armory-item:nth-child(-n+2){ border-top:1px solid var(--border); } .armory-list .armory-item:first-child{ border-top:none; } }
+    .armory-item{ padding:14px 16px; background:var(--surface,#16181e); border:1px solid var(--border); border-radius:12px; }
+  @media (max-width:640px){ .armory-list{ grid-template-columns:1fr; } }
   .armory-item{ display:flex; gap:12px; align-items:flex-start; }
   .armory-item .ai-thumb{ flex:0 0 58px; }
   .armory-item .ai-thumb button{ width:58px; height:58px; padding:0; border:1px solid var(--border); border-radius:8px; overflow:hidden; background:#000; cursor:zoom-in; display:block; }
@@ -415,7 +413,7 @@
       <p>The actual rig, band-by-band and handle-by-handle — straight from the Project 100 equipment manifest, not stock photos.</p>
     </div>
 
-    <div class="armory-photos carousel-grid" data-carousel data-carousel-max="7">
+        <div class="armory-photos carousel-grid" data-carousel data-carousel-max="3">
       <div class="ap-shot"><button type="button" data-full="assets/img/gear-rope-carabiners.jpg" aria-label="The Rig — Bands, Clips &amp; Rope Handle"><img src="assets/img/gear-rope-carabiners.jpg" alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" loading="lazy"></button><span class="ap-cap">The Rig — Bands, Clips &amp; Rope Handle</span></div>
       <div class="ap-shot"><button type="button" data-full="assets/img/gear-rig-setup.jpg" aria-label="Full Kinetic Rig"><img src="assets/img/gear-rig-setup.jpg" alt="Full kinetic rig with plyo box and kettlebells" loading="lazy"></button><span class="ap-cap">Full Kinetic Rig</span></div>
       <div class="ap-shot"><button type="button" data-full="assets/img/gym-photo-rig-bench.jpg" aria-label="Rig &amp; adjustable bench station"><img src="assets/img/gym-photo-rig-bench.jpg" alt="Rig and adjustable bench station on turf flooring" loading="lazy"></button><span class="ap-cap">Rig &amp; Bench Station</span></div>
