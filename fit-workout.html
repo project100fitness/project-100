@@ -169,7 +169,7 @@
   }
 </style>
 </head>
-<body>
+<body data-fx-theme="classic">
   <a class="fc-back" href="index.html" aria-label="Back to Project 100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
 <div class="page-shell">
 
@@ -178,6 +178,9 @@
   <div class="wrap">
     <a href="index.html#top" class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="7" width="3" height="10" rx="1"/><rect x="5" y="9" width="2" height="6" rx="1"/><rect x="7" y="10.5" width="10" height="3" rx="1"/><rect x="17" y="9" width="2" height="6" rx="1"/><rect x="20" y="7" width="3" height="10" rx="1"/></svg></span><b>PROJEK</b>_100</a>
     <div class="navcta">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle color theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
       <a class="btn btn-ghost" href="#connect">All Links</a>
       <a class="btn btn-primary" href="fit-protocol.html">Fit Protocol</a>
     </div>
@@ -310,6 +313,14 @@ const CAT_ICON = { "resistance-bands":"🎗️", arms:"💪", "chest-shoulders":
 // card (nothing to scroll, so that row's arrows/scrollbar never show while
 // its neighbors' do — looked broken). Instead, only use as many rows as
 // have enough cards to actually need scrolling, and hide the rest.
+// "Next in log" helper: the entry chronologically after d in LOG_DATA
+// (the array is newest-first, so that's the next-older index).
+function findNext(d){
+  var i = LOG_DATA.indexOf(d);
+  if(i === -1 || i === LOG_DATA.length - 1) return null;
+  return LOG_DATA[i+1];
+}
+
 const MIN_PER_ROW = 4;
 function renderLog(filter){
   const wraps = Array.from(document.querySelectorAll('#logGrid .carousel-wrap'));
@@ -331,6 +342,7 @@ function renderLog(filter){
       // front) + a normal outbound link to watch on YouTube itself.
       const card = document.createElement('div');
       card.className = `log-card yt-card cat-${d.cat} fx-reveal fx-reveal-media`;
+        card.dataset.logDate = d.date;
       card.innerHTML = `
         <div class="log-media fx-spotlight" data-yt="${d.yt}">
           ${media}
@@ -357,6 +369,24 @@ function renderLog(filter){
         ifr.setAttribute('allowfullscreen', '');
         ifr.loading = 'lazy';
         mediaEl.appendChild(ifr);
+
+        var nextEntry = findNext(d);
+        if(nextEntry){
+          var chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'yt-next-chip';
+          chip.textContent = nextEntry.title;
+          chip.addEventListener('click', function(ev){
+            ev.stopPropagation();
+            var target = document.querySelector('[data-log-date="' + CSS.escape(nextEntry.date) + '"]');
+            if(target){
+              target.scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+              target.classList.add('log-highlight');
+              setTimeout(function(){ target.classList.remove('log-highlight'); }, 1600);
+            }
+          });
+          mediaEl.appendChild(chip);
+        }
       });
       row.appendChild(card);
     } else {
@@ -364,6 +394,7 @@ function renderLog(filter){
       // posted as training footage) — keep the original Instagram link.
       const a = document.createElement('a');
       a.className = `log-card cat-${d.cat} fx-reveal fx-reveal-media`;
+      a.dataset.logDate = d.date;
       a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
       a.innerHTML = `
         <div class="log-media fx-spotlight">${media}<span class="log-tag fx-shine">${CAT_LABEL[d.cat]}</span></div>
