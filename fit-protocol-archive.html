@@ -1121,21 +1121,6 @@
 (function(){
   "use strict";
 
-  // ---- THEME TOGGLE ----
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('themeToggle');
-  function getStored(){ try{ return localStorage.getItem('p100-theme'); }catch(e){ return null; } }
-  function setStored(v){ try{ localStorage.setItem('p100-theme', v); }catch(e){} }
-  var stored = getStored();
-  if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
-  themeBtn.addEventListener('click', function(){
-    var current = root.getAttribute('data-theme');
-    var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var effective = current || (sysDark ? 'dark' : 'light');
-    var next = effective === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    setStored(next);
-  });
 
   // ---- BUILD NAV FROM SECTIONS ----
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section.chapter'));
