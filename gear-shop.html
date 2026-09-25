@@ -201,6 +201,41 @@
   .armory-item .ai-spec{ display:inline-block; margin-left:8px; font-size:.64rem; font-weight:700; letter-spacing:.04em; color:var(--cyan); background:rgba(63,215,208,.12); border:1px solid rgba(63,215,208,.3); padding:2px 8px; border-radius:100px; vertical-align:middle; }
   .armory-item p{ margin:6px 0 0; color:var(--text-dim); font-size:.82rem; line-height:1.5; }
 
+  /* SAFETY PROTOCOLS — the subset of Armory hardware that's actually
+     climbing- and vehicle-rated gear (forged locking carabiners, tie-down
+     webbing), plus the load-path mechanics and checks that keep it safe. */
+  .safety-blk{ padding:20px 0 56px; }
+  .safety-blk .sec-head{ max-width:720px; margin-bottom:26px; }
+  .safety-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
+  .safety-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
+
+  .safety-chain{ display:flex; flex-wrap:wrap; align-items:stretch; gap:0; margin-bottom:28px; }
+  .sc-step{ flex:1 1 150px; background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:12px; padding:14px 15px; min-width:140px; }
+  .sc-step .sc-n{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--gold); color:#1a1200; font-family:'Oswald',sans-serif; font-weight:700; font-size:.72rem; margin-bottom:8px; }
+  .sc-step h5{ font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; margin:0 0 4px; }
+  .sc-step p{ margin:0; color:var(--text-dim); font-size:.74rem; line-height:1.45; }
+  .sc-arrow{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; padding:0 8px; color:var(--text-dim); }
+  .sc-arrow svg{ width:16px; height:16px; }
+  @media (max-width:760px){
+    .safety-chain{ flex-direction:column; }
+    .sc-arrow{ transform:rotate(90deg); padding:2px 0; align-self:center; }
+  }
+
+  .safety-rated-group{ margin-bottom:22px; }
+  .safety-badge{ display:inline-block; margin-top:8px; font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gold); background:rgba(232,182,76,.12); border:1px solid rgba(232,182,76,.34); padding:3px 9px; border-radius:100px; }
+
+  .safety-cols{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:760px){ .safety-cols{ grid-template-columns:1fr; } }
+  .safety-col{ background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; padding:20px 22px; }
+  .safety-col h4{ font-family:'Oswald',sans-serif; font-size:.86rem; letter-spacing:.08em; text-transform:uppercase; margin:0 0 12px; display:flex; align-items:center; gap:8px; color:var(--cyan); }
+  .safety-col.safety-col-warn h4{ color:var(--red); }
+  .safety-col h4::before{ content:""; width:16px; height:2px; background:currentColor; display:inline-block; }
+  .safety-col ul{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+  .safety-col li{ display:flex; gap:9px; align-items:flex-start; color:var(--text-dim); font-size:.84rem; line-height:1.5; }
+  .safety-col li svg{ flex:0 0 auto; width:16px; height:16px; margin-top:2px; color:var(--cyan); }
+  .safety-col.safety-col-warn li svg{ color:var(--red); }
+  .safety-note{ margin:18px 0 0; color:var(--text-dim); font-size:.76rem; font-style:italic; max-width:760px; }
+
   /* GUIDE BOOK CTA — one strong block linking to Fit Protocol / a purchase link */
   .guide-blk{ padding:36px 0 56px; }
   .guide-card{
@@ -279,6 +314,7 @@
     <a href="#gym-tour">GYM TOUR</a>
     <a href="#reels">GYM PHOTOS</a>
     <a href="#armory">THE ARMORY</a>
+    <a href="#safety">SAFETY PROTOCOLS</a>
     <a href="#guide">GUIDE BOOK</a>
   </div>
 </nav>
@@ -469,6 +505,64 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="safety-blk" id="safety">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Rated Hardware</span>
+      <h2>Safety Protocols</h2>
+      <p>A handful of items in this rig aren't just gym accessories — they're the same class of hardware used in mountain-climbing protection and heavy-vehicle tie-down: forged, gate-locking carabiners and high-tensile webbing straps built to industrial breaking-strength standards. Here's how they're actually rigged into the setup, and the checks that keep that load path safe.</p>
+    </div>
+
+    <div class="safety-chain">
+      <div class="sc-step"><span class="sc-n">1</span><h5>Structural Anchor</h5><p>The rig's welded steel crossbar, or a non-marking soft-loop strap choked directly around it.</p></div>
+      <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="sc-step"><span class="sc-n">2</span><h5>Tie-Down Strap</h5><p>VEHICLEX / THEFITGUY webbing extends the anchor point out to a forged steel D-ring terminal.</p></div>
+      <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="sc-step"><span class="sc-n">3</span><h5>Locking Carabiner</h5><p>An Oak-Sports/JRSGS 25kN gate-lock clip closes the chain — gate faced away from the pull, locked shut.</p></div>
+      <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="sc-step"><span class="sc-n">4</span><h5>Band / Handle</h5><p>The working resistance — tubing, a grip handle, a rope attachment — clips in last, closest to the load.</p></div>
+      <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="sc-step"><span class="sc-n">5</span><h5>You</h5><p>The working end of the chain — only ever as strong as the weakest link rigged in behind it.</p></div>
+    </div>
+
+    <div class="armory-group safety-rated-group">
+      <h3>Climbing &amp; Vehicle-Rated Hardware</h3>
+      <div class="armory-list">
+        <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-carabiner.jpg" aria-label="Photo: a yellow locking carabiner on the rig"><img src="assets/img/gear-item-carabiner.jpg" alt="Photo: a yellow locking carabiner on the rig" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">Oak-Sports / JRSGS Carabiners</span><span class="ai-spec">25kN</span><p>Gate-locking clips rated to 5,600 lbs — the same load-rating language (kN) used on mountain-climbing protection gear, sized down for a home rig instead of a rock face.</p><span class="safety-badge">Climbing-Grade Rating</span></div></div>
+        <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-vehiclex.jpg" aria-label="Photo: the VEHICLEX axle tie-down straps"><img src="assets/img/gear-item-vehiclex.jpg" alt="Photo: the VEHICLEX axle tie-down straps" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">VEHICLEX Axle Tie-Down Straps</span><span class="ai-spec">Industrial</span><p>Car-hauling-grade webbing with triangular steel D-rings — the same tie-down category used to secure vehicles and freight, repurposed here as a fixed heavy anchor.</p><span class="safety-badge">Vehicle-Rated Webbing</span></div></div>
+        <div class="armory-item"><div class="ai-thumb fx-gallery"><button type="button" data-full="assets/img/gear-item-thefitguy-ext-straps.jpg" aria-label="Photo: the THEFITGUY ultimate extension straps"><img src="assets/img/gear-item-thefitguy-ext-straps.jpg" alt="Photo: the THEFITGUY ultimate extension straps" loading="lazy"></button></div><div class="ai-text"><span class="ai-name">THEFITGUY Ultimate Extension Straps</span><span class="ai-spec">Dual</span><p>Flat nylon webbing with steel D-ring terminals, built to the same high-tensile stitch-density standard as cargo and aircraft tie-down strapping.</p><span class="safety-badge">Aircraft-Grade Webbing</span></div></div>
+        <div class="armory-item"><div class="ai-text"><span class="ai-name">NILIGHT Soft Loop Anchor Straps</span><span class="ai-spec">1.7&quot;×17&quot;</span><p>Choke-loop straps rigged directly around structural bars — a non-marking, non-abrasive anchor point instead of hooking hardware straight onto bare steel.</p><span class="safety-badge">Non-Marking Anchor</span></div></div>
+        <div class="armory-item"><div class="ai-text"><span class="ai-name">XSTRAP Motorcycle Soft Loop Tie-Downs</span><span class="ai-spec">Soft Loop</span><p>Woven soft-loop straps built for securing a motorcycle in transit — a second non-marking anchor option alongside the Nilight set.</p><span class="safety-badge">Vehicle-Rated Webbing</span></div></div>
+      </div>
+    </div>
+
+    <div class="safety-cols">
+      <div class="safety-col">
+        <h4>Advantages</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span>Every anchor point breaks down and reconfigures in seconds — nothing bolted or permanently mounted.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span>Soft-loop and tie-down straps don't mark or wear the structural steel the way a bare hook or band would.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span>Locking gates prevent the accidental unclipping a plain resistance-band loop is prone to mid-set.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span>Rated in kN / lbs, so the hardware's actual failure point sits well above anything the bands can pull.</span></li>
+        </ul>
+      </div>
+      <div class="safety-col safety-col-warn">
+        <h4>Safety Measures</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>Match hardware rating to the heaviest band in the line with real margin — never eyeball it as "strong enough."</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>Carabiner gate faces away from the direction of pull, fully closed and locked, checked before every set.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>Webbing inspected before use — any cut, fraying, or UV-bleaching gets that strap retired immediately, no exceptions.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>No daisy-chaining mismatched hardware — every link in the setup should carry its own independent rating.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>Carabiners loaded along the spine only — side- or gate-loading drops rated strength dramatically.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.7 17.5a1.5 1.5 0 0 0 1.3 2.25h16a1.5 1.5 0 0 0 1.3-2.25L13.7 3.9a1.5 1.5 0 0 0-2.6 0z"/></svg><span>No shock-loading — bands are let out under control, never snapped or dropped into a sudden stop.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="safety-note">Ratings above reflect the manufacturer specs printed on the hardware itself. This is a home-gym rig, not a certified climbing or industrial rigging system — so those numbers are treated as a floor to stay well under, not a target to push toward.</p>
   </div>
 </section>
 
