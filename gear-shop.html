@@ -184,22 +184,22 @@
   .armory-photos .ap-shot img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease; }
   @media (hover:hover){ .armory-photos .ap-shot button:hover img{ transform:scale(1.06); } }
   .armory-photos .ap-cap{ position:absolute; left:0; right:0; bottom:0; padding:10px 12px; background:linear-gradient(0deg,rgba(0,0,0,.82),transparent); font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#fff; pointer-events:none; }
-  .armory-groups{ display:grid; gap:22px; }
-  .armory-group{ background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; padding:20px 22px; }
-  .armory-group h3{ font-size:.86rem; letter-spacing:.08em; color:var(--gold); margin:0 0 14px; display:flex; align-items:center; gap:8px; }
+  .armory-groups{ display:grid; gap:28px; }
+  .armory-group{ background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; padding:26px 28px; }
+  .armory-group h3{ font-size:.92rem; letter-spacing:.08em; color:var(--gold); margin:0 0 18px; display:flex; align-items:center; gap:8px; }
   .armory-group h3::before{ content:""; width:16px; height:2px; background:var(--gold); display:inline-block; }
-  .armory-list{ display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
-    .armory-item{ padding:14px 16px; background:var(--surface,#16181e); border:1px solid var(--border); border-radius:12px; }
+  .armory-list{ display:grid; gap:20px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+    .armory-item{ padding:0; background:var(--surface,#16181e); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
   @media (max-width:640px){ .armory-list{ grid-template-columns:1fr; } }
-  .armory-item{ display:flex; gap:12px; align-items:flex-start; }
-  .armory-item .ai-thumb{ flex:0 0 58px; }
-  .armory-item .ai-thumb button{ width:58px; height:58px; padding:0; border:1px solid var(--border); border-radius:8px; overflow:hidden; background:#000; cursor:zoom-in; display:block; }
+  .armory-item{ display:flex; flex-direction:column; }
+  .armory-item .ai-thumb{ flex:none; width:100%; }
+  .armory-item .ai-thumb button{ width:100%; height:220px; padding:0; border:0; border-bottom:1px solid var(--border); border-radius:0; overflow:hidden; background:#000; cursor:zoom-in; display:block; }
   .armory-item .ai-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease; }
-  @media (hover:hover){ .armory-item .ai-thumb button:hover img{ transform:scale(1.14); } }
-  .armory-item .ai-text{ flex:1; min-width:0; }
-  .armory-item .ai-name{ font-family:'Oswald',sans-serif; font-size:.86rem; font-weight:700; letter-spacing:.01em; text-transform:uppercase; color:var(--text); }
-  .armory-item .ai-spec{ display:inline-block; margin-left:8px; font-size:.64rem; font-weight:700; letter-spacing:.04em; color:var(--cyan); background:rgba(63,215,208,.12); border:1px solid rgba(63,215,208,.3); padding:2px 8px; border-radius:100px; vertical-align:middle; }
-  .armory-item p{ margin:6px 0 0; color:var(--text-dim); font-size:.82rem; line-height:1.5; }
+  @media (hover:hover){ .armory-item .ai-thumb button:hover img{ transform:scale(1.06); } }
+  .armory-item .ai-text{ flex:1; min-width:0; padding:18px 20px 20px; }
+  .armory-item .ai-name{ font-family:'Oswald',sans-serif; font-size:.98rem; font-weight:700; letter-spacing:.01em; text-transform:uppercase; color:var(--text); }
+  .armory-item .ai-spec{ display:inline-block; margin-left:8px; margin-top:4px; font-size:.7rem; font-weight:700; letter-spacing:.04em; color:var(--cyan); background:rgba(63,215,208,.12); border:1px solid rgba(63,215,208,.3); padding:3px 10px; border-radius:100px; vertical-align:middle; }
+  .armory-item p{ margin:10px 0 0; color:var(--text-dim); font-size:.92rem; line-height:1.65; }
 
   /* SAFETY PROTOCOLS — the subset of Armory hardware that's actually
      climbing- and vehicle-rated gear (forged locking carabiners, tie-down
