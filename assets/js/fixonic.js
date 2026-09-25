@@ -156,6 +156,56 @@
     });
   }
 
+  /* ---- 7. Spotlight cursor glow: track the pointer over any .fx-spotlight
+     element and write it into --sx/--sy (consumed by fixonic.css's
+     radial-gradient overlay). Fine-pointer devices only. ---- */
+  function initSpotlight(root){
+    if(!window.matchMedia || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    (root || document).querySelectorAll('.fx-spotlight').forEach(function(el){
+      if(el.dataset.fxSpot) return;
+      el.dataset.fxSpot = '1';
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--sx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--sy', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* ---- 8. Auto-scrolling carousel rows: any [data-autoscroll] container
+     nudges its .carousel-row along on a timer, pausing on hover/touch/
+     manual nav, and looping back to the start at the end. Skips entirely
+     under reduced-motion. Call after the row markup exists (carousel.js
+     builds it), same pattern as initGallery/initBeforeAfter. ---- */
+  function initAutoScroll(root){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    (root || document).querySelectorAll('[data-autoscroll]').forEach(function(container){
+      if(container.dataset.fxAuto) return;
+      container.dataset.fxAuto = '1';
+      container.querySelectorAll('.carousel-row').forEach(function(row){
+        var paused = false;
+        function step(){
+          if(paused) return;
+          var card = row.querySelector(':scope > *');
+          var amt = card ? (card.getBoundingClientRect().width + 18) : 260;
+          var max = row.scrollWidth - row.clientWidth;
+          if(max <= 4) return;
+          if(row.scrollLeft >= max - 4){ row.scrollTo({ left:0, behavior:'smooth' }); }
+          else{ row.scrollBy({ left:amt, behavior:'smooth' }); }
+        }
+        var timer = setInterval(step, 4200);
+        function pause(){ paused = true; }
+        function resume(){ paused = false; }
+        row.addEventListener('mouseenter', pause);
+        row.addEventListener('mouseleave', resume);
+        row.addEventListener('touchstart', pause, { passive:true });
+        row.addEventListener('focusin', pause);
+        row.addEventListener('focusout', resume);
+        row.addEventListener('carousel:nav', function(){ paused = true; clearInterval(timer); });
+      });
+    });
+  }
+
   function initAll(){
     initNavScroll();
     initCondenseNav();
@@ -163,6 +213,7 @@
     initStatCounters();
     initBeforeAfter();
     initGallery();
+    initSpotlight();
   }
 
   if(document.readyState === 'loading'){
@@ -176,6 +227,8 @@
     initBeforeAfter: initBeforeAfter,
     initGallery: initGallery,
     initStatCounters: initStatCounters,
-    initReveal: initReveal
+    initReveal: initReveal,
+    initSpotlight: initSpotlight,
+    initAutoScroll: initAutoScroll
   };
 })();
