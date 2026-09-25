@@ -201,25 +201,25 @@
 </nav>
 </header>
 
-<section class="placeholder-hero" id="top">
+<section class="placeholder-hero fx-aurora fx-spotlight" id="top">
   <div class="wrap">
-        <h1>Every Block.<br><span>Every Rep.</span></h1>
+        <h1 class="fx-reveal">Every Block.<br><span>Every Rep.</span></h1>
   </div>
 </section>
 
 <div class="focus-point-wrap wrap" style="padding-top:36px;">
-  <div class="focus-point">
-    <span class="fp-tag">The System Behind It</span>
+  <div class="focus-point fx-reveal fx-pulse-glow">
+    <span class="fp-tag fx-shine">The System Behind It</span>
     <p>Every block below runs on a timed six-vector intake system — 06:30 ignition to 20:30 shutdown. The full clock, the formula cards, and the master matrix live in Fit Protocol. <a href="fit-protocol.html#s-clock" style="color:var(--cyan);">Open the Master Chronometer ↗</a></p>
   </div>
 </div>
 
 <section class="reels-blk" id="log">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">The Last 60 Days, Unfiltered</span>
-      <h2>Training Log</h2>
-      <p>Every training block, sorted by exercise type, with the real dates and engagement. Tap a cover to play it right here, or open it on YouTube Shorts. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="gear-shop.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
+    <div class="sec-head fx-stagger">
+      <span class="eyebrow fx-reveal">The Last 60 Days, Unfiltered</span>
+      <h2 class="fx-reveal">Training Log</h2>
+      <p class="fx-reveal">Every training block, sorted by exercise type, with the real dates and engagement. Tap a cover to play it right here, or open it on YouTube Shorts. Food reels live on <a href="fit-nutrition.html" style="color:var(--cyan);text-decoration:none;">Fit Nutrition</a> · gym photo drops live on <a href="gear-shop.html" style="color:var(--cyan);text-decoration:none;">Fit Gear</a>.</p>
     </div>
 
     <div class="filters">
@@ -330,11 +330,11 @@ function renderLog(filter){
       // until tapped, so 15+ cards never load 15+ YouTube players up
       // front) + a normal outbound link to watch on YouTube itself.
       const card = document.createElement('div');
-      card.className = `log-card yt-card cat-${d.cat}`;
+      card.className = `log-card yt-card cat-${d.cat} fx-reveal fx-reveal-media`;
       card.innerHTML = `
-        <div class="log-media" data-yt="${d.yt}">
+        <div class="log-media fx-spotlight" data-yt="${d.yt}">
           ${media}
-          <span class="log-tag">${CAT_LABEL[d.cat]}</span>
+          <span class="log-tag fx-shine">${CAT_LABEL[d.cat]}</span>
           <span class="yt-play" aria-hidden="true">
             <svg viewBox="0 0 68 48" width="40" height="40"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="rgba(0,0,0,.55)"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
           </span>
@@ -363,10 +363,10 @@ function renderLog(filter){
       // No YouTube Shorts equivalent for this one (meme post, never
       // posted as training footage) — keep the original Instagram link.
       const a = document.createElement('a');
-      a.className = `log-card cat-${d.cat}`;
+      a.className = `log-card cat-${d.cat} fx-reveal fx-reveal-media`;
       a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
       a.innerHTML = `
-        <div class="log-media">${media}<span class="log-tag">${CAT_LABEL[d.cat]}</span></div>
+        <div class="log-media fx-spotlight">${media}<span class="log-tag fx-shine">${CAT_LABEL[d.cat]}</span></div>
         <div class="log-body">
           <div class="date">${d.date}</div>
           <h4>${d.title}</h4>
@@ -376,6 +376,7 @@ function renderLog(filter){
       row.appendChild(a);
     }
   });
+  window.Fixonic && window.Fixonic.initReveal && window.Fixonic.initReveal();
 }
 renderLog('all');
 window.ProjectCarousel && window.ProjectCarousel.init();
