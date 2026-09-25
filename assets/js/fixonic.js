@@ -206,6 +206,32 @@
     });
   }
 
+  /* ---- 9. Site-wide light/dark theme toggle: any #themeToggle button
+     flips html[data-theme] between 'light'/'dark' and remembers the
+     choice in localStorage under 'p100-theme'. fit-protocol.html and
+     fit-protocol-archive.html already ship their own copy of this exact
+     logic wired to the same #themeToggle id, so this stays a no-op there
+     (their inline script is being removed in the same rollout — this is
+     the single shared implementation going forward). ---- */
+  function initThemeToggle(){
+    var btn = document.getElementById('themeToggle');
+    if(!btn || btn.dataset.fxTheme) return;
+    btn.dataset.fxTheme = '1';
+    var root = document.documentElement;
+    function getStored(){ try{ return localStorage.getItem('p100-theme'); }catch(e){ return null; } }
+    function setStored(v){ try{ localStorage.setItem('p100-theme', v); }catch(e){} }
+    var stored = getStored();
+    if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
+    btn.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme');
+      var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var effective = current || (sysDark ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      setStored(next);
+    });
+  }
+
   function initAll(){
     initNavScroll();
     initCondenseNav();
@@ -214,6 +240,7 @@
     initBeforeAfter();
     initGallery();
     initSpotlight();
+    initThemeToggle();
   }
 
   if(document.readyState === 'loading'){
@@ -229,6 +256,7 @@
     initStatCounters: initStatCounters,
     initReveal: initReveal,
     initSpotlight: initSpotlight,
-    initAutoScroll: initAutoScroll
+    initAutoScroll: initAutoScroll,
+    initThemeToggle: initThemeToggle
   };
 })();
