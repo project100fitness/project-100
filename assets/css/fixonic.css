@@ -276,3 +276,78 @@
   .brand-mark{ width:19px; height:19px; margin-right:5px; vertical-align:-5px; }
   .brand-mark svg{ width:11px; height:11px; }
 }
+
+
+/* ---------- 18. Site-wide light/dark theme toggle (classic pages) ----------
+   Shared control for the 5 "classic" pages (index, fit-workout,
+   fit-nutrition, gear-shop, ninja-creami) that don't have a theme system
+   of their own. body[data-fx-theme="classic"] marks those pages so this
+   block can never match fit-protocol.html / fit-protocol-archive.html,
+   which already ship their own separately-tuned light/dark tokens under
+   the same --surface/--border/--text names. ---------- */
+.icon-btn{
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  width:32px; height:32px; border-radius:6px; display:flex; align-items:center;
+  justify-content:center; cursor:pointer; flex:0 0 auto; text-decoration:none;
+}
+.icon-btn:focus-visible{ outline:2px solid var(--red,var(--accent,#e6273f)); outline-offset:2px; }
+.icon-btn svg{ width:15px; height:15px; }
+@media(hover:hover){ .icon-btn:hover{ border-color:var(--red,var(--accent,#e6273f)); } }
+
+@media (prefers-color-scheme:light){
+  html:not([data-theme="dark"]) body[data-fx-theme="classic"]{
+    --bg:#eef0f2; --bg-2:#e6e9ec; --surface:#ffffff; --surface-2:#e6e9ec;
+    --border:#d3d7dd; --text:#14171b; --text-dim:#4b5158;
+    --red:#c81f34; --red-dim:#a91d30; --cyan:#0e9c95; --gold:#b8860b;
+    --purple:#7c5cf0; --purple-deep:#5c3fd0; --purple-soft:#f1eefc;
+    --slate:#5b6472; --bad:#b7373a;
+  }
+}
+html[data-theme="light"] body[data-fx-theme="classic"]{
+  --bg:#eef0f2; --bg-2:#e6e9ec; --surface:#ffffff; --surface-2:#e6e9ec;
+  --border:#d3d7dd; --text:#14171b; --text-dim:#4b5158;
+  --red:#c81f34; --red-dim:#a91d30; --cyan:#0e9c95; --gold:#b8860b;
+  --purple:#7c5cf0; --purple-deep:#5c3fd0; --purple-soft:#f1eefc;
+  --slate:#5b6472; --bad:#b7373a;
+}
+html[data-theme="dark"] body[data-fx-theme="classic"]{
+  --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029;
+  --border:#272b35; --text:#eef0f4; --text-dim:#9aa1b0;
+  --red:#e6273f; --red-dim:#a91d30; --cyan:#3fd7d0; --gold:#e8b64c;
+  --purple:#a78bfa; --purple-deep:#c9b8ff; --purple-soft:#1d1730;
+  --slate:#9aa1b0; --bad:#e0575a;
+}
+
+/* ---------- 19. FAQ accordion — native <details>/<summary>, no JS needed.
+   Used on index.html only (one well-lit place instead of duplicating it
+   across every page). ---------- */
+.faq-section{ padding:70px 0; }
+.faq-list{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+.faq-item{ background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.faq-item summary{
+  list-style:none; cursor:pointer; padding:16px 20px; font-weight:700; font-size:.95rem;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--text);
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{
+  content:'+'; font-size:1.3rem; font-weight:400; color:var(--red,var(--accent,#e6273f)); flex:0 0 auto;
+}
+.faq-item[open] summary::after{ content:'\2212'; }
+.faq-item .faq-a{ padding:0 20px 18px; color:var(--text-dim); font-size:.9rem; line-height:1.6; }
+.faq-item .faq-a p{ margin:0; }
+@media(hover:hover){ .faq-item summary:hover{ color:var(--red,var(--accent,#e6273f)); } }
+
+/* ---------- 20. "Next in log" suggested chip — appears only once a viewer
+   taps play on a Fit Workout log card, pointing to the next entry in the
+   log rather than autoplaying into it. ---------- */
+.yt-next-chip{
+  position:absolute; left:8px; right:8px; bottom:8px; z-index:2;
+  background:rgba(10,11,13,.82); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px); color:#fff;
+  border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:8px 10px;
+  font-size:.7rem; font-weight:700; text-align:left; cursor:pointer; font-family:inherit;
+  display:flex; align-items:center; gap:6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.yt-next-chip:before{ content:'\25B8 NEXT: '; color:var(--red,#e6273f); flex:0 0 auto; }
+@media(hover:hover){ .yt-next-chip:hover{ border-color:var(--red,#e6273f); } }
+@keyframes logPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(230,39,63,0); } 50%{ box-shadow:0 0 0 4px rgba(230,39,63,.55); } }
+.log-highlight{ animation:logPulse 1.5s ease-in-out 1; border-radius:14px; }
