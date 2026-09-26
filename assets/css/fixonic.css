@@ -377,7 +377,7 @@ html[data-theme="dark"] body[data-fx-theme="classic"]{
    colors here so it stays readable no matter which theme the rest of the
    page is in. Scoped to the 5 "classic" pages only, same as #18. */
 body[data-fx-theme="classic"] #nav{
-  --text:#eef0f4; --text-dim:#9aa1b0; --border:#2a2e37; --red:#ff3b57;
+  --text:#eef0f4; --text-dim:#9aa1b0; --border:#2a2e37;
 }
 /* The non-current Fit-page pills (Fit Protocol/Workout/Nutrition/Fit Gear)
    use a hardcoded pink (#f19aa5) tuned for the dark page-tabs strip. In
@@ -397,6 +397,33 @@ html[data-theme="light"] .page-tab:not(.tab-home):not(.tab-creami):not(.current)
 }
 html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{ color:#a11527; }
 
+/* ---------- 22b. Brand wordmark: bigger + glow, nav-left grouping ----------
+   Rebrand: PROJ3K_100. The wordmark link (nav + footer, all pages) gets a
+   much larger size and a pulsing red glow so it reads as the site's actual
+   logo. Scoped to <a class="brand"> only, so it never touches
+   fit-protocol-archive's unrelated <div class="topbar"><div class="brand">
+   tag. The classic pages' #nav brand gets its red pinned directly here
+   since --red is no longer forced in that scope (see #22 note above). */
+a.brand{
+  font-size:1.85rem; font-weight:800; letter-spacing:.03em; line-height:1;
+}
+a.brand b{
+  text-shadow:0 0 14px rgba(255,59,87,.55), 0 0 28px rgba(255,59,87,.25);
+  animation:brandGlowPulse 3.2s ease-in-out infinite;
+}
+body[data-fx-theme="classic"] #nav .brand b{ color:#ff3b57; }
+@keyframes brandGlowPulse{
+  0%,100%{ text-shadow:0 0 14px rgba(255,59,87,.55), 0 0 28px rgba(255,59,87,.25); }
+  50%{ text-shadow:0 0 22px rgba(255,59,87,.85), 0 0 44px rgba(255,59,87,.45); }
+}
+@media (prefers-reduced-motion:reduce){ a.brand b{ animation:none; } }
+@media (max-width:640px){ a.brand{ font-size:1.3rem; } }
+
+/* Groups the theme switch + wordmark together at the far left of the nav,
+   ahead of the All Links/Fit Protocol buttons on the right. */
+.nav-left{ display:flex; align-items:center; gap:14px; flex:0 0 auto; }
+@media (max-width:640px){ .nav-left{ gap:8px; } }
+
 /* ---------- 23. Obvious ON/OFF theme switch (replaces the small icon-btn).
    A wide, equally-divided pill — left half = light/sun, right half =
    dark/moon — with a sliding thumb that parks on whichever side is active.
@@ -405,23 +432,23 @@ html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{
    already sets on every page, including fit-protocol/-archive's own
    separate token system — so no JS changes needed. ---------- */
 .theme-switch{
-  --ts-w:60px; --ts-h:30px; --ts-pad:3px;
-  position:relative; display:inline-flex; align-items:center; flex:0 0 auto;
+  --ts-w:30px; --ts-h:58px; --ts-pad:3px;
+  position:relative; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
   width:var(--ts-w); height:var(--ts-h); padding:0; border-radius:100px; cursor:pointer;
   border:1px solid rgba(255,255,255,.16); background:#12141a;
   overflow:hidden; -webkit-tap-highlight-color:transparent;
 }
-.theme-switch .ts-track{ position:relative; display:flex; width:100%; height:100%; }
+.theme-switch .ts-track{ position:relative; display:flex; flex-direction:column; width:100%; height:100%; }
 .theme-switch .ts-icon{
-  flex:1 1 50%; display:flex; align-items:center; position:relative; z-index:1;
+  flex:1 1 50%; display:flex; align-items:center; justify-content:center; position:relative; z-index:1;
   transition:opacity .2s ease;
 }
-.theme-switch .ts-icon svg{ width:14px; height:14px; display:block; }
-.theme-switch .ts-sun{ color:#e8b64c; justify-content:flex-start; padding-left:8px; }
-.theme-switch .ts-moon{ color:#c7ccd6; justify-content:flex-end; padding-right:8px; }
+.theme-switch .ts-icon svg{ width:13px; height:13px; display:block; }
+.theme-switch .ts-sun{ color:#e8b64c; }
+.theme-switch .ts-moon{ color:#c7ccd6; }
 .theme-switch .ts-thumb{
   position:absolute; top:var(--ts-pad); left:var(--ts-pad);
-  width:calc(var(--ts-h) - (var(--ts-pad) * 2)); height:calc(var(--ts-h) - (var(--ts-pad) * 2));
+  width:calc(var(--ts-w) - (var(--ts-pad) * 2)); height:calc(var(--ts-w) - (var(--ts-pad) * 2));
   border-radius:50%; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.4);
   transition:transform .25s cubic-bezier(.4,0,.2,1), background .25s ease;
   z-index:2; pointer-events:none;
@@ -429,29 +456,29 @@ html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{
 .theme-switch:focus-visible{ outline:2px solid #ff3b57; outline-offset:2px; }
 @media(hover:hover){ .theme-switch:hover{ border-color:rgba(255,255,255,.32); } }
 
-/* dark = thumb parked right (moon side) */
-html[data-theme="dark"] .theme-switch .ts-thumb{ transform:translateX(calc(var(--ts-w) - var(--ts-h))); background:#1a1c22; }
+/* dark = thumb parked bottom (moon side) */
+html[data-theme="dark"] .theme-switch .ts-thumb{ transform:translateY(calc(var(--ts-h) - var(--ts-w))); background:#1a1c22; }
 html[data-theme="dark"] .theme-switch .ts-sun{ opacity:.32; }
 html[data-theme="dark"] .theme-switch .ts-moon{ opacity:1; }
-/* light = thumb parked left (sun side), pill itself turns light so it still
+/* light = thumb parked top (sun side), pill itself turns light so it still
    reads as "on" against the nav's own always-dark background */
 html[data-theme="light"] .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
-html[data-theme="light"] .theme-switch .ts-thumb{ transform:translateX(0); background:#fff; }
+html[data-theme="light"] .theme-switch .ts-thumb{ transform:translateY(0); background:#fff; }
 html[data-theme="light"] .theme-switch .ts-sun{ opacity:1; }
 html[data-theme="light"] .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
 /* no explicit choice made yet: follow system preference with the same states */
 @media (prefers-color-scheme:dark){
-  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateX(calc(var(--ts-w) - var(--ts-h))); background:#1a1c22; }
+  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateY(calc(var(--ts-h) - var(--ts-w))); background:#1a1c22; }
   html:not([data-theme]) .theme-switch .ts-sun{ opacity:.32; }
   html:not([data-theme]) .theme-switch .ts-moon{ opacity:1; }
 }
 @media (prefers-color-scheme:light){
   html:not([data-theme]) .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
-  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateX(0); background:#fff; }
+  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateY(0); background:#fff; }
   html:not([data-theme]) .theme-switch .ts-sun{ opacity:1; }
   html:not([data-theme]) .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
 }
 @media (max-width:640px){
-  .theme-switch{ --ts-w:52px; --ts-h:26px; }
-  .theme-switch .ts-icon svg{ width:12px; height:12px; }
+  .theme-switch{ --ts-w:26px; --ts-h:50px; }
+  .theme-switch .ts-icon svg{ width:11px; height:11px; }
 }
