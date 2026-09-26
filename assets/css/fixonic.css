@@ -405,19 +405,33 @@ html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{
    tag. The classic pages' #nav brand gets its red pinned directly here
    since --red is no longer forced in that scope (see #22 note above). */
 a.brand{
+  position:relative; display:inline-block;
   font-size:1.85rem; font-weight:800; letter-spacing:.03em; line-height:1;
+  text-decoration:none; padding-bottom:8px;
 }
+a.brand::after{
+  content:""; position:absolute; left:1px; right:1px; bottom:-1px; height:4px;
+  background:#ff3b57; border-radius:2px;
+  transform:scaleX(1); transform-origin:left center; transition:transform .25s ease;
+}
+@media(hover:hover){ a.brand:hover::after{ transform:scaleX(1.04); } }
 a.brand b{
-  text-shadow:0 0 14px rgba(255,59,87,.55), 0 0 28px rgba(255,59,87,.25);
-  animation:brandGlowPulse 3.2s ease-in-out infinite;
+  text-shadow:
+    1px 1px 0 rgba(255,59,87,.45),
+    2px 2px 0 rgba(255,59,87,.35),
+    3px 3px 0 rgba(255,59,87,.25),
+    4px 4px 0 rgba(255,59,87,.15);
 }
 body[data-fx-theme="classic"] #nav .brand b{ color:#ff3b57; }
-@keyframes brandGlowPulse{
-  0%,100%{ text-shadow:0 0 14px rgba(255,59,87,.55), 0 0 28px rgba(255,59,87,.25); }
-  50%{ text-shadow:0 0 22px rgba(255,59,87,.85), 0 0 44px rgba(255,59,87,.45); }
+@media (max-width:640px){
+  a.brand{ font-size:1.3rem; padding-bottom:6px; }
+  a.brand::after{ height:3px; }
+  a.brand b{
+    text-shadow:
+      1px 1px 0 rgba(255,59,87,.45),
+      2px 2px 0 rgba(255,59,87,.30);
+  }
 }
-@media (prefers-reduced-motion:reduce){ a.brand b{ animation:none; } }
-@media (max-width:640px){ a.brand{ font-size:1.3rem; } }
 
 /* Groups the theme switch + wordmark together at the far left of the nav,
    ahead of the All Links/Fit Protocol buttons on the right. */
