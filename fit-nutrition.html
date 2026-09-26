@@ -73,7 +73,7 @@
   .cat-tabs a{ flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease; }
   .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
 
-  .placeholder-hero{ padding:90px 0 64px; text-align:center; border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:radial-gradient(circle at 50% 0%, rgba(230,39,63,.14), transparent 55%), var(--bg); }
+  .placeholder-hero{ padding:90px 0 64px; min-height:440px; display:flex; align-items:center; justify-content:center; text-align:center; border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:radial-gradient(circle at 50% 0%, rgba(230,39,63,.16), transparent 55%), linear-gradient(120deg, rgba(6,7,9,.94) 0%, rgba(6,7,9,.72) 40%, rgba(6,7,9,.6) 55%, rgba(6,7,9,.95) 100%), url('assets/img/nutrition-hero-transport.jpg') center 38%/cover no-repeat; }
   .placeholder-hero > *{ position:relative; z-index:1; }
   .placeholder-hero .tag{ display:inline-block; background:var(--surface); border:1px solid var(--border); color:var(--cyan); font-family:'Oswald',sans-serif; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:22px; }
   .placeholder-hero h1{ font-size:clamp(2.2rem,6vw,3.6rem); margin:0 0 18px; }
@@ -199,7 +199,7 @@
     .page-tab{ padding:6px 12px; font-size:.68rem; }
     .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
     .cat-tabs a{ font-size:.64rem; }
-    .placeholder-hero{ padding:36px 0 30px; }
+    .placeholder-hero{ padding:36px 0 30px; min-height:280px; background-position:62% 35%; }
     .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
     .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
     .placeholder-hero p{ font-size:.94rem; margin:0 auto 24px; }
