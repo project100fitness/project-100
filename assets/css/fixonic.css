@@ -456,25 +456,29 @@ body[data-fx-theme="classic"] #nav .brand b{ color:#ff3b57; }
 .theme-switch:focus-visible{ outline:2px solid #ff3b57; outline-offset:2px; }
 @media(hover:hover){ .theme-switch:hover{ border-color:rgba(255,255,255,.32); } }
 
-/* dark = thumb parked bottom (moon side) */
+/* dark = thumb parked bottom (moon side). Color-inverted from site theme:
+   in dark mode the switch itself turns WHITE/light-toned so it reads as
+   its own distinct color-tone control instead of blending into the navs
+   fixed dark backdrop; in light mode it turns dark-toned (the inverse).
+   Thumb position + icon opacity still track the real active mode. */
+html[data-theme="dark"] .theme-switch{ background:#eef0f2; border-color:#c9ced6; }
 html[data-theme="dark"] .theme-switch .ts-thumb{ transform:translateY(calc(var(--ts-h) - var(--ts-w))); background:#1a1c22; }
 html[data-theme="dark"] .theme-switch .ts-sun{ opacity:.32; }
-html[data-theme="dark"] .theme-switch .ts-moon{ opacity:1; }
-/* light = thumb parked top (sun side), pill itself turns light so it still
-   reads as "on" against the nav's own always-dark background */
-html[data-theme="light"] .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
-html[data-theme="light"] .theme-switch .ts-thumb{ transform:translateY(0); background:#fff; }
+html[data-theme="dark"] .theme-switch .ts-moon{ opacity:1; color:#2a2e37; }
+html[data-theme="light"] .theme-switch{ background:#12141a; border-color:rgba(255,255,255,.16); }
+html[data-theme="light"] .theme-switch .ts-thumb{ transform:translateY(0); background:#eef0f2; }
 html[data-theme="light"] .theme-switch .ts-sun{ opacity:1; }
 html[data-theme="light"] .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
 /* no explicit choice made yet: follow system preference with the same states */
 @media (prefers-color-scheme:dark){
+  html:not([data-theme]) .theme-switch{ background:#eef0f2; border-color:#c9ced6; }
   html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateY(calc(var(--ts-h) - var(--ts-w))); background:#1a1c22; }
   html:not([data-theme]) .theme-switch .ts-sun{ opacity:.32; }
-  html:not([data-theme]) .theme-switch .ts-moon{ opacity:1; }
+  html:not([data-theme]) .theme-switch .ts-moon{ opacity:1; color:#2a2e37; }
 }
 @media (prefers-color-scheme:light){
-  html:not([data-theme]) .theme-switch{ background:#dfe3e8; border-color:#c9ced6; }
-  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateY(0); background:#fff; }
+  html:not([data-theme]) .theme-switch{ background:#12141a; border-color:rgba(255,255,255,.16); }
+  html:not([data-theme]) .theme-switch .ts-thumb{ transform:translateY(0); background:#eef0f2; }
   html:not([data-theme]) .theme-switch .ts-sun{ opacity:1; }
   html:not([data-theme]) .theme-switch .ts-moon{ opacity:.32; color:#5b6472; }
 }
