@@ -406,7 +406,7 @@ html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{
    since --red is no longer forced in that scope (see #22 note above). */
 a.brand{
   position:relative; display:inline-block;
-  font-size:1.85rem; font-weight:800; letter-spacing:.03em; line-height:1;
+  font-size:1.9rem; font-weight:800; letter-spacing:.1em; line-height:1;
   text-decoration:none; padding-bottom:8px;
 }
 a.brand::after{
@@ -424,7 +424,7 @@ a.brand b{
 }
 body[data-fx-theme="classic"] #nav .brand b{ color:#ff3b57; }
 @media (max-width:640px){
-  a.brand{ font-size:1.3rem; padding-bottom:6px; }
+  a.brand{ font-size:1.3rem; padding-bottom:6px; letter-spacing:.06em; }
   a.brand::after{ height:3px; }
   a.brand b{
     text-shadow:
