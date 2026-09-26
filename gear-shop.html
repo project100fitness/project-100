@@ -201,7 +201,7 @@
      rectangle with a chamfered, angular cut corner (alternating side
      per card down the grid for rhythm), with a brand-color diagonal
      flash showing through the cut notch instead of just more black. */
-  .armory-item .ai-thumb{ position:relative; }
+  .armory-item .ai-thumb{ position:relative; display:block; }
   .armory-item .ai-thumb::before{ content:""; position:absolute; inset:0; z-index:0; background:linear-gradient(135deg, var(--red) 0%, var(--gold) 100%); }
   .armory-item .ai-thumb button{ border-bottom:0; clip-path:polygon(0 0,100% 0,100% 100%,26px 100%,0 calc(100% - 26px)); }
   .armory-list .armory-item:nth-child(even) .ai-thumb button{ clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),calc(100% - 26px) 100%,0 100%); }
