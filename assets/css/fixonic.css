@@ -398,7 +398,7 @@ html[data-theme="light"] .page-tab:not(.tab-home):not(.tab-creami):not(.current)
 html[data-theme="light"] body[data-fx-theme="classic"] .field-note--red .fn-tag{ color:#a11527; }
 
 /* ---------- 22b. Brand wordmark: bigger + glow, nav-left grouping ----------
-   Rebrand: PROJ3K_100. The wordmark link (nav + footer, all pages) gets a
+   Rebrand: PROJEK_100. The wordmark link (nav + footer, all pages) gets a
    much larger size and a pulsing red glow so it reads as the site's actual
    logo. Scoped to <a class="brand"> only, so it never touches
    fit-protocol-archive's unrelated <div class="topbar"><div class="brand">
