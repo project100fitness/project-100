@@ -112,6 +112,14 @@
   .deckbar .spacer{flex:1;}
   .deckbar .counter{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.04em;white-space:nowrap;}
   .deckbar .counter .of{color:var(--text-faint);}
+  /* The site-wide .theme-switch (fixonic.css) is sized for the tall
+     standard #nav row (30x58px). This deckbar row is short and squeezed
+     around ~32px-tall siblings (.icon-btn, .archive-link), so the full-size
+     switch was forcing the whole bar to balloon to fit it. Scoping the
+     switch's own size variables down here keeps it proportional to its
+     row instead of dictating the row's height. */
+  .deckbar .theme-switch{--ts-w:18px;--ts-h:34px;--ts-pad:2px;}
+  .deckbar .theme-switch .ts-icon svg{width:8px;height:8px;}
   .archive-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:100px;padding:6px 11px;white-space:nowrap;}
   .archive-link:hover{color:var(--text);border-color:var(--accent-dim);}
   @media(max-width:520px){.archive-link span.full{display:none;}}
@@ -147,7 +155,7 @@
   .deck-controls button:disabled{opacity:.35;cursor:default;}
 
   /* ============ DECK / SLIDES ============ */
-  .deck{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior-x:none;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;}
+  .deck{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;}
 .deck::-webkit-scrollbar{display:none;width:0;height:0;}
   /* top-anchored, not centered: a slide with light content (e.g. a short
      reference note) used to float dead-center in a full-screen box, which
