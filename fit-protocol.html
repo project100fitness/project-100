@@ -335,7 +335,7 @@
   }
 </style>
 </head><body>
-<div class="page-shell">
+<style>.page-tabs{display:none;}.side-menu-tab{top:50%;transform:translateY(calc(-50% - 70px));}.page-nav-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:930;width:52px;height:52px;border-radius:50%;background:rgba(10,11,13,.72);backdrop-filter:blur(6px);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease;box-shadow:0 6px 20px rgba(0,0,0,.35);}.page-nav-arrow:hover{background:#e6273f;border-color:#e6273f;transform:translateY(-50%) scale(1.08);}.page-nav-arrow svg{width:26px;height:26px;}.page-nav-arrow.prev{left:14px;}.page-nav-arrow.next{right:14px;}@media(max-width:640px){.page-nav-arrow{width:42px;height:42px;}.page-nav-arrow svg{width:20px;height:20px;}.page-nav-arrow.prev{left:8px;}.page-nav-arrow.next{right:8px;}}.hub-tabs{display:flex;gap:8px;padding:10px 20px;overflow-x:auto;scrollbar-width:none;background:#0d0e11;border-bottom:1px solid var(--border-soft);}.hub-tabs::-webkit-scrollbar{display:none;}.hub-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--text-dim);border:1px solid var(--border);background:transparent;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease;}.hub-tab:hover{color:var(--text);border-color:#e6273f;}.hub-tab.open{background:#e6273f;border-color:#e6273f;color:#fff;}.hub-panels{overflow:hidden;max-height:0;transition:max-height .35s ease;background:#0a0b0d;}.hub-panels.open{max-height:220px;}.hub-panel{display:none;gap:10px;padding:14px 20px;overflow-x:auto;scrollbar-width:none;}.hub-panel::-webkit-scrollbar{display:none;}.hub-panel.active{display:flex;}.hub-card{flex:none;width:150px;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);color:var(--text);text-decoration:none;transition:transform .15s ease,border-color .15s ease;}.hub-card:hover{transform:translateY(-3px);border-color:#e6273f;}.hub-card .hc-n{font-family:var(--font-display);font-size:.68rem;color:#e6273f;font-weight:700;}.hub-card .hc-t{display:block;margin-top:4px;font-size:.78rem;font-weight:600;line-height:1.3;}@media(max-width:640px){.hub-card{width:124px;padding:10px 12px;}}</style><div class="page-shell">
 
 <header class="site-head">
 <nav id="nav">
@@ -366,7 +366,7 @@
     <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
   </div>
 </nav>
-<div class="deckbar">
+<div class="hub-tabs" id="hubTabs"></div><div class="hub-panels" id="hubPanels"></div><div class="deckbar">
   <button id="navToggle" class="icon-btn" aria-label="Open slide index" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
   </button>
@@ -378,7 +378,7 @@
 <div class="rail"><i id="railFill"></i></div>
 </header>
 
-<button id="sideMenuTab" class="side-menu-tab" type="button" aria-label="Open the section menu"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span>Menu</span></button><div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button id="sideMenuTab" class="side-menu-tab" type="button" aria-label="Open the section menu"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span>Menu</span></button><a class="page-nav-arrow prev" href="index.html" aria-label="Previous page: Project 100"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a><a class="page-nav-arrow next" href="fit-workout.html" aria-label="Next page: Fit Workout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a><div class="drawer-backdrop" id="drawerBackdrop"></div>
 <div class="drawer" id="drawer">
   <div class="dclose"><button class="icon-btn" id="drawerClose" aria-label="Close slide index">✕</button></div>
   <nav id="drawerNav" aria-label="Slide index"></nav>
@@ -1304,4 +1304,4 @@
 <script src="assets/js/float-connect.js"></script>
 <script src="assets/js/fixonic.js"></script>
 <script>window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
-</body></html>
+<script>(function(){var slides=Array.prototype.slice.call(document.querySelectorAll('.slide[data-group]'));var hubTabs=document.getElementById('hubTabs');var hubPanels=document.getElementById('hubPanels');if(!slides.length||!hubTabs||!hubPanels)return;var groups={};var order=[];slides.forEach(function(s){var g=s.getAttribute('data-group');if(!groups[g]){groups[g]=[];order.push(g);}groups[g].push(s);});order.forEach(function(g,gi){var btn=document.createElement('button');btn.type='button';btn.className='hub-tab';btn.textContent=g;hubTabs.appendChild(btn);var panel=document.createElement('div');panel.className='hub-panel';panel.id='hub-panel-'+gi;groups[g].forEach(function(s){var idx=slides.indexOf(s);var a=document.createElement('a');a.className='hub-card';a.href='#'+s.id;var n=document.createElement('span');n.className='hc-n';n.textContent=String(idx+1).padStart(2,'0');var ttl=document.createElement('span');ttl.className='hc-t';ttl.textContent=s.getAttribute('data-title')||g;a.appendChild(n);a.appendChild(ttl);panel.appendChild(a);});hubPanels.appendChild(panel);});var tabs=Array.prototype.slice.call(hubTabs.querySelectorAll('.hub-tab'));var panels=Array.prototype.slice.call(hubPanels.querySelectorAll('.hub-panel'));function closeAll(){tabs.forEach(function(t){t.classList.remove('open');});panels.forEach(function(p){p.classList.remove('active');});hubPanels.classList.remove('open');}tabs.forEach(function(btn,i){btn.addEventListener('click',function(){var isOpen=btn.classList.contains('open');closeAll();if(!isOpen){btn.classList.add('open');panels[i].classList.add('active');hubPanels.classList.add('open');}});});})();</script></body></html>
