@@ -111,7 +111,7 @@
   @media(min-width:640px){.deckbar .tag{display:inline;}}
   .deckbar .spacer{flex:1;}
   .deckbar .counter{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.04em;white-space:nowrap;}
-  .deckbar .counter .of{color:var(--text-faint);}
+  .deckbar .counter .of{color:var(--text-faint);} .side-menu-tab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:65;background:linear-gradient(160deg,var(--accent) 0%,#8f1a2c 100%);color:#fff;border:none;border-radius:0 12px 12px 0;padding:14px 10px;font-family:var(--font-display);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;box-shadow:4px 0 18px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;gap:6px;transition:padding-left .2s ease,box-shadow .2s ease;}.side-menu-tab:hover{padding-left:15px;box-shadow:6px 0 22px rgba(0,0,0,.5);}.side-menu-tab svg{flex:none;}@media(max-width:640px){.side-menu-tab{padding:12px 8px;font-size:.58rem;}}
   .archive-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:100px;padding:6px 11px;white-space:nowrap;}
   .archive-link:hover{color:var(--text);border-color:var(--accent-dim);}
   @media(max-width:520px){.archive-link span.full{display:none;}}
@@ -378,7 +378,7 @@
 <div class="rail"><i id="railFill"></i></div>
 </header>
 
-<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<button id="sideMenuTab" class="side-menu-tab" type="button" aria-label="Open the section menu"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span>Menu</span></button><div class="drawer-backdrop" id="drawerBackdrop"></div>
 <div class="drawer" id="drawer">
   <div class="dclose"><button class="icon-btn" id="drawerClose" aria-label="Close slide index">✕</button></div>
   <nav id="drawerNav" aria-label="Slide index"></nav>
@@ -1164,7 +1164,7 @@
   var drawerClose = document.getElementById('drawerClose');
   function openDrawer(){ drawer.classList.add('open'); backdrop.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); }
   function closeDrawer(){ drawer.classList.remove('open'); backdrop.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
-  navToggle.addEventListener('click', function(){ drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  navToggle.addEventListener('click', function(){ drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });var sideMenuTab=document.getElementById('sideMenuTab');if(sideMenuTab){sideMenuTab.addEventListener('click',function(){drawer.classList.contains('open')?closeDrawer():openDrawer();});}
   backdrop.addEventListener('click', closeDrawer);
   drawerClose.addEventListener('click', closeDrawer);
 
