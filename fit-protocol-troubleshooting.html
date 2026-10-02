@@ -1,0 +1,718 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:16.5px -apple-system,BlinkMacSystemFont,sans-serif;background:#0a0b0d;color:#eceef0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Troubleshooting &amp; Reference — Fit Protocol — PROJECT 100</title>
+<meta name="description" content="The Failure Matrix, Field Annexes, the Fiscal Audit, and the Ninja CREAMi system — reference material for when something goes wrong.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/float-connect.css">
+<link rel="stylesheet" href="assets/css/fixonic.css">
+<style>
+  /* ============ TOKENS — matches the rest of Project 100 ============ */
+  :root{
+    --bg:#0a0b0d; --surface:#16181c; --surface-2:#1e2126; --surface-3:#25292f;
+    --border:#2b2f36; --border-soft:#20232a; --text:#eceef0; --text-dim:#9aa1ab; --text-faint:#666d78;
+    --accent:#f5a623; --accent-ink:#1a1200; --accent-dim:#7a5615; --accent-2:#7fa8d9;
+    --good:#4caf7d; --good-ink:#0c1f16; --bad:#e0575a; --bad-ink:#2a0d0d;
+    --shadow: 0 8px 24px rgba(0,0,0,.35);
+    --font-display:'Oswald',"Arial Narrow",sans-serif;
+    --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+    --headerH:96px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#eef0f2; --surface:#ffffff; --surface-2:#e6e9ec; --surface-3:#dadee3;
+      --border:#d3d7dd; --border-soft:#dfe2e7; --text:#14171b; --text-dim:#4b5158; --text-faint:#767c85;
+      --accent:#b56a0e; --accent-ink:#ffffff; --accent-dim:#e3ad63; --accent-2:#2f6fb0;
+      --good:#217a51; --good-ink:#ffffff; --bad:#b7373a; --bad-ink:#ffffff;
+      --shadow: 0 8px 24px rgba(20,23,27,.08);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef0f2; --surface:#ffffff; --surface-2:#e6e9ec; --surface-3:#dadee3;
+    --border:#d3d7dd; --border-soft:#dfe2e7; --text:#14171b; --text-dim:#4b5158; --text-faint:#767c85;
+    --accent:#b56a0e; --accent-ink:#ffffff; --accent-dim:#e3ad63; --accent-2:#2f6fb0;
+    --good:#217a51; --good-ink:#ffffff; --bad:#b7373a; --bad-ink:#ffffff;
+    --shadow: 0 8px 24px rgba(20,23,27,.08);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0b0d; --surface:#16181c; --surface-2:#1e2126; --surface-3:#25292f;
+    --border:#2b2f36; --border-soft:#20232a; --text:#eceef0; --text-dim:#9aa1ab; --text-faint:#666d78;
+    --accent:#f5a623; --accent-ink:#1a1200; --accent-dim:#7a5615; --accent-2:#7fa8d9;
+    --good:#4caf7d; --good-ink:#0c1f16; --bad:#e0575a; --bad-ink:#2a0d0d;
+    --shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16.5px;font-weight:450;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;display:flex;flex-direction:column;overflow:hidden;}
+  /* This page is a full-viewport app shell (header + an internally-
+     scrolling .deck), not a normal scrolling document — body itself is
+     the flex column that gives .deck its bounded, scrollable height.
+     The shared .page-shell boxed-layout wrapper (assets/css/shell.css)
+     sits between body and that structure now, so it has to pass the
+     flex chain straight through instead of blocking it, or .deck loses
+     its bounded height and the whole page stops scroll-snapping.
+     min-width:0 matters just as much as min-height:0 here: as a flex
+     item, .page-shell's default min-width is "auto", which lets any
+     wide, non-wrapping descendant (the auto-scrolling link ticker's
+     max-content track, a wide table, etc.) bubble up and force the
+     WHOLE PAGE wider than the viewport — the exact "everything scrolls
+     sideways" bug. min-width:0 caps it at the viewport instead, so
+     that content clips/scrolls locally the way each piece intends. */
+  .page-shell{ display:flex; flex-direction:column; width:100%; height:100%; min-height:0; min-width:0; }
+  h1,h2,h3,h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;text-wrap:balance;font-weight:600;margin:0;}
+  a{color:var(--accent-2);}
+  code,.mono{font-family:var(--font-mono);}
+  ::selection{background:var(--accent);color:var(--accent-ink);}
+  button{font:inherit;}
+  @media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important;transition-duration:.01ms!important;} }
+
+  /* ============ SITE-WIDE HEADER (shared with index.html) ============ */
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  .site-head{flex:0 0 auto;}
+  #nav{position:relative;background:rgba(10,11,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);}
+  #nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+  .brand{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;text-decoration:none;color:#eceef0;text-transform:uppercase;}
+  .brand b{color:#e6273f;}
+  .navcta{display:flex;gap:10px;}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:6px;font-weight:700;font-size:.8rem;text-decoration:none;letter-spacing:.02em;border:1px solid var(--border);color:#eceef0;}
+  .btn-primary{background:#e6273f;border-color:#e6273f;color:#fff;}
+  @media(max-width:860px){.navcta .btn:not(.btn-primary){display:none;}}
+  .page-tabs{background:#0d0e11;border-bottom:1px solid var(--border-soft);}
+  .page-tabs .wrap::-webkit-scrollbar{display:none;}
+  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex;gap:8px;padding:10px 20px; }
+  .page-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#9aa1b0;border:1px solid #272b35;white-space:nowrap;}
+  .page-tab.current{background:#e6273f;border-color:#e6273f;color:#fff;}
+  .page-tab .lc-i{text-transform:lowercase;}
+  .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
+  .page-tab.tab-creami.current{background:#a78bfa;border-color:#a78bfa;color:#1a1030;}
+  .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
+  .page-tab.tab-creami:not(.current){border-color:rgba(167,139,250,.42);color:#c6b6fb;}
+  /* the plain FIT-page pills used to fall back to the same flat gray as
+     the sub-menu text below them — give them their own red-family tone
+     (matching this site's brand red, which is also what "current" turns
+     them) so they read as their own nav, with a solid-red hover. */
+  .page-tab:not(.tab-home):not(.tab-creami):not(.current){border-color:rgba(230,39,63,.4);color:#f19aa5;}
+  @media (hover:hover){
+    .page-tab:not(.current):hover{border-color:var(--text-dim,#9aa1b0);color:var(--text,#eef0f4);}
+    .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
+    .page-tab.tab-creami:not(.current):hover{border-color:#a78bfa;color:#a78bfa;}
+    .page-tab:not(.tab-home):not(.tab-creami):not(.current):hover{border-color:#e6273f;color:#e6273f;}
+  }
+
+  /* ============ DECK TOOLBAR (this page's own controls — same box model as .cat-tabs on the other pages) ============ */
+  .deckbar{display:flex;align-items:center;gap:10px;padding:9px 20px;background:#0d0e11;border-bottom:1px solid rgba(255,255,255,.08);}
+  .icon-btn{background:var(--surface-2);border:1px solid var(--border);color:var(--text);width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:0 0 auto;}
+  .icon-btn:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .icon-btn svg{width:15px;height:15px;}
+  .deckbar .tag{font-family:var(--font-mono);font-size:.62rem;color:var(--text-faint);letter-spacing:.08em;display:none;}
+  @media(min-width:640px){.deckbar .tag{display:inline;}}
+  .deckbar .spacer{flex:1;}
+  .deckbar .counter{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.04em;white-space:nowrap;}
+  .deckbar .counter .of{color:var(--text-faint);} .side-menu-tab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:65;background:linear-gradient(160deg,var(--accent) 0%,#8f1a2c 100%);color:#fff;border:none;border-radius:0 12px 12px 0;padding:14px 10px;font-family:var(--font-display);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;box-shadow:4px 0 18px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;gap:6px;transition:padding-left .2s ease,box-shadow .2s ease;}.side-menu-tab:hover{padding-left:15px;box-shadow:6px 0 22px rgba(0,0,0,.5);}.side-menu-tab svg{flex:none;}@media(max-width:640px){.side-menu-tab{padding:12px 8px;font-size:.58rem;}}
+  .archive-link{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-dim);text-decoration:none;border:1px solid var(--border);border-radius:100px;padding:6px 11px;white-space:nowrap;}
+  .archive-link:hover{color:var(--text);border-color:var(--accent-dim);}
+  @media(max-width:520px){.archive-link span.full{display:none;}}
+
+  /* progress rail under the deckbar */
+  .rail{height:3px;background:var(--surface-3);position:relative;flex:0 0 auto;}
+  .rail i{position:absolute;left:0;top:0;height:100%;background:var(--accent);width:6.25%;transition:width .25s ease;}
+
+  /* ============ DRAWER (slide index) ============ */
+  .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:69;opacity:0;pointer-events:none;transition:opacity .18s;}
+  .drawer-backdrop.open{opacity:1;pointer-events:auto;}
+  .drawer{position:fixed;top:0;bottom:0;left:0;width:min(320px,86vw);z-index:70;background:var(--surface);border-right:1px solid var(--border);transform:translateX(-105%);transition:transform .22s ease;padding:16px;padding-top:calc(16px + env(safe-area-inset-top,0px));overflow-y:auto;}
+  .drawer.open{transform:translateX(0);}
+  .drawer .dclose{display:flex;justify-content:flex-end;margin-bottom:6px;}
+  .drawer nav a{display:flex;align-items:baseline;gap:8px;padding:8px 8px;border-radius:5px;color:var(--text-dim);text-decoration:none;font-size:.9rem;font-weight:700;}
+  .drawer nav a .n{font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);flex:0 0 auto;}
+  .drawer nav a.active{color:var(--accent);background:var(--surface-2);font-weight:800;}
+  .drawer nav a.active .n{color:var(--accent);}
+  .drawer .grp-label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;color:var(--text-faint);margin:16px 8px 4px;text-transform:uppercase;}
+  .drawer .grp-label:first-child{margin-top:2px;} .drawer-backdrop{background:rgba(0,0,0,.6);} .drawer{width:min(360px,88vw);background:linear-gradient(165deg,var(--surface) 0%,#17090d 60%,#1e0b10 100%);border-right:1px solid rgba(230,39,63,.28);box-shadow:inset -1px 0 0 rgba(230,39,63,.12);transition:transform .28s cubic-bezier(.22,1,.36,1);} .drawer nav a{position:relative;justify-content:space-between;align-items:center;padding:13px 10px;border-radius:0;border-bottom:1px dashed rgba(236,238,240,.12);font-family:var(--font-display);font-size:1.02rem;font-weight:600;overflow:hidden;transition:color .22s ease,padding-left .22s ease;} .drawer nav a::before{content:"";position:absolute;top:0;bottom:0;left:0;width:0;background:linear-gradient(100deg,rgba(230,39,63,.32) 0%,rgba(230,39,63,.06) 78%,transparent 100%);clip-path:polygon(0 0,100% 0,calc(100% - 18px) 100%,0 100%);transition:width .32s cubic-bezier(.22,1,.36,1);z-index:0;} .drawer nav a:hover::before,.drawer nav a.active::before{width:100%;} .drawer nav a>*{position:relative;z-index:1;} .drawer nav a::after{content:"";width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);opacity:0;transition:opacity .22s ease,transform .3s cubic-bezier(.22,1,.36,1);flex:none;position:relative;z-index:1;} .drawer nav a:hover::after,.drawer nav a.active::after{opacity:.85;transform:rotate(45deg) translateX(2px);} .drawer nav a:hover{color:var(--text);padding-left:14px;} .drawer nav a .n{font-size:.7rem;color:rgba(230,39,63,.85);margin-right:2px;} .drawer nav a.active{color:var(--text);background:transparent;font-weight:700;} .drawer nav a.active .n{color:#e6273f;} .drawer .grp-label{font-size:.64rem;letter-spacing:.14em;margin:20px 10px 6px;} .drawer nav a[href^="#s-vec-"]{border-left:3px solid transparent;} .drawer nav a[href="#s-vec-recovery"]{--v-acc:var(--v3);border-left-color:color-mix(in srgb, var(--v3) 65%, transparent);} .drawer nav a[href="#s-vec-ignition"]{--v-acc:var(--v1);border-left-color:color-mix(in srgb, var(--v1) 65%, transparent);} .drawer nav a[href="#s-vec-refuel"]{--v-acc:var(--v2r);border-left-color:color-mix(in srgb, var(--v2r) 65%, transparent);} .drawer nav a[href="#s-vec-reload"]{--v-acc:var(--v4);border-left-color:color-mix(in srgb, var(--v4) 65%, transparent);} .drawer nav a[href="#s-vec-transport"]{--v-acc:var(--v5);border-left-color:color-mix(in srgb, var(--v5) 65%, transparent);} .drawer nav a[href="#s-vec-pump"]{--v-acc:var(--v2p);border-left-color:color-mix(in srgb, var(--v2p) 65%, transparent);} .drawer nav a[href="#s-vec-shutdown"]{--v-acc:var(--v10);border-left-color:color-mix(in srgb, var(--v10) 65%, transparent);} .drawer nav a[href^="#s-vec-"] .n{color:var(--v-acc);} .drawer nav a[href^="#s-vec-"].active{color:var(--v-acc);} .drawer nav a[href^="#s-vec-"].active .n{color:var(--v-acc);} .drawer nav a[href^="#s-vec-"]::before{background:linear-gradient(100deg,color-mix(in srgb, var(--v-acc) 38%, transparent) 0%,color-mix(in srgb, var(--v-acc) 8%, transparent) 78%,transparent 100%);} .drawer nav a[href^="#s-vec-"]::after{border-color:var(--v-acc);}
+
+  /* ============ DOT NAV (desktop) ============ */
+  .dotnav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;gap:11px;}
+  @media(min-width:900px){.dotnav{display:flex;}}
+  .dotnav button{width:9px;height:9px;border-radius:50%;background:var(--surface-3);border:1px solid var(--border);padding:0;cursor:pointer;}
+  .dotnav button.active{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);}
+
+  /* ============ PREV/NEXT CONTROLS ============ */
+  .deck-controls{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;gap:8px;}
+  @media(min-width:900px){.deck-controls{right:44px;}}
+  .deck-controls button{width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow);}
+  .deck-controls button svg{width:18px;height:18px;}
+  .deck-controls button:disabled{opacity:.35;cursor:default;}
+
+  /* ============ DECK / SLIDES ============ */
+  .deck{flex:1 1 auto;min-height:0;min-width:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;scroll-snap-type:y mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;}
+.deck::-webkit-scrollbar{display:none;width:0;height:0;}
+  /* top-anchored, not centered: a slide with light content (e.g. a short
+     reference note) used to float dead-center in a full-screen box, which
+     read as a big empty gap when scrolling past it. Anchoring to the top
+     with generous breathing room keeps every slide's rhythm consistent
+     whether it holds two lines or two screens of content. */
+  .slide{min-height:0;width:100%;max-width:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:flex-start;padding:56px 20px 40px;position:relative;border-bottom:1px solid var(--border-soft);overflow-x:hidden;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+  .slide.in-view{opacity:1;transform:translateY(0);}
+  /* Every slide hugs its own content instead of being force-stretched to
+     fill the deck viewport. This used to be desktop-only (min-height:100%
+     on mobile, "one slide = one phone screen") but that meant every short
+     slide on a phone dragged 150-400px of dead empty space before the next
+     one, which read as heavy, scroll-intensive dead air — so mobile now
+     gets the same content-hugging behaviour as desktop. Scroll-snap and
+     top-anchoring are unaffected either way; slides are just shorter when
+     they're short, on any screen. */
+  .slide-inner{max-width:1080px;margin:0 auto;width:100%;overflow-x:hidden;}
+  .slide-kicker{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+  .slide-kicker .n{border:1px solid var(--accent-dim);border-radius:4px;padding:2px 7px;}
+  .slide-title{font-size:clamp(1.6rem,5.2vw,2.7rem);line-height:1.04;margin-bottom:.3em;}
+  .slide-lede{max-width:68ch;color:var(--text-dim);font-size:1rem;margin-bottom:22px;}
+  .slide-lede b, .slide-lede strong{color:var(--text);}
+
+  /* card strip — was a horizontal-scroll-only strip (cards cut off at the
+     edge, needing a sideways swipe to see the rest). Now wraps onto as
+     many lines as it needs so every card is visible on first view, no
+     side-scrolling required, on any screen size. */
+  .card-strip{display:flex;flex-wrap:wrap;gap:12px;padding:2px 2px 14px;margin:0 -2px;}
+  .info-card{flex:0 0 auto;width:min(100%,270px);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 17px;box-shadow:var(--shadow);}
+  .info-card.wide{width:min(100%,340px);}
+  .info-card .ic-tag{display:inline-block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb, var(--accent) 14%, transparent);border:1px solid var(--accent-dim);border-radius:100px;padding:2px 9px;margin-bottom:9px;}
+  .info-card.bad .ic-tag{color:var(--bad);background:color-mix(in srgb, var(--bad) 16%, transparent);border-color:color-mix(in srgb, var(--bad) 50%, transparent);}
+  .info-card.good .ic-tag{color:var(--good);background:color-mix(in srgb, var(--good) 16%, transparent);border-color:color-mix(in srgb, var(--good) 50%, transparent);}
+  .info-card .ic-head{font-family:var(--font-display);font-size:1.02rem;letter-spacing:.01em;text-transform:none;margin-bottom:6px;line-height:1.15;}
+  .info-card .ic-body{font-size:.87rem;color:var(--text-dim);line-height:1.5;}
+  .info-card .ic-body b{color:var(--text);}
+  .info-card .ic-meta{margin-top:10px;font-family:var(--font-mono);font-size:.68rem;color:var(--text-faint);border-top:1px solid var(--border-soft);padding-top:8px;}
+
+  /* full vector detail blocks: payload + mechanisms + firewall.
+     Each vector now leads with a full hero photo (the real, high-resolution
+     formula-card art) instead of a tiny 88px thumbnail — the image itself
+     carries the payload/mechanism/firewall data as a beautiful reference,
+     the HTML text below it repeats the same data in accessible/scannable form. */
+  .vector-full{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:0 0 20px;margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden;}
+  .vector-full .vf-hero{position:relative;margin:0;cursor:zoom-in;background:#0a0b0d;line-height:0;}
+  .vector-full .vf-hero img{width:auto;height:auto;max-width:100%;max-height:78vh;display:block;margin:0 auto;transition:transform .35s cubic-bezier(.22,1,.36,1);}
+  @media (hover:hover){.vector-full .vf-hero:hover img{transform:scale(1.035);}}
+  .vector-full .vf-hero figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 16px 12px;background:linear-gradient(0deg,rgba(6,7,9,.92),rgba(6,7,9,.55) 70%,transparent);}
+  .vector-full .vf-name{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.01em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+  .vector-full .vf-time{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--accent);white-space:nowrap;}
+  .vector-full .vf-scope{font-size:.82rem;color:var(--text-faint);font-style:italic;margin:14px 18px 12px;}
+  .vector-full .vf-label{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin:0 0 6px;}
+  .vector-full .vf-list{font-size:.85rem;color:var(--text-dim);line-height:1.55;margin:0 0 12px;padding-left:18px;}
+  .vector-full .vf-list:last-child{margin-bottom:0;}
+  .vector-full .vf-list li b{color:var(--text);}
+  .vector-full .vf-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;padding:0 18px;}
+  .vector-full .vf-firewall{border-top:1px dashed var(--border-soft);padding:10px 18px 0;margin:2px 18px 0;}
+  .vector-full .vf-firewall .vf-label{color:var(--bad);}
+  @media (max-width:640px){.vector-full .vf-cols{grid-template-columns:1fr;gap:0;}} /* Vector Color System — fixed palette from the VECTOR Image Assets library (Phase 3 doc). Each Vector Protocol slide scopes --accent/--accent-2/--accent-dim to its own color so the card border, time label and section labels pick it up automatically. */ :root{--v1:#3ddc73;--v2r:#2fd9e0;--v2p:#3a86ff;--v3:#f5871f;--v4:#e6273f;--v5:#b34cf0;--v10:#7a1128;} #s-vec-recovery{--accent:var(--v3);--accent-2:var(--v3);--accent-dim:color-mix(in srgb, var(--v3) 55%, black);} #s-vec-ignition{--accent:var(--v1);--accent-2:var(--v1);--accent-dim:color-mix(in srgb, var(--v1) 55%, black);} #s-vec-refuel{--accent:var(--v2r);--accent-2:var(--v2r);--accent-dim:color-mix(in srgb, var(--v2r) 55%, black);} #s-vec-reload{--accent:var(--v4);--accent-2:var(--v4);--accent-dim:color-mix(in srgb, var(--v4) 55%, black);} #s-vec-transport{--accent:var(--v5);--accent-2:var(--v5);--accent-dim:color-mix(in srgb, var(--v5) 55%, black);} #s-vec-pump{--accent:var(--v2p);--accent-2:var(--v2p);--accent-dim:color-mix(in srgb, var(--v2p) 55%, black);} #s-vec-shutdown{--accent:var(--v10);--accent-2:var(--v10);--accent-dim:color-mix(in srgb, var(--v10) 55%, black);} #s-vec-recovery .vector-full,#s-vec-ignition .vector-full,#s-vec-refuel .vector-full,#s-vec-reload .vector-full,#s-vec-transport .vector-full,#s-vec-pump .vector-full,#s-vec-shutdown .vector-full{border-top:2px solid var(--accent);box-shadow:0 0 0 1px var(--border),0 0 26px -10px color-mix(in srgb, var(--accent) 60%, transparent);} #s-vectors .pill-row a.pill:nth-child(1){--accent:var(--v3);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(2){--accent:var(--v1);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(3){--accent:var(--v2r);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(4){--accent:var(--v4);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(5){--accent:var(--v5);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(6){--accent:var(--v2p);border-left:3px solid var(--accent);} #s-vectors .pill-row a.pill:nth-child(7){--accent:var(--v10);border-left:3px solid var(--accent);} .vector-full .vf-mix{border-top:1px dashed var(--border-soft);padding:10px 18px 14px;margin:14px 18px 0;} .vector-full .vf-mix .vf-label{color:var(--accent);} .vector-full .vf-mix-steps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 18px;} .vector-full .vf-mix-steps li{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--text-dim);flex:1 1 200px;} .vector-chrono{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px 0 4px;padding:4px 2px 14px;scrollbar-width:none;}.vector-chrono::-webkit-scrollbar{display:none;}.vc-stop{flex:0 0 190px;scroll-snap-align:start;margin-right:14px;padding:16px 14px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);border-top:3px solid var(--accent);position:relative;text-decoration:none;color:inherit;display:block;transition:transform .22s ease,box-shadow .22s ease;}.vc-stop:hover{transform:translateY(-4px);box-shadow:0 14px 28px -14px color-mix(in srgb, var(--accent) 55%, transparent);}.vc-stop .vc-time{font-family:var(--font-mono);font-size:.92rem;font-weight:700;color:var(--accent);letter-spacing:.02em;}.vc-stop .vc-code{font-family:var(--font-mono);font-size:.62rem;color:var(--text-faint);letter-spacing:.08em;text-transform:uppercase;margin-left:6px;}.vc-stop .vc-name{font-family:var(--font-display);font-size:1rem;font-weight:700;margin:8px 0 4px;text-transform:uppercase;}.vc-stop .vc-scope{font-size:.74rem;color:var(--text-dim);line-height:1.4;}@media(max-width:640px){.vc-stop{flex-basis:170px;}} .vector-full .vf-mix-steps li b{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:color-mix(in srgb, var(--accent) 18%, transparent);border:1px solid var(--accent);color:var(--accent);font-family:var(--font-mono);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;} .drawer .grp-label{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;width:100%;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;color:var(--text-dim);margin:14px 0 2px;padding:10px 8px;text-transform:uppercase;cursor:pointer;border-top:1px solid rgba(236,238,240,.08);}.drawer .grp-label:first-child{margin-top:2px;border-top:none;}.drawer .grp-label .grp-meta{display:inline-flex;align-items:center;gap:6px;color:var(--text-faint);font-size:.62rem;}.drawer .grp-label .chev{display:inline-block;transition:transform .25s ease;font-style:normal;}.drawer .grp-label.open{color:var(--text);}.drawer .grp-label.open .chev{transform:rotate(90deg);color:#e6273f;}.drawer .grp-body{max-height:0;overflow:hidden;transition:max-height .32s cubic-bezier(.22,1,.36,1);}.drawer .grp-body.open{max-height:900px;}
+  /* Encapsulated Intake Matrix — the capsule/pill schedule, built natively
+     from the reference chart's data instead of embedding the chart image. */
+  .matrix-timeline{display:flex;flex-direction:column;gap:12px;}
+  .mx-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);position:relative;border-left:3px solid var(--accent);}
+  .mx-block.mx-shutdown{border-left-color:var(--accent-2);}
+  .mx-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .mx-time{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--accent);white-space:nowrap;}
+  .mx-title{font-family:var(--font-display);font-size:1rem;letter-spacing:.01em;}
+  .mx-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
+  .mx-pill{display:inline-flex;align-items:center;gap:6px;background:var(--surface-2);border:1px solid var(--border-soft);border-radius:100px;padding:5px 11px 5px 8px;font-size:.76rem;color:var(--text-dim);}
+  .mx-pill .qty{font-family:var(--font-mono);font-size:.68rem;font-weight:700;color:var(--accent-2);background:rgba(255,255,255,.06);border-radius:100px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .mx-note{font-size:.82rem;color:var(--text-faint);line-height:1.5;margin:0;}
+  .mx-note b{color:var(--text-dim);}
+
+  /* protocol reference images: clock, systemic-fueling anatomy, capsule matrix.
+     These are plain white/clinical-diagram source images — a raw full-bleed
+     image dropped into a dark HUD looked like a pasted-in scan. Framing them
+     as a "reference plate" (dark mat border + mono eyebrow header) makes the
+     mismatch read as an intentional design choice instead of a clash. */
+  .protocol-fig{margin:22px 0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);cursor:zoom-in;}
+  .protocol-fig .pf-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--surface-2,var(--surface));border-bottom:1px solid var(--border-soft);font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+  .protocol-fig .pf-head .pf-lbl{display:flex;align-items:center;gap:7px;}
+  .protocol-fig .pf-head .pf-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);flex:none;}
+  .protocol-fig .pf-head .pf-zoom{color:var(--text-faint);}
+  .protocol-fig .pf-frame{padding:14px;background:#0a0b0d;}
+  .protocol-fig .pf-frame img{width:100%;display:block;border-radius:7px;filter:contrast(1.05) saturate(.9);}
+  .protocol-fig figcaption{padding:10px 14px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;color:var(--text-faint);border-top:1px solid var(--border-soft);}
+  @media(max-width:640px){.protocol-fig .pf-frame{padding:10px;}}
+
+  /* lightbox for zoomable protocol images */
+  .lightbox-overlay{position:fixed;inset:0;z-index:999;background:rgba(6,7,9,.92);display:flex;align-items:center;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .2s ease;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
+  .lightbox-overlay.open{opacity:1;pointer-events:auto;}
+  .lightbox-overlay img{max-width:90vw;max-height:88vh;width:auto;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);transform:scale(.94);transition:transform .2s ease;}
+  .lightbox-overlay.open img{transform:scale(1);}
+  .lightbox-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .15s ease,transform .15s ease;}
+  .lightbox-close:hover{background:rgba(230,39,63,.85);transform:scale(1.06);}
+  .lightbox-close svg{width:20px;height:20px;}
+  @media (max-width:640px){.lightbox-overlay{padding:16px;}.lightbox-close{top:10px;right:10px;width:36px;height:36px;}}
+
+  /* stat strip */
+  .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+  @media(max-width:640px){.stat-strip{grid-template-columns:1fr 1fr;}}
+  .stat-tile{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 15px;}
+  .stat-tile .k{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;color:var(--text-faint);text-transform:uppercase;}
+  .stat-tile .v{font-family:var(--font-display);font-size:1.35rem;margin:.2em 0 .1em;font-variant-numeric:tabular-nums;}
+  .stat-tile .v .arrow{color:var(--text-faint);font-size:.9rem;margin:0 .18em;}
+  .stat-tile .v .tgt{color:var(--accent);}
+  .bar{height:5px;border-radius:3px;background:var(--surface-3);overflow:hidden;margin-top:7px;}
+  .bar i{display:block;height:100%;background:var(--accent);}
+
+  /* pill row (timelines / quick vectors) */
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 16px;}
+  .pill{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:.82rem;text-decoration:none;color:inherit;display:inline-block;transition:border-color .15s ease,transform .15s ease;}
+  a.pill:hover{border-color:var(--accent);transform:translateY(-1px);}
+  .pill .t{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);display:block;margin-bottom:2px;}
+  .pill b{display:block;font-family:var(--font-display);font-size:.85rem;letter-spacing:.01em;}
+
+  /* focus / callout boxes */
+  .focus-point{position:relative;margin:6px 0 0;padding:14px 16px;background:linear-gradient(135deg,#1c0f12 0%,#101114 100%);border:1px solid #2b2f36;border-left:4px solid #e6273f;border-radius:0 10px 10px 0;box-shadow:0 4px 18px rgba(230,39,63,.12);}
+  .focus-point .fp-tag{display:inline-block;font-family:var(--font-display);font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#ff6b81;background:rgba(230,39,63,.14);border:1px solid rgba(230,39,63,.35);padding:3px 9px;border-radius:100px;margin:0 0 8px;}
+  .focus-point p{margin:0;font-family:var(--font-body);text-transform:uppercase;letter-spacing:.01em;font-size:.86rem;line-height:1.5;color:#f2f3f5;font-weight:650;}
+  .focus-point--cyan{border-left-color:#3fd7d0;box-shadow:0 4px 18px rgba(63,215,208,.12);}
+  .focus-point--cyan .fp-tag{color:#3fd7d0;background:rgba(63,215,208,.13);border-color:rgba(63,215,208,.34);}
+  .focus-point--gold{border-left-color:#e8b64c;box-shadow:0 4px 18px rgba(232,182,76,.12);}
+  .focus-point--gold .fp-tag{color:#e8b64c;background:rgba(232,182,76,.13);border-color:rgba(232,182,76,.32);}
+
+  .mini-note{font-family:var(--font-mono);font-size:.72rem;color:var(--text-faint);margin-top:14px;}
+  .tag{display:inline-block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.04em;padding:1px 7px;border-radius:3px;text-transform:uppercase;}
+  .tag.good{background:var(--good);color:var(--good-ink);}
+  .tag.bad{background:var(--bad);color:var(--bad-ink);}
+  .tag.new{background:var(--accent-2);color:#08131f;}
+
+  /* mini table (budget / macros) */
+  .mtbl{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .mtbl th,.mtbl td{text-align:left;padding:8px 11px;border-bottom:1px solid var(--border-soft);vertical-align:top;}
+  .mtbl th{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-faint);background:var(--surface-2);white-space:nowrap;}
+  .mtbl tr:last-child td{border-bottom:none;}
+  .mtbl-wrap{overflow-x:auto;margin-bottom:6px;}
+
+  /* cover slide */
+  .cover-eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;}
+  .cover-title{font-size:clamp(2rem,8vw,3.6rem);line-height:1.0;margin-bottom:.22em;}
+  .cover-sub{font-family:var(--font-mono);font-size:.8rem;color:var(--text-dim);letter-spacing:.03em;margin-bottom:16px;}
+  .scroll-cue{margin-top:26px;font-family:var(--font-mono);font-size:.74rem;color:var(--text-faint);display:flex;align-items:center;gap:8px;}
+  .scroll-cue svg{width:14px;height:14px;animation:bob 1.6s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+
+  footer.deck-foot{border-top:1px solid var(--border-soft);margin-top:24px;padding-top:18px;font-size:.78rem;color:var(--text-faint);font-family:var(--font-mono);}
+
+  /* CONNECT / FIND ME — same link-hub used everywhere on the site, dropped
+     into the deck's final slide so it's always the last thing reached,
+     re-themed to this page's own accent + light/dark tokens. */
+  .connect-block{margin:28px 0 8px;}
+  .connect-block .sec-head{text-align:center;max-width:480px;margin:0 auto 22px;}
+  .connect-block .sec-head h3{font-family:var(--font-display);text-transform:uppercase;font-size:1.15rem;margin:6px 0;color:var(--text);}
+  .connect-block .sec-head p{color:var(--text-dim);font-size:.88rem;margin:0;}
+  .connect-block .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:.68rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;font-weight:600;justify-content:center;width:100%;}
+  .connect-block .eyebrow::before{content:"";width:18px;height:2px;background:var(--accent);display:inline-block;}
+  .link-ticker{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 32px,#000 calc(100% - 32px),transparent 100%); }
+  .link-ticker-track{ display:flex; align-items:center; gap:10px; width:max-content; padding:2px 4px; animation:tickerScroll 26s linear infinite; }
+  .link-ticker:hover .link-ticker-track, .link-ticker:focus-within .link-ticker-track{ animation-play-state:paused; }
+  @keyframes tickerScroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion:reduce){ .link-ticker-track{ animation:none; overflow-x:auto; -webkit-overflow-scrolling:touch; } .link-ticker{ -webkit-mask-image:none; mask-image:none; } }
+  .tick-btn{ display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; white-space:nowrap; padding:9px 16px; border-radius:999px; background:var(--surface); border:1px solid var(--border); color:var(--text); text-decoration:none; font-family:var(--font-display); font-size:.8rem; letter-spacing:.03em; text-transform:uppercase; transition:border-color .15s ease, transform .12s ease; }
+  .tick-btn .ic{ flex:0 0 auto; width:16px; height:16px; color:var(--text-dim); }
+  .tick-btn .ic svg{ width:100%; height:100%; }
+  .tick-btn:active{ transform:scale(.96); }
+  @media (hover:hover){ .tick-btn:hover{ border-color:var(--text-dim); } }
+  .tick-btn.primary{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .tick-btn.primary .ic{ color:var(--accent-ink); }
+  footer.deck-foot a{color:var(--text-dim);}
+
+  /* mobile compaction */
+  @media(max-width:640px){
+    .wrap{padding:0 14px;}
+    #nav .wrap{padding:10px 14px;}
+    .brand{font-size:.92rem;}
+    .navcta{gap:6px;}
+    .btn{padding:7px 12px;font-size:.72rem;}
+    .page-tabs .wrap{padding:8px 14px;gap:6px;}
+    .page-tab{padding:6px 12px;font-size:.68rem;}
+    .deckbar{padding:7px 14px;gap:8px;}
+    .slide{padding:44px 15px 34px;}
+    .info-card{padding:13px 14px;}
+  }
+</style>
+</head><body>
+<style>.page-tabs{display:none;}.side-menu-tab{top:50%;transform:translateY(calc(-50% - 70px));}.page-nav-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:930;width:52px;height:52px;border-radius:50%;background:rgba(10,11,13,.72);backdrop-filter:blur(6px);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease;box-shadow:0 6px 20px rgba(0,0,0,.35);}.page-nav-arrow:hover{background:#e6273f;border-color:#e6273f;transform:translateY(-50%) scale(1.08);}.page-nav-arrow svg{width:26px;height:26px;}.page-nav-arrow.prev{left:14px;}.page-nav-arrow.next{right:14px;}@media(max-width:640px){.page-nav-arrow{width:42px;height:42px;}.page-nav-arrow svg{width:20px;height:20px;}.page-nav-arrow.prev{left:8px;}.page-nav-arrow.next{right:8px;}}.hub-tabs{display:flex;gap:8px;padding:10px 20px;overflow-x:auto;scrollbar-width:none;background:#0d0e11;border-bottom:1px solid var(--border-soft);}.hub-tabs::-webkit-scrollbar{display:none;}.hub-tab{flex:none;padding:8px 16px;border-radius:100px;font-family:var(--font-display);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--text-dim);border:1px solid var(--border);background:transparent;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease;}.hub-tab:hover{color:var(--text);border-color:#e6273f;}.hub-tab.open{background:#e6273f;border-color:#e6273f;color:#fff;}.hub-panels{overflow:hidden;max-height:0;transition:max-height .35s ease;background:#0a0b0d;}.hub-panels.open{max-height:220px;}.hub-panel{display:none;gap:10px;padding:14px 20px;overflow-x:auto;scrollbar-width:none;}.hub-panel::-webkit-scrollbar{display:none;}.hub-panel.active{display:flex;}.hub-card{flex:none;width:150px;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--border);color:var(--text);text-decoration:none;transition:transform .15s ease,border-color .15s ease;}.hub-card:hover{transform:translateY(-3px);border-color:#e6273f;}.hub-card .hc-n{font-family:var(--font-display);font-size:.68rem;color:#e6273f;font-weight:700;}.hub-card .hc-t{display:block;margin-top:4px;font-size:.78rem;font-weight:600;line-height:1.3;}@media(max-width:640px){.hub-card{width:124px;padding:10px 12px;}}.theme-switch{display:none;}.fc-back{display:none;}#nav .wrap{position:relative;}a.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;}.side-menu-tab{top:14px;left:14px;transform:none;border-radius:12px;flex-direction:row;padding:10px 14px;box-shadow:0 6px 18px rgba(0,0,0,.4);}.side-menu-tab:hover{padding-left:14px;transform:scale(1.04);}.page-nav-arrow{border-radius:16px;width:48px;height:72px;}.page-nav-arrow.prev{left:max(14px,calc(50% - 562px));}.page-nav-arrow.next{right:max(14px,calc(50% - 562px));}@media(max-width:640px){.page-nav-arrow{width:36px;height:54px;border-radius:12px;}.side-menu-tab{top:10px;left:10px;padding:8px 10px;}}</style><div class="page-shell">
+
+<header class="site-head">
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-left">
+      <button id="themeToggle" class="theme-switch" type="button" role="switch" aria-label="Toggle light or dark mode">
+        <span class="ts-track">
+          <span class="ts-icon ts-sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+          <span class="ts-icon ts-moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          <span class="ts-thumb" aria-hidden="true"></span>
+        </span>
+      </button>
+      <a href="index.html#top" class="brand"><b>PROJECT</b> 100</a>
+    </div>
+    <div class="navcta">
+      <a class="btn" href="#s-recap" id="connectBtn">All Links</a>
+      <a class="btn btn-primary" href="index.html">Project 100</a>
+    </div>
+  </div>
+</nav>
+<nav class="page-tabs" aria-label="Project 100 pages">
+  <div class="wrap">
+    <a class="page-tab tab-home" href="index.html">Project 100</a>
+    <a class="page-tab current" href="fit-protocol.html">Fit Protocol</a>
+    <a class="page-tab" href="fit-workout.html">Fit Workout</a>
+    <a class="page-tab" href="fit-nutrition.html">Fit Nutrition</a>
+    <a class="page-tab" href="gear-shop.html">Fit Gear</a>
+    <a class="page-tab tab-creami" href="ninja-creami.html">Ninja CREAM<span class="lc-i">i</span></a>
+  </div>
+</nav>
+<div class="hub-tabs" id="hubTabs"></div><div class="hub-panels" id="hubPanels"></div><div class="deckbar">
+  <button id="navToggle" class="icon-btn" aria-label="Open slide index" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <span class="tag">PROTOCOL DECK · VERSION-AUDITED</span>
+  <div class="spacer"></div>
+  <span class="counter"><span id="curIdx">01</span><span class="of" id="curTotal"> / 16</span></span>
+  <a class="archive-link" href="fit-protocol-archive.html"><span class="full">Full Archive</span><span aria-hidden="true">↗</span></a>
+  </div>
+<div class="rail"><i id="railFill"></i></div>
+</header>
+
+<button id="sideMenuTab" class="side-menu-tab" type="button" aria-label="Open the section menu"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span>Menu</span></button><a class="page-nav-arrow prev" href="fit-protocol-training.html" aria-label="Previous: Training &amp; Progression"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a><a class="page-nav-arrow next" href="fit-protocol.html" aria-label="Next: Fit Protocol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a><div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="drawer" id="drawer">
+  <div class="dclose"><button class="icon-btn" id="drawerClose" aria-label="Close slide index">✕</button></div>
+  <nav id="drawerNav" aria-label="Slide index"></nav>
+</div>
+
+<nav class="dotnav" id="dotNav" aria-label="Slide progress"></nav>
+<div class="deck-controls">
+  <button id="prevSlide" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+  <button id="nextSlide" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+</div>
+
+<div class="deck" id="deck">
+
+  <section class="slide" id="s-failures" data-title="The Failure Matrix" data-group="Troubleshooting & Reference">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">11</span>Check Engine Light</div>
+      <h2 class="slide-title">The Failure Analysis Matrix</h2>
+      <p class="slide-lede">Symptoms are diagnostic data, not obstacles. Identify the code, execute the override.</p>
+      <div class="card-strip">
+        <div class="info-card bad"><span class="ic-tag">ERR_DIGEST_01</span><div class="ic-head">Cement Gut</div><div class="ic-body">Fiber overload or missing enzyme. Fix: cease solid food 24h, deploy Fusion 3A.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_LIPID_01</span><div class="ic-head">Hard Gut Sludge</div><div class="ic-body">Fat-cap breach past 69g. Fix: solvent flush — hot ACV tea + 24h zero-fat isolate.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_ULNAR_01</span><div class="ic-head">Elbow Click</div><div class="ic-body">Grip too tight / supination breach. Fix: HXD-ERGO/Angles90 grips + silent eccentrics.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_L4S1_01</span><div class="ic-head">Back Stiffness</div><div class="ic-body">Compression / disc guarding reflex. Fix: 60-second dead hang + more magnesium at 20:30.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_RENAL_01</span><div class="ic-head">Frothy Urine</div><div class="ic-body">Protein-ceiling breach. Fix: drop to 200g for 48h, rebuild in 10g/day increments.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_HYPO_01</span><div class="ic-head">PM Dizziness</div><div class="ic-body">Hypoglycemia. Fix: emergency shuttle — 0.5 scoop BioSteel or 1 banana immediately.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_BILE_01</span><div class="ic-head">Morning Sludge</div><div class="ic-body">Overnight bile accumulation. Fix: +25% Metamucil/greens dose at 06:00.</div></div>
+        <div class="info-card bad"><span class="ic-tag">ERR_METAB_01</span><div class="ic-head">Stalled Fat Loss</div><div class="ic-body">Hidden "ghost sugar" calories. Fix: weekend audit — purge honey, sauces, breading.</div></div>
+      </div>
+      <div class="focus-point focus-point--gold fx-pulse-glow"><span class="fp-tag fx-shine">Diagnostic, Not Defeat</span><p>Every symptom has a documented cause and a fix — the check-engine light is information, not failure.</p></div>
+    </div>
+  </section>
+
+  <!-- 12 ANNEXES -->
+  <section class="slide" id="s-annexes" data-title="Field Annexes" data-group="Troubleshooting & Reference">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">12</span>Operational Annexes</div>
+      <h2 class="slide-title">Field Reference Annexes</h2>
+      <p class="slide-lede">The physics, the flush, the turf work, the gear manual — condensed.</p>
+      <div class="card-strip">
+        <div class="info-card"><span class="ic-tag">Annex A</span><div class="ic-head">The Physics Reference</div><div class="ic-body">F = kx. A 360-lb tubing setup runs without 360 lb of vertical compression through the L4–S1 disc.</div></div>
+        <div class="info-card"><span class="ic-tag">Annex B</span><div class="ic-head">The Resistance Flush</div><div class="ic-body">20–30 reps at 19:30 — deep-tissue hyperemia clearing lactic acid and ammonia.</div></div>        <div class="info-card"><span class="ic-tag">Annex C</span><div class="ic-head">Sunday Turf Zone</div><div class="ic-body">Backward sled drag (10 min, zero axial load) + 100+ band pull-aparts for scapular reset.</div></div>
+        <div class="info-card"><span class="ic-tag">Annex D</span><div class="ic-head">Tactical Gear Manual</div><div class="ic-body">Angles90 grips, HXD-ERGO handles, MANUEKLEAR webbing, heavy belt XL — full spec sheet in the archive.</div></div>
+        <div class="info-card"><span class="ic-tag">Annex E</span><div class="ic-head">Vectors Quick Card</div><div class="ic-body">All seven vectors, timing, and function on one card — see slide 08 for the full breakdown.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 BUDGET -->
+  <section class="slide" id="s-budget" data-title="The Fiscal Audit" data-group="Troubleshooting & Reference">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">13</span>Fiscal Forensic Audit</div>
+      <h2 class="slide-title">Priced Like Everything Else</h2>
+      <p class="slide-lede">~$8.30 CAD/day · ~$58.10/week · ~$249/month. Precision has a price tag.</p>
+      <div class="mtbl-wrap"><table class="mtbl">
+        <tr><th>Window</th><th>Share</th></tr>
+        <tr><td>Morning Ignition (05:00–07:00)</td><td class="mono"><b>58%</b> · ~$4.75/day</td></tr>
+        <tr><td>Afternoon Mineral Window (10:30–11:15)</td><td class="mono">22% · ~$1.80/day</td></tr>
+        <tr><td>Evening Iron Lock (15:30–16:30)</td><td class="mono">10% · ~$0.78/day</td></tr>
+        <tr><td>Night Shutdown (19:30–20:30)</td><td class="mono">10% · ~$0.79/day</td></tr>
+      </table></div>
+      <div class="focus-point focus-point--cyan fx-pulse-glow"><span class="fp-tag fx-shine">Highest Leverage</span><p>Morning Ignition alone is 58% of the daily budget — the first place to look if it needs to shrink.</p></div>
+    </div>
+  </section>
+
+  <!-- 14 CREAMI -->
+  <section class="slide" id="s-creami" data-title="Ninja Creami XL" data-group="Troubleshooting & Reference">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">14</span><span class="tag new fx-shine">New Chapter</span></div>
+      <h2 class="slide-title">The Ninja Creami XL System</h2>
+      <p class="slide-lede">Velvet-textured, zero-fat, high-protein frozen desserts — 18 flavors, engineered like everything else.</p>
+      <div class="card-strip">
+        <div class="info-card wide"><span class="ic-tag">7 Steps</span><div class="ic-head">The Master Workflow</div><div class="ic-body">Prep → Emulsify → Settle → Freeze → Level → Spin → Flush. 0.1g scale accuracy on the dry matrix.</div></div>
+        <div class="info-card"><span class="ic-tag">Base</span><div class="ic-head">~240 kcal</div><div class="ic-body">41g protein · 5.0g fat · 6.0g net carbs per base — before flavor and inclusions.</div></div>
+        <div class="info-card"><span class="ic-tag">Finished Range</span><div class="ic-head">380–610 kcal</div><div class="ic-body">74–92.5g protein per pint. Richest: PB Fudge Crunch. Leanest: Midnight Mocha.</div></div>
+        <div class="info-card wide"><span class="ic-tag">Flavor Matrix</span><div class="ic-head">18 Zero-Sugar Flavors</div><div class="ic-body">Lemon Chiffon, Midnight Mocha, Birthday Cake, PB Fudge Crunch, Pistachio Biscotti, Triple Mint Chip &amp; more.</div></div>
+      </div>
+      <div class="focus-point fx-pulse-glow"><span class="fp-tag fx-shine">Hall Of Mistakes</span><p>12-point error log: never process below −22°C, never exceed Max Fill, always flush the spindle with hot water after use.</p></div>
+    </div>
+  </section>
+
+  <!-- 15 ENCYCLOPEDIA -->
+  <!-- BACK TO HUB -->
+  <section class="slide" id="s-back-troubleshooting" data-title="Back to Fit Protocol" data-group="Troubleshooting & Reference">
+    <div class="slide-inner">
+      <div class="slide-kicker"><span class="n">04</span>End of Section</div>
+      <h2 class="slide-title">More of the Protocol</h2>
+      <p class="slide-lede">That's the full Troubleshooting &amp; Reference section. Keep exploring, or head back to the hub.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;"><a class="hub-card" style="width:auto;min-width:170px;flex:1 1 200px;" href="fit-protocol.html"><span class="hc-n">⌂</span><span class="hc-t">Fit Protocol Hub</span></a><a class="hub-card" style="width:auto;min-width:170px;flex:1 1 200px;" href="fit-protocol-baseline.html"><span class="hc-n">01</span><span class="hc-t">Baseline &amp; Constraints</span></a><a class="hub-card" style="width:auto;min-width:170px;flex:1 1 200px;" href="fit-protocol-fuel.html"><span class="hc-n">02</span><span class="hc-t">Timing &amp; Fuel</span></a><a class="hub-card" style="width:auto;min-width:170px;flex:1 1 200px;" href="fit-protocol-training.html"><span class="hc-n">03</span><span class="hc-t">Training &amp; Progression</span></a><a class="hub-card" style="width:auto;min-width:170px;flex:1 1 200px;" href="fit-protocol-archive.html"><span class="hc-n">↗</span><span class="hc-t">Full Archive</span></a></div>
+      <p style="color:var(--text-dim);font-size:.88rem;margin-top:28px;"><a href="mailto:project100@gmail.com">project100@gmail.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- LIGHTBOX (protocol reference images) ----
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  document.addEventListener('click', function(e){
+    var trigger = e.target.closest('[data-lightbox]');
+    if (trigger) {
+      lbImg.src = trigger.getAttribute('data-lightbox');
+      lb.classList.add('open');
+      return;
+    }
+    if (e.target === lb || e.target.closest('#lightboxClose')) {
+      lb.classList.remove('open');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') lb.classList.remove('open');
+  });
+
+
+  // ---- SLIDE DATA ----
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+
+  // ---- BUILD DRAWER NAV + DOT NAV FROM SLIDES ----
+  var drawerNav = document.getElementById('drawerNav');
+  var dotNav = document.getElementById('dotNav');
+  var groups = {};
+  slides.forEach(function(s){
+    var g = s.getAttribute('data-group');
+    groups[g] = groups[g] || [];
+    groups[g].push(s);
+  });
+  Object.keys(groups).forEach(function(g){
+    var label = document.createElement('div');
+    label.className = 'grp-label';
+    label.textContent = g;
+    drawerNav.appendChild(label);
+    groups[g].forEach(function(s){
+      var idx = slides.indexOf(s);
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.dataset.navFor = s.id;
+      var n = document.createElement('span');
+      n.className = 'n';
+      n.textContent = String(idx+1).padStart(2,'0');
+      a.appendChild(n);
+      var t = document.createElement('span');
+      t.textContent = s.getAttribute('data-title');
+      a.appendChild(t);
+      drawerNav.appendChild(a);
+    });
+  });
+  slides.forEach(function(s, i){
+    var b = document.createElement('button');
+    b.dataset.navFor = s.id;
+    b.setAttribute('aria-label', 'Go to slide ' + (i+1) + ': ' + s.getAttribute('data-title'));
+    dotNav.appendChild(b);
+  });
+
+  (function(){var oldLabels=Array.prototype.slice.call(drawerNav.querySelectorAll('.grp-label'));oldLabels.forEach(function(oldLabel,gi){var groupName=oldLabel.textContent;var body=document.createElement('div');body.className='grp-body'+(gi===0?' open':'');var node=oldLabel.nextSibling;while(node&&!(node.nodeType===1&&node.classList&&node.classList.contains('grp-label'))){var next=node.nextSibling;if(node.nodeType===1&&node.tagName==='A'){body.appendChild(node);}node=next;}var newLabel=document.createElement('button');newLabel.type='button';newLabel.className='grp-label'+(gi===0?' open':'');newLabel.innerHTML='<span>'+groupName+'</span><span class="grp-meta">'+body.children.length+' <i class="chev">&#8250;</i></span>';newLabel.addEventListener('click',function(){var willOpen=!newLabel.classList.contains('open');drawerNav.querySelectorAll('.grp-label.open').forEach(function(l){l.classList.remove('open');});drawerNav.querySelectorAll('.grp-body.open').forEach(function(b){b.classList.remove('open');});if(willOpen){newLabel.classList.add('open');body.classList.add('open');}});oldLabel.parentNode.replaceChild(newLabel,oldLabel);newLabel.parentNode.insertBefore(body,newLabel.nextSibling);});})();function goTo(slide){
+    if(!slide) return;
+    slide.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // "All Links" nav button jumps straight to the Find Me block inside the
+  // deck's final slide, instead of a bare hash that can't scroll an
+  // internally-scrolling deck.
+  var connectBtn = document.getElementById('connectBtn');
+  if(connectBtn){
+    connectBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      goTo(document.getElementById('s-recap'));
+      closeDrawer();
+    });
+  }
+
+  [drawerNav, dotNav].forEach(function(container){
+    container.addEventListener('click', function(e){
+      var el = e.target.closest('[data-nav-for]');
+      if(!el) return;
+      e.preventDefault();
+      goTo(document.getElementById(el.dataset.navFor));
+      closeDrawer();
+    });
+  });
+
+  // ---- DRAWER OPEN/CLOSE ----
+  var navToggle = document.getElementById('navToggle');
+  var drawer = document.getElementById('drawer');
+  var backdrop = document.getElementById('drawerBackdrop');
+  var drawerClose = document.getElementById('drawerClose');
+  function openDrawer(){ drawer.classList.add('open'); backdrop.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); }
+  function closeDrawer(){ drawer.classList.remove('open'); backdrop.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
+  navToggle.addEventListener('click', function(){ drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });var sideMenuTab=document.getElementById('sideMenuTab');if(sideMenuTab){sideMenuTab.addEventListener('click',function(){drawer.classList.contains('open')?closeDrawer():openDrawer();});}
+  backdrop.addEventListener('click', closeDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+
+  // ---- ACTIVE SLIDE TRACKING (scrollspy) ----
+  var curIdxEl = document.getElementById('curIdx');
+  var curTotalEl = document.getElementById('curTotal');
+  // computed from the actual slide count rather than hardcoded, so the
+  // "of N" total can't silently drift out of sync when slides are added
+  // or split (as happened here — the deck grew from 16 to 24 slides).
+  if(curTotalEl) curTotalEl.textContent = ' / ' + String(total).padStart(2,'0');
+  var railFill = document.getElementById('railFill');
+  var prevBtn = document.getElementById('prevSlide');
+  var nextBtn = document.getElementById('nextSlide');
+  var currentIndex = 0;
+
+  function setActive(idx){
+    currentIndex = idx;
+    curIdxEl.textContent = String(idx+1).padStart(2,'0');
+    railFill.style.width = (((idx+1)/total)*100) + '%';
+    slides.forEach(function(s,i){
+      var on = i === idx;
+      s.classList.toggle('active', on);
+    });
+    document.querySelectorAll('#drawerNav a, #dotNav button').forEach(function(el){
+      el.classList.toggle('active', el.dataset.navFor === slides[idx].id);
+    });
+    var activeLink=drawerNav.querySelector('a[data-nav-for="'+slides[idx].id+'"]');if(activeLink){var activeBody=activeLink.closest('.grp-body');if(activeBody&&!activeBody.classList.contains('open')){drawerNav.querySelectorAll('.grp-label.open').forEach(function(l){l.classList.remove('open');});drawerNav.querySelectorAll('.grp-body.open').forEach(function(b){b.classList.remove('open');});activeBody.classList.add('open');var lbl=activeBody.previousElementSibling;if(lbl)lbl.classList.add('open');}}prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === total - 1;
+  }
+
+  var visible = new Set();
+  function pickActive(){
+    if(!visible.size) return;
+    var chosen = 0;
+    slides.forEach(function(s,i){ if(visible.has(s.id)) chosen = i; });
+    setActive(chosen);
+  }
+  // Low threshold: reveal a slide (add .in-view) as soon as any meaningful
+  // part of it is on screen, rather than waiting for it to be mostly
+  // visible. Some in-app browsers (e.g. Instagram's WebView) deliver
+  // IntersectionObserver callbacks late or in a single batch after a fast
+  // scroll-snap jump, so a high threshold could leave a slide the user has
+  // already landed on sitting at opacity:0 (blank/black) until the next
+  // scroll event. A low threshold makes that window effectively impossible
+  // to land in.
+  // threshold near 0 (rather than a fixed fraction like 0.12): a slide's
+  // total height can vary a lot — a text-only slide vs. one carrying
+  // several full-width reference images — and a fixed-fraction threshold
+  // that works for a short slide can simply be unreachable on a much
+  // taller one when only one viewport's worth of it is visible after a
+  // scroll-snap jump. "any pixel on screen" reveals correctly regardless
+  // of how tall the slide is.
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        visible.add(entry.target.id);
+        entry.target.classList.add('in-view');
+      } else {
+        visible.delete(entry.target.id);
+      }
+    });
+    pickActive();
+  }, { root: deck, threshold: 0 });
+  slides.forEach(function(s){ io.observe(s); });
+  setActive(0);
+
+  // ---- SAFETY NET: force-reveal whatever slide is centered in the deck
+  // after scrolling settles, even if the IntersectionObserver never fired
+  // (or fired late) for it. This is a pure backstop against WebView
+  // compositor/observer quirks — it never hides a slide, only ensures the
+  // one the user is actually looking at is never left blank. ----
+  var settleTimer = null;
+  function revealCentered(){
+    // viewport-relative rects, so this is correct regardless of any
+    // offsetParent/positioning-context quirks between .deck and .slide.
+    // Picks whichever slide has the most overlap with the deck's visible
+    // area, rather than whichever slide's CENTER is nearest the deck's
+    // center — a slide much taller than one viewport (e.g. one carrying
+    // several full-width reference images) can have its center far below
+    // the visible area right after a scroll-snap jump to its top, even
+    // though the user is looking straight at it.
+    var deckRect = deck.getBoundingClientRect();
+    var best = null, bestOverlap = -1;
+    slides.forEach(function(s){
+      var r = s.getBoundingClientRect();
+      var overlap = Math.min(r.bottom, deckRect.bottom) - Math.max(r.top, deckRect.top);
+      if(overlap > bestOverlap){ bestOverlap = overlap; best = s; }
+    });
+    if(best && !best.classList.contains('in-view')){
+      best.classList.add('in-view');
+      visible.add(best.id);
+      pickActive();
+    }
+  }
+  // Single scroll handler doing both jobs. Combining the horizontal-scroll
+  // correction and the reveal debounce into ONE listener (instead of two
+  // separate ones) matters: our own corrective "scrollLeft = 0" write fires
+  // its own scroll event, and a second independent listener would treat
+  // that as a fresh user scroll, re-arming its 120ms debounce timer over
+  // and over — starving revealCentered() from ever getting a quiet enough
+  // moment to fire when the horizontal glitch and a slide change happen
+  // close together. The ignoreNextScroll flag stops that self-triggered
+  // event from re-arming the debounce.
+  var ignoreNextScroll = false;
+  deck.addEventListener('scroll', function(){
+    if(ignoreNextScroll){ ignoreNextScroll = false; return; }
+    if(deck.scrollLeft !== 0){
+      ignoreNextScroll = true;
+      deck.scrollLeft = 0;
+    }
+    if(settleTimer) clearTimeout(settleTimer);
+    settleTimer = setTimeout(revealCentered, 120);
+  }, { passive: true });
+  revealCentered();
+
+  // ---- PREV / NEXT ----
+  prevBtn.addEventListener('click', function(){ if(currentIndex>0) goTo(slides[currentIndex-1]); });
+  nextBtn.addEventListener('click', function(){ if(currentIndex<total-1) goTo(slides[currentIndex+1]); });
+
+  // ---- KEYBOARD ----
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown' || e.key === 'PageDown'){ e.preventDefault(); if(currentIndex<total-1) goTo(slides[currentIndex+1]); }
+    else if(e.key === 'ArrowUp' || e.key === 'PageUp'){ e.preventDefault(); if(currentIndex>0) goTo(slides[currentIndex-1]); }
+    else if(e.key === 'Escape'){ closeDrawer(); }
+  });
+
+  // ---- DEEP LINK ON LOAD ----
+  if(location.hash){
+    var target = document.querySelector(location.hash);
+    if(target && target.classList.contains('slide')){
+      requestAnimationFrame(function(){ target.scrollIntoView({behavior:'auto', block:'start'}); });
+    }
+  }
+})();
+</script>
+</div>
+<script src="assets/js/float-connect.js"></script>
+<script src="assets/js/fixonic.js"></script>
+<script>window.ProjectFloatConnect && window.ProjectFloatConnect.init();</script>
+<script>(function(){var slides=Array.prototype.slice.call(document.querySelectorAll('.slide[data-group]'));var hubTabs=document.getElementById('hubTabs');var hubPanels=document.getElementById('hubPanels');if(!slides.length||!hubTabs||!hubPanels)return;var groups={};var order=[];slides.forEach(function(s){var g=s.getAttribute('data-group');if(!groups[g]){groups[g]=[];order.push(g);}groups[g].push(s);});order.forEach(function(g,gi){var btn=document.createElement('button');btn.type='button';btn.className='hub-tab';btn.textContent=g;hubTabs.appendChild(btn);var panel=document.createElement('div');panel.className='hub-panel';panel.id='hub-panel-'+gi;groups[g].forEach(function(s){var idx=slides.indexOf(s);var a=document.createElement('a');a.className='hub-card';a.href='#'+s.id;var n=document.createElement('span');n.className='hc-n';n.textContent=String(idx+1).padStart(2,'0');var ttl=document.createElement('span');ttl.className='hc-t';ttl.textContent=s.getAttribute('data-title')||g;a.appendChild(n);a.appendChild(ttl);panel.appendChild(a);});hubPanels.appendChild(panel);});var tabs=Array.prototype.slice.call(hubTabs.querySelectorAll('.hub-tab'));var panels=Array.prototype.slice.call(hubPanels.querySelectorAll('.hub-panel'));function closeAll(){tabs.forEach(function(t){t.classList.remove('open');});panels.forEach(function(p){p.classList.remove('active');});hubPanels.classList.remove('open');}tabs.forEach(function(btn,i){btn.addEventListener('click',function(){var isOpen=btn.classList.contains('open');closeAll();if(!isOpen){btn.classList.add('open');panels[i].classList.add('active');hubPanels.classList.add('open');}});});})();</script></body></html>
