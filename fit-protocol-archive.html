@@ -198,12 +198,27 @@
   main{flex:1; min-width:0; padding:22px 18px 80px;}
   @media(min-width:640px){main{padding:32px 32px 100px;}}
 
-  /* ============ HERO ============ */
-  .hero{padding:14px 0 30px; border-bottom:1px solid var(--border-soft); margin-bottom:34px;}
-  .hero .eyebrow{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; color:var(--accent); text-transform:uppercase;}
-  .hero h1{font-size:clamp(2.1rem,7vw,3.2rem); margin:.3em 0 .12em; line-height:1.02;}
-  .hero .sub{font-family:var(--font-mono); font-size:.82rem; color:var(--text-dim); letter-spacing:.03em; margin-bottom:18px;}
-  .hero p.lede{max-width:62ch; color:var(--text-dim); font-size:1.02rem;}
+  /* ============ HERO — fashion-edge color-block opener ============ */
+  .hero{
+    position:relative; padding:36px 28px 32px; margin:0 0 40px; border-radius:0;
+    background:linear-gradient(135deg,#1a0d10 0%,#0d0e11 62%);
+    border:1px solid var(--border-soft); overflow:hidden;
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.09; mix-blend-mode:overlay;
+    background-image:radial-gradient(circle at 1px 1px, #fff 1px, transparent 0); background-size:6px 6px;
+  }
+  .hero::before{
+    content:""; position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%;
+    background:radial-gradient(circle, rgba(230,39,63,.28), transparent 70%); pointer-events:none;
+  }
+  .hero .eyebrow{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; color:var(--accent); text-transform:uppercase; position:relative;}
+  .archive-h1{display:flex; flex-direction:column; gap:0; margin:.32em 0 .16em; position:relative;}
+  .ah1-row{font-family:var(--font-display); font-weight:700; text-transform:uppercase; line-height:.86;}
+  .ah1-row.ah1-sm{font-size:clamp(1.3rem,4.2vw,1.9rem); letter-spacing:.1em; color:#e6273f;}
+  .ah1-row.ah1-lg{font-size:clamp(2.6rem,11.5vw,6.6rem); letter-spacing:-.015em; color:var(--text);}
+  .hero .sub{font-family:var(--font-mono); font-size:.82rem; color:var(--text-dim); letter-spacing:.03em; margin-bottom:18px; position:relative;}
+  .hero p.lede{max-width:62ch; color:var(--text-dim); font-size:1.02rem; position:relative;}
 
   .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:22px;}
   @media(max-width:560px){.stat-row{grid-template-columns:1fr;}}
@@ -215,24 +230,43 @@
   .bar{height:5px; border-radius:3px; background:var(--surface-3); overflow:hidden; margin-top:8px;}
   .bar i{display:block; height:100%; background:var(--accent);}
 
-  /* ============ CHAPTER SECTIONS ============ */
+  /* ============ CHAPTER SECTIONS — fashion-edge color-blocked dossier ============ */
   .kicker{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; color:var(--text-faint); text-transform:uppercase; margin-bottom:26px; padding-top:2px;}
-  section.chapter{scroll-margin-top:112px; margin-bottom:14px;}
-  details.chapter-box{border:1px solid var(--border); background:var(--surface); border-radius:10px; overflow:hidden;}
-  details.chapter-box + details.chapter-box{margin-top:10px;}
+  section.chapter{scroll-margin-top:112px; margin-bottom:18px;}
+  /* rotating 5-color editorial palette, cycling across all chapter blocks regardless of group */
+  section.chapter:nth-of-type(5n+1) > details.chapter-box{--chbg:#8a2434; --chbg2:#6c1c29; --chfg:#fdece7; --chnum:#ffcdbd;}
+  section.chapter:nth-of-type(5n+2) > details.chapter-box{--chbg:#c99a2e; --chbg2:#a67c1f; --chfg:#221804; --chnum:#4a3100;}
+  section.chapter:nth-of-type(5n+3) > details.chapter-box{--chbg:#1f6f68; --chbg2:#154e49; --chfg:#eafbf7; --chnum:#bdf3e8;}
+  section.chapter:nth-of-type(5n+4) > details.chapter-box{--chbg:#c1591f; --chbg2:#984615; --chfg:#fff3e8; --chnum:#ffdcb8;}
+  section.chapter:nth-of-type(5n+5) > details.chapter-box{--chbg:#5c3568; --chbg2:#432550; --chfg:#f6ecff; --chnum:#e3c9ff;}
+  details.chapter-box{border:none; background:transparent; border-radius:0; overflow:hidden;}
+  details.chapter-box + details.chapter-box{margin-top:16px;}
   details.chapter-box summary{
-    list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; gap:14px;
+    list-style:none; cursor:pointer; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+    padding:28px 26px 30px; background:linear-gradient(135deg, var(--chbg), var(--chbg2));
+  }
+  details.chapter-box summary::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.1; mix-blend-mode:overlay;
+    background-image:radial-gradient(circle at 1px 1px, #000 1px, transparent 0); background-size:5px 5px;
   }
   details.chapter-box summary::-webkit-details-marker{display:none;}
   details.chapter-box summary .num{
-    font-family:var(--font-mono); font-size:.72rem; color:var(--accent); flex:0 0 auto;
-    border:1px solid var(--accent-dim); border-radius:4px; padding:2px 6px;
+    font-family:var(--font-mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--chfg); opacity:.75; border:none; border-radius:0; padding:0; position:relative; z-index:1;
   }
-  details.chapter-box summary h2{font-size:1.05rem; flex:1; margin:0;}
-  details.chapter-box summary .chev{flex:0 0 auto; color:var(--text-faint); transition:transform .15s;}
+  details.chapter-box summary .num::before{content:"No. ";}
+  details.chapter-box summary h2{
+    font-family:var(--font-display); font-weight:700; text-transform:uppercase; letter-spacing:-.01em;
+    font-size:clamp(1.9rem,5.4vw,3.6rem); line-height:.92; flex:none; margin:0; max-width:18ch;
+    color:var(--chfg); position:relative; z-index:1;
+  }
+  details.chapter-box summary .chev{
+    position:absolute; right:24px; top:28px; color:var(--chfg); opacity:.68; transition:transform .15s; z-index:1;
+  }
   details.chapter-box[open] summary .chev{transform:rotate(90deg);}
-  details.chapter-box[open] summary{border-bottom:1px solid var(--border-soft);}
-  .chapter-body{padding:6px 20px 24px; max-width:74ch;}
+  details.chapter-box[open] summary{box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);}
+  .chapter-body{padding:22px 24px 28px; max-width:74ch; background:var(--surface); border:1px solid var(--border); border-top:none;}
   .chapter-body h3{font-family:var(--font-body); font-weight:600; font-size:1.15rem; text-transform:none; letter-spacing:0; color:var(--text); margin:1.6em 0 .5em;}
   .chapter-body h3:first-child{margin-top:1.2em;}
   .chapter-body p{margin:.85em 0; color:var(--text);}
@@ -385,9 +419,10 @@
     .hero p.lede{ font-size:.92rem; }
     .stat-row{ gap:8px; margin-top:16px; }
     .stat-tile{ padding:11px 13px; }
-    details.chapter-box summary{ padding:13px 14px; gap:10px; }
-    details.chapter-box summary h2{ font-size:.95rem; }
-    .chapter-body{ padding:4px 14px 18px; }
+    details.chapter-box summary{ padding:20px 17px 22px; gap:6px; }
+    details.chapter-box summary h2{ font-size:clamp(1.4rem,8vw,2rem); max-width:100%; }
+    details.chapter-box summary .chev{ right:16px; top:20px; }
+    .chapter-body{ padding:16px 16px 20px; }
   }
 </style>
 
@@ -457,7 +492,7 @@
 
     <div class="hero fx-aurora fx-spotlight">
       <div class="eyebrow fx-reveal">Forensic Bio-Tactical Reference · Est. 2010 · Documented 2013 · Rebuilt 2025–2026</div>
-      <h1 class="fx-reveal">The Singularity Archive</h1>
+      <h1 class="fx-reveal archive-h1"><span class="ah1-row ah1-sm">The</span><span class="ah1-row ah1-lg">Singularity</span><span class="ah1-row ah1-lg">Archive</span></h1>
       <div class="sub">KERNEL V187.00 · RECONCILED WITH V185.99 · STATUS: <span style="color:var(--accent)">ACTIVE</span> · VERSION-TRUTH-AUDITED OCT 2026</div>
       <p class="lede">The forensic excavation of a 100+ lb skeletal muscle mass masterpiece, on a 5'7" frame, at age 46. Every chapter below is the operating system this runs on — training, fuel, timing, supplementation, and the failure protocols for when something goes wrong.</p>
 
