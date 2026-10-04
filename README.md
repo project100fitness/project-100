@@ -25,3 +25,5 @@ See `CONTENT_GOVERNANCE.md` for source precedence, historical claims, missing fi
 See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, decorative background loops and playback checks. The V2 builder reapplies this media overlay automatically.
 
 See `NAVIGATION_RELEASE.md` for the shared folder shell, floating Encyclopedia access and the unresolved Bitdefender alert.
+
+The Encyclopedia has an independent paper/teal/copper reading design and a return to PROJECT_100 action. See `ENCYCLOPEDIA_DESIGN.md`; the source builder reapplies this reader overlay last.

@@ -10,6 +10,7 @@ PAGES = ['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html',
 for name in PAGES:
     page = ROOT/name
     soup = BeautifulSoup(page.read_text(), 'html.parser')
+    if 'encyclopedia-site' in soup.body.get('class',[]):continue
     for tag, attrs in [('link', {'rel':'stylesheet','href':'assets/css/shell.css'}),
                        ('link', {'rel':'stylesheet','href':'assets/css/filing-navigation.css?v=20261004-2'}),
                        ('script', {'defer':'','src':'assets/js/filing-navigation.js?v=20261004-2'})]:
