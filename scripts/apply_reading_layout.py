@@ -9,6 +9,6 @@ for path in ROOT.glob('*.html'):
         continue
     for old in soup.select('link[href*="assets/css/reading-layout.css"]'):
         old.decompose()
-    soup.head.append(soup.new_tag('link', rel='stylesheet', href='assets/css/reading-layout.css?v=20261004'))
+    soup.head.append(soup.new_tag('link', rel='stylesheet', href='assets/css/reading-layout.css?v=20261004-cards'))
     path.write_text(str(soup))
 print('Shared enclosure and readable typography applied to all 12 full pages.')

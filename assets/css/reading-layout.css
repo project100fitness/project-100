@@ -11,6 +11,17 @@ body.filing-layout :is(.page-tab,.cat-tabs a,.site-drawer nav a,.encyclopedia-fl
 body.filing-layout .page-tab{font-size:12px;line-height:1.4}
 .filing-layout .cat-tabs a{font-size:13px;line-height:1.5}
 .filing-layout .v2-kicker{font-size:12px}
+/* Long vector records need the full enclosure, not promotional card columns. */
+.daily-page #vectors>.v2-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+.daily-page #vectors>.v2-grid>.v2-card{width:100%}
+.filing-layout .clinical-card{container-type:inline-size;min-width:0}
+.filing-layout .clinical-card dd{min-width:0;overflow-wrap:break-word}
+@container(max-width:480px){
+ .filing-layout .clinical-card dl{display:block}
+ .filing-layout .clinical-card dt{margin-top:18px}
+ .filing-layout .clinical-card dt:first-child{margin-top:0}
+ .filing-layout .clinical-card dd{margin:6px 0 0}
+}
 body:is(.filing-layout,.encyclopedia-site) .book-text{font-family:var(--reading-font);font-size:18px;line-height:1.8}
 body:is(.filing-layout,.encyclopedia-site) .book-text :is(p,li){max-width:66ch}
 body:is(.filing-layout,.encyclopedia-site) .v2-table{font-family:var(--reading-font);font-size:15px;line-height:1.7}
@@ -35,6 +46,9 @@ body:is(.filing-layout,.encyclopedia-site) .v2-table{font-family:var(--reading-f
  .encyclopedia-site .book-cover{width:145px}
 }
 @media(max-width:640px){
+ .daily-page.filing-layout main.wrap{padding-inline:22px!important}
+ .daily-page #vectors>.v2-grid>.v2-card{padding:18px 16px}
+ .daily-page #vectors .clinical-card{padding:14px 12px}
  body.filing-layout .page-tab{font-size:12px;padding-inline:11px}
  .encyclopedia-site .book-masthead{display:block;padding:32px 22px 24px}
  .encyclopedia-site .reader-layout{padding:24px 22px}
