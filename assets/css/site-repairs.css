@@ -1,0 +1,111 @@
+/* Mobile layout repair: loaded after page-specific export styles. */
+:root { --site-header-offset: 210px; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: var(--site-header-offset); }
+body { overflow-x: clip; }
+a, button { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #3fd7d0; outline-offset: 3px;
+}
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+/* Content must remain visible if WebView delays an observer or scripts fail. */
+.fx-reveal, .slide, .slide.in-view { opacity: 1 !important; transform: none !important; }
+.site-head { position: sticky !important; top: 0; z-index: 960; flex: 0 0 auto; }
+#nav .wrap { display: grid !important; grid-template-columns: 70px minmax(0,1fr) 48px; align-items: center; gap: 10px; min-height: 64px; padding: 8px 16px !important; }
+#nav .site-menu-tab, #nav .side-menu-tab { position: static !important; transform: none !important; padding: 10px 8px !important; margin: 0; border-radius: 8px; width: 70px; min-height: 44px; display: flex; flex-direction: row; justify-content: center; gap: 5px; font-size: .65rem; }
+#nav .nav-wordmark { min-width: 0; text-align: center; }
+#nav a.brand { position: static !important; transform: none !important; display: inline-block; max-width: 100%; font-size: clamp(1rem, 4.2vw, 1.65rem) !important; line-height: 1.2; letter-spacing: .02em !important; padding: 4px 0 !important; white-space: nowrap; }
+#nav .theme-switch { display: inline-flex !important; position: relative; width: 44px; height: 44px; min-height: 44px; margin: 0; border-radius: 12px; }
+#nav .theme-switch .ts-track { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+#nav .theme-switch .ts-icon { position: static; width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; }
+#nav .theme-switch .ts-thumb { display: none; }
+.site-destinations { display: flex; justify-content: center; gap: 10px; padding: 0 12px 10px; }
+.site-destinations a { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 6px 18px; border: 1px solid #642834; border-radius: 7px; color: #f6d6dc; background: #251219; font: 700 .72rem 'Inter',sans-serif; letter-spacing: .05em; text-decoration: none; }
+.site-destinations a[aria-current="page"] { background: #c22d42; color: #fff; border-color: #c22d42; }
+.guidebook-access { display: flex; align-items: center; gap: 12px; padding: 10px 16px; width: 100%; min-height: 52px; background: linear-gradient(110deg,#201a0e,#342819 55%,#191610); border-block: 1px solid #735b2e; color: #f3d595; text-decoration: none; }
+.guidebook-access:hover { background: #372b18; color: #fff0cc; }
+.guidebook-mark { flex: 0 0 34px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #b89955; border-radius: 7px; font: 700 .8rem 'Oswald',sans-serif; }
+.guidebook-access small, .guidebook-access strong { display: block; line-height: 1.35; }
+.guidebook-access small { font: 600 .58rem 'Inter',sans-serif; letter-spacing: .18em; }
+.guidebook-access strong { font: 600 clamp(.74rem,2.9vw,.95rem) 'Oswald',sans-serif; letter-spacing: .07em; }
+.guidebook-arrow { margin-left: auto; font-size: 1.4rem; }
+.page-tabs .wrap, .cat-tabs .wrap { max-width: 100%; min-width: 0; }
+.page-tabs .wrap { padding-block: 8px; }
+.cat-tabs .wrap { padding-block: 8px; }
+.page-nav-arrow { z-index: 940; }
+/* The deck is still its own scroll container, so its navigation scripts retain their semantics. */
+.protocol-page { height: 100vh; height: 100dvh; overflow: hidden; }
+.protocol-page .page-shell { height: 100%; min-height: 0; width: 100%; display: flex; flex-direction: column; }
+.protocol-page .deck { scroll-snap-type: none !important; scrollbar-width: thin; scroll-padding-top: 0; overflow-y: auto; }
+.protocol-page .slide { scroll-snap-align: none !important; scroll-snap-stop: normal !important; min-height: 0 !important; height: auto !important; padding: 28px 24px; }
+.protocol-page .slide-inner { min-height: 0; }
+.guidebook-page .archive-h1 { font-size: inherit; }
+.guidebook-page .ah1-lg { font-size: clamp(1.55rem,6.4vw,3.8rem); line-height: 1.05; overflow-wrap: anywhere; }
+.guidebook-page .ah1-sm { font-size: 1rem; line-height: 1.4; }
+.guidebook-page .chapter { min-height: 0; margin-block: 14px; scroll-margin-top: var(--site-header-offset); }
+.guidebook-page details.chapter-box { opacity: 1 !important; transform: none !important; }
+.guidebook-page .chapter-box > summary { min-height: 0; padding: 20px 16px; }
+.guidebook-page .chapter-box > summary h2 { font-size: clamp(1.2rem,4.8vw,2.3rem); line-height: 1.15; }
+.guidebook-page #quickref { margin-top: 8px; }
+.guidebook-page #quickref > details { scroll-margin-top: var(--site-header-offset); }
+.guidebook-page .sidebar { top: calc(var(--site-header-offset) + 8px); max-height: calc(100dvh - var(--site-header-offset) - 16px); }
+.nutrition-protocol-link { padding: 30px 0; }
+.nutrition-protocol-link h2 { margin: 10px 0; font-size: clamp(1.3rem,4.5vw,2rem); }
+.nutrition-protocol-link p { max-width: 62ch; color: var(--text-dim); }
+/* Full portrait/video framing on the homepage; media and text occupy separate areas. */
+body.home-page .hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
+body.home-page .hero-bg { position: relative; inset: auto; width: 100%; background: #101116; aspect-ratio: 16 / 9; }
+body.home-page .hero-bg img, body.home-page .hero-bg video { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+body.home-page .hero-scrim { display: none; }
+body.home-page .hero-inner { padding: 28px 24px; }
+body.home-page .origin-photos { align-items: start; }
+body.home-page .origin-photos img, body.home-page .origin-photos .tall { width: 100%; height: auto; max-height: 480px; object-fit: contain; aspect-ratio: auto; grid-row: auto; }
+body.home-page .explore-card .ex-media img { object-fit: contain; background: #111318; }
+@media (max-width: 640px) {
+  :root { --site-header-offset: 210px; }
+  .site-head { backdrop-filter: none; }
+  #nav .wrap { gap: 6px; padding-inline: 10px !important; }
+  section { padding-top: 32px; padding-bottom: 32px; }
+  .sec-head { margin-bottom: 22px; }
+  .food-row { margin-top: 24px; }
+  .placeholder-hero { padding: 32px 0 !important; min-height: 0 !important; }
+  .protocol-page .slide { padding: 22px 16px; }
+  .protocol-page .deck-controls { right: 12px; bottom: calc(64px + env(safe-area-inset-bottom,0px)); }
+  .page-nav-arrow { top: auto !important; bottom: calc(10px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
+  .page-nav-arrow.prev { left: auto !important; right: 64px !important; }
+  .page-nav-arrow.next { right: 12px !important; }
+  .page-nav-arrow:hover { transform: none !important; }
+  body:not(.protocol-page) .page-shell { padding-bottom: calc(64px + env(safe-area-inset-bottom,0px)); }
+  body.home-page .origin-photos { grid-template-columns: 1fr 1fr; }
+  body.home-page .origin-photos .tall { grid-column: 1 / -1; max-height: 420px; }
+  body.home-page .hero h1 { font-size: clamp(1.9rem,8vw,2.7rem); }
+  .guidebook-page main { padding: 22px 16px 40px; }
+  .guidebook-page .chapter-box > summary { padding: 18px 12px; }
+  .guidebook-page .chapter-body { padding-inline: 4px; }
+  .guidebook-page .page-nav-arrow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+}
+#nav #navToggle { width: 70px; height: 44px; border-radius: 8px; }
+#nav #navToggle svg { width: 22px; height: 22px; }
+/* Drawers must sit above the sticky header and expose their close controls. */
+.site-drawer, .drawer { z-index: 990 !important; }
+.site-drawer-backdrop, .drawer-backdrop { z-index: 980 !important; }
+.guidebook-page .drawer.open { padding-top: 16px; }
+
+.guidebook-page .topbar { position: relative; top: auto; flex-wrap: wrap; height: auto; min-height: 0; padding: 12px 16px; gap: 10px; }
+.guidebook-page .topbar .brand { font-size: .7rem; }
+.guidebook-page .search-wrap { flex: 1 1 180px; min-width: 0; }
+.guidebook-page .search-wrap input { width: 100%; }
+
+.guidebook-menu-close { display: block; min-height: 44px; width: 100%; margin-bottom: 12px; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); color: var(--text); cursor: pointer; }
+/* Keep video/title panels dark in both themes so fixed light text stays legible. */
+body.home-page .hero { background: #111318; }
+.placeholder-hero { --text: #f2f4f7; --text-dim: #c4cad4; color: #f2f4f7; }
+.placeholder-hero h1 { color: #f2f4f7; }
+.origin-copy p { color: var(--text); }
+.reveal, .reveal.pre { opacity: 1 !important; transform: none !important; }
+/* The document already reserves header space; avoid adding it a second time at each chapter. */
+.guidebook-page .chapter, .guidebook-page #quickref > details { scroll-margin-top: 8px; }
+.page-nav-arrow, .page-nav-arrow:visited { color: #f2f4f7 !important; background: rgba(10,11,13,.92); border-color: #454b58; }

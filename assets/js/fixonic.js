@@ -222,6 +222,12 @@
     function setStored(v){ try{ localStorage.setItem('p100-theme', v); }catch(e){} }
     var stored = getStored();
     if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
+    function syncSwitch(){
+      var theme = root.getAttribute('data-theme');
+      var dark = theme ? theme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      btn.setAttribute('aria-checked', String(dark));
+    }
+    syncSwitch();
     btn.addEventListener('click', function(){
       var current = root.getAttribute('data-theme');
       var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -229,6 +235,7 @@
       var next = effective === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       setStored(next);
+      syncSwitch();
     });
   }
 
