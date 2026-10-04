@@ -21,3 +21,5 @@ Run `python scripts/audit_site.py`, `node --check assets/js/v2.js`, and `git dif
 Browser scripts require Playwright and Chromium. Set `CHROMIUM_EXECUTABLE_PATH` to the browser executable and optional `CHROMIUM_ARGS_JSON` to its launch arguments, then run `node scripts/check_responsive.cjs` and `node scripts/check_interactions.cjs`. They serve local files through request interception, block third-party traffic, and write results/screenshots to `/tmp/project100-v2-qa` (or `QA_OUTPUT_DIR`). No local server is needed.
 
 See `CONTENT_GOVERNANCE.md` for source precedence, historical claims, missing file/service boundaries and redirect constraints.
+
+See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, decorative background loops and playback checks. The V2 builder reapplies this media overlay automatically.
