@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://project100.fit/sitemap.xml
