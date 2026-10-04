@@ -396,4 +396,6 @@ Legacy redirects use static HTML plus JavaScript (including queries and remapped
 
 Verify with `python scripts/audit_site.py`, `node --check assets/js/v2.js`, source-text equality checks in `scripts/build_v2.py`, and responsive browser tests before publishing.
 ''')
+import runpy
+runpy.run_path(str(ROOT / 'scripts/apply_october_assets.py'))
 print(f'Built {len(titles)} current pages. Verified complete source words on {len(master)} Encyclopedia + {len(guide)} Guidebook PDF pages.')

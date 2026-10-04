@@ -1,0 +1,11 @@
+# October 2026 media integration
+
+The supplied `PROJECT 100 - ASSETS OCTOBER 2026.zip` contains 172 files: 152 images and 20 videos. `assets/media/october-2026/catalog.json` records original filenames, SHA-256 hashes, byte sizes, dimensions, video durations, exact duplicates, selections and page mappings. The supplied archive remains the original master. Only the curated web derivatives are committed; the 490 MiB archive is not served to visitors.
+
+Three generated clips provide decorative motion: tea behind the Nutrition header, a shaker behind its protocol category, and hydration behind the Fuel header. They are illustrations, not proof of supplement ingredients, doses or physique. Original gym photos replace two Origins photos, the Training exploration cover and a rig/bench gallery photo. Photographs receive only orientation correction, proportional resizing and JPEG compression, with no body edits or retouching. Supplied instructional art with unverified labels is not used as clinical evidence.
+
+The original home animation is restored behind the existing hero text; its existing follow-up animation and the Workout header use the same background controls. This adds no separate video player rows. Clips are silent, load only when their section enters view, pause when offscreen or the document is hidden, and expose a keyboard-accessible pause/play control. Reduced-motion and browser data-saving preferences show the poster without downloading video. Current menus and both navigation loops are retained.
+
+Run `python scripts/apply_october_assets.py` to reapply page mappings. The V2 builder invokes it automatically, so source rebuilds preserve these selections. The original archive and regenerated derivatives must not overwrite the master Encyclopedia text. An inherited Nutrition callout was aligned with the existing V2 note: protein/fat numbers are historical planning figures, not hard caps.
+
+Validation: `python scripts/audit_site.py`, `node --check assets/js/media-backgrounds.js`, `node scripts/check_responsive.cjs`, and `node scripts/check_backgrounds.cjs` with the same Playwright/Chromium environment documented in README. The motion check covers actual playback readiness, reduced-motion no-download, silence, pause/play and offscreen pause. Review desktop/mobile screenshots for contrast and framing.
