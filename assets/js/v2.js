@@ -6,11 +6,15 @@
  const event=(name,detail={})=>document.dispatchEvent(new CustomEvent('project100:event',{detail:{name,...detail}}));
  $$('[data-door]').forEach(a=>a.addEventListener('click',()=>event('door_click',{door:a.dataset.door})));
  $$('a[download]').forEach(a=>a.addEventListener('click',()=>event('download',{file:a.getAttribute('href')})));
+ if(document.body.classList.contains('encyclopedia-site')){
+  const openIndex=()=>{if(location.hash==='#book-index'&&innerWidth<=900){const index=$('.reader-mobile-index');if(index)index.open=true}};
+  addEventListener('hashchange',openIndex);openIndex();
+ }
  const head=$('.site-head');if(head){const size=()=>document.documentElement.style.setProperty('--site-header-offset',Math.ceil(head.getBoundingClientRect().height)+'px');new ResizeObserver(size).observe(head);size()}
  if(document.body.classList.contains('v2-page')){
-  const theme=$('#themeToggle'),stored=get('p100-v2-theme',null);if(stored)document.documentElement.dataset.theme=stored;
+  const theme=$('#themeToggle'),themeKey=document.body.classList.contains('encyclopedia-site')?'p100-encyclopedia-theme':'p100-v2-theme',stored=get(themeKey,null);if(stored)document.documentElement.dataset.theme=stored;
   const sync=()=>theme?.setAttribute('aria-checked',String(document.documentElement.dataset.theme!=='light'));sync();
-  theme?.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;set('p100-v2-theme',next);sync()});
+  theme?.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;set(themeKey,next);sync()});
  }
  {
   const menu=$('#siteMenuTab'),drawer=$('#siteDrawer'),back=$('#siteDrawerBackdrop');let opener;

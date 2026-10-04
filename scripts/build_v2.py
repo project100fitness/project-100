@@ -399,4 +399,5 @@ Verify with `python scripts/audit_site.py`, `node --check assets/js/v2.js`, sour
 import runpy
 runpy.run_path(str(ROOT / 'scripts/apply_october_assets.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_filing_navigation.py'))
+runpy.run_path(str(ROOT / 'scripts/apply_encyclopedia_design.py'))
 print(f'Built {len(titles)} current pages. Verified complete source words on {len(master)} Encyclopedia + {len(guide)} Guidebook PDF pages.')

@@ -39,7 +39,10 @@ for p, doc in docs.items():
             if sum(t==wrapper for t,a in doc.tags) != 1: issues.append(f'{name}: invalid {wrapper} wrapper count')
         if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html','404.html']:
             if sum(t=='h1' for t,a in doc.tags) != 1: issues.append(f'{name}: needs exactly one h1')
-        if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html']:
+        if name == 'fit-protocol-archive.html':
+            if not any('return-project' in a.get('class','') and a.get('href') == 'index.html' for _,a in doc.tags):issues.append(f'{name}: no return to PROJECT_100')
+            if any('site-destinations' in a.get('class','') or 'page-tabs' in a.get('class','') or 'encyclopedia-float' in a.get('class','') for _,a in doc.tags):issues.append(f'{name}: unrelated shared navigation remains')
+        elif name in main+protocol+['guidebook.html','library.html']:
             if not any('guidebook-access' in a.get('class','') and a.get('href') == 'fit-protocol-archive.html' for _,a in doc.tags):
                 issues.append(f'{name}: no guidebook bar')
 for ring in [main, protocol]:
