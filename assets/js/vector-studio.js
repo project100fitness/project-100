@@ -12,6 +12,7 @@
  files.forEach((file,index)=>{
   file.style.scrollMarginTop='calc(var(--site-header-offset) + 18px)';
   file.addEventListener('toggle',()=>{
+   if(file.open)files.forEach(other=>{if(other!==file)other.open=false});
    if(file.open&&!reduced.matches)file.querySelector('.stack-content').animate(
     [{opacity:0,transform:'perspective(900px) rotateX(-8deg) translateY(-8px)'},{opacity:1,transform:'perspective(900px) rotateX(0deg) translateY(0)'}],
     {duration:350,easing:'cubic-bezier(.2,.7,.2,1)'});
