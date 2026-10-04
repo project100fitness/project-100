@@ -3,7 +3,7 @@ const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwr
 const root=path.resolve(__dirname,'..');
 async function route(context){await context.route('**/*',async r=>{
  const u=new URL(r.request().url());if(u.hostname!=='127.0.0.1')return r.abort();
- const f=root+u.pathname;const contentType={html:'text/html',css:'text/css',js:'application/javascript',jpg:'image/jpeg',png:'image/png',mp4:'video/mp4'}[f.split('.').pop()];
+ const f=root+u.pathname;const contentType={html:'text/html',css:'text/css',js:'application/javascript',jpg:'image/jpeg',png:'image/png',svg:'image/svg+xml',mp4:'video/mp4'}[f.split('.').pop()];
  await r.fulfill({status:fs.existsSync(f)?200:404,contentType,body:fs.existsSync(f)?fs.readFileSync(f):'Missing'});
 });}
 async function browser(){return chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE_PATH,args:JSON.parse(process.env.CHROMIUM_ARGS_JSON)});}
@@ -14,16 +14,16 @@ async function browser(){return chromium.launch({executablePath:process.env.CHRO
   const p=await c.newPage();await p.goto('http://127.0.0.1/fit-nutrition.html',{waitUntil:'networkidle'});
   const files=p.locator('.vector-stack-file');assert.equal(await files.count(),7);
   for(let i=0;i<7;i++){
-   const f=files.nth(i);await f.locator('summary').focus();await p.keyboard.press('Enter');assert.notEqual(await f.getAttribute('open'),null);
-   assert.equal(await f.locator('.stack-source').getAttribute('href'),'guidebook.html#vector-'+['v1','v2','v3','v4','v5','v10','pump'][i]);
+   const f=files.nth(i);await f.locator(':scope > summary').focus();await p.keyboard.press('Enter');assert.notEqual(await f.getAttribute('open'),null);
+   assert.equal(await f.locator('.stack-source').getAttribute('href'),'guidebook.html#vector-'+['v3','v1','v2','v4','v5','v10','pump'][i]);
    await f.locator('.stack-content img').scrollIntoViewIfNeeded();
    const g=await f.evaluate(e=>{const r=e.getBoundingClientRect(),parent=e.parentElement.getBoundingClientRect();return {width:r.width,parentWidth:parent.width,overflow:document.documentElement.scrollWidth>innerWidth+1}});
    assert(!g.overflow);assert(g.width>=g.parentWidth-82);
-   await f.locator('summary').focus();await p.keyboard.press('Enter');assert.equal(await f.getAttribute('open'),null);checks++;
+   await f.locator(':scope > summary').focus();await p.keyboard.press('Enter');assert.equal(await f.getAttribute('open'),null);checks++;
   }
-  await files.nth(6).locator('summary').click();await files.nth(6).locator('.stack-step.next').click();assert.notEqual(await files.nth(0).getAttribute('open'),null);assert.equal(await files.nth(6).getAttribute('open'),null);
-  await files.nth(0).locator('summary').focus();await p.keyboard.press('ArrowLeft');assert.notEqual(await files.nth(6).getAttribute('open'),null);await files.nth(6).locator('summary').click();checks++;
-  if(width===1280){await p.addStyleTag({content:'.site-head{visibility:hidden!important}'});await p.locator('.vector-studio').screenshot({path:'/tmp/project100-v2-qa/vector-stack-desktop.png'});await files.nth(3).locator('summary').click();await files.nth(3).screenshot({path:'/tmp/project100-v2-qa/vector-stack-open.png'});}
+  await files.nth(6).locator(':scope > summary').click();await files.nth(6).locator('.stack-step.next').click();assert.notEqual(await files.nth(0).getAttribute('open'),null);assert.equal(await files.nth(6).getAttribute('open'),null);
+  await files.nth(0).locator(':scope > summary').focus();await p.keyboard.press('ArrowLeft');assert.notEqual(await files.nth(6).getAttribute('open'),null);await files.nth(6).locator(':scope > summary').click();checks++;
+  if(width===1280){await p.addStyleTag({content:'.site-head{visibility:hidden!important}'});await p.locator('.vector-studio').screenshot({path:'/tmp/project100-v2-qa/vector-stack-desktop.png'});await files.nth(3).locator(':scope > summary').click();await files.nth(3).screenshot({path:'/tmp/project100-v2-qa/vector-stack-open.png'});}
   if(width===390)await p.locator('.vector-studio').screenshot({path:'/tmp/project100-v2-qa/vector-stack-mobile.png'});
   await b.close();
  }

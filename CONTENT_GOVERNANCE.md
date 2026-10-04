@@ -11,3 +11,5 @@ Available downloads: Encyclopedia, Guidebook, Simplified Structure, Marketing Sl
 Legacy redirects use static HTML plus JavaScript (including queries and remapped hashes), because GitHub Pages does not support custom host-level 301 redirects. All old protocol section anchors are retained as aliases. Historical changelog entries remain explicitly superseded.
 
 Verify with `python scripts/audit_site.py`, `node --check assets/js/v2.js`, source-text equality checks in `scripts/build_v2.py`, and responsive browser tests before publishing.
+
+Vector folders follow the published daily order: V3, V1, V2, V4, V5, V10, then inactive PUMP. Each offers a persona-free PNG and SVG diagram, generated directly from the current Guidebook ingredient amounts, timings and clinical notes. Regenerate with `python scripts/apply_vector_folders.py`.

@@ -37,26 +37,66 @@
     var nextBtn = wrap.querySelector(':scope > .carousel-arrow.right');
     if(!prevBtn || !nextBtn) return;
 
-    function step(){
-      var card = row.querySelector(':scope > *');
-      return card ? (card.getBoundingClientRect().width + 18) : (row.clientWidth * 0.9);
+    if(row.dataset.loopReady) return;
+    row.dataset.loopReady='1';
+    var cards=Array.from(row.children), count=cards.length;
+    row.tabIndex=0; row.setAttribute('role','region');
+    row.setAttribute('aria-label',label+'; use left and right arrows to explore');
+    if(count<2){prevBtn.classList.add('hidden');nextBtn.classList.add('hidden');return;}
+    wrap.style.width='100%';wrap.style.minWidth='0';wrap.style.marginInline='auto';
+    var start=0,period=0,timer;
+    var reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    var estimate=cards[0].getBoundingClientRect().width*count||200;
+    var copies=2+Math.ceil(row.clientWidth/estimate);
+    function clone(card){
+      var copy=card.cloneNode(true);copy.dataset.loopCopy='1';copy.setAttribute('aria-hidden','true');
+      [copy].concat(Array.from(copy.querySelectorAll('*'))).forEach(function(el){
+        el.removeAttribute('id');Array.from(el.attributes).forEach(function(a){if(/^on/i.test(a.name))el.removeAttribute(a.name)});
+        if(el.matches('a,button,input,select,textarea,[tabindex]'))el.tabIndex=-1;
+        if(el.tagName==='IMG')el.loading='lazy';
+      });
+      copy.addEventListener('click',function(event){
+        event.preventDefault();event.stopImmediatePropagation();
+        var original=card, path=[],node=event.target;
+        while(node!==copy){path.unshift(Array.from(node.parentNode.children).indexOf(node));node=node.parentNode;}
+        path.forEach(function(i){original=original.children[i]});
+        original=original.closest('a,button')||original;
+        while(original&&!original.click)original=original.parentElement;
+        row.scrollTo({left:card.offsetLeft-row.offsetLeft,behavior:'instant'});
+        if(original)original.click();
+      },true);return copy;
     }
-    function update(){
-      var max = row.scrollWidth - row.clientWidth;
-      prevBtn.classList.toggle('hidden', row.scrollLeft <= 4);
-      nextBtn.classList.toggle('hidden', max <= 4 || row.scrollLeft >= max - 4);
+    var before=document.createDocumentFragment(),after=document.createDocumentFragment();
+    for(var k=0;k<copies;k++){cards.forEach(function(c){before.appendChild(clone(c));after.appendChild(clone(c))})}
+    row.prepend(before);row.append(after);
+    function measure(){
+      var old=period?((row.scrollLeft-start)%period+period)%period:0;
+      wrap.style.maxWidth='none';
+      var all=Array.from(row.children),first=cards[0],next=all[all.indexOf(first)+count];
+      start=first.offsetLeft-row.offsetLeft;period=next.offsetLeft-first.offsetLeft;
+      wrap.style.maxWidth=(period+parseFloat(getComputedStyle(row).paddingLeft||0)+parseFloat(getComputedStyle(row).paddingRight||0))+'px';
+      start=first.offsetLeft-row.offsetLeft;period=next.offsetLeft-first.offsetLeft;
+      row.scrollTo({left:start+old,behavior:'instant'});
+      prevBtn.classList.remove('hidden');nextBtn.classList.remove('hidden');
+    }
+    function normalize(){
+      if(!period)return;
+      var pos=start+((row.scrollLeft-start)%period+period)%period;
+      if(Math.abs(pos-row.scrollLeft)>1)row.scrollTo({left:pos,behavior:'instant'});
     }
     function nav(dir){
-      // let any page-specific auto-scroll (index.html) know this was a manual nudge
-      row.dispatchEvent(new CustomEvent('carousel:nav'));
-      row.scrollBy({left: dir * step() * 3, behavior:'smooth'});
+      normalize();row.dispatchEvent(new CustomEvent('carousel:nav'));
+      var distance=cards[1].offsetLeft-cards[0].offsetLeft;
+      row.scrollBy({left:dir*distance,behavior:reduced.matches?'instant':'smooth'});
     }
-    prevBtn.addEventListener('click', function(){ nav(-1); });
-    nextBtn.addEventListener('click', function(){ nav(1); });
-    row.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update);
-    new MutationObserver(update).observe(row, {childList:true});
-    setTimeout(update, 300);
+    prevBtn.addEventListener('click',function(){nav(-1)});
+    nextBtn.addEventListener('click',function(){nav(1)});
+    row.addEventListener('keydown',function(e){if(e.target!==row||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();nav(e.key==='ArrowLeft'?-1:1)});
+    row.addEventListener('scroll',function(){clearTimeout(timer);timer=setTimeout(normalize,140)},{passive:true});
+    row.addEventListener('scrollend',normalize);
+    window.addEventListener('resize',measure);
+    requestAnimationFrame(measure);
+
   }
 
   function buildRow(cards, index, container){
@@ -102,5 +142,5 @@
     document.querySelectorAll('[data-carousel]').forEach(initContainer);
   }
 
-  window.ProjectCarousel = { init: init };
+  window.ProjectCarousel = { init: init, wireRow: wireRow };
 })();

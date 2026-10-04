@@ -123,7 +123,7 @@
     (root || document).querySelectorAll('.fx-gallery').forEach(function(gal){
       if(gal.dataset.fxGal) return;
       gal.dataset.fxGal = '1';
-      var buttons = Array.prototype.slice.call(gal.querySelectorAll('button[data-full]'));
+      var buttons = Array.prototype.slice.call(gal.querySelectorAll('button[data-full]')).filter(function(b){return !b.closest('[data-loop-copy]')});
       if(!buttons.length) return;
 
       var lb = document.createElement('div');
@@ -190,7 +190,7 @@
           var amt = card ? (card.getBoundingClientRect().width + 18) : 260;
           var max = row.scrollWidth - row.clientWidth;
           if(max <= 4) return;
-          if(row.scrollLeft >= max - 4){ row.scrollTo({ left:0, behavior:'smooth' }); }
+          if(!row.dataset.loopReady && row.scrollLeft >= max - 4){ row.scrollTo({ left:0, behavior:'smooth' }); }
           else{ row.scrollBy({ left:amt, behavior:'smooth' }); }
         }
         var timer = setInterval(step, 4200);
