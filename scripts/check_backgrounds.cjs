@@ -8,7 +8,12 @@ const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwr
   const page=await context.newPage();await page.goto('http://127.0.0.1/fit-nutrition.html',{waitUntil:'networkidle'});
   const video=page.locator('#top video');const control=page.locator('#top .motion-control');
   if(reducedMotion==='reduce'){
-   assert.equal(await video.getAttribute('src'),null);assert.equal(await control.isVisible(),false);
+   assert.equal(await video.getAttribute('src'),null);assert.equal(await control.isVisible(),true);
+   assert.equal(await control.textContent(),'Play background');
+   await control.click();
+   await page.waitForFunction(()=>{const v=document.querySelector('#top video');return v.readyState>=2&&!v.paused});
+   assert.equal(await video.evaluate(v=>getComputedStyle(v).visibility),'visible');
+   await control.click();assert.equal(await video.evaluate(v=>v.paused),true);
   }else{
    await page.waitForFunction(()=>document.querySelector('#top video').getAttribute('src'));
    await page.waitForFunction(()=>{const v=document.querySelector('#top video');return v.readyState>=2&&!v.paused});
@@ -16,9 +21,11 @@ const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwr
    await control.click();assert.equal(await control.getAttribute('aria-pressed'),'true');assert.equal(await video.evaluate(v=>v.paused),true);
    await control.click();assert.equal(await control.getAttribute('aria-pressed'),'false');
    await page.locator('#vectors').scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.querySelector('#top video').paused);
+   await page.locator('#top').scrollIntoViewIfNeeded();await page.waitForFunction(()=>!document.querySelector('#top video').paused);
+   await page.locator('#vectors').scrollIntoViewIfNeeded();
    await page.screenshot({path:process.env.QA_OUTPUT_DIR||'/tmp/project100-v2-qa'+'/background-vectors-desktop.png'});
   }
   await browser.close();
  }
- console.log('PASS: reduced-motion/no-download, silent video, pause/play and offscreen pause');
+ console.log('PASS: reduced-motion/no-download default, explicit motion opt-in, silence, pause/play and offscreen pause/resume');
 })();
