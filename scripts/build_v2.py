@@ -386,7 +386,7 @@ write('CONTENT_GOVERNANCE.md','''# PROJECT 100 V2.0 website release
 
 The Encyclopedia V2.0 dated 2026-10-03 is the only reading master. The website preserves its text and derives the daily clock and vector formulas directly from its tables. Its 26 physical PDF pages differ from the page references printed in its inherited contents; website source links use physical PDF pages.
 
-Author instructions override the build brief: keep the repaired design, top menus and PROJECT_100 / FIT PROTOCOL switch. Do not restore the dedicated appliance content. Preserve both page navigation loops. The Encyclopedia access bar remains below navigation; the Daily Guidebook is a distinct page.
+Author instructions override the build brief: keep the repaired design, top menus and PROJECT_100 / FIT PROTOCOL switch. Do not restore the dedicated appliance content. Preserve both page navigation loops. Encyclopedia access floats at the lower right, outside navigation; the Daily Guidebook is a distinct page.
 
 Legacy 252 g protein / 69 g fat values are planning figures, not hard caps. Fixed roadmap gains and guaranteed tissue growth are retired claims. The master groups 23 audited records; it does not itemize every product and dose, so absent pill values and social-meal codes are not invented. The standalone Full Detailed and Clinical Analysis PDFs are superseded and are not offered as current downloads.
 
@@ -398,4 +398,5 @@ Verify with `python scripts/audit_site.py`, `node --check assets/js/v2.js`, sour
 ''')
 import runpy
 runpy.run_path(str(ROOT / 'scripts/apply_october_assets.py'))
+runpy.run_path(str(ROOT / 'scripts/apply_filing_navigation.py'))
 print(f'Built {len(titles)} current pages. Verified complete source words on {len(master)} Encyclopedia + {len(guide)} Guidebook PDF pages.')

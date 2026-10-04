@@ -5,7 +5,7 @@ Static website at https://project100.fit, published by GitHub Pages from `main`.
 The repaired Fixonic design, top menus and PROJECT_100 / FIT PROTOCOL switch are retained. The Encyclopedia access bar sits below the navigation. Existing media URLs, the main four-page navigation loop and Fit Protocol's independent five-page loop remain intact.
 
 - PROJECT_100: Home, Workout, Nutrition, Gear.
-- FIT PROTOCOL: Start Here deck, Baseline, Timing & Fuel, Training, Troubleshooting, Daily Guidebook, downloads.
+- FIT PROTOCOL: Start Here files, Baseline, Timing & Fuel, Training, Troubleshooting, Daily Guidebook, downloads.
 - Encyclopedia: `fit-protocol-archive.html`, the full 26-page V2.0 reading master, with stable chapter/Part anchors, search, local reading progress and chapter print/PDF controls.
 - Daily Guidebook: `guidebook.html`, training/rest clock, recorded vector recipes and all 13 pages of Guidebook source text.
 - Books: `library.html`, dated source PDFs, editable Marketing Slider and the exact one-page Annex II checklist.
@@ -23,3 +23,5 @@ Browser scripts require Playwright and Chromium. Set `CHROMIUM_EXECUTABLE_PATH` 
 See `CONTENT_GOVERNANCE.md` for source precedence, historical claims, missing file/service boundaries and redirect constraints.
 
 See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, decorative background loops and playback checks. The V2 builder reapplies this media overlay automatically.
+
+See `NAVIGATION_RELEASE.md` for the shared folder shell, floating Encyclopedia access and the unresolved Bitdefender alert.

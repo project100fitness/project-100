@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[1]
 MEDIA = 'assets/media/october-2026/'
 BACKGROUNDS = {
+    'fit-protocol.html': [('#top', 'assets/video/hero-loop.mp4', 'assets/img/hero-loop-poster.jpg')],
     'index.html': [('#top', 'assets/video/hero-loop.mp4', 'assets/img/hero-loop-poster.jpg'),
                    ('.cta-band', 'assets/video/featured-plyo-protocol.mp4', 'assets/img/featured-plyo-protocol.jpg')],
     'fit-workout.html': [('#top', 'assets/video/hero-loop.mp4', 'assets/img/hero-loop-poster.jpg')],
