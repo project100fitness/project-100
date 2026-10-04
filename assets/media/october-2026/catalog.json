@@ -59,7 +59,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/night-steam-loop.mp4",
+          "bytes": 465959,
+          "sha256": "00721dad51af696e54a835bc6cccc67db6ecb7dbc270a17d90a0a06bb0525d5d"
+        },
+        {
+          "path": "assets/media/october-2026/night-steam-loop.jpg",
+          "bytes": 23204,
+          "sha256": "b6adca7e29bb84dbe36d1970b18434392d16f9892173aac082012df1e2055e70"
+        }
+      ]
     },
     {
       "id": 5,
@@ -115,7 +127,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/shaker-steam-loop.mp4",
+          "bytes": 227398,
+          "sha256": "17ed0ec1d610c06954997fdebbda5bdb21ddad9036634f95f03a5eb639ad06fc"
+        },
+        {
+          "path": "assets/media/october-2026/shaker-steam-loop.jpg",
+          "bytes": 13800,
+          "sha256": "e0e9011afa9654aaeb0405a03aa9ddd6b2096974eb3565a47a84c80990709f29"
+        }
+      ]
     },
     {
       "id": 10,
@@ -149,7 +173,19 @@
         1280,
         720
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/sunlit-shaker-loop.mp4",
+          "bytes": 750007,
+          "sha256": "9fb7615cc052088d1b5a4326a2344c1fd02c3db9e4a70e3dd861df749b8106f9"
+        },
+        {
+          "path": "assets/media/october-2026/sunlit-shaker-loop.jpg",
+          "bytes": 50061,
+          "sha256": "1a4c140246d9f10b871be38a251133ed5c3e6c17758a68b1485b8cba31d6a16c"
+        }
+      ]
     },
     {
       "id": 13,
@@ -196,7 +232,19 @@
         1280,
         720
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/athlete-shaker-loop.mp4",
+          "bytes": 800474,
+          "sha256": "79ddcec19cef6256fb0deecdbc7a6597392910440cad23c480d8e0f9e7798e8f"
+        },
+        {
+          "path": "assets/media/october-2026/athlete-shaker-loop.jpg",
+          "bytes": 40606,
+          "sha256": "e9817f790ec20d12871674027b31169bcc9b1ac8929d29187e3a5344d790df8a"
+        }
+      ]
     },
     {
       "id": 16,
@@ -242,7 +290,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/blue-refuel-loop.mp4",
+          "bytes": 273093,
+          "sha256": "0bedd87dde660f99c466d97b926e792ad68c80a6b30f7b04ab8ff4fa75c24e92"
+        },
+        {
+          "path": "assets/media/october-2026/blue-refuel-loop.jpg",
+          "bytes": 21923,
+          "sha256": "169b91e4ec0a5be9bba2b45ea26ba933be27987e27842d8af1ad391418f2e8cb"
+        }
+      ]
     },
     {
       "id": 20,
@@ -344,7 +404,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/ruby-reload-loop.mp4",
+          "bytes": 930044,
+          "sha256": "79f96a72d93da9aa85eb21f8b7e254d9dcd7f658288aa4770c7d89f6ff5b740a"
+        },
+        {
+          "path": "assets/media/october-2026/ruby-reload-loop.jpg",
+          "bytes": 26998,
+          "sha256": "706621e0676249db39314310b54ecfc25596577d381784ea1838714d0fa0ee36"
+        }
+      ]
     },
     {
       "id": 28,
@@ -411,7 +483,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/green-ignition-loop.mp4",
+          "bytes": 892816,
+          "sha256": "d411f4eef598c6afc5d2936c358106686d499903fb43324f436b4bfdf21c2009"
+        },
+        {
+          "path": "assets/media/october-2026/green-ignition-loop.jpg",
+          "bytes": 18395,
+          "sha256": "e72b8ca12a84cbabfff41285279d05da5141246d8a760e0356e9a681d6bd6104"
+        }
+      ]
     },
     {
       "id": 34,
@@ -456,7 +540,19 @@
         1280,
         720
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/recovery-mix-loop.mp4",
+          "bytes": 552600,
+          "sha256": "64a41b87b2e36957a5cd44ee08b85231c9b1a5e11b23844bf62e16b60e2581d3"
+        },
+        {
+          "path": "assets/media/october-2026/recovery-mix-loop.jpg",
+          "bytes": 36864,
+          "sha256": "5203cf422f18a6efbfb4b42a8734f4d4f3f808d8db2f9b0cf49628d7a56168c4"
+        }
+      ]
     },
     {
       "id": 38,
@@ -467,7 +563,14 @@
         1672,
         941
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v5.jpg",
+          "bytes": 326112,
+          "sha256": "0b2624105a45913ef0df7b02c9ca91aa2148cb5ec124cb79f4b703d2efa1d206"
+        }
+      ]
     },
     {
       "id": 39,
@@ -501,7 +604,14 @@
         1672,
         941
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v10.jpg",
+          "bytes": 324845,
+          "sha256": "a7f801066f3a3e90446db444432d8c27b61cd948e1b81bf1cece1a300f1dd02b"
+        }
+      ]
     },
     {
       "id": 42,
@@ -524,7 +634,14 @@
         1672,
         941
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v1.jpg",
+          "bytes": 342218,
+          "sha256": "2dcbf06b28d78b2b95b92031376a04ada8cb0156c9b96698a8e5c46b34e44cb1"
+        }
+      ]
     },
     {
       "id": 44,
@@ -535,7 +652,14 @@
         1672,
         941
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v3.jpg",
+          "bytes": 360660,
+          "sha256": "0f79da81cb92d11cdcc9f66cc1b180fd93920b58e74a079b354af44bbaf4c620"
+        }
+      ]
     },
     {
       "id": 45,
@@ -801,7 +925,19 @@
         1280,
         720
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/greens-transport-loop.mp4",
+          "bytes": 705338,
+          "sha256": "7ff6b290824581cf63b982722c37264f70975b4ea970c85287169f83dfef4559"
+        },
+        {
+          "path": "assets/media/october-2026/greens-transport-loop.jpg",
+          "bytes": 33920,
+          "sha256": "6b5252fa834347d732a398b873228d5a59bd5bc719b815bdcf89213463b23a18"
+        }
+      ]
     },
     {
       "id": 69,
@@ -837,7 +973,19 @@
         720,
         1280
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/tech-shaker-loop.mp4",
+          "bytes": 537419,
+          "sha256": "688fec2343cd12814ce7d0cc287194fc252fe2d7b3ec30a15b80c2a888d28609"
+        },
+        {
+          "path": "assets/media/october-2026/tech-shaker-loop.jpg",
+          "bytes": 29134,
+          "sha256": "3801d5d95ac5e7243f3fc5baf3c512e25774e0ddfc323a8bc69a397559f6863d"
+        }
+      ]
     },
     {
       "id": 71,
@@ -893,7 +1041,14 @@
         2752,
         1536
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-pump.jpg",
+          "bytes": 188431,
+          "sha256": "1aee4b46075c7c6c0309fef4dc4a4e5c3fccd6505a4e485105f5ee9125e643b3"
+        }
+      ]
     },
     {
       "id": 76,
@@ -974,7 +1129,14 @@
         3072,
         4080
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/bogdan-november-2025.jpg",
+          "bytes": 175486,
+          "sha256": "7684673797ac508d52507c7b9a101aa0db6f570721709ba22276a38ceb89d748"
+        }
+      ]
     },
     {
       "id": 83,
@@ -1029,7 +1191,14 @@
         3072,
         4080
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/bogdan-june-2026.jpg",
+          "bytes": 173681,
+          "sha256": "6f0ab5c29bcfb2f7d75bdfb0843f24a04af0b3cf0919e3272c9b28dac863622b"
+        }
+      ]
     },
     {
       "id": 88,
@@ -1212,7 +1381,14 @@
         3072,
         4080
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/bogdan-july-2026.jpg",
+          "bytes": 230070,
+          "sha256": "39f6e951c86ce28233eb7f05d0c503924d0f613d2ef370901873e7d4177fcc23"
+        }
+      ]
     },
     {
       "id": 104,
@@ -1234,7 +1410,14 @@
         3072,
         4080
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/gym-july-session.jpg",
+          "bytes": 416770,
+          "sha256": "addc4ac2457be997b5deeacf2380ec18a6d3124fbb514ddddefa8fdc7d65a950"
+        }
+      ]
     },
     {
       "id": 106,
@@ -1256,7 +1439,14 @@
         1440,
         1920
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/gym-july-turf.jpg",
+          "bytes": 341768,
+          "sha256": "e996a08712805d02547eb4f3c4e0bc29a6ea4b3f6590b11ff6aaea908842cf51"
+        }
+      ]
     },
     {
       "id": 108,
@@ -1289,7 +1479,14 @@
         3072,
         3072
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/gym-august-floor.jpg",
+          "bytes": 420538,
+          "sha256": "1a0fb2a47a594aed5ef191ce15a4cfed92952adb3338f0fe1edbd7a0801aa4a6"
+        }
+      ]
     },
     {
       "id": 111,
@@ -1347,7 +1544,14 @@
         3072,
         3072
       ],
-      "selection": "archived-not-selected"
+      "selection": "original-photo",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/gym-august-weights.jpg",
+          "bytes": 588834,
+          "sha256": "aa650925e51b28794d5fc31eca80e750ee2d3339be098be4ef9efbe5a7b7aceb"
+        }
+      ]
     },
     {
       "id": 115,
@@ -1377,7 +1581,19 @@
         1920,
         1080
       ],
-      "selection": "archived-not-selected"
+      "selection": "animated-background",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/gear-setup-loop.mp4",
+          "bytes": 410105,
+          "sha256": "865709e785fb692273ad63dc2a9a53fa3599738e51c34376312e9ab0e85b0eb9"
+        },
+        {
+          "path": "assets/media/october-2026/gear-setup-loop.jpg",
+          "bytes": 31590,
+          "sha256": "53e23fb9f336a606bcab702dfa124b922f4bff43d05cba0ba3a549f7cbfd40cc"
+        }
+      ]
     },
     {
       "id": 117,
@@ -1884,7 +2100,14 @@
         1672,
         940
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v4.jpg",
+          "bytes": 347442,
+          "sha256": "3adbccf554e6bca1db86a65ec1cdd2a4a4f3753da7e96dae312df292ef70bbec"
+        }
+      ]
     },
     {
       "id": 162,
@@ -1950,7 +2173,14 @@
         1672,
         941
       ],
-      "selection": "archived-not-selected"
+      "selection": "vector-artwork",
+      "web_outputs": [
+        {
+          "path": "assets/media/october-2026/vector-v2.jpg",
+          "bytes": 340349,
+          "sha256": "49b83cf99dcdda5a208091ec95db93736c832e1e7ff9e276393244f6b9728862"
+        }
+      ]
     },
     {
       "id": 168,
@@ -2006,5 +2236,29 @@
     "origins": "bogdan-august-mirror.jpg, gym-bench-august.jpg",
     "training_explore_card": "bogdan-gym-session.jpg",
     "gear_gallery": "gym-turf-rig.jpg"
+  },
+  "expanded_section_mapping": {
+    "index.html:.cta-band": "athlete-shaker",
+    "index.html:#mission h2": "tech-shaker",
+    "fit-workout.html:#top": "gear-setup",
+    "fit-nutrition.html:#top": "tea",
+    "fit-nutrition.html:#vectors": "shake",
+    "fit-nutrition.html:#clinical-nutrition h2": "greens-transport",
+    "gear-shop.html:#top": "gear-setup",
+    "gear-shop.html:#armory h2": "shaker-steam",
+    "fit-protocol.html:#top": "athlete-shaker",
+    "fit-protocol-baseline.html:#top": "athlete-shaker",
+    "fit-protocol-fuel.html:#top": "hydration",
+    "fit-protocol-training.html:#top": "gear-setup",
+    "fit-protocol-troubleshooting.html:#top": "tech-shaker",
+    "guidebook.html:#top": "shaker-steam",
+    "guidebook.html:#vector-v1": "green-ignition",
+    "guidebook.html:#vector-v2": "blue-refuel",
+    "guidebook.html:#vector-v3": "recovery-mix",
+    "guidebook.html:#vector-v4": "ruby-reload",
+    "guidebook.html:#vector-v5": "greens-transport",
+    "guidebook.html:#vector-v10": "night-steam",
+    "guidebook.html:#vector-pump": "inactive artwork",
+    "library.html:#top": "sunlit-shaker"
   }
 }
