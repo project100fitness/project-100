@@ -1,6 +1,6 @@
 # PROJECT 100 V2.0 website release
 
-The Encyclopedia V2.0 dated 2026-10-03 is the only reading master. The website preserves its text and derives the daily clock and vector formulas directly from its tables. Its 26 physical PDF pages differ from the page references printed in its inherited contents; website source links use physical PDF pages.
+The Encyclopedia V2.0 dated 2026-10-03 is the only reading master. Public editions incorporate the author's requested privacy edits to personal background, using a neutral description of a difficult personal period and rebuilding routines. Operational records, doses and measured baselines are unchanged. The website preserves the public master's text and derives the daily clock and vector formulas directly from its tables. Its 26 physical PDF pages differ from the page references printed in its inherited contents; website source links use physical PDF pages.
 
 Author instructions override the build brief: keep the repaired design, top menus and PROJECT_100 / FIT PROTOCOL switch. Do not restore the dedicated appliance content. Preserve both page navigation loops. Encyclopedia access floats at the lower right, outside navigation; the Daily Guidebook is a distinct page.
 

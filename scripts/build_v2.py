@@ -96,6 +96,8 @@ def export_page(page,n,book='Encyclopedia'):
     assert tokens(source)==tokens(emitted), f'Source text mismatch: {book} page {n}: {tokens(source)-tokens(emitted)}'
     return f'<div class="source-page" data-pdf-page="{n}"><div class="source-page-label">{book} V2.0 · PDF page {n}</div>'+''.join(x[1] for x in sorted(events,key=lambda x:x[0]))+'</div>'
 
+import runpy
+runpy.run_path(str(ROOT / 'scripts/apply_personal_privacy.py'))
 master=fitz.open(ROOT/DOWNLOAD/MASTER)
 guide=fitz.open(ROOT/DOWNLOAD/GUIDE)
 source_pages=[export_page(p,i+1) for i,p in enumerate(master)]
@@ -242,7 +244,7 @@ page('library.html',library,'Download the PROJECT 100 Encyclopedia V2.0, Guidebo
 # Twelve-slide orientation: claims condense the master and point directly into its text.
 slide_data=[
  ('cover','88.2 → 100 LBS OF MUSCLE.','introduction','Train like two. Eat for two. — not a double dose, a double commitment: sufficient food, sufficient recovery, no shortcuts.','gym-selfie-black-shirt.jpg'),
- ('return','The architecture of return.','introduction','Heavy alcohol use from 2020 to 2025. Cessation in 2025. Renewed attention to health and gym training during 2026. The February publication’s baseline and the current profile are separate dated records.','gym-selfie-backpack.jpg'),
+ ('return','The architecture of return.','introduction','A difficult personal period interrupted regular routines. A fresh start brought renewed attention to health and gym training during 2026. The February publication’s baseline and the current profile are separate dated records.','gym-selfie-backpack.jpg'),
  ('code','Durability is the method.','ch12','Measure honestly. Train repeatably. Eat with a record. Sleep. Let symptoms set the ceiling. A larger stack, longer session or bigger meal does not prove better adaptation.','gym-photo-rig-bench.jpg'),
  ('system','INTAKE × VECTOR × TIME.','ch4','Morning training and rest days are different branches. Clock times are reference anchors. Symptoms override the schedule.','gym-bench-closeup.jpg'),
  ('vectors','A recorded recipe. A defined branch.','part3-vectors','Training: V3, V1, V2, V4 and V10. Rest: V3 when consumed, V5 if consumed, and V10. PUMP is preserved strictly as inactive reference.',''),
@@ -327,7 +329,7 @@ for a in home.select('.faq-a'):
     if 'thirteen chapters' in t:a.clear();a.append(BeautifulSoup('<p>Fit Protocol is the system behind the lived record: the Start Here deck, the complete Encyclopedia with 12 chapters and Parts III–VI, and the Daily Guidebook.</p>','html.parser'))
 for summary in home.select('.faq-item summary'):
     if 'PROJ3K' in summary.text:summary.string='What is PROJECT 100?'
-home.select_one('#story .origin-copy>p').string='The earlier publications described a training journey beginning in 2010. The V2.0 master separates historical dates from the confirmed recent record: heavy alcohol use in 2020–2025, cessation in 2025, and renewed gym training in 2026. Earlier dated baselines are retained as historical records.'
+home.select_one('#story .origin-copy>p').string='The journey began in 2010. A difficult personal period later interrupted regular routines. A fresh start brought renewed attention to health, training and recovery in 2026. Earlier dated baselines remain part of the documented journey.'
 home.select_one('#story').append(BeautifulSoup('<div class="wrap v2-provenance">Formerly published as PROJ3K_100. '+link('introduction','Read the current chronology and evidence limits')+'.</div>','html.parser'))
 write('index.html',str(home))
 
@@ -384,7 +386,7 @@ for name in ['index.html','fit-protocol-archive.html','library.html']:
         faq=home_schema.new_tag('script',type='application/ld+json');faq.string=json.dumps({'@context':'https://schema.org','@type':'FAQPage','mainEntity':questions});home_schema.head.append(faq);write(name,str(home_schema))
 write('CONTENT_GOVERNANCE.md','''# PROJECT 100 V2.0 website release
 
-The Encyclopedia V2.0 dated 2026-10-03 is the only reading master. The website preserves its text and derives the daily clock and vector formulas directly from its tables. Its 26 physical PDF pages differ from the page references printed in its inherited contents; website source links use physical PDF pages.
+The Encyclopedia V2.0 dated 2026-10-03 is the only reading master. Public editions incorporate the author's requested privacy edits to personal background, using a neutral description of a difficult personal period and rebuilding routines. Operational records, doses and measured baselines are unchanged. The website preserves the public master's text and derives the daily clock and vector formulas directly from its tables. Its 26 physical PDF pages differ from the page references printed in its inherited contents; website source links use physical PDF pages.
 
 Author instructions override the build brief: keep the repaired design, top menus and PROJECT_100 / FIT PROTOCOL switch. Do not restore the dedicated appliance content. Preserve both page navigation loops. Encyclopedia access floats at the lower right, outside navigation; the Daily Guidebook is a distinct page.
 
@@ -402,4 +404,5 @@ runpy.run_path(str(ROOT / 'scripts/apply_filing_navigation.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_encyclopedia_design.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_reading_layout.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_vector_studio.py'))
+runpy.run_path(str(ROOT / 'scripts/apply_editorial_sections.py'))
 print(f'Built {len(titles)} current pages. Verified complete source words on {len(master)} Encyclopedia + {len(guide)} Guidebook PDF pages.')
