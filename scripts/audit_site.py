@@ -37,10 +37,10 @@ for p, doc in docs.items():
     if p.parent == ROOT:
         for wrapper in ['html','head','body']:
             if sum(t==wrapper for t,a in doc.tags) != 1: issues.append(f'{name}: invalid {wrapper} wrapper count')
-        if name in main+protocol+['encyclopedia-guidebook.html','404.html']:
+        if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html','404.html']:
             if sum(t=='h1' for t,a in doc.tags) != 1: issues.append(f'{name}: needs exactly one h1')
-        if name in main+protocol+['encyclopedia-guidebook.html']:
-            if not any('guidebook-access' in a.get('class','') and a.get('href') == 'encyclopedia-guidebook.html' for _,a in doc.tags):
+        if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html']:
+            if not any('guidebook-access' in a.get('class','') and a.get('href') == 'fit-protocol-archive.html' for _,a in doc.tags):
                 issues.append(f'{name}: no guidebook bar')
 for ring in [main, protocol]:
     for i, name in enumerate(ring):
