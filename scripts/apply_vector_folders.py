@@ -53,10 +53,7 @@ for i,key in enumerate(['v3','v1','v2','v4','v5','v10','pump']):
  formula.append(downloads)
  a=s.new_tag('a',href=f'guidebook.html#vector-{key}',attrs={'class':'stack-source'});a.string='Read the current Guidebook record →';formula.append(a)
  content.append(sheet)
- controls=s.new_tag('div',attrs={'class':'folder-controls'})
- for direction,label in [('prev','← Previous folder'),('next','Next folder →')]:
-  b=s.new_tag('button',type='button',attrs={'class':'stack-step '+direction,'data-stack-step':direction,'hidden':''});b.string=label;controls.append(b)
- content.append(controls);studio.append(file)
+ studio.append(file)
 s.select_one('#vectors .vector-entry p').string='Open a folder in daily order to explore its ingredients, timing and current protocol. Save a descriptive diagram without the digital persona.'
 (ROOT/'fit-nutrition.html').write_text(str(s))
 for name in ['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html']:

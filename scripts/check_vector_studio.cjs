@@ -21,7 +21,7 @@ async function browser(){return chromium.launch({executablePath:process.env.CHRO
    assert(!g.overflow);assert(g.width>=g.parentWidth-82);
    await f.locator(':scope > summary').focus();await p.keyboard.press('Enter');assert.equal(await f.getAttribute('open'),null);checks++;
   }
-  await files.nth(6).locator(':scope > summary').click();await files.nth(6).locator('.stack-step.next').click();assert.notEqual(await files.nth(0).getAttribute('open'),null);assert.equal(await files.nth(6).getAttribute('open'),null);
+  await files.nth(6).locator(':scope > summary').click();await files.nth(6).locator(':scope > summary').focus();await p.keyboard.press('ArrowRight');assert.notEqual(await files.nth(0).getAttribute('open'),null);assert.equal(await files.nth(6).getAttribute('open'),null);
   await files.nth(0).locator(':scope > summary').focus();await p.keyboard.press('ArrowLeft');assert.notEqual(await files.nth(6).getAttribute('open'),null);await files.nth(6).locator(':scope > summary').click();checks++;
   if(width===1280){await p.addStyleTag({content:'.site-head{visibility:hidden!important}'});await p.locator('.vector-studio').screenshot({path:'/tmp/project100-v2-qa/vector-stack-desktop.png'});await files.nth(3).locator(':scope > summary').click();await files.nth(3).screenshot({path:'/tmp/project100-v2-qa/vector-stack-open.png'});}
   if(width===390)await p.locator('.vector-studio').screenshot({path:'/tmp/project100-v2-qa/vector-stack-mobile.png'});
@@ -36,7 +36,7 @@ async function browser(){return chromium.launch({executablePath:process.env.CHRO
    console.log('Verify playback',file,src);
    await v.locator('..').locator('..').scrollIntoViewIfNeeded();
    try{await p.waitForFunction(src=>{const v=[...document.querySelectorAll('video')].find(e=>e.dataset.backgroundSrc===src);return v.readyState>=2&&!v.paused},src)}
-   catch(error){console.log(await v.evaluate(e=>({src:e.src,ready:e.readyState,paused:e.paused,error:e.error?.message,box:e.getBoundingClientRect().toJSON(),control:e.closest('.has-section-motion').querySelector('button').outerHTML})));throw error;}
+   catch(error){console.log(await v.evaluate(e=>({src:e.src,ready:e.readyState,paused:e.paused,error:e.error?.message,box:e.getBoundingClientRect().toJSON(),controls:e.closest('.has-section-motion').querySelectorAll('.motion-control').length})));throw error;}
    const before=await v.evaluate(e=>e.currentTime);await p.waitForFunction(({src,before})=>[...document.querySelectorAll('video')].find(e=>e.dataset.backgroundSrc===src).currentTime!==before,{src,before});
    assert.equal(await v.evaluate(e=>e.muted),true);assert.equal(await v.evaluate(e=>getComputedStyle(e).opacity),'1');assert.equal(await v.evaluate(e=>getComputedStyle(e.parentElement).zIndex),'0');
    played.add(src);checks++;
@@ -46,7 +46,6 @@ async function browser(){return chromium.launch({executablePath:process.env.CHRO
  const uploaded=[...played].filter(s=>s.startsWith('assets/media/october-2026/'));assert.equal(uploaded.length,14);
  const b=await browser(),c=await b.newContext({viewport:{width:390,height:900},reducedMotion:'no-preference'});
  await c.addInitScript(()=>Object.defineProperty(navigator,'connection',{value:{saveData:true,addEventListener(){}}}));await route(c);
- const p=await c.newPage();await p.goto('http://127.0.0.1/guidebook.html',{waitUntil:'networkidle'});assert.equal(await p.locator('#top video').getAttribute('src'),null);assert.equal(await p.locator('#top .motion-control').textContent(),'Play background');
- await p.locator('#top .motion-control').click();await p.waitForFunction(()=>{const v=document.querySelector('#top video');return v.readyState>=2&&!v.paused});checks++;await b.close();
- console.log('PASS:',checks,'folding files, source links, actual moving backgrounds and Save-Data opt-in;',uploaded.length,'unique uploaded clips play');
+ const p=await c.newPage();await p.goto('http://127.0.0.1/guidebook.html',{waitUntil:'networkidle'});assert.equal(await p.locator('.motion-control').count(),0);await p.waitForFunction(()=>{const v=document.querySelector('#top video');return v.readyState>=2&&!v.paused});checks++;await b.close();
+ console.log('PASS:',checks,'folding files, source links, actual moving backgrounds and silent autoplay;',uploaded.length,'unique uploaded clips play');
 })();

@@ -13,3 +13,5 @@ Legacy redirects use static HTML plus JavaScript (including queries and remapped
 Verify with `python scripts/audit_site.py`, `node --check assets/js/v2.js`, source-text equality checks in `scripts/build_v2.py`, and responsive browser tests before publishing.
 
 Vector folders follow the published daily order: V3, V1, V2, V4, V5, V10, then inactive PUMP. Each offers a persona-free PNG and SVG diagram, generated directly from the current Guidebook ingredient amounts, timings and clinical notes. Regenerate with `python scripts/apply_vector_folders.py`.
+
+Background animation follows the author’s explicit autoplay preference: silent looping when visible, automatic pause offscreen or in hidden tabs, poster fallback if the browser blocks playback, and no extra play/pause buttons. PROJECT 100 and Fit Protocol share the same red accents per theme. Vector folders use their covers and keyboard navigation; download links remain compact text links.

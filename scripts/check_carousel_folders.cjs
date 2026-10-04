@@ -20,8 +20,8 @@ for(const width of [320,390,768,1280]){
    assert.equal(await f.locator('a[download]').count(),2);
    const download=p.waitForEvent('download');await f.locator('a[download]').first().click();assert((await download).suggestedFilename().endsWith('.png'));checked++;
   }
-  await p.locator('.vector-stack-file').last().locator('[data-stack-step=next]').click();assert.equal(await p.locator('.vector-stack-file[open]').getAttribute('data-vector'),'v3');
-  await p.locator('.vector-stack-file').first().locator('[data-stack-step=prev]').click();assert.equal(await p.locator('.vector-stack-file[open]').getAttribute('data-vector'),'pump');
+  await p.locator('.vector-stack-file').last().locator(':scope > summary').focus();await p.keyboard.press('ArrowRight');assert.equal(await p.locator('.vector-stack-file[open]').getAttribute('data-vector'),'v3');
+  await p.locator('.vector-stack-file').first().locator(':scope > summary').focus();await p.keyboard.press('ArrowLeft');assert.equal(await p.locator('.vector-stack-file[open]').getAttribute('data-vector'),'pump');
   if(width===390){await p.screenshot({path:'/tmp/vector-folders-mobile.png',fullPage:true});}
  }
  assert.deepEqual(errors,[]);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await p.close();
