@@ -38,3 +38,9 @@
 @media(max-width:1100px){.filing-layout .page-nav-arrow{width:32px!important;height:48px!important;border-radius:0!important}.filing-layout .page-nav-arrow.prev{left:0!important;border-radius:0 8px 8px 0!important}.filing-layout .page-nav-arrow.next{right:0!important;border-radius:8px 0 0 8px!important}.filing-layout main.wrap{padding-inline:40px!important}.filing-layout .reader-layout{padding-inline:40px}.filing-layout .page-shell section .wrap{padding-inline:40px}.filing-layout .hero-inner.wrap{padding-inline:40px!important}.filing-layout .origin-grid{padding-inline:40px}}
 @media(max-width:640px){.filing-layout .page-tabs .wrap{padding-inline:10px!important}.filing-layout .page-tab{font-size:.68rem;padding-inline:11px}.filing-layout .v2-intro h1{font-size:2rem}.filing-layout .page-shell>.v2-intro{padding-inline:40px}.filing-layout .protocol-file summary{padding-left:14px}.filing-layout .protocol-file-content{padding-inline:14px}.filing-layout .v2-stats{grid-template-columns:1fr}.filing-layout .encyclopedia-float{right:12px;bottom:12px;max-width:calc(100vw - 90px)}.filing-layout .page-shell{padding-bottom:78px}}
 @media print{.filing-layout .encyclopedia-float,.filing-layout .page-tabs{display:none!important}.filing-layout .page-shell{max-width:none;border:0;box-shadow:none}}
+/* One brand accent on both sides of the site switch. */
+body.filing-layout{--red:#e6273f;--red-dim:#a91d30}
+html[data-theme=light] body.filing-layout{--red:#c81f34}
+@media(prefers-color-scheme:light){html:not([data-theme=dark]) body.filing-layout{--red:#c81f34}}
+body.filing-layout #nav .brand b{color:#ff3b57}
+body.filing-layout .site-menu-tab{background:linear-gradient(160deg,var(--red),var(--red-dim))}
