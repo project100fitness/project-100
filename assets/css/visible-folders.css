@@ -1,0 +1,60 @@
+/* Every primary destination is present without a horizontal scroll gesture. */
+.filing-layout .site-head>.page-tabs .wrap{flex-wrap:wrap;overflow:visible;white-space:normal;gap:5px;padding:8px 10px 5px!important}
+.filing-layout .site-head>.page-tabs .page-tab{flex:1 0 auto;justify-content:center;min-height:38px;border-bottom:1px solid var(--border);border-radius:7px;font:650 12px/1.35 Inter,sans-serif;letter-spacing:0;text-transform:none;padding:8px 10px}
+.filing-layout .folder-page-layout{display:grid;grid-template-columns:174px minmax(0,1fr);align-items:start;gap:0;isolation:isolate}
+.folder-page-content{min-width:0;width:100%}
+.folder-page-rail{position:sticky;top:145px;align-self:start;padding:20px 10px 28px;background:var(--bg-2);border-right:1px solid var(--border);max-height:calc(100dvh - 220px);overflow-y:auto;scrollbar-width:thin}
+.folder-rail-title{font:650 11px/1.4 Inter,sans-serif;letter-spacing:.05em;color:var(--text-dim);margin:0 6px 14px;text-transform:uppercase}
+.filing-layout .folder-page-rail .focused-subtabs{border:0;background:none;position:static}
+.filing-layout .folder-page-rail .focused-subtabs .wrap{display:flex;flex-direction:column;gap:7px;padding:0!important;overflow:visible;white-space:normal;max-width:none}
+.filing-layout .folder-page-rail .focused-subtabs .page-tab{display:flex;width:100%;min-width:0;min-height:44px;white-space:normal;overflow-wrap:anywhere;padding:10px 11px;border:1px solid var(--border);border-left:3px solid var(--folder-accent,var(--red));border-radius:0 7px 7px 0;font:600 12px/1.4 Inter,sans-serif;letter-spacing:0;text-transform:none;color:var(--text);background:var(--surface)}
+.filing-layout .folder-page-rail .focused-subtabs .page-tab.current{background:var(--folder-accent,var(--red));border-color:var(--folder-accent,var(--red));color:#fff}
+.filing-layout .folder-page-rail .focused-subtabs .page-tab.current[style*="--folder-accent"]{color:#111820}
+.filing-layout .folder-page-rail .page-tab:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+.filing-layout .folder-page-rail .tab-arrow{display:none}
+.filing-layout .folder-page-content>.compact-page-identity{margin-inline:16px}
+.filing-layout .folder-page-content main.wrap{max-width:100%;padding-inline:20px}
+.filing-layout .folder-page-content .wrap{max-width:100%}
+@media(max-width:900px){
+ .filing-layout .folder-page-layout{display:block}
+ .folder-page-rail{position:static;max-height:none;overflow:visible;border-right:0;border-bottom:1px solid var(--border);padding:12px 12px 14px}
+ .folder-rail-title{margin-bottom:8px}
+ .filing-layout .folder-page-rail .focused-subtabs .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .filing-layout .folder-page-rail .focused-subtabs .page-tab{min-height:44px;height:100%;padding:8px;font-size:11px}
+ .filing-layout .folder-page-content main.wrap{padding-inline:16px}
+}
+@media(max-width:380px){.filing-layout .site-head>.page-tabs .page-tab{font-size:11px;padding:7px 8px}.filing-layout .folder-page-rail .focused-subtabs .page-tab{font-size:10px;padding:7px 6px}}
+@media print{.folder-page-rail{display:none}.filing-layout .folder-page-layout{display:block}}
+/* The same horizontal-primary / vertical-secondary hierarchy on phones. */
+@media(max-width:900px){
+ .filing-layout .folder-page-layout{display:grid;grid-template-columns:92px minmax(0,1fr)}
+ .folder-page-rail{position:sticky;top:205px;align-self:start;max-height:calc(100dvh - 280px);overflow-y:auto;border-right:1px solid var(--border);border-bottom:0;padding:14px 6px 22px}
+ .folder-rail-title{font-size:9px;letter-spacing:0;margin:0 3px 10px}
+ .filing-layout .folder-page-rail .focused-subtabs .wrap{display:flex;flex-direction:column;gap:5px}
+ .filing-layout .folder-page-rail .focused-subtabs .page-tab{font-size:10px;min-height:44px;padding:7px 6px;line-height:1.4}
+ .filing-layout .folder-page-content main.wrap{padding-inline:10px}
+ .filing-layout .folder-page-content>.compact-page-identity{margin-inline:8px}
+ .filing-layout .folder-page-content .liquid-cabinet summary{grid-template-columns:1fr;gap:8px;padding:14px 12px}
+ .filing-layout .folder-page-content .liquid-cabinet .stack-preview{display:none}
+ .filing-layout .folder-page-content .liquid-cabinet .stack-label{font-size:16px}
+ .filing-layout .folder-page-content .single-card .log-card{display:block}
+ .filing-layout .folder-page-content .single-card .log-media{height:auto;min-height:0;aspect-ratio:4/3}
+ .filing-layout .folder-page-content .single-card .log-body{padding:12px}
+ .filing-layout .folder-page-content .carousel-row>.log-card{flex-basis:100%}
+ .filing-layout .folder-page-content .folder-sheet{display:block}
+ .filing-layout .folder-page-content .folder-formula{margin-top:18px}
+ .filing-layout .folder-page-content .folder-formula li{font-size:13px!important}
+ .filing-layout .folder-page-content .stack-content{padding:16px 12px}
+ .filing-layout .folder-page-content .focused-vector summary{display:block;padding:16px 12px}
+ .filing-layout .folder-page-content .focused-vector .stack-preview{max-width:100px;margin-bottom:12px}
+ .filing-layout .folder-page-content .focused-vector .stack-label{font-size:18px}
+ .filing-layout .folder-page-content .armory-list>.armory-item{display:block!important}
+ .filing-layout .folder-page-content .armory-item .ai-thumb{margin-bottom:12px}
+}
+@media(max-width:900px){.filing-layout .folder-page-content .liquid-cabinet summary{grid-template-columns:40px minmax(0,1fr)}.filing-layout .folder-page-content .liquid-cabinet .stack-preview{display:block;width:40px}.filing-layout .folder-page-content .focused-cabinet{grid-template-columns:minmax(0,1fr)}}
+.filing-layout .folder-page-rail{top:calc(var(--folder-header-height,145px) + 12px);max-height:calc(100dvh - var(--folder-header-height,145px) - 90px)}
+.filing-layout .folder-page-content main.wrap{padding-inline:20px!important}
+@media(max-width:900px){.filing-layout .folder-page-content main.wrap{padding-inline:10px!important}.filing-layout .folder-page-rail .focused-subtabs .page-tab{font-size:11px}.filing-layout .folder-page-content .reels-blk>.wrap,.filing-layout .folder-page-content .armory-blk>.wrap{padding-inline:14px!important}}
+@media(max-width:900px){.filing-layout .folder-page-layout{grid-template-columns:100px minmax(0,1fr)}.filing-layout .folder-page-rail .focused-subtabs .page-tab{overflow-wrap:normal;font-size:10.5px;padding-inline:5px}}
+@media(max-width:900px){.filing-layout .folder-page-content .wrap{padding-inline:14px!important}.filing-layout .folder-page-content main.wrap{padding-inline:10px!important}.filing-layout .folder-page-content .focused-notes{margin-inline:12px}.filing-layout .folder-page-content .compact-page-identity>.wrap{padding:0!important}}
+@media(min-width:641px) and (max-width:900px){.filing-layout .folder-page-content .single-card .log-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.filing-layout .folder-page-content .single-card .log-media{aspect-ratio:4/3;height:auto}}
