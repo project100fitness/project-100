@@ -82,6 +82,14 @@ for name,description in D.items():
    if i<len(parts)-1:
     a=s.new_tag('a',href='https://www.instagram.com/fudge_fit/',target='_blank',rel='noopener');a.string='@fudge_fit';node.insert_before(a)
   node.extract()
+ if name=='project-goals.html':
+  old=s.select_one('#reported-smm-history')
+  if old:old.decompose()
+  note=s.new_tag('div',id='reported-smm-history',attrs={'class':'v2-note'})
+  heading=s.new_tag('strong');heading.string='Reported measurement history';note.append(heading)
+  history=s.new_tag('p');history.string='June 28, 2025: 82.0 lb estimated SMM. December 14, 2025: 88.2 lb estimated SMM, used for the February 2026 baseline lock. The reported change is +6.2 lb in estimated SMM; original scan reports remain to be verified. These readings do not establish a gain of 6.2 lb of dry muscle tissue.';note.append(history)
+  review=s.new_tag('p');review.string='Planned review window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme and comparable measurement conditions. This is a planned review, not a completed scan or a deadline for reaching the goal.';note.append(review)
+  s.select_one('#mission .anomaly').append(note)
  if name=='library.html':
   old=s.select_one('#download-help')
   if old:old.decompose()
