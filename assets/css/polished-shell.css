@@ -52,3 +52,12 @@ body.filing-layout .cta-band{min-height:0;padding:22px;background:var(--surface)
 .kuzaro-grade-reference{margin:18px 0;border-top:1px solid var(--border);padding-top:12px}
 .kuzaro-grade-reference>summary{cursor:pointer;font-size:14px;font-weight:600}
 .bundle-connections{font-size:14px!important}
+
+/* Keep category imagery compact and fixed access inside the reading column. */
+.filing-layout .category-folder{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:15px}
+.category-folder>img{display:block;width:76px;height:76px;object-fit:contain;border-radius:6px;background:var(--bg)}
+.category-folder-copy{display:flex;flex-direction:column;gap:7px;min-width:0}
+.category-folder-copy>span:last-child{font-size:.75rem;color:var(--text-dim);text-decoration:underline;text-underline-offset:4px}
+.filing-layout .fc-trigger,.filing-layout .fc-panel,.filing-layout .fc-back{left:max(12px,calc((100vw - var(--site-column))/2 + 12px))}
+.filing-layout .site-switch-float{right:max(12px,calc((100vw - var(--site-column))/2 + 12px))}
+@media(max-width:640px){.filing-layout .category-folder{grid-template-columns:64px minmax(0,1fr);gap:12px}.category-folder>img{width:64px;height:64px}}
