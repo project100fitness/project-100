@@ -31,3 +31,5 @@ See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, d
 See `NAVIGATION_RELEASE.md` for the shared folder shell, floating Encyclopedia access and the unresolved Bitdefender alert.
 
 See `FOCUSED_NAVIGATION.md` and `MAIN_FOCUSED_NAVIGATION.md` for the current page splits and site switch. The historical Encyclopedia design remains in its build overlay for a future return; the two focused-files overlays run last.
+
+See `SHELL_POLISH_RELEASE.md` for compact image identities, shared social access, local sans-serif typography and the antivirus diagnostic boundary. The polished-shell overlay runs last.
