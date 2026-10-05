@@ -10,11 +10,28 @@
   const openIndex=()=>{if(location.hash==='#book-index'&&innerWidth<=900){const index=$('.reader-mobile-index');if(index)index.open=true}};
   addEventListener('hashchange',openIndex);openIndex();
  }
+ let preservingView=false;
  const head=$('.site-head');if(head){const size=()=>document.documentElement.style.setProperty('--site-header-offset',Math.ceil(head.getBoundingClientRect().height)+'px');new ResizeObserver(size).observe(head);size()}
  if(document.body.classList.contains('v2-page')){
-  const theme=$('#themeToggle'),themeKey=document.body.classList.contains('encyclopedia-site')?'p100-encyclopedia-theme':'p100-v2-theme',stored=get(themeKey,null);if(stored)document.documentElement.dataset.theme=stored;
-  const sync=()=>theme?.setAttribute('aria-checked',String(document.documentElement.dataset.theme!=='light'));sync();
-  theme?.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;set(themeKey,next);sync()});
+  const theme=$('#themeToggle'),independent=document.body.classList.contains('encyclopedia-site');
+  const themeKey=independent?'p100-encyclopedia-theme':'p100-theme';
+  let stored=independent?get(themeKey,null):null;
+  if(!independent){try{stored=localStorage.getItem(themeKey)||get('p100-v2-theme',null)}catch{}}
+  const valid=value=>value==='light'||value==='dark';
+  const system=matchMedia('(prefers-color-scheme: dark)');
+  document.documentElement.dataset.theme=valid(stored)?stored:(independent?'light':system.matches?'dark':'light');
+  const sync=()=>theme?.setAttribute('aria-checked',String(document.documentElement.dataset.theme==='dark'));sync();
+  theme?.addEventListener('click',()=>{
+   const offset=head?.getBoundingClientRect().height||0;
+   const anchor=$$('.book-chapter').filter(e=>!e.hidden&&e.getBoundingClientRect().top<=offset+100).at(-1);
+   const top=anchor?.getBoundingClientRect().top;preservingView=!!anchor;
+   const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;
+   if(anchor){
+    const restore=()=>window.scrollBy({top:anchor.getBoundingClientRect().top-top,behavior:'instant'});
+    restore();requestAnimationFrame(()=>{restore();preservingView=false;window.dispatchEvent(new Event('scroll'))});
+   }
+   if(independent)set(themeKey,next);else{try{localStorage.setItem(themeKey,next)}catch{}}sync();
+  });
  }
  {
   const menu=$('#siteMenuTab'),drawer=$('#siteDrawer'),back=$('#siteDrawerBackdrop');let opener;
@@ -27,11 +44,13 @@
  }
  const chapters=$$('.book-chapter');
  if(chapters.length){
-  const search=$('#readerSearch'),facet=$('#readerCategory'),results=$('#readerResults'),links=$$('[data-chapter-link]'),progress=$('#readingProgress'),read=new Set(get('p100-v2-read',[]));
+  const search=$('#readerSearch'),facet=$('#readerCategory'),results=$('#readerResults'),links=$$('[data-chapter-link]'),progress=$('#readingProgress'),readerKey=document.body.classList.contains('encyclopedia-site')?'p100-encyclopedia':document.body.classList.contains('daily-page')?'p100-guidebook':'p100-'+location.pathname.split('/').pop(),readKey=readerKey+'-read',positionKey=readerKey+'-position';
+  const savedRead=get(readKey,get('p100-v2-read',[]));
+  const read=new Set((Array.isArray(savedRead)?savedRead:[]).filter(id=>chapters.some(c=>c.id===id)));
   links.forEach(a=>a.classList.toggle('read',read.has(a.dataset.chapterLink)));
-  const resume=get('p100-v2-position',null),resumeBox=$('#resumeReading');if(resume&&resumeBox&&document.getElementById(resume.id)){resumeBox.hidden=false;const a=$('a',resumeBox);a.href='#'+resume.id;a.textContent='Continue: '+$('#'+resume.id+' h2')?.textContent;const dismiss=$('button',resumeBox);dismiss.addEventListener('click',()=>resumeBox.hidden=true)}
+  const resume=get(positionKey,get('p100-v2-position',null)),resumeBox=$('#resumeReading');if(resume&&resumeBox&&document.getElementById(resume.id)){resumeBox.hidden=false;const a=$('a',resumeBox);a.href='#'+resume.id;a.textContent='Continue: '+document.getElementById(resume.id).querySelector('h2')?.textContent;const dismiss=$('button',resumeBox);dismiss.addEventListener('click',()=>resumeBox.hidden=true)}
   let active='',ticking=false;
-  const track=()=>{ticking=false;const offset=head?.getBoundingClientRect().height||0,visible=chapters.filter(x=>!x.hidden);if(!visible.length)return;const current=visible.filter(x=>x.getBoundingClientRect().top<=offset+100).at(-1)||visible[0];if(active!==current.id){active=current.id;links.forEach(a=>a.classList.toggle('active',a.dataset.chapterLink===active));set('p100-v2-position',{id:active});event('chapter_start',{chapter:active})}visible.forEach(x=>{if(x.getBoundingClientRect().bottom<offset+120&&!read.has(x.id)){read.add(x.id);set('p100-v2-read',[...read]);links.filter(a=>a.dataset.chapterLink===x.id).forEach(a=>a.classList.add('read'));event('chapter_finish',{chapter:x.id})}});if(progress){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%'}const status=$('#readerPosition');if(status)status.textContent=$('h2',current)?.textContent||''};
+  const track=()=>{ticking=false;if(preservingView)return;const offset=head?.getBoundingClientRect().height||0,visible=chapters.filter(x=>!x.hidden);if(!visible.length)return;const reached=visible.filter(x=>x.getBoundingClientRect().top<=offset+100).at(-1),current=reached||visible[0];if(active!==current.id){active=current.id;links.forEach(a=>a.classList.toggle('active',a.dataset.chapterLink===active));event('chapter_start',{chapter:active})}if(reached)set(positionKey,{id:active});visible.forEach(x=>{if(x.getBoundingClientRect().bottom<offset+120&&!read.has(x.id)){read.add(x.id);set(readKey,[...read]);links.filter(a=>a.dataset.chapterLink===x.id).forEach(a=>a.classList.add('read'));event('chapter_finish',{chapter:x.id})}});if(progress){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%'}const status=$('#readerPosition');if(status)status.textContent=$('h2',current)?.textContent||''};
   addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(track)}},{passive:true});track();
   const clearMarks=()=>$$('.book-text mark').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
   const highlight=(node,query)=>{const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);const texts=[];while(walker.nextNode())texts.push(walker.currentNode);texts.forEach(t=>{const value=t.textContent,low=value.toLowerCase();if(!low.includes(query))return;const frag=document.createDocumentFragment();let start=0,pos;while((pos=low.indexOf(query,start))!==-1){frag.append(value.slice(start,pos));const mark=document.createElement('mark');mark.textContent=value.slice(pos,pos+query.length);frag.append(mark);start=pos+query.length}frag.append(value.slice(start));t.replaceWith(frag)})};
@@ -54,5 +73,5 @@
  }
  const dayButtons=$$('[data-day]');if(dayButtons.length){const choose=day=>{document.body.classList.add('day-filtered');dayButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.day===day)));$$('.clock-card').forEach(c=>c.hidden=c.dataset.branch!==day);set('p100-v2-day',day);const label=$('#dayStatus');if(label)label.textContent=day==='training'?'Morning training day selected.':'Rest day selected. Training pill grids skipped.'};dayButtons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.day)));choose(get('p100-v2-day','training'))}
  // Video covers remain playable with a keyboard as well as a tap.
- $$('.log-media[data-yt]').forEach(el=>{el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Play '+(el.closest('.log-card')?.querySelector('h4')?.textContent||'training video'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}})});
+ $$('.log-media[data-yt]').filter(el=>!el.closest('[data-loop-copy]')).forEach(el=>{if(el.hasAttribute('data-video-keyboard-ready'))return;el.setAttribute('data-video-keyboard-ready','');el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Play '+(el.closest('.log-card')?.querySelector('h4')?.textContent||'training video'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}})});
 })();

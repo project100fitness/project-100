@@ -18,6 +18,14 @@
         filtered categories). This script only wires up the arrows.
    =================================================================== */
 (function(){
+  var rowCleanup = new WeakMap();
+  function destroyRow(row){
+    var cleanup=rowCleanup.get(row);
+    if(cleanup)cleanup();
+    rowCleanup.delete(row);
+    delete row.dataset.loopReady;
+    row.querySelectorAll(':scope > [data-loop-copy]').forEach(function(copy){copy.remove()});
+  }
   function arrowSVG(dir){
     var d = dir === 'left' ? 'M15 18l-6-6 6-6' : 'M9 6l6 6-6 6';
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="' + d + '"/></svg>';
@@ -39,9 +47,13 @@
 
     if(row.dataset.loopReady) return;
     row.dataset.loopReady='1';
+    var events=new AbortController(),frame;
+    function listen(target,type,callback,options){target.addEventListener(type,callback,Object.assign({},options,{signal:events.signal}))}
+    rowCleanup.set(row,function(){events.abort();clearTimeout(timer);cancelAnimationFrame(frame);wrap.style.maxWidth='';});
     var cards=Array.from(row.children), count=cards.length;
     row.tabIndex=0; row.setAttribute('role','region');
     row.setAttribute('aria-label',label+'; use left and right arrows to explore');
+    [prevBtn,nextBtn].forEach(function(button){button.disabled=count<2;button.tabIndex=count<2?-1:0;button.setAttribute('aria-hidden',String(count<2))});
     if(count<2){prevBtn.classList.add('hidden');nextBtn.classList.add('hidden');return;}
     wrap.style.width='100%';wrap.style.minWidth='0';wrap.style.marginInline='auto';
     var start=0,period=0,timer;
@@ -70,6 +82,7 @@
     for(var k=0;k<copies;k++){cards.forEach(function(c){before.appendChild(clone(c));after.appendChild(clone(c))})}
     row.prepend(before);row.append(after);
     function measure(){
+      if(!row.isConnected||!row.clientWidth)return;
       var old=period?((row.scrollLeft-start)%period+period)%period:0;
       wrap.style.maxWidth='none';
       var all=Array.from(row.children),first=cards[0],next=all[all.indexOf(first)+count];
@@ -89,13 +102,13 @@
       var distance=cards[1].offsetLeft-cards[0].offsetLeft;
       row.scrollBy({left:dir*distance,behavior:reduced.matches?'instant':'smooth'});
     }
-    prevBtn.addEventListener('click',function(){nav(-1)});
-    nextBtn.addEventListener('click',function(){nav(1)});
-    row.addEventListener('keydown',function(e){if(e.target!==row||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();nav(e.key==='ArrowLeft'?-1:1)});
-    row.addEventListener('scroll',function(){clearTimeout(timer);timer=setTimeout(normalize,140)},{passive:true});
-    row.addEventListener('scrollend',normalize);
-    window.addEventListener('resize',measure);
-    requestAnimationFrame(measure);
+    listen(prevBtn,'click',function(){nav(-1)});
+    listen(nextBtn,'click',function(){nav(1)});
+    listen(row,'keydown',function(e){if(e.target!==row||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();nav(e.key==='ArrowLeft'?-1:1)});
+    listen(row,'scroll',function(){clearTimeout(timer);timer=setTimeout(normalize,140)},{passive:true});
+    listen(row,'scrollend',normalize);
+    listen(window,'resize',measure);
+    frame=requestAnimationFrame(measure);
 
   }
 
@@ -142,5 +155,5 @@
     document.querySelectorAll('[data-carousel]').forEach(initContainer);
   }
 
-  window.ProjectCarousel = { init: init, wireRow: wireRow };
+  window.ProjectCarousel = { init: init, wireRow: wireRow, destroyRow: destroyRow };
 })();

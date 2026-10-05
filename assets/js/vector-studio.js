@@ -10,7 +10,7 @@
   target.scrollIntoView({block:'start',behavior:reduced.matches?'instant':'smooth'});
  }
  files.forEach((file,index)=>{
-  file.style.scrollMarginTop='calc(var(--site-header-offset) + 18px)';
+  file.style.scrollMarginTop='18px';
   file.addEventListener('toggle',()=>{
    if(file.open)files.forEach(other=>{if(other!==file)other.open=false});
    if(file.open&&!reduced.matches)file.querySelector('.stack-content').animate(
