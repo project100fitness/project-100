@@ -1,0 +1,2 @@
+/* Preserve bookmarks into source folders and simple liquid files. */
+(()=>{function reveal(){let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}if(!id)return;const target=document.getElementById(id);if(!target)return;let parent=target.matches('details')?target:target.closest('details');if(!parent)return;while(parent){parent.open=true;parent=parent.parentElement?.closest('details')}requestAnimationFrame(()=>target.scrollIntoView({block:'start',behavior:'instant'}));}addEventListener('hashchange',reveal);reveal();})();

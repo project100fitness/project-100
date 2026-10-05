@@ -1,0 +1,26 @@
+/* Compact food context and a separate MAIN-site liquid-intake view. */
+.nutrition-overview{padding-block:20px!important}
+.nutrition-overview h2{font-size:clamp(20px,2.3vw,30px);line-height:1.2;margin:0 0 16px;text-transform:none;letter-spacing:-.02em}
+.nutrition-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nutrition-info-card{display:flex;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;min-width:0;align-items:flex-start}
+.nutrition-info-card>img{width:72px;height:72px;object-fit:cover;border-radius:7px;flex:none}
+.nutrition-info-card h3{font:700 15px/1.35 Inter,sans-serif;margin:0 0 6px;text-transform:none;letter-spacing:0}
+.nutrition-info-card p,.nutrition-small-note{font:400 14px/1.65 Inter,sans-serif;margin:0;color:var(--text-dim)}
+.nutrition-small-note{margin-top:14px}.nutrition-source-links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14px}
+.nutrition-source-file>summary{font-size:15px!important}.nutrition-source-file .book-chapter{padding-top:20px}
+.single-file-layout{grid-template-columns:minmax(0,1fr)!important}
+.liquid-branch-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.liquid-branch-strip>span{padding:12px;border-left:3px solid var(--red);background:var(--surface);font:400 14px/1.5 Inter,sans-serif}.liquid-branch-strip strong{display:block;font-size:14px;margin-bottom:4px}
+.simple-liquid-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.simple-liquid-file{border:1px solid var(--border);border-top:3px solid var(--liquid-accent);border-radius:10px;background:var(--surface);min-width:0;overflow:hidden;scroll-margin-top:180px}
+.simple-liquid-file>summary{display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer;list-style:none;min-height:100px}
+.simple-liquid-file>summary::-webkit-details-marker{display:none}.simple-liquid-file>summary>img{width:106px;height:70px;object-fit:contain;border-radius:8px;flex:none}
+.simple-liquid-file summary strong{display:block;font:700 16px/1.4 Inter,sans-serif}.simple-liquid-file summary small{display:block;font:400 12px/1.5 Inter,sans-serif;color:var(--text-dim);margin-top:5px}
+.liquid-fold-mark{margin-left:auto;color:var(--liquid-accent);font-size:26px}.simple-liquid-file[open] .liquid-fold-mark{transform:rotate(45deg)}
+.simple-liquid-content{border-top:1px solid var(--border);padding:16px;font:400 14px/1.65 Inter,sans-serif}.simple-liquid-content p{font:inherit;margin:0 0 12px}.simple-liquid-ingredients{padding-left:20px;margin:12px 0}.simple-liquid-ingredients li{margin:0 0 8px}.simple-liquid-links{font-size:13px!important;margin-top:18px!important}.simple-liquid-links a{text-decoration:underline;text-underline-offset:3px}
+.simple-liquid-file summary:focus-visible{outline:2px solid var(--text);outline-offset:-4px}
+@media(max-width:760px){.nutrition-info-grid,.simple-liquid-grid{grid-template-columns:minmax(0,1fr)}.nutrition-info-card{padding:12px}.nutrition-info-card>img{width:52px;height:60px}.nutrition-info-card h3{font-size:14px}.nutrition-info-card p{font-size:13px}.liquid-branch-strip{grid-template-columns:minmax(0,1fr)}.simple-liquid-file summary{min-height:90px}.simple-liquid-file summary>img{width:84px;height:62px}.nutrition-overview{padding-block:16px!important}}
+@media(prefers-reduced-motion:no-preference){.simple-liquid-file[open] .simple-liquid-content{animation:liquid-unfold .2s ease-out}@keyframes liquid-unfold{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}}
+.simple-liquid-file[open]{grid-column:1/-1}.white-ingredient-card{display:block;margin:0 0 18px}.white-ingredient-card img{display:block;width:100%;height:auto;border-radius:8px;object-fit:contain}.simple-liquid-file[open] .simple-liquid-content{max-width:100%}
+body.filing-layout .nutrition-info-card p{font:400 14px/1.55 Inter,sans-serif!important;margin:0!important}body.filing-layout .nutrition-small-note{font-size:14px!important}.nutrition-info-card>div{min-width:0}
+body.filing-layout .simple-liquid-content p,body.filing-layout .simple-liquid-content li{font-size:15px!important;line-height:1.6!important}
