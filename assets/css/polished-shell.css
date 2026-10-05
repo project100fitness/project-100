@@ -66,3 +66,14 @@ body.filing-layout .cta-band{min-height:0;padding:22px;background:var(--surface)
 .publication-bar:hover,.publication-bar:focus-visible{background:var(--bg-2);text-decoration:underline;text-underline-offset:4px}
 .filing-layout .v2-footer-grid{grid-template-columns:2fr 1fr 1fr}
 @media(max-width:640px){.publication-bar{padding:16px 40px;font-size:.8rem}.filing-layout .v2-footer-grid{grid-template-columns:1fr}}
+
+/* Contextual art fades into existing enclosures without claiming layout space. */
+.filing-layout .compact-page-identity{display:block;isolation:isolate;padding:20px 24px!important;min-height:0!important}
+.filing-layout .compact-page-identity .page-identity-image{position:absolute;inset:0 0 0 auto;width:58%;height:100%;margin:0;border-radius:0;object-fit:cover;object-position:center;opacity:.26;z-index:-1;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 55%);background:none}
+.filing-layout .compact-page-identity h1,.filing-layout .compact-page-identity p{max-width:70%}
+.filing-layout .category-folder{display:flex;isolation:isolate;overflow:visible;min-height:94px}
+.filing-layout .category-folder>img{position:absolute;inset:0 0 0 auto;width:52%;height:100%;object-fit:cover;opacity:.23;border-radius:0 8px 8px 0;mask-image:linear-gradient(to right,transparent,#000 70%);z-index:-1;pointer-events:none;background:none}
+.filing-layout .category-folder>span{position:relative;max-width:80%}
+.filing-layout .main-folder img{object-fit:cover!important}
+.focused-protocol .compact-page-identity + .book-chapter,.focused-protocol .compact-page-identity + .wrap > .book-chapter:first-child{padding-top:20px;margin-top:0}
+@media(max-width:640px){.filing-layout .compact-page-identity{padding:16px!important}.filing-layout .compact-page-identity h1,.filing-layout .compact-page-identity p{max-width:100%}.filing-layout .compact-page-identity .page-identity-image{width:70%;opacity:.16}.filing-layout .category-folder>img{width:55%;height:100%;opacity:.18}.filing-layout .category-folder>span{max-width:100%}}
