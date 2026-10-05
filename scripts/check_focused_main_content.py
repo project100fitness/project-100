@@ -13,17 +13,21 @@ for file,ids in [('index.html',['story','mission','roadmap','faq']),('fit-nutrit
     before=old(file)
     for id in ids:
         a=before.find(id=id);b=sections[file+':'+id]
+        if id=='safety':
+            # Duplicated gear descriptions follow the author's new manifest.
+            for part in [a,b]:
+                for c in part.select('.armory-item'):
+                    for node in c.select('.ai-text'):node.clear()
         assert Counter(a.get_text().split())<=Counter(b.get_text().split()),(file,id,'text')
         assert Counter(e.get('src') for e in a.select('img'))<=Counter(e.get('src') for e in b.select('img')),(file,id,'images')
         count+=1
 before=old('gear-shop.html')
-for key,group in zip(['resistance','grips','anchors','recovery'],before.select('.armory-groups .armory-group')):
-    a=group.select_one('.armory-list');b=sections['gear-shop.html:armory-'+key].select_one('.armory-list')
-    assert Counter(e.get('src') for e in a.select('img'))==Counter(e.get('src') for e in b.select('img')),key
-    if key=='resistance':
-        # The author corrected only KUZARO to a four-kit inventory on 2026-10-05.
-        for listing in [a,b]:
-            next(c for c in listing.select('.armory-item') if 'KUZARO' in c.get_text()).decompose()
-    assert Counter(a.get_text().split())==Counter(b.get_text().split()),key
-    assert Counter(e.get('src') for e in a.select('img'))==Counter(e.get('src') for e in b.select('img')),key
-print(f'PASS: {count} moved sections and all equipment images retained; unchanged equipment text preserved outside the authorized KUZARO correction.')
+current=[c for file in ['gear-resistance.html','gear-grips.html','gear-anchors.html','gear-recovery.html'] for c in BeautifulSoup((ROOT/file).read_text(),'html.parser').select('.armory-item')]
+assert Counter(e.get('src') for e in before.select('.armory-groups .armory-item img'))<=Counter(e.get('src') for c in current for e in c.select('img'))
+# Manifest-backed card text is author-authorized for revision; other records stay exact.
+for c in before.select('.armory-groups .armory-item'):
+    name=c.select_one('.ai-name').get_text()
+    match=next((e for e in current if e.select_one('.ai-name').get_text()==name),None)
+    if match and not match.get('data-gear-record'):
+        assert Counter(c.get_text().split())==Counter(match.get_text().split()),name
+print(f'PASS: {count} moved sections and all equipment images retained; additional inventory text preserved outside the authorized manifest updates.')

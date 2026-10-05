@@ -16,6 +16,4 @@ Vector folders follow the published daily order: V3, V1, V2, V4, V5, V10, then i
 
 Background animation follows the author’s explicit autoplay preference: silent looping when visible, automatic pause offscreen or in hidden tabs, poster fallback if the browser blocks playback, and no extra play/pause buttons. PROJECT 100 and Fit Protocol share the same red accents per theme. Vector folders use their covers and keyboard navigation; download links remain compact text links.
 
-## KUZARO inventory correction · 5 October 2026
-
-The author confirms four KUZARO kits with multiple band bundles/combinations. This supersedes the single-set description on the Resistance bands page. The current V2.0 PDF does not contain this kit breakdown; the earlier website archive (8c70b82, Chapter 8) records Pure Triad tubes at 35–85 lb and a 360 lb combined setup. Those are reference inventory ratings, not newly measured forces, and must not be multiplied by four. The exact four kit names and individual kit ratings were not recovered from the available editions. Leave those unassigned until the author supplies the labels/source page. Do not invent four kit versions from that one Pure Triad record. The build overlay preserves the confirmed four-kit structure.
+See `GEAR_MANIFEST_RELEASE.md` for the author-supplied equipment database and current KUZARO grade mapping.
