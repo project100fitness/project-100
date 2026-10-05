@@ -12,12 +12,15 @@ const root=path.resolve(__dirname,'..'),{chromium}=require(process.env.CODEX_PRI
  for(const file of ['index.html','fit-nutrition.html','gear-shop.html','fit-protocol.html','guidebook.html']){
  await go(file);await p.locator('.focused-cabinet').first().scrollIntoViewIfNeeded();
  for(const img of await p.locator('.focused-cabinet img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode())}
- assert(await p.locator('.focused-cabinet:not(.vector-cabinet) > a').evaluateAll(ns=>ns.every(n=>{const i=n.querySelector('img');return i&&i.complete&&i.naturalWidth>0})),file+' previews');
+ assert(await p.locator('.focused-cabinet:not(.vector-cabinet) > a').evaluateAll(ns=>ns.every(n=>{const i=n.querySelector('img');return !i||(i.complete&&i.naturalWidth>0)})),file+' previews');
  assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),file+' overflow');
  const shell=await p.locator('.page-shell').boundingBox();
  for(const selector of ['.fc-trigger','.site-switch-float']){const b=await p.locator(selector).boundingBox();assert(b.x>=shell.x&&b.x+b.width<=shell.x+shell.width+1,file+' edge '+width)}
 
  }
  }
+ await go('fit-protocol-labs.html');assert.equal(await p.locator('.page-identity-image').count(),0,'No unrelated lab image');
+ await go('fit-protocol-supplements.html');assert.equal(await p.locator('.page-identity-image').getAttribute('src'),'assets/img/supplements-stack-2026.jpg');
+ assert.equal(await p.locator('.page-identity-image').evaluate(n=>getComputedStyle(n).position),'absolute','Art consumes no layout space');
  assert.deepEqual(errors,[]);console.log('PASS: loaded category previews and enclosed fixed controls on five directories at five viewport sizes.');await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

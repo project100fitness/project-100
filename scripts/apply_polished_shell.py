@@ -3,40 +3,47 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
 main=['index.html','project-story.html','project-goals.html','fit-workout.html','fit-nutrition.html','fit-meals.html','fit-nutrition-notes.html','gear-shop.html','gear-gym.html','gear-photos.html','gear-rig.html','gear-resistance.html','gear-grips.html','gear-anchors.html','gear-recovery.html','gear-safety.html']
+# Explicit editorial matches: absent subjects remain unillustrated, never a selfie fallback.
 images={
  'project-story.html':'assets/media/october-2026/bogdan-november-2025.jpg',
- 'project-goals.html':'assets/media/october-2026/bogdan-august-mirror.jpg',
+ 'project-goals.html':'assets/img/objective-100lbs-smm.jpg',
  'fit-workout.html':'assets/media/october-2026/bogdan-gym-session.jpg',
- 'fit-nutrition.html':'assets/media/october-2026/vector-v4.jpg',
- 'fit-meals.html':'assets/media/october-2026/vector-v3.jpg',
- 'fit-nutrition-notes.html':'assets/media/october-2026/vector-v4.jpg',
+ 'fit-nutrition.html':'assets/img/mega-salad-mango-chickpea.jpg',
+ 'fit-meals.html':'assets/img/carnivore-omelette.jpg',
+ 'fit-nutrition-notes.html':'assets/img/mega-salad-kale-tuna.jpg',
  'gear-shop.html':'assets/media/october-2026/gym-turf-rig.jpg',
  'gear-gym.html':'assets/media/october-2026/gym-august-floor.jpg',
  'gear-photos.html':'assets/media/october-2026/gym-july-turf.jpg',
  'gear-rig.html':'assets/media/october-2026/gym-bench-august.jpg',
- 'gear-resistance.html':'assets/img/gear-item-kuzaro-triad.jpg',
- 'gear-grips.html':'assets/img/gear-item-angles90.jpg',
- 'gear-anchors.html':'assets/img/gear-item-thefitguy-sled.jpg',
- 'gear-recovery.html':'assets/img/gear-item-foam-roller.jpg',
- 'gear-safety.html':'assets/media/october-2026/gym-turf-rig.jpg',
-}
-category_images={**images,
  'gear-resistance.html':'assets/img/gear-item-tubing.jpg',
- 'gear-anchors.html':'assets/img/gear-item-sled-belt.jpg',
+ 'gear-grips.html':'assets/img/gear-item-angles90.jpg',
+ 'gear-anchors.html':'assets/img/gear-item-carabiner.jpg',
  'gear-recovery.html':'assets/img/gear-item-miaoke.jpg',
- 'fit-protocol.html':'assets/img/v2/guidebook-cover.png',
- 'fit-protocol-baseline.html':'assets/media/october-2026/bogdan-november-2025.jpg',
- 'guidebook.html':'assets/img/v2/guidebook-cover.png',
- 'fit-protocol-vectors.html':'assets/media/october-2026/vector-v4.jpg',
- 'fit-protocol-nutrition.html':'assets/media/october-2026/vector-v3.jpg',
- 'fit-protocol-supplements.html':'assets/downloads/vector-diagrams/project100-v5-ingredients.png',
+ 'gear-safety.html':None,
+ 'fit-protocol.html':'assets/img/protocol-systemic-fueling.jpg',
+ 'fit-protocol-baseline.html':'assets/img/objective-100lbs-smm.jpg',
+ 'fit-protocol-history.html':'assets/media/october-2026/bogdan-june-2026.jpg',
+ 'fit-protocol-constraints.html':None,
+ 'guidebook.html':'assets/img/protocol-24hr-clock.jpg',
+ 'fit-protocol-fuel.html':'assets/img/protocol-24hr-clock.jpg',
+ 'fit-protocol-checklists.html':None,
+ 'fit-protocol-vectors.html':'assets/img/liquid-intake-vectors.jpg',
+ 'fit-protocol-vector-reference.html':'assets/img/diagram-matrix.jpg',
+ 'fit-protocol-nutrition.html':'assets/img/mega-salad-kale-tuna.jpg',
+ 'fit-protocol-supplements.html':'assets/img/supplements-stack-2026.jpg',
+ 'fit-protocol-interactions.html':None,
+ 'fit-protocol-margins.html':None,
  'fit-protocol-training.html':'assets/media/october-2026/bogdan-gym-session.jpg',
- 'fit-protocol-labs.html':'assets/img/v2/social-fit-protocol-baseline.png',
- 'fit-protocol-troubleshooting.html':'assets/img/v2/checklist-cover.png',
- 'library.html':'assets/img/v2/simplified-cover.png',
- 'fit-protocol-fuel.html':'assets/downloads/vector-diagrams/project100-v1-ingredients.png',
- 'fit-protocol-checklists.html':'assets/img/v2/checklist-cover.png',
+ 'fit-protocol-progression.html':'assets/img/resistance-band-001.jpg',
+ 'fit-protocol-joints.html':'assets/img/warmups-stretch-001.jpg',
+ 'fit-protocol-monitoring.html':None,
+ 'fit-protocol-labs.html':None,
+ 'fit-protocol-troubleshooting.html':None,
+ 'library.html':'assets/img/v2/guidebook-cover.png',
 }
+for key in ['v1','v2','v3','v4','v5','v10','pump']:
+ images['fit-protocol-vector-'+key+'.html']='assets/media/october-2026/vector-'+key+'.jpg'
+category_images=images
 for path in ROOT.glob('*.html'):
  s=BeautifulSoup(path.read_text(),'html.parser')
  if not s.select_one('.page-shell'):continue
@@ -46,7 +53,7 @@ for path in ROOT.glob('*.html'):
  host.append(BeautifulSoup((ROOT/'assets/partials/float-connect.html').read_text(),'html.parser'));s.body.insert(0,host)
  for node in s.select('script[src*="float-connect.js"],link[href*="float-connect.css"],link[href*="polished-shell.css"]'):node.decompose()
  s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/float-connect.css?v=20261005-shell'))
- s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-publications')))
+ s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-contextual')))
  s.head.append(s.new_tag('script',src='assets/js/float-connect.js?v=20261005-shell',defer=''))
  # Publication access belongs in one full-width footer bar, outside content menus.
  for link in s.select('.page-tabs a,.focused-cabinet a,#siteDrawer a'):
@@ -65,15 +72,15 @@ for path in ROOT.glob('*.html'):
  for folder in s.select('.focused-cabinet:not(.vector-cabinet) > a.focused-folder'):
   target=folder.get('href','').split('#')[0]
   image=category_images.get(target)
-  if not image:raise ValueError('Missing category preview: '+target)
-  if not (ROOT/image).is_file():raise ValueError('Missing preview asset: '+image)
+  if target not in category_images:raise ValueError('Unmapped category: '+target)
+  if image and not (ROOT/image).is_file():raise ValueError('Missing preview asset: '+image)
   for old in folder.select('img'):old.decompose()
   if 'main-folder' not in folder.get('class',[]) and not folder.select_one('.category-folder-copy'):
    content=s.new_tag('span',attrs={'class':'category-folder-copy'})
    for child in list(folder.contents):content.append(child.extract())
    folder.append(content)
   folder['class']=list(dict.fromkeys(folder.get('class',[])+['category-folder']))
-  folder.insert(0,s.new_tag('img',src=image,alt='',width='76',height='76',loading='lazy'))
+  if image:folder.insert(0,s.new_tag('img',src=image,alt='',width='76',height='76',loading='lazy',attrs={'class':'folder-background','aria-hidden':'true'}))
  # Only the meaningful original landing hero retains a decorative video.
  for motion in s.select('.section-motion'):
   parent=motion.parent
@@ -88,16 +95,11 @@ for path in ROOT.glob('*.html'):
    for node in intro.select('.section-motion,.page-identity-image'):node.decompose()
    intro['class']=list(dict.fromkeys([c for c in intro.get('class',[]) if c not in ['has-section-motion','placeholder-hero','fx-aurora','fx-spotlight']]+['compact-page-identity']))
    intro.attrs.pop('style',None)
-   image=images.get(path.name)
-   if not image:
-    if 'vector-' in path.name and 'reference' not in path.name:image='assets/media/october-2026/vector-'+path.stem.split('-')[-1]+'.jpg'
-    elif any(k in path.name for k in ['training','progression','joints']):image='assets/media/october-2026/bogdan-gym-session.jpg'
-    elif any(k in path.name for k in ['nutrition','fuel','supplements','interactions','margins','vectors']):image='assets/media/october-2026/vector-v4.jpg'
-    else:image='assets/media/october-2026/bogdan-august-mirror.jpg'
-   if not (ROOT/image).exists():
-    item=s.select_one('.ai-thumb img')
-    image=item['src'] if item else 'assets/media/october-2026/gym-turf-rig.jpg'
-   intro.insert(0,s.new_tag('img',src=image,alt='',width='1600',height='900',attrs={'class':'page-identity-image'}))
+   if path.name not in images:raise ValueError('Unmapped page identity: '+path.name)
+   image=images[path.name]
+   if image:
+    if not (ROOT/image).is_file():raise ValueError('Missing identity asset: '+image)
+    intro.insert(0,s.new_tag('img',src=image,alt='',width='1600',height='900',attrs={'class':'page-identity-image','aria-hidden':'true'}))
    for p in intro.select(':scope > p,.wrap > p'):
     if p.get_text().startswith('One focused file'):p.decompose()
  if path.name=='project-story.html':
