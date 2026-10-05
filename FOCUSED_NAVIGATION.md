@@ -10,4 +10,4 @@ The Daily Guidebook is now a training/rest execution page. Its twelve analysis/r
 
 The new overlay runs last in `scripts/build_v2.py`. `assets/js/protocol-files.json` defines the page ring and bookmark routing. Verify with `python scripts/audit_site.py`, `python scripts/check_focused_content.py`, `node scripts/check_focused_protocol.cjs`, `node scripts/check_responsive.cjs` and the carousel/privacy regression checks. Historical reader-only tests describe the suspended reader and do not apply to this release.
 
-Large MAIN equipment groups remain a separate mobile layout improvement. The previously reported antivirus warning still requires its blocked URL and threat name for diagnosis.
+The subsequent MAIN pass also separates equipment groups and shortens the landing and nutrition pages; see MAIN_FOCUSED_NAVIGATION.md. The previously reported antivirus warning still requires its blocked URL and threat name for diagnosis.

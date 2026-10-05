@@ -14,7 +14,7 @@ class Document(HTMLParser):
         self.tags.append((tag, dict(attrs)))
 docs = {p: Document(p.read_text()) for p in ROOT.rglob('*.html')}
 issues = []
-main = ['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html']
+main = [x['file'] for x in json.loads((ROOT/'assets/js/main-files.json').read_text())['files']]
 protocol = [x['file'] for x in json.loads((ROOT/'assets/js/protocol-files.json').read_text())['files']]
 for p, doc in docs.items():
     name = str(p.relative_to(ROOT)); text = p.read_text()
@@ -36,6 +36,8 @@ for p, doc in docs.items():
         if count > 1: issues.append(f'{name}: duplicate ID {key}')
     if re.search(r'ninja|creami',text,re.I): issues.append(f'{name}: removed feature still referenced')
     if p.parent == ROOT:
+        if name in ['fit-protocol-archive.html','encyclopedia.html','encyclopedia-guidebook.html','encyclopedia-archive.html']:
+            if any('encyclopedia-site' in a.get('class','') or 'page-shell' in a.get('class','') for _,a in doc.tags):issues.append(f'{name}: suspended reader was restored')
         for wrapper in ['html','head','body']:
             if sum(t==wrapper for t,a in doc.tags) != 1: issues.append(f'{name}: invalid {wrapper} wrapper count')
         if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html','404.html']:

@@ -2,7 +2,7 @@ const fs=require('fs');const path=require('path');const repoRoot=path.resolve(__
 (async()=>{
  const browserArgs=JSON.parse(process.env.CHROMIUM_ARGS_JSON||'["--no-sandbox"]');
 
- const defaultPages=['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html',...JSON.parse(fs.readFileSync(path.join(repoRoot,'assets/js/protocol-files.json'),'utf8')).files.map(x=>x.file)];
+ const defaultPages=[...JSON.parse(fs.readFileSync(path.join(repoRoot,'assets/js/main-files.json'),'utf8')).files.map(x=>x.file),...JSON.parse(fs.readFileSync(path.join(repoRoot,'assets/js/protocol-files.json'),'utf8')).files.map(x=>x.file)];
  const pages=process.env.TEST_PAGES?process.env.TEST_PAGES.split(','):defaultPages;
  const results=[];fs.mkdirSync(qaRoot,{recursive:true});
  for(const width of (process.env.TEST_WIDTHS?process.env.TEST_WIDTHS.split(',').map(Number):[320,390,768,1280])) {
