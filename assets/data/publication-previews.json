@@ -1,0 +1,176 @@
+{
+  "pages": {
+    "index.html": {
+      "description": "PROJECT 100: Bogdan’s documented training, nutrition and equipment journey toward the 100 lb skeletal muscle mass goal.",
+      "image": "assets/media/october-2026/bogdan-gym-session.jpg"
+    },
+    "project-story.html": {
+      "description": "The PROJECT 100 story: rebuilding daily routines, returning to training and documenting progress through original photographs.",
+      "image": "assets/media/october-2026/bogdan-november-2025.jpg"
+    },
+    "project-goals.html": {
+      "description": "PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking.",
+      "image": "assets/img/objective-100lbs-smm.jpg"
+    },
+    "fit-workout.html": {
+      "description": "Explore the PROJECT 100 training journal, original gym videos and recorded workout categories.",
+      "image": "assets/media/october-2026/bogdan-gym-session.jpg"
+    },
+    "fit-nutrition.html": {
+      "description": "Explore PROJECT 100 nutrition folders: meals, recipes and notes from the documented food record.",
+      "image": "assets/img/mega-salad-mango-chickpea.jpg"
+    },
+    "fit-meals.html": {
+      "description": "Browse PROJECT 100 meals and recipes, including protein smoothies, recovery bowls, wraps and salads.",
+      "image": "assets/img/carnivore-omelette.jpg"
+    },
+    "fit-nutrition-notes.html": {
+      "description": "PROJECT 100 nutrition notes: recorded meal structure, food tolerance and the source context behind the recipes.",
+      "image": "assets/media/october-2026/nutrition-pantry-july-2026.jpg"
+    },
+    "gear-shop.html": {
+      "description": "Explore PROJECT 100 equipment folders: resistance bands, grips, anchors, recovery tools and gym setup photographs.",
+      "image": "assets/media/october-2026/gym-turf-rig.jpg"
+    },
+    "gear-gym.html": {
+      "description": "PROJECT 100 gym walkthroughs: original training-floor footage and equipment setup references.",
+      "image": "assets/media/october-2026/gym-august-floor.jpg"
+    },
+    "gear-photos.html": {
+      "description": "Browse the PROJECT 100 gym photo journal: original equipment and training-space photographs.",
+      "image": "assets/media/october-2026/gym-july-turf.jpg"
+    },
+    "gear-rig.html": {
+      "description": "The PROJECT 100 training rig: setup photographs and the documented equipment configuration.",
+      "image": "assets/media/october-2026/gym-bench-august.jpg"
+    },
+    "gear-resistance.html": {
+      "description": "PROJECT 100 resistance gear: four KUZARO kits, six named band bundles and their recorded resistance ratings.",
+      "image": "assets/img/gear-item-tubing.jpg"
+    },
+    "gear-grips.html": {
+      "description": "PROJECT 100 grips and handles: the equipment inventory, setup images and related hardware references.",
+      "image": "assets/img/gear-item-angles90.jpg"
+    },
+    "gear-anchors.html": {
+      "description": "PROJECT 100 straps and anchors: attachment hardware, carabiners and the recorded rig connections.",
+      "image": "assets/img/gear-item-carabiner.jpg"
+    },
+    "gear-recovery.html": {
+      "description": "PROJECT 100 recovery tools: original equipment images and the documented recovery hardware inventory.",
+      "image": "assets/img/gear-item-miaoke.jpg"
+    },
+    "gear-safety.html": {
+      "description": "PROJECT 100 hardware safety: setup checks, inspection notes and the source context for the training rig.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "fit-protocol.html": {
+      "description": "FIT PROTOCOL: explore the documented PROJECT 100 baseline, daily guide, liquid intake, training and monitoring pages.",
+      "image": "assets/img/protocol-systemic-fueling.jpg"
+    },
+    "fit-protocol-baseline.html": {
+      "description": "FIT PROTOCOL baseline: the recorded goals, measurements and starting context for PROJECT 100.",
+      "image": "assets/img/objective-100lbs-smm.jpg"
+    },
+    "fit-protocol-history.html": {
+      "description": "FIT PROTOCOL training history: the documented return to exercise and the context behind the current system.",
+      "image": "assets/media/october-2026/bogdan-june-2026.jpg"
+    },
+    "fit-protocol-constraints.html": {
+      "description": "FIT PROTOCOL constraints: the recorded limitations and source notes that guide the personal training system.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "guidebook.html": {
+      "description": "PROJECT 100 Daily Guidebook: select morning training, rest or evening training and follow the corresponding daily schedule.",
+      "image": "assets/media/october-2026/pill-organizer-may-2026.jpg"
+    },
+    "fit-protocol-fuel.html": {
+      "description": "FIT PROTOCOL daily clock: the recorded timing anchors and meal structure for the PROJECT 100 system.",
+      "image": "assets/img/protocol-24hr-clock.jpg"
+    },
+    "fit-protocol-checklists.html": {
+      "description": "FIT PROTOCOL checklists: daily checks, source notes and the documented stop-rule references.",
+      "image": "assets/media/october-2026/pill-organizer-may-2026.jpg"
+    },
+    "fit-protocol-vectors.html": {
+      "description": "PROJECT 100 Liquid Intake: open seven vector folders in place to read ingredients, protocols and descriptive diagram downloads.",
+      "image": "assets/img/liquid-intake-vectors.jpg"
+    },
+    "fit-protocol-vector-reference.html": {
+      "description": "FIT PROTOCOL vector notes: source context and reference material for the seven registered liquid-intake records.",
+      "image": "assets/img/diagram-matrix.jpg"
+    },
+    "fit-protocol-nutrition.html": {
+      "description": "FIT PROTOCOL food and nutrition: the recorded meal structure, source tables and nutrition context.",
+      "image": "assets/img/mega-salad-kale-tuna.jpg"
+    },
+    "fit-protocol-supplements.html": {
+      "description": "FIT PROTOCOL pills and accounting: the documented supplement records and source analysis.",
+      "image": "assets/media/october-2026/pill-organizer-february-2026.jpg"
+    },
+    "fit-protocol-interactions.html": {
+      "description": "FIT PROTOCOL interactions: the recorded stack relationships and source analysis for the personal system.",
+      "image": "assets/media/october-2026/pill-organizer-may-2026.jpg"
+    },
+    "fit-protocol-margins.html": {
+      "description": "FIT PROTOCOL safety margins: the published source analysis and monitoring references.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "fit-protocol-training.html": {
+      "description": "FIT PROTOCOL training mechanics: supported loading, recorded exercise constraints and the source training framework.",
+      "image": "assets/media/october-2026/bogdan-gym-session.jpg"
+    },
+    "fit-protocol-progression.html": {
+      "description": "FIT PROTOCOL progression: the documented training roadmap and recorded loading context.",
+      "image": "assets/img/resistance-band-001.jpg"
+    },
+    "fit-protocol-joints.html": {
+      "description": "FIT PROTOCOL joints and recovery: recorded movement constraints and recovery source notes.",
+      "image": "assets/img/warmups-stretch-001.jpg"
+    },
+    "fit-protocol-monitoring.html": {
+      "description": "FIT PROTOCOL metabolic context: the first Monitoring page, with recorded measurements and source analysis.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "fit-protocol-labs.html": {
+      "description": "FIT PROTOCOL lab monitoring: laboratory interpretation context, supplement disclosure and source notes.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "fit-protocol-troubleshooting.html": {
+      "description": "FIT PROTOCOL troubleshooting: recorded problems, source checks and monitoring references.",
+      "image": "assets/img/v2/checklist-cover.png"
+    },
+    "library.html": {
+      "description": "PROJECT 100 published downloads: dated Guidebook, Simplified Structure, visual walkthrough, checklist and current vector diagrams.",
+      "image": "assets/img/v2/guidebook-cover.png"
+    },
+    "fit-protocol-vector-v1.html": {
+      "description": "V1 IGNITION: Morning training only (State A). Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v1.jpg"
+    },
+    "fit-protocol-vector-v2.html": {
+      "description": "V2 REFUEL: During the training session (States A and C). Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v2.jpg"
+    },
+    "fit-protocol-vector-v3.html": {
+      "description": "V3 RECOVERY: Daily anchor; optional when consumed on rest days. Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v3.jpg"
+    },
+    "fit-protocol-vector-v4.html": {
+      "description": "V4 RELOAD: After the workout (States A and C); R-ALA remains separate. Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v4.jpg"
+    },
+    "fit-protocol-vector-v5.html": {
+      "description": "V5 TRANSPORT: Rest days only (State B). Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v5.jpg"
+    },
+    "fit-protocol-vector-v6.html": {
+      "description": "V6 PUMP: Evening training only (State C); replaces V1. Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-pump.jpg"
+    },
+    "fit-protocol-vector-v10.html": {
+      "description": "V10 SHUTDOWN: Night anchor across all three states. Read the recorded ingredients, protocol and persona-free diagram downloads.",
+      "image": "assets/media/october-2026/vector-v10.jpg"
+    }
+  }
+}

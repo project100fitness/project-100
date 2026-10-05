@@ -27,3 +27,13 @@ assert 'location.replace' in alias and 'location.search' in alias and '#vector-v
 for ext in ['png','svg']:
  assert (ROOT/f'assets/downloads/vector-diagrams/project100-pump-ingredients.{ext}').read_bytes()==(ROOT/f'assets/downloads/vector-diagrams/project100-v6-ingredients.{ext}').read_bytes()
 print('PASS: seven numbered vectors; retained ingredient quantities; V6 formulation, exclusions, diagrams and legacy aliases.')
+# The directory must agree with the dedicated records and branch deployment labels.
+hub=BeautifulSoup((ROOT/'fit-protocol-vectors.html').read_text(),'html.parser')
+assert len(hub.select('.liquid-cabinet > details'))==len(data['vectors'])
+for v in data['vectors']:
+ f=hub.select_one('#vector-'+v['id']);assert f is not None
+ assert f.select_one('.stack-label').get_text(' ',strip=True)==v['name']
+ assert f.select_one('.stack-hint').get_text(' ',strip=True)==v['deployment']
+ assert [n.get_text(' ',strip=True) for n in f.select('.folder-ingredients li')]==v['ingredients']
+ assert f.select_one('.stack-source')['href']==f'fit-protocol-vector-{v["id"]}.html'
+print('PASS: directory names, deployment states, ingredients and detail links match all seven registered vectors.')
