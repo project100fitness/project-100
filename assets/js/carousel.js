@@ -54,6 +54,7 @@
     row.tabIndex=0; row.setAttribute('role','region');
     row.setAttribute('aria-label',label+'; use left and right arrows to explore');
     [prevBtn,nextBtn].forEach(function(button){button.disabled=count<2;button.tabIndex=count<2?-1:0;button.setAttribute('aria-hidden',String(count<2))});
+    wrap.classList.toggle('single-card',count===1);
     if(count<2){prevBtn.classList.add('hidden');nextBtn.classList.add('hidden');return;}
     wrap.style.width='100%';wrap.style.minWidth='0';wrap.style.marginInline='auto';
     var start=0,period=0,timer;
