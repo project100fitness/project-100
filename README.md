@@ -2,15 +2,15 @@
 
 Static website at https://project100.fit, published by GitHub Pages from `main`.
 
-The repaired Fixonic design, top menus and PROJECT_100 / FIT PROTOCOL switch are retained. Encyclopedia access floats at the lower right, outside the navigation. Existing media URLs, the main four-page navigation loop and Fit Protocol's independent five-page loop remain intact.
+The repaired Fixonic design and enclosed layout are retained. A compact lower-right link switches PROJECT_100 / FIT PROTOCOL; the top space belongs to folder navigation. The main four-page loop and Protocol's 27-file loop both wrap continuously.
 
 - PROJECT_100: Home, Workout, Nutrition, Gear.
-- FIT PROTOCOL: Start Here files, Baseline, Timing & Fuel, Training, Troubleshooting, Daily Guidebook, downloads.
-- Encyclopedia: `fit-protocol-archive.html`, the full 26-page V2.0 reading master, with stable chapter/Part anchors, search, local reading progress and chapter print/PDF controls.
-- Daily Guidebook: `guidebook.html`, training/rest clock, recorded vector recipes and all 13 pages of Guidebook source text.
+- FIT PROTOCOL: ten topic folders, focused related files and seven individual vector pages.
+- Encyclopedia: complete reader and its public links suspended; old reader URLs redirect into the focused Protocol files.
+- Daily Guidebook: `guidebook.html`, a compact training/rest execution page; analysis notes now live in related topic files.
 - Books: `library.html`, dated source PDFs, editable Marketing Slider and the exact one-page Annex II checklist.
 
-The dedicated appliance content stays removed. Old Encyclopedia URLs redirect to the current reader while preserving queries and remapping historical chapter hashes. Keep `CNAME` and `.nojekyll`.
+The dedicated appliance content stays removed. Old Encyclopedia chapter hashes redirect to their focused pages. Keep `CNAME` and `.nojekyll`.
 
 ## Rebuild and verify
 
@@ -18,9 +18,9 @@ Install optional build dependencies with `python -m pip install -r scripts/requi
 
 Run `python scripts/audit_site.py`, `node --check assets/js/v2.js`, and `git diff --check`.
 
-Browser scripts require Playwright and Chromium. Set `CHROMIUM_EXECUTABLE_PATH` to the browser executable and optional `CHROMIUM_ARGS_JSON` to its launch arguments, then run `node scripts/check_responsive.cjs` and `node scripts/check_interactions.cjs`. They serve local files through request interception, block third-party traffic, and write results/screenshots to `/tmp/project100-v2-qa` (or `QA_OUTPUT_DIR`). No local server is needed.
+Browser scripts require Playwright and Chromium. Set `CHROMIUM_EXECUTABLE_PATH` to the browser executable and optional `CHROMIUM_ARGS_JSON` to its launch arguments, then run `node scripts/check_responsive.cjs` and `node scripts/check_focused_protocol.cjs`. They serve local files through request interception and block third-party traffic. No local server is needed.
 
-Targeted regression checks: `node scripts/check_carousel_refresh.cjs` verifies filtered infinite rows and keyboard playback; `node scripts/check_reader_state.cjs` verifies shared themes and independent reading progress.
+Targeted regression checks: `node scripts/check_carousel_refresh.cjs` verifies filtered infinite rows and keyboard playback; `python scripts/check_focused_content.py` checks source preservation. Historical reader-only tests apply to the suspended reader.
 
 See `RELEASE_AUDIT.md` for the Astra-assisted review and remaining priorities.
 
@@ -30,4 +30,4 @@ See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, d
 
 See `NAVIGATION_RELEASE.md` for the shared folder shell, floating Encyclopedia access and the unresolved Bitdefender alert.
 
-The Encyclopedia has an independent paper/teal/copper reading design and a return to PROJECT_100 action. See `ENCYCLOPEDIA_DESIGN.md`; the source builder reapplies this reader overlay last.
+See `FOCUSED_NAVIGATION.md` for the current page split and site switch. The historical Encyclopedia design remains in its build overlay for a future return; the focused-files overlay runs last.

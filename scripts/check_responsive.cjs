@@ -2,14 +2,14 @@ const fs=require('fs');const path=require('path');const repoRoot=path.resolve(__
 (async()=>{
  const browserArgs=JSON.parse(process.env.CHROMIUM_ARGS_JSON||'["--no-sandbox"]');
 
- const defaultPages=['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html','fit-protocol.html','fit-protocol-baseline.html','fit-protocol-fuel.html','fit-protocol-training.html','fit-protocol-troubleshooting.html','fit-protocol-archive.html','guidebook.html','library.html'];
+ const defaultPages=['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html',...JSON.parse(fs.readFileSync(path.join(repoRoot,'assets/js/protocol-files.json'),'utf8')).files.map(x=>x.file)];
  const pages=process.env.TEST_PAGES?process.env.TEST_PAGES.split(','):defaultPages;
  const results=[];fs.mkdirSync(qaRoot,{recursive:true});
  for(const width of (process.env.TEST_WIDTHS?process.env.TEST_WIDTHS.split(',').map(Number):[320,390,768,1280])) {
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE_PATH,args:browserArgs,headless:true});
  const context=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'});
  // Keep tests deterministic when third-party fonts/social embeds are unreachable.
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='127.0.0.1')return route.abort();const f=repoRoot+decodeURIComponent(u.pathname);const ext=f.split('.').pop();const types={html:'text/html',css:'text/css',js:'application/javascript',jpg:'image/jpeg',png:'image/png',mp4:'video/mp4'};if(!fs.existsSync(f))return route.fulfill({status:404,body:'Missing'});return route.fulfill({status:200,contentType:types[ext]||'application/octet-stream',body:fs.readFileSync(f)});});
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.hostname!=='127.0.0.1')return route.abort();const f=repoRoot+decodeURIComponent(u.pathname);const ext=f.split('.').pop();const types={html:'text/html',css:'text/css',js:'application/javascript',svg:'image/svg+xml',jpg:'image/jpeg',png:'image/png',mp4:'video/mp4'};if(!fs.existsSync(f))return route.fulfill({status:404,body:'Missing'});return route.fulfill({status:200,contentType:types[ext]||'application/octet-stream',body:fs.readFileSync(f)});});
  for(const file of pages){
   console.log('Checking',width,file);const p=await context.newPage();p.setDefaultTimeout(4000);const errors=[],missing=[];p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400&&r.url().includes('127.0.0.1'))missing.push(r.url())});
   await p.goto('http://127.0.0.1:8765/'+file,{waitUntil:'networkidle'});
