@@ -5,6 +5,12 @@ ROOT=Path(__file__).resolve().parents[1]
 for path in ROOT.glob('*.html'):
  doc=BeautifulSoup(path.read_text(),'html.parser');shell=doc.select_one('.page-shell')
  if not shell:continue
+ # Category entry starts at the first related page; explicit lab links stay intact.
+ for link in doc.select('.site-head > .page-tabs:not(.focused-subtabs) a,#siteDrawer a,.focused-cabinet > a,.page-nav-arrow'):
+  if link.get('href')!='fit-protocol-labs.html':continue
+  text=link.get_text(' ',strip=True)
+  if text=='Monitoring' or ' Monitoring Open file' in text or link.get('aria-label','').endswith('page: Monitoring'):
+   link['href']='fit-protocol-monitoring.html'
  related=doc.select_one('.site-head .focused-subtabs')
  if related:
   layout=doc.new_tag('div',attrs={'class':'folder-page-layout'})

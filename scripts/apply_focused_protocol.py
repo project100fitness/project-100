@@ -74,7 +74,7 @@ GROUPS = [
  ('overview','Overview','fit-protocol.html'), ('baseline','Baseline','fit-protocol-baseline.html'),
  ('daily','Daily','guidebook.html'), ('vectors','Vectors','fit-protocol-vectors.html'),
  ('nutrition','Nutrition','fit-protocol-nutrition.html'), ('supplements','Supplements','fit-protocol-supplements.html'),
- ('training','Training','fit-protocol-training.html'), ('monitoring','Monitoring','fit-protocol-labs.html'),
+ ('training','Training','fit-protocol-training.html'), ('monitoring','Monitoring','fit-protocol-monitoring.html'),
  ('troubleshooting','Fixes','fit-protocol-troubleshooting.html'), ('downloads','Downloads','library.html'),
 ]
 routes = {id: f'{name}#{id}' for name, _, _, ids, _ in FILES for id in ids}
