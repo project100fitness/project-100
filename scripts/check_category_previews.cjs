@@ -20,7 +20,7 @@ const root=path.resolve(__dirname,'..'),{chromium}=require(process.env.CODEX_PRI
  }
  }
  await go('fit-protocol-labs.html');assert.equal(await p.locator('.page-identity-image').count(),0,'No unrelated lab image');
- await go('fit-protocol-supplements.html');assert.equal(await p.locator('.page-identity-image').getAttribute('src'),'assets/img/supplements-stack-2026.jpg');
+ await go('fit-protocol-supplements.html');assert.equal(await p.locator('.page-identity-image').getAttribute('src'),'assets/media/october-2026/pill-organizer-february-2026.jpg');
  assert.equal(await p.locator('.page-identity-image').evaluate(n=>getComputedStyle(n).position),'absolute','Art consumes no layout space');
  assert.deepEqual(errors,[]);console.log('PASS: loaded category previews and enclosed fixed controls on five directories at five viewport sizes.');await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
