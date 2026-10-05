@@ -47,12 +47,15 @@ for p, doc in docs.items():
             if not any('site-switch-float' in a.get('class','') and a.get('href') == target for _,a in doc.tags):issues.append(f'{name}: no floating site switch')
             if any('site-destinations' in a.get('class','') for _,a in doc.tags):issues.append(f'{name}: obsolete header site switch')
             if any(t=='a' and 'encyclopedia' in a.get('href','').lower() or t=='a' and 'fit-protocol-archive.html' in a.get('href','') for t,a in doc.tags):issues.append(f'{name}: retired reader access remains')
-for ring in [main, protocol]:
-    for i, name in enumerate(ring):
-        for cls, delta in [('prev',-1),('next',1)]:
-            links=[a.get('href') for t,a in docs[ROOT/name].tags if t=='a' and {'page-nav-arrow',cls} <= set(a.get('class','').split())]
-            expected=ring[(i+delta)%len(ring)]
-            if links != [expected]: issues.append(f'{name}: {cls} must link once to {expected}, found {links}')
+from bs4 import BeautifulSoup
+for name in main+protocol:
+    doc=BeautifulSoup((ROOT/name).read_text(),'html.parser')
+    tabs=doc.select('.site-head > .page-tabs:not(.focused-subtabs) .wrap a')
+    current=next((i for i,t in enumerate(tabs) if 'current' in t.get('class',[])),0)
+    for cls,delta in [('prev',-1),('next',1)]:
+        expected=tabs[(current+delta)%len(tabs)]['href'].split('#')[0]
+        links=[a['href'] for a in doc.select('.page-nav-arrow.'+cls)]
+        if links != [expected]:issues.append(f'{name}: {cls} must change to page {expected}, found {links}')
 # Scan local asset paths in dynamically generated markup and styles too.
 for p in [*ROOT.glob('*.html'), *ROOT.glob('assets/js/*.js'), *ROOT.glob('assets/css/*.css')]:
     for value in set(re.findall(r"assets/(?:img|video|css|js|partials)/[\w.\-/]+", p.read_text())):
