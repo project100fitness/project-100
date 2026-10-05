@@ -19,6 +19,11 @@ for file,ids in [('index.html',['story','mission','roadmap','faq']),('fit-nutrit
 before=old('gear-shop.html')
 for key,group in zip(['resistance','grips','anchors','recovery'],before.select('.armory-groups .armory-group')):
     a=group.select_one('.armory-list');b=sections['gear-shop.html:armory-'+key].select_one('.armory-list')
+    assert Counter(e.get('src') for e in a.select('img'))==Counter(e.get('src') for e in b.select('img')),key
+    if key=='resistance':
+        # The author corrected only KUZARO to a four-kit inventory on 2026-10-05.
+        for listing in [a,b]:
+            next(c for c in listing.select('.armory-item') if 'KUZARO' in c.get_text()).decompose()
     assert Counter(a.get_text().split())==Counter(b.get_text().split()),key
     assert Counter(e.get('src') for e in a.select('img'))==Counter(e.get('src') for e in b.select('img')),key
-print(f'PASS: {count} moved sections and all four equipment groups retain their text and images.')
+print(f'PASS: {count} moved sections and all equipment images retained; unchanged equipment text preserved outside the authorized KUZARO correction.')
