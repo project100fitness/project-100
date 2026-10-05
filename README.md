@@ -2,9 +2,9 @@
 
 Static website at https://project100.fit, published by GitHub Pages from `main`.
 
-The repaired Fixonic design and enclosed layout are retained. A compact lower-right link switches PROJECT_100 / FIT PROTOCOL; the top space belongs to folder navigation. The main four-page loop and Protocol's 27-file loop both wrap continuously.
+The repaired Fixonic design and enclosed layout are retained. A compact lower-right link switches PROJECT_100 / FIT PROTOCOL; the top space belongs to folder navigation. The main 16-file loop and Protocol's 27-file loop both wrap continuously.
 
-- PROJECT_100: Home, Workout, Nutrition, Gear.
+- PROJECT_100: compact Home, Nutrition and Gear directories, focused story/goals/meal/equipment files, and the filtered Workout log.
 - FIT PROTOCOL: ten topic folders, focused related files and seven individual vector pages.
 - Encyclopedia: complete reader and its public links suspended; old reader URLs redirect into the focused Protocol files.
 - Daily Guidebook: `guidebook.html`, a compact training/rest execution page; analysis notes now live in related topic files.
@@ -20,7 +20,7 @@ Run `python scripts/audit_site.py`, `node --check assets/js/v2.js`, and `git dif
 
 Browser scripts require Playwright and Chromium. Set `CHROMIUM_EXECUTABLE_PATH` to the browser executable and optional `CHROMIUM_ARGS_JSON` to its launch arguments, then run `node scripts/check_responsive.cjs` and `node scripts/check_focused_protocol.cjs`. They serve local files through request interception and block third-party traffic. No local server is needed.
 
-Targeted regression checks: `node scripts/check_carousel_refresh.cjs` verifies filtered infinite rows and keyboard playback; `python scripts/check_focused_content.py` checks source preservation. Historical reader-only tests apply to the suspended reader.
+Targeted regression checks: `node scripts/check_carousel_refresh.cjs` verifies filtered infinite rows and keyboard playback; `python scripts/check_focused_content.py` and `python scripts/check_focused_main_content.py` check source preservation; `node scripts/check_focused_main.cjs` checks the main-site file navigation and migrated bookmarks. Historical reader-only tests apply to the suspended reader.
 
 See `RELEASE_AUDIT.md` for the Astra-assisted review and remaining priorities.
 
@@ -30,4 +30,4 @@ See `MEDIA_ASSETS.md` for the October archive catalog, curated photo mappings, d
 
 See `NAVIGATION_RELEASE.md` for the shared folder shell, floating Encyclopedia access and the unresolved Bitdefender alert.
 
-See `FOCUSED_NAVIGATION.md` for the current page split and site switch. The historical Encyclopedia design remains in its build overlay for a future return; the focused-files overlay runs last.
+See `FOCUSED_NAVIGATION.md` and `MAIN_FOCUSED_NAVIGATION.md` for the current page splits and site switch. The historical Encyclopedia design remains in its build overlay for a future return; the two focused-files overlays run last.

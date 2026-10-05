@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "file": "index.html",
+      "label": "Home",
+      "group": "home"
+    },
+    {
+      "file": "project-story.html",
+      "label": "The story",
+      "group": "home"
+    },
+    {
+      "file": "project-goals.html",
+      "label": "Goals & roadmap",
+      "group": "home"
+    },
+    {
+      "file": "fit-workout.html",
+      "label": "Training log",
+      "group": "workout"
+    },
+    {
+      "file": "fit-nutrition.html",
+      "label": "Nutrition folders",
+      "group": "nutrition"
+    },
+    {
+      "file": "fit-meals.html",
+      "label": "Meals & recipes",
+      "group": "nutrition"
+    },
+    {
+      "file": "fit-nutrition-notes.html",
+      "label": "Nutrition notes",
+      "group": "nutrition"
+    },
+    {
+      "file": "gear-shop.html",
+      "label": "Gear folders",
+      "group": "gear"
+    },
+    {
+      "file": "gear-gym.html",
+      "label": "Gym walkthroughs",
+      "group": "gear"
+    },
+    {
+      "file": "gear-photos.html",
+      "label": "Gym photo journal",
+      "group": "gear"
+    },
+    {
+      "file": "gear-rig.html",
+      "label": "The rig",
+      "group": "gear"
+    },
+    {
+      "file": "gear-resistance.html",
+      "label": "Resistance bands",
+      "group": "gear"
+    },
+    {
+      "file": "gear-grips.html",
+      "label": "Grips & handles",
+      "group": "gear"
+    },
+    {
+      "file": "gear-anchors.html",
+      "label": "Straps & anchors",
+      "group": "gear"
+    },
+    {
+      "file": "gear-recovery.html",
+      "label": "Recovery tools",
+      "group": "gear"
+    },
+    {
+      "file": "gear-safety.html",
+      "label": "Hardware safety",
+      "group": "gear"
+    }
+  ],
+  "routes": {
+    "index.html:story": "project-story.html#story",
+    "index.html:mission": "project-goals.html#mission",
+    "index.html:roadmap": "project-goals.html#roadmap",
+    "fit-nutrition.html:reels": "fit-meals.html#reels",
+    "fit-nutrition.html:clinical-nutrition": "fit-nutrition-notes.html#clinical-nutrition",
+    "gear-shop.html:gym-tour": "gear-gym.html#gym-tour",
+    "gear-shop.html:reels": "gear-photos.html#reels",
+    "gear-shop.html:rig": "gear-rig.html#rig",
+    "gear-shop.html:armory-resistance": "gear-resistance.html#armory-resistance",
+    "gear-shop.html:armory-grips": "gear-grips.html#armory-grips",
+    "gear-shop.html:armory-anchors": "gear-anchors.html#armory-anchors",
+    "gear-shop.html:armory-recovery": "gear-recovery.html#armory-recovery",
+    "gear-shop.html:safety": "gear-safety.html#safety",
+    "gear-shop.html:gear-source": "gear-safety.html#gear-source",
+    "index.html:explore": "index.html#explore",
+    "gear-shop.html:armory": "gear-shop.html#gear-files",
+    "gear-shop.html:guide": "library.html",
+    "fit-nutrition.html:vectors": "fit-protocol-vectors.html"
+  }
+}
