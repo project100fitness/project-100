@@ -1,7 +1,7 @@
 {
   "pages": {
     "index.html": {
-      "description": "PROJECT 100: Bogdan’s documented training, nutrition and equipment journey toward the 100 lb skeletal muscle mass goal.",
+      "description": "PROJECT 100: Bogdan\u2019s documented training, nutrition and equipment journey toward the 100 lb skeletal muscle mass goal.",
       "image": "assets/media/october-2026/bogdan-gym-session.jpg"
     },
     "project-story.html": {
@@ -146,35 +146,35 @@
     },
     "fit-protocol-vector-v1.html": {
       "description": "V1 IGNITION: Morning training only (State A). Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v1.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v1.png"
     },
     "fit-protocol-vector-v2.html": {
       "description": "V2 REFUEL: During the training session (States A and C). Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v2.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v2.png"
     },
     "fit-protocol-vector-v3.html": {
       "description": "V3 RECOVERY: Daily anchor; optional when consumed on rest days. Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v3.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v3.png"
     },
     "fit-protocol-vector-v4.html": {
       "description": "V4 RELOAD: After the workout (States A and C); R-ALA remains separate. Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v4.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v4.png"
     },
     "fit-protocol-vector-v5.html": {
       "description": "V5 TRANSPORT: Rest days only (State B). Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v5.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v5.png"
     },
     "fit-protocol-vector-v6.html": {
       "description": "V6 PUMP: Evening training only (State C); replaces V1. Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-pump.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v6.png"
     },
     "fit-protocol-vector-v10.html": {
       "description": "V10 SHUTDOWN: Night anchor across all three states. Read the recorded ingredients, protocol and persona-free diagram downloads.",
-      "image": "assets/media/october-2026/vector-v10.jpg"
+      "image": "assets/media/vector-artwork/ingredients/v10.png"
     },
     "liquid-intake.html": {
       "description": "A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads.",
-      "image": "assets/media/october-2026/ingredient-cards/v4-white.png"
+      "image": "assets/media/vector-artwork/portraits/v4.png"
     }
   }
 }
