@@ -37,7 +37,68 @@
         "kg": 38.5,
         "color": "Solid black"
       }
-    ]
+    ],
+    "bundles": [
+      {
+        "name": "Juggernaut",
+        "lb": 255,
+        "band_count": 3,
+        "band_lb": 85,
+        "color": "Solid black",
+        "focus": "Chest",
+        "use": "Chest presses, standing presses and horizontal pushing."
+      },
+      {
+        "name": "Titan",
+        "lb": 195,
+        "band_count": 3,
+        "band_lb": 65,
+        "color": "Dark gray",
+        "focus": "Back",
+        "use": "Rows, lat pull-downs and posterior-chain work."
+      },
+      {
+        "name": "Enforcer",
+        "lb": 165,
+        "band_count": 3,
+        "band_lb": 55,
+        "color": "Medium gray",
+        "focus": "Triceps",
+        "use": "Overhand/underhand extensions, press-downs and lockout work."
+      },
+      {
+        "name": "Viper",
+        "lb": 135,
+        "band_count": 3,
+        "band_lb": 45,
+        "color": "Medium-light gray",
+        "focus": "Reserve / drop sets",
+        "use": "Shoulder raises, drop sets and finisher work."
+      },
+      {
+        "name": "Scalpel",
+        "lb": 105,
+        "band_count": 3,
+        "band_lb": 35,
+        "color": "Light gray",
+        "focus": "Delts / isolation",
+        "use": "Deltoid flys, precise isolation and warm-up sets."
+      },
+      {
+        "name": "Twin Cobras",
+        "lb": 75,
+        "band_count": 2,
+        "band_lb": 75,
+        "color": "Very dark gray / soft black",
+        "focus": "Biceps / unilateral",
+        "per_hand": true,
+        "use": "Two separate bands for unilateral curls, one band per hand with individual factory clips."
+      }
+    ],
+    "bundle_modifiers": {
+      "tape": "Black Renfrew cloth tape at the joint loops, replacing rigid plastic ties.",
+      "connection": "Eight JRSGS carabiners in the documented bundle setup. Twin Cobras use individual factory clips."
+    }
   },
   "records": [
     {
@@ -192,5 +253,11 @@
       "description": "Outer: 18 \u00d7 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 \u00d7 3.9 in neon-orange roller with linear ridges. Core: 18 \u00d7 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.",
       "page": 3
     }
-  ]
+  ],
+  "bundle_source": {
+    "name": "PROJECT 100 __ THE HEX-GRID BUNDLE DIRECTORY (1).pdf",
+    "sha256": "3d435e4016cb21b021f4b67391b55480fe2f4486f78527eeb4a25a468d83b69c",
+    "pages": 2,
+    "historical_deployed_kit_count": 3
+  }
 }

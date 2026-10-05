@@ -28,11 +28,21 @@ for record in data['records']:
  p=BeautifulSoup('<p class="gear-record-detail"></p>','html.parser').p;p.string=record['description'];c.append(p)
  if id=='kuzaro':
   c['id']='kuzaro-multi-kit'
-  text.select_one('.ai-spec').string='4 KITS · 35 / 45 / 55 / 65 / 75 / 85 LB'
-  box=BeautifulSoup('<div class="kuzaro-setup"><h4>Pure Triad · six tube grades</h4><ul class="gear-grade-list"></ul><p>Listed set total: 360 lb. Four owned kits form the wider multi-band collection. Kit names and kit-specific ratings are separate from these six tube grades; resistance changes with stretch.</p></div>','html.parser').div
+  text.select_one('.ai-spec').string='6 BUNDLES · 4 KITS'
+  p.string='Six named matched-band configurations form the KUZARO setup. Bundle ratings describe the selected tubes; resistance changes with stretch.'
+  box=BeautifulSoup('<div class="kuzaro-setup"><h4>Hex-Grid bundle directory</h4><div class="kuzaro-bundles"></div><details class="kuzaro-grade-reference"><summary>Individual tube grades · 360 lb listed set</summary><ul class="gear-grade-list"></ul></details><details class="kuzaro-grade-reference"><summary>Bundle connections &amp; protective tape</summary><p class="bundle-connections"></p></details></div>','html.parser').div
+  for b in data['kuzaro']['bundles']:
+   detail=BeautifulSoup('<details class="kuzaro-bundle"><summary><span class="bundle-name"></span><span class="bundle-force"></span></summary><p><strong class="bundle-composition"></strong><span class="bundle-color"></span></p><p class="bundle-use"></p></details>','html.parser').details
+   detail.select_one('.bundle-name').string=b['name']
+   detail.select_one('.bundle-force').string=f"{b['lb']} lb"+(' / hand' if b.get('per_hand') else '')
+   detail.select_one('.bundle-composition').string=f"{b['band_count']} × {b['band_lb']} lb"+(' · separate bands' if b.get('per_hand') else ' · matched bundle')
+   detail.select_one('.bundle-color').string=' · '+b['color']
+   detail.select_one('.bundle-use').string=b['focus']+' · '+b['use']
+   box.select_one('.kuzaro-bundles').append(detail)
   for g in data['kuzaro']['grades']:
    li=BeautifulSoup('<li><strong></strong><span></span></li>','html.parser').li
    li.strong.string=f"{g['lb']} lb · {g['kg']:.1f} kg";li.span.string=g['color'];box.ul.append(li)
+  box.select_one('.bundle-connections').string=data['kuzaro']['bundle_modifiers']['tape']+' '+data['kuzaro']['bundle_modifiers']['connection']
   c.append(box)
  c['data-gear-page']=str(record['page']);cards[id]=c
 layouts={
