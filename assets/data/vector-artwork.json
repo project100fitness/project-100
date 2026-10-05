@@ -1,0 +1,100 @@
+{
+  "v1": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v1.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "b9af9e75e12b1f9321b5d45d21139737810fd2c9af8e0a69eb688d55a8ee8814"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v1.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "ca283fcd0c219d11941936f7ad17e46b7e381587a5f72b7a53c52721c2a67dbf"
+    }
+  },
+  "v2": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v2.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "b9630a6d87b08dbe9f18be476c1254c380c0b70343a92ed1b0f5cb9eccb1c07d"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v2.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "dfecd4e6a5dc09f5f64bad9cfb34b7f73b0a02f8e525cec40e0e0d54031084a5"
+    }
+  },
+  "v3": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v3.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "c9010cf790df8a44ef72d6af175f06f3983f7ad1fc41ba8b1d61d17037d07dc0"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v3.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "ad93527d0efcb68dfd59275349826b93f3a6e6a41a52cf4e01ddd47ec76f51a1"
+    }
+  },
+  "v4": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v4.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "871f194f63ccc481f5e715946310b2daebbe14b30a3e337cd98be0c541d753f9"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v4.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "0f0dbfb39f6ba016e48c2f28518587a10370ab21bfc47e76b10900a52e719d01"
+    }
+  },
+  "v5": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v5.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "42f5028f2e29146fe40d791cb333d15c2f854df9bf32d239c8f5810a62cb5ef0"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v5.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "ae168e1dacb1a378dc3e440262425de8428def80f8a8791707b5d6c9639ff876"
+    }
+  },
+  "v6": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v6.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "34c00a39f807c039a7f300100fef436e04414042b0c238f47dfb0522ea42c980"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v6.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "6cb6c844dbd2161706d2c46c6603efd255d6173d018f61def825dc8bea775b86"
+    }
+  },
+  "v10": {
+    "portraits": {
+      "src": "assets/media/vector-artwork/portraits/v10.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "c1e4f7cab7e933ecfdb880184eb4f9eef03bf4e5963d449ff3f3903820dca5c5"
+    },
+    "ingredients": {
+      "src": "assets/media/vector-artwork/ingredients/v10.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "0c9c5848978415f9b41947a2ae574a202fe6c9b15c0bc7a15b49ae7b601a91ab"
+    }
+  }
+}
