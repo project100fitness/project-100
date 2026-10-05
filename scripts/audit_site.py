@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import re
 import sys
+import json
 ROOT = Path(__file__).resolve().parents[1]
 class Document(HTMLParser):
     def __init__(self, text):
@@ -14,7 +15,7 @@ class Document(HTMLParser):
 docs = {p: Document(p.read_text()) for p in ROOT.rglob('*.html')}
 issues = []
 main = ['index.html','fit-workout.html','fit-nutrition.html','gear-shop.html']
-protocol = ['fit-protocol.html','fit-protocol-baseline.html','fit-protocol-fuel.html','fit-protocol-training.html','fit-protocol-troubleshooting.html']
+protocol = [x['file'] for x in json.loads((ROOT/'assets/js/protocol-files.json').read_text())['files']]
 for p, doc in docs.items():
     name = str(p.relative_to(ROOT)); text = p.read_text()
     for tag, attrs in doc.tags:
@@ -39,12 +40,11 @@ for p, doc in docs.items():
             if sum(t==wrapper for t,a in doc.tags) != 1: issues.append(f'{name}: invalid {wrapper} wrapper count')
         if name in main+protocol+['fit-protocol-archive.html','guidebook.html','library.html','404.html']:
             if sum(t=='h1' for t,a in doc.tags) != 1: issues.append(f'{name}: needs exactly one h1')
-        if name == 'fit-protocol-archive.html':
-            if not any('return-project' in a.get('class','') and a.get('href') == 'index.html' for _,a in doc.tags):issues.append(f'{name}: no return to PROJECT_100')
-            if any('site-destinations' in a.get('class','') or 'page-tabs' in a.get('class','') or 'encyclopedia-float' in a.get('class','') for _,a in doc.tags):issues.append(f'{name}: unrelated shared navigation remains')
-        elif name in main+protocol+['guidebook.html','library.html']:
-            if not any('guidebook-access' in a.get('class','') and a.get('href') == 'fit-protocol-archive.html' for _,a in doc.tags):
-                issues.append(f'{name}: no guidebook bar')
+        if name in main+protocol:
+            target='index.html' if name in protocol else 'fit-protocol.html'
+            if not any('site-switch-float' in a.get('class','') and a.get('href') == target for _,a in doc.tags):issues.append(f'{name}: no floating site switch')
+            if any('site-destinations' in a.get('class','') for _,a in doc.tags):issues.append(f'{name}: obsolete header site switch')
+            if any(t=='a' and 'encyclopedia' in a.get('href','').lower() or t=='a' and 'fit-protocol-archive.html' in a.get('href','') for t,a in doc.tags):issues.append(f'{name}: retired reader access remains')
 for ring in [main, protocol]:
     for i, name in enumerate(ring):
         for cls, delta in [('prev',-1),('next',1)]:
