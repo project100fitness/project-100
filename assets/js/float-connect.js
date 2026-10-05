@@ -63,7 +63,8 @@
   }
 
   function init(){
-    if(document.getElementById('fcTrigger')) return; // already mounted
+    var existing=document.getElementById('fcTrigger');
+    if(existing){var root=existing.closest('.fc-root');if(root&&!root.dataset.wired){root.dataset.wired='1';wire(root)}return;}
     fetchPartial().then(function(html){
       var host = document.createElement('div');
       host.className = 'fc-root';
@@ -77,4 +78,5 @@
   }
 
   window.ProjectFloatConnect = { init: init };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

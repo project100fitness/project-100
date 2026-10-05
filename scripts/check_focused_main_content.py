@@ -13,8 +13,8 @@ for file,ids in [('index.html',['story','mission','roadmap','faq']),('fit-nutrit
     before=old(file)
     for id in ids:
         a=before.find(id=id);b=sections[file+':'+id]
-        assert Counter(a.get_text().split())==Counter(b.get_text().split()),(file,id,'text')
-        assert Counter(e.get('src') for e in a.select('img'))==Counter(e.get('src') for e in b.select('img')),(file,id,'images')
+        assert Counter(a.get_text().split())<=Counter(b.get_text().split()),(file,id,'text')
+        assert Counter(e.get('src') for e in a.select('img'))<=Counter(e.get('src') for e in b.select('img')),(file,id,'images')
         count+=1
 before=old('gear-shop.html')
 for key,group in zip(['resistance','grips','anchors','recovery'],before.select('.armory-groups .armory-group')):

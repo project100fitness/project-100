@@ -109,6 +109,7 @@ for name, label, group, ids, nums in FILES:
         intro = deepcopy(main.select_one('.v2-intro'))
         main.clear();main.append(intro)
         intro.h1.clear();intro.h1.string = label
+        if not intro.p:intro.append(doc.new_tag('p'))
         intro.p.string = 'One focused file. Use the folder tabs to explore related records, or the side arrows to continue through FIT PROTOCOL.'
         for node in intro.select('.v2-actions'):node.decompose()
         if name == 'fit-protocol.html':
