@@ -50,6 +50,25 @@ images=next(ast.literal_eval(n.value) for n in module.body if isinstance(n,ast.A
 images['index.html']='assets/media/october-2026/bogdan-gym-session.jpg'
 images['guidebook.html']='assets/media/october-2026/pill-organizer-may-2026.jpg'
 for v in records:images[f'fit-protocol-vector-{v["id"]}.html']='assets/media/october-2026/vector-'+('pump' if v['id']=='v6' else v['id'])+'.jpg'
+metrics=json.loads((ROOT/'assets/data/current-metrics.json').read_text())
+p=metrics['profile'];n=metrics['historical_nutrition_plan'];a=metrics['protocol_accounting'];review=metrics['planned_review']
+metric_summaries={
+ 'fit-protocol-baseline.html':('Profile at a glance',[
+  f"Reported September–October 2026 weight: {p['weight_lb']:.1f} lb / {p['weight_kg']:.2f} kg. Height: {p['height_cm']} cm; reported age: {p['age_reported']}. The exact weight measurement date is not supplied.",
+  f"Historical baseline: {p['baseline_smm_lb']:.1f} lb estimated SMM and {p['baseline_body_fat_percent']:.1f}% body fat. The {p['current_body_fat_percent_estimated']:.1f}% current body-fat figure is an estimate, not a new verified scan. The 100 lb SMM / below 15% goal remains aspirational."]),
+ 'fit-protocol-nutrition.html':('Planning figures at a glance',[
+  f"Historical plan: {n['energy_kcal']:,} kcal · {n['protein_g']} g protein · {n['fat_g']} g fat. These are legacy planning figures; verified whole-day intake remains deferred.",
+  f"The database records {metrics['hydration_record']['liters']} L as a hydration reference, not a universal ceiling or a verified fluid prescription."]),
+ 'fit-protocol-supplements.html':('Recorded accounting at a glance',[
+  f"Creatine HCl: {a['creatine_hcl_mg']/1000:g} g total when both listed doses are consumed — V4 + V10 on training days, or V5 + V10 on rest days, each at 750 mg. Carnivor contributes zero added creatine in the recorded Canadian panel.",
+  'Boron: one 3 mg capsule. Zinc Supreme: removed. Separate copper: paused. Optional items remain optional.']),
+ 'fit-protocol-vectors.html':('Branch rules at a glance',[
+  'V1: morning training. V6: evening training. At most one per calendar day; both are inactive on rest days.',
+  'V4 uses BioSteel Recovery Protein Plus, one 36 g scoop / half-serving. V2 and V5 use RapiDrem electrolytes.']),
+ 'fit-protocol-monitoring.html':('Next measurement review',[
+  'Planned window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme under comparable conditions. This is a planned review, not a completed scan.',
+  'Keep the reported weight snapshot, historical SMM baseline and estimated body-fat figure separate when tracking progress.'])
+}
 # Source/checklist covers remain relevant for reference pages with no matched photo.
 for name in D:
  if not images.get(name):images[name]='assets/img/v2/checklist-cover.png'
@@ -82,6 +101,15 @@ for name,description in D.items():
    if i<len(parts)-1:
     a=s.new_tag('a',href='https://www.instagram.com/fudge_fit/',target='_blank',rel='noopener');a.string='@fudge_fit';node.insert_before(a)
   node.extract()
+ if name in metric_summaries:
+  old=s.select_one('#metrics-summary')
+  if old:old.decompose()
+  heading,paragraphs=metric_summaries[name]
+  note=s.new_tag('div',id='metrics-summary',attrs={'class':'v2-note'})
+  title=s.new_tag('strong');title.string=heading;note.append(title)
+  for text in paragraphs:
+   paragraph=s.new_tag('p');paragraph.string=text;note.append(paragraph)
+  s.select_one('.v2-intro').insert_after(note)
  if name=='project-goals.html':
   old=s.select_one('#reported-smm-history')
   if old:old.decompose()

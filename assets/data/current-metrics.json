@@ -1,0 +1,76 @@
+{
+  "version": "2.0-reconciled-2026-10-05",
+  "source": {
+    "name": "PROJECT100_CURRENT_DATABASE_V2_0.json",
+    "sha256": "93c7adef8a952db0218500a1ecdc059e8e3c8c83f5f9dd5e9b28f863817b115d",
+    "status": "Author-reported snapshot reconciled against published vector and gear registries; not independent measurement verification."
+  },
+  "profile": {
+    "age_reported": 46,
+    "height_cm": 170,
+    "weight_lb": 200.1,
+    "weight_kg": 90.76,
+    "weight_period": "September–October 2026; exact measurement date not supplied",
+    "baseline_smm_lb": 88.2,
+    "baseline_smm_scan_date_reported": "2025-12-14",
+    "baseline_lock_period": "February 2026",
+    "baseline_body_fat_percent": 22.9,
+    "current_body_fat_percent_estimated": 22.5,
+    "current_body_fat_status": "Estimate, not a new verified scan"
+  },
+  "goals": {
+    "smm_lb": 100,
+    "body_fat_percent": "<15",
+    "status": "Personal aspirations; SMM is BIA-estimated"
+  },
+  "historical_nutrition_plan": {
+    "energy_kcal": 2780,
+    "protein_g": 252,
+    "fat_g": 69,
+    "status": "Legacy planning values; whole-day intake verification deferred"
+  },
+  "hydration_record": {
+    "liters": 4,
+    "status": "Reported database reference, not a universal ceiling or a verified fluid prescription"
+  },
+  "protocol_accounting": {
+    "creatine_hcl_mg": 1500,
+    "status": "Recorded total when both listed doses are consumed",
+    "training_route": [
+      "V4: 750 mg",
+      "V10: 750 mg"
+    ],
+    "rest_route": [
+      "V5: 750 mg",
+      "V10: 750 mg"
+    ],
+    "carnivor_added_creatine_g": 0,
+    "boron_mg_per_capsule": 3,
+    "boron_capsules": 1,
+    "zinc_supreme": "removed",
+    "separate_copper": "paused",
+    "v4_product": "BioSteel Recovery Protein Plus",
+    "v4_serving_g": 36,
+    "v4_serving": "1 scoop / half-serving",
+    "v2_v5_electrolyte": "RapiDrem Electrolyte Powder",
+    "v1_v6_rule": "At most one per calendar day; both inactive on rest days"
+  },
+  "registry_references": {
+    "vectors": "assets/data/vector-registry.json",
+    "gear": "assets/data/gear-database.json"
+  },
+  "planned_review": {
+    "start": "2026-12-14",
+    "end": "2026-12-21",
+    "device": "Same InBody unit at Gym Fit Forme",
+    "status": "Planned, not completed"
+  },
+  "reconciliation": [
+    "Replaced system ceilings with historical planning figures and a reported hydration reference.",
+    "Kept 22.5% body fat as an estimate separate from 22.9% baseline.",
+    "Corrected BioSteel Hydration wording to Recovery Protein Plus for V4.",
+    "Replaced XOR=1 with at-most-one V1/V6 rule, including rest-day inactivity.",
+    "Preserved four owned KUZARO kits and six named bundles in existing gear registry.",
+    "Excluded unsupported personal biological ceiling and fixed BIA water-offset claims."
+  ]
+}
