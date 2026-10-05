@@ -1,0 +1,117 @@
+{
+  "version": "2026-10-05-v6",
+  "sources": [
+    "Unified Master Vector Directory (V1–V10) october 2026.pdf",
+    "VECTOR 6 (V6) RATIFICATION & ARCHITECTURAL LOCK.pdf"
+  ],
+  "policy": "Latest sources govern numbering and branches. Existing V1–V5/V10 ingredient records retained. No physiological guarantees adopted. V7–V9 are not supplied and are not invented.",
+  "vectors": [
+    {
+      "id": "v1",
+      "name": "V1 IGNITION",
+      "timing": "06:00 pre- gym; morning training only",
+      "base": "500-600 mL cold filtered water",
+      "ingredients": [
+        "ALLMAX Impact Igniter Xtreme 2.0 (2 scoops / 28 g)",
+        "ALLMAX MuscleEAA Xtreme (1 scoop / 17.73 g)",
+        "PeakO2 2,000 mg",
+        "Betaine Anhydrous 2,500 mg",
+        "Citrulline Malate 2:1 (4-6 g)",
+        "Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately."
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>About 373 mg total caffeine, 10.67-12 g active citrulline base, 3.2 g beta-alanine, 2 g PeakO2 mushrooms, 2.5 g betaine. Spaced about 2 hours post- breakfast tea.</dd><dt>Stack interaction</dt><dd>IGNITER about 373 mg caffeine + TeaCrine (theacrine half-life 16-20 h) + Dynamine + theobromine + Earl Grey 40-70 mg — Exposure regularly crosses the 400 mg/day guidance; sleep is the limiting organ.</dd><dt>Margin</dt><dd>IGNITER about 373 mg caffeine before tea; with tea about 413–443 mg versus Health Canada 400 mg/day guidance.</dd><dt>Monitor</dt><dd>Sleep duration and awakenings; session RPE and performance.</dd><dt>Stop rule</dt><dd>Palpitations, fainting or sleep disruption that does not resolve when caffeine is pulled earlier.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "Morning training only (State A)"
+    },
+    {
+      "id": "v2",
+      "name": "V2 REFUEL",
+      "timing": "During the training session (09:30 morning reference); moves with the evening workout in State C.",
+      "base": "600-750 mL cold filtered water",
+      "ingredients": [
+        "Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1)",
+        "RapiDrem Electrolyte Powder (1 scoop, about 6.5 g)",
+        "Kirkland Himalayan Pink Salt 1/16 tsp",
+        "2-3 Medjool dates chewed solid, separately"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>3,750 mg leucine-led BCAAs, 1,000 mg potassium, 100 mg magnesium, about 36-54 g fast carbohydrate from dates.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Supplemental magnesium: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day supplemental UL. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "During the training session (States A and C)"
+    },
+    {
+      "id": "v3",
+      "name": "V3 RECOVERY",
+      "timing": "04:00; training and rest",
+      "base": "Cold filtered water; shaker volume unspecified",
+      "ingredients": [
+        "MuscleMeds Carnivor Beef Protein Isolate (33.9 g Canadian scoop)",
+        "PROMISE Pure Marine Collagen Peptan 10 g",
+        "Rootalive Organic Gelatinized Black Maca 5 g",
+        "ALLMAX Liquid L- Carnitine 1500 (15 mL / 1,500 mg)",
+        "MegaFood C Defense Gummy (1, chewed)",
+        "NAKA Platinum Vital Greens (20 mL separate flush)"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>23 g beef protein, 10 g marine collagen, 1.5 g free carnitine, whole-food ascorbate. Canadian Carnivor panel: zero added creatine. Greens taken as separate 20 mL flush.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Supplemental magnesium: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day supplemental UL. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "Daily anchor; optional when consumed on rest days"
+    },
+    {
+      "id": "v4",
+      "name": "V4 RELOAD",
+      "timing": "After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.",
+      "base": "350-450 mL room-temperature water",
+      "ingredients": [
+        "BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving)",
+        "Rootalive Beetroot Powder 7 g raw",
+        "Proline Pure Creatine HCl 750 mg active",
+        "Kirkland Himalayan Salt 1/16 tsp"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Scaled half-serving: 12 g protein, 19 g carbohydrate, 125 kcal. Dietary nitrates from beetroot combine with creatine HCl. R-ALA swallowed whole; emptying into the shake risks mucosal irritation and degradation.</dd><dt>Stack interaction</dt><dd>R-ALA 300 mg + glycogen- depleted training + only 19 g carbohydrate in V4 — Hypoglycaemia symptoms post- training need glucose awareness, not stimulant escalation.</dd><dt>Margin</dt><dd>R-ALA 300 mg training days; no UL established. V4 is one 36 g half-serving, with 19 g carbohydrate.</dd><dt>Monitor</dt><dd>Recurrent sweating, tremor or confusion after training.</dd><dt>Stop rule</dt><dd>Recurrent sweating, tremor or confusion after training: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "After the workout (States A and C); R-ALA remains separate"
+    },
+    {
+      "id": "v5",
+      "name": "V5 TRANSPORT",
+      "timing": "16:00-16:30; rest branch only",
+      "base": "500 mL cold filtered water",
+      "ingredients": [
+        "Proline Pure Creatine HCl 750 mg",
+        "PROMISE Pure Marine Collagen 10 g",
+        "ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)",
+        "RapiDrem Electrolyte Powder (1 scoop)",
+        "Kirkland Himalayan Salt 1/16 tsp"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Rest-day bridge: second daily creatine pulse (750 mg), 10 g connective-tissue peptides, carnitine and electrolytes.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Supplemental magnesium: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day supplemental UL. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "Rest days only (State B)"
+    },
+    {
+      "id": "v6",
+      "name": "V6 PUMP",
+      "timing": "Evening training override; 20–30 minutes before the evening session. Citicoline is a separate capsule at T−30 minutes. Never combined with V1 on the same calendar day.",
+      "base": "500–600 mL cold filtered water",
+      "ingredients": [
+        "ALLMAX Impact PUMP Xtreme (Blue Raspberry): 2 scoops / 31 g",
+        "ALLMAX MuscleEAA Xtreme (Cherry Limeade): 1 scoop / 17.73 g",
+        "Compound Solutions / ALLMAX PeakO2: 2,000 mg by mass",
+        "ALLMAX Essentials Betaine Anhydrous (TMG): 2,500 mg",
+        "ALLMAX Essentials Citrulline Malate 2:1: 4–6 g",
+        "ALLMAX Essentials Pure Taurine Powder: 2–3 g",
+        "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>V6 source notes &amp; deployment rules</summary><dl><dt>Recorded branch</dt><dd>State C: evening training override, documented 5 October 2026.</dd><dt>Exclusion</dt><dd>V1 and V6 are never used on the same calendar day. Both are inactive on rest days.</dd><dt>Shaker exclusions</dt><dd>No added salt or creatine HCl; the source records a stimulant-free PUMP base.</dd><dt>Companion routing</dt><dd>V2 remains intra-session; V4 moves after the evening workout; V5 is inactive; V10 remains the night anchor.</dd><dt>Source limit</dt><dd>This reproduces the supplied formulation and branch rules. Ingredient effects, product-label subcomponents and safety guarantees are not independently established here.</dd></dl></details>",
+      "deployment": "Evening training only (State C); replaces V1"
+    },
+    {
+      "id": "v10",
+      "name": "V10 SHUTDOWN",
+      "timing": "Night anchor (18:30 reference); morning training, rest and evening-training branches. Tisane at a comfortable temperature.",
+      "base": "800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature",
+      "ingredients": [
+        "SD Pharmaceuticals Creatine HCl 750 mg",
+        "North Coast Naturals Fermented L-Glutamine 5 g",
+        "AOR Pure Glycine Powder 3-5 g",
+        "optional half-scoop Medi-C Plus (2.5 g)",
+        "rare Niyama Hey Relax full scoop"
+      ],
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Nocturnal recovery: second creatine pulse, 5 g glutamine, 3-5 g glycine. Optional Medi-C adds 1,000 mg vitamin C and 105 mg magnesium; Hey Relax adds 200 mg magnesium and 1,000 mg inositol. The old 60-65 degree Celsius heating rule is retired.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Supplemental magnesium: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day supplemental UL. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "Night anchor across all three states"
+    }
+  ]
+}

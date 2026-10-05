@@ -17,3 +17,5 @@ Vector folders follow the published daily order: V3, V1, V2, V4, V5, V10, then i
 Background animation follows the author’s explicit autoplay preference: silent looping when visible, automatic pause offscreen or in hidden tabs, poster fallback if the browser blocks playback, and no extra play/pause buttons. PROJECT 100 and Fit Protocol share the same red accents per theme. Vector folders use their covers and keyboard navigation; download links remain compact text links.
 
 See `GEAR_MANIFEST_RELEASE.md` for the author-supplied equipment database and current KUZARO grade mapping.
+
+5 October registry extension: latest author PDFs formally assign PUMP to V6, with a separate evening override. Older unnumbered/permanently inactive PUMP passages are superseded. Live records and diagrams follow assets/data/vector-registry.json; source limits are documented in VECTOR_REGISTRY_RELEASE.md.

@@ -100,7 +100,7 @@ def vector_cabinet():
     return out+'</div>'
 
 for name, label, group, ids, nums in FILES:
-    if name in docs:
+    if name in docs and docs[name].select_one("main"):
         doc = deepcopy(docs[name])
     else:
         doc = deepcopy(template)

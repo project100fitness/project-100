@@ -10,7 +10,7 @@ images={
  'fit-workout.html':'assets/media/october-2026/bogdan-gym-session.jpg',
  'fit-nutrition.html':'assets/img/mega-salad-mango-chickpea.jpg',
  'fit-meals.html':'assets/img/carnivore-omelette.jpg',
- 'fit-nutrition-notes.html':'assets/img/mega-salad-kale-tuna.jpg',
+ 'fit-nutrition-notes.html':'assets/media/october-2026/nutrition-pantry-july-2026.jpg',
  'gear-shop.html':'assets/media/october-2026/gym-turf-rig.jpg',
  'gear-gym.html':'assets/media/october-2026/gym-august-floor.jpg',
  'gear-photos.html':'assets/media/october-2026/gym-july-turf.jpg',
@@ -26,12 +26,12 @@ images={
  'fit-protocol-constraints.html':None,
  'guidebook.html':'assets/img/protocol-24hr-clock.jpg',
  'fit-protocol-fuel.html':'assets/img/protocol-24hr-clock.jpg',
- 'fit-protocol-checklists.html':None,
+ 'fit-protocol-checklists.html':'assets/media/october-2026/pill-organizer-may-2026.jpg',
  'fit-protocol-vectors.html':'assets/img/liquid-intake-vectors.jpg',
  'fit-protocol-vector-reference.html':'assets/img/diagram-matrix.jpg',
  'fit-protocol-nutrition.html':'assets/img/mega-salad-kale-tuna.jpg',
- 'fit-protocol-supplements.html':'assets/img/supplements-stack-2026.jpg',
- 'fit-protocol-interactions.html':None,
+ 'fit-protocol-supplements.html':'assets/media/october-2026/pill-organizer-february-2026.jpg',
+ 'fit-protocol-interactions.html':'assets/media/october-2026/pill-organizer-may-2026.jpg',
  'fit-protocol-margins.html':None,
  'fit-protocol-training.html':'assets/media/october-2026/bogdan-gym-session.jpg',
  'fit-protocol-progression.html':'assets/img/resistance-band-001.jpg',
@@ -41,8 +41,8 @@ images={
  'fit-protocol-troubleshooting.html':None,
  'library.html':'assets/img/v2/guidebook-cover.png',
 }
-for key in ['v1','v2','v3','v4','v5','v10','pump']:
- images['fit-protocol-vector-'+key+'.html']='assets/media/october-2026/vector-'+key+'.jpg'
+for key in ['v1','v2','v3','v4','v5','v10','pump','v6']:
+ images['fit-protocol-vector-'+key+'.html']='assets/media/october-2026/vector-'+('pump' if key=='v6' else key)+'.jpg'
 category_images=images
 for path in ROOT.glob('*.html'):
  s=BeautifulSoup(path.read_text(),'html.parser')
@@ -53,7 +53,7 @@ for path in ROOT.glob('*.html'):
  host.append(BeautifulSoup((ROOT/'assets/partials/float-connect.html').read_text(),'html.parser'));s.body.insert(0,host)
  for node in s.select('script[src*="float-connect.js"],link[href*="float-connect.css"],link[href*="polished-shell.css"]'):node.decompose()
  s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/float-connect.css?v=20261005-shell'))
- s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-contextual')))
+ s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-v6')))
  s.head.append(s.new_tag('script',src='assets/js/float-connect.js?v=20261005-shell',defer=''))
  # Publication access belongs in one full-width footer bar, outside content menus.
  for link in s.select('.page-tabs a,.focused-cabinet a,#siteDrawer a'):
