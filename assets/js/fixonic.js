@@ -218,7 +218,7 @@
     if(!btn || btn.dataset.fxTheme) return;
     btn.dataset.fxTheme = '1';
     var root = document.documentElement;
-    function getStored(){ try{ return localStorage.getItem('p100-theme'); }catch(e){ return null; } }
+    function getStored(){ try{ return localStorage.getItem('p100-theme') || JSON.parse(localStorage.getItem('p100-v2-theme')); }catch(e){ return null; } }
     function setStored(v){ try{ localStorage.setItem('p100-theme', v); }catch(e){} }
     var stored = getStored();
     if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
