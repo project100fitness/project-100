@@ -18,7 +18,7 @@ for file,ids in [('index.html',['story','mission','roadmap','faq']),('fit-nutrit
             for part in [a,b]:
                 for c in part.select('.armory-item'):
                     for node in c.select('.ai-text'):node.clear()
-        assert Counter(a.get_text().split())<=Counter(b.get_text().split()),(file,id,'text')
+        assert Counter(a.get_text(' ',strip=True).split())<=Counter(b.get_text(' ',strip=True).split()),(file,id,'text')
         assert Counter(e.get('src') for e in a.select('img'))<=Counter(e.get('src') for e in b.select('img')),(file,id,'images')
         count+=1
 before=old('gear-shop.html')
@@ -29,5 +29,5 @@ for c in before.select('.armory-groups .armory-item'):
     name=c.select_one('.ai-name').get_text()
     match=next((e for e in current if e.select_one('.ai-name').get_text()==name),None)
     if match and not match.get('data-gear-record'):
-        assert Counter(c.get_text().split())==Counter(match.get_text().split()),name
+        assert Counter(c.get_text(' ',strip=True).split())==Counter(match.get_text(' ',strip=True).split()),name
 print(f'PASS: {count} moved sections and all equipment images retained; additional inventory text preserved outside the authorized manifest updates.')

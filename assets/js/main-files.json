@@ -22,7 +22,7 @@
     },
     {
       "file": "fit-nutrition.html",
-      "label": "Nutrition folders",
+      "label": "Nutrition overview",
       "group": "nutrition"
     },
     {
@@ -34,6 +34,11 @@
       "file": "fit-nutrition-notes.html",
       "label": "Nutrition notes",
       "group": "nutrition"
+    },
+    {
+      "file": "liquid-intake.html",
+      "label": "Liquid Intake",
+      "group": "liquid"
     },
     {
       "file": "gear-shop.html",
@@ -99,6 +104,6 @@
     "index.html:explore": "index.html#explore",
     "gear-shop.html:armory": "gear-shop.html#gear-files",
     "gear-shop.html:guide": "library.html",
-    "fit-nutrition.html:vectors": "fit-protocol-vectors.html"
+    "fit-nutrition.html:vectors": "liquid-intake.html"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "version": "2026-10-05",
+  "white_ingredient_cards": {
+    "v3": {
+      "path": "assets/media/october-2026/ingredient-cards/v3-white.png",
+      "source_name": "Clinical white lab supplement lineup.png",
+      "sha256": "1854325c250706d676d21709da5296d97569567b508c45b18ab3cd0233600a7d",
+      "status": "Key recorded ingredients checked; original image bytes preserved"
+    },
+    "v4": {
+      "path": "assets/media/october-2026/ingredient-cards/v4-white.png",
+      "source_name": "Central vessel formula core.png",
+      "sha256": "527c0238d9bb9cf15c713030ae02dd108f310fcece1917d352690b979c53626c",
+      "status": "Key recorded ingredients checked; original image bytes preserved"
+    }
+  },
+  "schematic_previews": [
+    "v1",
+    "v2",
+    "v5",
+    "v6",
+    "v10"
+  ],
+  "remaining_cards": "Awaiting completed, source-checked ingredient illustrations.",
+  "held_v1_examples": [
+    "Cleanroom example depicts PeakO2 as capsules and omits separate citicoline.",
+    "Persona example uses generic EAA wording instead of the source-locked MuscleEAA Xtreme product."
+  ]
+}
