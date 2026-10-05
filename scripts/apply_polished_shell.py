@@ -20,6 +20,23 @@ images={
  'gear-recovery.html':'assets/img/gear-item-foam-roller.jpg',
  'gear-safety.html':'assets/media/october-2026/gym-turf-rig.jpg',
 }
+category_images={**images,
+ 'gear-resistance.html':'assets/img/gear-item-tubing.jpg',
+ 'gear-anchors.html':'assets/img/gear-item-sled-belt.jpg',
+ 'gear-recovery.html':'assets/img/gear-item-miaoke.jpg',
+ 'fit-protocol.html':'assets/img/v2/guidebook-cover.png',
+ 'fit-protocol-baseline.html':'assets/media/october-2026/bogdan-november-2025.jpg',
+ 'guidebook.html':'assets/img/v2/guidebook-cover.png',
+ 'fit-protocol-vectors.html':'assets/media/october-2026/vector-v4.jpg',
+ 'fit-protocol-nutrition.html':'assets/media/october-2026/vector-v3.jpg',
+ 'fit-protocol-supplements.html':'assets/downloads/vector-diagrams/project100-v5-ingredients.png',
+ 'fit-protocol-training.html':'assets/media/october-2026/bogdan-gym-session.jpg',
+ 'fit-protocol-labs.html':'assets/img/v2/social-fit-protocol-baseline.png',
+ 'fit-protocol-troubleshooting.html':'assets/img/v2/checklist-cover.png',
+ 'library.html':'assets/img/v2/simplified-cover.png',
+ 'fit-protocol-fuel.html':'assets/downloads/vector-diagrams/project100-v1-ingredients.png',
+ 'fit-protocol-checklists.html':'assets/img/v2/checklist-cover.png',
+}
 for path in ROOT.glob('*.html'):
  s=BeautifulSoup(path.read_text(),'html.parser')
  if not s.select_one('.page-shell'):continue
@@ -29,8 +46,21 @@ for path in ROOT.glob('*.html'):
  host.append(BeautifulSoup((ROOT/'assets/partials/float-connect.html').read_text(),'html.parser'));s.body.insert(0,host)
  for node in s.select('script[src*="float-connect.js"],link[href*="float-connect.css"],link[href*="polished-shell.css"]'):node.decompose()
  s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/float-connect.css?v=20261005-shell'))
- s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-bundles' if path.name in ['gear-resistance.html','gear-grips.html','gear-anchors.html','gear-recovery.html','gear-safety.html'] else '20261005-shell')))
+ s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-previews')))
  s.head.append(s.new_tag('script',src='assets/js/float-connect.js?v=20261005-shell',defer=''))
+ # Category folders share a compact preview; the entire folder stays the link.
+ for folder in s.select('.focused-cabinet:not(.vector-cabinet) > a.focused-folder'):
+  target=folder.get('href','').split('#')[0]
+  image=category_images.get(target)
+  if not image:raise ValueError('Missing category preview: '+target)
+  if not (ROOT/image).is_file():raise ValueError('Missing preview asset: '+image)
+  for old in folder.select('img'):old.decompose()
+  if 'main-folder' not in folder.get('class',[]) and not folder.select_one('.category-folder-copy'):
+   content=s.new_tag('span',attrs={'class':'category-folder-copy'})
+   for child in list(folder.contents):content.append(child.extract())
+   folder.append(content)
+  folder['class']=list(dict.fromkeys(folder.get('class',[])+['category-folder']))
+  folder.insert(0,s.new_tag('img',src=image,alt='',width='76',height='76',loading='lazy'))
  # Only the meaningful original landing hero retains a decorative video.
  for motion in s.select('.section-motion'):
   parent=motion.parent
