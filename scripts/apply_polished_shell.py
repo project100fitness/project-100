@@ -29,7 +29,7 @@ for path in ROOT.glob('*.html'):
  host.append(BeautifulSoup((ROOT/'assets/partials/float-connect.html').read_text(),'html.parser'));s.body.insert(0,host)
  for node in s.select('script[src*="float-connect.js"],link[href*="float-connect.css"],link[href*="polished-shell.css"]'):node.decompose()
  s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/float-connect.css?v=20261005-shell'))
- s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v=20261005-shell'))
+ s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-geardb' if path.name in ['gear-resistance.html','gear-grips.html','gear-anchors.html','gear-recovery.html','gear-safety.html'] else '20261005-shell')))
  s.head.append(s.new_tag('script',src='assets/js/float-connect.js?v=20261005-shell',defer=''))
  # Only the meaningful original landing hero retains a decorative video.
  for motion in s.select('.section-motion'):

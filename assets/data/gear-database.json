@@ -1,0 +1,196 @@
+{
+  "source": {
+    "name": "GYM GEAR STRENGHT TRAINING RESISTANCE BANDS - PROJECT 100 MASTER VISUAL RECOGNITION DATABASE (COMPREHENSIVE) (1).pdf",
+    "sha256": "c72d4bb19b3ab7e7efd968f9cd70b6e35817d15e6f9a512fd632d41ed1047403"
+  },
+  "kuzaro": {
+    "owned_kit_count": 4,
+    "listed_set_total_lb": 360,
+    "grades": [
+      {
+        "lb": 35,
+        "kg": 15.9,
+        "color": "Light gray"
+      },
+      {
+        "lb": 45,
+        "kg": 20.4,
+        "color": "Medium-light gray"
+      },
+      {
+        "lb": 55,
+        "kg": 24.9,
+        "color": "Medium gray"
+      },
+      {
+        "lb": 65,
+        "kg": 29.5,
+        "color": "Dark gray"
+      },
+      {
+        "lb": 75,
+        "kg": 34.0,
+        "color": "Very dark gray / soft black"
+      },
+      {
+        "lb": 85,
+        "kg": 38.5,
+        "color": "Solid black"
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "kuzaro",
+      "name": "KUZARO \u00b7 Multi-band setup",
+      "category": "resistance",
+      "badge": "4 KITS \u00b7 360 LB SET",
+      "description": "Yellow connection webbing with black KUZARO lettering and thick black D-rings. The supplied manifest lists six tubing grades from light gray to solid black.",
+      "page": 1
+    },
+    {
+      "id": "hpygn-bands",
+      "name": "HPYGN Heavy-Duty Compression System",
+      "category": "resistance",
+      "badge": "330 LB SET",
+      "description": "Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Recorded short-band configuration: two 65 lb bands, doubled and shortened at the low Iron Tower anchor, routed into the Tribe bar\u2019s rotating eyelets. Their nominal ratings total 130 lb; resistance changes with stretch.",
+      "page": 1
+    },
+    {
+      "id": "bluslm",
+      "name": "BLUSLM Ergonomic Tricep Rope",
+      "category": "grips",
+      "badge": "Hand Rope-03",
+      "description": "Extra-long twin black braided nylon arms, a chrome connection collar and large molded black palm-flare stops.",
+      "page": 1
+    },
+    {
+      "id": "hxd",
+      "name": "HXD-ERGO Biomechanical Handles",
+      "category": "grips",
+      "badge": "Curved",
+      "description": "Asymmetric black ergonomic grip molds, flat nylon straps with a blue-and-white shield logo, and integrated fixed black carabiners.",
+      "page": 1
+    },
+    {
+      "id": "innstar",
+      "name": "INNSTAR High-Traction Stirrup Handles",
+      "category": "grips",
+      "badge": "Honeycomb",
+      "description": "Triangular black nylon stirrup handles with black carabiners. The ABS grip cores have anti-slip silicone honeycomb texture; white INNSTAR lettering runs along the straps.",
+      "page": 1
+    },
+    {
+      "id": "angles90",
+      "name": "Angles90 Camo Pull-Up Grips",
+      "category": "grips",
+      "badge": "A90",
+      "description": "Bright orange curved handles on flat black nylon slings, with black A90 GRIPS lettering along the outer curve.",
+      "page": 1
+    },
+    {
+      "id": "single-rope",
+      "name": "THEFITGUY Single-Arm Tricep Rope",
+      "category": "grips",
+      "badge": "16.5 IN",
+      "description": "Single-arm black braided rope with a zinc-plated top snap hook. The distinctive red bell-shaped palm stop carries debossed thefitguy lettering.",
+      "page": 2
+    },
+    {
+      "id": "manueklear",
+      "name": "MANUEKLEAR Neoprene Multi-Grip Handles",
+      "category": "grips",
+      "badge": "3 GRIP ZONES",
+      "description": "Extra-wide matte-gray neoprene/nylon straps with one silver D-ring. Sewn upper, middle and lower grip pockets provide three positions; the side tag has a yellow-and-white logo.",
+      "page": 2
+    },
+    {
+      "id": "tribe",
+      "name": "Tribe Lifting Modular Resistance Bar",
+      "category": "structural",
+      "badge": "3 PIECES \u00b7 360\u00b0 SWIVELS",
+      "description": "Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.",
+      "page": 2
+    },
+    {
+      "id": "hpygn-bar",
+      "name": "HPYGN Heavy Pilates Structural Bar",
+      "category": "structural",
+      "badge": "Foam-padded steel",
+      "description": "Black steel bar covered in dense non-slip black foam. Its nylon terminal straps have distinctive red edge stitching.",
+      "page": 2
+    },
+    {
+      "id": "extensions",
+      "name": "THEFITGUY Ultimate Extension Straps",
+      "category": "structural",
+      "badge": "Dual D-ring straps",
+      "description": "Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.",
+      "page": 2
+    },
+    {
+      "id": "sled",
+      "name": "THEFITGUY Sled Pulling Belt & Straps Kit",
+      "category": "structural",
+      "badge": "2 \u00d7 9.8 FT \u00b7 4 HOOKS",
+      "description": "Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.",
+      "page": 2
+    },
+    {
+      "id": "oak",
+      "name": "Oak-Sports Heavy-Duty Carabiners",
+      "category": "connections",
+      "badge": "25 kN \u00b7 5,600 LB",
+      "description": "Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.",
+      "page": 2
+    },
+    {
+      "id": "jrsgs",
+      "name": "JRSGS Rock Locking Clips",
+      "category": "connections",
+      "badge": "25 kN \u00b7 2 VARIANTS",
+      "description": "Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.",
+      "page": 2
+    },
+    {
+      "id": "sleeves",
+      "name": "Neoprene Cable / Bundle Management Sleeves",
+      "category": "connections",
+      "badge": "1.5 IN",
+      "description": "Flexible black wraps enclosing multi-band arrays. The reversible split-seam sleeves use a continuous hook-and-loop closure for bundle management and contact shielding.",
+      "page": 3
+    },
+    {
+      "id": "vehiclex",
+      "name": "VEHICLEX Axle Tie-Down Straps",
+      "category": "anchors",
+      "badge": "Sleeved webbing",
+      "description": "Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.",
+      "page": 3
+    },
+    {
+      "id": "nilight",
+      "name": "NILIGHT Soft Loop Anchor Straps",
+      "category": "anchors",
+      "badge": "1.7 \u00d7 17 IN",
+      "description": "Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.",
+      "page": 3
+    },
+    {
+      "id": "miaoke",
+      "name": "MIAOKE Tactical Hardware Duffel",
+      "category": "logistics",
+      "badge": "Duffel + organizer",
+      "description": "Black utility duffel/backpack with red zipper tracks and red diamond elastic side cording. The matching clear-panel organizer is labeled WASHBAG.",
+      "page": 3
+    },
+    {
+      "id": "jooeer",
+      "name": "jooeer 3-in-1 Nested Foam Roller Set",
+      "category": "recovery",
+      "badge": "3 NESTED TIERS",
+      "description": "Outer: 18 \u00d7 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 \u00d7 3.9 in neon-orange roller with linear ridges. Core: 18 \u00d7 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.",
+      "page": 3
+    }
+  ]
+}
