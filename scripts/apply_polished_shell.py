@@ -46,8 +46,21 @@ for path in ROOT.glob('*.html'):
  host.append(BeautifulSoup((ROOT/'assets/partials/float-connect.html').read_text(),'html.parser'));s.body.insert(0,host)
  for node in s.select('script[src*="float-connect.js"],link[href*="float-connect.css"],link[href*="polished-shell.css"]'):node.decompose()
  s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/float-connect.css?v=20261005-shell'))
- s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-previews')))
+ s.head.append(s.new_tag('link',rel='stylesheet',href='assets/css/polished-shell.css?v='+('20261005-publications')))
  s.head.append(s.new_tag('script',src='assets/js/float-connect.js?v=20261005-shell',defer=''))
+ # Publication access belongs in one full-width footer bar, outside content menus.
+ for link in s.select('.page-tabs a,.focused-cabinet a,#siteDrawer a'):
+  if link.get('href','').split('#')[0]=='library.html':link.decompose()
+ for bar in s.select('.publication-bar'):bar.decompose()
+ footer=s.select_one('footer')
+ if footer:
+  for link in footer.select('a[href="library.html"]'):link.decompose()
+  for column in footer.select('.v2-footer-grid > div'):
+   if column.h3 and column.h3.get_text(strip=True)=='Reference':column.decompose()
+  bar=s.new_tag('a',href='library.html',attrs={'class':'publication-bar'})
+  bar.string='Guidebook · Published files · Downloads ↗'
+  if path.name=='library.html':bar['aria-current']='page'
+  footer.insert_before(bar)
  # Category folders share a compact preview; the entire folder stays the link.
  for folder in s.select('.focused-cabinet:not(.vector-cabinet) > a.focused-folder'):
   target=folder.get('href','').split('#')[0]
