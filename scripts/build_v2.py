@@ -424,3 +424,5 @@ print(f'Built {len(titles)} current pages. Verified complete source words on {le
 
 # Final compact nutrition and shared-footer overlay.
 runpy.run_path(str(ROOT / 'scripts/apply_compact_pages.py'))
+
+runpy.run_path(str(ROOT / 'scripts/apply_description_order.py'))
