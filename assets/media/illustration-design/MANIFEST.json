@@ -1,0 +1,3676 @@
+[
+  {
+    "id": "J03_v1",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v1.html",
+    "image": "IMAGES/J03_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "86c2c12da5bb88b10ad6382ea4499d2c62ac38aaac60caeed8fd11d08dd30a9e",
+    "width": 720,
+    "height": 2662,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v1_part1.png",
+      "PHONE/J03_v1_part2.png",
+      "PHONE/J03_v1_part3.png",
+      "PHONE/J03_v1_part4.png"
+    ]
+  },
+  {
+    "id": "J03_v2",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v2.html",
+    "image": "IMAGES/J03_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "6de54058002aa149e95191731d405105e07250fb7d4a282ea7c8f91eae7dde84",
+    "width": 720,
+    "height": 1998,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v2_part1.png",
+      "PHONE/J03_v2_part2.png",
+      "PHONE/J03_v2_part3.png"
+    ]
+  },
+  {
+    "id": "J03_v3",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v3.html",
+    "image": "IMAGES/J03_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "7435e59b797e9c543ff78a5fccf6aec79e8d17de593eb05f2a9db2dd739b815c",
+    "width": 720,
+    "height": 2441,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v3_part1.png",
+      "PHONE/J03_v3_part2.png",
+      "PHONE/J03_v3_part3.png",
+      "PHONE/J03_v3_part4.png"
+    ]
+  },
+  {
+    "id": "J03_v4",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v4.html",
+    "image": "IMAGES/J03_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "00b5c5f0710bf25e8a861416f83e55fba6645e6900bcdec9701eb2f805a81951",
+    "width": 720,
+    "height": 2345,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v4_part1.png",
+      "PHONE/J03_v4_part2.png",
+      "PHONE/J03_v4_part3.png",
+      "PHONE/J03_v4_part4.png"
+    ]
+  },
+  {
+    "id": "J03_v5",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v5.html",
+    "image": "IMAGES/J03_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "30414607b3d232ada9b8aae0456d2e23b3d1c0553dd365631ac5fdf9b5173729",
+    "width": 720,
+    "height": 2039,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v5_part1.png",
+      "PHONE/J03_v5_part2.png",
+      "PHONE/J03_v5_part3.png"
+    ]
+  },
+  {
+    "id": "J03_v6",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v6.html",
+    "image": "IMAGES/J03_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "ab77f440d8494062598a0afbf755a27f0beee8b9d6ccf38c319d75f51444dbfc",
+    "width": 720,
+    "height": 2705,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v6_part1.png",
+      "PHONE/J03_v6_part2.png",
+      "PHONE/J03_v6_part3.png",
+      "PHONE/J03_v6_part4.png"
+    ]
+  },
+  {
+    "id": "J03_v10",
+    "style": "J03",
+    "family": "Clinical anatomy poster",
+    "type": "vector",
+    "page": "PAGES/J03_v10.html",
+    "image": "IMAGES/J03_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": [
+      "Nerves",
+      "Carry signals that control muscle contraction."
+    ],
+    "sha256": "7ffdefcfba5ecaf65eecc31efb6ce9c458ba3d78a8eafa2854c8d6b439a1a4c5",
+    "width": 720,
+    "height": 2345,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J03_v10_part1.png",
+      "PHONE/J03_v10_part2.png",
+      "PHONE/J03_v10_part3.png"
+    ]
+  },
+  {
+    "id": "J04_v1",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v1.html",
+    "image": "IMAGES/J04_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "25d928be356d2c3f8f3392d69e4bff287bcacceec08595669992259a124748e5",
+    "width": 720,
+    "height": 2284,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v1_part1.png",
+      "PHONE/J04_v1_part2.png",
+      "PHONE/J04_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J04_v2",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v2.html",
+    "image": "IMAGES/J04_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "2f568e94ae7a1d48863940b3e0d1d91e7e5833229ac1e40eecf63b88a280d6b7",
+    "width": 720,
+    "height": 1620,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v2_part1.png",
+      "PHONE/J04_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J04_v3",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v3.html",
+    "image": "IMAGES/J04_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "63567051d0c05f0847c214e71add28ff11bdc1322fb8ff543b3646abd7626aa6",
+    "width": 720,
+    "height": 2063,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v3_part1.png",
+      "PHONE/J04_v3_part2.png",
+      "PHONE/J04_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J04_v4",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v4.html",
+    "image": "IMAGES/J04_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "eaee5dc81ad2d8dd185992e88b2b7722b8b4547f64c820997fd917ddf5698adb",
+    "width": 720,
+    "height": 1967,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v4_part1.png",
+      "PHONE/J04_v4_part2.png",
+      "PHONE/J04_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J04_v5",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v5.html",
+    "image": "IMAGES/J04_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "18bec0b2c792b62cca3c1f99b4d40617ba9ad20471cf54d848c587247a2b75b9",
+    "width": 720,
+    "height": 1661,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v5_part1.png",
+      "PHONE/J04_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J04_v6",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v6.html",
+    "image": "IMAGES/J04_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "27251c0f664175c037f6d6fd1f20932981aa5fd8422968d9eb5ff906344c7b60",
+    "width": 720,
+    "height": 2328,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v6_part1.png",
+      "PHONE/J04_v6_part2.png",
+      "PHONE/J04_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J04_v10",
+    "style": "J04",
+    "family": "Neon recipe-panel matrix",
+    "type": "vector",
+    "page": "PAGES/J04_v10.html",
+    "image": "IMAGES/J04_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "e417d78853dfd7546a2fbd8efd0fd4d49f41fbb33380b717efc73aca0b3a1ea5",
+    "width": 720,
+    "height": 1967,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J04_v10_part1.png",
+      "PHONE/J04_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J05_v1",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v1.html",
+    "image": "IMAGES/J05_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "524745b4266204cbc27a2de630ac30cf6074742db9baba85a8cec8e054442db1",
+    "width": 720,
+    "height": 2284,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v1_part1.png",
+      "PHONE/J05_v1_part2.png",
+      "PHONE/J05_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J05_v2",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v2.html",
+    "image": "IMAGES/J05_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "f867ddf8b389c952c375bcfa32d52c3875ca359e5022a1bcca61fd29b7f2cc66",
+    "width": 720,
+    "height": 1620,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v2_part1.png",
+      "PHONE/J05_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J05_v3",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v3.html",
+    "image": "IMAGES/J05_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "733ef35ffdd5de9d08f4dd3e1b453dab2d47e8ee811fe72d37cef1056b716a44",
+    "width": 720,
+    "height": 2063,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v3_part1.png",
+      "PHONE/J05_v3_part2.png",
+      "PHONE/J05_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J05_v4",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v4.html",
+    "image": "IMAGES/J05_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "70c39b946f82a0314479baaebe08b7584113a5ee99b07beecba0322c5e9dabbf",
+    "width": 720,
+    "height": 1967,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v4_part1.png",
+      "PHONE/J05_v4_part2.png",
+      "PHONE/J05_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J05_v5",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v5.html",
+    "image": "IMAGES/J05_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "1a6205a9d604c3a74acf557fcb20dc6361f6b939ab28c0be8925d00c35ed0859",
+    "width": 720,
+    "height": 1661,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v5_part1.png",
+      "PHONE/J05_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J05_v6",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v6.html",
+    "image": "IMAGES/J05_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "9a54ba4238381785b6138fee067f249a8d165981fe5de89bebb3eee3126e3c5b",
+    "width": 720,
+    "height": 2328,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v6_part1.png",
+      "PHONE/J05_v6_part2.png",
+      "PHONE/J05_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J05_v10",
+    "style": "J05",
+    "family": "Cinematic instrument console",
+    "type": "vector",
+    "page": "PAGES/J05_v10.html",
+    "image": "IMAGES/J05_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "1c7ee05b1db317515b77b735048d9232d872175f502aa1a14101343e425d9081",
+    "width": 720,
+    "height": 1967,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J05_v10_part1.png",
+      "PHONE/J05_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J06_v1",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v1.html",
+    "image": "IMAGES/J06_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "1835d47bb6eada1730f322cf7ab636d5a8a7c50f551dce02ca8274ab12a60682",
+    "width": 720,
+    "height": 2299,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v1_part1.png",
+      "PHONE/J06_v1_part2.png",
+      "PHONE/J06_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J06_v2",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v2.html",
+    "image": "IMAGES/J06_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "cc68badc4513740a996e769aac620d6bee3f7d39873ea8b1b8e23d6acf517931",
+    "width": 720,
+    "height": 1635,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v2_part1.png",
+      "PHONE/J06_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J06_v3",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v3.html",
+    "image": "IMAGES/J06_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "1405c075d4bf218c2d731aed419b8995ab8798ef2ad83ad4e9eceb0b7a48d3e3",
+    "width": 720,
+    "height": 2078,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v3_part1.png",
+      "PHONE/J06_v3_part2.png",
+      "PHONE/J06_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J06_v4",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v4.html",
+    "image": "IMAGES/J06_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "3ac51720dfc741126523b8ec4b1e0c82c982d971fed6dc4b74c5e524ab4d268d",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v4_part1.png",
+      "PHONE/J06_v4_part2.png",
+      "PHONE/J06_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J06_v5",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v5.html",
+    "image": "IMAGES/J06_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "0d9581dcca3acdcfe8b12389312ec7cdb8e95a009160fb44ee426a6f9221dc8b",
+    "width": 720,
+    "height": 1671,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v5_part1.png",
+      "PHONE/J06_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J06_v6",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v6.html",
+    "image": "IMAGES/J06_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "2035b93969bd610c84cdbd6a5293e3a70971aac9bd286e27da38a68e320ba80f",
+    "width": 720,
+    "height": 2343,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v6_part1.png",
+      "PHONE/J06_v6_part2.png",
+      "PHONE/J06_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J06_v10",
+    "style": "J06",
+    "family": "Dark gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J06_v10.html",
+    "image": "IMAGES/J06_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "dd9802f666f5eb5549773f5e07f3c787cdfa495d8ed0a743e6325d4a2a589c36",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J06_v10_part1.png",
+      "PHONE/J06_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J07_v1",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v1.html",
+    "image": "IMAGES/J07_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "b21cfed914f72f6c4db403b07228eee38edf77a97a9d2f715970ef4316b35a9d",
+    "width": 720,
+    "height": 2688,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v1_part1.png",
+      "PHONE/J07_v1_part2.png",
+      "PHONE/J07_v1_part3.png",
+      "PHONE/J07_v1_part4.png"
+    ]
+  },
+  {
+    "id": "J07_v2",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v2.html",
+    "image": "IMAGES/J07_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "c9d012dba9bab35023bf6a4a0f8087bcdd10a5d8b8edc5871b5331123aa6b547",
+    "width": 720,
+    "height": 2082,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v2_part1.png",
+      "PHONE/J07_v2_part2.png",
+      "PHONE/J07_v2_part3.png"
+    ]
+  },
+  {
+    "id": "J07_v3",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v3.html",
+    "image": "IMAGES/J07_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "7a497132366b7490ef8a956cf269121b49b68fdc694a393de1ad289a4f46bcd9",
+    "width": 720,
+    "height": 2081,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v3_part1.png",
+      "PHONE/J07_v3_part2.png",
+      "PHONE/J07_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J07_v4",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v4.html",
+    "image": "IMAGES/J07_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": [
+      "Cell membrane",
+      "Controls what enters and leaves the cell."
+    ],
+    "sha256": "056b83c0ea545890b5512187ec7620e2b0fccdfd0d019667f4851df9a89bb54f",
+    "width": 720,
+    "height": 2312,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v4_part1.png",
+      "PHONE/J07_v4_part2.png",
+      "PHONE/J07_v4_part3.png",
+      "PHONE/J07_v4_part4.png"
+    ]
+  },
+  {
+    "id": "J07_v5",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v5.html",
+    "image": "IMAGES/J07_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "98cb6ec66e36b3401d40061ff13e26231ed91fe09e60b6cd1009527ba136e3da",
+    "width": 720,
+    "height": 2057,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v5_part1.png",
+      "PHONE/J07_v5_part2.png",
+      "PHONE/J07_v5_part3.png"
+    ]
+  },
+  {
+    "id": "J07_v6",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v6.html",
+    "image": "IMAGES/J07_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "f547d1bfedeb7c7913f1ce868bf6934f2e6b155a60833b516fb7127d55fc86cc",
+    "width": 720,
+    "height": 2731,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v6_part1.png",
+      "PHONE/J07_v6_part2.png",
+      "PHONE/J07_v6_part3.png",
+      "PHONE/J07_v6_part4.png"
+    ]
+  },
+  {
+    "id": "J07_v10",
+    "style": "J07",
+    "family": "Monochrome illustrated flow",
+    "type": "vector",
+    "page": "PAGES/J07_v10.html",
+    "image": "IMAGES/J07_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "5f3aaa2a5c30c4e91d08e4f5cad933b05ff1a3c4dee8b2725019f3524107d571",
+    "width": 720,
+    "height": 1985,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J07_v10_part1.png",
+      "PHONE/J07_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J08_v1",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v1.html",
+    "image": "IMAGES/J08_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "1935336d7f7963b3dabe5013d7586e5b909021d717c0dc52ac733bcb07123212",
+    "width": 720,
+    "height": 2302,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v1_part1.png",
+      "PHONE/J08_v1_part2.png",
+      "PHONE/J08_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J08_v2",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v2.html",
+    "image": "IMAGES/J08_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "e22ec847076fe2790b6c18d419dc00f17428af7a44bc641a3188e19552757cc4",
+    "width": 720,
+    "height": 1697,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v2_part1.png",
+      "PHONE/J08_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J08_v3",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v3.html",
+    "image": "IMAGES/J08_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "453c92bf2f4eaf8297fa9b2db8479005f77a4af31c5095b483df9430de8077cb",
+    "width": 720,
+    "height": 2081,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v3_part1.png",
+      "PHONE/J08_v3_part2.png",
+      "PHONE/J08_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J08_v4",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v4.html",
+    "image": "IMAGES/J08_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "d1a40734832c7cae6b38507f9bef1b6f44ca01a1a954d3348900c76e0dda97b3",
+    "width": 720,
+    "height": 2371,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v4_part1.png",
+      "PHONE/J08_v4_part2.png",
+      "PHONE/J08_v4_part3.png",
+      "PHONE/J08_v4_part4.png"
+    ]
+  },
+  {
+    "id": "J08_v5",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v5.html",
+    "image": "IMAGES/J08_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "ac1d31300bd624099a512ca97e686723b18b25ef45bbd69449d5b7cd81dd93df",
+    "width": 720,
+    "height": 2057,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v5_part1.png",
+      "PHONE/J08_v5_part2.png",
+      "PHONE/J08_v5_part3.png"
+    ]
+  },
+  {
+    "id": "J08_v6",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v6.html",
+    "image": "IMAGES/J08_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "a74301921678ec01363a37b9926df0b5e06f7b0f7d7b06f8bf1ef5e6554203f3",
+    "width": 720,
+    "height": 2346,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v6_part1.png",
+      "PHONE/J08_v6_part2.png",
+      "PHONE/J08_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J08_v10",
+    "style": "J08",
+    "family": "Vertical engineering schematic",
+    "type": "vector",
+    "page": "PAGES/J08_v10.html",
+    "image": "IMAGES/J08_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": [
+      "Kidneys",
+      "Filter waste and help balance water and minerals."
+    ],
+    "sha256": "8b7c1b77dc5868770dfcb1ca35e5ffd93093108a0220ab28feb98803cb343d9d",
+    "width": 720,
+    "height": 2371,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J08_v10_part1.png",
+      "PHONE/J08_v10_part2.png",
+      "PHONE/J08_v10_part3.png"
+    ]
+  },
+  {
+    "id": "J09_v1",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v1.html",
+    "image": "IMAGES/J09_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "be9638cc41f105af11d38813999d75928b9c0f1853b0b0f195ce1d19a94770cf",
+    "width": 720,
+    "height": 2284,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v1_part1.png",
+      "PHONE/J09_v1_part2.png",
+      "PHONE/J09_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J09_v2",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v2.html",
+    "image": "IMAGES/J09_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "1045636e7aecf57237ce4ef4410fd9cc42658c3f7f6dddc2d7b566f8926e3fdb",
+    "width": 720,
+    "height": 1682,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v2_part1.png",
+      "PHONE/J09_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J09_v3",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v3.html",
+    "image": "IMAGES/J09_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "dbd52dfc8ce57bddabd05f59e95c941cc3d7463e33bfe87e79c86acbb57e8416",
+    "width": 720,
+    "height": 2063,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v3_part1.png",
+      "PHONE/J09_v3_part2.png",
+      "PHONE/J09_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J09_v4",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v4.html",
+    "image": "IMAGES/J09_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "62bfbaeb00fcae3d3b849e0650f95ce926452a9de2c1c4a6c97fcbbccd2bf90c",
+    "width": 720,
+    "height": 1967,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v4_part1.png",
+      "PHONE/J09_v4_part2.png",
+      "PHONE/J09_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J09_v5",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v5.html",
+    "image": "IMAGES/J09_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "bac64cd1fe0b190bc4ef4a406f0f44b27f80270165ac3225e58961c3e626e27e",
+    "width": 720,
+    "height": 1661,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v5_part1.png",
+      "PHONE/J09_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J09_v6",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v6.html",
+    "image": "IMAGES/J09_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "c1efc89d5cae13a7401f83d6d3fa36217e1e10be57998a80029055eb7a06da9f",
+    "width": 720,
+    "height": 2328,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v6_part1.png",
+      "PHONE/J09_v6_part2.png",
+      "PHONE/J09_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J09_v10",
+    "style": "J09",
+    "family": "Circular neon chronometer",
+    "type": "vector",
+    "page": "PAGES/J09_v10.html",
+    "image": "IMAGES/J09_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "29a16192bb5895854af88b90733a82800e45c899091cbd27b6f80b44cab75828",
+    "width": 720,
+    "height": 2029,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J09_v10_part1.png",
+      "PHONE/J09_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J10_v1",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v1.html",
+    "image": "IMAGES/J10_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "d6068da7f51174cbac96744c35f1402db45ad35f53bd0d0e56b58ae98659fb39",
+    "width": 720,
+    "height": 2299,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v1_part1.png",
+      "PHONE/J10_v1_part2.png",
+      "PHONE/J10_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J10_v2",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v2.html",
+    "image": "IMAGES/J10_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "c3cb18f33aeb6ddd676062959524f2678053aa5aec59380f7550419846ca941d",
+    "width": 720,
+    "height": 1635,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v2_part1.png",
+      "PHONE/J10_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J10_v3",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v3.html",
+    "image": "IMAGES/J10_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "2339e4378607939eaa44caa099c86c6f703e59e0ec5b3e6ade6a51136105cd8d",
+    "width": 720,
+    "height": 2078,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v3_part1.png",
+      "PHONE/J10_v3_part2.png",
+      "PHONE/J10_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J10_v4",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v4.html",
+    "image": "IMAGES/J10_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "685b4b58019d0f41fba22fc30a01f60aee65e3bdf99ef894476989b0f3c3da85",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v4_part1.png",
+      "PHONE/J10_v4_part2.png",
+      "PHONE/J10_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J10_v5",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v5.html",
+    "image": "IMAGES/J10_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "068dce3b9a520de0f9a71493e1441f03fbfd2488f0b87f77673f437798cc2559",
+    "width": 720,
+    "height": 1671,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v5_part1.png",
+      "PHONE/J10_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J10_v6",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v6.html",
+    "image": "IMAGES/J10_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "ba103a9cc54086858f6fee0618be9ebe74b8cd3235df8efbffdbd380ac9012ee",
+    "width": 720,
+    "height": 2343,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v6_part1.png",
+      "PHONE/J10_v6_part2.png",
+      "PHONE/J10_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J10_v10",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "vector",
+    "page": "PAGES/J10_v10.html",
+    "image": "IMAGES/J10_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "cd97592e34f1d63172a139522edef89c0743422557c5ea2fa49637e75a335563",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_v10_part1.png",
+      "PHONE/J10_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J10_wake",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_wake.html",
+    "image": "IMAGES/J10_wake.png",
+    "counts": [
+      3,
+      1,
+      1
+    ],
+    "required": [
+      "ALLMAX TestoFX Xtreme — 3 capsules",
+      "New Roots Herbal Boron — 1 capsule / 3 mg",
+      "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+    ],
+    "body_function": null,
+    "sha256": "9a699b15923f83265ac70d8fe03cd4086cd0288308660c9f2863ca8c5f46fcde",
+    "width": 720,
+    "height": 1115,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_wake_part1.png"
+    ]
+  },
+  {
+    "id": "J10_meal1",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_meal1.html",
+    "image": "IMAGES/J10_meal1.png",
+    "counts": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "required": [
+      "Wakunaga Kyolic 104 — 2 capsules",
+      "Pure Encapsulations NAC — 1 capsule / 900 mg",
+      "California Gold Nutrition NMN — 1 capsule / 175 mg",
+      "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+    ],
+    "body_function": null,
+    "sha256": "68842e7fc7f67c169de1c35be23551a4eac376d432f2b44e2e890b997bb6e597",
+    "width": 720,
+    "height": 1369,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_meal1_part1.png",
+      "PHONE/J10_meal1_part2.png"
+    ]
+  },
+  {
+    "id": "J10_primer",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_primer.html",
+    "image": "IMAGES/J10_primer.png",
+    "counts": [
+      1
+    ],
+    "required": [
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside beverage"
+    ],
+    "body_function": null,
+    "sha256": "796ec9a9cbac638819065f981685e5f82a5131492ddbb8dd9a0ccb9dc7cd90e2",
+    "width": 720,
+    "height": 772,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_primer_part1.png"
+    ]
+  },
+  {
+    "id": "J10_dmz",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_dmz.html",
+    "image": "IMAGES/J10_dmz.png",
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations PureGenomics — 1 capsule",
+      "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+      "California Gold Nutrition Omega 800 — 1 softgel",
+      "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+      "Himalaya UriCare — 2 capsules",
+      "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+      "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+    ],
+    "body_function": null,
+    "sha256": "c017c06df8ef646fc213b2a885ffb15d62b7a8a62dc390961d86a5414b9ac7f3",
+    "width": 720,
+    "height": 2397,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_dmz_part1.png",
+      "PHONE/J10_dmz_part2.png",
+      "PHONE/J10_dmz_part3.png"
+    ]
+  },
+  {
+    "id": "J10_cofactors",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_cofactors.html",
+    "image": "IMAGES/J10_cofactors.png",
+    "counts": [
+      3,
+      2
+    ],
+    "required": [
+      "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+      "Pure Encapsulations Ligament Restore — 2 capsules"
+    ],
+    "body_function": null,
+    "sha256": "7cee5a44dc5af8a4e7720a8fe5e63f9da52a8a6848d1ac15f7d49df73798ce71",
+    "width": 720,
+    "height": 1032,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_cofactors_part1.png"
+    ]
+  },
+  {
+    "id": "J10_night",
+    "style": "J10",
+    "family": "Panoramic daily execution console",
+    "type": "pill_group",
+    "page": "PAGES/J10_night.html",
+    "image": "IMAGES/J10_night.png",
+    "counts": [
+      2,
+      1,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+      "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+      "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+    ],
+    "body_function": null,
+    "sha256": "14d42ac42cbb5fc52b49d4363605e6b97dd28ab1fc82e34ad9f591de81bb47f2",
+    "width": 720,
+    "height": 1236,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J10_night_part1.png",
+      "PHONE/J10_night_part2.png"
+    ]
+  },
+  {
+    "id": "J11_v1",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v1.html",
+    "image": "IMAGES/J11_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "2c8dde6fee5d1cda1fbc64089b0a5e568c072fbfc8e1a2f6a38b6404614d40d2",
+    "width": 720,
+    "height": 2299,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v1_part1.png",
+      "PHONE/J11_v1_part2.png",
+      "PHONE/J11_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J11_v2",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v2.html",
+    "image": "IMAGES/J11_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "e07a4bba5d5f9cffb8894be9442875e7b9c2f41e5d14e7b1c95cd2ad61bb1b74",
+    "width": 720,
+    "height": 1635,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v2_part1.png",
+      "PHONE/J11_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J11_v3",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v3.html",
+    "image": "IMAGES/J11_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "eb810a3833d27466aebd0a6769b973994500ec04113a74180e08d031e0821b11",
+    "width": 720,
+    "height": 2078,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v3_part1.png",
+      "PHONE/J11_v3_part2.png",
+      "PHONE/J11_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J11_v4",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v4.html",
+    "image": "IMAGES/J11_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "2c52cf70fefb652730c4959566565133db01fba67af42731960fc3d322e9b3cc",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v4_part1.png",
+      "PHONE/J11_v4_part2.png",
+      "PHONE/J11_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J11_v5",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v5.html",
+    "image": "IMAGES/J11_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "bff29f5bcc54deb18d62161f50e71328e571c2feb7ebb5cb9e0c7afa9645cee4",
+    "width": 720,
+    "height": 1671,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v5_part1.png",
+      "PHONE/J11_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J11_v6",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v6.html",
+    "image": "IMAGES/J11_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "e253d91e2b9798b181b02a4c2e8ccb7fa149e0a6a0370d3481f609fd26b45f5a",
+    "width": 720,
+    "height": 2343,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v6_part1.png",
+      "PHONE/J11_v6_part2.png",
+      "PHONE/J11_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J11_v10",
+    "style": "J11",
+    "family": "Six-panel scientific illustration board",
+    "type": "vector",
+    "page": "PAGES/J11_v10.html",
+    "image": "IMAGES/J11_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "9357cf07d8159e543ac43cba1b596f18cdb89ce4d61e2c7ac1fe121af7a66960",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J11_v10_part1.png",
+      "PHONE/J11_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J12_v1",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v1.html",
+    "image": "IMAGES/J12_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "424fa402f8fc0e47a133595ea13f9555b1610037985b5be2b73a0f9930a0fe4f",
+    "width": 720,
+    "height": 2688,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v1_part1.png",
+      "PHONE/J12_v1_part2.png",
+      "PHONE/J12_v1_part3.png",
+      "PHONE/J12_v1_part4.png"
+    ]
+  },
+  {
+    "id": "J12_v2",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v2.html",
+    "image": "IMAGES/J12_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": [
+      "Cell membrane",
+      "Controls what enters and leaves the cell."
+    ],
+    "sha256": "0215f2b48b20c3734ff53c338a75937901eeb482fcac466d95e152f76ba4876f",
+    "width": 720,
+    "height": 2024,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v2_part1.png",
+      "PHONE/J12_v2_part2.png",
+      "PHONE/J12_v2_part3.png"
+    ]
+  },
+  {
+    "id": "J12_v3",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v3.html",
+    "image": "IMAGES/J12_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "c60bf4febc621daa44affcbf98abc726abc6b0eb19941a61bb2bf77a73a2c7a0",
+    "width": 720,
+    "height": 2081,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v3_part1.png",
+      "PHONE/J12_v3_part2.png",
+      "PHONE/J12_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J12_v4",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v4.html",
+    "image": "IMAGES/J12_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "c31ea9968eb74335c04eb9f1c794f2be6183bba0301d47e8260d4b9a43e7d60e",
+    "width": 720,
+    "height": 2371,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v4_part1.png",
+      "PHONE/J12_v4_part2.png",
+      "PHONE/J12_v4_part3.png",
+      "PHONE/J12_v4_part4.png"
+    ]
+  },
+  {
+    "id": "J12_v5",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v5.html",
+    "image": "IMAGES/J12_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "54fac56a18803e3228e156c02a89435fd52c07cf72fc94ff83a15752b362d324",
+    "width": 720,
+    "height": 2057,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v5_part1.png",
+      "PHONE/J12_v5_part2.png",
+      "PHONE/J12_v5_part3.png"
+    ]
+  },
+  {
+    "id": "J12_v6",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v6.html",
+    "image": "IMAGES/J12_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "63af4c13046022514ae5046806f0b40c06c7d2033b62aeb2d4be6f6e37047d0c",
+    "width": 720,
+    "height": 2731,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v6_part1.png",
+      "PHONE/J12_v6_part2.png",
+      "PHONE/J12_v6_part3.png",
+      "PHONE/J12_v6_part4.png"
+    ]
+  },
+  {
+    "id": "J12_v10",
+    "style": "J12",
+    "family": "Scientific printed recipe plate",
+    "type": "vector",
+    "page": "PAGES/J12_v10.html",
+    "image": "IMAGES/J12_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "9146dd6d7329a6b28092fdf9ce56aa493edd631c895977fe3728508fc1c03610",
+    "width": 720,
+    "height": 1985,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J12_v10_part1.png",
+      "PHONE/J12_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J13_wake",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_wake.html",
+    "image": "IMAGES/J13_wake.png",
+    "counts": [
+      3,
+      1,
+      1
+    ],
+    "required": [
+      "ALLMAX TestoFX Xtreme — 3 capsules",
+      "New Roots Herbal Boron — 1 capsule / 3 mg",
+      "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "9383d44af2d7877541e45e90ab4dbe1369fb3ca1bcc260f221c949f531daa367",
+    "width": 720,
+    "height": 1501,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_wake_part1.png",
+      "PHONE/J13_wake_part2.png"
+    ]
+  },
+  {
+    "id": "J13_meal1",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_meal1.html",
+    "image": "IMAGES/J13_meal1.png",
+    "counts": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "required": [
+      "Wakunaga Kyolic 104 — 2 capsules",
+      "Pure Encapsulations NAC — 1 capsule / 900 mg",
+      "California Gold Nutrition NMN — 1 capsule / 175 mg",
+      "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+    ],
+    "body_function": [
+      "Liver",
+      "Makes bile for fat digestion and processes nutrients."
+    ],
+    "sha256": "84fca8e162990b7bc622eedd5e35ad375ad626cd9c56d104163851fea7a2079f",
+    "width": 720,
+    "height": 1754,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_meal1_part1.png",
+      "PHONE/J13_meal1_part2.png",
+      "PHONE/J13_meal1_part3.png"
+    ]
+  },
+  {
+    "id": "J13_primer",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_primer.html",
+    "image": "IMAGES/J13_primer.png",
+    "counts": [
+      1
+    ],
+    "required": [
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside beverage"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "2a9ac4d26ec5d004e177906a6250317084e8f8d1539f9d95dd113a08cc87eb32",
+    "width": 720,
+    "height": 1157,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_primer_part1.png",
+      "PHONE/J13_primer_part2.png"
+    ]
+  },
+  {
+    "id": "J13_dmz",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_dmz.html",
+    "image": "IMAGES/J13_dmz.png",
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations PureGenomics — 1 capsule",
+      "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+      "California Gold Nutrition Omega 800 — 1 softgel",
+      "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+      "Himalaya UriCare — 2 capsules",
+      "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+      "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+    ],
+    "body_function": [
+      "Kidneys",
+      "Filter waste and help balance water and minerals."
+    ],
+    "sha256": "ac885d70f9261943f85e01f0b7fbb51fbdca47af5e0f18efbd42766f2ed19d24",
+    "width": 720,
+    "height": 2783,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_dmz_part1.png",
+      "PHONE/J13_dmz_part2.png",
+      "PHONE/J13_dmz_part3.png",
+      "PHONE/J13_dmz_part4.png"
+    ]
+  },
+  {
+    "id": "J13_cofactors",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_cofactors.html",
+    "image": "IMAGES/J13_cofactors.png",
+    "counts": [
+      3,
+      2
+    ],
+    "required": [
+      "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+      "Pure Encapsulations Ligament Restore — 2 capsules"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "28dcfc1611887da9e949400dc684b9e42f1d29924e053a94d1c13d109760621b",
+    "width": 720,
+    "height": 1418,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_cofactors_part1.png",
+      "PHONE/J13_cofactors_part2.png"
+    ]
+  },
+  {
+    "id": "J13_night",
+    "style": "J13",
+    "family": "Encapsulated-intake illustrated grid",
+    "type": "pill_group",
+    "page": "PAGES/J13_night.html",
+    "image": "IMAGES/J13_night.png",
+    "counts": [
+      2,
+      1,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+      "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+      "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+    ],
+    "body_function": [
+      "Spine",
+      "Supports the body and protects the spinal cord."
+    ],
+    "sha256": "bf3abe31b4dcf38946f8c957e0a657684b5f13c70cf9da01ab18824939181b7d",
+    "width": 720,
+    "height": 1563,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J13_night_part1.png",
+      "PHONE/J13_night_part2.png",
+      "PHONE/J13_night_part3.png"
+    ]
+  },
+  {
+    "id": "J14_v1",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v1.html",
+    "image": "IMAGES/J14_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "43f05c3930473b3114a25675cf2b08328273d2a2248d840cdb181c85634d9dac",
+    "width": 720,
+    "height": 2299,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v1_part1.png",
+      "PHONE/J14_v1_part2.png",
+      "PHONE/J14_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J14_v2",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v2.html",
+    "image": "IMAGES/J14_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "77868e9c16c30277f8d0ca37ed3b7de1e5a8609a4176faee286d86c421e21848",
+    "width": 720,
+    "height": 1579,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v2_part1.png",
+      "PHONE/J14_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J14_v3",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v3.html",
+    "image": "IMAGES/J14_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "e979cc5654f1fb697eb83508fee3432c0e69915ac6569514b3f483d04b234487",
+    "width": 720,
+    "height": 2021,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v3_part1.png",
+      "PHONE/J14_v3_part2.png",
+      "PHONE/J14_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J14_v4",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v4.html",
+    "image": "IMAGES/J14_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "ee6dc9987be0407c1528a2e310cb599cf0ef4d9f4028293bf3e9fb9ad8512a28",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v4_part1.png",
+      "PHONE/J14_v4_part2.png",
+      "PHONE/J14_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J14_v5",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v5.html",
+    "image": "IMAGES/J14_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "26f92ff8c6579ca7603fea7569c9a0991d6146c77975234e0a35e3c04fd380b7",
+    "width": 720,
+    "height": 1616,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v5_part1.png",
+      "PHONE/J14_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J14_v6",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v6.html",
+    "image": "IMAGES/J14_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "1c25ad77129885c9e48a5e8bdb2584bedb452ffb4426ca6e64cdb734a5ca592e",
+    "width": 720,
+    "height": 2286,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v6_part1.png",
+      "PHONE/J14_v6_part2.png",
+      "PHONE/J14_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J14_v10",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "vector",
+    "page": "PAGES/J14_v10.html",
+    "image": "IMAGES/J14_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "37fa915d74724761ecf40f7e1c3fe932756d870ef800b47a20bcd6e621f0416d",
+    "width": 720,
+    "height": 1925,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_v10_part1.png",
+      "PHONE/J14_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J14_wake",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_wake.html",
+    "image": "IMAGES/J14_wake.png",
+    "counts": [
+      3,
+      1,
+      1
+    ],
+    "required": [
+      "ALLMAX TestoFX Xtreme — 3 capsules",
+      "New Roots Herbal Boron — 1 capsule / 3 mg",
+      "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+    ],
+    "body_function": null,
+    "sha256": "9a699b15923f83265ac70d8fe03cd4086cd0288308660c9f2863ca8c5f46fcde",
+    "width": 720,
+    "height": 1115,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_wake_part1.png"
+    ]
+  },
+  {
+    "id": "J14_meal1",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_meal1.html",
+    "image": "IMAGES/J14_meal1.png",
+    "counts": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "required": [
+      "Wakunaga Kyolic 104 — 2 capsules",
+      "Pure Encapsulations NAC — 1 capsule / 900 mg",
+      "California Gold Nutrition NMN — 1 capsule / 175 mg",
+      "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+    ],
+    "body_function": null,
+    "sha256": "68842e7fc7f67c169de1c35be23551a4eac376d432f2b44e2e890b997bb6e597",
+    "width": 720,
+    "height": 1369,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_meal1_part1.png",
+      "PHONE/J14_meal1_part2.png"
+    ]
+  },
+  {
+    "id": "J14_primer",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_primer.html",
+    "image": "IMAGES/J14_primer.png",
+    "counts": [
+      1
+    ],
+    "required": [
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside beverage"
+    ],
+    "body_function": null,
+    "sha256": "796ec9a9cbac638819065f981685e5f82a5131492ddbb8dd9a0ccb9dc7cd90e2",
+    "width": 720,
+    "height": 772,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_primer_part1.png"
+    ]
+  },
+  {
+    "id": "J14_dmz",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_dmz.html",
+    "image": "IMAGES/J14_dmz.png",
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations PureGenomics — 1 capsule",
+      "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+      "California Gold Nutrition Omega 800 — 1 softgel",
+      "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+      "Himalaya UriCare — 2 capsules",
+      "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+      "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+    ],
+    "body_function": null,
+    "sha256": "c017c06df8ef646fc213b2a885ffb15d62b7a8a62dc390961d86a5414b9ac7f3",
+    "width": 720,
+    "height": 2397,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_dmz_part1.png",
+      "PHONE/J14_dmz_part2.png",
+      "PHONE/J14_dmz_part3.png"
+    ]
+  },
+  {
+    "id": "J14_cofactors",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_cofactors.html",
+    "image": "IMAGES/J14_cofactors.png",
+    "counts": [
+      3,
+      2
+    ],
+    "required": [
+      "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+      "Pure Encapsulations Ligament Restore — 2 capsules"
+    ],
+    "body_function": null,
+    "sha256": "7cee5a44dc5af8a4e7720a8fe5e63f9da52a8a6848d1ac15f7d49df73798ce71",
+    "width": 720,
+    "height": 1032,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_cofactors_part1.png"
+    ]
+  },
+  {
+    "id": "J14_night",
+    "style": "J14",
+    "family": "Liquid/pill crosscheck dashboard",
+    "type": "pill_group",
+    "page": "PAGES/J14_night.html",
+    "image": "IMAGES/J14_night.png",
+    "counts": [
+      2,
+      1,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+      "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+      "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+    ],
+    "body_function": null,
+    "sha256": "14d42ac42cbb5fc52b49d4363605e6b97dd28ab1fc82e34ad9f591de81bb47f2",
+    "width": 720,
+    "height": 1236,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J14_night_part1.png",
+      "PHONE/J14_night_part2.png"
+    ]
+  },
+  {
+    "id": "J15_wake",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_wake.html",
+    "image": "IMAGES/J15_wake.png",
+    "counts": [
+      3,
+      1,
+      1
+    ],
+    "required": [
+      "ALLMAX TestoFX Xtreme — 3 capsules",
+      "New Roots Herbal Boron — 1 capsule / 3 mg",
+      "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "9383d44af2d7877541e45e90ab4dbe1369fb3ca1bcc260f221c949f531daa367",
+    "width": 720,
+    "height": 1501,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_wake_part1.png",
+      "PHONE/J15_wake_part2.png"
+    ]
+  },
+  {
+    "id": "J15_meal1",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_meal1.html",
+    "image": "IMAGES/J15_meal1.png",
+    "counts": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "required": [
+      "Wakunaga Kyolic 104 — 2 capsules",
+      "Pure Encapsulations NAC — 1 capsule / 900 mg",
+      "California Gold Nutrition NMN — 1 capsule / 175 mg",
+      "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+    ],
+    "body_function": [
+      "Liver",
+      "Makes bile for fat digestion and processes nutrients."
+    ],
+    "sha256": "84fca8e162990b7bc622eedd5e35ad375ad626cd9c56d104163851fea7a2079f",
+    "width": 720,
+    "height": 1754,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_meal1_part1.png",
+      "PHONE/J15_meal1_part2.png",
+      "PHONE/J15_meal1_part3.png"
+    ]
+  },
+  {
+    "id": "J15_primer",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_primer.html",
+    "image": "IMAGES/J15_primer.png",
+    "counts": [
+      1
+    ],
+    "required": [
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside beverage"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "2a9ac4d26ec5d004e177906a6250317084e8f8d1539f9d95dd113a08cc87eb32",
+    "width": 720,
+    "height": 1157,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_primer_part1.png",
+      "PHONE/J15_primer_part2.png"
+    ]
+  },
+  {
+    "id": "J15_dmz",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_dmz.html",
+    "image": "IMAGES/J15_dmz.png",
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations PureGenomics — 1 capsule",
+      "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+      "California Gold Nutrition Omega 800 — 1 softgel",
+      "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+      "Himalaya UriCare — 2 capsules",
+      "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+      "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+    ],
+    "body_function": [
+      "Kidneys",
+      "Filter waste and help balance water and minerals."
+    ],
+    "sha256": "ac885d70f9261943f85e01f0b7fbb51fbdca47af5e0f18efbd42766f2ed19d24",
+    "width": 720,
+    "height": 2783,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_dmz_part1.png",
+      "PHONE/J15_dmz_part2.png",
+      "PHONE/J15_dmz_part3.png",
+      "PHONE/J15_dmz_part4.png"
+    ]
+  },
+  {
+    "id": "J15_cofactors",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_cofactors.html",
+    "image": "IMAGES/J15_cofactors.png",
+    "counts": [
+      3,
+      2
+    ],
+    "required": [
+      "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+      "Pure Encapsulations Ligament Restore — 2 capsules"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "28dcfc1611887da9e949400dc684b9e42f1d29924e053a94d1c13d109760621b",
+    "width": 720,
+    "height": 1418,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_cofactors_part1.png",
+      "PHONE/J15_cofactors_part2.png"
+    ]
+  },
+  {
+    "id": "J15_night",
+    "style": "J15",
+    "family": "Vertical illustrated chronometer",
+    "type": "pill_group",
+    "page": "PAGES/J15_night.html",
+    "image": "IMAGES/J15_night.png",
+    "counts": [
+      2,
+      1,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+      "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+      "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+    ],
+    "body_function": [
+      "Spine",
+      "Supports the body and protects the spinal cord."
+    ],
+    "sha256": "bf3abe31b4dcf38946f8c957e0a657684b5f13c70cf9da01ab18824939181b7d",
+    "width": 720,
+    "height": 1563,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J15_night_part1.png",
+      "PHONE/J15_night_part2.png",
+      "PHONE/J15_night_part3.png"
+    ]
+  },
+  {
+    "id": "J16_v1",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v1.html",
+    "image": "IMAGES/J16_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "9388522f6f0b3d5d2dae3a2b4c14a11a7dd5a57141482f827059efb5886fcfa6",
+    "width": 720,
+    "height": 2241,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v1_part1.png",
+      "PHONE/J16_v1_part2.png",
+      "PHONE/J16_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J16_v2",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v2.html",
+    "image": "IMAGES/J16_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "fc496dc0dfffd9aa2f505e38f09faf45601e3e3173c46956120a8151357897e4",
+    "width": 720,
+    "height": 1636,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v2_part1.png",
+      "PHONE/J16_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J16_v3",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v3.html",
+    "image": "IMAGES/J16_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "ae3fa7e7ce76a04b8d7e6a2affb1d4ed6b5782710864ff46783ebd590db018a2",
+    "width": 720,
+    "height": 2079,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v3_part1.png",
+      "PHONE/J16_v3_part2.png",
+      "PHONE/J16_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J16_v4",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v4.html",
+    "image": "IMAGES/J16_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "1c3ff50ede2f92614c369c650363c1420ff0dbaf1b16d80792e0039dc4358d23",
+    "width": 720,
+    "height": 1862,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v4_part1.png",
+      "PHONE/J16_v4_part2.png",
+      "PHONE/J16_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J16_v5",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v5.html",
+    "image": "IMAGES/J16_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "dbebc00e41d68db1b1c5272975153c0232a4526c57e42538d3d33200cb68cea9",
+    "width": 720,
+    "height": 1668,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v5_part1.png",
+      "PHONE/J16_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J16_v6",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v6.html",
+    "image": "IMAGES/J16_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "a969c7cc5c509bc642e6651e0fe7474c5be0bfa8824b5fc93b297ea5b85d9aee",
+    "width": 720,
+    "height": 2344,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v6_part1.png",
+      "PHONE/J16_v6_part2.png",
+      "PHONE/J16_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J16_v10",
+    "style": "J16",
+    "family": "Minimal grid-paper bottle sequence",
+    "type": "vector",
+    "page": "PAGES/J16_v10.html",
+    "image": "IMAGES/J16_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "03e35aacf02b9a14532f608171d92f448d35a38518572380370ac0ccb44192d6",
+    "width": 720,
+    "height": 1983,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J16_v10_part1.png",
+      "PHONE/J16_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J17_v1",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v1.html",
+    "image": "IMAGES/J17_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "8826e212fea54483829fc73927abacd087adbf123ec934f13f2d2a1bc48f81ae",
+    "width": 720,
+    "height": 2302,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v1_part1.png",
+      "PHONE/J17_v1_part2.png",
+      "PHONE/J17_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J17_v2",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v2.html",
+    "image": "IMAGES/J17_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": [
+      "Cell membrane",
+      "Controls what enters and leaves the cell."
+    ],
+    "sha256": "1526653dea40428c55b0e47223eecf7ece29b5f75b7f706f16c8fe98f5f9bfd5",
+    "width": 720,
+    "height": 2024,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v2_part1.png",
+      "PHONE/J17_v2_part2.png",
+      "PHONE/J17_v2_part3.png"
+    ]
+  },
+  {
+    "id": "J17_v3",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v3.html",
+    "image": "IMAGES/J17_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "ab2b5620c712b9404c51a9be0b35c22ca13cc25a446efcd5bd2fc24cc364bcba",
+    "width": 720,
+    "height": 2081,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v3_part1.png",
+      "PHONE/J17_v3_part2.png",
+      "PHONE/J17_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J17_v4",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v4.html",
+    "image": "IMAGES/J17_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "8bd046999b2f1276439d3eb1727fa126623ed55f84a9f1656072acea3d883248",
+    "width": 720,
+    "height": 2371,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v4_part1.png",
+      "PHONE/J17_v4_part2.png",
+      "PHONE/J17_v4_part3.png",
+      "PHONE/J17_v4_part4.png"
+    ]
+  },
+  {
+    "id": "J17_v5",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v5.html",
+    "image": "IMAGES/J17_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "361513d508d633a12bf310e79f9de21cfb6f6570bde66930e863bd2ace806fa4",
+    "width": 720,
+    "height": 2057,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v5_part1.png",
+      "PHONE/J17_v5_part2.png",
+      "PHONE/J17_v5_part3.png"
+    ]
+  },
+  {
+    "id": "J17_v6",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v6.html",
+    "image": "IMAGES/J17_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "7fdf60fbed4389c994f1f0c844c4f19e625344e351e45cb08346c47324b7b750",
+    "width": 720,
+    "height": 2346,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v6_part1.png",
+      "PHONE/J17_v6_part2.png",
+      "PHONE/J17_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J17_v10",
+    "style": "J17",
+    "family": "Vertical grid-paper vector architecture",
+    "type": "vector",
+    "page": "PAGES/J17_v10.html",
+    "image": "IMAGES/J17_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "d95ae4a511449a945e03ccd302423fe27deadb7702e42e1a086d1d5bc5f54845",
+    "width": 720,
+    "height": 1985,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J17_v10_part1.png",
+      "PHONE/J17_v10_part2.png"
+    ]
+  },
+  {
+    "id": "J18_wake",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_wake.html",
+    "image": "IMAGES/J18_wake.png",
+    "counts": [
+      3,
+      1,
+      1
+    ],
+    "required": [
+      "ALLMAX TestoFX Xtreme — 3 capsules",
+      "New Roots Herbal Boron — 1 capsule / 3 mg",
+      "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "9383d44af2d7877541e45e90ab4dbe1369fb3ca1bcc260f221c949f531daa367",
+    "width": 720,
+    "height": 1501,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_wake_part1.png",
+      "PHONE/J18_wake_part2.png"
+    ]
+  },
+  {
+    "id": "J18_meal1",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_meal1.html",
+    "image": "IMAGES/J18_meal1.png",
+    "counts": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "required": [
+      "Wakunaga Kyolic 104 — 2 capsules",
+      "Pure Encapsulations NAC — 1 capsule / 900 mg",
+      "California Gold Nutrition NMN — 1 capsule / 175 mg",
+      "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+    ],
+    "body_function": [
+      "Liver",
+      "Makes bile for fat digestion and processes nutrients."
+    ],
+    "sha256": "84fca8e162990b7bc622eedd5e35ad375ad626cd9c56d104163851fea7a2079f",
+    "width": 720,
+    "height": 1754,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_meal1_part1.png",
+      "PHONE/J18_meal1_part2.png",
+      "PHONE/J18_meal1_part3.png"
+    ]
+  },
+  {
+    "id": "J18_primer",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_primer.html",
+    "image": "IMAGES/J18_primer.png",
+    "counts": [
+      1
+    ],
+    "required": [
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside beverage"
+    ],
+    "body_function": [
+      "Lungs",
+      "Exchange oxygen and carbon dioxide with the blood."
+    ],
+    "sha256": "2a9ac4d26ec5d004e177906a6250317084e8f8d1539f9d95dd113a08cc87eb32",
+    "width": 720,
+    "height": 1157,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_primer_part1.png",
+      "PHONE/J18_primer_part2.png"
+    ]
+  },
+  {
+    "id": "J18_dmz",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_dmz.html",
+    "image": "IMAGES/J18_dmz.png",
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations PureGenomics — 1 capsule",
+      "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+      "California Gold Nutrition Omega 800 — 1 softgel",
+      "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+      "Himalaya UriCare — 2 capsules",
+      "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+      "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+    ],
+    "body_function": [
+      "Kidneys",
+      "Filter waste and help balance water and minerals."
+    ],
+    "sha256": "ac885d70f9261943f85e01f0b7fbb51fbdca47af5e0f18efbd42766f2ed19d24",
+    "width": 720,
+    "height": 2783,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_dmz_part1.png",
+      "PHONE/J18_dmz_part2.png",
+      "PHONE/J18_dmz_part3.png",
+      "PHONE/J18_dmz_part4.png"
+    ]
+  },
+  {
+    "id": "J18_cofactors",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_cofactors.html",
+    "image": "IMAGES/J18_cofactors.png",
+    "counts": [
+      3,
+      2
+    ],
+    "required": [
+      "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+      "Pure Encapsulations Ligament Restore — 2 capsules"
+    ],
+    "body_function": [
+      "Skeletal muscle",
+      "Contracts to produce movement and maintain posture."
+    ],
+    "sha256": "28dcfc1611887da9e949400dc684b9e42f1d29924e053a94d1c13d109760621b",
+    "width": 720,
+    "height": 1418,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_cofactors_part1.png",
+      "PHONE/J18_cofactors_part2.png"
+    ]
+  },
+  {
+    "id": "J18_night",
+    "style": "J18",
+    "family": "Pill architecture engineering plate",
+    "type": "pill_group",
+    "page": "PAGES/J18_night.html",
+    "image": "IMAGES/J18_night.png",
+    "counts": [
+      2,
+      1,
+      1
+    ],
+    "required": [
+      "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+      "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+      "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+    ],
+    "body_function": [
+      "Spine",
+      "Supports the body and protects the spinal cord."
+    ],
+    "sha256": "bf3abe31b4dcf38946f8c957e0a657684b5f13c70cf9da01ab18824939181b7d",
+    "width": 720,
+    "height": 1563,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J18_night_part1.png",
+      "PHONE/J18_night_part2.png",
+      "PHONE/J18_night_part3.png"
+    ]
+  },
+  {
+    "id": "J19_v1",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v1.html",
+    "image": "IMAGES/J19_v1.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+      "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+    ],
+    "body_function": null,
+    "sha256": "d9adbf17a2aa96793e80f72b4d3a8e124faeb1579acc08241f4c49b6fc3a7d91",
+    "width": 720,
+    "height": 2299,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v1_part1.png",
+      "PHONE/J19_v1_part2.png",
+      "PHONE/J19_v1_part3.png"
+    ]
+  },
+  {
+    "id": "J19_v2",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v2.html",
+    "image": "IMAGES/J19_v2.png",
+    "counts": [],
+    "required": [
+      "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+    ],
+    "body_function": null,
+    "sha256": "da4e3fcaac4c9d172e4e40462979c25278be83f301d65f1699c5dc9a57454789",
+    "width": 720,
+    "height": 1635,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v2_part1.png",
+      "PHONE/J19_v2_part2.png"
+    ]
+  },
+  {
+    "id": "J19_v3",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v3.html",
+    "image": "IMAGES/J19_v3.png",
+    "counts": [],
+    "required": [
+      "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "Rootalive Organic Gelatinized Black Maca — 5 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "MegaFood C Defense Gummy — 1 gummy chewed separately",
+      "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+    ],
+    "body_function": null,
+    "sha256": "47925455b7c60ffb5f2cb471bb78fd1cd3c92f845492669ae5e378dbfa77bbb7",
+    "width": 720,
+    "height": 2078,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v3_part1.png",
+      "PHONE/J19_v3_part2.png",
+      "PHONE/J19_v3_part3.png"
+    ]
+  },
+  {
+    "id": "J19_v4",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v4.html",
+    "image": "IMAGES/J19_v4.png",
+    "counts": [],
+    "required": [
+      "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+      "Rootalive Organic Beetroot Powder — 7 g",
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp",
+      "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+    ],
+    "body_function": null,
+    "sha256": "3fcae93f4a7f345ba82cd10ddde3fcdefecb637edd96ba1d07a3533fc7031afb",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v4_part1.png",
+      "PHONE/J19_v4_part2.png",
+      "PHONE/J19_v4_part3.png"
+    ]
+  },
+  {
+    "id": "J19_v5",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v5.html",
+    "image": "IMAGES/J19_v5.png",
+    "counts": [],
+    "required": [
+      "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+      "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+      "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+      "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+      "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+    ],
+    "body_function": null,
+    "sha256": "b22c3780a4cca467ca1c714fd812b210997ee755c819d5f1723ba84c5158f764",
+    "width": 720,
+    "height": 1671,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v5_part1.png",
+      "PHONE/J19_v5_part2.png"
+    ]
+  },
+  {
+    "id": "J19_v6",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v6.html",
+    "image": "IMAGES/J19_v6.png",
+    "counts": [],
+    "required": [
+      "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+      "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+      "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+      "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+      "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+      "ALLMAX Essentials Taurine Powder — 2–3 g",
+      "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+    ],
+    "body_function": null,
+    "sha256": "4bd986a222de8f92400b385bd0529d37f2f854411fbf042cca9366a61e519948",
+    "width": 720,
+    "height": 2343,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v6_part1.png",
+      "PHONE/J19_v6_part2.png",
+      "PHONE/J19_v6_part3.png"
+    ]
+  },
+  {
+    "id": "J19_v10",
+    "style": "J19",
+    "family": "White gym-sequence blueprint",
+    "type": "vector",
+    "page": "PAGES/J19_v10.html",
+    "image": "IMAGES/J19_v10.png",
+    "counts": [],
+    "required": [
+      "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+      "North Coast Naturals Fermented L-Glutamine — 5 g",
+      "AOR Pure Glycine Powder — 3–5 g",
+      "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+      "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+    ],
+    "body_function": null,
+    "sha256": "a686a2ce75c915007cac123ae1ae96ba72d4cf43d4bd459c5de0be68b76c6455",
+    "width": 720,
+    "height": 1982,
+    "minimum_body_px": 42,
+    "body_at_320": 18.666666666666668,
+    "phone_panels": [
+      "PHONE/J19_v10_part1.png",
+      "PHONE/J19_v10_part2.png"
+    ]
+  }
+]

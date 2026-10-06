@@ -1,0 +1,270 @@
+{
+  "version": "V187.50-V2.8-image-reconciliation-2026-10-05",
+  "authority": "Uploaded V187.50/V2.8 is a source document, not independent scientific validation. Current user confirmations retain NOW betaine and afternoon DMZ. Confirmed product-package evidence overrides conflicting derived nutrient claims.",
+  "vectors": [
+    {
+      "id": "v1",
+      "name": "V1 IGNITION",
+      "base": "500-600 mL cold filtered water",
+      "ingredients": [
+        "ALLMAX Impact Igniter Xtreme 2.0 — 2 scoops / 28 g",
+        "ALLMAX MuscleEAA Xtreme — 1 scoop / 17.73 g",
+        "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+        "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+        "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+        "ALLMAX Essentials Taurine Powder — 2–3 g"
+      ],
+      "deployment": "Morning training only (State A)",
+      "separate": [
+        "AOR Xerenoos Citicoline — 1 capsule / 250 mg; outside shaker"
+      ]
+    },
+    {
+      "id": "v2",
+      "name": "V2 REFUEL",
+      "base": "600-750 mL cold filtered water",
+      "ingredients": [
+        "Perfect Sports BCAA HyperClear — 1 scoop / 7.5 g BCAAs 2:1:1",
+        "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop / about 6.5 g",
+        "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+      ],
+      "deployment": "During the training session (States A and C)",
+      "separate": [
+        "Natural Delights Organic Medjool Dates — 2–3 whole dates, eaten separately; brand recorded in historical source, confirm current package before exact packaging use"
+      ],
+      "electrolyte_package_reference": "product_references/RapiDrem_Electrolyte_Lemon_Raspberry_user.jpg"
+    },
+    {
+      "id": "v3",
+      "name": "V3 RECOVERY",
+      "base": "Cold filtered water; shaker volume unspecified",
+      "ingredients": [
+        "MuscleMeds Carnivor Beef Protein Isolate — 1 Canadian scoop / 33.9 g",
+        "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+        "Rootalive Organic Gelatinized Black Maca — 5 g",
+        "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg"
+      ],
+      "deployment": "Daily anchor; optional when consumed on rest days",
+      "separate": [
+        "MegaFood C Defense Gummy — 1 gummy chewed separately",
+        "NAKA Platinum Vital Greens (Mint, 600 mL bottle) — 20 mL separate flush"
+      ]
+    },
+    {
+      "id": "v4",
+      "name": "V4 RELOAD",
+      "base": "350-450 mL room-temperature water",
+      "ingredients": [
+        "BioSteel Recovery Protein Plus — 1 scoop / 36 g half-serving",
+        "Rootalive Organic Beetroot Powder — 7 g",
+        "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg active",
+        "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+      ],
+      "deployment": "After the workout (States A and C); R-ALA remains separate",
+      "separate": [
+        "AOR High Dose R-Lipoic Acid — 300 mg whole capsule, taken separately before shake"
+      ],
+      "creatine_package_reference": "product_references/Proline_CreatineHCL_BlueRaspberry_164g_user.png"
+    },
+    {
+      "id": "v5",
+      "name": "V5 TRANSPORT",
+      "base": "500 mL cold filtered water",
+      "ingredients": [
+        "Proline Nutrition Creatine HCL (Blue Raspberry, 164 g package) — 750 mg",
+        "PROMISE Orthomolecular Pure Marine Collagen Peptan — 10 g",
+        "ALLMAX Liquid L-Carnitine 1500 — 15 mL / 1,500 mg",
+        "RapiDrem Electrolyte Powder (lemon & raspberry) — 1 scoop",
+        "Kirkland Signature Himalayan Pink Salt — 1/16 tsp"
+      ],
+      "deployment": "Rest days only (State B)",
+      "separate": [],
+      "creatine_package_reference": "product_references/Proline_CreatineHCL_BlueRaspberry_164g_user.png",
+      "electrolyte_package_reference": "product_references/RapiDrem_Electrolyte_Lemon_Raspberry_user.jpg"
+    },
+    {
+      "id": "v6",
+      "name": "V6 PUMP",
+      "base": "500–600 mL cold filtered water",
+      "ingredients": [
+        "ALLMAX Impact PUMP Xtreme (Blue Raspberry) — 2 scoops / 31 g",
+        "ALLMAX MuscleEAA Xtreme (Cherry Limeade) — 1 scoop / 17.73 g",
+        "ALLMAX Essentials PeakO2 mushroom POWDER — 2,000 mg",
+        "NOW Foods / NOW Sports Betaine Powder (anhydrous TMG) — 2,500 mg",
+        "ALLMAX Essentials Citrulline Malate 2:1 — 4–6 g",
+        "ALLMAX Essentials Taurine Powder — 2–3 g"
+      ],
+      "deployment": "Evening training only (State C); replaces V1",
+      "separate": [
+        "AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water"
+      ]
+    },
+    {
+      "id": "v10",
+      "name": "V10 SHUTDOWN",
+      "base": "800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature",
+      "ingredients": [
+        "SD Pharmaceuticals Natural Series Creatine HCL (Raspberry Lemonade, 300 g package) — 750 mg",
+        "North Coast Naturals Fermented L-Glutamine — 5 g",
+        "AOR Pure Glycine Powder — 3–5 g"
+      ],
+      "deployment": "Night anchor across all three states",
+      "separate": [],
+      "optional": [
+        "Medi-C Plus Original Formula — Vitamin C & L-Lysine with Calcium Ascorbate, Citrus — OPTIONAL recorded half-scoop / 2.5 g; exact serving composition not checked from this front label",
+        "Niyama Wellness Hey Relax — OPTIONAL / RARE full scoop"
+      ],
+      "separate_note": "The separate pill stack is not this beverage formula; do not invent or add capsules to the drink.",
+      "vessel": "Large insulated hot-beverage thermos/bottle for 800 mL night slurry; NO protein shaker",
+      "creatine_package_reference": "product_references/SD_CreatineHCL_NaturalSeries_RaspberryLemonade_300g_user.png"
+    }
+  ],
+  "presentation_rules": {
+    "source_date": "2026-10-05",
+    "main_training": [
+      "v3",
+      "v1",
+      "v2",
+      "v4",
+      "v10"
+    ],
+    "rest": [
+      "v3",
+      "v5",
+      "v10"
+    ],
+    "evening": [
+      "v3",
+      "v6",
+      "v2",
+      "v4",
+      "v10"
+    ],
+    "v3_rest": "when consumed",
+    "v5_rest": "if consumed",
+    "mutual_exclusion": "V1 and V6 never on the same calendar day",
+    "unrecorded_vectors": [
+      "v7",
+      "v8",
+      "v9"
+    ],
+    "clock_times": "No fixed clock times in images; session-relative sequence only",
+    "dmz_latest_user_override": "Afternoon is the DMZ stack, the large pill group. User confirmation on 5 October 2026."
+  },
+  "pill_blocks": [
+    {
+      "id": "wake",
+      "title": "Wake pack",
+      "items": [
+        "ALLMAX TestoFX Xtreme — 3 capsules",
+        "New Roots Herbal Boron — 1 capsule / 3 mg",
+        "California Gold LactoBif 100 — 1 capsule when used; intermittent"
+      ],
+      "branch": "Morning pack retained on training and rest days"
+    },
+    {
+      "id": "meal1",
+      "title": "First meal",
+      "items": [
+        "Wakunaga Kyolic 104 — 2 capsules",
+        "Pure Encapsulations NAC — 1 capsule / 900 mg",
+        "California Gold Nutrition NMN — 1 capsule / 175 mg",
+        "Pure Encapsulations Digestive Enzymes Ultra — 1 capsule with the meal"
+      ],
+      "branch": "Training grid; rest days retain meal enzyme"
+    },
+    {
+      "id": "primer",
+      "title": "Pre-training capsule",
+      "items": [
+        "Citicoline — 250 mg, whole capsule separately"
+      ],
+      "branch": "Once on selected training branch; outside beverage"
+    },
+    {
+      "id": "dmz",
+      "title": "Afternoon · DMZ",
+      "items": [
+        "Pure Encapsulations PureGenomics — 1 capsule",
+        "CanPrev Calcium Malate — 1 capsule / 200 mg elemental; conditional",
+        "California Gold Nutrition Omega 800 — 1 softgel",
+        "Pure Encapsulations Liver-GI Detox — 1 capsule; conditional",
+        "Himalaya UriCare — 2 capsules",
+        "KITABIO Pumpkin Seed Oil with Saw Palmetto — 3 softgels",
+        "Pure Encapsulations Curcumin 500 + BioPerine — 1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported"
+      ],
+      "branch": "Training-only meal grid; skipped on rest days",
+      "provenance": "V187.50/V2.8 pill table; user reconfirmed afternoon placement in this turn, overriding the document lunch schedule."
+    },
+    {
+      "id": "cofactors",
+      "title": "Other recorded meal co-factors",
+      "items": [
+        "Higher Healths Beef Liver — 3 capsules / 1.5 g powder",
+        "Pure Encapsulations Ligament Restore — 2 capsules"
+      ],
+      "branch": "Training-only. Meal placement unresolved; enzyme accompanies each actual main meal."
+    },
+    {
+      "id": "night",
+      "title": "Night pill stage",
+      "items": [
+        "Pure Encapsulations Magnesium Glycinate — 2 capsules / 240 mg elemental",
+        "Organika Tart Cherry 10X — 1 capsule / 500 mg extract",
+        "Naturopathic Labs Milk Thistle — 1 capsule; conditional, mass unspecified"
+      ],
+      "branch": "Training days only; skipped on rest days"
+    }
+  ],
+  "unresolved_current_source_conflicts": [
+    "Betaine: document says ALLMAX; user reconfirmed NOW. NOW remains in V1/V6.",
+    "DMZ: document says lunch; user reconfirmed afternoon. Afternoon remains. Beef Liver/Ligament Restore meal placement is not silently transferred into the same DMZ group.",
+    "Medi-C Plus: document attributes 105 mg magnesium to a half scoop, conflicting with prior confirmed calcium-ascorbate package. Do not put those magnesium totals or derived daily totals into images.",
+    "S016 Endurance Pill appears as a rest-only formulation without identifiable brand/product or package; not generated as a retail item or integrated into the active pill grid. Its payload and rest-day schedule conflict with other source summaries.",
+    "Rest-day biotin table counts the multivitamin although the same document says it is skipped. Exact rest-day totals are unresolved.",
+    "Clinical cause/effect, rigid natural-muscle ceilings, hydration-attributed SMM increments and renal-test mandates are source claims, not independently established facts. Not included as verified illustration claims.",
+    "750 mg active creatine is the consumed dose, not package net weight."
+  ],
+  "source_document": {
+    "filename": "VOLUME V187.50 _ V2.8 CONSOLIDATED MASTER ENCYCLOPEDIA. PART 1_ CROSS-DOCUMENT DISCREPANCY & AUDIT RECONCILIATION.docx",
+    "sha256": "b1245293008c3fd2eac28cc7b0d209de9f869ea26ef94502a8a02d510a20af42"
+  },
+  "meal_enzyme_rule": "Digestive Enzymes Ultra: 1 capsule with each actual main meal, training and rest days. The document models three main meals; do not display three extra capsules alongside the first-meal capsule.",
+  "removed_paused": {
+    "Zinc Supreme": "removed",
+    "Pure Lab Copper Glycinate": "paused; not a current dose"
+  },
+  "gear_bundles_document_records": [
+    {
+      "name": "Juggernaut",
+      "nominal_resistance": "255 lb",
+      "composition": "3 × 85 lb KUZARO"
+    },
+    {
+      "name": "Titan",
+      "nominal_resistance": "195 lb",
+      "composition": "3 × 65 lb KUZARO"
+    },
+    {
+      "name": "Enforcer",
+      "nominal_resistance": "165 lb",
+      "composition": "3 × 55 lb KUZARO"
+    },
+    {
+      "name": "Viper",
+      "nominal_resistance": "135 lb",
+      "composition": "3 × 45 lb KUZARO"
+    },
+    {
+      "name": "Scalpel",
+      "nominal_resistance": "105 lb",
+      "composition": "3 × 35 lb KUZARO"
+    },
+    {
+      "name": "Twin Cobras",
+      "nominal_resistance": "75 lb per hand",
+      "composition": "2 × 75 lb KUZARO total, one per hand"
+    }
+  ],
+  "gear_note": "Nominal bundle ratings as recorded in the document, not measured force at every extension. Product geometry and safe-use certification not inferred."
+}
