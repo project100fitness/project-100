@@ -426,3 +426,5 @@ print(f'Built {len(titles)} current pages. Verified complete source words on {le
 runpy.run_path(str(ROOT / 'scripts/apply_compact_pages.py'))
 
 runpy.run_path(str(ROOT / 'scripts/apply_description_order.py'))
+
+runpy.run_path(str(ROOT / 'scripts/apply_illustration_layers.py'))

@@ -1,0 +1,7 @@
+/* Artwork supplies atmosphere; all information stays selectable and responsive. */
+.filing-layout .illustration-info{position:relative;isolation:isolate;overflow:hidden;padding:20px!important;min-height:0!important}
+.illustration-info .illustration-context-art{position:absolute;inset:0 0 0 auto;display:block;width:45%;height:100%;object-fit:cover;object-position:center;opacity:.22;z-index:-1;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 50%)}
+.illustration-info>:not(.illustration-context-art){position:relative;max-width:78%}
+.illustration-info p{font-size:16px!important;line-height:1.6!important;text-transform:none!important}
+.illustration-j18 .illustration-context-art{opacity:.12}
+@media(max-width:640px){.filing-layout .illustration-info{padding:16px!important}.illustration-info>:not(.illustration-context-art){max-width:none}.illustration-info .illustration-context-art{width:60%;opacity:.10}.illustration-info p{font-size:15px!important}}
