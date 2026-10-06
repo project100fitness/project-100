@@ -18,6 +18,6 @@ for file,selector,art in [('liquid-intake.html','#liquid-description .focus-poin
   style='j04' if file=='liquid-intake.html' else 'j12'
   for a in details.select('a[download]'):
    if a.get('href','').endswith('.png'):
-    a['href']=f'assets/downloads/complete-vector-cards/{style}-{id}.png';a['download']=f'project100-{id}-complete-ingredients.png'
+    a['href']=f'assets/downloads/complete-vector-cards/readable-{style}-{id}.png';a['download']=f'project100-{id}-complete-ingredients.png'
  p.write_text(str(s))
 print('Integrated three artwork layers into existing info cards and upgraded 14 diagram downloads.')
