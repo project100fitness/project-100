@@ -75,3 +75,107 @@
  // Video covers remain playable with a keyboard as well as a tap.
  $$('.log-media[data-yt]').filter(el=>!el.closest('[data-loop-copy]')).forEach(el=>{if(el.hasAttribute('data-video-keyboard-ready'))return;el.setAttribute('data-video-keyboard-ready','');el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-label','Play '+(el.closest('.log-card')?.querySelector('h4')?.textContent||'training video'));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}})});
 })();
+
+/* Smart Folders — progressive disclosure for long content blocks.
+   Folds sections taller than SF_THRESHOLD on mobile (<=900px) into tappable
+   folders with a smooth slide animation. Zero per-page markup: targets are
+   detected at runtime. Opt out with data-sf="off", force open with
+   data-sf="open", custom title with data-sf-title="...". */
+(()=>{'use strict';
+ const MOBILE_MQ=matchMedia('(max-width: 900px)');
+ const THRESHOLD=480, FOLDED=new Set();
+ const isMobile=()=>MOBILE_MQ.matches;
+ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+ const cssHref='assets/css/smart-folders.css';
+ if(!document.querySelector('link[href="'+cssHref+'"]')){
+   const l=document.createElement('link');l.rel='stylesheet';l.href=cssHref;
+   document.head.appendChild(l);
+ }
+ const headingOf=el=>{
+   let h=el.querySelector(':scope > h1,:scope > h2,:scope > h3,:scope > h4')
+        ||el.querySelector('h1,h2,h3,h4');
+   if(!h){const p=el.previousElementSibling;if(p&&/^H[1-4]$/.test(p.tagName))h=p}
+   if(!h)h=el.querySelector('caption');
+   if(h)return h.textContent.trim().replace(/\s+/g,' ').slice(0,80);
+   return el.getAttribute('data-sf-title')||'Details';
+ };
+ const itemCount=el=>{const n=el.querySelectorAll('ul > li, ol > li').length;return n>2?n:0};
+ const foldable=el=>{
+   if(el.hasAttribute('data-sf-fold'))return false;
+   if(el.closest('[data-sf-fold]')||el.closest('details')||el.closest('#v2Deck'))return false;
+   if(el.dataset.sf==='off')return false;
+   return el.getBoundingClientRect().height>THRESHOLD;
+ };
+ const toggle=(wrap,force)=>{
+   const open=force!==undefined?force:wrap.getAttribute('data-open')!=='true';
+   wrap.setAttribute('data-open',String(open));
+   wrap.querySelector('.sf-head').setAttribute('aria-expanded',String(open));
+   updateExpandAll();
+ };
+ const fold=el=>{
+   const wrap=document.createElement('div');
+   wrap.className='sf-fold';wrap.setAttribute('data-sf-fold','');
+   const startOpen=el.dataset.sf==='open';
+   wrap.setAttribute('data-open',String(startOpen));
+   if(el.id){wrap.id=el.id;el.removeAttribute('id')}
+   const head=document.createElement('button');
+   head.className='sf-head';head.type='button';
+   head.setAttribute('aria-expanded',String(startOpen));
+   const title=document.createElement('span');title.className='sf-title';
+   title.textContent=headingOf(el);
+   head.appendChild(title);
+   const n=itemCount(el);
+   if(n){const c=document.createElement('span');c.className='sf-count';c.textContent=n+' items';head.appendChild(c)}
+   const hint=document.createElement('span');hint.className='sf-hint';hint.textContent='Tap to read';head.appendChild(hint);
+   head.insertAdjacentHTML('beforeend','<svg class="sf-chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>');
+   const body=document.createElement('div');body.className='sf-body';
+   const inner=document.createElement('div');inner.className='sf-inner';
+   el.replaceWith(wrap);inner.appendChild(el);body.appendChild(inner);
+   wrap.appendChild(head);wrap.appendChild(body);
+   head.addEventListener('click',()=>toggle(wrap));
+   FOLDED.add(wrap);
+ };
+ const unfold=wrap=>{
+   const el=wrap.querySelector(':scope > .sf-body > .sf-inner')?.firstElementChild;
+   if(!el)return;
+   if(wrap.id)el.id=wrap.id;
+   wrap.replaceWith(el);FOLDED.delete(wrap);
+ };
+ const updateExpandAll=()=>{
+   const btn=document.getElementById('sfExpandAll');
+   if(!btn)return;
+   const anyClosed=[...FOLDED].some(w=>w.getAttribute('data-open')!=='true');
+   btn.classList.toggle('show',isMobile()&&FOLDED.size>=2);
+   btn.querySelector('span').textContent=anyClosed?'Expand all':'Collapse all';
+ };
+ const ensureExpandAll=()=>{
+   if(document.getElementById('sfExpandAll'))return;
+   const b=document.createElement('button');
+   b.id='sfExpandAll';b.className='sf-expandall';b.type='button';
+   b.innerHTML='<span>Expand all</span>';
+   b.addEventListener('click',()=>{
+     const anyClosed=[...FOLDED].some(w=>w.getAttribute('data-open')!=='true');
+     FOLDED.forEach(w=>toggle(w,anyClosed));
+   });
+   document.body.appendChild(b);
+ };
+ const openForHash=()=>{
+   const id=location.hash.slice(1);if(!id)return;
+   const t=document.getElementById(id);
+   const wrap=t&&t.closest('[data-sf-fold]');
+   if(wrap)toggle(wrap,true);
+ };
+ const SELECTORS='main article, main .book-chapter, main .addon-card, main table';
+ const apply=()=>{
+   if(!isMobile()){[...FOLDED].forEach(unfold);document.getElementById('sfExpandAll')?.remove();return}
+   $$(SELECTORS).forEach(el=>{if(foldable(el))fold(el)});
+   if(FOLDED.size)ensureExpandAll();
+   updateExpandAll();openForHash();
+ };
+ let rT;
+ addEventListener('resize',()=>{clearTimeout(rT);rT=setTimeout(apply,250)});
+ if(MOBILE_MQ.addEventListener)MOBILE_MQ.addEventListener('change',apply);
+ addEventListener('hashchange',openForHash);
+ requestAnimationFrame(()=>setTimeout(apply,60));
+ addEventListener('load',apply);
+})();

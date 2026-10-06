@@ -1,0 +1,78 @@
+/* Smart Folders — progressive disclosure for project100.fit.
+   Loaded at runtime by assets/js/v2.js (no per-page markup needed).
+   Vibe: matches the folder cards — surface bg, 1px border, 7px radius,
+   3px accent bar, Inter type. Theme-aware via the site CSS variables. */
+
+.sf-fold{
+  border:1px solid var(--border);
+  border-left:3px solid var(--folder-accent,var(--red));
+  border-radius:0 7px 7px 0;
+  background:var(--surface);
+  margin:14px 0;
+  overflow:hidden;
+}
+.sf-head{
+  display:flex;align-items:center;gap:10px;
+  width:100%;min-height:52px;padding:13px 14px;
+  background:none;border:0;cursor:pointer;text-align:left;
+  color:var(--text);font:650 14px/1.35 Inter,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.sf-head:active{background:var(--bg-2)}
+.sf-title{
+  flex:1;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.sf-count{
+  flex:none;white-space:nowrap;
+  font:600 11px/1 Inter,sans-serif;color:var(--text-dim);
+  border:1px solid var(--border);border-radius:20px;padding:5px 10px;
+}
+.sf-hint{flex:none;font:500 11px/1 Inter,sans-serif;color:var(--text-dim)}
+.sf-chev{
+  flex:none;width:22px;height:22px;color:var(--text-dim);
+  transition:transform .3s ease;
+}
+.sf-fold[data-open="true"] .sf-chev{transform:rotate(180deg)}
+
+/* smooth slide: grid-rows 0fr -> 1fr (no JS height measuring) */
+.sf-body{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .38s cubic-bezier(.4,0,.2,1);
+}
+.sf-fold[data-open="true"] .sf-body{grid-template-rows:1fr}
+.sf-inner{overflow:hidden;min-height:0}
+.sf-inner>*:first-child{margin-top:0}
+
+/* smooth open/close for the site's native <details> (vector stacks, clinical cards) */
+@supports selector(details::details-content){
+  details::details-content{
+    display:grid;grid-template-rows:0fr;
+    transition:grid-template-rows .35s cubic-bezier(.4,0,.2,1);
+  }
+  details[open]::details-content{grid-template-rows:1fr}
+  details::details-content>*{overflow:hidden;min-height:0}
+}
+
+/* floating expand/collapse-all (mobile, long pages only) */
+.sf-expandall{
+  position:fixed;right:14px;bottom:16px;z-index:60;
+  display:none;align-items:center;gap:8px;
+  background:var(--surface);color:var(--text);
+  border:1px solid var(--border);border-radius:24px;
+  padding:12px 18px;min-height:48px;
+  font:600 13px/1 Inter,sans-serif;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.sf-expandall.show{display:flex}
+@media(min-width:901px){.sf-expandall{display:none!important}}
+
+@media print{
+  .sf-body{grid-template-rows:1fr!important}
+  .sf-expandall{display:none!important}
+  details::details-content{grid-template-rows:1fr!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .sf-body,.sf-chev,details::details-content{transition:none}
+}
