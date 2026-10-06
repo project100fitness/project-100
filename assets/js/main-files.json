@@ -16,6 +16,11 @@
       "group": "home"
     },
     {
+      "file": "biometrics.html",
+      "label": "Biometrics",
+      "group": "biometrics"
+    },
+    {
       "file": "fit-workout.html",
       "label": "Training log",
       "group": "workout"

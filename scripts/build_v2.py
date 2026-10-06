@@ -428,3 +428,5 @@ runpy.run_path(str(ROOT / 'scripts/apply_compact_pages.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_description_order.py'))
 
 runpy.run_path(str(ROOT / 'scripts/apply_illustration_layers.py'))
+
+runpy.run_path(str(ROOT / 'scripts/apply_biometrics_addon.py'))

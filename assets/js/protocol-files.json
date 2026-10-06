@@ -101,6 +101,11 @@
       "group": "supplements"
     },
     {
+      "file": "mineral-chemistry.html",
+      "label": "Mineral Chemistry",
+      "group": "chemistry"
+    },
+    {
       "file": "fit-protocol-training.html",
       "label": "Training mechanics",
       "group": "training"
