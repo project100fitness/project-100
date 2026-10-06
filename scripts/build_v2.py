@@ -421,3 +421,6 @@ runpy.run_path(str(ROOT / 'scripts/apply_nutrition_overview.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_vector_artwork.py'))
 runpy.run_path(str(ROOT / 'scripts/apply_mobile_focus.py'))
 print(f'Built {len(titles)} current pages. Verified complete source words on {len(master)} Encyclopedia + {len(guide)} Guidebook PDF pages.')
+
+# Final compact nutrition and shared-footer overlay.
+runpy.run_path(str(ROOT / 'scripts/apply_compact_pages.py'))
