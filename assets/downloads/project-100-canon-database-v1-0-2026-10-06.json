@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "name": "PROJECT 100 — Portable Canon Database",
+    "version": "V3.2",
+    "date": "2026-10-06",
+    "owner": "Bogdan",
+    "matches_book_versions": ["Encyclopedia V3.2", "Guidebook V3.3", "Simplified Structure V3.2", "Marketing Slider V3.2", "Website Infographic Integration V1.2"],
+    "authority": "Physical tub labels read from his Drive photos = ground truth. Overrides retail listings and prior assumptions.",
+    "purpose": "Self-contained export Bogdan can paste/upload into other AI chats for separate research. No dependency on the book rebuilds.",
+    "disclaimer": "Label-and-protocol record, not medical advice. Supplement decisions involving heart, hormones, liver, kidneys, sleep, or prescription meds should be confirmed with his clinician."
+  },
+  "ground_truth_rules": [
+    "His physical product panels override retail listings and AI/document assumptions.",
+    "DMAE + huperzine-A are FORMULA-NATIVE ONLY, never standalone pills. Igniter (V1): 500mg DMAE bitartrate + 200mcg Huperzine-A. Pump (V6): 50mcg Huperzine-A. The old 'absolute zero / not in my protocol on any day' claim is dead.",
+    "V1⊕V6 = 1: the two pre-workout vectors never run on the same calendar day.",
+    "Biotin: disclose 425mcg/day; assay-specific guidance; NO universal 72-hour washout.",
+    "S016 is excluded entirely — not his protocol, never was.",
+    "Reconciliation-doc-only items are unverified until he confirms them.",
+    "Every vector/recipe/pill grid lists item counts + doses + usage benefits.",
+    "Standalone betaine is NOW Sports Betaine Powder.",
+    "Citicoline: 1 x 250mg capsule, swallowed whole, never stirred into a shaker."
+  ],
+  "states": {
+    "A_morning_gym": {"vectors": ["V3", "V1", "V2", "V4", "V10"], "excluded": ["V5", "V6"]},
+    "B_rest": {"vectors": ["V3 (when used)", "V5", "V10"], "excluded": ["V1", "V2", "V4", "V6"]},
+    "C_evening_gym": {"vectors": ["V3", "V6", "V2 (intra-session)", "V4 (post-session)", "V10"], "excluded": ["V1", "V5"]}
+  },
+  "vectors": {
+    "V1_Ignition": {
+      "state": "A only", "timing": "06:00", "items": [
+        {"item": "ALLMAX Impact Igniter Xtreme 2.0", "dose": "2 scoops / 28g (~373mg caffeine)", "use": "Morning adrenergic drive and focus"},
+        {"item": "ALLMAX MuscleEAA Xtreme", "dose": "1 scoop / 17.73g (10g EAA / 5.3g BCAA)", "use": "Amino scaffolding around the session"},
+        {"item": "PeakO2 mushroom matrix", "dose": "2000mg by mass", "use": "Cellular oxygen kinetics, work tolerance"},
+        {"item": "NOW Sports Betaine Powder", "dose": "2500mg", "use": "Osmolyte / methyl donor (Igniter has no native betaine)"},
+        {"item": "Citrulline Malate 2:1", "dose": "4-6g (~2.67-4.0g free citrulline)", "use": "eNOS saturation on top of base"},
+        {"item": "Taurine", "dose": "2-3g added", "use": "Sarcoplasmic swelling, bile-acid conjugation"},
+        {"item": "Citicoline", "dose": "1 cap 250mg at 05:30, swallowed whole", "use": "Cholinergic primer, never in the shaker"}
+      ],
+      "igniter_full_formula_19_items_per_label": {
+        "L-Citrulline": "8000mg", "Beta-Alanine": "3200mg", "Taurine": "1000mg", "L-Malic_Acid": "3000mg",
+        "Caffeine": "373mg (300mg anhydrous + 100mg Infinergy 73%)", "TeaCrine": "63mg", "Dynamine": "50mg",
+        "L-Tyrosine": "2000mg", "Choline_bitartrate": "400mg", "DMAE_bitartrate": "500mg (formula-native)", "L-Theanine": "400mg",
+        "Cocoa_extract": "500mg", "Synapsa_bacopa": "320mg", "Juniper": "200mg", "Huperzine-A": "200mcg (formula-native)",
+        "Xanthoparmelia": "600mg", "Horny_Goat_Weed": "300mg", "WATTS_UP": "500mg",
+        "Pink_Himalayan_Sea_Salt": "500mg", "Sodium": "210mg",
+        "notes": "NO betaine in Igniter. NO agmatine."
+      }
+    },
+    "V2_Refuel": {
+      "state": "training days", "timing": "09:30, in session", "items": [
+        {"item": "Perfect Sports BCAA Hyper Clear", "dose": "1 scoop / 7.5g", "use": "Intra-session amino support"},
+        {"item": "RapiDrem Electrolytes (Lemon & Raspberry)", "dose": "1 scoop ~6.5g (1000mg K, 100mg Mg, 82mg Ca, 45mg Vit C)", "use": "Electrolyte replacement. Label discrepancy recorded: panel declares Sodium 0mg while ingredient list includes NaCl."},
+        {"item": "Himalayan pink salt", "dose": "1/16 tsp", "use": "Sodium for the session window only, never at night"},
+        {"item": "Medjool dates", "dose": "2-3 whole, chewed solid", "use": "Fast carbohydrate, never blended into shaker"}
+      ]
+    },
+    "V3_Recovery": {
+      "state": "every day used", "timing": "04:00 priming", "items": [
+        {"item": "MuscleMeds Carnivor Beef Protein Isolate", "dose": "1 scoop / 33.9g", "use": "Fast morning protein base"},
+        {"item": "Promise Pure Marine Collagen", "dose": "10g (AM)", "use": "Connective-tissue amino supply"},
+        {"item": "Black Maca powder", "dose": "5g", "use": "Morning adaptogen in priming shaker"},
+        {"item": "Liquid L-Carnitine 1500", "dose": "15mL", "use": "Fatty-acid transport support"},
+        {"item": "MegaFood C Defense Gummy", "dose": "1 gummy, chewed", "use": "Vitamin C in chewed form"},
+        {"item": "NAKA Vital Greens", "dose": "20mL in separate glass", "use": "Greens and micronutrients"}
+      ]
+    },
+    "V4_Reload": {
+      "state": "after training", "timing": "11:00", "items": [
+        {"item": "AOR R-ALA", "dose": "1 cap 300mg, swallowed whole with water before shake", "use": "Antioxidant + glucose-disposal support; never opened into liquid"},
+        {"item": "BioSteel Recovery Protein Plus", "dose": "1 scoop / 36g half-serving (12g protein, 19g carbs, 125 kcal)", "use": "Post-session protein + glycogen deposit; only place BioSteel appears"},
+        {"item": "Beetroot powder", "dose": "7g", "use": "Nitrate support in reload window"},
+        {"item": "Creatine HCl (SD Pharmaceuticals / Proline)", "dose": "750mg (dose 1 of 2)", "use": "First locked daily pulse"},
+        {"item": "Himalayan pink salt", "dose": "1/16 tsp", "use": "Post-session sodium replacement"}
+      ],
+      "note": "R-ALA with only 19g carbs: post-training tremor/sweating/confusion is read as a glucose question first."
+    },
+    "V5_Transport": {
+      "state": "B only", "timing": "16:00", "items": [
+        {"item": "Creatine HCl (SD Pharmaceuticals / Proline)", "dose": "750mg (dose 1 of 2 on rest days)", "use": "Keeps 1.5g daily rhythm without training"},
+        {"item": "Promise Marine Collagen", "dose": "10g", "use": "Connective-tissue supply on recovery day"},
+        {"item": "Liquid L-Carnitine", "dose": "15mL", "use": "Transport support in afternoon window"},
+        {"item": "RapiDrem Electrolytes", "dose": "1 scoop ~6.5g", "use": "Same electrolyte identity as V2"},
+        {"item": "Himalayan pink salt", "dose": "1/16 tsp", "use": "Daytime sodium only; night stays sodium-free"}
+      ]
+    },
+    "V6_Pump": {
+      "state": "C only", "timing": "evening, T-30 min primer",
+      "status": "DORMANT since May 2026 (~5 months). Stays in canon as the designed evening vector.",
+      "stim_status": "STIM-FREE, 0mg caffeine (verified)",
+      "items": [
+        {"item": "ALLMAX Impact Pump Xtreme (Blue Raspberry)", "dose": "2 scoops / 31g", "use": "Stimulant-free nitric-oxide hyperemia + hyper-hydration base"},
+        {"item": "ALLMAX MuscleEAA Xtreme (Cherry Limeade)", "dose": "1 scoop / 17.73g (10g EAA / 5.3g BCAA, 2g glutamine, 1g carnitine, 200mg Alpha-GPC)", "use": "1:1 companion symmetry with V1, no stimulants"},
+        {"item": "PeakO2 matrix", "dose": "2000mg by mass", "use": "Oxygen kinetics for evening session"},
+        {"item": "NOW Sports Betaine Powder", "dose": "2500mg", "use": "Mirrors V1 dose; V6-day total 5000mg"},
+        {"item": "Citrulline Malate 2:1", "dose": "4-6g", "use": "Total citrulline base 10.67-12.0g for eNOS saturation"},
+        {"item": "Taurine", "dose": "2-3g added (4.0-5.0g total with 2g native)", "use": "Sarcoplasmic swelling without stimulant load"},
+        {"item": "Citicoline", "dose": "1 cap 250mg at T-30, swallowed whole", "use": "Cholinergic primer"}
+      ],
+      "pump_full_formula_21_items_per_canadian_label": {
+        "L-Citrulline": "8g", "Beta-Alanine": "3.2g", "Betaine_Anhydrous": "2.5g (native)", "Taurine": "2g (native)",
+        "Alpha-GPC": "300mg", "Creatine_Monohydrate": "1000mg (native)", "Sodium": "220mg",
+        "Huperzine-A": "50mcg (formula-native)", "Choline_bitartrate": "300mg", "L-Tyrosine": "500mg",
+        "PEAK02": "528mg", "Lions_Mane": "500mg", "Rhodiola": "100mg", "Mango_leaf_Zynamite": "50mg", "Mushroom_blend": "50mg",
+        "Glycerol": "2g", "Beet_Root": "1000mg", "L-Arginine_sulphate": "500mg (NOT agmatine — regional formula difference)",
+        "NitroVascine": "250mg (NOT Nitrosigine — Canadian label name)", "Magnesium": "40mg", "Sea_Salt": "500mg",
+        "Black_Pepper_95_piperine": "10mg", "Cinnulin": "5mg"
+      }
+    },
+    "V10_Shutdown": {
+      "state": "daily anchor", "timing": "18:30", "items": [
+        {"item": "Creatine HCl (SD Pharmaceuticals / Proline)", "dose": "750mg (dose 2 of 2)", "use": "Second locked pulse; completes 1.5g/day"},
+        {"item": "Glutamine (North Coast Naturals Fermented)", "dose": "5g", "use": "Gut and immune substrate in night window"},
+        {"item": "Glycine", "dose": "3-5g", "use": "Sleep architecture + collagen synthesis support"},
+        {"item": "Hibiscus tisane", "dose": "800mL, comfortable temperature", "use": "Fluid vehicle; caffeine-free; sodium-free night rule"},
+        {"item": "Bovine collagen (Preferred Nutrition)", "dose": "10g (PM)", "use": "PM collagen convention (marine is AM)"},
+        {"item": "Medi-C Plus half-scoop", "dose": "1000mg C / 105mg Mg / 650mg lysine (where used)", "use": "Night-stage vitamin C / magnesium context"}
+      ]
+    }
+  },
+  "pill_grids": {
+    "wake_pack_0330": {"rule": "Daily foundation, stays on rest days", "items": [
+      {"item": "TestoFX complex", "dose": "Per label (Testofen/fenugreek 500mg, tongkat 250mg, boron 9.5mg class payload)", "use": "Hormone-support pathway input; morning anchor"},
+      {"item": "Boron", "dose": "9.5mg (in complex) + 1mg multi contribution", "use": "Mineral-balance and SHBG-context input"},
+      {"item": "LactoBif probiotic (California Gold LactoBif 100)", "dose": "Intermittent, per schedule (100B CFU)", "use": "Gut microbiome support; not a daily automatic"}
+    ]},
+    "first_meal_grid_0500": {"rule": "With breakfast; enzymes ride the meal even on State B", "items": [
+      {"item": "Kyolic Formula 104", "dose": "2 caps (600mg aged garlic extract / 380mg lecithin)", "use": "Cardiovascular-support sulfur compounds; with food"},
+      {"item": "NMN (Codeage NMN Platinum)", "dose": "1 cap 175mg", "use": "NAD+ precursor for cellular energy and repair"},
+      {"item": "NAC (Pure Encapsulations)", "dose": "1 cap 900mg", "use": "Cysteine donor; glutathione synthesis substrate"},
+      {"item": "Digestive Enzymes Ultra (Pure Encapsulations)", "dose": "1 cap (1,500 FIP lipase)", "use": "Meal fat handling with continuous bile trickle (no gallbladder)"}
+    ]},
+    "pre_training_primer_0530": {"rule": "State A only; on State C moves to T-30 before V6", "items": [
+      {"item": "Citicoline", "dose": "1 cap 250mg, swallowed whole", "use": "Cholinergic primer; the protocol's only cholinergic capsule; never stirred into any shaker"}
+    ]},
+    "lunch_grid_dmz_1200": {"rule": "Training days only (10 capsules)", "items": [
+      {"item": "PureGenomics multivitamin", "dose": "Per label; biotin 425mcg disclosed", "use": "Methylation-cycle micronutrients; biotin disclose-and-assay-specific rule"},
+      {"item": "Omega 800 (Pure Encapsulations)", "dose": "EPA 480mg / DHA 320mg", "use": "Membrane and lipid-mediator substrate"},
+      {"item": "Curcumin + BioPerine", "dose": "475mg curcumin + 5mg piperine", "use": "Inflammatory-signaling support; piperine interaction watched"},
+      {"item": "Liver-GI Detox (Pure Encapsulations)", "dose": "50/50/47.5mg class actives", "use": "Liver conjugation-pathway support"},
+      {"item": "UriCare + pumpkin seed / saw palmetto", "dose": "Per label", "use": "Urinary and prostate support pair"}
+    ]},
+    "afternoon_grid_1530": {"rule": "Training days only (5 capsules); copper paused", "items": [
+      {"item": "Beef liver capsules + Ligament Restore (Pure Encapsulations)", "dose": "5 capsules total", "use": "Nutrient matrix (B12, vitamin A, heme iron in food form) + connective-tissue building blocks"}
+    ]},
+    "night_stage_1815_1830": {"rule": "Training days; V10 tisane closes the day", "items": [
+      {"item": "Magnesium glycinate (Pure Encapsulations)", "dose": "Per night-stage label", "use": "Magnesium + glycine sleep and enzyme-cofactor support"},
+      {"item": "Tart cherry (Inno Nutrition Tart Cherry 10x)", "dose": "500mg (=5,000mg fruit equivalent)", "use": "Melatonin-related compounds and anthocyanins for sleep/recovery"},
+      {"item": "Milk thistle (Naturopathic Labs, silymarin)", "dose": "Conditional only", "use": "Liver-antioxidant item; not a daily automatic"}
+    ]}
+  },
+  "chronometer": [
+    "03:30 wake pack", "04:00 V3", "05:00 first meal + breakfast grid",
+    "05:30 pre-gym primer (State A) / T-30 before V6 (State C)",
+    "06:00 V1 Ignition (State A)", "09:30 V2 in session (training days)",
+    "10:30 band deload, 100 reps (State A mornings)", "11:00 V4 after training",
+    "12:00 lunch grid DMZ (training only)", "15:30 afternoon grid (training only)",
+    "16:00 V5 Transport (State B only)", "Evening: V6 Pump + V2 + V4 (State C)",
+    "18:15-18:30 night stage + V10 shutdown"
+  ],
+  "firewall_math": {
+    "rule": "V1 and V6 never run on the same calendar day. The firewall is quantitative.",
+    "forbidden_same_day_hypothetical": {
+      "citicoline": "250mg (unchanged)", "alpha_GPC_inside_formulas": "500mg (300 Pump + 200 MuscleEAA)",
+      "taurine": "7-9g", "betaine": "5000mg", "citrulline": "21-24g"
+    },
+    "taurine_split": "V1: 1g native + 2-3g added (3-4g total); V6: 2g native + 2-3g added (4-5g total)"
+  },
+  "cholinergic": {
+    "framing": "Two-sided stack: choline precursors PLUS an acetylcholinesterase inhibitor. Formula-native only, never standalone pills. V1 and V6 never co-occur same day, so the two huperzine doses never stack same-day. Huperzine-A half-life ~10-24h.",
+    "state_A": "citicoline 250mg + choline 400mg (Igniter) + DMAE 500mg (Igniter) + Huperzine-A 200mcg (Igniter)",
+    "state_C": "citicoline 250mg + choline 300mg (Pump) + Alpha-GPC 300mg (Pump) + Huperzine-A 50mcg (Pump, evening dose)",
+    "state_B": "zero cholinergic load",
+    "sensitive_person_effects": "headache, GI queasiness, muscle tightness/cramp, vivid dreams",
+    "huperzine_cautions": "slow heart rate/arrhythmia, asthma/COPD, epilepsy/seizure history, significant kidney disease, pregnancy, anticholinergic drugs, prescription Alzheimer drugs — clinician check if any apply"
+  },
+  "caffeine": {
+    "V1": "~373mg (Igniter) + tea 40-70mg = ~413-443mg/day on State A — EXCEEDS EFSA 400mg/day guidance when tea included (flagged, his call)",
+    "V6": "0mg — stim-free evening vector",
+    "state_B": "~40-70mg (tea only)",
+    "adrenergic_layering_state_A": "caffeine 373mg + theobromine ~100mg (cocoa) + TeaCrine 63mg + Dynamine 50mg + tea 40-70mg + tyrosine 2000mg (catecholamine substrate)"
+  },
+  "creatine_geography": {
+    "standalone": "Creatine HCl (SD Pharmaceuticals Natural Series AND Proline — both approved, used interchangeably at vector-specified times), 750mg x2 = 1.5g/day",
+    "V6_vector": "1.75g (1000mg native monohydrate + 750mg standalone HCl)",
+    "state_C_day": "2.5g (V6 vector 1.75g + V10 night 750mg)",
+    "state_A_day": "1.5g (V4 750mg + V10 750mg)",
+    "state_B_day": "1.5g (V5 750mg + V10 750mg)",
+    "note": "Deliberate sub-clinical dose vs the 3-5g evidence base — his protocol choice, not a hazard"
+  },
+  "betaine": {
+    "standalone": "NOW Sports Betaine Powder (label: 1/2 level tsp ~ 1.6g)",
+    "V1": "2.5g protocol dose standalone (Igniter has NO native betaine); his extra ~1/2 tsp scoop adds ~1.6g = ~4.1g total (within studied 2.5-6g/day)",
+    "V6_day": "5000mg (2.5g native in Pump + 2.5g standalone NOW Sports)"
+  },
+  "collagen_convention": {
+    "marine_AM": "Promise Pure Marine Collagen, 10g, in V3 (and V5)",
+    "bovine_PM": "Preferred Nutrition bovine collagen, 10g, in V10 night slot",
+    "bone_broth": "beef bone broth sometimes in the fudge (nutritional-guide territory)"
+  },
+  "enzyme_convention": {
+    "baseline": "Pure Encapsulations Digestive Enzymes Ultra, 1 cap in EVERY daily stage pill stack",
+    "rotating_addons": "~2 others used 'here and there' — Naturopathic Labs Active Enzymes Plus confirmed; third unidentified (AOR Enzymes candidate, unverified)",
+    "reason": "post-cholecystectomy (no gallbladder) — bile trickles continuously; lipase coverage must match the MEAL (60-90g fat sittings), not just the day",
+    "top_improvement": "assign the 2 addon enzymes deliberately to the biggest fat meals"
+  },
+  "biotin_rule": "Disclose 425mcg/day (PureGenomics multi). Assay-specific interpretation guidance. NO universal 72-hour washout.",
+  "exclusions": [
+    "S016 Endurance Pill — excluded entirely; not his protocol (came only from a reconciliation doc)",
+    "Standalone DMAE / standalone huperzine-A — never bought or added; formula-native only",
+    "Zinc Supreme — removed", "Separate copper — paused (was 1mg)"
+  ],
+  "mediC_plus": {"version": "magnesium-ascorbate tub (his inventory)", "per_5g_scoop": "Vitamin C 2000mg / Magnesium 210mg / L-Lysine 1300mg", "half_scoop": "1000mg C / 105mg Mg / 650mg lysine", "artwork_note": "V10 vector cards show a 'Calcium Ascorbate' tub — artwork needs swapping; text canon is correct"}
+,
+  "inventory": {
+    "source": "174 Drive photos ('SUPPLEMENTS PACK 2026 - FULL PICS'), ~55 distinct products after deduplication",
+    "photo_confirmed_in_canon": 43,
+    "dose_form_mismatches_corrected": 5,
+    "not_in_canon": 17,
+    "in_canon_no_dedicated_photo": 12,
+    "legitimacy": "All Tier-1/2 brands (ALLMAX, NOW Sports, Pure Encapsulations, MuscleMeds, BSN, PVL, Nutrabolics, Cellucor, Vega, EHP Labs, BioSteel, Perfect Sports, Himalaya, CanPrev, Kyolic, AOR, Niyama, SD Pharmaceuticals, Proline, etc.). No counterfeit red flags. No damaged containers observed.",
+    "not_in_canon_disposition": {
+      "protein_powders_active_in_fudge": ["ALLMAX Hexapro", "BSN Syntha-6", "PVL IsoGold (whey isolate)"],
+      "spare_preworkouts_not_in_protocol": ["Nutrabolics Supernova Infinite", "Vega Sport Pre-Workout", "Cellucor C4 Sport", "ALLMAX KetoCuts"],
+      "food_fudge_ingredients": ["bone broth powder", "Kirkland chia seeds", "cocoa powder"],
+      "other": ["Niyama You've Gut This (prebiotic fibre)", "Niyama Hey Relax (magnesium blend — on V10 card as '1 scoop, rare', zero book mentions)", "Himalaya LiverCare (status UNDECIDED)", "Naturopathic Active Enzymes Plus (confirmed addon enzyme)", "Blume SuperBelly (hydration)", "EHP Labs Beyond BCAA+EAA (spare)", "Preferred Nutrition bovine collagen (PM convention)", "Instagram-only: Beyond Yourself PRESET, Cluster Dextrin, Key Nutrients hydration, Progressive Greens+, Metamucil, PB&Me, Navitas cacao, allulose, UltraPur protein, egg-white powder, AOR Enzymes, Rootalive beetroot/black maca — nutritional-guide raw material"]
+    }
+  },
+  "spare_preworkouts_NOT_in_protocol": {
+    "status": "EXPLORATORY ONLY — parked. Not in current protocol. Kept for future mixer/variation system.",
+    "Supernova_Infinite_his_tub": "1 scoop/14.6g: caffeine 200mg, theobromine 350mg, dendrobium 600mg, citrulline malate 6g, creatine 3.2g (HCl+mono), DMAE 350mg, Huperzine-A 200mcg, Alpha-GPC 600mg, PeakO2 2g, D-ribose 2g, betaine 1.5g, taurine 1.5g, tyrosine 1g, Lion's Mane 500mg, AstraGin 50mg. Label: occasional use / consult HCP beyond 4 weeks. Stevia.",
+    "Vega_Sport_retail_derived": "~100mg caffeine, eleuthero 400mg, rhodiola 150mg — VERIFY against his tub",
+    "C4_Sport_retail_derived": "~135mg caffeine, ~3g creatine mono, ~1.6g beta-alanine, ~1g arginine AKG, NSF Certified — VERIFY against his tub",
+    "KetoCuts_retail_derived": "stim-free; BHB 2g, MCT 750mg, carnitine 500mg; contains milk + coconut — VERIFY against his tub",
+    "V11_V14_proposals": "PARKED. Do not add to canon without his approval."
+  },
+  "daily_totals_per_state": {
+    "state_A_morning_gym": "caffeine ~413-443mg (373 Igniter + 40-70 tea) | citicoline 250mg | DMAE 500mg | Hup-A 200mcg | citrulline ~10.7-12g | beta-alanine 3.2g | betaine ~4.1g | taurine 3-4g | creatine 1.5g | tyrosine 2000mg | theanine 400mg | NAC 900mg | NMN 175mg | R-ALA 300mg",
+    "state_C_evening_gym": "caffeine ~40-70mg (tea only) | citicoline 250mg | choline 300mg | Alpha-GPC 300mg | Hup-A 50mcg (evening) | citrulline ~10.7-12g | beta-alanine 3.2g | betaine 5.0g | taurine 4-5g | creatine 2.5g | arginine 500mg | piperine 15mg (5 lunch + 10 Pump)",
+    "state_B_rest": "creatine 1.5g | caffeine ~40-70mg | collagen | electrolytes | zero cholinergic load — genuine de-escalation",
+    "dose_ceiling_flags": "caffeine-with-tea OVER 400mg EFSA guidance (State A); citrulline 10.7-12g above typical 6-8g studied dose (not toxic; GI possible); everything else within or below studied ranges; NO acute overdose risk anywhere"
+  },
+  "interaction_watchlist": [
+    "Piperine 15mg on State C days (5mg lunch + 10mg Pump): CYP3A4/P-gp — flag to any prescribing doctor",
+    "R-ALA 300mg before 19g-carb V4: shakiness/sweating/confusion post-training = glucose question first",
+    "Magnesium ~400mg/day supplemental (night glycinate + Medi-C 105mg + multi): above 350mg supplemental UL (diarrhea endpoint); watch stool, not dangerous",
+    "CanPrev Calcium Bis-Glycinate 200mg: timing not in protocol — keep away from beef-liver/iron window, zinc-heavy meals, night magnesium",
+    "Huperzine-A cautions: slow heart rate/arrhythmia, asthma/COPD, epilepsy, kidney disease, pregnancy, anticholinergic/memory meds",
+    "Post-cholecystectomy: 60-90g fat sittings are the highest-probability GI event; enzymes must match the meal",
+    "TestoFX (tongkat/fenugreek, standard doses): higher-scrutiny category — watch BP, mood, sleep; labs tell the truth",
+    "No serotonin-syndrome vector (no 5-HTP, St. John's Wort, MAOIs). No frankly contraindicated combos found."
+  ],
+  "open_undecided": [
+    "Himalaya LiverCare: active or shelf stock? (drives liver-trio consolidation: keep max 2 if active)",
+    "Niyama Hey Relax: give it a protocol home or remove from the V10 card ('1 scoop, rare')",
+    "State A caffeine: accept 413-443mg/day consciously, or lighten/shift the tea on V1 mornings",
+    "Winter vitamin D: confirm multi covers 1000-2000 IU D3 or add; check 25-OH-D on December labs",
+    "Selenium/iodine: confirm the multi covers both (no dedicated source spotted)",
+    "B6 (<=100mg/day) and preformed vitamin A in multi + beef-liver combo: verify against ULs at next label review",
+    "Rest-day grid gaps: lunch + afternoon grids are skipped on State B — confirm B-vitamin/mineral coverage on multi-rest-day stretches",
+    "Vega/C4/KetoCuts retail-derived formulas: verify against his physical tubs before any canon adoption"
+  ],
+  "biometrics": {
+    "age": 46, "height_cm": 170,
+    "stretch_goal": "100 lb SMM (disclosed stretch readout)",
+    "validated_corridor": "90-93 lb true contractile SMM; 92-97 lb on standardized BIA printout",
+    "bodyfat_target": "below 15%; 13.6% documented Aug 2026 (sub-15% milestone ACHIEVED)",
+    "telemetry": {
+      "2024_baseline": "72.3 lb SMM / 226.2 lb / 37.0% BF",
+      "28_Jun_2025": "82.0 lb SMM",
+      "14_Dec_2025_benchmark_Gym_Fit_Forme": "197.1 lb / 88.2 lb SMM / 22.9% BF",
+      "Apr_2026": "191.5 lb / 93.7 lb / 30.2% — operator-reported, excluded from corridor judgment",
+      "Aug_2026": "13.6% BF milestone",
+      "Sep_Oct_2026": "200.1 lb / 88.2 lb carried baseline / ~22.5% est."
+    },
+    "FFMI_reconciliation": 25.71,
+    "next_review": "14-21 Dec 2026, Gym Fit Forme, same InBody unit — waking/fasted/post-void/pre-workout, >=24h after heavy resistance training"
+  },
+  "unsourced_or_approximate": [
+    "Afternoon grid: 5 capsules = beef liver + Ligament Restore — exact per-item capsule split not found in extracted text; recorded as grid total only.",
+    "ALLMAX MuscleEAA Xtreme full panel: cards give 10g EAA / 5.3g BCAA (+ 2g glutamine, 1g carnitine, 200mg Alpha-GPC on the Cherry Limeade V6 card); full supplement-facts panel was not photo-read.",
+    "Medi-C Plus half-scoop in V10/night: recorded 'where used' — night-stage context, not a locked daily dose.",
+    "CanPrev Calcium Bis-Glycinate 200mg: 'lab-declared'; no protocol timing assigned.",
+    "TestoFX: 'per label' in books (Testofen/fenugreek 500mg, tongkat 250mg, boron 9.5mg class payload); exact per-capsule breakdown not transcribed.",
+    "DMAE base conversion: 500mg DMAE bitartrate ~= 185mg DMAE base (standard ~37% conversion) — marked approximate.",
+    "Tea caffeine 40-70mg and theobromine ~100mg (cocoa): estimates carried from the audit.",
+    "Vega Sport, C4 Sport, KetoCuts formulas: retail-derived, NOT his-tub verified — flagged for verification."
+  ]
+}
