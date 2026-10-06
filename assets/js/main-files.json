@@ -90,8 +90,6 @@
     "index.html:story": "project-story.html#story",
     "index.html:mission": "project-goals.html#mission",
     "index.html:roadmap": "project-goals.html#roadmap",
-    "fit-nutrition.html:reels": "fit-meals.html#reels",
-    "fit-nutrition.html:clinical-nutrition": "fit-nutrition-notes.html#clinical-nutrition",
     "gear-shop.html:gym-tour": "gear-gym.html#gym-tour",
     "gear-shop.html:reels": "gear-photos.html#reels",
     "gear-shop.html:rig": "gear-rig.html#rig",
