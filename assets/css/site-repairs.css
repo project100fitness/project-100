@@ -71,7 +71,7 @@ body.home-page .explore-card .ex-media img { object-fit: contain; background: #1
   .placeholder-hero { padding: 32px 0 !important; min-height: 0 !important; }
   .protocol-page .slide { padding: 22px 16px; }
   .protocol-page .deck-controls { right: 12px; bottom: calc(64px + env(safe-area-inset-bottom,0px)); }
-  .page-nav-arrow { top: auto !important; bottom: calc(10px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
+  .page-nav-arrow { top: auto !important; bottom: calc(78px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
   .page-nav-arrow.prev { left: auto !important; right: 64px !important; }
   .page-nav-arrow.next { right: 12px !important; }
   .page-nav-arrow:hover { transform: none !important; }
