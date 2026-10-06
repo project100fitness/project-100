@@ -47,9 +47,9 @@
 
     if(row.dataset.loopReady) return;
     row.dataset.loopReady='1';
-    var events=new AbortController(),frame;
+    var events=new AbortController(),frame,motionFrame,observer;
     function listen(target,type,callback,options){target.addEventListener(type,callback,Object.assign({},options,{signal:events.signal}))}
-    rowCleanup.set(row,function(){events.abort();clearTimeout(timer);cancelAnimationFrame(frame);wrap.style.maxWidth='';});
+    rowCleanup.set(row,function(){events.abort();clearTimeout(timer);cancelAnimationFrame(frame);cancelAnimationFrame(motionFrame);if(observer)observer.disconnect();wrap.style.maxWidth='';delete row.dataset.motion;});
     var cards=Array.from(row.children), count=cards.length;
     row.tabIndex=0; row.setAttribute('role','region');
     row.setAttribute('aria-label',label+'; use left and right arrows to explore');
@@ -99,6 +99,7 @@
       if(Math.abs(pos-row.scrollLeft)>1)row.scrollTo({left:pos,behavior:'instant'});
     }
     function nav(dir){
+      direction=dir;row.dataset.motionDirection=String(dir);pauseUntil=performance.now()+2400;
       normalize();row.dispatchEvent(new CustomEvent('carousel:nav'));
       var distance=cards[1].offsetLeft-cards[0].offsetLeft;
       row.scrollBy({left:dir*distance,behavior:reduced.matches?'instant':'smooth'});
@@ -109,7 +110,39 @@
     listen(row,'scroll',function(){clearTimeout(timer);timer=setTimeout(normalize,140)},{passive:true});
     listen(row,'scrollend',normalize);
     listen(window,'resize',measure);
-    frame=requestAnimationFrame(measure);
+    // One owner for continuous motion, including dynamically rebuilt rows.
+    var direction=1,visible=false,pointerActive=false,hovered=false,focused=false;
+    var pauseUntil=0,lastTime=0,position=0,lastRendered=-1,lastX=null;
+    row.dataset.motion='continuous';row.dataset.motionDirection='1';
+    function busy(){return row.querySelector('iframe')||Array.from(row.querySelectorAll('video')).some(function(v){return !v.paused&&!v.ended&&!v.muted})}
+    function animate(now){
+      motionFrame=undefined;
+      if(!row.isConnected||!visible||document.hidden||reduced.matches){lastTime=0;return;}
+      var dt=lastTime?Math.min(now-lastTime,50):0;lastTime=now;
+      if(period&&!pointerActive&&!hovered&&!focused&&now>=pauseUntil&&!busy()){
+        if(row.scrollLeft!==lastRendered)position=row.scrollLeft;
+        position+=direction*dt*14/1000;
+        position=start+((position-start)%period+period)%period;
+        row.scrollLeft=position;lastRendered=row.scrollLeft;
+      }else{position=row.scrollLeft;lastRendered=row.scrollLeft;}
+      motionFrame=requestAnimationFrame(animate);
+    }
+    function resume(){if(!motionFrame&&visible&&!document.hidden&&!reduced.matches){lastTime=0;motionFrame=requestAnimationFrame(animate)}}
+    function setDirection(delta){if(Math.abs(delta)<1)return;direction=delta>0?1:-1;row.dataset.motionDirection=String(direction)}
+    listen(row,'pointerdown',function(e){pointerActive=true;lastX=e.clientX;pauseUntil=performance.now()+2400});
+    listen(row,'pointermove',function(e){if(!pointerActive)return;setDirection(lastX-e.clientX);lastX=e.clientX});
+    function release(){if(!pointerActive)return;pointerActive=false;pauseUntil=performance.now()+2400;resume()}
+    listen(window,'pointerup',release);listen(window,'pointercancel',release);
+    listen(row,'wheel',function(e){if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){setDirection(e.deltaX);pauseUntil=performance.now()+2400}},{passive:true});
+    listen(row,'mouseenter',function(){if(matchMedia('(hover:hover)').matches)hovered=true});
+    listen(row,'mouseleave',function(){hovered=false;resume()});
+    listen(row,'focusin',function(){focused=true});
+    listen(row,'focusout',function(e){focused=!!(e.relatedTarget&&row.contains(e.relatedTarget));resume()});
+    function motionPreference(){if(document.hidden||reduced.matches){cancelAnimationFrame(motionFrame);motionFrame=undefined;lastTime=0}else resume()}
+    listen(document,'visibilitychange',motionPreference);
+    listen(reduced,'change',motionPreference);
+    observer=new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;resume()},{threshold:0.05});observer.observe(row);
+    frame=requestAnimationFrame(function(){measure();position=row.scrollLeft;lastRendered=row.scrollLeft;resume()});
 
   }
 

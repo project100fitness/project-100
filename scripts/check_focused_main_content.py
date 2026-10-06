@@ -18,6 +18,13 @@ for file,ids in [('index.html',['story','mission','roadmap','faq']),('fit-nutrit
             for part in [a,b]:
                 for c in part.select('.armory-item'):
                     for node in c.select('.ai-text'):node.clear()
+        # Author requested removal of repeated gallery boilerplate.
+        for part in [a,b]:
+            for node in part.select('.recipe-record,.reels-head>p,.sec-head>p,.watch,.watch-yt'):
+                node.decompose()
+            for node in part.select('.eyebrow,h2'):
+                if node.get_text(' ',strip=True).lower() in ['gym walkthrough','the last 60 days, unfiltered'] or node.get_text(' ',strip=True).lower().startswith('straight from @'):
+                    node.decompose()
         assert Counter(a.get_text(' ',strip=True).split())<=Counter(b.get_text(' ',strip=True).split()),(file,id,'text')
         assert Counter(e.get('src') for e in a.select('img'))<=Counter(e.get('src') for e in b.select('img')),(file,id,'images')
         count+=1

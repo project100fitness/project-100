@@ -177,33 +177,9 @@
      manual nav, and looping back to the start at the end. Skips entirely
      under reduced-motion. Call after the row markup exists (carousel.js
      builds it), same pattern as initGallery/initBeforeAfter. ---- */
-  function initAutoScroll(root){
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    (root || document).querySelectorAll('[data-autoscroll]').forEach(function(container){
-      if(container.dataset.fxAuto) return;
-      container.dataset.fxAuto = '1';
-      container.querySelectorAll('.carousel-row').forEach(function(row){
-        var paused = false;
-        function step(){
-          if(paused) return;
-          var card = row.querySelector(':scope > *');
-          var amt = card ? (card.getBoundingClientRect().width + 18) : 260;
-          var max = row.scrollWidth - row.clientWidth;
-          if(max <= 4) return;
-          if(!row.dataset.loopReady && row.scrollLeft >= max - 4){ row.scrollTo({ left:0, behavior:'smooth' }); }
-          else{ row.scrollBy({ left:amt, behavior:'smooth' }); }
-        }
-        var timer = setInterval(step, 4200);
-        function pause(){ paused = true; }
-        function resume(){ paused = false; }
-        row.addEventListener('mouseenter', pause);
-        row.addEventListener('mouseleave', resume);
-        row.addEventListener('touchstart', pause, { passive:true });
-        row.addEventListener('focusin', pause);
-        row.addEventListener('focusout', resume);
-        row.addEventListener('carousel:nav', function(){ paused = true; clearInterval(timer); });
-      });
-    });
+  function initAutoScroll(){
+    // Motion and lifecycle are centralized in ProjectCarousel.
+    if(window.ProjectCarousel)window.ProjectCarousel.init();
   }
 
   /* ---- 9. Site-wide light/dark theme toggle: any #themeToggle button

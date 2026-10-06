@@ -1,0 +1,49 @@
+/* Mobile content density: keep the existing folders and primary/secondary navigation. */
+.filing-layout .carousel-row[data-motion="continuous"]{scroll-snap-type:none;scroll-behavior:auto}
+.filing-layout .carousel-row{padding-block:8px 12px;scrollbar-width:none}
+.filing-layout .carousel-row::-webkit-scrollbar{display:none}
+.filing-layout .carousel-row>*{transform:none!important;box-shadow:none}
+.filing-layout .log-body .stats{display:none}
+.filing-layout .compact-page-identity{padding-block:12px!important}
+.filing-layout .compact-page-identity h1{margin-block:0 6px}
+.filing-layout .compact-page-identity p:empty{display:none}
+.filing-layout .log-body{min-height:0;gap:6px}
+@media(max-width:900px){
+ .filing-layout .carousel-row,.filing-layout .armory-photos .carousel-row.fx-gallery{gap:12px;padding:6px 0 10px}
+ .filing-layout .carousel-row>*,.filing-layout .folder-page-content .carousel-row>*{flex:0 0 calc((100% - 12px)/2)!important;min-width:0!important;max-width:none!important}
+ .filing-layout .carousel-wrap:not(.single-card) .log-card{display:flex;flex-direction:column}
+ .filing-layout .log-card .log-media{aspect-ratio:4/3;min-height:0;height:auto}
+ .filing-layout .log-card .log-body{padding:9px 10px;gap:5px}
+ .filing-layout .log-card .log-body h4{font:650 14px/1.4 Inter,sans-serif!important;overflow-wrap:anywhere}
+ .filing-layout .log-card .log-body .date{font:500 11px/1.35 Inter,sans-serif!important}
+ .filing-layout .log-card .log-body .watch,.filing-layout .log-card .log-body .watch-yt{font:550 12px/1.4 Inter,sans-serif!important;white-space:normal}
+ .filing-layout .log-card .log-media .cat-badge{font-size:9px;line-height:1.3;padding:4px 6px;max-width:calc(100% - 12px);white-space:normal;top:6px;left:6px}
+ .filing-layout .carousel-arrow{top:48px;width:28px;height:36px;border-radius:8px;background:rgba(10,11,13,.64)}
+ .filing-layout .carousel-arrow.left{left:0}.filing-layout .carousel-arrow.right{right:0}
+ .filing-layout .single-card .carousel-row>.log-card{flex-basis:100%!important;max-width:none;width:100%}
+ .filing-layout .folder-page-rail{padding-top:8px}
+ .filing-layout .folder-page-rail .focused-subtabs .page-tab{font-size:12px;line-height:1.35;padding:8px 5px}
+ .filing-layout .compact-page-identity{padding:10px 12px!important}
+ .filing-layout .compact-page-identity .v2-kicker{font-size:10px;margin:0 0 5px}
+ .filing-layout .compact-page-identity h1{font-size:clamp(22px,4.5vw,30px);line-height:1.15}
+ .filing-layout .reels-blk,.filing-layout .armory-blk{padding-block:20px}
+ .filing-layout .reels-head,.filing-layout .armory-head{margin-bottom:16px}
+ .filing-layout .reels-head h2,.filing-layout .armory-head h2{font-size:clamp(24px,5vw,34px);line-height:1.15;margin-bottom:8px}
+ .filing-layout .stack-index{display:none}
+ .filing-layout .v2-footer-grid{gap:16px}
+ .filing-layout .era-card{padding:12px}
+ .filing-layout .era-card h3{font-size:16px!important;line-height:1.3}
+ .filing-layout .era-card p{font-size:13px!important;line-height:1.5}
+}
+@media(max-width:640px){
+ .filing-layout .folder-page-layout{grid-template-columns:82px minmax(0,1fr)}
+ .filing-layout .folder-page-content .wrap{padding-inline:10px!important}
+ .filing-layout .folder-page-content main.wrap{padding-inline:8px!important}
+ .filing-layout .folder-page-content .reels-blk>.wrap,.filing-layout .folder-page-content .armory-blk>.wrap{padding-inline:8px!important}
+ .filing-layout .folder-page-content .log-card .log-body{padding:8px}
+ .filing-layout .folder-page-content .log-card .log-body h4{font-size:13px!important}
+ .filing-layout .log-card .log-body .watch,.filing-layout .log-card .log-body .watch-yt{font-size:11px!important}
+}
+@media(prefers-reduced-motion:reduce){.filing-layout .carousel-row{scroll-snap-type:x proximity}}
+
+@media(max-width:640px){.filing-layout .v2-footer-grid>div:nth-child(2){display:none}.filing-layout .v2-footer-grid>div:first-child>p:last-child{display:none}}
