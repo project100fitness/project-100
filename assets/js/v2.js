@@ -34,9 +34,10 @@
   });
  }
  {
-  const menu=$('#siteMenuTab'),drawer=$('#siteDrawer'),back=$('#siteDrawerBackdrop');let opener;
-  const close=()=>{drawer?.classList.remove('open');back?.classList.remove('open');drawer?.setAttribute('aria-hidden','true');if(drawer)drawer.inert=true;menu?.setAttribute('aria-expanded','false');document.body.style.overflow='';opener?.focus()};
-  const open=()=>{opener=document.activeElement;drawer?.classList.add('open');back?.classList.add('open');if(drawer)drawer.inert=false;drawer?.setAttribute('aria-hidden','false');menu?.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';$('#siteDrawerClose')?.focus()};
+  const menu=$('#siteMenuTab'),drawer=$('#siteDrawer'),back=$('#siteDrawerBackdrop');let opener,drawerPushed=false;
+ addEventListener('popstate',()=>{if(drawer&&drawer.classList.contains('open'))close()});
+  const close=()=>{drawer?.classList.remove('open');back?.classList.remove('open');drawer?.setAttribute('aria-hidden','true');if(drawer)drawer.inert=true;menu?.setAttribute('aria-expanded','false');document.body.style.overflow='';drawerPushed=false;opener?.focus()};
+  const open=()=>{opener=document.activeElement;drawer?.classList.add('open');back?.classList.add('open');if(drawer)drawer.inert=false;drawer?.setAttribute('aria-hidden','false');menu?.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';$('#siteDrawerClose')?.focus();if(!drawerPushed){try{history.pushState({p100drawer:1},document.title)}catch{}drawerPushed=true}};
   if(drawer){drawer.inert=true;drawer.setAttribute('aria-hidden','true')}
   menu?.addEventListener('click',()=>drawer?.classList.contains('open')?close():open());back?.addEventListener('click',close);$('#siteDrawerClose')?.addEventListener('click',close);
   drawer?.addEventListener('click',e=>{if(e.target.closest('a'))close()});
@@ -178,4 +179,20 @@
  addEventListener('hashchange',openForHash);
  requestAnimationFrame(()=>setTimeout(apply,60));
  addEventListener('load',apply);
+})();
+
+/* Mobile section rail: reliable tap-to-section jumps with header offset. */
+(()=>{'use strict';
+ const links=[...document.querySelectorAll('.folder-page-rail a.page-tab[href^="#"]')];
+ if(!links.length)return;
+ const head=()=>document.querySelector('.site-head');
+ links.forEach(a=>a.addEventListener('click',e=>{
+   const t=document.getElementById(a.getAttribute('href').slice(1));
+   if(!t)return;
+   e.preventDefault();
+   const y=t.getBoundingClientRect().top+window.scrollY-(head()?.getBoundingClientRect().height||0)-12;
+   window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+   try{history.replaceState(null,'','#'+t.id)}catch{}
+   links.forEach(x=>x.classList.toggle('current',x===a));
+ }));
 })();

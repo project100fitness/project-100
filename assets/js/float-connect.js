@@ -63,6 +63,7 @@
   }
 
   function init(){
+    document.querySelectorAll('.fc-back').forEach(function(e){e.remove()});
     var existing=document.getElementById('fcTrigger');
     if(existing){var root=existing.closest('.fc-root');if(root&&!root.dataset.wired){root.dataset.wired='1';wire(root)}return;}
     fetchPartial().then(function(html){

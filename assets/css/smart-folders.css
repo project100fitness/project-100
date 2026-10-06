@@ -76,3 +76,35 @@
 @media (prefers-reduced-motion:reduce){
   .sf-body,.sf-chev,details::details-content{transition:none}
 }
+
+/* ---- Mobile section rail: cramped side column -> horizontal chip bar ----
+   Big tap targets, full labels, sticky under the header. */
+@media(max-width:900px){
+  .filing-layout .folder-page-layout{display:block}
+  .folder-page-rail{
+    position:sticky;top:var(--folder-header-height,145px);z-index:50;
+    max-height:none;overflow:visible;
+    border-right:0;border-bottom:1px solid var(--border);
+    padding:10px 12px;background:var(--bg-2);
+  }
+  .folder-rail-title{display:none}
+  .filing-layout .folder-page-rail .focused-subtabs{border:0;background:none}
+  .filing-layout .folder-page-rail .focused-subtabs .wrap{
+    display:flex;flex-direction:row;gap:8px;
+    overflow-x:auto;overflow-y:hidden;
+    padding:2px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .filing-layout .folder-page-rail .focused-subtabs .wrap::-webkit-scrollbar{display:none}
+  .filing-layout .folder-page-rail .focused-subtabs .page-tab{
+    flex:none;width:auto;min-height:48px;
+    padding:12px 18px;white-space:nowrap;
+    border:1px solid var(--border);border-left:1px solid var(--border);
+    border-radius:24px;font-size:13px;
+  }
+  .filing-layout .folder-page-rail .focused-subtabs .page-tab.current{
+    background:var(--folder-accent,var(--red));
+    border-color:var(--folder-accent,var(--red));color:#fff;
+  }
+  /* prev/next page arrows float over content on phones — the MENU covers this */
+  .page-nav-arrow{display:none!important}
+}
