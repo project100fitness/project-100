@@ -197,11 +197,16 @@
  }));
 })();
 
-// 2026-10-06 Bogdan: brand logo links to its own site homepage
+// 2026-10-06 Bogdan: brand logo links to its own site homepage + FIT PROTOCOL text
 (function(){
   if(document.body.classList.contains('focused-protocol')){
     document.querySelectorAll('a.brand').forEach(function(a){
       if(a.getAttribute('href')==='index.html'){ a.setAttribute('href','fit-protocol.html'); }
+      // replace branding text: FIT (red) PROTOCOL (white)
+      if(!a.dataset.fpDone){
+        a.dataset.fpDone='1';
+        a.innerHTML='<span style="color:#e6273f">FIT</span> <span style="color:#fff">PROTOCOL</span>';
+      }
     });
   }
 })();
