@@ -107,8 +107,9 @@
   .reels-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
 
   /* quick-jump pill bar — scrolls to a category row, doesn't filter/hide anything */
-  .meal-jump{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:34px; }
+  .meal-jump{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:20px; }
   .meal-jump a{
+    font-size:.8rem !important; padding:6px 14px !important;
     padding:7px 14px; border-radius:100px; border:1px solid var(--border); background:var(--surface);
     font-size:.78rem; font-weight:600; color:var(--text-dim); text-decoration:none;
     font-family:'Oswald',sans-serif; letter-spacing:.02em; transition:border-color .15s ease, color .15s ease;
@@ -284,47 +285,6 @@ a.brand b{ color:#e6273f !important; }
 </style>
 </head>
 <body class="filing-layout focused-main" data-fx-theme="classic">
-<!-- 2026-10-07 Bogdan: 🥗 PROJECT 100 Nutrition Framework - hard coded -->
-<article class="vector-highlight">
-<div>
-<h3>🥗 PROJECT 100 Nutrition Framework</h3>
-<div class="macro-grid">
-  <div class="macro-item"><span class="macro-val">2,780</span><span class="macro-label">kcal Target</span></div>
-  <div class="macro-item"><span class="macro-val">252g</span><span class="macro-label">Protein</span></div>
-  <div class="macro-item"><span class="macro-val">4L</span><span class="macro-label">Water</span></div>
-</div>
-<p class="macro-desc"><strong>Protein-first approach:</strong> 252g daily (~1g per lb target weight) from whole foods and shakes. The fudge matrix, berries smoothies, and carnivor omelettes are staple vehicles.</p>
-<p class="macro-desc"><strong>Whole foods priority:</strong> Meals built from Instagram-documented recipes — choco-blueberry recovery, T-bone matrix, chicken-bean salad, protein wraps.</p>
-<p class="macro-desc"><strong>Hydration:</strong> 4L daily reference with electrolytes during training. Not a universal ceiling — adjust for training load and climate.</p>
-<p class="macro-note"><em>See fit-protocol-nutrition.html for the detailed FIT PROTOCOL nutrition page with full macro breakdown.</em></p>
-</div>
-</article>
-
-<style>
-/* 2026-10-07 Bogdan: highlight box - hard coded in page */
-.vector-highlight{
-  border:2px solid rgba(230,39,63,.4); border-radius:16px;
-  background:linear-gradient(135deg, rgba(230,39,63,.08) 0%, rgba(20,22,28,.95) 50%, rgba(230,39,63,.05) 100%);
-  box-shadow:0 0 24px rgba(230,39,63,.25), 0 0 48px rgba(230,39,63,.12), inset 0 0 20px rgba(230,39,63,.05);
-  padding:20px; margin:24px 0; position:relative; overflow:hidden;
-}
-.vector-highlight::before{
-  content:""; position:absolute; top:0; left:0; right:0; height:3px;
-  background:linear-gradient(90deg, transparent, #e6273f, transparent);
-  animation:glowPulse 2s ease-in-out infinite;
-}
-@keyframes glowPulse{ 0%,100%{ opacity:.6; } 50%{ opacity:1; } }
-.vector-highlight h3{ margin:0 0 16px 0; font-size:1.15rem; color:#fff; text-shadow:0 0 12px rgba(230,39,63,.5); }
-.vector-highlight .macro-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:16px; }
-@media(max-width:600px){ .vector-highlight .macro-grid{ grid-template-columns:repeat(2,1fr); } }
-.vector-highlight .macro-item{ text-align:center; padding:14px 8px; background:rgba(0,0,0,.4); border-radius:12px; border:1px solid rgba(230,39,63,.25); }
-.vector-highlight .macro-val{ display:block; font-size:1.3rem; font-weight:800; color:#fff; text-shadow:0 0 10px rgba(230,39,63,.6); }
-.vector-highlight .macro-label{ display:block; font-size:.75rem; color:#9aa0ae; margin-top:4px; text-transform:uppercase; letter-spacing:.05em; }
-.vector-highlight .macro-desc{ font-size:.92rem; line-height:1.6; color:#e0e0e0; margin:0 0 12px 0; }
-.vector-highlight .macro-desc strong{ color:#fff; }
-.vector-highlight .macro-note{ font-size:.85rem; color:#9aa0ae; border-top:1px solid rgba(255,255,255,.1); padding-top:12px; margin:0; }
-</style>
-
 <div class="fc-root">
 <div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
 <div aria-label="Links and contact" aria-modal="true" class="fc-panel" hidden="" id="fcPanel" role="dialog">
@@ -383,7 +343,19 @@ a.brand b{ color:#e6273f !important; }
 <span class="fp-tag fx-shine">Operating Law</span>
 <p>Historical plan: 252 g protein · 69 g fat. Whole-day intake remains unverified. See the source notes for context.</p>
 </div>
-</div><section class="nutrition-overview wrap" id="nutrition-overview"><span class="v2-kicker">THE EVERYDAY RECORD</span><h2>Food, drinks &amp; context</h2><div class="nutrition-info-grid"><article class="nutrition-info-card"><img alt="" class="" height="2037" loading="lazy" src="assets/media/october-2026/nutrition-pantry-july-2026.jpg" width="1528"/><div><h3>Breakfast / primer</h3><p>80 g dry roasted kasha + Earl Grey tea.</p></div></article><article class="nutrition-info-card"><img alt="" class="" height="1423" loading="lazy" src="assets/img/protein-berries-smoothie.jpg" width="800"/><div><h3>Meals from the journal</h3><p>Smoothies · bowls · wraps · salads.</p></div></article><article class="nutrition-info-card"><div><h3>Liquid routine</h3><p>Seven vectors · morning, rest and evening branches.</p></div></article><article class="nutrition-info-card"><div><h3>Planning reference</h3><p>2,780 kcal · 252 g protein · 69 g fat. Historical plan; whole-day intake is not verified.</p></div></article></div></section><section class="reels-blk" data-main-source="fit-nutrition.html:reels" id="reels">
+</div><section class="nutrition-overview wrap" id="nutrition-overview"><span class="v2-kicker">THE EVERYDAY RECORD</span><h2>Food, drinks &amp; context</h2><div class="nutrition-title-card">
+<p><strong>PROJECT 100 Nutrition</strong> — Real meals from the journal. Protein-first eating with whole foods, documented from @fudge_fit. Browse the meal galleries below by category.</p>
+</div>
+<style>
+.nutrition-title-card{
+  background:linear-gradient(135deg, rgba(230,39,63,.1) 0%, rgba(20,22,28,.9) 100%);
+  border:1px solid rgba(230,39,63,.3); border-radius:14px;
+  padding:18px 20px; margin-bottom:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.nutrition-title-card p{ margin:0; font-size:.95rem; line-height:1.6; color:#e0e0e0; }
+.nutrition-title-card strong{ color:#fff; }
+</style></section><section class="reels-blk" data-main-source="fit-nutrition.html:reels" id="reels">
 <div class="wrap">
 <div class="sec-head fx-stagger">
 <span class="eyebrow fx-reveal">Straight From <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a></span>
@@ -517,5 +489,52 @@ window.Fixonic && window.Fixonic.initGallery && window.Fixonic.initGallery();
 </script>
 </div>
 <script defer="" src="assets/js/v2.js?v=20261005-liquid"></script><a aria-label="Switch to FIT PROTOCOL" class="guidebook-access site-switch-float" href="fit-protocol.html"><span aria-hidden="true" class="guidebook-mark">↔</span><span>FIT PROTOCOL</span></a><a aria-label="Previous page" class="page-nav-arrow prev" href="liquid-intake.html">‹</a><a aria-label="Next page" class="page-nav-arrow next" href="gear-shop.html">›</a><script src="assets/js/image-lightbox.js"></script>
+
+<!-- 2026-10-07 Bogdan: Daily targets - hard coded at end -->
+<article class="vector-highlight">
+<div>
+<h3>📊 Daily Targets — Calories & Macros</h3>
+<div class="macro-grid">
+  <div class="macro-item"><span class="macro-val">2,780</span><span class="macro-label">kcal / day</span></div>
+  <div class="macro-item"><span class="macro-val">252g</span><span class="macro-label">protein</span></div>
+  <div class="macro-item"><span class="macro-val">~288g</span><span class="macro-label">carbs*</span></div>
+  <div class="macro-item"><span class="macro-val">69g</span><span class="macro-label">fat</span></div>
+  <div class="macro-item"><span class="macro-val">30-40g</span><span class="macro-label">fiber</span></div>
+  <div class="macro-item"><span class="macro-val">4L</span><span class="macro-label">water</span></div>
+</div>
+<p style="font-size:.8rem; color:#9aa0ae; margin:-8px 0 16px 0;">*Carbs calculated from remaining calories.</p>
+<p class="macro-desc"><strong>2,780 kcal:</strong> Total daily energy for training + lean muscle maintenance.</p>
+<p class="macro-desc"><strong>252g protein (~1g/lb):</strong> Building blocks for muscle protein synthesis and recovery.</p>
+<p class="macro-desc"><strong>~288g carbs:</strong> Fuel for training intensity and glycogen replenishment.</p>
+<p class="macro-desc"><strong>69g fat:</strong> Essential fatty acids and hormone production.</p>
+<p class="macro-desc"><strong>30-40g fiber:</strong> Critical for gut health post-gallbladder. Spread across meals.</p>
+<p class="macro-desc"><strong>4L water:</strong> Hydration reference with electrolytes during training.</p>
+<p class="macro-note"><em>Historical plan — whole-day intake not verified. Reference framework; adjust for your training phase and goals.</em></p>
+</div>
+</article>
+<style>
+.vector-highlight{
+  border:2px solid rgba(230,39,63,.4); border-radius:16px;
+  background:linear-gradient(135deg, rgba(230,39,63,.08) 0%, rgba(20,22,28,.95) 50%, rgba(230,39,63,.05) 100%);
+  box-shadow:0 0 24px rgba(230,39,63,.25), 0 0 48px rgba(230,39,63,.12), inset 0 0 20px rgba(230,39,63,.05);
+  padding:20px; margin:32px 0; position:relative; overflow:hidden;
+}
+.vector-highlight::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, transparent, #e6273f, transparent);
+  animation:glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse{ 0%,100%{ opacity:.6; } 50%{ opacity:1; } }
+.vector-highlight h3{ margin:0 0 16px 0; font-size:1.15rem; color:#fff; text-shadow:0 0 12px rgba(230,39,63,.5); }
+.vector-highlight .macro-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:16px; }
+@media(max-width:600px){ .vector-highlight .macro-grid{ grid-template-columns:repeat(2,1fr); } }
+.vector-highlight .macro-item{ text-align:center; padding:14px 8px; background:rgba(0,0,0,.4); border-radius:12px; border:1px solid rgba(230,39,63,.25); }
+.vector-highlight .macro-val{ display:block; font-size:1.4rem; font-weight:800; color:#fff; text-shadow:0 0 10px rgba(230,39,63,.6); }
+.vector-highlight .macro-label{ display:block; font-size:.8rem; color:#9aa0ae; margin-top:4px; text-transform:uppercase; letter-spacing:.05em; }
+.vector-highlight .macro-desc{ font-size:.92rem; line-height:1.6; color:#e0e0e0; margin:0 0 10px 0; }
+.vector-highlight .macro-desc strong{ color:#fff; }
+.vector-highlight .macro-note{ font-size:.85rem; color:#9aa0ae; border-top:1px solid rgba(255,255,255,.1); padding-top:12px; margin:0; }
+</style>
+
 </body>
 </html>
