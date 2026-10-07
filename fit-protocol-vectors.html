@@ -143,11 +143,22 @@ a.brand b{ color:#e6273f !important; }
     <div class="img-modal-title" id="imgModalTitle">Gallery</div>
     <div class="img-carousel">
       <button class="img-car-btn prev" onclick="imgCarMove(-1)" aria-label="Previous">&#10094;</button>
-      <div class="img-car-track" id="imgCarTrack">
-        <!-- Images injected by JS -->
+      <div class="img-car-wrap">
+        <div class="img-car-track" id="imgCarTrack">
+          <!-- Images injected by JS -->
+        </div>
+        <div class="img-car-actions">
+          <a id="imgCarDownload" class="img-car-action" download title="Download image" aria-label="Download image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+          <a id="imgCarFullview" class="img-car-action" target="_blank" rel="noopener" title="Open full size in new tab" aria-label="Open full size">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
       </div>
       <button class="img-car-btn next" onclick="imgCarMove(1)" aria-label="Next">&#10095;</button>
     </div>
+    <div class="img-car-hint">Click image for full view &bull; Use arrows or dots to browse</div>
     <div class="img-car-dots" id="imgCarDots"></div>
   </div>
 </div>
@@ -201,6 +212,36 @@ a.brand b{ color:#e6273f !important; }
   padding:0;
 }
 .img-car-dots button.active{ background:var(--red, #e6273f); transform:scale(1.3); }
+/* 2026-10-07 Bogdan: download and fullview buttons */
+.img-car-wrap{ position:relative; flex:1; }
+.img-car-actions{
+  position:absolute; top:12px; right:12px;
+  display:flex; gap:8px; z-index:3;
+}
+.img-car-action{
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(0,0,0,.7); backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.25);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; text-decoration:none;
+  transition:all .2s;
+}
+.img-car-action:hover{
+  background:var(--red, #e6273f); border-color:var(--red, #e6273f);
+  transform:scale(1.1);
+}
+.img-car-track img{ cursor:zoom-in; }
+.img-car-hint{
+  text-align:center; font-size:.8rem; color:var(--muted, #9aa0ae);
+  margin-top:12px;
+}
+/* Make X more prominent */
+.img-modal-close{
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem;
+}
 </style>
 <script>
 /* 2026-10-07 Bogdan: modal carousel logic - in-page */
@@ -218,6 +259,10 @@ function closeImgModal(){
   document.getElementById('imgModal').hidden = true;
   document.body.style.overflow = '';
 }
+function getFullRes(src){
+  // Map webp to full-res png
+  return src.replace('portraits-web/', 'portraits/').replace('.webp', '.png');
+}
 function renderImgCar(){
   const track = document.getElementById('imgCarTrack');
   const dots = document.getElementById('imgCarDots');
@@ -228,6 +273,8 @@ function renderImgCar(){
     img.src = src;
     img.alt = '';
     if(i === imgCarIndex) img.classList.add('active');
+    // Click for full view in new tab
+    img.onclick = () => window.open(getFullRes(src), '_blank', 'noopener');
     track.appendChild(img);
     const dot = document.createElement('button');
     dot.setAttribute('aria-label', 'Go to image ' + (i+1));
@@ -235,6 +282,12 @@ function renderImgCar(){
     dot.onclick = () => { imgCarIndex = i; renderImgCar(); };
     dots.appendChild(dot);
   });
+  // Update download and fullview for current image
+  const cur = imgCarImages[imgCarIndex];
+  const dl = document.getElementById('imgCarDownload');
+  const fv = document.getElementById('imgCarFullview');
+  if(dl){ dl.href = cur; dl.setAttribute('download', cur.split('/').pop()); }
+  if(fv){ fv.href = getFullRes(cur); }
 }
 function imgCarMove(dir){
   imgCarIndex = (imgCarIndex + dir + imgCarImages.length) % imgCarImages.length;
