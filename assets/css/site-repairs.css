@@ -124,7 +124,7 @@ body.home-page .hero { background: #111318; }
   .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
 }
 /* bigger logo branding */
-a.brand, .brand{ font-size:2.6rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 rgba(0,0,0,.8), 2px 2px 0 rgba(0,0,0,.6), 3px 3px 6px rgba(0,0,0,.5), 0 0 24px rgba(230,39,63,.25) !important; }
+a.brand, .brand{ font-size:3.4rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 rgba(0,0,0,.8), 2px 2px 0 rgba(0,0,0,.6), 3px 3px 6px rgba(0,0,0,.5), 0 0 24px rgba(230,39,63,.25) !important; }
 a.brand b{ color:#e6273f !important; }
 
 
