@@ -112,9 +112,9 @@ body.home-page .hero { background: #111318; }
 
 /* 2026-10-06 Bogdan: no more round pill buttons — use left-menu style everywhere */
 .page-tab{ border-radius:10px !important; }
-.folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; }
-.folder-page-rail .page-tab{ border-radius:8px !important; border-left:3px solid transparent !important; text-align:left !important; display:block !important; }
-.folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.12) !important; }
+.folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
+.folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
+.folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
 @media (max-width:640px){
   .folder-page-rail{ display:block !important; }
   .folder-page-rail .page-tabs{ display:block !important; }
