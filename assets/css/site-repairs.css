@@ -131,3 +131,35 @@ body.home-page .hero { background: #111318; }
 .page-tabs .page-tab{ border-radius:6px !important; }
 
 .page-tabs .wrap .page-tab{ border-radius:6px !important; }
+
+/* 2026-10-06 Bogdan: page nav arrows TALL red easy-click buttons, always visible */
+.page-nav-arrow{
+  width:52px !important; height:140px !important;
+  border-radius:14px !important;
+  background:rgba(198,40,60,.94) !important;
+  border:1px solid #e6273f !important;
+  color:#fff !important; z-index:960 !important;
+  top:50% !important; bottom:auto !important;
+  transform:translateY(-50%) !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  box-shadow:0 4px 22px rgba(0,0,0,.55) !important;
+  opacity:1 !important; visibility:visible !important;
+}
+.page-nav-arrow.prev{ left:8px !important; right:auto !important; }
+.page-nav-arrow.next{ right:8px !important; left:auto !important; }
+.page-nav-arrow svg{ width:30px !important; height:30px !important; }
+@media (max-width:640px){
+  .page-nav-arrow{ width:44px !important; height:110px !important; }
+  .page-nav-arrow.prev{ left:6px !important; }
+  .page-nav-arrow.next{ right:6px !important; }
+}
+/* menu narrower */
+@media (max-width:640px){
+  .folder-page-rail{ flex:0 0 108px !important; max-width:108px !important; }
+  .folder-page-rail .page-tab{ font-size:.6rem !important; padding:6px 7px !important; line-height:1.25 !important; }
+}
+/* carousel side arrows taller, button-style */
+button[class*="car-prev"], button[class*="car-next"],
+.carousel-btn, .car-arrow{
+  height:84px !important; border-radius:10px !important;
+}
