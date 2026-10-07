@@ -58,3 +58,35 @@
 @media(max-width:900px){.filing-layout .folder-page-layout{grid-template-columns:100px minmax(0,1fr)}.filing-layout .folder-page-rail .focused-subtabs .page-tab{overflow-wrap:normal;font-size:10.5px;padding-inline:5px}}
 @media(max-width:900px){.filing-layout .folder-page-content .wrap{padding-inline:14px!important}.filing-layout .folder-page-content main.wrap{padding-inline:10px!important}.filing-layout .folder-page-content .focused-notes{margin-inline:12px}.filing-layout .folder-page-content .compact-page-identity>.wrap{padding:0!important}}
 @media(min-width:641px) and (max-width:900px){.filing-layout .folder-page-content .single-card .log-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.filing-layout .folder-page-content .single-card .log-media{aspect-ratio:4/3;height:auto}}
+
+/* 2026-10-07 Bogdan: Landing page tab stands out as parent container */
+.folder-page-rail .page-tabs .wrap .page-tab:first-child{
+  text-transform:uppercase !important;
+  text-align:center !important;
+  font-weight:800 !important;
+  letter-spacing:.08em !important;
+  font-size:.85rem !important;
+  background:linear-gradient(135deg, rgba(230,39,63,.15) 0%, rgba(230,39,63,.05) 100%) !important;
+  border:1px solid rgba(230,39,63,.4) !important;
+  border-left:1px solid rgba(230,39,63,.4) !important;
+  border-radius:10px !important;
+  margin-bottom:8px !important;
+  padding:12px 10px !important;
+  box-shadow:0 2px 12px rgba(230,39,63,.2) !important;
+  position:relative;
+}
+.folder-page-rail .page-tabs .wrap .page-tab:first-child::after{
+  content:"⌂";
+  display:block;
+  font-size:1.1rem;
+  margin-top:2px;
+  opacity:.7;
+}
+.folder-page-rail .page-tabs .wrap .page-tab:first-child:hover{
+  background:linear-gradient(135deg, rgba(230,39,63,.25) 0%, rgba(230,39,63,.1) 100%) !important;
+  box-shadow:0 2px 16px rgba(230,39,63,.35) !important;
+}
+/* Add a subtle divider after the landing */
+.folder-page-rail .page-tabs .wrap .page-tab:first-child + .page-tab{
+  margin-top:4px;
+}
