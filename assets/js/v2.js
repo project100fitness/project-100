@@ -202,11 +202,7 @@
   if(document.body.classList.contains('focused-protocol')){
     document.querySelectorAll('a.brand').forEach(function(a){
       if(a.getAttribute('href')==='index.html'){ a.setAttribute('href','fit-protocol.html'); }
-      // replace branding text: FIT (red) PROTOCOL (white)
-      if(!a.dataset.fpDone){
-        a.dataset.fpDone='1';
-        a.innerHTML='<span style="color:#e6273f">FIT</span> <span style="color:#fff">PROTOCOL</span>';
-      }
+      // branding text now in HTML directly, no JS replacement needed
     });
   }
 })();
