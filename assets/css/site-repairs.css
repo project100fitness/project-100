@@ -161,8 +161,9 @@ body.home-page .hero { background: #111318; }
   .folder-page-rail .page-tab{ font-size:.6rem !important; padding:6px 7px !important; line-height:1.25 !important; }
 }
 /* carousel side arrows taller, button-style */
-button[class*="car-prev"], button[class*="car-next"],
-.carousel-btn, .car-arrow{
-  height:84px !important; border-radius:10px !important;
-  top:50% !important; transform:translateY(-50%) !important;
+@media (max-width:640px){
+  button[class*="car-prev"], button[class*="car-next"],
+  .carousel-btn, .car-arrow{
+    height:84px !important; border-radius:10px !important;
+  }
 }
