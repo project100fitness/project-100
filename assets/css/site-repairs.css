@@ -158,3 +158,12 @@ a.brand b{ color:#e6273f !important; }
 .page-tabs .wrap{
   margin-bottom:-1px !important;
 }
+
+/* 2026-10-06 Bogdan: remove MENU button, move floating links to top-left */
+.site-menu-tab, #siteMenuTab{ display:none !important; }
+.fc-trigger, #fcTrigger{
+  position:fixed !important;
+  top:12px !important; left:12px !important;
+  bottom:auto !important; right:auto !important;
+  z-index:10000 !important;
+}
