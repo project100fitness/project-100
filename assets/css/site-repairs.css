@@ -138,3 +138,23 @@ body.focused-protocol a.brand::after{ content:"PROTOCOL"; font-size:1.9rem !impo
 @media (max-width:640px){
   button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
 }
+
+/* 2026-10-06 Bogdan: file cabinet style for active top tabs */
+.page-tabs .page-tab.current{
+  border-radius:8px 8px 0 0 !important;
+  border-bottom:none !important;
+  background:#e6273f !important;
+  border-color:#e6273f !important;
+  color:#fff !important;
+  position:relative !important;
+  z-index:2 !important;
+  margin-bottom:-1px !important;
+  padding-bottom:calc(8px + 1px) !important;
+}
+/* ensure tab bar has bottom border for cabinet effect */
+.page-tabs{
+  border-bottom:1px solid #e6273f !important;
+}
+.page-tabs .wrap{
+  margin-bottom:-1px !important;
+}
