@@ -119,12 +119,12 @@ body.home-page .hero { background: #111318; }
 /* rail as LEFT sidebar on mobile */
 @media (max-width:640px){
   .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
-  .folder-page-rail{ flex:0 0 108px !important; max-width:108px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
+  .folder-page-rail{ flex:0 0 132px !important; max-width:132px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
   .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
   .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
 }
 /* bigger logo branding */
-a.brand, .brand{ font-size:2.2rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 #0a0a0a, 2px 2px 0 #0a0a0a, 3px 3px 0 #111, 4px 4px 0 #111, 5px 5px 0 #1a1a1a, 6px 6px 0 #1a1a1a, 7px 7px 12px rgba(0,0,0,.7) !important; }
+a.brand, .brand{ font-size:4rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 #0a0a0a, 2px 2px 0 #0a0a0a, 3px 3px 0 #111, 4px 4px 0 #111, 5px 5px 0 #1a1a1a, 6px 6px 0 #1a1a1a, 7px 7px 12px rgba(0,0,0,.7) !important; }
 a.brand b{ color:#e6273f !important; }
 
 
@@ -163,7 +163,16 @@ a.brand b{ color:#e6273f !important; }
 .site-menu-tab, #siteMenuTab{ display:none !important; }
 .fc-trigger, #fcTrigger{
   position:fixed !important;
-  top:76px !important; left:12px !important;
+  top:12px !important; left:12px !important;
   bottom:auto !important; right:auto !important;
   z-index:10000 !important;
+}
+
+/* 2026-10-07 Bogdan: rail labels wrap, not clipped */
+.folder-page-rail .page-tab{
+  white-space:normal !important;
+  word-break:break-word !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  line-height:1.25 !important;
 }
