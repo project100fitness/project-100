@@ -90,10 +90,10 @@
   .folder-rail-title{display:none}
   .filing-layout .folder-page-rail .focused-subtabs{border:0;background:none}
   .filing-layout .folder-page-rail .focused-subtabs .wrap{
-    display:flex;flex-direction:row;gap:8px;
-    overflow-x:auto;overflow-y:hidden;
-    padding:2px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none;
-  }
+    display:flex;flex-direction:column;gap:7px;
+    overflow:visible;
+    padding:0!important;
+}
   .filing-layout .folder-page-rail .focused-subtabs .wrap::-webkit-scrollbar{display:none}
   .filing-layout .folder-page-rail .focused-subtabs .page-tab{
     flex:none;width:auto;min-height:48px;

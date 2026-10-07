@@ -19,7 +19,7 @@
  .filing-layout .folder-page-layout{display:block}
  .folder-page-rail{position:static;max-height:none;overflow:visible;border-right:0;border-bottom:1px solid var(--border);padding:12px 12px 14px}
  .folder-rail-title{margin-bottom:8px}
- .filing-layout .folder-page-rail .focused-subtabs .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ /* 2026-10-07 Bogdan: removed - rail is vertical, not 3-col grid */
  .filing-layout .folder-page-rail .focused-subtabs .page-tab{min-height:44px;height:100%;padding:8px;font-size:11px}
  .filing-layout .folder-page-content main.wrap{padding-inline:16px}
 }
