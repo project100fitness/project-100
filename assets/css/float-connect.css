@@ -28,7 +28,7 @@
 .fc-backdrop[hidden]{ display:none; }
 
 .fc-panel{
-  position:fixed; left:16px; bottom:calc(80px + env(safe-area-inset-bottom,0px));
+  position:fixed; left:16px; top:70px;
   z-index:899; width:min(88vw, 320px); max-height:min(70vh, 480px); overflow-y:auto;
   background:var(--surface,#16181e); border:1px solid var(--border,#272b35); border-radius:16px;
   box-shadow:0 16px 44px rgba(0,0,0,.5); padding:8px;
