@@ -283,7 +283,49 @@ a.brand b{ color:#e6273f !important; }
 .folder-page-content{ max-width:100% !important; width:100% !important; margin:0 !important; padding-left:16px !important; padding-right:16px !important; }
 </style>
 </head>
-<body class="filing-layout focused-main" data-fx-theme="classic"><div class="fc-root">
+<body class="filing-layout focused-main" data-fx-theme="classic">
+<!-- 2026-10-07 Bogdan: 🥗 PROJECT 100 Nutrition Framework - hard coded -->
+<article class="vector-highlight">
+<div>
+<h3>🥗 PROJECT 100 Nutrition Framework</h3>
+<div class="macro-grid">
+  <div class="macro-item"><span class="macro-val">2,780</span><span class="macro-label">kcal Target</span></div>
+  <div class="macro-item"><span class="macro-val">252g</span><span class="macro-label">Protein</span></div>
+  <div class="macro-item"><span class="macro-val">4L</span><span class="macro-label">Water</span></div>
+</div>
+<p class="macro-desc"><strong>Protein-first approach:</strong> 252g daily (~1g per lb target weight) from whole foods and shakes. The fudge matrix, berries smoothies, and carnivor omelettes are staple vehicles.</p>
+<p class="macro-desc"><strong>Whole foods priority:</strong> Meals built from Instagram-documented recipes — choco-blueberry recovery, T-bone matrix, chicken-bean salad, protein wraps.</p>
+<p class="macro-desc"><strong>Hydration:</strong> 4L daily reference with electrolytes during training. Not a universal ceiling — adjust for training load and climate.</p>
+<p class="macro-note"><em>See fit-protocol-nutrition.html for the detailed FIT PROTOCOL nutrition page with full macro breakdown.</em></p>
+</div>
+</article>
+
+<style>
+/* 2026-10-07 Bogdan: highlight box - hard coded in page */
+.vector-highlight{
+  border:2px solid rgba(230,39,63,.4); border-radius:16px;
+  background:linear-gradient(135deg, rgba(230,39,63,.08) 0%, rgba(20,22,28,.95) 50%, rgba(230,39,63,.05) 100%);
+  box-shadow:0 0 24px rgba(230,39,63,.25), 0 0 48px rgba(230,39,63,.12), inset 0 0 20px rgba(230,39,63,.05);
+  padding:20px; margin:24px 0; position:relative; overflow:hidden;
+}
+.vector-highlight::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, transparent, #e6273f, transparent);
+  animation:glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse{ 0%,100%{ opacity:.6; } 50%{ opacity:1; } }
+.vector-highlight h3{ margin:0 0 16px 0; font-size:1.15rem; color:#fff; text-shadow:0 0 12px rgba(230,39,63,.5); }
+.vector-highlight .macro-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-bottom:16px; }
+@media(max-width:600px){ .vector-highlight .macro-grid{ grid-template-columns:repeat(2,1fr); } }
+.vector-highlight .macro-item{ text-align:center; padding:14px 8px; background:rgba(0,0,0,.4); border-radius:12px; border:1px solid rgba(230,39,63,.25); }
+.vector-highlight .macro-val{ display:block; font-size:1.3rem; font-weight:800; color:#fff; text-shadow:0 0 10px rgba(230,39,63,.6); }
+.vector-highlight .macro-label{ display:block; font-size:.75rem; color:#9aa0ae; margin-top:4px; text-transform:uppercase; letter-spacing:.05em; }
+.vector-highlight .macro-desc{ font-size:.92rem; line-height:1.6; color:#e0e0e0; margin:0 0 12px 0; }
+.vector-highlight .macro-desc strong{ color:#fff; }
+.vector-highlight .macro-note{ font-size:.85rem; color:#9aa0ae; border-top:1px solid rgba(255,255,255,.1); padding-top:12px; margin:0; }
+</style>
+
+<div class="fc-root">
 <div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
 <div aria-label="Links and contact" aria-modal="true" class="fc-panel" hidden="" id="fcPanel" role="dialog">
 <div class="fc-head">
