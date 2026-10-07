@@ -156,7 +156,7 @@ body.home-page .hero { background: #111318; }
 /* menu narrower */
 @media (max-width:640px){
   .folder-page-rail{ flex:0 0 108px !important; max-width:108px !important; }
-  .folder-page-rail .page-tab{ font-size:.6rem !important; padding:6px 7px !important; line-height:1.25 !important; }
+  .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; line-height:1.35 !important; }
 }
 /* carousel side arrows taller, button-style */
 button[class*="car-prev"], button[class*="car-next"],
