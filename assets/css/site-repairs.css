@@ -124,7 +124,7 @@ body.home-page .hero { background: #111318; }
   .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
   .folder-page-rail{ flex:0 0 148px !important; max-width:148px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
   .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
-  .folder-page-rail .page-tab{ font-size:.68rem !important; padding:8px 10px !important; white-space:normal !important; }
+  .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
 }
 /* top tabs: less round */
 .page-tabs .page-tab{ border-radius:6px !important; }
