@@ -105,6 +105,5 @@
     background:var(--folder-accent,var(--red));
     border-color:var(--folder-accent,var(--red));color:#fff;
   }
-  /* prev/next page arrows float over content on phones — the MENU covers this */
-  .page-nav-arrow{display:none!important}
+
 }

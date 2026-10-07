@@ -10,7 +10,7 @@
 .filing-layout .site-head .page-tabs .page-tab:not(.current){color:var(--text)!important}
 .filing-layout .page-tabs .tab-arrow{display:none}
 .filing-layout .cat-tabs{border-bottom:1px solid var(--border)}
-.filing-layout .page-nav-arrow{position:fixed!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:grid;place-items:center;width:48px!important;height:64px!important;border:1px solid #454952;border-radius:12px!important;background:rgba(10,12,16,.92);color:#eef0f4;text-decoration:none;font:32px/1 Inter,sans-serif;z-index:940;box-shadow:0 4px 16px #0005}
+.filing-layout .page-nav-arrow{position:fixed!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;display:grid;place-items:center;width:48px!important;height:64px!important;border:1px solid rgba(255,255,255,.2);border-radius:12px!important;background:rgba(0,0,0,.25);color:#fff;text-decoration:none;font:32px/1 Inter,sans-serif;z-index:940;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .filing-layout .page-nav-arrow.prev{left:max(14px,calc(50vw - 570px))!important;right:auto!important}
 .filing-layout .page-nav-arrow.next{right:max(14px,calc(50vw - 570px))!important;left:auto!important}
 .filing-layout .page-nav-arrow svg{width:24px;height:24px}
