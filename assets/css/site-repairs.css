@@ -137,12 +137,15 @@ body.home-page .hero { background: #111318; }
   border-radius:14px !important;
   background:rgba(198,40,60,.94) !important;
   border:1px solid #e6273f !important;
-  color:#fff !important; z-index:960 !important;
+  color:#fff !important; z-index:9999 !important;
+  position:fixed !important;
   top:50% !important; bottom:auto !important;
-  transform:translateY(-50%) !important;
+  margin-top:-70px !important;
+  transform:none !important;
   display:flex !important; align-items:center !important; justify-content:center !important;
   box-shadow:0 4px 22px rgba(0,0,0,.55) !important;
   opacity:1 !important; visibility:visible !important;
+  pointer-events:auto !important;
 }
 .page-nav-arrow.prev{ left:8px !important; right:auto !important; }
 .page-nav-arrow.next{ right:8px !important; left:auto !important; }
