@@ -24,3 +24,25 @@
   .page-nav-arrow.prev{ left:6px !important; }
   .page-nav-arrow.next{ right:6px !important; }
 }
+
+/* 2026-10-06 Bogdan: DEFINITIVE nav arrows - must stay visible */
+.page-nav-arrow{
+  display:flex !important;
+  position:fixed !important;
+  z-index:9999 !important;
+  width:48px !important; height:72px !important;
+  border-radius:12px !important;
+  background:rgba(10,11,13,.92) !important;
+  border:1px solid #454b58 !important;
+  color:#f2f4f7 !important;
+  align-items:center !important; justify-content:center !important;
+  opacity:1 !important; visibility:visible !important;
+  pointer-events:auto !important;
+  top:auto !important;
+  bottom:calc(10px + env(safe-area-inset-bottom,0px)) !important;
+  transform:none !important;
+}
+.page-nav-arrow.prev{ left:auto !important; right:64px !important; }
+.page-nav-arrow.next{ right:12px !important; left:auto !important; }
+.page-nav-arrow svg{ width:24px !important; height:24px !important; }
+.page-nav-arrow:hover{ background:#e6273f !important; border-color:#e6273f !important; color:#fff !important; }
