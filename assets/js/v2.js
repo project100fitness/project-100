@@ -196,3 +196,12 @@
    links.forEach(x=>x.classList.toggle('current',x===a));
  }));
 })();
+
+// 2026-10-06 Bogdan: brand logo links to its own site homepage
+(function(){
+  if(document.body.classList.contains('focused-protocol')){
+    document.querySelectorAll('a.brand').forEach(function(a){
+      if(a.getAttribute('href')==='index.html'){ a.setAttribute('href','fit-protocol.html'); }
+    });
+  }
+})();
