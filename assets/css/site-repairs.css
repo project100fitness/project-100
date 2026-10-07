@@ -127,13 +127,12 @@ body.home-page .hero { background: #111318; }
 a.brand, .brand{ font-size:1.9rem !important; font-weight:800 !important; letter-spacing:.03em !important; font-family:'Oswald',sans-serif !important; }
 a.brand b{ color:#e6273f !important; }
 
-body.focused-protocol a.brand b{ display:none !important; }
+
 
 
 @media (max-width:640px){
   a.brand, .brand{ font-size:1.5rem !important; }
-  body.focused-protocol a.brand::before, 
-}
+  
 /* carousel arrows taller on mobile */
 @media (max-width:640px){
   button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
