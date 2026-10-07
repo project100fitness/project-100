@@ -132,7 +132,10 @@ body.home-page .hero { background: #111318; }
 .page-tabs .wrap .page-tab{ border-radius:6px !important; }
 
 /* 2026-10-06 Bogdan: page nav arrows TALL red easy-click buttons, always visible */
-/* arrows now in compact-pages.css */
+.page-nav-arrow { top: auto !important; bottom: calc(10px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
+  .page-nav-arrow.prev { left: auto !important; right: 64px !important; }
+  .page-nav-arrow.next { right: 12px !important; }
+  .page-nav-arrow:hover { transform: none !important; }
 /* moved */
 /* moved */
 /* moved */
