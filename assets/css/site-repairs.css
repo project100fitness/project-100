@@ -126,8 +126,8 @@ body.home-page .hero { background: #111318; }
 /* bigger logo branding */
 a.brand, .brand{ font-size:1.9rem !important; font-weight:800 !important; letter-spacing:.03em !important; font-family:'Oswald',sans-serif !important; }
 a.brand b{ color:#e6273f !important; }
-body.focused-protocol a.brand{ font-size:0 !important; color:transparent !important; text-indent:-9999px !important; overflow:hidden !important; }
-body.focused-protocol a.brand b{ display:none !important; }
+
+
 
 
 @media (max-width:640px){
