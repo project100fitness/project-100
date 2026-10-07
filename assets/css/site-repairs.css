@@ -113,7 +113,7 @@ body.home-page .hero { background: #111318; }
 /* 2026-10-06 Bogdan: no more round pill buttons */
 .page-tab{ border-radius:10px !important; }
 .page-tabs .wrap .page-tab{ border-radius:6px !important; }
-.folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
+.folder-page-rail .page-tabs:not(.focused-subtabs) .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
 .folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
 .folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
 /* rail as LEFT sidebar on mobile */
@@ -140,7 +140,7 @@ body.focused-protocol a.brand::after{ content:"PROTOCOL"; font-size:1.9rem !impo
 }
 
 /* 2026-10-06 Bogdan: file cabinet style for active top tabs */
-.page-tabs .page-tab.current{
+.page-tabs:not(.focused-subtabs) .page-tab.current{
   border-radius:8px 8px 0 0 !important;
   border-bottom:none !important;
   background:#e6273f !important;
@@ -153,7 +153,7 @@ body.focused-protocol a.brand::after{ content:"PROTOCOL"; font-size:1.9rem !impo
   box-shadow:0 -2px 28px rgba(230,39,63,.75), 0 2px 20px rgba(230,39,63,.55), 0 0 40px rgba(230,39,63,.25) !important;
 }
 /* ensure tab bar has bottom border for cabinet effect */
-.page-tabs{
+.page-tabs:not(.focused-subtabs){
   border-bottom:1px solid #e6273f !important;
 }
 .page-tabs .wrap{
