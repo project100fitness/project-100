@@ -1,310 +1,334 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="light dark" name="color-scheme"/>
-<meta content="#f5f4f1" media="(prefers-color-scheme: light)" name="theme-color"/>
-<meta content="#0a0b0e" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f4f1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0b0e">
 <title>Mineral Chemistry · PROJECT 100</title>
-<meta content="Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number." name="description"/>
-<link href="https://project100.fit/mineral-chemistry.html" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="PROJECT 100" property="og:site_name"/>
-<meta content="Mineral Chemistry · PROJECT 100" property="og:title"/>
-<meta content="Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number." property="og:description"/>
-<meta content="https://project100.fit/mineral-chemistry.html" property="og:url"/>
-<meta content="https://project100.fit/assets/img/diagram-matrix.jpg" property="og:image"/>
-<meta content="Mineral Chemistry · PROJECT 100" property="og:image:alt"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta name="description" content="Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.">
+<link rel="canonical" href="https://project100.fit/mineral-chemistry.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PROJECT 100">
+<meta property="og:title" content="Mineral Chemistry · PROJECT 100">
+<meta property="og:description" content="Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.">
+<meta property="og:url" content="https://project100.fit/mineral-chemistry.html">
+<meta property="og:image" content="https://project100.fit/assets/img/diagram-matrix.jpg">
+<meta property="og:image:alt" content="Mineral Chemistry · PROJECT 100">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>
 /* theme first, so there is no flash: saved choice wins, else the OS decides */
 try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
 document.documentElement.classList.add('js');
+/* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
+if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
-<link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-<link href="assets/css/site.css?v=acecf671" rel="stylesheet"/>
-<link href="assets/css/schematic-sections.css?v=20261007" rel="stylesheet"/></head>
-<body data-group="chemistry" data-page="mineral-chemistry" data-site="protocol">
+<link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css?v=3ac9a00f">
+</head>
+<body data-site="protocol" data-page="mineral-chemistry" data-group="chemistry">
 <a class="skip-link" href="#content">Skip to content</a>
+
 <header class="site-head" id="siteHead">
-<div class="site-head__bar">
-<a aria-label="FIT PROTOCOL – home" class="brand" href="fit-protocol.html"><span class="brand__accent">FIT</span><span>PROTOCOL</span></a>
-<div class="site-head__actions">
-<a aria-label="Switch to PROJECT 100" class="site-switch" href="index.html"><span aria-hidden="true" class="site-switch__glyph">↔</span>PROJECT 100</a>
-<button aria-label="Switch colour theme" class="icon-btn" id="themeToggle" type="button">
-<svg aria-hidden="true" class="i-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
-<svg aria-hidden="true" class="i-moon" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-</button>
-<button aria-controls="menu" aria-haspopup="dialog" class="icon-btn menu-btn" id="menuBtn" type="button">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-<span class="menu-btn__label">Menu</span>
-</button>
-</div>
-</div>
-<nav aria-label="FIT PROTOCOL sections" class="tabs">
-<ul class="tabs__list">
-<li><a class="tab" href="fit-protocol.html">Overview</a></li>
-<li><a class="tab" href="fit-protocol-baseline.html">Baseline</a></li>
-<li><a class="tab" href="guidebook.html">Daily</a></li>
-<li><a class="tab" href="fit-protocol-vectors.html">Liquid Intake</a></li>
-<li><a class="tab" href="fit-protocol-nutrition.html">Nutrition</a></li>
-<li><a class="tab" href="fit-protocol-supplements.html">Supplements</a></li>
-<li><a class="tab" href="fit-protocol-training.html">Training</a></li>
-<li><a class="tab" href="fit-protocol-monitoring.html">Monitoring</a></li>
-<li><a class="tab" href="fit-protocol-troubleshooting.html">Fixes</a></li>
-<li><a aria-current="page" class="tab" href="mineral-chemistry.html">Minerals</a></li>
-</ul>
-</nav>
+  <div class="site-head__bar">
+    <a class="brand" href="fit-protocol.html" aria-label="FIT PROTOCOL – home"><span class="brand__accent">FIT</span><span>PROTOCOL</span></a>
+    <div class="site-head__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="menu-btn__label">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="FIT PROTOCOL sections">
+    <ul class="tabs__list">
+      <li><a class="tab" href="fit-protocol.html">Overview</a></li>
+      <li><a class="tab" href="fit-protocol-baseline.html">Baseline</a></li>
+      <li><a class="tab" href="guidebook.html">Daily</a></li>
+      <li><a class="tab" href="fit-protocol-vectors.html">Liquid Intake</a></li>
+      <li><a class="tab" href="fit-protocol-nutrition.html">Nutrition</a></li>
+      <li><a class="tab" href="fit-protocol-supplements.html">Supplements</a></li>
+      <li><a class="tab" href="fit-protocol-training.html">Training</a></li>
+      <li><a class="tab" href="fit-protocol-monitoring.html">Monitoring</a></li>
+      <li><a class="tab" href="fit-protocol-troubleshooting.html">Fixes</a></li>
+      <li><a class="tab" href="mineral-chemistry.html" aria-current="page">Minerals</a></li>
+    </ul>
+  </nav>
 </header>
+
 <div class="layout layout--rail">
-<aside aria-label="On this page" class="rail" data-spy="">
-<h2 class="rail__title">On this page</h2>
-<ul>
-<li><a href="#accounting">Daily accounting</a></li>
-<li><a href="#vector-chemistry">Vectors</a></li>
-<li><a href="#payloads">Product payloads</a></li>
-<li><a href="#sources">Sources</a></li>
-</ul>
-</aside>
-<main class="main" id="content" tabindex="-1">
-<ul aria-label="On this page" class="subnav subnav--auto" data-spy="">
-<li><a href="#accounting">Daily accounting</a></li>
-<li><a href="#vector-chemistry">Vectors</a></li>
-<li><a href="#payloads">Product payloads</a></li>
-<li><a href="#sources">Sources</a></li>
-</ul>
+  <aside class="rail" aria-label="On this page" data-spy>
+    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>On this page</span></h2>
+    <ul class="rail__list">
+      <li><a href="#accounting"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Daily accounting</span></a></li>
+      <li><a href="#vector-chemistry"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Vectors</span></a></li>
+      <li><a href="#payloads"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Product payloads</span></a></li>
+      <li><a href="#sources"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">Sources</span></a></li>
+    </ul>
+  </aside>
+  <main class="main" id="content" tabindex="-1">
 <header class="page-hero" id="top">
-<img alt="" class="page-hero__img" decoding="async" fetchpriority="high" height="1535" sizes="100vw" src="assets/web/media-october-2026-pill-organizer-february-2026-960.webp" srcset="assets/web/media-october-2026-pill-organizer-february-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-february-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-february-2026-1600.webp 1600w" width="2048"/>
-<div class="page-hero__text">
-<span class="eyebrow">FIT PROTOCOL · OCTOBER 2026</span>
-<h1>Mineral Chemistry</h1>
-<p class="lead">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p>
-</div>
+  <img class="page-hero__img" src="assets/web/media-october-2026-pill-organizer-february-2026-960.webp" alt="" width="2048" height="1535" srcset="assets/web/media-october-2026-pill-organizer-february-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-february-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-february-2026-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
+  <div class="page-hero__text">
+    <span class="eyebrow">FIT PROTOCOL · OCTOBER 2026</span>
+    <h1>Mineral Chemistry</h1>
+    <p class="lead">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p>
+  </div>
 </header>
-<section aria-label="Magnesium · baseline and options" class="section schematic-section" id="mineral-illustration"><h2>Magnesium · baseline and options</h2><div class="schematic-minerals"><div class="schematic-console"><div class="schematic-console-label"><span>Training base</span><strong>341 mg</strong><span>Rest base · when V5 is consumed</span><strong>100 mg</strong></div></div><div class="schematic-formula"><span class="eyebrow">Recorded supplemental magnesium · training scenario</span><p class="schematic-equation">240 + 1 + 100 = <strong>341 mg</strong></p><p>Glycinate + EAA + RapiDrem</p><dl class="schematic-options"><div><dt>+ Medi-C half serving</dt><dd>446 mg</dd></div><div><dt>+ Hey Relax</dt><dd>541 mg</dd></div><div><dt>+ both options</dt><dd>646 mg</dd></div></dl></div></div><p class="schematic-caption">Conditional sums, not prescribed doses. Rest-day base: 100 mg when V5 is consumed. Food magnesium is outside this supplemental account.</p></section><section aria-labelledby="accounting-title" class="section" id="accounting">
-<div class="section__head">
-<h2 id="accounting-title">Recorded intake scenarios</h2>
-</div>
-<aside class="callout callout--warn nut-before">
-<p>Partial accounting from your October 6 records. These scenarios depend on the selected products and optional servings; they exclude unlisted food. Upper limits have different scopes and are not target doses.</p>
-</aside>
-<div class="nut-facts">
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Magnesium</h3>
-<p class="nut-fact__value">341 mg training · 100 mg rest</p>
-<p>Known supplemental base: 240 mg glycinate + 1 mg EAA + 100 mg RapiDrem on training days; RapiDrem alone on the recorded rest branch. Medi-C half serving adds 105 mg: training 446 mg / rest 205 mg. Hey Relax adds 200 mg: 541 / 300 mg; both add-ons 646 / 405 mg. Adult supplemental/medication UL: 350 mg; food magnesium is excluded from that UL.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Calcium</h3>
-<p class="nut-fact__value">1,536.5 mg training scenario · 1,216 mg rest</p>
-<p>Includes 945 mL Silk at the recorded 1,134 mg calcium. Training supplements 402.5 mg include the conditional 200 mg CanPrev tablet; rest RapiDrem adds 82 mg. Without that tablet, subtract 200 mg from the training scenario. Other food is not counted. Total-intake UL: 2,500 mg at ages 19–50; 2,000 mg at 51+.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Zinc</h3>
-<p class="nut-fact__value">28.78 mg training · 3.78 mg rest</p>
-<p>Training: 25 mg multivitamin + 3.78 mg recorded Silk contribution. Rest skips the multivitamin. Other food is excluded. Adult total-intake UL: 40 mg.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Potassium</h3>
-<p class="nut-fact__value">1,000 mg per RapiDrem scoop</p>
-<p>Applies when V2 or V5 is consumed. Other food and beverages are excluded. No established general UL does not imply unlimited supplemental intake.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Sodium</h3>
-<p class="nut-fact__value">233 mg training · 59 mg rest, partial</p>
-<p>Training: two 1/16 tsp salt portions at 59 mg each + 115 mg BioSteel. Rest: one salt portion. Igniter and other formula sodium are not included, so these are not daily totals. Recheck the current RapiDrem label before reconciling its ingredient and nutrition declarations.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Vitamin C</h3>
-<p class="nut-fact__value">452.9 mg training scenario · 150 mg rest scenario</p>
-<p>Assumes the listed products are consumed, including conditional Liver GI and meal enzymes. Medi-C half serving adds 1,000 mg: 1,452.9 / 1,150 mg. Full serving adds 2,000 mg: training 2,452.9 mg. Adult total-intake UL: 2,000 mg. Other food is excluded.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Biotin</h3>
-<p class="nut-fact__value">425 mcg training</p>
-<p>300 mcg multivitamin + 125 mcg EAA. Neither is included in the recorded rest branch; a complete rest-day total is not established. Tell the testing clinician about biotin; assay-specific instructions take priority over a fixed hold time.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Boron</h3>
-<p class="nut-fact__value">4 mg training · 3 mg rest</p>
-<p>Training: 3 mg standalone capsule + 1 mg multivitamin. Rest: standalone capsule only. Adult total-intake UL: 20 mg.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Creatine HCl</h3>
-<p class="nut-fact__value">1,500 mg when both recorded drinks are consumed</p>
-<p>Training: Proline 750 mg in V4 + SD Pharmaceuticals 750 mg in V10. Rest: Proline 750 mg in V5 + SD Pharmaceuticals 750 mg in V10. The Canadian Carnivor serving records no added creatine. Share creatine use with the clinician interpreting kidney markers.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Caffeine</h3>
-<p class="nut-fact__value">Approximately 413–443 mg, morning branch</p>
-<p>Recorded Igniter estimate: approximately 373 mg + tea estimate 40–70 mg. Other sources are excluded. Health Canada guidance for adults: 400 mg/day. Evening V6 has no added caffeine; tea still counts.</p>
-</article>
-<article class="card card--pad nut-fact">
-<h3 class="nut-fact__name">Piperine</h3>
-<p class="nut-fact__value">14.5 mg training · 9.5 mg rest</p>
-<p>Recorded TestoFX contribution 9.5 mg + curcumin product 5 mg on training days. Rest skips that curcumin grid. Review the full product list alongside medications; no safe upper limit is claimed here.</p>
-</article>
-</div>
+
+<section class="section" id="accounting" aria-labelledby="accounting-title">
+  <div class="section__head">
+    <h2 id="accounting-title">Recorded intake scenarios</h2>
+  </div>
+  <aside class="callout callout--warn nut-before">
+    <p>Partial accounting from your October 6 records. These scenarios depend on the selected products and optional servings; they exclude unlisted food. Upper limits have different scopes and are not target doses.</p>
+  </aside>
+  <div class="nut-facts">
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Magnesium</h3>
+      <p class="nut-fact__value">341 mg training · 100 mg rest</p>
+      <p>Known supplemental base: 240 mg glycinate + 1 mg EAA + 100 mg RapiDrem on training days; RapiDrem alone on the recorded rest branch. Medi-C half serving adds 105 mg: training 446 mg / rest 205 mg. Hey Relax adds 200 mg: 541 / 300 mg; both add-ons 646 / 405 mg. Adult supplemental/medication UL: 350 mg; food magnesium is excluded from that UL.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Calcium</h3>
+      <p class="nut-fact__value">1,536.5 mg training scenario · 1,216 mg rest</p>
+      <p>Includes 945 mL Silk at the recorded 1,134 mg calcium. Training supplements 402.5 mg include the conditional 200 mg CanPrev tablet; rest RapiDrem adds 82 mg. Without that tablet, subtract 200 mg from the training scenario. Other food is not counted. Total-intake UL: 2,500 mg at ages 19–50; 2,000 mg at 51+.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Zinc</h3>
+      <p class="nut-fact__value">28.78 mg training · 3.78 mg rest</p>
+      <p>Training: 25 mg multivitamin + 3.78 mg recorded Silk contribution. Rest skips the multivitamin. Other food is excluded. Adult total-intake UL: 40 mg.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Potassium</h3>
+      <p class="nut-fact__value">1,000 mg per RapiDrem scoop</p>
+      <p>Applies when V2 or V5 is consumed. Other food and beverages are excluded. No established general UL does not imply unlimited supplemental intake.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Sodium</h3>
+      <p class="nut-fact__value">233 mg training · 59 mg rest, partial</p>
+      <p>Training: two 1/16 tsp salt portions at 59 mg each + 115 mg BioSteel. Rest: one salt portion. Igniter and other formula sodium are not included, so these are not daily totals. Recheck the current RapiDrem label before reconciling its ingredient and nutrition declarations.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Vitamin C</h3>
+      <p class="nut-fact__value">452.9 mg training scenario · 150 mg rest scenario</p>
+      <p>Assumes the listed products are consumed, including conditional Liver GI and meal enzymes. Medi-C half serving adds 1,000 mg: 1,452.9 / 1,150 mg. Full serving adds 2,000 mg: training 2,452.9 mg. Adult total-intake UL: 2,000 mg. Other food is excluded.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Biotin</h3>
+      <p class="nut-fact__value">425 mcg training</p>
+      <p>300 mcg multivitamin + 125 mcg EAA. Neither is included in the recorded rest branch; a complete rest-day total is not established. Tell the testing clinician about biotin; assay-specific instructions take priority over a fixed hold time.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Boron</h3>
+      <p class="nut-fact__value">4 mg training · 3 mg rest</p>
+      <p>Training: 3 mg standalone capsule + 1 mg multivitamin. Rest: standalone capsule only. Adult total-intake UL: 20 mg.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Creatine HCl</h3>
+      <p class="nut-fact__value">1,500 mg when both recorded drinks are consumed</p>
+      <p>Training: Proline 750 mg in V4 + SD Pharmaceuticals 750 mg in V10. Rest: Proline 750 mg in V5 + SD Pharmaceuticals 750 mg in V10. The Canadian Carnivor serving records no added creatine. Share creatine use with the clinician interpreting kidney markers.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Caffeine</h3>
+      <p class="nut-fact__value">Approximately 413–443 mg, morning branch</p>
+      <p>Recorded Igniter estimate: approximately 373 mg + tea estimate 40–70 mg. Other sources are excluded. Health Canada guidance for adults: 400 mg/day. Evening V6 has no added caffeine; tea still counts.</p>
+    </article>
+    <article class="card card--pad nut-fact">
+      <h3 class="nut-fact__name">Piperine</h3>
+      <p class="nut-fact__value">14.5 mg training · 9.5 mg rest</p>
+      <p>Recorded TestoFX contribution 9.5 mg + curcumin product 5 mg on training days. Rest skips that curcumin grid. Review the full product list alongside medications; no safe upper limit is claimed here.</p>
+    </article>
+  </div>
 </section>
-<section aria-labelledby="vector-chemistry-title" class="section" id="vector-chemistry">
-<div class="section__head">
-<h2 id="vector-chemistry-title">Vector contributions</h2>
-</div>
-<div class="grid grid--3">
-<article class="card card--pad">
-<h3 class="card__title">Training · V2 + V4</h3>
-<p>RapiDrem contributes the recorded potassium, magnesium and calcium. BioSteel and two pink-salt portions contribute to the partial sodium account.</p>
-</article>
-<article class="card card--pad">
-<h3 class="card__title">Rest · V5</h3>
-<p>One RapiDrem scoop and one pink-salt portion when the drink is consumed. The training multivitamin and EAA do not carry into this branch.</p>
-</article>
-<article class="card card--pad">
-<h3 class="card__title">Night · V10</h3>
-<p>SD Pharmaceuticals creatine HCl 750 mg. Optional Medi-C or Hey Relax changes the totals; record the serving actually taken.</p>
-</article>
-</div>
+
+<section class="section" id="vector-chemistry" aria-labelledby="vector-chemistry-title">
+  <div class="section__head">
+    <h2 id="vector-chemistry-title">Vector contributions</h2>
+  </div>
+  <div class="grid grid--3">
+    <article class="card card--pad">
+      <h3 class="card__title">Training · V2 + V4</h3>
+      <p>RapiDrem contributes the recorded potassium, magnesium and calcium. BioSteel and two pink-salt portions contribute to the partial sodium account.</p>
+    </article>
+    <article class="card card--pad">
+      <h3 class="card__title">Rest · V5</h3>
+      <p>One RapiDrem scoop and one pink-salt portion when the drink is consumed. The training multivitamin and EAA do not carry into this branch.</p>
+    </article>
+    <article class="card card--pad">
+      <h3 class="card__title">Night · V10</h3>
+      <p>SD Pharmaceuticals creatine HCl 750 mg. Optional Medi-C or Hey Relax changes the totals; record the serving actually taken.</p>
+    </article>
+  </div>
 </section>
-<section aria-labelledby="payloads-title" class="section" id="payloads">
-<div class="section__head">
-<h2 id="payloads-title">Product payloads</h2>
-</div>
-<div class="grid grid--3">
-<article class="card card--pad">
-<h3 class="card__title">BioSteel · 36 g</h3>
-<p>Recorded half serving: 12 g protein, 19 g carbohydrate, 125 kcal, 90.5 mg calcium and 115 mg sodium.</p>
-</article>
-<article class="card card--pad">
-<h3 class="card__title">RapiDrem · one scoop</h3>
-<p>Recorded label amounts: 1,000 mg potassium, 100 mg magnesium, 82 mg calcium and 45 mg vitamin C. Confirm your current container.</p>
-</article>
-<article class="card card--pad">
-<h3 class="card__title">Medi-C · 2.5 g, conditional</h3>
-<p>Latest cross-check records the magnesium-ascorbate version: 105 mg magnesium, 1,000 mg vitamin C and 650 mg lysine. This differs from the older calcium formula; confirm the package before applying these numbers.</p>
-</article>
-</div>
+
+<section class="section" id="payloads" aria-labelledby="payloads-title">
+  <div class="section__head">
+    <h2 id="payloads-title">Product payloads</h2>
+  </div>
+  <div class="grid grid--3">
+    <article class="card card--pad">
+      <h3 class="card__title">BioSteel · 36 g</h3>
+      <p>Recorded half serving: 12 g protein, 19 g carbohydrate, 125 kcal, 90.5 mg calcium and 115 mg sodium.</p>
+    </article>
+    <article class="card card--pad">
+      <h3 class="card__title">RapiDrem · one scoop</h3>
+      <p>Recorded label amounts: 1,000 mg potassium, 100 mg magnesium, 82 mg calcium and 45 mg vitamin C. Confirm your current container.</p>
+    </article>
+    <article class="card card--pad">
+      <h3 class="card__title">Medi-C · 2.5 g, conditional</h3>
+      <p>Latest cross-check records the magnesium-ascorbate version: 105 mg magnesium, 1,000 mg vitamin C and 650 mg lysine. This differs from the older calcium formula; confirm the package before applying these numbers.</p>
+    </article>
+  </div>
 </section>
-<section aria-labelledby="sources-title" class="section" id="sources">
-<div class="section__head">
-<h2 id="sources-title">Sources and limits</h2>
-<p>Product amounts are transcribed from supplied records, not independently verified laboratory results. Totals are conditional sums, not complete dietary intake or a safety guarantee.</p>
-</div>
-<ul class="nut-links">
-<li><a href="https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · magnesium</a></li>
-<li><a href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · calcium</a></li>
-<li><a href="https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · vitamin C</a></li>
-<li><a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/caffeine-foods.html" rel="noopener" target="_blank">Health Canada · caffeine guidance</a></li>
-</ul>
+
+<section class="section" id="sources" aria-labelledby="sources-title">
+  <div class="section__head">
+    <h2 id="sources-title">Sources and limits</h2>
+    <p>Product amounts are transcribed from supplied records, not independently verified laboratory results. Totals are conditional sums, not complete dietary intake or a safety guarantee.</p>
+  </div>
+  <ul class="nut-links">
+    <li><a href="https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · magnesium</a></li>
+    <li><a href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · calcium</a></li>
+    <li><a href="https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · vitamin C</a></li>
+    <li><a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/caffeine-foods.html" rel="noopener" target="_blank">Health Canada · caffeine guidance</a></li>
+  </ul>
 </section>
-<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-margins.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Safety margins</span></a><a class="pager__next" href="fit-protocol-training.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Training mechanics</span></a>
-</nav>
-</main>
+
+    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-margins.html"><span class="pager__dir">← Previous</span><span class="pager__label">Safety margins</span></a><a class="pager__next" rel="next" href="fit-protocol-training.html"><span class="pager__dir">Next →</span><span class="pager__label">Training mechanics</span></a>
+    </nav>
+  </main>
 </div>
+
 <footer class="site-foot">
-<div class="site-foot__inner">
-<div>
-<h2>FIT PROTOCOL</h2>
-<p class="site-foot__lede">The documented system behind the record: daily execution, vectors, nutrition, training and monitoring.</p>
-<a class="site-foot__switch" href="index.html"><span aria-hidden="true">↔</span> Switch to PROJECT 100</a>
-</div>
-<div>
-<h2>Explore</h2>
-<ul><li><a href="fit-protocol.html">Overview</a></li><li><a href="fit-protocol-baseline.html">Baseline</a></li><li><a href="guidebook.html">Daily</a></li><li><a href="fit-protocol-vectors.html">Liquid Intake</a></li><li><a href="fit-protocol-nutrition.html">Nutrition</a></li><li><a href="fit-protocol-supplements.html">Supplements</a></li><li><a href="fit-protocol-training.html">Training</a></li><li><a href="fit-protocol-monitoring.html">Monitoring</a></li><li><a href="fit-protocol-troubleshooting.html">Fixes</a></li><li><a href="mineral-chemistry.html">Minerals</a></li>
-<li><a href="library.html">Guidebook · Files · Downloads</a></li>
-</ul>
-</div>
-<div>
-<h2>Elsewhere</h2>
-<ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">Gym playlist</a></li>
-</ul>
-</div>
-<p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
-</div>
+  <div class="site-foot__inner">
+    <div>
+      <h2>FIT PROTOCOL</h2>
+      <p class="site-foot__lede">The documented system behind the record: daily execution, vectors, nutrition, training and monitoring.</p>
+      <a class="site-foot__switch" href="index.html"><span aria-hidden="true">↔</span> Switch to PROJECT 100</a>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <ul><li><a href="fit-protocol.html">Overview</a></li><li><a href="fit-protocol-baseline.html">Baseline</a></li><li><a href="guidebook.html">Daily</a></li><li><a href="fit-protocol-vectors.html">Liquid Intake</a></li><li><a href="fit-protocol-nutrition.html">Nutrition</a></li><li><a href="fit-protocol-supplements.html">Supplements</a></li><li><a href="fit-protocol-training.html">Training</a></li><li><a href="fit-protocol-monitoring.html">Monitoring</a></li><li><a href="fit-protocol-troubleshooting.html">Fixes</a></li><li><a href="mineral-chemistry.html">Minerals</a></li>
+        <li><a href="library.html">Guidebook · Files · Downloads</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Elsewhere</h2>
+      <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">Gym playlist</a></li>
+      </ul>
+    </div>
+    <p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
+  </div>
 </footer>
-<dialog aria-labelledby="menuTitle" class="menu" id="menu">
-<div class="menu__head">
-<h2 class="menu__title" id="menuTitle">Menu</h2>
-<button aria-label="Close menu" class="icon-btn" data-menu-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
+<a class="edge edge--prev" rel="prev" href="fit-protocol-margins.html" aria-label="Previous page: Safety margins" title="Previous: Safety margins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<a class="edge edge--next" rel="next" href="fit-protocol-training.html" aria-label="Next page: Training mechanics" title="Next: Training mechanics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+
+<div class="fab-dock" id="fabDock">
+  <a class="fab fab--back" id="fabBack" href="fit-protocol.html" aria-label="Go back" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
+  <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
+  <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
+    <p class="fab-panel__title">Links</p>
+    <ul class="fab-panel__list">
+      <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
+      <li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small>instagram.com/fudge_fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small>youtube.com/@FUDGE_fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small>facebook.com/fudge.fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small>tiktok.com/@bogdan_dospi</small></span></a></li>
+      <li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small>twitch.tv/cyberk1llaTTV</small></span></a></li>
+      <li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small>Spotify playlist</small></span></a></li>
+    </ul>
+  </div>
 </div>
-<div class="menu__body">
-<div class="menu__sites">
-<a class="menu__site" href="index.html"><small>Switch to</small><strong>PROJECT 100</strong></a>
-<a aria-current="true" class="menu__site" href="fit-protocol.html"><small>You are here</small><strong>FIT PROTOCOL</strong></a>
-</div>
-<section class="menu__section">
-<h3>FIT PROTOCOL pages</h3>
-<div class="menu__group">
-<p class="menu__group-title">Baseline</p>
-<ul class="menu__list"><li><a href="fit-protocol-baseline.html">Goals &amp; baseline</a></li><li><a href="fit-protocol-history.html">Return to training</a></li><li><a href="fit-protocol-constraints.html">Constraints</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Daily</p>
-<ul class="menu__list"><li><a href="guidebook.html">Today</a></li><li><a href="daily-pill-cards.html">Pill cards</a></li><li><a href="fit-protocol-fuel.html">Daily clock</a></li><li><a href="fit-protocol-checklists.html">Checklists</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Liquid Intake</p>
-<ul class="menu__list"><li><a href="fit-protocol-vectors.html">Vector folders</a></li><li><a href="fit-protocol-vector-v3.html">V3 RECOVERY</a></li><li><a href="fit-protocol-vector-v1.html">V1 IGNITION</a></li><li><a href="fit-protocol-vector-v2.html">V2 REFUEL</a></li><li><a href="fit-protocol-vector-v4.html">V4 RELOAD</a></li><li><a href="fit-protocol-vector-v5.html">V5 TRANSPORT</a></li><li><a href="fit-protocol-vector-v10.html">V10 SHUTDOWN</a></li><li><a href="fit-protocol-vector-v6.html">V6 PUMP</a></li><li><a href="fit-protocol-vector-reference.html">Vector notes</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Nutrition</p>
-<ul class="menu__list"><li><a href="fit-protocol-nutrition.html">Food &amp; nutrition</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Supplements</p>
-<ul class="menu__list"><li><a href="fit-protocol-supplements.html">Pills &amp; accounting</a></li><li><a href="fit-protocol-interactions.html">Interactions</a></li><li><a href="fit-protocol-margins.html">Safety margins</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Training</p>
-<ul class="menu__list"><li><a href="fit-protocol-training.html">Training mechanics</a></li><li><a href="fit-protocol-progression.html">Progression</a></li><li><a href="fit-protocol-joints.html">Joints &amp; recovery</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Monitoring</p>
-<ul class="menu__list"><li><a href="fit-protocol-monitoring.html">Metabolic context</a></li><li><a href="fit-protocol-labs.html">Lab monitoring</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Fixes</p>
-<ul class="menu__list"><li><a href="fit-protocol-troubleshooting.html">Troubleshooting</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">Minerals</p>
-<ul class="menu__list"><li><a aria-current="page" href="mineral-chemistry.html">Mineral Chemistry</a></li>
-</ul>
-</div>
-<div class="menu__group">
-<p class="menu__group-title">More</p>
-<ul class="menu__list"><li><a href="library.html">Downloads</a></li>
-</ul>
-</div>
-</section>
-<section class="menu__section">
-<h3>Downloads</h3>
-<div class="menu__links"><a class="menu__link" href="library.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Guidebook · Files · Downloads</span></a></div>
-</section>
-<section class="menu__section">
-<h3>Links &amp; contact</h3>
-<div class="menu__links">
-<a class="menu__link" href="mailto:project100@gmail.com"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small>project100@gmail.com</small></span></a>
-<a class="menu__link" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg><span>Instagram<small>instagram.com/fudge_fit</small></span></a>
-<a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg><span>YouTube<small>youtube.com/@FUDGE_fit</small></span></a>
-<a class="menu__link" href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg><span>Facebook<small>facebook.com/fudge.fit</small></span></a>
-<a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg><span>TikTok<small>tiktok.com/@bogdan_dospi</small></span></a>
-<a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg><span>Twitch<small>twitch.tv/cyberk1llaTTV</small></span></a>
-<a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg><span>Gym playlist<small>Spotify playlist</small></span></a>
-</div>
-</section>
-</div>
+<a class="fab-switch" href="index.html" aria-label="Switch to PROJECT 100"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>PROJECT 100</span></a>
+
+<dialog class="menu" id="menu" aria-labelledby="menuTitle">
+  <div class="menu__head">
+    <h2 class="menu__title" id="menuTitle">Menu</h2>
+    <button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="menu__body">
+    <div class="menu__sites">
+      <a class="menu__site" href="index.html"><small>Switch to</small><strong>PROJECT 100</strong></a>
+      <a class="menu__site" href="fit-protocol.html" aria-current="true"><small>You are here</small><strong>FIT PROTOCOL</strong></a>
+    </div>
+    <section class="menu__section">
+      <h3>FIT PROTOCOL pages</h3>
+      <div class="menu__group">
+        <p class="menu__group-title">Baseline</p>
+        <ul class="menu__list"><li><a href="fit-protocol-baseline.html">Goals &amp; baseline</a></li><li><a href="fit-protocol-history.html">Return to training</a></li><li><a href="fit-protocol-constraints.html">Constraints</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Daily</p>
+        <ul class="menu__list"><li><a href="guidebook.html">Today</a></li><li><a href="daily-pill-cards.html">Pill cards</a></li><li><a href="fit-protocol-fuel.html">Daily clock</a></li><li><a href="fit-protocol-checklists.html">Checklists</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Liquid Intake</p>
+        <ul class="menu__list"><li><a href="fit-protocol-vectors.html">Vector folders</a></li><li><a href="fit-protocol-vector-v3.html">V3 RECOVERY</a></li><li><a href="fit-protocol-vector-v1.html">V1 IGNITION</a></li><li><a href="fit-protocol-vector-v2.html">V2 REFUEL</a></li><li><a href="fit-protocol-vector-v4.html">V4 RELOAD</a></li><li><a href="fit-protocol-vector-v5.html">V5 TRANSPORT</a></li><li><a href="fit-protocol-vector-v10.html">V10 SHUTDOWN</a></li><li><a href="fit-protocol-vector-v6.html">V6 PUMP</a></li><li><a href="fit-protocol-vector-reference.html">Vector notes</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Nutrition</p>
+        <ul class="menu__list"><li><a href="fit-protocol-nutrition.html">Food &amp; nutrition</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Supplements</p>
+        <ul class="menu__list"><li><a href="fit-protocol-supplements.html">Pills &amp; accounting</a></li><li><a href="fit-protocol-interactions.html">Interactions</a></li><li><a href="fit-protocol-margins.html">Safety margins</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Training</p>
+        <ul class="menu__list"><li><a href="fit-protocol-training.html">Training mechanics</a></li><li><a href="fit-protocol-progression.html">Progression</a></li><li><a href="fit-protocol-joints.html">Joints &amp; recovery</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Monitoring</p>
+        <ul class="menu__list"><li><a href="fit-protocol-monitoring.html">Metabolic context</a></li><li><a href="fit-protocol-labs.html">Lab monitoring</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Fixes</p>
+        <ul class="menu__list"><li><a href="fit-protocol-troubleshooting.html">Troubleshooting</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Minerals</p>
+        <ul class="menu__list"><li><a href="mineral-chemistry.html" aria-current="page">Mineral Chemistry</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">More</p>
+        <ul class="menu__list"><li><a href="library.html">Downloads</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="menu__section">
+      <h3>Downloads</h3>
+      <div class="menu__links"><a class="menu__link" href="library.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg><span>Guidebook · Files · Downloads</span></a></div>
+    </section>
+    <section class="menu__section">
+      <h3>Links &amp; contact</h3>
+      <div class="menu__links">
+        <a class="menu__link" href="mailto:project100@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg><span>Email<small>project100@gmail.com</small></span></a>
+        <a class="menu__link" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg><span>Instagram<small>instagram.com/fudge_fit</small></span></a>
+        <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg><span>YouTube<small>youtube.com/@FUDGE_fit</small></span></a>
+        <a class="menu__link" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg><span>Facebook<small>facebook.com/fudge.fit</small></span></a>
+        <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg><span>TikTok<small>tiktok.com/@bogdan_dospi</small></span></a>
+        <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg><span>Twitch<small>twitch.tv/cyberk1llaTTV</small></span></a>
+        <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg><span>Gym playlist<small>Spotify playlist</small></span></a>
+      </div>
+    </section>
+  </div>
 </dialog>
-<script defer="" src="assets/js/site.js?v=27a63fbf"></script>
+
+<script src="assets/js/site.js?v=fef1c5ca" defer></script>
 </body>
 </html>

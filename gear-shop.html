@@ -22,9 +22,11 @@
 /* theme first, so there is no flash: saved choice wins, else the OS decides */
 try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
 document.documentElement.classList.add('js');
+/* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
+if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=acecf671">
+<link rel="stylesheet" href="assets/css/site.css?v=3ac9a00f">
 </head>
 <body data-site="main" data-page="gear-shop" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -33,7 +35,6 @@ document.documentElement.classList.add('js');
   <div class="site-head__bar">
     <a class="brand" href="index.html" aria-label="PROJECT 100 – home"><span>PROJECT</span><span class="brand__accent">100</span></a>
     <div class="site-head__actions">
-      <a class="site-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="site-switch__glyph" aria-hidden="true">↔</span>FIT PROTOCOL</a>
       <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -58,31 +59,20 @@ document.documentElement.classList.add('js');
 
 <div class="layout layout--rail">
   <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title">Gear</h2>
-    <ul>
-      <li><a href="gear-shop.html" aria-current="page">Gear folders</a></li>
-      <li><a href="gear-gym.html">Gym walkthroughs</a></li>
-      <li><a href="gear-photos.html">Gym photo journal</a></li>
-      <li><a href="gear-rig.html">The rig</a></li>
-      <li><a href="gear-resistance.html">Resistance bands</a></li>
-      <li><a href="gear-grips.html">Grips &amp; handles</a></li>
-      <li><a href="gear-anchors.html">Straps &amp; anchors</a></li>
-      <li><a href="gear-recovery.html">Recovery tools</a></li>
-      <li><a href="gear-safety.html">Hardware safety</a></li>
+    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
+    <ul class="rail__list">
+      <li><a href="gear-shop.html" aria-current="page"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
+      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
+      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
+      <li><a href="gear-rig.html"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
+      <li><a href="gear-resistance.html"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
+      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
+      <li><a href="gear-anchors.html"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
+      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
+      <li><a href="gear-safety.html"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-    <ul class="subnav subnav--auto" aria-label="Gear">
-      <li><a href="gear-shop.html" aria-current="page">Gear folders</a></li>
-      <li><a href="gear-gym.html">Gym walkthroughs</a></li>
-      <li><a href="gear-photos.html">Gym photo journal</a></li>
-      <li><a href="gear-rig.html">The rig</a></li>
-      <li><a href="gear-resistance.html">Resistance bands</a></li>
-      <li><a href="gear-grips.html">Grips &amp; handles</a></li>
-      <li><a href="gear-anchors.html">Straps &amp; anchors</a></li>
-      <li><a href="gear-recovery.html">Recovery tools</a></li>
-      <li><a href="gear-safety.html">Hardware safety</a></li>
-    </ul>
 <header class="page-hero" id="top">
   <img class="page-hero__img" src="assets/web/media-october-2026-gym-turf-rig-960.webp" alt="" width="1600" height="1205" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
   <div class="page-hero__text">
@@ -99,16 +89,19 @@ document.documentElement.classList.add('js');
   <div class="section__head">
     <h2 id="gear-files-title">Choose a gear file.</h2>
   </div>
-  <ul class="file-grid">
-    <li><a class="file-card" href="gear-gym.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-august-floor-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-august-floor-480.webp 480w, assets/web/media-october-2026-gym-august-floor-960.webp 960w, assets/web/media-october-2026-gym-august-floor-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 01</span> <span class="file-card__title">Gym walkthroughs</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-photos.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-july-turf-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 02</span> <span class="file-card__title">Gym photo journal</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-rig.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-bench-august-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-bench-august-480.webp 480w, assets/web/media-october-2026-gym-bench-august-960.webp 960w, assets/web/media-october-2026-gym-bench-august-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 03</span> <span class="file-card__title">The rig</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-resistance.html"><img class="file-card__thumb" src="assets/web/img-gear-item-tubing-308.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span><span class="file-card__num">FILE 04</span> <span class="file-card__title">Resistance bands</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-grips.html"><img class="file-card__thumb" src="assets/web/img-gear-item-angles90-699.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-angles90-480.webp 480w, assets/web/img-gear-item-angles90-699.webp 699w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 05</span> <span class="file-card__title">Grips &amp; handles</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-anchors.html"><img class="file-card__thumb" src="assets/web/img-gear-item-carabiner-1000.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 06</span> <span class="file-card__title">Straps &amp; anchors</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card" href="gear-recovery.html"><img class="file-card__thumb" src="assets/web/img-gear-item-miaoke-500.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span><span class="file-card__num">FILE 07</span> <span class="file-card__title">Recovery tools</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-    <li><a class="file-card file-card--no-thumb" href="gear-safety.html"><span><span class="file-card__num">FILE 08</span> <span class="file-card__title">Hardware safety</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
-  </ul>
+  <section class="carousel carousel--file" id="gear-file-row" data-carousel data-count="8" aria-labelledby="gear-file-row-t">
+    <header class="carousel__head"><h3 class="carousel__title" id="gear-file-row-t">Gear files</h3><span class="carousel__count">8 files</span></header>
+    <div class="carousel__stage"><ul class="carousel__track">
+    <li class="carousel__item"><a class="file-card" href="gear-gym.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-august-floor-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-august-floor-480.webp 480w, assets/web/media-october-2026-gym-august-floor-960.webp 960w, assets/web/media-october-2026-gym-august-floor-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 01</span> <span class="file-card__title">Gym walkthroughs</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-photos.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-july-turf-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 02</span> <span class="file-card__title">Gym photo journal</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-rig.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-bench-august-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-bench-august-480.webp 480w, assets/web/media-october-2026-gym-bench-august-960.webp 960w, assets/web/media-october-2026-gym-bench-august-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 03</span> <span class="file-card__title">The rig</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-resistance.html"><img class="file-card__thumb" src="assets/web/img-gear-item-tubing-308.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span><span class="file-card__num">FILE 04</span> <span class="file-card__title">Resistance bands</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-grips.html"><img class="file-card__thumb" src="assets/web/img-gear-item-angles90-699.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-angles90-480.webp 480w, assets/web/img-gear-item-angles90-699.webp 699w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 05</span> <span class="file-card__title">Grips &amp; handles</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-anchors.html"><img class="file-card__thumb" src="assets/web/img-gear-item-carabiner-1000.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 06</span> <span class="file-card__title">Straps &amp; anchors</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card" href="gear-recovery.html"><img class="file-card__thumb" src="assets/web/img-gear-item-miaoke-500.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span><span class="file-card__num">FILE 07</span> <span class="file-card__title">Recovery tools</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    <li class="carousel__item"><a class="file-card file-card--no-thumb" href="gear-safety.html"><span><span class="file-card__num">FILE 08</span> <span class="file-card__title">Hardware safety</span> <span class="file-card__cta">Open file ↗</span></span></a></li>
+    </ul></div>
+  </section>
 </section>
 
     <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="liquid-intake.html"><span class="pager__dir">← Previous</span><span class="pager__label">Liquid Intake</span></a><a class="pager__next" rel="next" href="gear-gym.html"><span class="pager__dir">Next →</span><span class="pager__label">Gym walkthroughs</span></a>
@@ -137,6 +130,26 @@ document.documentElement.classList.add('js');
     <p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
   </div>
 </footer>
+<a class="edge edge--prev" rel="prev" href="liquid-intake.html" aria-label="Previous page: Liquid Intake" title="Previous: Liquid Intake"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<a class="edge edge--next" rel="next" href="gear-gym.html" aria-label="Next page: Gym walkthroughs" title="Next: Gym walkthroughs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+
+<div class="fab-dock" id="fabDock">
+  <a class="fab fab--back" id="fabBack" href="index.html" aria-label="Go back" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
+  <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
+  <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
+    <p class="fab-panel__title">Links</p>
+    <ul class="fab-panel__list">
+      <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
+      <li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small>instagram.com/fudge_fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small>youtube.com/@FUDGE_fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small>facebook.com/fudge.fit</small></span></a></li>
+      <li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small>tiktok.com/@bogdan_dospi</small></span></a></li>
+      <li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small>twitch.tv/cyberk1llaTTV</small></span></a></li>
+      <li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small>Spotify playlist</small></span></a></li>
+    </ul>
+  </div>
+</div>
+<a class="fab-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
 
 <dialog class="menu" id="menu" aria-labelledby="menuTitle">
   <div class="menu__head">
@@ -200,6 +213,6 @@ document.documentElement.classList.add('js');
   </div>
 </dialog>
 
-<script src="assets/js/site.js?v=27a63fbf" defer></script>
+<script src="assets/js/site.js?v=fef1c5ca" defer></script>
 </body>
 </html>
