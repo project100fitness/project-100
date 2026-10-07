@@ -71,17 +71,18 @@ body.home-page .explore-card .ex-media img { object-fit: contain; background: #1
   .placeholder-hero { padding: 32px 0 !important; min-height: 0 !important; }
   .protocol-page .slide { padding: 22px 16px; }
   .protocol-page .deck-controls { right: 12px; bottom: calc(64px + env(safe-area-inset-bottom,0px)); }
-  .page-nav-arrow { top: 50% !important; bottom: auto !important; transform: translateY(-50%) !important; }
-  .page-nav-arrow.prev { left: 12px !important; right: auto !important; }
+  .page-nav-arrow { top: auto !important; bottom: calc(10px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
+  .page-nav-arrow.prev { left: auto !important; right: 64px !important; }
   .page-nav-arrow.next { right: 12px !important; }
-  .page-nav-arrow:hover{ background:rgba(230,39,63,1) !important; }
+  .page-nav-arrow:hover { transform: none !important; }
   body:not(.protocol-page) .page-shell { padding-bottom: calc(64px + env(safe-area-inset-bottom,0px)); }
   body.home-page .origin-photos { grid-template-columns: 1fr 1fr; }
   body.home-page .origin-photos .tall { grid-column: 1 / -1; max-height: 420px; }
   body.home-page .hero h1 { font-size: clamp(1.9rem,8vw,2.7rem); }
   .guidebook-page main { padding: 22px 16px 40px; }
   .guidebook-page .chapter-box > summary { padding: 18px 12px; }
-  .guidebook-page .chapter-body { padding-inline: 4px; }/* removed hiding rule */
+  .guidebook-page .chapter-body { padding-inline: 4px; }
+  .guidebook-page .page-nav-arrow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
@@ -109,76 +110,31 @@ body.home-page .hero { background: #111318; }
 .guidebook-page .chapter, .guidebook-page #quickref > details { scroll-margin-top: 8px; }
 .page-nav-arrow, .page-nav-arrow:visited { color: #f2f4f7 !important; background: rgba(10,11,13,.92); border-color: #454b58; }
 
-/* 2026-10-06 Bogdan: no more round pill buttons — use left-menu style everywhere */
+/* 2026-10-06 Bogdan: no more round pill buttons */
 .page-tab{ border-radius:10px !important; }
+.page-tabs .wrap .page-tab{ border-radius:6px !important; }
 .folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
 .folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
 .folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
-@media (max-width:640px){
-  .folder-page-rail{ display:block !important; }
-  .folder-page-rail .page-tabs{ display:block !important; }
-}
-
-/* 2026-10-06 Bogdan: rail as LEFT sidebar on mobile, content on right */
+/* rail as LEFT sidebar on mobile */
 @media (max-width:640px){
   .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
-  .folder-page-rail{ flex:0 0 148px !important; max-width:148px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
+  .folder-page-rail{ flex:0 0 108px !important; max-width:108px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
   .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
   .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
 }
-/* top tabs: less round */
-.page-tabs .page-tab{ border-radius:6px !important; }
-
-.page-tabs .wrap .page-tab{ border-radius:6px !important; }
-
-/* 2026-10-06 Bogdan: page nav arrows TALL red easy-click buttons, always visible */
-.page-nav-arrow { top: auto !important; bottom: calc(10px + env(safe-area-inset-bottom,0px)); transform: none !important; width: 44px !important; height: 44px !important; border-radius: 12px !important; }
-  .page-nav-arrow.prev { left: auto !important; right: 64px !important; }
-  .page-nav-arrow.next { right: 12px !important; }
-  .page-nav-arrow:hover { transform: none !important; }
-/* moved */
-/* moved */
-/* moved */
-
-/* menu narrower */
-@media (max-width:640px){
-  .folder-page-rail{ flex:0 0 108px !important; max-width:108px !important; }
-  .folder-page-rail .page-tab{ font-size:.6rem !important; padding:6px 7px !important; line-height:1.25 !important; }
-}
-/* carousel side arrows taller, button-style */
-@media (max-width:640px){
-  button[class*="car-prev"], button[class*="car-next"],
-  .carousel-btn, .car-arrow{
-    height:84px !important; border-radius:10px !important;
-  }
-}
-
-/* 2026-10-06 Bogdan: bigger logo-like branding */
-a.brand, .brand{
-  font-size:1.9rem !important;
-  font-weight:800 !important;
-  letter-spacing:.03em !important;
-  font-family:'Oswald',sans-serif !important;
-}
+/* bigger logo branding */
+a.brand, .brand{ font-size:1.9rem !important; font-weight:800 !important; letter-spacing:.03em !important; font-family:'Oswald',sans-serif !important; }
 a.brand b{ color:#e6273f !important; }
-/* FIT PROTOCOL pages: swap branding text */
-body.focused-protocol a.brand{ font-size:0 !important; } body.focused-protocol a.brand b{ display:none !important; }
-body.focused-protocol a.brand::before{
-  content:"FIT ";
-  font-size:1.9rem !important; font-weight:800 !important;
-  font-family:'Oswald',sans-serif !important;
-  letter-spacing:.03em !important;
-  color:#e6273f !important;
-}
-body.focused-protocol a.brand::after{
-  content:"PROTOCOL";
-  font-size:1.9rem !important; font-weight:800 !important;
-  font-family:'Oswald',sans-serif !important;
-  letter-spacing:.03em !important;
-  color:#fff !important;
-}
+body.focused-protocol a.brand{ font-size:0 !important; }
+body.focused-protocol a.brand b{ display:none !important; }
+body.focused-protocol a.brand::before{ content:"FIT "; font-size:1.9rem !important; font-weight:800 !important; font-family:'Oswald',sans-serif !important; letter-spacing:.03em !important; color:#e6273f !important; }
+body.focused-protocol a.brand::after{ content:"PROTOCOL"; font-size:1.9rem !important; font-weight:800 !important; font-family:'Oswald',sans-serif !important; letter-spacing:.03em !important; color:#fff !important; }
 @media (max-width:640px){
   a.brand, .brand{ font-size:1.5rem !important; }
-  body.focused-protocol a.brand::before,
-  body.focused-protocol a.brand::after{ font-size:1.5rem !important; }
+  body.focused-protocol a.brand::before, body.focused-protocol a.brand::after{ font-size:1.5rem !important; }
+}
+/* carousel arrows taller on mobile */
+@media (max-width:640px){
+  button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
 }
