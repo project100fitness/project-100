@@ -141,10 +141,23 @@ a.brand b{ color:#e6273f !important; }
 <div class="macro-grid">
   <div class="macro-item"><span class="macro-val">2,780</span><span class="macro-label">kcal / day</span></div>
   <div class="macro-item"><span class="macro-val">252g</span><span class="macro-label">protein</span></div>
+  <div class="macro-item"><span class="macro-val">~288g</span><span class="macro-label">carbs*</span></div>
   <div class="macro-item"><span class="macro-val">69g</span><span class="macro-label">fat</span></div>
+  <div class="macro-item"><span class="macro-val">30-40g</span><span class="macro-label">fiber target</span></div>
+  <div class="macro-item"><span class="macro-val">4L</span><span class="macro-label">water</span></div>
 </div>
+<p style="font-size:.8rem; color:var(--muted,#9aa0ae); margin:-8px 0 16px 0;">*Carbs calculated from remaining calories. Fiber is general target range.</p>
 <p class="macro-desc">
-  These are the daily nutritional targets from the PROJECT 100 protocol. The <strong>2,780 kcal</strong> represents total daily energy intake designed to fuel training while supporting lean muscle maintenance. The <strong>252g protein</strong> (approximately 1g per pound of target body weight) provides the building blocks for muscle protein synthesis and recovery. The <strong>69g fat</strong> covers essential fatty acid needs and hormone production while keeping the focus on protein-driven nutrition.
+  These are the daily nutritional targets from the PROJECT 100 protocol. The <strong>2,780 kcal</strong> represents total daily energy intake designed to fuel training while supporting lean muscle maintenance. The <strong>252g protein</strong> (approximately 1g per pound of target body weight) provides the building blocks for muscle protein synthesis and recovery. <strong>~288g carbs</strong> fuel training intensity and replenish glycogen stores. The <strong>69g fat</strong> covers essential fatty acid needs and hormone production while keeping the focus on protein-driven nutrition.
+</p>
+<p class="macro-desc">
+  <strong>Fiber (30-40g):</strong> Critical for gut health, especially important post-cholecystectomy (no gallbladder). Supports digestion, feeds beneficial gut bacteria, and helps manage the high-protein intake. Spread across meals — do not consume as a single bolus.
+</p>
+<p class="macro-desc">
+  <strong>Water (4L):</strong> The hydration reference from the database. Electrolytes accompany training water — not as an afterthought. Proper hydration supports the high protein intake, kidney function, and training performance. Adjust upward on heavy training days or in heat.
+</p>
+<p class="macro-desc">
+  <strong>Micronutrients:</strong> Vitamins and minerals are the most important yet often overlooked piece. High micronutrient density from whole foods is prioritized. See the <a href="mineral-chemistry.html" style="color:var(--red,#e6273f);">Minerals page</a> for detailed mineral chemistry and the <a href="fit-protocol-supplements.html" style="color:var(--red,#e6273f);">Supplements page</a> for the pill grid covering vitamin/mineral gaps.
 </p>
 <p class="macro-note">
   <em>Historical plan — whole-day intake is not verified. These figures serve as a reference framework; adjust based on your current training phase, body composition goals, and individual response.</em>
@@ -177,7 +190,8 @@ a.brand b{ color:#e6273f !important; }
   text-shadow:0 0 12px rgba(230,39,63,.5);
 }
 .macro-grid{
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;}
+@media(max-width:600px){.macro-grid{grid-template-columns:repeat(2,1fr);}
   margin-bottom:16px;
 }
 .macro-item{
