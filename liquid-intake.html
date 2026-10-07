@@ -1,393 +1,394 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-<head><link href="assets/css/local-fonts.css?v=20261005-liquid" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;🥗&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
-<link href="assets/css/shell.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/carousel.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/connect.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/fixonic.css?v=20261005-liquid" rel="stylesheet"/>
-<style>
-  :root{
-    --bg:#0a0b0d; --bg-2:#111318; --surface:#16181e; --surface-2:#1d2029; --border:#272b35;
-    --text:#eef0f4; --text-dim:#9aa1b0; --red:#c22d42; --red-dim:#8f2233; --cyan:#3fd7d0; --gold:#e8b64c;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Inter',system-ui,-apple-system,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; }
-  h1,h2,h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.02em; margin:0; }
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 20px; }
-  .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.18em; color:var(--red); text-transform:uppercase; font-weight:600; }
-  .eyebrow::before{ content:""; width:20px; height:2px; background:var(--red); display:inline-block;}
-  .btn{ display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:6px; font-weight:700; font-size:.92rem; text-decoration:none; letter-spacing:.02em; transition:transform .15s ease; border:1px solid transparent; cursor:pointer; }
-  .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 8px 22px rgba(230,39,63,.35);}
-  .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
-
-  .site-head{ position:sticky; top:0; z-index:50; }
-  nav{ position:relative; background:rgba(10,11,13,.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
-  #nav .wrap{ display:flex; align-items:center; justify-content:flex-end; gap:14px; padding:14px 20px; }
-  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text); text-transform:uppercase;}
-  .brand b{ color:var(--red); }
-  .navcta{ display:flex; gap:10px; }
-  .navcta .btn{ padding:9px 16px; font-size:.8rem; }
-  @media (max-width:860px){ .navcta .btn-ghost{ display:none; } }
-
-  .page-tabs{ background:var(--bg-2); border-bottom:1px solid var(--border); }
-  .page-tabs .wrap::-webkit-scrollbar{ display:none; }
-  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:8px; padding:10px 20px; }
-  .page-tab{ flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap; transition:border-color .15s ease, color .15s ease; }
-  .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
-  .page-tab .lc-i{text-transform:lowercase;}
-  .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
-  .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
-  /* the plain FIT-page pills used to fall back to the same flat gray as
-     the sub-menu text below them — give them their own red-family tone
-     (matching this site's brand red, which is also what "current" turns
-     them) so they read as their own nav, with a solid-red hover. */
-  .page-tab:not(.tab-home):not(.current){ border-color:rgba(230,39,63,.4); color:#f19aa5; }
-  @media (hover:hover){
-    .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
-  }
-  @media (hover:hover){
-    .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); }
-    .page-tab:not(.tab-home):not(.current):hover{ border-color:var(--red); color:var(--red); }
-  }
-
-  /* TIER 3 — category / section jump-links, always directly under the page tabs (universal across all pages) */
-  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); }
-  .cat-tabs .wrap::-webkit-scrollbar{ display:none; }
-  .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:18px; padding:9px 20px; }
-  .cat-tabs a{ flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px; border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease; }
-  .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
-
-  .placeholder-hero{ padding:90px 0 64px; min-height:440px; display:flex; align-items:center; justify-content:center; text-align:center; border-bottom:1px solid var(--border); position:relative; overflow:hidden; background:radial-gradient(circle at 50% 0%, rgba(230,39,63,.16), transparent 55%), linear-gradient(120deg, rgba(6,7,9,.94) 0%, rgba(6,7,9,.72) 40%, rgba(6,7,9,.6) 55%, rgba(6,7,9,.95) 100%), url('assets/img/nutrition-hero-transport.jpg') center 38%/cover no-repeat; }
-  .placeholder-hero > *{ position:relative; z-index:1; }
-  .placeholder-hero .tag{ display:inline-block; background:var(--surface); border:1px solid var(--border); color:var(--cyan); font-family:'Oswald',sans-serif; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:22px; }
-  .placeholder-hero h1{ font-size:clamp(2.2rem,6vw,3.6rem); margin:0 0 18px; }
-  .placeholder-hero h1 span{ color:var(--red); }
-  .placeholder-hero p{ max-width:560px; margin:0 auto 34px; color:var(--text-dim); font-size:1.05rem; }
-  .placeholder-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-
-  /* ===== FOCUS POINT — same site-wide "field note" callout as index.html /
-     encyclopedia.html, red·black·neon, dropped in here
-     while the full recipe build-out is underway. ===== */
-  .focus-point-wrap{ padding:0 0 8px; }
-  .focus-point{
-  position:relative; margin:0 auto; max-width:640px; padding:18px 20px; text-align:left;
-  background:linear-gradient(135deg, #1c0f12 0%, #101114 100%);
-  border:1px solid rgba(230,39,63,.35); border-radius:16px;
-  box-shadow:0 4px 18px rgba(230,39,63,.12), 0 0 24px rgba(230,39,63,.18);
-  }
-  .focus-point .fp-tag{
-    display:inline-block; font-family:'Oswald',sans-serif; font-size:.68rem; font-weight:700;
-    letter-spacing:.14em; text-transform:uppercase; color:#ff6b81;
-    background:rgba(230,39,63,.14); border:1px solid rgba(230,39,63,.35);
-    padding:3px 10px; border-radius:100px; margin:0 0 10px;
-  }
-  .focus-point p{
-    margin:0; font-family:'Inter',sans-serif; text-transform:uppercase;
-    letter-spacing:.01em; font-size:.92rem; line-height:1.55; color:#f2f3f5; font-weight:650;
-  }
-  .focus-point--cyan{ border-color:rgba(63,215,208,.35); box-shadow:0 4px 18px rgba(63,215,208,.12), 0 0 24px rgba(63,215,208,.18); }
-  .focus-point--cyan .fp-tag{ color:var(--cyan); background:rgba(63,215,208,.13); border-color:rgba(63,215,208,.34); }
-  @media (max-width:640px){ .focus-point{ padding:13px 15px 13px 16px; } .focus-point p{ font-size:.85rem; } }
-
-  /* MEAL ROWS — Netflix-style: one titled carousel row per food/meal
-     category, each independently scrollable. Rows with real content
-     first, "coming soon" rows (empty categories, placeholder cards)
-     last, so the page always reads honest about what's live vs. planned. */
-  .reels-blk{ padding:56px 0 64px; }
-  .reels-blk .sec-head{ max-width:680px; margin-bottom:22px; }
-  .reels-blk .sec-head h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); margin:10px 0 10px; }
-  .reels-blk .sec-head p{ color:var(--text-dim); font-size:1rem; margin:0; }
-
-  /* quick-jump pill bar — scrolls to a category row, doesn't filter/hide anything */
-  .meal-jump{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:34px; }
-  .meal-jump a{
-    padding:7px 14px; border-radius:100px; border:1px solid var(--border); background:var(--surface);
-    font-size:.78rem; font-weight:600; color:var(--text-dim); text-decoration:none;
-    font-family:'Oswald',sans-serif; letter-spacing:.02em; transition:border-color .15s ease, color .15s ease;
-  }
-  .meal-jump a:hover{ border-color:var(--cyan); color:var(--text); }
-
-  .food-row{ margin-bottom:40px; }
-  .food-row:last-child{ margin-bottom:0; }
-  .food-row .fr-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:2px; scroll-margin-top:150px; }
-  .food-row .fr-head h3{ font-family:'Oswald',sans-serif; font-size:1.08rem; letter-spacing:.02em; text-transform:none; color:var(--text); margin:0; }
-  .food-row .fr-count{ font-size:.72rem; color:var(--text-dim); font-weight:600; }
-  .food-row.fr-empty .fr-head h3{ color:var(--text-dim); }
-  .food-row .fr-soon{
-    display:inline-block; font-family:'Oswald',sans-serif; font-size:.6rem; font-weight:700; letter-spacing:.08em;
-    text-transform:uppercase; color:var(--gold); background:rgba(232,182,76,.13); border:1px solid rgba(232,182,76,.34);
-    padding:2px 9px; border-radius:100px; margin-left:2px;
-  }
-
-  /* VECTOR TIMELINE — wide infographic cards (shaker/mug + full payload
-     breakdown baked into the image itself), scrollable row, click to open
-     full-size in the shared fx-lightbox. */
-  /* Vector Timeline gallery rides the site's standard carousel-row
-     component (scrollbar + prev/next arrows, wired by carousel.js) —
-     only the card size is overridden here, up from the default 168px
-     tile to a wide 16:9 preview card. Explicit display:flex here wins
-     over .fx-gallery's display:grid (fixonic.css loads after
-     carousel.css, so without this override it would fight the
-     carousel-grid layout the JS builds). */
-  .vector-gallery{ display:flex; flex-direction:column; }
-  .vector-gallery .carousel-row > *{ flex:0 0 min(82vw,360px); }
-  /* The row itself (not the outer container) carries .fx-gallery — see
-     the inline script below — so the lightbox lookup never touches the
-     carousel's own prev/next arrow buttons (siblings of the row, not
-     descendants). .carousel-row.fx-gallery beats fx-gallery's own
-     display:grid by specificity, keeping the horizontal scroll layout. */
-  .vector-gallery .carousel-row.fx-gallery{ display:flex; gap:14px; }
-  .vector-gallery .carousel-row > button{ width:100%; aspect-ratio:16/9; border-radius:12px; border:1px solid var(--border); overflow:hidden; padding:0; background:#000; cursor:pointer; display:block; }
-  .vector-gallery .carousel-row > button img{ width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
-  @media (hover:hover){ .vector-gallery .carousel-row > button:hover img{ transform:scale(1.06); } }
-  .vector-note{ color:var(--text-dim); font-size:.82rem; margin:14px 0 0; }
-
-  .log-card{
-    background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border); border-radius:14px; overflow:hidden;
-    display:flex; flex-direction:column; text-decoration:none; color:var(--text);
-    transition:transform .18s ease, border-color .18s ease; box-shadow:0 2px 12px rgba(0,0,0,.25);
-  }
-  .log-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
-  .log-media{ aspect-ratio:4/5; position:relative; overflow:hidden; background:#000; }
-  .log-media img{ width:100%; height:100%; object-fit:cover; object-position:center; background:#000; }
-  .log-media .noimg{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:linear-gradient(135deg,#123326,#08150f); }
-  .log-tag{
-    position:absolute; top:6px; left:6px; font-size:.58rem; font-weight:700; letter-spacing:.05em;
-    text-transform:uppercase; padding:4px 8px; border-radius:100px; backdrop-filter:blur(6px);
-    background:rgba(63,215,144,.85); color:#06170f;
-  }
-  .log-card.fr-placeholder{ opacity:.68; }
-  .log-card.fr-placeholder .log-media{ display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#1a1d24,#101218); }
-  .log-card.fr-placeholder .log-tag{ background:rgba(154,161,176,.85); color:#0d0e11; }
-  .log-body{ padding:9px 11px 11px; flex:1; display:flex; flex-direction:column; }
-  .log-body .date{ font-size:.6rem; color:var(--text-dim); letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
-  .log-body h4{ font-family:'Oswald',sans-serif; font-size:.8rem; margin:5px 0 6px; line-height:1.22; text-transform:none; letter-spacing:0; }
-  .log-body .stats{ margin-top:auto; display:flex; gap:8px; color:var(--text-dim); font-size:.66rem; padding-top:6px; }
-  .log-body .watch{ margin-top:6px; font-size:.66rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
-
-  footer{ padding:40px 0; }
-  .foot-fine{ color:var(--text-dim); font-size:.78rem; text-align:center; }
-  .foot-email{ display:inline-flex; align-items:center; gap:7px; justify-content:center; width:100%; margin-top:12px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.02em; color:var(--cyan); text-decoration:none; }
-  .foot-email svg{ width:15px; height:15px; flex:0 0 auto; }
-  .foot-email:hover{ text-decoration:underline; }
-
-
-  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
-  @media (max-width:640px){
-    .wrap{ padding:0 14px; }
-    #nav .wrap{ padding:10px 14px; }
-    .brand{ font-size:.92rem; }
-    .navcta{ gap:6px; }
-    .navcta .btn{ padding:7px 12px; font-size:.72rem; }
-    .page-tabs .wrap{ padding:8px 14px; gap:6px; }
-    .page-tab{ padding:6px 12px; font-size:.68rem; }
-    .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
-    .cat-tabs a{ font-size:.64rem; }
-    .placeholder-hero{ padding:36px 0 30px; min-height:280px; background-position:62% 35%; }
-    .placeholder-hero .tag{ font-size:.7rem; padding:5px 12px; margin-bottom:16px; }
-    .placeholder-hero h1{ font-size:clamp(1.8rem, 8.5vw, 2.4rem); margin:0 0 12px; }
-    .placeholder-hero p{ font-size:.94rem; margin:0 auto 24px; }
-    .reels-blk{ padding:26px 0 34px; }
-    .reels-blk .sec-head{ margin-bottom:20px; }
-    .reels-blk .sec-head h2{ font-size:clamp(1.35rem, 6.5vw, 1.7rem); }
-    .meal-jump{ margin-bottom:26px; }
-    .food-row{ margin-bottom:30px; }
-    .food-row .fr-head{ scroll-margin-top:112px; }
-  }
-</style>
-<style>.site-menu-tab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:950;background:linear-gradient(160deg,var(--red) 0%,var(--red-dim) 100%);color:#fff;border:none;border-radius:0 12px 12px 0;padding:14px 10px;font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;box-shadow:4px 0 18px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;gap:6px;transition:padding-left .2s ease,box-shadow .2s ease;}.site-menu-tab:hover{padding-left:15px;box-shadow:6px 0 22px rgba(0,0,0,.5);}.site-menu-tab svg{flex:none;}.site-drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:948;}.site-drawer-backdrop.open{opacity:1;visibility:visible;}.site-drawer{position:fixed;top:0;left:0;bottom:0;width:280px;max-width:84vw;background:var(--bg-2);border-right:1px solid var(--border);z-index:949;transform:translateX(-100%);transition:transform .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:22px 0;overflow-y:auto;}.site-drawer.open{transform:translateX(0);}.site-drawer .sd-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 18px;border-bottom:1px solid var(--border);margin-bottom:10px;}.site-drawer .sd-brand{font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.04em;text-decoration:none;color:var(--text);text-transform:uppercase;}.site-drawer .sd-brand b{color:var(--red);}.site-drawer .sd-close{all:unset;cursor:pointer;color:var(--text-dim);padding:4px;}.site-drawer nav{display:flex;flex-direction:column;padding:6px 10px;}.site-drawer nav a{display:flex;align-items:center;justify-content:space-between;padding:14px 12px;border-radius:8px;text-decoration:none;color:var(--text-dim);font-family:'Oswald',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease,color .15s ease;}.site-drawer nav a:hover{background:var(--surface);color:var(--text);}.site-drawer nav a.current{background:var(--red);color:#fff;}.site-drawer nav a .sd-arrow{opacity:.5;font-size:.8rem;}@media(max-width:640px){.site-menu-tab{padding:12px 8px;font-size:.58rem;}.page-tabs{display:none;}}.site-menu-tab{top:50%;transform:translateY(calc(-50% - 70px));}.page-nav-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:930;width:52px;height:52px;border-radius:50%;background:rgba(10,11,13,.72);backdrop-filter:blur(6px);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease;box-shadow:0 6px 20px rgba(0,0,0,.35);}.page-nav-arrow:hover{background:var(--red);border-color:var(--red);transform:translateY(-50%) scale(1.08);}.page-nav-arrow svg{width:26px;height:26px;}.page-nav-arrow.prev{left:14px;}.page-nav-arrow.next{right:14px;}@media(max-width:640px){.page-nav-arrow{width:42px;height:42px;}.page-nav-arrow svg{width:20px;height:20px;}.page-nav-arrow.prev{left:8px;}.page-nav-arrow.next{right:8px;}}.fc-back{display:none;}#nav .wrap{position:relative;}a.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;}.site-menu-tab{top:14px;left:14px;transform:none;border-radius:12px;flex-direction:row;padding:10px 14px;box-shadow:0 6px 18px rgba(0,0,0,.4);}.site-menu-tab:hover{padding-left:14px;transform:scale(1.04);}.page-nav-arrow{border-radius:16px;width:48px;height:72px;}.page-nav-arrow.prev{left:max(14px,calc(50% - 632px));}.page-nav-arrow.next{right:max(14px,calc(50% - 632px));}@media(max-width:640px){.page-nav-arrow{width:36px;height:54px;border-radius:12px;}.site-menu-tab{top:10px;left:10px;padding:8px 10px;}}</style><link href="assets/css/site-repairs.css?v=20261005-liquid" rel="stylesheet"/>
-<title>PROJECT 100 | Liquid Intake</title><meta content="A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads." name="description"/><link href="https://project100.fit/liquid-intake.html" rel="canonical"/><meta content="website" property="og:type"/><meta content="PROJECT 100 | Liquid Intake" property="og:title"/><meta content="A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads." property="og:description"/><meta content="https://project100.fit/liquid-intake.html" property="og:url"/><meta content="https://project100.fit/assets/media/vector-artwork/portraits/v4.png" property="og:image"/><meta content="941" property="og:image:width"/><meta content="1672" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><link href="assets/css/v2.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/filing-navigation.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/filing-navigation.js?v=20261005-liquid"></script><link href="assets/css/reading-layout.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/media-backgrounds.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/media-backgrounds.js?v=20261005-liquid"></script><link href="assets/css/vector-studio.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/editorial-sections.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/focused-protocol.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/focused-main.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/main-files.js?v=20261005-liquid"></script><link href="assets/css/float-connect.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/polished-shell.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/float-connect.js?v=20261005-liquid"></script><link href="assets/css/visible-folders.css?v=20261005-folders" rel="stylesheet"/><script defer="" src="assets/js/visible-folders.js?v=20261005-folders"></script><meta content="A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads." name="twitter:description"/><meta content="V4 RELOAD white ingredient illustration" property="og:image:alt"/><meta content="https://project100.fit/assets/media/vector-artwork/portraits/v4.png" name="twitter:image"/><meta content="V4 RELOAD white ingredient illustration" name="twitter:image:alt"/><link href="assets/css/nutrition-overview.css?v=20261005-nutrition" rel="stylesheet"/><script defer="" src="assets/js/nutrition-overview.js?v=20261005-nutrition"></script><link href="assets/css/vector-artwork.css?v=20261005-artwork" rel="stylesheet"/><link href="assets/css/mobile-focus.css?v=20261005-focus" rel="stylesheet"/>
-<link href="assets/css/compact-pages.css?v=20261006c" rel="stylesheet"/><link href="assets/css/description-order.css?v=20261006" rel="stylesheet"/><link href="assets/css/illustration-layers.css?v=20261006" rel="stylesheet"/><link href="assets/css/biometrics-addon.css" rel="stylesheet"/><style>
-/* Bogdan site styles - in-page (2026-10-07) */
-/* 2026-10-06 Bogdan: no more round pill buttons */
-.page-tab{ border-radius:10px !important; }
-.page-tabs .wrap .page-tab{ border-radius:6px !important; }
-.folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
-.folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
-.folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
-/* rail as LEFT sidebar on mobile */
-@media (max-width:640px){
-  .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
-  .folder-page-rail{ flex:0 0 132px !important; max-width:132px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
-  .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
-  .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
-}
-/* bigger logo branding */
-a.brand, .brand{ font-size:4rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 #0a0a0a, 2px 2px 0 #0a0a0a, 3px 3px 0 #111, 4px 4px 0 #111, 5px 5px 0 #1a1a1a, 6px 6px 0 #1a1a1a, 7px 7px 12px rgba(0,0,0,.7) !important; }
-a.brand b{ color:#e6273f !important; }
-
-
-
-
-@media (max-width:640px){
-  a.brand, .brand{ font-size:1.5rem !important; }
-  
-/* carousel arrows taller on mobile */
-@media (max-width:640px){
-  button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
-}
-
-/* 2026-10-06 Bogdan: file cabinet style for active top tabs */
-.page-tabs:not(.focused-subtabs) .page-tab.current{
-  border-radius:8px 8px 0 0 !important;
-  border-bottom:none !important;
-  background:#e6273f !important;
-  border-color:#e6273f !important;
-  color:#fff !important;
-  position:relative !important;
-  z-index:2 !important;
-  margin-bottom:-1px !important;
-  padding-bottom:calc(8px + 1px) !important;
-  box-shadow:0 -2px 28px rgba(230,39,63,.75), 0 2px 20px rgba(230,39,63,.55), 0 0 40px rgba(230,39,63,.25) !important;
-}
-/* ensure tab bar has bottom border for cabinet effect */
-.page-tabs:not(.focused-subtabs){
-  border-bottom:1px solid #e6273f !important;
-}
-.page-tabs .wrap{
-  margin-bottom:-1px !important;
-}
-
-/* 2026-10-07 Bogdan: MENU removed from HTML, fc-trigger in header */
-.site-menu-tab, #siteMenuTab{ display:none !important; }
-#nav .wrap .fc-trigger{
-  position:static !important;
-  width:44px !important; height:44px !important;
-  flex:0 0 auto !important;
-  margin:0 !important;
-  top:auto !important; left:auto !important;
-  bottom:auto !important; right:auto !important;
-}
-
-/* 2026-10-07 Bogdan: rail labels wrap, not clipped */
-.folder-page-rail .page-tab{
-  white-space:normal !important;
-  word-break:break-word !important;
-  overflow:visible !important;
-  text-overflow:clip !important;
-  line-height:1.25 !important;
-}
-
-</style>
-<style>
-/* 2026-10-07 Bogdan: main site full-width, no side menus */
-.folder-page-layout{ display:block !important; }
-.folder-page-content{ max-width:100% !important; width:100% !important; margin:0 !important; padding-left:16px !important; padding-right:16px !important; }
-</style>
-</head>
-<body class="filing-layout focused-main" data-fx-theme="classic"><div class="fc-root">
-<div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
-<div aria-label="Links and contact" aria-modal="true" class="fc-panel" hidden="" id="fcPanel" role="dialog">
-<div class="fc-head">
-<button aria-label="Close" class="fc-close" id="fcClose" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg>
-</button>
-<span class="fc-title">Links</span>
-</div>
-<div class="fc-list">
-<a class="fc-row fc-primary" href="mailto:project100@gmail.com">
-<span class="fc-ic"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Email</span><span class="fc-url">project100@gmail.com</span></span>
-</a>
-<a class="fc-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-instagram"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Instagram</span><span class="fc-url">instagram.com/fudge_fit</span></span>
-</a>
-<a class="fc-row" href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-facebook"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Facebook</span><span class="fc-url">facebook.com/fudge.fit</span></span>
-</a>
-<a class="fc-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-tiktok"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">TikTok</span><span class="fc-url">tiktok.com/@bogdan_dospi</span></span>
-</a>
-<a class="fc-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-twitch"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Twitch</span><span class="fc-url">twitch.tv/cyberk1llaTTV</span></span>
-</a>
-<a class="fc-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-youtube"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">YouTube</span><span class="fc-url">youtube.com/@FUDGE_fit</span></span>
-</a>
-<a class="fc-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-spotify"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Gym Playlist</span><span class="fc-url">open.spotify.com/playlist</span></span>
-</a>
-</div>
-</div>
-</div><div class="site-drawer-backdrop" id="siteDrawerBackdrop"></div><aside class="site-drawer" id="siteDrawer"><div class="sd-head"><a class="sd-brand" href="index.html">PROJECT 100</a><button aria-label="Close menu" class="sd-close" id="siteDrawerClose" type="button"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div><nav><a class="page-tab" href="index.html">PROJECT 100</a><a class="page-tab" href="fit-workout.html">Workout</a><a aria-current="page" class="page-tab current" href="liquid-intake.html">Liquid Intake</a><a class="page-tab" href="fit-nutrition.html">Nutrition</a><a class="page-tab" href="gear-shop.html">Gear</a></nav></aside>
-<a aria-label="Back to PROJ3K_100" class="fc-back" href="index.html"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></a>
-<div class="page-shell">
-<header class="site-head">
-<nav aria-label="Website navigation" id="nav"><div class="wrap"><button aria-controls="fcPanel" aria-expanded="false" aria-haspopup="dialog" aria-label="Open links &amp; contact" class="fc-trigger" id="fcTrigger" type="button">
-<svg aria-hidden="true" viewbox="0 0 24 24"><text fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-size="16.5" font-weight="700" text-anchor="middle" x="12" y="17.2">@</text></svg>
-</button><div class="nav-wordmark"><a class="brand" href="index.html">PROJECT <b>100</b></a></div><button aria-label="Toggle light or dark mode" class="theme-switch" id="themeToggle" role="switch" type="button">
-<span class="ts-track">
-<span aria-hidden="true" class="ts-icon ts-sun"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
-<span aria-hidden="true" class="ts-icon ts-moon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
-<span aria-hidden="true" class="ts-thumb"></span>
-</span>
-</button></div></nav>
-<nav aria-label="PROJECT_100 folders" class="page-tabs"><div class="wrap"><a class="page-tab" href="index.html">PROJECT 100</a><a class="page-tab" href="fit-workout.html">Workout</a><a aria-current="page" class="page-tab current" href="liquid-intake.html">Liquid Intake</a><a class="page-tab" href="fit-nutrition.html">Nutrition</a><a class="page-tab" href="gear-shop.html">Gear</a><a class="page-tab" href="biometrics.html">Biometrics</a></div></nav></header><div class="folder-page-layout single-file-layout"><div class="folder-page-content"><section class="main-file-intro compact-page-identity" id="top"><div class="wrap"><span class="v2-kicker">PROJECT_100 · LIQUID INTAKE</span><h1>Liquid Intake</h1></div></section><div class="focus-point-wrap wrap page-description" id="liquid-description"><div class="focus-point fx-reveal fx-pulse-glow illustration-info illustration-j04"><img alt="" aria-hidden="true" class="illustration-context-art" decoding="async" loading="lazy" src="assets/media/illustration-design/j04.webp"/><span class="fp-tag">Liquid Intake</span><p>Seven drink protocols · ingredients, preparation and descriptive downloads. Open a vector for its recipe; follow the morning, rest or evening branch. V1 and V6 are never combined on the same day. Personal record, not a prescription.</p></div></div><section class="nutrition-overview wrap" id="liquid-files"><h2>Seven recorded files</h2><div class="simple-liquid-grid"><details class="simple-liquid-file" id="vector-v3" name="main-liquid-files" style="--liquid-accent:#dfbf75"><summary><img alt="V3 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v3.png" width="941"/><span><strong>V3 RECOVERY</strong><small>Daily anchor; optional when consumed on rest days</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V3 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v3.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> Cold filtered water; shaker volume unspecified</p><ul class="simple-liquid-ingredients"><li>MuscleMeds Carnivor Beef Protein Isolate (33.9 g Canadian scoop)</li><li>PROMISE Pure Marine Collagen Peptan 10 g</li><li>Rootalive Organic Gelatinized Black Maca 5 g</li><li>ALLMAX Liquid L- Carnitine 1500 (15 mL / 1,500 mg)</li><li>MegaFood C Defense Gummy (1, chewed)</li><li>NAKA Platinum Vital Greens (20 mL separate flush)</li></ul><p><strong>Protocol</strong> 04:00; training and rest</p><p class="simple-liquid-links"><a download="project100-v3-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v3.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v3.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v1" name="main-liquid-files" style="--liquid-accent:#a6c969"><summary><img alt="V1 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v1.png" width="941"/><span><strong>V1 IGNITION</strong><small>Morning training only (State A)</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V1 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v1.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 500-600 mL cold filtered water</p><ul class="simple-liquid-ingredients"><li>ALLMAX Impact Igniter Xtreme 2.0 (2 scoops / 28 g)</li><li>ALLMAX MuscleEAA Xtreme (1 scoop / 17.73 g)</li><li>PeakO2 2,000 mg</li><li>Betaine Anhydrous 2,500 mg</li><li>Citrulline Malate 2:1 (4-6 g)</li><li>Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately.</li></ul><p><strong>Protocol</strong> 06:00 pre- gym; morning training only</p><p class="simple-liquid-links"><a download="project100-v1-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v1.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v1.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v2" name="main-liquid-files" style="--liquid-accent:#64c9d6"><summary><img alt="V2 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v2.png" width="941"/><span><strong>V2 REFUEL</strong><small>During the training session (States A and C)</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V2 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v2.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 600-750 mL cold filtered water</p><ul class="simple-liquid-ingredients"><li>Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1)</li><li>RapiDrem Electrolyte Powder (1 scoop, about 6.5 g)</li><li>Kirkland Himalayan Pink Salt 1/16 tsp</li><li>2-3 Medjool dates chewed solid, separately</li></ul><p><strong>Protocol</strong> During the training session (09:30 morning reference); moves with the evening workout in State C.</p><p class="simple-liquid-links"><a download="project100-v2-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v2.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v2.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v4" name="main-liquid-files" style="--liquid-accent:#ea637c"><summary><img alt="V4 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v4.png" width="941"/><span><strong>V4 RELOAD</strong><small>After the workout (States A and C); R-ALA remains separate</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V4 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v4.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 350-450 mL room-temperature water</p><ul class="simple-liquid-ingredients"><li>BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving)</li><li>Rootalive Beetroot Powder 7 g raw</li><li>Proline Pure Creatine HCl 750 mg active</li><li>Kirkland Himalayan Salt 1/16 tsp</li></ul><p><strong>Protocol</strong> After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.</p><p>Whole R-ALA 300 mg is taken separately before the shaker.</p><p class="simple-liquid-links"><a download="project100-v4-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v4.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v4.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v5" name="main-liquid-files" style="--liquid-accent:#94a9dd"><summary><img alt="V5 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v5.png" width="941"/><span><strong>V5 TRANSPORT</strong><small>Rest days only (State B)</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V5 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v5.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 500 mL cold filtered water</p><ul class="simple-liquid-ingredients"><li>Proline Pure Creatine HCl 750 mg</li><li>PROMISE Pure Marine Collagen 10 g</li><li>ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)</li><li>RapiDrem Electrolyte Powder (1 scoop)</li><li>Kirkland Himalayan Salt 1/16 tsp</li></ul><p><strong>Protocol</strong> 16:00-16:30; rest branch only</p><p class="simple-liquid-links"><a download="project100-v5-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v5.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v5.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v10" name="main-liquid-files" style="--liquid-accent:#b2a0cf"><summary><img alt="V10 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v10.png" width="941"/><span><strong>V10 SHUTDOWN</strong><small>Night anchor across all three states</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V10 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v10.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature</p><ul class="simple-liquid-ingredients"><li>SD Pharmaceuticals Creatine HCl 750 mg</li><li>North Coast Naturals Fermented L-Glutamine 5 g</li><li>AOR Pure Glycine Powder 3-5 g</li><li>optional half-scoop Medi-C Plus (2.5 g)</li><li>rare Niyama Hey Relax full scoop</li></ul><p><strong>Protocol</strong> Night anchor (18:30 reference); morning training, rest and evening-training branches. Tisane at a comfortable temperature.</p><p class="simple-liquid-links"><a download="project100-v10-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v10.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v10.html">Full protocol details →</a></p></div></details><details class="simple-liquid-file" id="vector-v6" name="main-liquid-files" style="--liquid-accent:#cd94de"><summary><img alt="V6 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v6.png" width="941"/><span><strong>V6 PUMP</strong><small>Evening training only (State C); replaces V1</small></span><span aria-hidden="true" class="liquid-fold-mark">+</span></summary><div class="simple-liquid-content"><div class="portrait-vector-card"><img alt="V6 — varied portrait and recorded ingredients" class="selected-vector-art" decoding="async" height="1672" loading="lazy" src="assets/media/vector-artwork/portraits/v6.png" width="941"/></div><p class="liquid-base"><strong>Base</strong> 500–600 mL cold filtered water</p><ul class="simple-liquid-ingredients"><li>ALLMAX Impact PUMP Xtreme (Blue Raspberry): 2 scoops / 31 g</li><li>ALLMAX MuscleEAA Xtreme (Cherry Limeade): 1 scoop / 17.73 g</li><li>Compound Solutions / ALLMAX PeakO2: 2,000 mg by mass</li><li>NOW Betaine Anhydrous (TMG): 2,500 mg</li><li>ALLMAX Essentials Citrulline Malate 2:1: 4–6 g</li><li>ALLMAX Essentials Pure Taurine Powder: 2–3 g</li><li>AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water</li></ul><p><strong>Protocol</strong> Evening training override; 20–30 minutes before the evening session. Citicoline is a separate capsule at T−30 minutes. Never combined with V1 on the same calendar day.</p><p>No added salt or creatine HCl in this shaker.</p><p class="simple-liquid-links"><a download="project100-v6-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v6.png">Save descriptive diagram</a> · <a href="fit-protocol-vector-v6.html">Full protocol details →</a></p></div></details></div></section><section class="nutrition-overview wrap" id="liquid-overview"><div class="liquid-branch-strip"><span><strong>Morning training</strong> V1 before the session</span><span><strong>Rest</strong> V1 and V6 inactive</span><span><strong>Evening training</strong> V6 replaces V1</span></div><p class="nutrition-small-note">V1 and V6 are never combined on the same day. Recipes document the personal record, not a prescription.</p></section></div></div>
-<a class="publication-bar" href="library.html">Guidebook · Files · Downloads ↗</a><footer class="v2-footer compact-footer"><div class="compact-footer-links"><a href="index.html">PROJECT 100</a><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Instagram ↗</a><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube ↗</a></div><p>Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p></footer>
-<script src="assets/js/carousel.js?v=20261005-focus"></script>
-<script src="assets/js/connect.js?v=20261005-liquid"></script>
-<script src="assets/js/fixonic.js?v=20261005-focus"></script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f4f1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0b0e">
+<title>PROJECT 100 | Liquid Intake</title>
+<meta name="description" content="A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads.">
+<link rel="canonical" href="https://project100.fit/liquid-intake.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PROJECT 100">
+<meta property="og:title" content="PROJECT 100 | Liquid Intake">
+<meta property="og:description" content="A simple PROJECT 100 Liquid Intake guide: seven source-backed vectors, branch rules, ingredients and descriptive diagram downloads.">
+<meta property="og:url" content="https://project100.fit/liquid-intake.html">
+<meta property="og:image" content="https://project100.fit/assets/media/vector-artwork/portraits/v4.png">
+<meta property="og:image:alt" content="PROJECT 100 | Liquid Intake">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>
-window.ProjectCarousel && window.ProjectCarousel.init();
-window.Fixonic && window.Fixonic.initAutoScroll && window.Fixonic.initAutoScroll();
-window.ProjectConnect && window.ProjectConnect.init();
-window.ProjectFloatConnect && window.ProjectFloatConnect.init();
-
-// Vector Timeline gallery: carousel.js just built .carousel-row inside
-// .vector-gallery. Tag that row (not the outer container, and not the
-// prev/next arrow buttons beside it) as .fx-gallery so Fixonic's click-
-// to-zoom lightbox picks up the 5 cards, then run the lightbox wiring
-// now since fixonic.js already finished its own pass before this ran.
-document.querySelectorAll('.vector-gallery .carousel-row').forEach(function(row){ row.classList.add('fx-gallery'); });
-window.Fixonic && window.Fixonic.initGallery && window.Fixonic.initGallery();
-
-// scrollspy: highlight the nav link for whichever section is currently in view
-(function(){
-  const navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
-  const sections = [];
-  navLinks.forEach(a => {
-    const id = a.getAttribute('href').slice(1);
-    const sec = document.getElementById(id);
-    if(sec) sections.push({sec, id});
-  });
-  if(!sections.length) return;
-  const setActive = (id) => {
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-  };
-  setActive(sections[0].id);
-  const visible = new Set();
-  const pickActive = () => {
-    if(!visible.size) return;
-    let chosen = sections[0].id;
-    sections.forEach(({id}) => { if(visible.has(id)) chosen = id; });
-    setActive(chosen);
-  };
-  try{
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
-      });
-      pickActive();
-    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
-    sections.forEach(({sec}) => io.observe(sec));
-  }catch(e){ /* nav still works without highlighting */ }
-})();
+/* theme first, so there is no flash: saved choice wins, else the OS decides */
+try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
+document.documentElement.classList.add('js');
 </script>
+<link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css?v=df1613a5">
+</head>
+<body data-site="main" data-page="liquid-intake" data-group="liquid">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-head" id="siteHead">
+  <div class="site-head__bar">
+    <a class="brand" href="index.html" aria-label="PROJECT 100 – home"><span>PROJECT</span><span class="brand__accent">100</span></a>
+    <div class="site-head__actions">
+      <a class="site-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="site-switch__glyph" aria-hidden="true">↔</span>FIT PROTOCOL</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="menu-btn__label">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="PROJECT 100 sections">
+    <ul class="tabs__list">
+      <li><a class="tab" href="index.html">PROJECT 100</a></li>
+      <li><a class="tab" href="fit-workout.html">Workout</a></li>
+      <li><a class="tab" href="liquid-intake.html" aria-current="page">Liquid Intake</a></li>
+      <li><a class="tab" href="fit-nutrition.html">Nutrition</a></li>
+      <li><a class="tab" href="gear-shop.html">Gear</a></li>
+      <li><a class="tab" href="biometrics.html">Biometrics</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="layout">
+  <main class="main" id="content" tabindex="-1">
+<header class="page-hero" id="top">
+  <img class="page-hero__img" src="assets/web/media-october-2026-hydration-loop-960.webp" alt="" width="960" height="540" srcset="assets/web/media-october-2026-hydration-loop-480.webp 480w, assets/web/media-october-2026-hydration-loop-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
+  <div class="page-hero__text">
+    <span class="eyebrow">PROJECT_100 · LIQUID INTAKE</span>
+    <h1>Liquid Intake</h1>
+  </div>
+</header>
+
+<aside class="callout callout--accent nut-intro" id="liquid-description">
+  <div class="nut-intro__text">
+    <span class="callout__title">Liquid Intake</span>
+    <p>Seven drink protocols · ingredients, preparation and descriptive downloads. Open a vector for its recipe; follow the morning, rest or evening branch. V1 and V6 are never combined on the same day. Personal record, not a prescription.</p>
+  </div>
+  <img class="nut-intro__art" src="assets/media/illustration-design/j04.webp" alt="" width="1000" height="667" loading="lazy" decoding="async">
+</aside>
+
+<section class="section" id="liquid-files" aria-labelledby="liquid-files-title">
+  <div class="section__head">
+    <h2 id="liquid-files-title">Seven recorded files</h2>
+  </div>
+  <ul class="nut-vec-list" data-gallery>
+    <li>
+      <article class="nut-vec nut-vec--v3" id="vector-v3" aria-labelledby="vector-v3-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v3.png" aria-label="Enlarge the V3 Recovery poster">
+            <img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 Recovery poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v3-480.webp 480w, assets/web/media-vector-artwork-portraits-v3-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v3-title">V3 RECOVERY</h3>
+          <p class="nut-vec__sub">Daily anchor; optional when consumed on rest days</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> Cold filtered water; shaker volume unspecified</p>
+          <ul class="nut-vec__ingredients">
+          <li>MuscleMeds Carnivor Beef Protein Isolate (33.9 g Canadian scoop)</li>
+          <li>PROMISE Pure Marine Collagen Peptan 10 g</li>
+          <li>Rootalive Organic Gelatinized Black Maca 5 g</li>
+          <li>ALLMAX Liquid L- Carnitine 1500 (15 mL / 1,500 mg)</li>
+          <li>MegaFood C Defense Gummy (1, chewed)</li>
+          <li>NAKA Platinum Vital Greens (20 mL separate flush)</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> 04:00; training and rest</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v3-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v3.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v3.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v1" id="vector-v1" aria-labelledby="vector-v1-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v1.png" aria-label="Enlarge the V1 Ignition poster">
+            <img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 Ignition poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v1-480.webp 480w, assets/web/media-vector-artwork-portraits-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v1-title">V1 IGNITION</h3>
+          <p class="nut-vec__sub">Morning training only (State A)</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 500-600 mL cold filtered water</p>
+          <ul class="nut-vec__ingredients">
+          <li>ALLMAX Impact Igniter Xtreme 2.0 (2 scoops / 28 g)</li>
+          <li>ALLMAX MuscleEAA Xtreme (1 scoop / 17.73 g)</li>
+          <li>PeakO2 2,000 mg</li>
+          <li>Betaine Anhydrous 2,500 mg</li>
+          <li>Citrulline Malate 2:1 (4-6 g)</li>
+          <li>Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately.</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> 06:00 pre- gym; morning training only</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v1-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v1.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v1.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v2" id="vector-v2" aria-labelledby="vector-v2-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v2.png" aria-label="Enlarge the V2 Refuel poster">
+            <img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 Refuel poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v2-480.webp 480w, assets/web/media-vector-artwork-portraits-v2-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v2-title">V2 REFUEL</h3>
+          <p class="nut-vec__sub">During the training session (States A and C)</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 600-750 mL cold filtered water</p>
+          <ul class="nut-vec__ingredients">
+          <li>Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1)</li>
+          <li>RapiDrem Electrolyte Powder (1 scoop, about 6.5 g)</li>
+          <li>Kirkland Himalayan Pink Salt 1/16 tsp</li>
+          <li>2-3 Medjool dates chewed solid, separately</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> During the training session (09:30 morning reference); moves with the evening workout in State C.</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v2-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v2.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v2.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v4" id="vector-v4" aria-labelledby="vector-v4-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v4.png" aria-label="Enlarge the V4 Reload poster">
+            <img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 Reload poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v4-480.webp 480w, assets/web/media-vector-artwork-portraits-v4-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v4-title">V4 RELOAD</h3>
+          <p class="nut-vec__sub">After the workout (States A and C); R-ALA remains separate</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 350-450 mL room-temperature water</p>
+          <ul class="nut-vec__ingredients">
+          <li>BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving)</li>
+          <li>Rootalive Beetroot Powder 7 g raw</li>
+          <li>Proline Pure Creatine HCl 750 mg active</li>
+          <li>Kirkland Himalayan Salt 1/16 tsp</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.</p>
+        <p>Whole R-ALA 300 mg is taken separately before the shaker.</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v4-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v4.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v4.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v5" id="vector-v5" aria-labelledby="vector-v5-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v5.png" aria-label="Enlarge the V5 Transport poster">
+            <img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 Transport poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v5-480.webp 480w, assets/web/media-vector-artwork-portraits-v5-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v5-title">V5 TRANSPORT</h3>
+          <p class="nut-vec__sub">Rest days only (State B)</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 500 mL cold filtered water</p>
+          <ul class="nut-vec__ingredients">
+          <li>Proline Pure Creatine HCl 750 mg</li>
+          <li>PROMISE Pure Marine Collagen 10 g</li>
+          <li>ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)</li>
+          <li>RapiDrem Electrolyte Powder (1 scoop)</li>
+          <li>Kirkland Himalayan Salt 1/16 tsp</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> 16:00-16:30; rest branch only</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v5-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v5.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v5.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v10" id="vector-v10" aria-labelledby="vector-v10-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v10.png" aria-label="Enlarge the V10 Shutdown poster">
+            <img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 Shutdown poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v10-480.webp 480w, assets/web/media-vector-artwork-portraits-v10-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v10-title">V10 SHUTDOWN</h3>
+          <p class="nut-vec__sub">Night anchor across all three states</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature</p>
+          <ul class="nut-vec__ingredients">
+          <li>SD Pharmaceuticals Creatine HCl 750 mg</li>
+          <li>North Coast Naturals Fermented L-Glutamine 5 g</li>
+          <li>AOR Pure Glycine Powder 3-5 g</li>
+          <li>optional half-scoop Medi-C Plus (2.5 g)</li>
+          <li>rare Niyama Hey Relax full scoop</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> Night anchor (18:30 reference); morning training, rest and evening-training branches. Tisane at a comfortable temperature.</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v10-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v10.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v10.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="nut-vec nut-vec--v6" id="vector-v6" aria-labelledby="vector-v6-title">
+        <div class="nut-vec__art">
+          <button type="button" data-full="assets/media/vector-artwork/portraits/v6.png" aria-label="Enlarge the V6 Pump poster">
+            <img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 Pump poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v6-480.webp 480w, assets/web/media-vector-artwork-portraits-v6-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async">
+          </button>
+        </div>
+        <header class="nut-vec__head">
+          <h3 class="nut-vec__title" id="vector-v6-title">V6 PUMP</h3>
+          <p class="nut-vec__sub">Evening training only (State C); replaces V1</p>
+        </header>
+        <div class="nut-vec__body">
+          <p class="nut-vec__base"><strong>Base</strong> 500–600 mL cold filtered water</p>
+          <ul class="nut-vec__ingredients">
+          <li>ALLMAX Impact PUMP Xtreme (Blue Raspberry): 2 scoops / 31 g</li>
+          <li>ALLMAX MuscleEAA Xtreme (Cherry Limeade): 1 scoop / 17.73 g</li>
+          <li>Compound Solutions / ALLMAX PeakO2: 2,000 mg by mass</li>
+          <li>NOW Betaine Anhydrous (TMG): 2,500 mg</li>
+          <li>ALLMAX Essentials Citrulline Malate 2:1: 4–6 g</li>
+          <li>ALLMAX Essentials Pure Taurine Powder: 2–3 g</li>
+          <li>AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water</li>
+          </ul>
+          <p class="nut-vec__protocol"><strong>Protocol</strong> Evening training override; 20–30 minutes before the evening session. Citicoline is a separate capsule at T−30 minutes. Never combined with V1 on the same calendar day.</p>
+        <p>No added salt or creatine HCl in this shaker.</p>
+          <div class="nut-vec__links">
+            <a class="btn" download="project100-v6-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v6.png">Save descriptive diagram</a>
+            <span class="nut-vec__sep" aria-hidden="true">·</span>
+            <a class="btn btn--ghost" href="fit-protocol-vector-v6.html">Full protocol details →</a>
+          </div>
+        </div>
+      </article>
+    </li>
+  </ul>
+</section>
+
+<section class="section" id="liquid-overview" aria-label="Branch summary">
+  <ul class="nut-branches">
+    <li><strong>Morning training</strong> V1 before the session</li>
+    <li><strong>Rest</strong> V1 and V6 inactive</li>
+    <li><strong>Evening training</strong> V6 replaces V1</li>
+  </ul>
+  <aside class="callout callout--warn">
+    <p>V1 and V6 are never combined on the same day. Recipes document the personal record, not a prescription.</p>
+  </aside>
+</section>
+
+    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-nutrition-notes.html"><span class="pager__dir">← Previous</span><span class="pager__label">Nutrition notes</span></a><a class="pager__next" rel="next" href="gear-shop.html"><span class="pager__dir">Next →</span><span class="pager__label">Gear folders</span></a>
+    </nav>
+  </main>
 </div>
-<script defer="" src="assets/js/v2.js?v=20261005-liquid"></script><a aria-label="Switch to FIT PROTOCOL" class="guidebook-access site-switch-float" href="fit-protocol.html"><span aria-hidden="true" class="guidebook-mark">↔</span><span>FIT PROTOCOL</span></a><a aria-label="Previous page" class="page-nav-arrow prev" href="fit-workout.html">‹</a><a aria-label="Next page" class="page-nav-arrow next" href="fit-nutrition.html">›</a><script src="assets/js/image-lightbox.js"></script>
+
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <div>
+      <h2>PROJECT 100</h2>
+      <p class="site-foot__lede">The lived record: training, food, gear and measured results.</p>
+      <a class="site-foot__switch" href="fit-protocol.html"><span aria-hidden="true">↔</span> Switch to FIT PROTOCOL</a>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <ul><li><a href="index.html">PROJECT 100</a></li><li><a href="fit-workout.html">Workout</a></li><li><a href="liquid-intake.html">Liquid Intake</a></li><li><a href="fit-nutrition.html">Nutrition</a></li><li><a href="gear-shop.html">Gear</a></li><li><a href="biometrics.html">Biometrics</a></li>
+        <li><a href="library.html">Guidebook · Files · Downloads</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Elsewhere</h2>
+      <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">Gym playlist</a></li>
+      </ul>
+    </div>
+    <p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
+  </div>
+</footer>
+
+<dialog class="menu" id="menu" aria-labelledby="menuTitle">
+  <div class="menu__head">
+    <h2 class="menu__title" id="menuTitle">Menu</h2>
+    <button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="menu__body">
+    <div class="menu__sites">
+      <a class="menu__site" href="index.html" aria-current="true"><small>You are here</small><strong>PROJECT 100</strong></a>
+      <a class="menu__site" href="fit-protocol.html"><small>Switch to</small><strong>FIT PROTOCOL</strong></a>
+    </div>
+    <section class="menu__section">
+      <h3>PROJECT 100 pages</h3>
+      <div class="menu__group">
+        <p class="menu__group-title">PROJECT 100</p>
+        <ul class="menu__list"><li><a href="project-story.html">The story</a></li><li><a href="project-goals.html">Goals &amp; roadmap</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Workout</p>
+        <ul class="menu__list"><li><a href="fit-workout.html">Training log</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Liquid Intake</p>
+        <ul class="menu__list"><li><a href="liquid-intake.html" aria-current="page">Liquid Intake</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Nutrition</p>
+        <ul class="menu__list"><li><a href="fit-nutrition.html">Nutrition overview</a></li><li><a href="fit-meals.html">Meals &amp; recipes</a></li><li><a href="fit-nutrition-notes.html">Nutrition notes</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Gear</p>
+        <ul class="menu__list"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Biometrics</p>
+        <ul class="menu__list"><li><a href="biometrics.html">Biometrics</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="menu__section">
+      <h3>Downloads</h3>
+      <div class="menu__links"><a class="menu__link" href="library.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg><span>Guidebook · Files · Downloads</span></a></div>
+    </section>
+    <section class="menu__section">
+      <h3>Links &amp; contact</h3>
+      <div class="menu__links">
+        <a class="menu__link" href="mailto:project100@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg><span>Email<small>project100@gmail.com</small></span></a>
+        <a class="menu__link" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg><span>Instagram<small>instagram.com/fudge_fit</small></span></a>
+        <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg><span>YouTube<small>youtube.com/@FUDGE_fit</small></span></a>
+        <a class="menu__link" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg><span>Facebook<small>facebook.com/fudge.fit</small></span></a>
+        <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg><span>TikTok<small>tiktok.com/@bogdan_dospi</small></span></a>
+        <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg><span>Twitch<small>twitch.tv/cyberk1llaTTV</small></span></a>
+        <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg><span>Gym playlist<small>Spotify playlist</small></span></a>
+      </div>
+    </section>
+  </div>
+</dialog>
+
+<script src="assets/js/site.js?v=333632b6" defer></script>
 </body>
 </html>

@@ -1,680 +1,269 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-<head><link href="assets/css/local-fonts.css?v=20261005-liquid" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;💪&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
-<link href="assets/css/shell.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/carousel.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/connect.css?v=20261005-liquid" rel="stylesheet"/>
-<link href="assets/css/fixonic.css?v=20261005-liquid" rel="stylesheet"/>
-<style>
-  :root{
-    --bg:#0a0b0d;
-    --bg-2:#111318;
-    --surface:#16181e;
-    --surface-2:#1d2029;
-    --border:#272b35;
-    --text:#eef0f4;
-    --text-dim:#9aa1b0;
-    --red:#c22d42;
-    --red-dim:#8f2233;
-    --cyan:#3fd7d0;
-    --gold:#e8b64c;
-    --shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:16.5px; font-weight:450;
-    line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  p{ font-weight:450; }
-  strong, b{ font-weight:650; }
-  h1,h2,h3,.display{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.02em; margin:0; }
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 20px; }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.18em;
-    color:var(--red); text-transform:uppercase; font-weight:600;
-  }
-  .eyebrow::before{ content:""; width:20px; height:2px; background:var(--red); display:inline-block;}
-  section{ padding:64px 0; border-bottom:1px solid var(--border); overflow:hidden; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding:13px 24px;
-    border-radius:6px; font-weight:700; font-size:.92rem; text-decoration:none;
-    letter-spacing:.02em; transition:transform .15s ease, box-shadow .15s ease;
-    border:1px solid transparent; cursor:pointer;
-  }
-  .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 8px 22px rgba(230,39,63,.35);}
-  .btn-ghost{ background:transparent; color:var(--text); border-color:var(--border); }
-  .btn-ghost:hover{ border-color:var(--text-dim); }
-
-  /* SITE HEAD — nav + page-tab bar + category sub-menu scroll together as one fixed unit */
-  .site-head{ position:sticky; top:0; z-index:50; }
-  nav{
-    position:relative; background:rgba(10,11,13,.92); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  .page-tabs{
-    background:var(--bg-2); border-bottom:1px solid var(--border);
-    }
-  .page-tabs .wrap::-webkit-scrollbar{ display:none; }
-  .page-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:8px; padding:10px 20px; }
-  .page-tab{
-    flex:none; padding:8px 16px; border-radius:100px; font-family:'Oswald',sans-serif;
-    font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-    text-decoration:none; color:var(--text-dim); border:1px solid var(--border); white-space:nowrap;
-    transition:border-color .15s ease, color .15s ease;
-  }
-  .page-tab.current{ background:var(--red); border-color:var(--red); color:#fff; }
-  .page-tab .lc-i{text-transform:lowercase;}
-  .page-tab.tab-home.current{background:#e8b64c;border-color:#e8b64c;color:#1a1200;}
-  .page-tab.tab-home:not(.current){border-color:rgba(232,182,76,.38);color:#e6c078;}
-  /* the plain FIT-page pills (Fit Protocol/Workout/Nutrition/Fit Gear)
-     used to fall back to the same flat gray as the sub-menu text below
-     them — give them their own red-family tone (matching this site's
-     brand red, which is also what "current" turns them) so they read
-     as their own nav, with a solid-red hover to confirm they're links. */
-  .page-tab:not(.tab-home):not(.current){ border-color:rgba(230,39,63,.4); color:#f19aa5; }
-  @media (hover:hover){
-    .page-tab.tab-home:not(.current):hover{border-color:#e8b64c;color:#e8b64c;}
-  }
-  @media (hover:hover){
-    .page-tab:not(.current):hover{ border-color:var(--text-dim); color:var(--text); }
-    .page-tab:not(.tab-home):not(.current):hover{ border-color:var(--red); color:var(--red); }
-  }
-  #nav .wrap{ display:flex; align-items:center; justify-content:flex-end; gap:14px; padding:14px 20px; }
-  .brand{ font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:.04em; text-decoration:none; color:var(--text); text-transform:uppercase;}
-  .brand b{ color:var(--red); }
-  .navcta{ display:flex; gap:10px; }
-  .navcta .btn{ padding:9px 16px; font-size:.8rem; }
-  @media (max-width:860px){ .navcta .btn-ghost{ display:none; } }
-
-  /* TIER 3 — category / section jump-links, always directly under the page tabs */
-  .cat-tabs{ background:#0d0e11; border-bottom:1px solid rgba(255,255,255,.08); }
-  .cat-tabs .wrap::-webkit-scrollbar{ display:none; }
-  .cat-tabs .wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; display:flex; gap:18px; padding:9px 20px; }
-  .cat-tabs a{
-    flex:none; font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.08em;
-    text-transform:uppercase; text-decoration:none; color:#9aa1b0; white-space:nowrap; padding:4px 2px;
-    border-bottom:2px solid transparent; transition:color .15s ease, border-color .15s ease;
-  }
-  .cat-tabs a:hover, .cat-tabs a.active{ color:#fff; border-bottom-color:#e6273f; }
-
-  /* HERO */
-  .hero{
-    position:relative; padding:0; border-bottom:1px solid var(--border); overflow:hidden;
-    min-height:82vh; display:flex; align-items:flex-end;
-  }
-  .hero-bg{ position:absolute; inset:0; }
-  .hero-bg img, .hero-bg video{ width:100%; height:100%; object-fit:cover; object-position:50% 20%; filter:saturate(1.05) contrast(1.05);}
-  .hero-scrim{
-    position:absolute; inset:0;
-    background:
-      linear-gradient(180deg, rgba(10,11,13,.35) 0%, rgba(10,11,13,.55) 40%, rgba(10,11,13,.96) 92%),
-      linear-gradient(90deg, rgba(10,11,13,.85) 0%, rgba(10,11,13,.15) 55%);
-  }
-  .hero-inner{ position:relative; z-index:2; padding:52px 20px 48px; width:100%; }
-  .hero h1{ font-size:clamp(2.6rem, 6.4vw, 5rem); line-height:.98; margin:14px 0 18px; }
-  .hero h1 span{ color:var(--red); }
-  .hero p.lead{ max-width:620px; color:#d7dae2; font-size:1.15rem; font-weight:480; margin-bottom:26px; }
-  .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
-  .chip{
-    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(6px);
-    padding:9px 14px; border-radius:100px; font-size:.82rem; font-weight:600; color:#e9ebef;
-  }
-  .chip b{ color:var(--cyan); }
-  .hero-ctas{ display:flex; flex-wrap:wrap; gap:12px; }
-  .motto{
-    font-family:'Oswald',sans-serif; font-size:.82rem; letter-spacing:.32em; font-weight:600;
-    color:var(--cyan); text-transform:uppercase; margin:0 0 20px;
-  }
-  .motto span{ color:var(--text-dim); }
-
-  /* SECTION HEADERS */
-  .sec-head{ max-width:680px; margin-bottom:34px; }
-  .sec-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.6rem); margin-top:10px; }
-  .sec-head p{ color:var(--text-dim); font-size:1.08rem; font-weight:460; margin-top:14px; }
-  .sec-head.center{ max-width:620px; margin-left:auto; margin-right:auto; text-align:center; }
-  .sec-head.center .eyebrow{ justify-content:center; width:100%; }
-
-  /* ORIGIN */
-  .origin-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; }
-  .origin-copy p{ color:#cfd2da; margin:0 0 16px; font-size:1.06rem; font-weight:460; }
-  .origin-copy .pullquote{
-    border-left:3px solid var(--red); padding:4px 0 4px 18px; margin:22px 0; font-family:'Oswald',sans-serif;
-    font-size:1.15rem; color:var(--text); text-transform:none; letter-spacing:0; font-weight:500;
-  }
-  .origin-photos{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .origin-photos img{ border-radius:10px; aspect-ratio:1/1; object-fit:contain; background:var(--surface-2); border:1px solid var(--border); }
-  .origin-photos .tall{ grid-row:span 2; aspect-ratio:auto; height:100%; }
-  .timeline-mini{ display:flex; gap:0; margin-top:24px; border-top:1px solid var(--border); padding-top:18px; flex-wrap:wrap; }
-  .tm-item{ flex:1; min-width:120px; padding-right:16px; }
-  .tm-item .yr{ color:var(--red); font-family:'Oswald',sans-serif; font-weight:700; font-size:1.05rem; }
-  .tm-item .lb{ color:var(--text-dim); font-size:.82rem; margin-top:4px; } .era-scroll{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;margin:24px -20px 18px;padding:4px 20px 18px;scrollbar-width:none;}.era-scroll::-webkit-scrollbar{display:none;}.era-panel{flex:0 0 min(78vw,340px);scroll-snap-align:start;padding:28px 20px;margin-right:14px;border-radius:10px;position:relative;overflow:hidden;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;box-sizing:border-box;border:1px solid var(--border);transition:transform .25s cubic-bezier(.22,1,.36,1);}.era-panel:hover{transform:translateY(-4px);}.era-panel .era-num{position:absolute;top:16px;left:18px;font-family:'Oswald',sans-serif;font-size:4.2rem;font-weight:700;opacity:.14;line-height:1;text-transform:none;}.era-panel .era-range{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;opacity:.85;display:block;font-weight:600;}.era-panel h3{font-size:1.15rem;margin-bottom:8px;text-transform:none;letter-spacing:0;}.era-panel p{font-size:.82rem;line-height:1.5;opacity:.92;margin:0;}
-
-  /* BIO HISTORY STRIP */
-  .bio-history{ margin-top:24px; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--surface); }
-  .bio-history .bh-head{ padding:12px 16px; border-bottom:1px solid var(--border); font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); }
-  .bio-history .bh-row{ display:grid; grid-template-columns:1.1fr .8fr .8fr .8fr 1.6fr; gap:10px; padding:12px 16px; font-size:.85rem; align-items:center; }
-  .bio-history .bh-row + .bh-row{ border-top:1px solid var(--border); }
-  .bio-history .bh-row.bh-labels{ color:var(--text-dim); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; font-weight:700; }
-  .bio-history .bh-row .bh-date{ font-family:'Oswald',sans-serif; font-weight:600; color:var(--text); }
-  .bio-history .bh-row .bh-note{ color:var(--text-dim); font-size:.8rem; }
-  .bio-history .bh-row b{ color:var(--cyan); }
-  @media(max-width:640px){ .bio-history .bh-row{ grid-template-columns:1fr 1fr; row-gap:4px; } .bio-history .bh-row .bh-note{ grid-column:1/-1; margin-top:4px; } .bio-history .bh-row.bh-labels{ display:none; } }
-
-  @media (max-width:820px){ .origin-grid{ grid-template-columns:1fr; } }
-
-  /* STATS DASHBOARD */
-  .stat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .stat-card{
-    background:linear-gradient(180deg, var(--surface), var(--surface-2)); border:1px solid var(--border);
-    border-radius:14px; padding:24px 20px; position:relative; overflow:hidden;
-  }
-  .stat-card .label{ color:var(--text-dim); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; }
-  .stat-card .nums{ display:flex; align-items:baseline; gap:10px; margin:14px 0 10px; flex-wrap:wrap; }
-  .stat-card .now{ font-family:'Oswald',sans-serif; font-size:2.1rem; color:var(--text-dim); }
-  .stat-card .arrow{ color:var(--text-dim); }
-  .stat-card .target{ font-family:'Oswald',sans-serif; font-size:2.6rem; color:var(--cyan); }
-  .stat-card .bar{ height:8px; border-radius:100px; background:var(--bg-2); overflow:hidden; margin-top:6px;}
-  .stat-card .bar i{ display:block; height:100%; background:linear-gradient(90deg, var(--red), var(--cyan)); }
-  .stat-card .sub{ color:var(--text-dim); font-size:.82rem; margin-top:10px; }
-  @media (max-width:820px){ .stat-grid{ grid-template-columns:1fr; } }
-
-  .anomaly{
-    margin-top:22px; background:radial-gradient(circle at 20% 20%, rgba(230,39,63,.14), transparent 60%), var(--surface);
-    border:1px solid var(--border); border-radius:14px; padding:24px 26px;
-    display:flex; align-items:center; gap:24px; flex-wrap:wrap;
-  }
-  .anomaly .badge-patch{
-    flex:0 0 auto; width:78px; height:78px; border-radius:50%; object-fit:cover;
-    border:2px solid var(--gold); box-shadow:0 6px 18px rgba(232,182,76,.25);
-  }
-  .anomaly .big{ font-family:'Oswald',sans-serif; font-size:2.8rem; color:var(--red); line-height:1; }
-  .anomaly .txt{ color:var(--text-dim); max-width:520px; font-size:.94rem; }
-  .anomaly .txt b{ color:var(--text); }
-
-  /* ROADMAP */
-  .roadmap{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .phase{
-    background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px 22px;
-    position:relative;
-  }
-  .phase .num{
-    width:38px; height:38px; border-radius:8px; background:var(--bg-2); border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700;
-    color:var(--red); margin-bottom:16px;
-  }
-  .phase .months{ color:var(--text-dim); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
-  .phase h3{ font-size:1.2rem; margin:8px 0 12px; }
-  .phase p{ color:var(--text-dim); font-size:.9rem; margin:0 0 16px; }
-  .phase .foot{ display:flex; justify-content:space-between; border-top:1px solid var(--border); padding-top:14px; font-size:.82rem;}
-  .phase .foot .gain{ color:var(--cyan); font-weight:700; }
-  .phase .foot .marker{ color:var(--text-dim); text-align:right; } .stat-card,.phase,.bio-history,.anomaly{clip-path:polygon(0 0,100% 0,100% 90%,90% 100%,0 100%);} .stat-card{transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s ease,box-shadow .25s ease;} .stat-card:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 14px 30px -14px rgba(63,215,208,.4);} .phase{transition:transform .25s cubic-bezier(.22,1,.36,1),border-color .25s ease,box-shadow .25s ease;} .phase:hover{transform:translateY(-4px);border-color:var(--red);box-shadow:0 14px 30px -14px rgba(194,45,66,.4);} .bio-history{transition:border-color .25s ease,box-shadow .25s ease;} .bio-history:hover{border-color:var(--cyan);box-shadow:0 14px 30px -14px rgba(63,215,208,.3);} .anomaly{transition:border-color .25s ease,box-shadow .25s ease;} .anomaly:hover{border-color:var(--gold);box-shadow:0 14px 30px -14px rgba(232,182,76,.3);} .tm-item{border-left:2px solid var(--border);padding-left:14px;transition:border-color .25s ease;} .tm-item:hover{border-left-color:var(--red);}
-  @media (max-width:900px){ .roadmap{ grid-template-columns:1fr; } }
-
-  /* EXPLORE — the site preview carousel: this replaces embedded content
-     (training log, protocol diagrams) with compact cards linking out to
-     each page, so nothing important ever gets buried in a long scroll. */
-  .explore-blk .sec-head{ margin-bottom:26px; }
-  .explore-card{
-    display:flex; flex-direction:column; text-decoration:none; color:var(--text);
-    background:linear-gradient(180deg,var(--surface),var(--surface-2)); border:1px solid var(--border);
-    border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.3);
-    transition:transform .18s ease, border-color .18s ease;
-  }
-  .explore-card:hover{ transform:translateY(-4px); border-color:#3a3f4c; }
-  .explore-card .ex-media img{ transition:transform .3s ease; }
-  .explore-card:hover .ex-media img{ transform:scale(1.05); }
-  .explore-card .ex-media{ aspect-ratio:3/4; position:relative; overflow:hidden; background:#000; }
-  .explore-card .ex-media img{ width:100%; height:100%; object-fit:cover; object-position:center; }
-  .explore-card .ex-tag{
-    position:absolute; top:8px; left:8px; font-size:.6rem; font-weight:700; letter-spacing:.06em;
-    text-transform:uppercase; padding:4px 9px; border-radius:100px; backdrop-filter:blur(6px);
-    background:rgba(190,18,42,.92); color:#fff;
-  }
-  .explore-card .ex-body{ padding:12px 13px 14px; flex:1; display:flex; flex-direction:column; }
-  .explore-card h4{ font-family:'Oswald',sans-serif; font-size:.88rem; margin:0 0 6px; line-height:1.25; text-transform:uppercase; letter-spacing:.02em; }
-  .explore-card p{ color:var(--text-dim); font-size:.74rem; margin:0; line-height:1.4; flex:1; }
-  .explore-card .ex-cta{ margin-top:10px; font-size:.7rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; }
-
-  /* ===== Zoomable static images: click to pop out bigger in a lightbox ===== */
-  .zoomable{ cursor:zoom-in; transition:transform .25s ease, filter .25s ease; }
-  @media (hover:hover){
-    .zoomable:hover{ transform:scale(1.035); filter:brightness(1.05); }
-  }
-  .lightbox-overlay{
-    position:fixed; inset:0; z-index:999; background:rgba(6,7,9,.92);
-    display:flex; align-items:center; justify-content:center; padding:32px;
-    opacity:0; pointer-events:none; transition:opacity .2s ease;
-    -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px);
-  }
-  .lightbox-overlay.open{ opacity:1; pointer-events:auto; }
-  .lightbox-overlay img{
-    max-width:90vw; max-height:88vh; width:auto; border-radius:10px;
-    box-shadow:0 20px 60px rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.1);
-    transform:scale(.94); transition:transform .2s ease;
-  }
-  .lightbox-overlay.open img{ transform:scale(1); }
-  .lightbox-close{
-    position:absolute; top:18px; right:18px; width:40px; height:40px; border-radius:50%;
-    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff;
-    display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0;
-    transition:background .15s ease, transform .15s ease;
-  }
-  .lightbox-close:hover{ background:rgba(230,39,63,.85); transform:scale(1.06); }
-  .lightbox-close svg{ width:20px; height:20px; }
-  @media (max-width:640px){
-    .lightbox-overlay{ padding:16px; }
-    .lightbox-close{ top:10px; right:10px; width:36px; height:36px; }
-  }
-
-  /* FOOTER / CTA */
-  .cta-band{
-    position:relative; overflow:hidden; text-align:center; padding:90px 20px;
-    border-bottom:1px solid var(--border);
-  }
-  .cta-bg{ position:absolute; inset:0; z-index:0; }
-  .cta-bg img, .cta-bg video{ width:100%; height:100%; object-fit:cover; object-position:center; }
-  .cta-bg::after{
-    content:""; position:absolute; inset:0;
-    background:
-      radial-gradient(circle at 50% 0%, rgba(230,39,63,.22), transparent 60%),
-      linear-gradient(180deg, rgba(10,11,13,.82) 0%, rgba(10,11,13,.93) 100%);
-  }
-  .cta-band > *{ position:relative; z-index:1; }
-  .cta-band h2{ font-size:clamp(2rem,4.4vw,3.2rem); margin:16px 0 20px; }
-  .cta-band p{ color:var(--text-dim); max-width:560px; margin:0 auto 26px; }
-  .cta-btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-
-  footer{ padding:40px 20px 60px; }
-  .foot-grid{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; }
-  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
-  .foot-links a{ text-decoration:none; color:var(--text-dim); }
-  .foot-links a:hover{ color:var(--text); }
-  .foot-fine{ color:var(--text-dim); font-size:.78rem; margin-top:26px; border-top:1px solid var(--border); padding-top:20px; }
-  /* the contact email: visible and clickable, but one notch down from
-     the bold all-caps foot-links row so it reads as info, not another
-     nav item */
-  .foot-email{ display:inline-flex; align-items:center; gap:7px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.02em; color:var(--cyan); text-decoration:none; }
-  .foot-email svg{ width:15px; height:15px; flex:0 0 auto; }
-  .foot-email:hover{ text-decoration:underline; }
-
-  /* Content is visible by default (never gated behind JS); IntersectionObserver
-     below only adds a subtle enhancement class for browsers that support it. */
-  .reveal{ opacity:1; transform:none; transition:opacity .6s ease, transform .6s ease; }
-  .reveal.pre{ opacity:0; transform:translateY(18px); }
-  .reveal.in{ opacity:1; transform:none; }
-
-  /* CONNECT / LINK HUB — mobile-first tap targets, no hover dependency.
-     Always the LAST section before the footer, on every page. */
-
-  /* ===== FIELD NOTE — short bold-caps callouts dropped into sections to
-     surface a stat, milestone, or piece of mindset without breaking the
-     surrounding prose. Three tone variants share one layout. ===== */
-  .field-note{
-    position:relative; margin:24px 0; padding:18px 20px;
-    background:var(--surface); border:1px solid var(--border);
-    border-left:4px solid var(--gold); border-radius:10px;
-  }
-  .field-note .fn-tag{
-    display:inline-block; font-family:'Oswald',sans-serif; font-size:.68rem; font-weight:700;
-    letter-spacing:.14em; text-transform:uppercase; color:var(--gold);
-    background:rgba(232,182,76,.12); border:1px solid rgba(232,182,76,.3);
-    padding:4px 10px; border-radius:100px; margin-bottom:12px;
-  }
-  .field-note p{
-    margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;
-    letter-spacing:.01em; font-size:1rem; line-height:1.45; color:var(--text); font-weight:600;
-  }
-  .field-note--cyan{ border-left-color:var(--cyan); }
-  .field-note--cyan .fn-tag{ color:var(--cyan); background:rgba(63,215,208,.12); border-color:rgba(63,215,208,.32); }
-  .field-note--red{ border-left-color:var(--red); }
-  .field-note--red .fn-tag{ color:#ff6b81; background:rgba(230,39,63,.14); border-color:rgba(230,39,63,.35); }
-  @media (max-width:640px){ .field-note{ padding:16px 18px; } .field-note p{ font-size:.9rem; } }
-
-  /* ===== Fixonic edge accent strip — a thin diagonal-stripe divider
-     dropped between major sections for a bit of "edge" without ever
-     touching real content (it's its own flat element, never an overlay
-     clipped over text) ===== */
-  .fx-edge{ height:20px; background:repeating-linear-gradient(135deg, var(--red) 0 2px, transparent 2px 20px); opacity:.4; border-bottom:1px solid var(--border); }
-  @media (max-width:640px){ .fx-edge{ height:14px; background-size:14px 14px; } }
-
-  /* ===== Mobile compaction pass (6.5" phone -> 11" tablet) ===== */
-  @media (max-width:640px){
-    .wrap{ padding:0 14px; }
-    #nav .wrap{ padding:10px 14px; }
-    .brand{ font-size:.92rem; }
-    .navcta{ gap:6px; }
-    .navcta .btn{ padding:7px 12px; font-size:.72rem; }
-    .page-tabs .wrap{ padding:8px 14px; gap:6px; }
-    .page-tab{ padding:6px 12px; font-size:.68rem; }
-    .cat-tabs .wrap{ padding:7px 14px; gap:13px; }
-    .cat-tabs a{ font-size:.64rem; }
-    .hero{ min-height:auto; }
-    .hero-inner{ padding:30px 14px 28px; }
-    .hero h1{ font-size:clamp(2rem, 9vw, 2.7rem); line-height:1.02; margin:10px 0 12px; }
-    .hero p.lead{ font-size:.98rem; margin-bottom:18px; }
-    .motto{ font-size:.68rem; letter-spacing:.22em; margin-bottom:12px; }
-    .chips{ gap:7px; margin-bottom:20px; }
-    .chip{ padding:7px 11px; font-size:.74rem; }
-    section{ padding:38px 0; }
-    .sec-head{ margin-bottom:22px; }
-    .sec-head h2{ font-size:clamp(1.5rem, 6.5vw, 2rem); margin-top:6px; }
-    .stat-card{ padding:18px 16px; }
-    .phase{ padding:18px 16px; }
-    .anomaly .badge-patch{ width:58px; height:58px; }
-  }
-</style>
-<style>.site-menu-tab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:950;background:linear-gradient(160deg,var(--red) 0%,var(--red-dim) 100%);color:#fff;border:none;border-radius:0 12px 12px 0;padding:14px 10px;font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;box-shadow:4px 0 18px rgba(0,0,0,.4);display:flex;flex-direction:column;align-items:center;gap:6px;transition:padding-left .2s ease,box-shadow .2s ease;}.site-menu-tab:hover{padding-left:15px;box-shadow:6px 0 22px rgba(0,0,0,.5);}.site-menu-tab svg{flex:none;}.site-drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:opacity .25s ease;z-index:948;}.site-drawer-backdrop.open{opacity:1;visibility:visible;}.site-drawer{position:fixed;top:0;left:0;bottom:0;width:280px;max-width:84vw;background:var(--bg-2);border-right:1px solid var(--border);z-index:949;transform:translateX(-100%);transition:transform .3s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;padding:22px 0;overflow-y:auto;}.site-drawer.open{transform:translateX(0);}.site-drawer .sd-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 18px;border-bottom:1px solid var(--border);margin-bottom:10px;}.site-drawer .sd-brand{font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.04em;text-decoration:none;color:var(--text);text-transform:uppercase;}.site-drawer .sd-brand b{color:var(--red);}.site-drawer .sd-close{all:unset;cursor:pointer;color:var(--text-dim);padding:4px;}.site-drawer nav{display:flex;flex-direction:column;padding:6px 10px;}.site-drawer nav a{display:flex;align-items:center;justify-content:space-between;padding:14px 12px;border-radius:8px;text-decoration:none;color:var(--text-dim);font-family:'Oswald',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;transition:background .15s ease,color .15s ease;}.site-drawer nav a:hover{background:var(--surface);color:var(--text);}.site-drawer nav a.current{background:var(--red);color:#fff;}.site-drawer nav a .sd-arrow{opacity:.5;font-size:.8rem;}@media(max-width:640px){.site-menu-tab{padding:12px 8px;font-size:.58rem;}.page-tabs{display:none;}}.page-tabs{display:none;}.site-menu-tab{top:50%;transform:translateY(calc(-50% - 70px));}.page-nav-arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:930;width:52px;height:52px;border-radius:50%;background:rgba(10,11,13,.72);backdrop-filter:blur(6px);border:1px solid var(--border);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease;box-shadow:0 6px 20px rgba(0,0,0,.35);}.page-nav-arrow:hover{background:var(--red);border-color:var(--red);transform:translateY(-50%) scale(1.08);}.page-nav-arrow svg{width:26px;height:26px;}.page-nav-arrow.prev{left:max(14px,calc(50% - 632px));}.page-nav-arrow.next{right:max(14px,calc(50% - 632px));}@media(max-width:640px){.page-nav-arrow{width:42px;height:42px;}.page-nav-arrow svg{width:20px;height:20px;}.page-nav-arrow.prev{left:8px;}.page-nav-arrow.next{right:8px;}}.fc-back{display:none;}#nav .wrap{position:relative;}a.brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;}.site-menu-tab{top:14px;left:14px;transform:none;border-radius:12px;flex-direction:row;padding:10px 14px;box-shadow:0 6px 18px rgba(0,0,0,.4);}.site-menu-tab:hover{padding-left:14px;transform:scale(1.04);}.page-nav-arrow{border-radius:16px;width:48px;height:72px;}.page-nav-arrow.prev{left:max(14px,calc(50% - 632px));}.page-nav-arrow.next{right:max(14px,calc(50% - 632px));}@media(max-width:640px){.page-nav-arrow{width:36px;height:54px;border-radius:12px;}.site-menu-tab{top:10px;left:10px;padding:8px 10px;}}</style><link href="assets/css/site-repairs.css?v=20261005-liquid" rel="stylesheet"/>
-<title>PROJECT 100 | Goals &amp; roadmap</title><meta content="PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking." name="description"/><link href="https://project100.fit/project-goals.html" rel="canonical"/><meta content="website" property="og:type"/><meta content="PROJECT 100 | Goals &amp; roadmap" property="og:title"/><meta content="PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking." property="og:description"/><meta content="https://project100.fit/project-goals.html" property="og:url"/><meta content="https://project100.fit/assets/img/objective-100lbs-smm.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="654" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><link href="assets/css/v2.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/filing-navigation.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/filing-navigation.js?v=20261005-liquid"></script><link href="assets/css/media-backgrounds.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/media-backgrounds.js?v=20261005-liquid"></script><script defer="" src="assets/js/journey-loop.js?v=20261005-liquid"></script><link href="assets/css/vector-studio.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/reading-layout.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/editorial-sections.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/focused-protocol.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/focused-main.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/main-files.js?v=20261005-liquid"></script><link href="assets/css/float-connect.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/polished-shell.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/float-connect.js?v=20261005-liquid"></script><link href="assets/css/visible-folders.css?v=20261005-folders" rel="stylesheet"/><script defer="" src="assets/js/visible-folders.js?v=20261005-folders"></script><meta content="PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking." name="twitter:description"/><meta content="PROJECT 100 | Goals &amp; roadmap" property="og:image:alt"/><meta content="https://project100.fit/assets/img/objective-100lbs-smm.jpg" name="twitter:image"/><meta content="PROJECT 100 | Goals &amp; roadmap" name="twitter:image:alt"/><link href="assets/css/nutrition-overview.css?v=20261005-nutrition" rel="stylesheet"/><script defer="" src="assets/js/nutrition-overview.js?v=20261005-nutrition"></script><link href="assets/css/mobile-focus.css?v=20261005-focus" rel="stylesheet"/>
-<link href="assets/css/compact-pages.css?v=20261006" rel="stylesheet"/><link href="assets/css/biometrics-addon.css" rel="stylesheet"/><style>
-/* Bogdan site styles - in-page (2026-10-07) */
-/* 2026-10-06 Bogdan: no more round pill buttons */
-.page-tab{ border-radius:10px !important; }
-.page-tabs .wrap .page-tab{ border-radius:6px !important; }
-.folder-page-rail .page-tabs .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
-.folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
-.folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
-/* rail as LEFT sidebar on mobile */
-@media (max-width:640px){
-  .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
-  .folder-page-rail{ flex:0 0 132px !important; max-width:132px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
-  .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
-  .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
-}
-/* bigger logo branding */
-a.brand, .brand{ font-size:4rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 #0a0a0a, 2px 2px 0 #0a0a0a, 3px 3px 0 #111, 4px 4px 0 #111, 5px 5px 0 #1a1a1a, 6px 6px 0 #1a1a1a, 7px 7px 12px rgba(0,0,0,.7) !important; }
-a.brand b{ color:#e6273f !important; }
-
-
-
-
-@media (max-width:640px){
-  a.brand, .brand{ font-size:1.5rem !important; }
-  
-/* carousel arrows taller on mobile */
-@media (max-width:640px){
-  button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
-}
-
-/* 2026-10-06 Bogdan: file cabinet style for active top tabs */
-.page-tabs:not(.focused-subtabs) .page-tab.current{
-  border-radius:8px 8px 0 0 !important;
-  border-bottom:none !important;
-  background:#e6273f !important;
-  border-color:#e6273f !important;
-  color:#fff !important;
-  position:relative !important;
-  z-index:2 !important;
-  margin-bottom:-1px !important;
-  padding-bottom:calc(8px + 1px) !important;
-  box-shadow:0 -2px 28px rgba(230,39,63,.75), 0 2px 20px rgba(230,39,63,.55), 0 0 40px rgba(230,39,63,.25) !important;
-}
-/* ensure tab bar has bottom border for cabinet effect */
-.page-tabs:not(.focused-subtabs){
-  border-bottom:1px solid #e6273f !important;
-}
-.page-tabs .wrap{
-  margin-bottom:-1px !important;
-}
-
-/* 2026-10-07 Bogdan: MENU removed from HTML, fc-trigger in header */
-.site-menu-tab, #siteMenuTab{ display:none !important; }
-#nav .wrap .fc-trigger{
-  position:static !important;
-  width:44px !important; height:44px !important;
-  flex:0 0 auto !important;
-  margin:0 !important;
-  top:auto !important; left:auto !important;
-  bottom:auto !important; right:auto !important;
-}
-
-/* 2026-10-07 Bogdan: rail labels wrap, not clipped */
-.folder-page-rail .page-tab{
-  white-space:normal !important;
-  word-break:break-word !important;
-  overflow:visible !important;
-  text-overflow:clip !important;
-  line-height:1.25 !important;
-}
-
-</style>
-</head>
-<body class="home-page filing-layout focused-main" data-fx-theme="classic"><div class="fc-root">
-<div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
-<div aria-label="Links and contact" aria-modal="true" class="fc-panel" hidden="" id="fcPanel" role="dialog">
-<div class="fc-head">
-<button aria-label="Close" class="fc-close" id="fcClose" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg>
-</button>
-<span class="fc-title">Links</span>
-</div>
-<div class="fc-list">
-<a class="fc-row fc-primary" href="mailto:project100@gmail.com">
-<span class="fc-ic"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Email</span><span class="fc-url">project100@gmail.com</span></span>
-</a>
-<a class="fc-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-instagram"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Instagram</span><span class="fc-url">instagram.com/fudge_fit</span></span>
-</a>
-<a class="fc-row" href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-facebook"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Facebook</span><span class="fc-url">facebook.com/fudge.fit</span></span>
-</a>
-<a class="fc-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-tiktok"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">TikTok</span><span class="fc-url">tiktok.com/@bogdan_dospi</span></span>
-</a>
-<a class="fc-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-twitch"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Twitch</span><span class="fc-url">twitch.tv/cyberk1llaTTV</span></span>
-</a>
-<a class="fc-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-youtube"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">YouTube</span><span class="fc-url">youtube.com/@FUDGE_fit</span></span>
-</a>
-<a class="fc-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">
-<span class="fc-ic fc-ic-spotify"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span>
-<span class="fc-txt"><span class="fc-lbl">Gym Playlist</span><span class="fc-url">open.spotify.com/playlist</span></span>
-</a>
-</div>
-</div>
-</div><div class="site-drawer-backdrop" id="siteDrawerBackdrop"></div><aside class="site-drawer" id="siteDrawer"><div class="sd-head"><a class="sd-brand" href="index.html">PROJECT 100</a><button aria-label="Close menu" class="sd-close" id="siteDrawerClose" type="button"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div><nav><a aria-current="page" class="page-tab current" href="index.html">PROJECT 100</a><a class="page-tab" href="fit-workout.html">Workout</a><a class="page-tab" href="liquid-intake.html">Liquid Intake</a><a class="page-tab" href="fit-nutrition.html">Nutrition</a><a class="page-tab" href="gear-shop.html">Gear</a></nav></aside>
-<div class="page-shell">
-<header class="site-head">
-<nav aria-label="Website navigation" id="nav"><div class="wrap"><button aria-controls="fcPanel" aria-expanded="false" aria-haspopup="dialog" aria-label="Open links &amp; contact" class="fc-trigger" id="fcTrigger" type="button">
-<svg aria-hidden="true" viewbox="0 0 24 24"><text fill="currentColor" font-family="Arial,Helvetica,sans-serif" font-size="16.5" font-weight="700" text-anchor="middle" x="12" y="17.2">@</text></svg>
-</button><div class="nav-wordmark"><a class="brand" href="index.html">PROJECT <b>100</b></a></div><button aria-label="Toggle light or dark mode" class="theme-switch" id="themeToggle" role="switch" type="button">
-<span class="ts-track">
-<span aria-hidden="true" class="ts-icon ts-sun"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
-<span aria-hidden="true" class="ts-icon ts-moon"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
-<span aria-hidden="true" class="ts-thumb"></span>
-</span>
-</button></div></nav>
-<nav aria-label="PROJECT_100 folders" class="page-tabs"><div class="wrap"><a aria-current="page" class="page-tab current" href="index.html">PROJECT 100</a><a class="page-tab" href="fit-workout.html">Workout</a><a class="page-tab" href="liquid-intake.html">Liquid Intake</a><a class="page-tab" href="fit-nutrition.html">Nutrition</a><a class="page-tab" href="gear-shop.html">Gear</a><a class="page-tab" href="biometrics.html">Biometrics</a></div></nav></header><div class="folder-page-layout"><aside class="folder-page-rail"><nav aria-label="Related home files" class="page-tabs focused-subtabs"><div class="wrap"><a class="page-tab" href="index.html">Home</a><a class="page-tab" href="project-story.html">The story</a><a aria-current="page" class="page-tab current" href="project-goals.html">Goals &amp; roadmap</a></div></nav></aside><div class="folder-page-content"><section class="main-file-intro compact-page-identity" id="top"><img alt="" aria-hidden="true" class="page-identity-image" height="900" src="assets/img/objective-100lbs-smm.jpg" width="1600"/><div class="wrap"><span class="v2-kicker">PROJECT_100 · HOME</span><h1>Goals &amp; roadmap</h1></div></section><section data-main-source="index.html:mission" id="mission">
-<div class="wrap reveal">
-<div class="sec-head fx-stagger">
-<span class="eyebrow fx-reveal">The Mission</span>
-<div class="asset-scene"><h2 class="fx-reveal">The last 11.8 lbs.</h2></div>
-<p class="fx-reveal">Goal: 100 lb bioimpedance-estimated skeletal muscle mass · below 15% body fat. Track measurements, waist, performance and symptoms together. Aspirational; no guaranteed result.</p>
-</div>
-<div class="stat-grid">
-<div class="stat-card fx-reveal">
-<div class="label">Skeletal Muscle Mass</div>
-<div class="nums"><span class="now stat-num" data-count-to="88.2" data-decimals="1">88.2</span><span class="arrow">→</span><span class="target">100</span><span style="color:var(--text-dim);font-size:.85rem;">lbs</span></div>
-<div class="bar fx-reveal"><i style="width:78%"></i></div>
-<div class="sub">+11.8 lb from the recorded baseline to the target</div>
-</div>
-<div class="stat-card fx-reveal">
-<div class="label">Body Fat</div>
-<div class="nums"><span class="now stat-num" data-count-to="22.9" data-decimals="1" data-suffix="%">22.9%</span><span class="arrow">→</span><span class="target">&lt;15%</span></div>
-<div class="bar fx-reveal"><i style="width:55%"></i></div>
-<div class="sub">Personal body-fat aspiration</div>
-</div>
-<div class="stat-card fx-reveal">
-<div class="label">FFMI (Fat-Free Mass Index)</div>
-<div class="nums"><span class="now stat-num" data-count-to="23.86" data-decimals="2">23.86</span><span class="arrow">→</span><span class="target">25.71</span></div>
-<div class="bar fx-reveal"><i style="width:82%"></i></div>
-<div class="sub">Historical planning trajectory; not a biological ceiling</div>
-</div>
-</div>
-<div class="anomaly"><div class="v2-note">BIA estimates skeletal muscle from water-sensitive algorithms. Creatine, glycogen and electrolytes can move the estimate without new contractile tissue. <a href="fit-protocol-baseline.html#ch1">Read the measurement rules</a>.</div><div class="v2-note" id="reported-smm-history"><strong>Reported measurement history</strong><p>June 28, 2025: 82.0 lb estimated SMM. December 14, 2025: 88.2 lb estimated SMM, used for the February 2026 baseline lock. The reported change is +6.2 lb in estimated SMM; original scan reports remain to be verified. These readings do not establish a gain of 6.2 lb of dry muscle tissue.</p><p>Planned review window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme and comparable measurement conditions. This is a planned review, not a completed scan or a deadline for reaching the goal.</p></div></div>
-<div class="field-note field-note--cyan fx-reveal fx-pulse-glow">
-<span class="fn-tag fx-shine">The Four Laws</span>
-<p>EAT. SLEEP. TRAIN. REPEAT. Four words, zero exceptions — the entire operating system. Break one law and the other three stop compounding.</p>
-</div>
-</div>
-</section><details class="focused-notes"><summary>Open the planning roadmap</summary><section data-main-source="index.html:roadmap" id="roadmap">
-<div class="wrap reveal">
-<div class="sec-head fx-stagger">
-<span class="eyebrow fx-reveal">The Roadmap</span>
-<h2 class="fx-reveal">The long-term excavation.</h2>
-<p class="fx-reveal">Plan: quarterly review · comparable measurements · symptom-guided progression. No fixed growth rate or completion deadline.</p>
-</div>
-<div class="field-note field-note--red fx-reveal fx-pulse-glow">
-<span class="fn-tag fx-shine">Non-Negotiable</span>
-<p>LOAD FOLLOWS TOLERANCE. A rigid +2.5 lb every three weeks is not a current V2.0 prescription. If pain changes form or neurological signs appear, stop and assess.</p>
-</div>
-<div class="roadmap fx-stagger">
-<div class="phase fx-reveal">
-<div class="num">I</div>
-<div class="months">Months 1–3</div>
-<h3>Rebuild the routine</h3>
-<p>Regular training, sleep and repeatable setups come first.</p>
-<div class="foot">Historical planning phase · Rebuild the routine</div>
-</div>
-<div class="phase fx-reveal">
-<div class="num">II</div>
-<div class="months">Months 4–8</div>
-<h3>Repeat the loading signal</h3>
-<p>Supported work and recovery guide progression; no automatic load escalation.</p>
-<div class="foot">Historical planning phase · Repeat the loading signal</div>
-</div>
-<div class="phase fx-reveal">
-<div class="num">III</div>
-<div class="months">Months 9–12</div>
-<h3>Review and adjust</h3>
-<p>Compare body composition, waist and function under consistent conditions.</p>
-<div class="foot">Historical planning phase · Review and adjust</div>
-</div>
-</div>
-</div>
-</section></details><div class="fx-edge"></div><div class="cta-band">
-<span class="eyebrow fx-reveal">Follow the Excavation</span>
-<h2 class="fx-reveal">88.2 lbs down.<br/>11.8 to go.</h2>
-<p class="fx-reveal">New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
-<div class="cta-btns">
-<a class="btn btn-primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
-<a class="btn btn-ghost" href="fit-protocol.html">Open Fit Protocol ↗</a>
-</div>
-</div><div class="fx-edge"></div><section class="wrap addon-section" id="biometric-milestone"><h2>Biometric record</h2><div class="addon-card"><p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p><p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p><a href="biometrics.html">Timeline and scan plan ↗</a></div></section></div></div>
-<a class="publication-bar" href="library.html">Guidebook · Files · Downloads ↗</a><footer class="v2-footer compact-footer"><div class="compact-footer-links"><a href="index.html">PROJECT 100</a><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Instagram ↗</a><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube ↗</a></div><p>Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p></footer>
-<script src="assets/js/carousel.js?v=20261005-focus"></script>
-<script src="assets/js/connect.js?v=20261005-liquid"></script>
-<script src="assets/js/fixonic.js?v=20261005-focus"></script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f4f1">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0b0e">
+<title>PROJECT 100 | Goals &amp; roadmap</title>
+<meta name="description" content="PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking.">
+<link rel="canonical" href="https://project100.fit/project-goals.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PROJECT 100">
+<meta property="og:title" content="PROJECT 100 | Goals &amp; roadmap">
+<meta property="og:description" content="PROJECT 100 goals and roadmap: the skeletal muscle mass target, recorded baseline and progress tracking.">
+<meta property="og:url" content="https://project100.fit/project-goals.html">
+<meta property="og:image" content="https://project100.fit/assets/img/objective-100lbs-smm.jpg">
+<meta property="og:image:alt" content="PROJECT 100 | Goals &amp; roadmap">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>
-window.ProjectCarousel && window.ProjectCarousel.init();
-window.Fixonic && window.Fixonic.initAutoScroll && window.Fixonic.initAutoScroll();
-window.ProjectConnect && window.ProjectConnect.init();
-window.ProjectFloatConnect && window.ProjectFloatConnect.init();
-
-// ===== Lightbox: click any static "zoomable" image to pop it out bigger.
-// Auto-closes if the page is scrolled/swiped, closes on backdrop click,
-// the X button, or Escape — like a normal photo viewer. =====
-(function(){
-  const overlay = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.innerHTML = `
-    <button type="button" class="lightbox-close" aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <img alt="" style="display:none;">`;
-  document.body.appendChild(overlay);
-  const lbImg = overlay.querySelector('img');
-  const closeBtn = overlay.querySelector('.lightbox-close');
-  let isOpen = false;
-
-  function closeLightbox(){
-    if(!isOpen) return;
-    isOpen = false;
-    overlay.classList.remove('open');
-    lbImg.style.display = 'none';
-    window.removeEventListener('scroll', closeLightbox, true);
-    window.removeEventListener('wheel', closeLightbox, true);
-    window.removeEventListener('touchmove', closeLightbox, true);
-  }
-  function openImage(src, alt){
-    lbImg.src = src;
-    lbImg.alt = alt || '';
-    lbImg.style.display = '';
-    overlay.classList.add('open');
-    isOpen = true;
-    window.addEventListener('scroll', closeLightbox, true);
-    window.addEventListener('wheel', closeLightbox, {passive:true, capture:true});
-    window.addEventListener('touchmove', closeLightbox, {passive:true, capture:true});
-  }
-  document.querySelectorAll('img.zoomable').forEach(img => {
-    img.addEventListener('click', () => openImage(img.currentSrc || img.src, img.alt));
-  });
-  closeBtn.addEventListener('click', closeLightbox);
-  overlay.addEventListener('click', (e) => { if(e.target === overlay) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
-})();
-
-// scrollspy: highlight the nav link for whichever section is currently in view
-(function(){
-  const navLinks = document.querySelectorAll('.cat-tabs a[href^="#"]');
-  const sections = [];
-  navLinks.forEach(a => {
-    const id = a.getAttribute('href').slice(1);
-    const sec = document.getElementById(id);
-    if(sec) sections.push({sec, id});
-  });
-  if(!sections.length) return;
-  const setActive = (id) => {
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-  };
-  setActive(sections[0].id);
-  const visible = new Set();
-  const pickActive = () => {
-    if(!visible.size) return;
-    let chosen = sections[0].id;
-    sections.forEach(({id}) => { if(visible.has(id)) chosen = id; });
-    setActive(chosen);
-  };
-  try{
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if(e.isIntersecting) visible.add(e.target.id); else visible.delete(e.target.id);
-      });
-      pickActive();
-    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
-    sections.forEach(({sec}) => io.observe(sec));
-  }catch(e){ /* nav still works without highlighting */ }
-})();
-
-// scroll reveal (pure enhancement — content is visible by default via CSS,
-// so if IntersectionObserver is unsupported or this throws, nothing is ever hidden)
-try{
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); e.target.classList.remove('pre'); io.unobserve(e.target); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => { el.classList.add('pre'); io.observe(el); });
-}catch(e){ /* .reveal is visible by default — nothing to do */ }
+/* theme first, so there is no flash: saved choice wins, else the OS decides */
+try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
+document.documentElement.classList.add('js');
 </script>
+<link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css?v=df1613a5">
+</head>
+<body data-site="main" data-page="project-goals" data-group="home">
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-head" id="siteHead">
+  <div class="site-head__bar">
+    <a class="brand" href="index.html" aria-label="PROJECT 100 – home"><span>PROJECT</span><span class="brand__accent">100</span></a>
+    <div class="site-head__actions">
+      <a class="site-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="site-switch__glyph" aria-hidden="true">↔</span>FIT PROTOCOL</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="menu-btn__label">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="PROJECT 100 sections">
+    <ul class="tabs__list">
+      <li><a class="tab" href="index.html" aria-current="page">PROJECT 100</a></li>
+      <li><a class="tab" href="fit-workout.html">Workout</a></li>
+      <li><a class="tab" href="liquid-intake.html">Liquid Intake</a></li>
+      <li><a class="tab" href="fit-nutrition.html">Nutrition</a></li>
+      <li><a class="tab" href="gear-shop.html">Gear</a></li>
+      <li><a class="tab" href="biometrics.html">Biometrics</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="layout">
+  <main class="main" id="content" tabindex="-1">
+    <ul class="subnav subnav--auto" aria-label="Related pages">
+      <li><a href="project-story.html">The story</a></li>
+      <li><a href="project-goals.html" aria-current="page">Goals &amp; roadmap</a></li>
+    </ul>
+<header class="page-hero" id="top">
+  <img class="page-hero__img" src="assets/web/img-objective-100lbs-smm-960.webp" alt="The objective: 100 lb of skeletal muscle mass" width="1200" height="654" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w, assets/web/img-objective-100lbs-smm-1200.webp 1200w" sizes="100vw" decoding="async" fetchpriority="high">
+  <div class="page-hero__text">
+    <span class="eyebrow">PROJECT_100 · HOME</span>
+    <h1>Goals &amp; roadmap</h1>
+  </div>
+</header>
+
+<section class="section" id="mission" aria-labelledby="mission-title">
+  <div class="section__head">
+    <span class="eyebrow">The Mission</span>
+    <h2 id="mission-title">The last 11.8 lbs.</h2>
+    <p class="lead">Goal: 100 lb bioimpedance-estimated skeletal muscle mass · below 15% body fat. Track measurements, waist, performance and symptoms together. Aspirational; no guaranteed result.</p>
+  </div>
+
+  <ul class="grid grid--3 home-goals">
+    <li class="card card--pad home-goal">
+      <span class="stat__label">Skeletal Muscle Mass</span>
+      <p class="home-goal__nums"><span class="home-goal__now">88.2</span><span class="home-goal__arrow">→</span><span class="home-goal__target">100</span><span class="home-goal__unit">lbs</span></p>
+      <progress class="home-goal__bar" value="78" max="100" aria-hidden="true"></progress>
+      <p class="card__meta">+11.8 lb from the recorded baseline to the target</p>
+    </li>
+    <li class="card card--pad home-goal">
+      <span class="stat__label">Body Fat</span>
+      <p class="home-goal__nums"><span class="home-goal__now">22.9%</span><span class="home-goal__arrow">→</span><span class="home-goal__target">&lt;15%</span></p>
+      <progress class="home-goal__bar" value="55" max="100" aria-hidden="true"></progress>
+      <p class="card__meta">Personal body-fat aspiration</p>
+    </li>
+    <li class="card card--pad home-goal">
+      <span class="stat__label">FFMI (Fat-Free Mass Index)</span>
+      <p class="home-goal__nums"><span class="home-goal__now">23.86</span><span class="home-goal__arrow">→</span><span class="home-goal__target">25.71</span></p>
+      <progress class="home-goal__bar" value="82" max="100" aria-hidden="true"></progress>
+      <p class="card__meta">Historical planning trajectory; not a biological ceiling</p>
+    </li>
+  </ul>
+
+  <div class="stack">
+    <aside class="callout callout--note">
+      <p>BIA estimates skeletal muscle from water-sensitive algorithms. Creatine, glycogen and electrolytes can move the estimate without new contractile tissue. <a href="fit-protocol-baseline.html#ch1">Read the measurement rules</a>.</p>
+    </aside>
+    <aside class="callout callout--warn" id="reported-smm-history">
+      <span class="callout__title">Reported measurement history</span>
+      <p>June 28, 2025: 82.0 lb estimated SMM. December 14, 2025: 88.2 lb estimated SMM, used for the February 2026 baseline lock. The reported change is +6.2 lb in estimated SMM; original scan reports remain to be verified. These readings do not establish a gain of 6.2 lb of dry muscle tissue.</p>
+      <p>Planned review window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme and comparable measurement conditions. This is a planned review, not a completed scan or a deadline for reaching the goal.</p>
+    </aside>
+    <aside class="callout callout--accent home-laws">
+      <span class="callout__title">The Four Laws</span>
+      <p>EAT. SLEEP. TRAIN. REPEAT. Four words, zero exceptions — the entire operating system. Break one law and the other three stop compounding.</p>
+    </aside>
+  </div>
+</section>
+
+<details class="acc home-roadmap-acc" open>
+  <summary>Open the planning roadmap</summary>
+  <div class="acc__body">
+    <section id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section__head">
+        <span class="eyebrow">The Roadmap</span>
+        <h2 id="roadmap-title">The long-term excavation.</h2>
+        <p class="lead">Plan: quarterly review · comparable measurements · symptom-guided progression. No fixed growth rate or completion deadline.</p>
+      </div>
+      <aside class="callout callout--danger home-rule">
+        <span class="callout__title">Non-Negotiable</span>
+        <p>LOAD FOLLOWS TOLERANCE. A rigid +2.5 lb every three weeks is not a current V2.0 prescription. If pain changes form or neurological signs appear, stop and assess.</p>
+      </aside>
+      <ol class="grid grid--3 home-phases">
+        <li class="card card--pad home-phase">
+          <span class="home-phase__num">I</span>
+          <span class="home-phase__months">Months 1–3</span>
+          <h3 class="card__title">Rebuild the routine</h3>
+          <p>Regular training, sleep and repeatable setups come first.</p>
+          <p class="card__meta home-phase__foot">Historical planning phase · Rebuild the routine</p>
+        </li>
+        <li class="card card--pad home-phase">
+          <span class="home-phase__num">II</span>
+          <span class="home-phase__months">Months 4–8</span>
+          <h3 class="card__title">Repeat the loading signal</h3>
+          <p>Supported work and recovery guide progression; no automatic load escalation.</p>
+          <p class="card__meta home-phase__foot">Historical planning phase · Repeat the loading signal</p>
+        </li>
+        <li class="card card--pad home-phase">
+          <span class="home-phase__num">III</span>
+          <span class="home-phase__months">Months 9–12</span>
+          <h3 class="card__title">Review and adjust</h3>
+          <p>Compare body composition, waist and function under consistent conditions.</p>
+          <p class="card__meta home-phase__foot">Historical planning phase · Review and adjust</p>
+        </li>
+      </ol>
+    </section>
+  </div>
+</details>
+
+<section class="cta home-cta" aria-labelledby="cta-title">
+  <span class="eyebrow">Follow the Excavation</span>
+  <h2 id="cta-title">88.2 lbs down.<br>11.8 to go.</h2>
+  <p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
+    <a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
+  </div>
+</section>
+
+<section class="section" id="biometric-milestone" aria-labelledby="biometric-title">
+  <div class="section__head">
+    <h2 id="biometric-title">Biometric record</h2>
+  </div>
+  <div class="card card--pad card--accent home-record">
+    <p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p>
+    <p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p>
+    <a class="btn btn--ghost btn--sm" href="biometrics.html">Timeline and scan plan ↗</a>
+  </div>
+</section>
+
+    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="project-story.html"><span class="pager__dir">← Previous</span><span class="pager__label">The story</span></a><a class="pager__next" rel="next" href="biometrics.html"><span class="pager__dir">Next →</span><span class="pager__label">Biometrics</span></a>
+    </nav>
+  </main>
 </div>
-<script defer="" src="assets/js/v2.js?v=20261005-liquid"></script><a aria-label="Switch to FIT PROTOCOL" class="guidebook-access site-switch-float" href="fit-protocol.html"><span aria-hidden="true" class="guidebook-mark">↔</span><span>FIT PROTOCOL</span></a><a aria-label="Previous page" class="page-nav-arrow prev" href="biometrics.html">‹</a><a aria-label="Next page" class="page-nav-arrow next" href="fit-workout.html">›</a><script src="assets/js/image-lightbox.js"></script>
+
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <div>
+      <h2>PROJECT 100</h2>
+      <p class="site-foot__lede">The lived record: training, food, gear and measured results.</p>
+      <a class="site-foot__switch" href="fit-protocol.html"><span aria-hidden="true">↔</span> Switch to FIT PROTOCOL</a>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <ul><li><a href="index.html">PROJECT 100</a></li><li><a href="fit-workout.html">Workout</a></li><li><a href="liquid-intake.html">Liquid Intake</a></li><li><a href="fit-nutrition.html">Nutrition</a></li><li><a href="gear-shop.html">Gear</a></li><li><a href="biometrics.html">Biometrics</a></li>
+        <li><a href="library.html">Guidebook · Files · Downloads</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Elsewhere</h2>
+      <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">Gym playlist</a></li>
+      </ul>
+    </div>
+    <p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
+  </div>
+</footer>
+
+<dialog class="menu" id="menu" aria-labelledby="menuTitle">
+  <div class="menu__head">
+    <h2 class="menu__title" id="menuTitle">Menu</h2>
+    <button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="menu__body">
+    <div class="menu__sites">
+      <a class="menu__site" href="index.html" aria-current="true"><small>You are here</small><strong>PROJECT 100</strong></a>
+      <a class="menu__site" href="fit-protocol.html"><small>Switch to</small><strong>FIT PROTOCOL</strong></a>
+    </div>
+    <section class="menu__section">
+      <h3>PROJECT 100 pages</h3>
+      <div class="menu__group">
+        <p class="menu__group-title">PROJECT 100</p>
+        <ul class="menu__list"><li><a href="project-story.html">The story</a></li><li><a href="project-goals.html" aria-current="page">Goals &amp; roadmap</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Workout</p>
+        <ul class="menu__list"><li><a href="fit-workout.html">Training log</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Liquid Intake</p>
+        <ul class="menu__list"><li><a href="liquid-intake.html">Liquid Intake</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Nutrition</p>
+        <ul class="menu__list"><li><a href="fit-nutrition.html">Nutrition overview</a></li><li><a href="fit-meals.html">Meals &amp; recipes</a></li><li><a href="fit-nutrition-notes.html">Nutrition notes</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Gear</p>
+        <ul class="menu__list"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li>
+        </ul>
+      </div>
+      <div class="menu__group">
+        <p class="menu__group-title">Biometrics</p>
+        <ul class="menu__list"><li><a href="biometrics.html">Biometrics</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="menu__section">
+      <h3>Downloads</h3>
+      <div class="menu__links"><a class="menu__link" href="library.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg><span>Guidebook · Files · Downloads</span></a></div>
+    </section>
+    <section class="menu__section">
+      <h3>Links &amp; contact</h3>
+      <div class="menu__links">
+        <a class="menu__link" href="mailto:project100@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg><span>Email<small>project100@gmail.com</small></span></a>
+        <a class="menu__link" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg><span>Instagram<small>instagram.com/fudge_fit</small></span></a>
+        <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg><span>YouTube<small>youtube.com/@FUDGE_fit</small></span></a>
+        <a class="menu__link" href="https://www.facebook.com/fudge.fit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg><span>Facebook<small>facebook.com/fudge.fit</small></span></a>
+        <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg><span>TikTok<small>tiktok.com/@bogdan_dospi</small></span></a>
+        <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg><span>Twitch<small>twitch.tv/cyberk1llaTTV</small></span></a>
+        <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg><span>Gym playlist<small>Spotify playlist</small></span></a>
+      </div>
+    </section>
+  </div>
+</dialog>
+
+<script src="assets/js/site.js?v=333632b6" defer></script>
 </body>
 </html>

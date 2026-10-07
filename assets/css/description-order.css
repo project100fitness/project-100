@@ -1,6 +1,0 @@
-.filing-layout .page-description{padding:0 16px!important;margin:0 0 22px!important;box-sizing:border-box}
-.filing-layout .page-description .focus-point{max-width:none;margin:0;padding:18px 20px;border:1px solid rgba(232,182,76,.4);border-radius:14px;background:linear-gradient(135deg,#1c0f12,#101114);box-shadow:0 0 22px rgba(232,182,76,.16)}
-.filing-layout .page-description .fp-tag{display:inline-block;margin-bottom:10px;color:var(--gold,#e8b64c);font:700 12px/1.4 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.filing-layout .page-description .focus-point p{margin:0;text-transform:none;font:500 15px/1.6 Inter,sans-serif;color:#f2f3f5}
-.filing-layout .armory-list>.gear-text-only .ai-text{grid-column:1/-1;min-width:0}
-@media(max-width:640px){.filing-layout .page-description{padding:0 10px!important;margin-bottom:16px!important}.filing-layout .page-description .focus-point{padding:14px}.filing-layout .page-description .focus-point p{font-size:14px}}
