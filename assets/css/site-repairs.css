@@ -150,7 +150,7 @@ body.focused-protocol a.brand::after{ content:"PROTOCOL"; font-size:1.9rem !impo
   z-index:2 !important;
   margin-bottom:-1px !important;
   padding-bottom:calc(8px + 1px) !important;
-  box-shadow:0 -2px 18px rgba(230,39,63,.45), 0 2px 12px rgba(230,39,63,.3) !important;
+  box-shadow:0 -2px 28px rgba(230,39,63,.75), 0 2px 20px rgba(230,39,63,.55), 0 0 40px rgba(230,39,63,.25) !important;
 }
 /* ensure tab bar has bottom border for cabinet effect */
 .page-tabs{
