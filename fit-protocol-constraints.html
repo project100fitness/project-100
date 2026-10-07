@@ -1,7 +1,79 @@
 <!DOCTYPE html>
 
 <html lang="en"><head><link href="assets/css/local-fonts.css?v=20261005-liquid" rel="stylesheet"/><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>PROJECT 100 — FIT PROTOCOL | Constraints</title><meta content="FIT PROTOCOL constraints: the recorded limitations and source notes that guide the personal training system." name="description"/><link href="https://project100.fit/fit-protocol-constraints.html" rel="canonical"/><meta content="website" property="og:type"/><meta content="PROJECT 100 — FIT PROTOCOL | Constraints" property="og:title"/><meta content="FIT PROTOCOL constraints: the recorded limitations and source notes that guide the personal training system." property="og:description"/><meta content="https://project100.fit/fit-protocol-constraints.html" property="og:url"/><meta content="https://project100.fit/assets/img/v2/checklist-cover.png" property="og:image"/><meta content="495" property="og:image:width"/><meta content="700" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><link href="assets/css/fixonic.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/site-repairs.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/v2.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/shell.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/filing-navigation.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/filing-navigation.js?v=20261005-liquid"></script><link href="assets/css/media-backgrounds.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/media-backgrounds.js?v=20261005-liquid"></script><link href="assets/css/vector-studio.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/reading-layout.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/editorial-sections.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/focused-protocol.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/float-connect.css?v=20261005-liquid" rel="stylesheet"/><link href="assets/css/polished-shell.css?v=20261005-liquid" rel="stylesheet"/><script defer="" src="assets/js/float-connect.js?v=20261005-liquid"></script><link href="assets/css/visible-folders.css?v=20261005-folders" rel="stylesheet"/><script defer="" src="assets/js/visible-folders.js?v=20261005-folders"></script><meta content="FIT PROTOCOL constraints: the recorded limitations and source notes that guide the personal training system." name="twitter:description"/><meta content="PROJECT 100 — FIT PROTOCOL | Constraints" property="og:image:alt"/><meta content="https://project100.fit/assets/img/v2/checklist-cover.png" name="twitter:image"/><meta content="PROJECT 100 — FIT PROTOCOL | Constraints" name="twitter:image:alt"/><link href="assets/css/mobile-focus.css?v=20261005-focus" rel="stylesheet"/>
-<link href="assets/css/compact-pages.css?v=20261006" rel="stylesheet"/><link href="assets/css/biometrics-addon.css" rel="stylesheet"/></head><body class="v2-page filing-layout focused-protocol"><div class="fc-root">
+<link href="assets/css/compact-pages.css?v=20261006" rel="stylesheet"/><link href="assets/css/biometrics-addon.css" rel="stylesheet"/><style>
+/* Bogdan site styles - in-page (2026-10-07) */
+/* 2026-10-06 Bogdan: no more round pill buttons */
+.page-tab{ border-radius:10px !important; }
+.page-tabs .wrap .page-tab{ border-radius:6px !important; }
+.folder-page-rail .page-tabs:not(.focused-subtabs) .wrap{ flex-direction:column !important; align-items:stretch !important; overflow-x:visible !important; gap:2px !important; padding:0 !important; }
+.folder-page-rail .page-tab{ border-radius:0 !important; border:none !important; border-left:3px solid rgba(255,255,255,.08) !important; background:transparent !important; text-align:left !important; display:block !important; margin:0 !important; }
+.folder-page-rail .page-tab.current{ border-left-color:#e6273f !important; background:rgba(230,39,63,.07) !important; color:#fff !important; }
+/* rail as LEFT sidebar on mobile */
+@media (max-width:640px){
+  .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
+  .folder-page-rail{ flex:0 0 132px !important; max-width:132px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
+  .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
+  .folder-page-rail .page-tab{ font-size:.78rem !important; padding:9px 10px !important; white-space:normal !important; line-height:1.35 !important; }
+}
+/* bigger logo branding */
+a.brand, .brand{ font-size:4rem !important; font-weight:800 !important; letter-spacing:.02em !important; font-family:'Oswald',sans-serif !important; line-height:1 !important; white-space:nowrap !important; text-shadow:1px 1px 0 #0a0a0a, 2px 2px 0 #0a0a0a, 3px 3px 0 #111, 4px 4px 0 #111, 5px 5px 0 #1a1a1a, 6px 6px 0 #1a1a1a, 7px 7px 12px rgba(0,0,0,.7) !important; }
+a.brand b{ color:#e6273f !important; }
+
+
+
+
+@media (max-width:640px){
+  a.brand, .brand{ font-size:1.5rem !important; }
+  
+/* carousel arrows taller on mobile */
+@media (max-width:640px){
+  button[class*="car-prev"], button[class*="car-next"], .carousel-btn, .car-arrow{ height:84px !important; border-radius:10px !important; }
+}
+
+/* 2026-10-06 Bogdan: file cabinet style for active top tabs */
+.page-tabs:not(.focused-subtabs) .page-tab.current{
+  border-radius:8px 8px 0 0 !important;
+  border-bottom:none !important;
+  background:#e6273f !important;
+  border-color:#e6273f !important;
+  color:#fff !important;
+  position:relative !important;
+  z-index:2 !important;
+  margin-bottom:-1px !important;
+  padding-bottom:calc(8px + 1px) !important;
+  box-shadow:0 -2px 28px rgba(230,39,63,.75), 0 2px 20px rgba(230,39,63,.55), 0 0 40px rgba(230,39,63,.25) !important;
+}
+/* ensure tab bar has bottom border for cabinet effect */
+.page-tabs:not(.focused-subtabs){
+  border-bottom:1px solid #e6273f !important;
+}
+.page-tabs .wrap{
+  margin-bottom:-1px !important;
+}
+
+/* 2026-10-07 Bogdan: MENU removed from HTML, fc-trigger in header */
+.site-menu-tab, #siteMenuTab{ display:none !important; }
+#nav .wrap .fc-trigger{
+  position:static !important;
+  width:44px !important; height:44px !important;
+  flex:0 0 auto !important;
+  margin:0 !important;
+  top:auto !important; left:auto !important;
+  bottom:auto !important; right:auto !important;
+}
+
+/* 2026-10-07 Bogdan: rail labels wrap, not clipped */
+.folder-page-rail .page-tab{
+  white-space:normal !important;
+  word-break:break-word !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  line-height:1.25 !important;
+}
+
+</style>
+</head><body class="v2-page filing-layout focused-protocol"><div class="fc-root">
 <div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
 <div aria-label="Links and contact" aria-modal="true" class="fc-panel" hidden="" id="fcPanel" role="dialog">
 <div class="fc-head">
