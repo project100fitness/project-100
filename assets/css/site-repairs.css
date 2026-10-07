@@ -123,9 +123,11 @@ body.home-page .hero { background: #111318; }
 /* 2026-10-06 Bogdan: rail as LEFT sidebar on mobile, content on right */
 @media (max-width:640px){
   .folder-page-layout{ display:flex !important; flex-direction:row !important; align-items:flex-start !important; }
-  .folder-page-rail{ flex:0 0 148px !important; max-width:148px !important; min-width:0 !important; position:sticky !important; top:8px !important; }
+  .folder-page-rail{ flex:0 0 148px !important; max-width:148px !important; min-width:0 !important; position:static !important; align-self:flex-start !important; }
   .folder-page-content{ flex:1 1 auto !important; min-width:0 !important; }
   .folder-page-rail .page-tab{ font-size:.68rem !important; padding:8px 10px !important; white-space:normal !important; }
 }
 /* top tabs: less round */
 .page-tabs .page-tab{ border-radius:6px !important; }
+
+.page-tabs .wrap .page-tab{ border-radius:6px !important; }
