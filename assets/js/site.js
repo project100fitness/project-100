@@ -260,17 +260,29 @@
 
   var conn = navigator.connection || {};
   P.$$('video[data-src]').forEach(function (v) {
-    if (P.reduceMotion.matches || conn.saveData) return;       /* poster only */
+    /* the home hero is an always-on ambient loop (owner's choice): it plays even with "reduce motion" on,
+       and a pause button (below) lets anyone stop it. Other videos stay poster-only for reduce-motion / data-saver. */
+    var always = v.hasAttribute('data-always');
+    if (!always && (P.reduceMotion.matches || conn.saveData)) return;       /* poster only */
     if (!('IntersectionObserver' in window)) return;
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
           if (!v.src) { v.src = v.dataset.src; v.load(); }
-          var p = v.play(); if (p && p.catch) p.catch(function () {});
+          if (!v.dataset.userPaused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
         } else { v.pause(); }
       });
     }, { threshold: .15 });
     io.observe(v);
+  });
+
+  /* pause / play control for the hero loop */
+  P.$$('.video-toggle').forEach(function (b) {
+    var v = b.parentElement && b.parentElement.querySelector('video');
+    if (!v) return;
+    var sync = function () { var on = !v.paused; b.setAttribute('aria-pressed', on ? 'false' : 'true'); b.setAttribute('aria-label', on ? 'Pause background video' : 'Play background video'); b.textContent = on ? '❚❚' : '▶'; };
+    b.addEventListener('click', function () { if (v.paused) { delete v.dataset.userPaused; var p = v.play(); if (p && p.catch) p.catch(function () {}); } else { v.dataset.userPaused = '1'; v.pause(); } sync(); });
+    v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
   });
 })();
 
