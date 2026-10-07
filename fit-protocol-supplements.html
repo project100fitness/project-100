@@ -74,15 +74,16 @@ a.brand b{ color:#e6273f !important; }
 
 </style>
 
+
 <style>
-/* 2026-10-07 Bogdan: visual info cards with images */
+/* 2026-10-07 Bogdan: visual info cards with blend effects */
 .checklist-folder{
   border:1px solid var(--border, #2a2e38);
   border-radius:16px;
   margin:16px 0;
   background:var(--surface, #14161c);
   overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,0,0,.3);
+  box-shadow:0 4px 20px rgba(0,0,0,.35), 0 0 0 1px rgba(230,39,63,.08);
 }
 .checklist-folder summary{
   padding:0;
@@ -90,33 +91,60 @@ a.brand b{ color:#e6273f !important; }
   list-style:none;
   display:flex;
   align-items:stretch;
-  min-height:80px;
+  min-height:96px;
+  position:relative;
 }
 .checklist-folder summary::-webkit-details-marker{ display:none; }
 .checklist-folder .card-thumb{
-  width:80px; min-width:80px;
+  width:120px; min-width:120px;
+  position:relative;
   background-size:cover; background-position:center;
-  border-radius:16px 0 0 16px;
+  /* Fade from left - image blends into card */
+  -webkit-mask-image:linear-gradient(to right, black 40%, transparent 100%);
+  mask-image:linear-gradient(to right, black 40%, transparent 100%);
+}
+/* Color tone overlay - red/dark cinematic */
+.checklist-folder .card-thumb::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(230,39,63,.25) 0%, rgba(20,22,28,.6) 100%);
+  mix-blend-mode:multiply;
+}
+/* Vignette shadow */
+.checklist-folder .card-thumb::before{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.5) 100%);
+  z-index:1;
 }
 .checklist-folder .card-head{
-  flex:1; padding:16px;
+  flex:1; padding:18px 16px 18px 8px;
   display:flex; flex-direction:column; justify-content:center;
+  margin-left:-20px; /* overlap the fade */
+  position:relative; z-index:2;
 }
 .checklist-folder .card-title{
-  font-weight:800; font-size:1.1rem; margin:0;
+  font-weight:800; font-size:1.15rem; margin:0;
   display:flex; align-items:center; gap:10px;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
 .checklist-folder .card-title::before{
   content:"▶"; font-size:.75rem; color:var(--red, #e6273f);
   transition:transform .2s;
+  filter:drop-shadow(0 2px 4px rgba(230,39,63,.4));
 }
 .checklist-folder[open] .card-title::before{ transform:rotate(90deg); }
 .checklist-folder .card-sub{
   font-size:.85rem; color:var(--muted, #9aa0ae); margin-top:4px;
 }
-.checklist-folder summary:hover{ background:rgba(255,255,255,.03); }
-.checklist-folder .card-body{ padding:0 16px 20px 16px; }
-.checklist-folder .card-body h3{ display:none; } /* hide duplicate, summary has title */
+.checklist-folder summary:hover .card-thumb{
+  filter:brightness(1.15) saturate(1.1);
+}
+.checklist-folder summary:hover{
+  background:linear-gradient(to right, rgba(230,39,63,.05) 0%, transparent 50%);
+}
+.checklist-folder .card-body{ padding:0 18px 22px 18px; }
+.checklist-folder .card-body h3{ display:none; }
 </style>
 </head><body class="v2-page filing-layout focused-protocol"><div class="fc-root">
 <div class="fc-backdrop" hidden="" id="fcBackdrop"></div>
