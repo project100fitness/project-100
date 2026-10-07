@@ -14,3 +14,30 @@
  .nutrition-overview h2{font-size:22px!important;margin:0 0 14px!important}
  .nutrition-info-card{padding:12px!important}
 }
+
+/* 2026-10-06 Bogdan CRITICAL: force page nav arrows visible - override v2.css display:none */
+.page-nav-arrow{
+  display:flex !important;
+  position:fixed !important;
+  top:50% !important; bottom:auto !important;
+  margin-top:-70px !important;
+  transform:none !important;
+  width:52px !important; height:140px !important;
+  border-radius:14px !important;
+  background:rgba(198,40,60,.94) !important;
+  border:1px solid #e6273f !important;
+  color:#fff !important;
+  z-index:9999 !important;
+  align-items:center !important; justify-content:center !important;
+  opacity:1 !important; visibility:visible !important;
+  pointer-events:auto !important;
+  box-shadow:0 4px 22px rgba(0,0,0,.55) !important;
+}
+.page-nav-arrow.prev{ left:8px !important; right:auto !important; }
+.page-nav-arrow.next{ right:8px !important; left:auto !important; }
+.page-nav-arrow svg{ width:30px !important; height:30px !important; }
+@media (max-width:640px){
+  .page-nav-arrow{ width:44px !important; height:110px !important; margin-top:-55px !important; }
+  .page-nav-arrow.prev{ left:6px !important; }
+  .page-nav-arrow.next{ right:6px !important; }
+}
