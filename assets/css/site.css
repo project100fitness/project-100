@@ -75,7 +75,7 @@
 
   /* layout */
   --gutter: clamp(1rem, 4vw, 2rem);
-  --content-w: 70rem;          /* 1120px */
+  --content-w: 80rem;          /* 1280px: same column as the header, layout and footer */
   --prose-w: 44rem;
   --rail-w: 15rem;
   --head-h: 3.5rem;            /* header row 1 */
@@ -1359,12 +1359,15 @@ input[type="search"], input[type="text"], select {
   --on-dark-accent: #ffb400;
 }
 
-/* ---- home hero (full-bleed, flush page) ------------------------------- */
+/* ---- home hero (a framed cover banner in the same column as the menu, like a page cover photo) ---- */
 .home-hero {
   position: relative;
   display: grid;
   align-items: end;
-  min-height: clamp(26rem, 62vw, 36rem);
+  width: min(100% - 2 * var(--gutter), var(--content-w));
+  margin: var(--s-4) auto 0;
+  border-radius: var(--r-3, 14px);
+  min-height: clamp(26rem, 40vw, 33rem);
   padding: var(--s-9) 0 calc(var(--s-8) + var(--s-6));
   background: var(--inverse);
   color: var(--on-dark);
@@ -1375,6 +1378,7 @@ input[type="search"], input[type="text"], select {
 .video-toggle { position: absolute; z-index: 2; right: var(--s-4); top: var(--s-4); width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / .35); border-radius: var(--r-2); background: rgb(8 9 12 / .55); color: #fff; font-size: .8rem; cursor: pointer; }
 .video-toggle:hover { background: rgb(8 9 12 / .8); }
 .home-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(8 9 12 / .92) 0%, rgb(8 9 12 / .55) 50%, rgb(8 9 12 / .25) 100%); }
+.home-hero__inner { width: 100%; padding-inline: clamp(var(--s-4), 4vw, var(--s-7)); }
 .home-hero__inner > * { max-width: 44rem; }
 .home-hero .eyebrow { color: var(--on-dark-accent); }
 .home-hero h1 { margin: 0 0 var(--s-4); color: #fff; font-size: var(--step-5); line-height: 1; letter-spacing: -.045em; }
