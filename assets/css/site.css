@@ -689,40 +689,12 @@ input[type="search"], input[type="text"], select {
 
 /* ===== 25-float.css ===== */
 /* ==========================================================================
-   Floating controls: loop arrows at both screen edges, the "@" links button,
+   Floating controls: the "@" links button,
    back button and site switch. All are fixed to the viewport on every page of
    both sites; markup lives at the end of src/templates/page.html.
    ========================================================================== */
 
-/* ---- previous / next page: side arrows, vertically centred, looping --------- */
-.edge {
-  position: fixed;
-  top: 50%;
-  z-index: 40;
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 4.25rem;
-  margin-top: -2.125rem;
-  color: var(--text);
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--line-strong);
-  text-decoration: none;
-  box-shadow: var(--shadow-2);
-  transition: width .18s var(--ease), background .15s, color .15s, border-color .15s;
-}
-.edge svg { width: 1.2rem; height: 1.2rem; }
-.edge--prev { left: 0; border-left: 0; border-radius: 0 var(--r-3) var(--r-3) 0; padding-right: 0; }
-.edge--next { right: 0; border-right: 0; border-radius: var(--r-3) 0 0 var(--r-3); }
-.edge:hover, .edge:focus-visible { width: 2.6rem; background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); text-decoration: none; }
-@media (max-width: 719px) {
-  .edge { width: 1.35rem; height: 3.6rem; margin-top: -1.8rem; background: color-mix(in srgb, var(--surface) 70%, transparent); }
-  .edge svg { width: 1rem; height: 1rem; }
-  .edge:hover { width: 1.35rem; }
-}
-@media print { .edge, .fab-dock, .fab-switch { display: none !important; } }
+@media print { .fab-dock, .fab-switch { display: none !important; } }
 
 /* ---- "@" links, back button, site switch ----------------------------------- */
 .fab-dock {
