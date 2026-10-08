@@ -14,6 +14,7 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var groups = document.querySelectorAll('[data-hud-cards]');
   if (!groups.length) return;
+  var registry = [];   // every folder's card group, so opening one closes the others
 
   groups.forEach(function (list) {
     var cards = [].slice.call(list.querySelectorAll('[data-hud-card]'));
@@ -21,8 +22,10 @@
     if (!wrap) return;
     var details = [].slice.call(wrap.querySelectorAll('[data-hud-detail]'));
     var byId = {}; details.forEach(function (d) { byId[d.id] = d; });
-    var stage = document.createElement('div'); stage.className = 'hud-stage'; stage.setAttribute('aria-live', 'polite');
+    var stage = document.createElement('div'); stage.className = 'hud-stage' + (details.length < 2 ? ' hud-stage--single' : ''); stage.setAttribute('aria-live', 'polite');
     var current = null;
+    var me = { isOpen: function () { return !!current; }, close: function (o) { close(o); } };
+    registry.push(me);
 
     function cols() { return getComputedStyle(list).gridTemplateColumns.split(' ').length || 1; }
     function lastInRow(card) {
@@ -31,7 +34,11 @@
       return items[end];
     }
     function cardForHash(h) {
-      return cards.filter(function (c) { return c.getAttribute('href') === '#' + h || c.getAttribute('aria-controls') === h; })[0];
+      var hit = cards.filter(function (c) { return c.getAttribute('href') === '#' + h || c.getAttribute('aria-controls') === h; })[0];
+      if (hit) return hit;
+      // a link to something INSIDE a card opens that card first
+      var el = h && document.getElementById(h), det = el && el.closest && el.closest('[data-hud-detail]');
+      return det ? cards.filter(function (c) { return c.getAttribute('aria-controls') === det.id; })[0] : undefined;
     }
     function park(d) { if (d && d.parentNode !== wrap) wrap.appendChild(d); }
     function setState(card, on) { if (card) card.setAttribute('aria-expanded', on ? 'true' : 'false'); }
@@ -58,6 +65,7 @@
       var id = card.getAttribute('aria-controls'), d = byId[id];
       if (!d) return;
       if (current === d) { close({ focus: true }); return; }
+      registry.forEach(function (g) { if (g !== me && g.isOpen()) g.close({ instant: true, keepHash: true }); });
       if (current) close({ instant: true, keepHash: true });
       current = d;
       cards.forEach(function (c) { setState(c, c === card); });

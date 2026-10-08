@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "author": {"@type": "Person", "name": "Bogdan Dospi", "sameAs": ["https://www.instagram.com/fudge_fit/"]}, "name": "Project 100 Encyclopedia V3.2", "url": "https://project100.fit/library.html"}</script>
 </head>
 <body data-site="protocol" data-page="library" data-group="downloads">
@@ -62,56 +63,49 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout">
-  <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-objective-100lbs-smm-960.webp" alt="" width="960" height="523" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT 100 · Published files · V3.2 / V3.3</span>
-    <h1>Two files.<br>The complete set.</h1>
-    <p class="lead">The full Encyclopedia and the daily Guidebook. Direct downloads, no account required.</p>
-  </div>
-</header>
-
-<div class="stack-lg">
-  <p class="muted" id="download-help">If a PDF opens in a viewer, use its download icon to save.</p>
-
-  <ul class="home-downloads">
-    <li>
-      <article class="home-dl">
-        <button type="button" class="zoom" data-full="assets/img/v2/encyclopedia-v32-cover.jpg" aria-label="Enlarge: Encyclopedia V3.2 cover — Midnight Manuscript"><img class="home-dl__cover" src="assets/web/img-v2-encyclopedia-v32-cover-600.webp" alt="Encyclopedia V3.2 cover — Midnight Manuscript" width="600" height="850" loading="lazy" srcset="assets/web/img-v2-encyclopedia-v32-cover-480.webp 480w, assets/web/img-v2-encyclopedia-v32-cover-600.webp 600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button>
-        <div class="home-dl__body">
-          <span class="tag tag--accent">V3.2 · 2026-10-06 · LIVE</span>
-          <h2 class="card__title">Encyclopedia V3.2</h2>
-          <p>The big documented manuscript: the complete personal record — nutrition, training, vectors, pills, labs.</p>
-          <p class="card__meta">PDF · 75 pages · 13.3 MB</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" download="project-100-encyclopedia-v3-2-2026-10-06.pdf" href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf">Download PDF</a>
-          </div>
-        </div>
-      </article>
-    </li>
-    <li>
-      <article class="home-dl">
-        <button type="button" class="zoom" data-full="assets/img/v2/guidebook-v33-cover.jpg" aria-label="Enlarge: Guidebook V3.3 cover — Tactical Manual"><img class="home-dl__cover" src="assets/web/img-v2-guidebook-v33-cover-600.webp" alt="Guidebook V3.3 cover — Tactical Manual" width="600" height="850" loading="lazy" srcset="assets/web/img-v2-guidebook-v33-cover-480.webp 480w, assets/web/img-v2-guidebook-v33-cover-600.webp 600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button>
-        <div class="home-dl__body">
-          <span class="tag tag--accent">V3.3 · 2026-10-06 · LIVE</span>
-          <h2 class="card__title">Guidebook V3.3</h2>
-          <p>The daily manual — what to take, when to take it, and how the day runs. Run it daily.</p>
-          <p class="card__meta">PDF · 31 pages · 5.4 MB</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" download="project-100-guidebook-v3-3-2026-10-06.pdf" href="assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf">Download PDF</a>
-            <a class="btn" href="guidebook.html">Run It Daily</a>
-          </div>
-        </div>
-      </article>
-    </li>
-  </ul>
+<div class="layout layout--rail">
+<aside class="rail" aria-label="On this page"><h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>On this page</span></h2><ul class="rail__list"><li><a href="#details"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Details</span></a></li></ul></aside>
+<main class="main" id="content" tabindex="-1">
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-objective-100lbs-smm-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT 100 · Published files · V3.2 / V3.3</span><h1 class="hud-title" id="hudT">Two files. The complete <em>set.</em></h1><p class="hud-lede">The full Encyclopedia and the daily Guidebook. Direct downloads, no account required.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#details"><small>Folder 01</small><strong>Details</strong></a></div></div></section>
+<section class="hud-folder" id="details" aria-labelledby="details-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="details-t">Details</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="muted" id="download-help">If a PDF opens in a viewer, use its download icon to save.</p>
+<ul class="home-downloads">
+<li>
+<article class="home-dl">
+<button aria-label="Enlarge: Encyclopedia V3.2 cover — Midnight Manuscript" class="zoom" data-full="assets/img/v2/encyclopedia-v32-cover.jpg" type="button"><img alt="Encyclopedia V3.2 cover — Midnight Manuscript" class="home-dl__cover" decoding="async" height="850" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-v2-encyclopedia-v32-cover-600.webp" srcset="assets/web/img-v2-encyclopedia-v32-cover-480.webp 480w, assets/web/img-v2-encyclopedia-v32-cover-600.webp 600w" width="600"/><span aria-hidden="true" class="zoom__hint">Enlarge</span></button>
+<div class="home-dl__body">
+<span class="tag tag--accent">V3.2 · 2026-10-06 · LIVE</span>
+<h2 class="card__title">Encyclopedia V3.2</h2>
+<p>The big documented manuscript: the complete personal record — nutrition, training, vectors, pills, labs.</p>
+<p class="card__meta">PDF · 75 pages · 13.3 MB</p>
+<div class="btn-row">
+<a class="btn btn--primary" download="project-100-encyclopedia-v3-2-2026-10-06.pdf" href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf">Download PDF</a>
 </div>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-troubleshooting.html"><span class="pager__dir">← Previous</span><span class="pager__label">Troubleshooting</span></a><a class="pager__next" rel="next" href="fit-protocol.html"><span class="pager__dir">Next →</span><span class="pager__label">Overview</span></a>
-    </nav>
-  </main>
+</div>
+</article>
+</li>
+<li>
+<article class="home-dl">
+<button aria-label="Enlarge: Guidebook V3.3 cover — Tactical Manual" class="zoom" data-full="assets/img/v2/guidebook-v33-cover.jpg" type="button"><img alt="Guidebook V3.3 cover — Tactical Manual" class="home-dl__cover" decoding="async" height="850" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-v2-guidebook-v33-cover-600.webp" srcset="assets/web/img-v2-guidebook-v33-cover-480.webp 480w, assets/web/img-v2-guidebook-v33-cover-600.webp 600w" width="600"/><span aria-hidden="true" class="zoom__hint">Enlarge</span></button>
+<div class="home-dl__body">
+<span class="tag tag--accent">V3.3 · 2026-10-06 · LIVE</span>
+<h2 class="card__title">Guidebook V3.3</h2>
+<p>The daily manual — what to take, when to take it, and how the day runs. Run it daily.</p>
+<p class="card__meta">PDF · 31 pages · 5.4 MB</p>
+<div class="btn-row">
+<a class="btn btn--primary" download="project-100-guidebook-v3-3-2026-10-06.pdf" href="assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf">Download PDF</a>
+<a class="btn" href="guidebook.html">Run It Daily</a>
+</div>
+</div>
+</article>
+</li>
+</ul></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-troubleshooting.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Troubleshooting</span></a><a class="pager__next" href="fit-protocol.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Overview</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -249,5 +243,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

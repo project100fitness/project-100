@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="gear-rig" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,75 +58,52 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
-    <ul class="rail__list">
-      <li><a href="gear-shop.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
-      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
-      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
-      <li><a href="gear-rig.html" aria-current="page"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
-      <li><a href="gear-resistance.html"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
-      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
-      <li><a href="gear-anchors.html"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
-      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
-      <li><a href="gear-safety.html"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-gym-bench-august-960.webp" alt="" width="1600" height="1600" srcset="assets/web/media-october-2026-gym-bench-august-480.webp 480w, assets/web/media-october-2026-gym-bench-august-960.webp 960w, assets/web/media-october-2026-gym-bench-august-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · GEAR</span>
-    <h1>The rig</h1>
-  </div>
-</header>
-<aside class="callout callout--note">
-  <span class="callout__title">The Physics Behind It</span>
-  <p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
-</aside>
-
-<section class="section" id="rig" data-main-source="gear-shop.html:rig" aria-labelledby="rig-title">
-  <div class="section__head">
-    <span class="eyebrow">The Real Inventory</span>
-    <h2 id="rig-title">The rig in pictures.</h2>
-    <p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
-  </div>
-  <ul class="gear-photos" data-gallery>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/img/gear-rope-carabiners.jpg" aria-label="The Rig — Bands, Clips &amp; Rope Handle"><img src="assets/web/img-gear-rope-carabiners-960.webp" alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" width="1100" height="1460" loading="lazy" srcset="assets/web/img-gear-rope-carabiners-480.webp 480w, assets/web/img-gear-rope-carabiners-960.webp 960w, assets/web/img-gear-rope-carabiners-1100.webp 1100w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>The Rig — Bands, Clips &amp; Rope Handle</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/img/gear-rig-setup.jpg" aria-label="Full Kinetic Rig"><img src="assets/web/img-gear-rig-setup-960.webp" alt="Full kinetic rig with plyo box and kettlebells" width="1100" height="1460" loading="lazy" srcset="assets/web/img-gear-rig-setup-480.webp 480w, assets/web/img-gear-rig-setup-960.webp 960w, assets/web/img-gear-rig-setup-1100.webp 1100w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>Full Kinetic Rig</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/media/october-2026/gym-turf-rig.jpg" aria-label="Rig &amp; adjustable bench station"><img src="assets/web/media-october-2026-gym-turf-rig-960.webp" alt="Original photo of the gym rig, adjustable bench and turf training area" width="1600" height="1205" loading="lazy" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>Rig &amp; Bench Station</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/media/october-2026/gym-august-weights.jpg" aria-label="Dumbbell rack, full run"><img src="assets/web/media-october-2026-gym-august-weights-960.webp" alt="Original gym photograph of the dumbbell rack, full run of weights" width="1600" height="1600" loading="lazy" srcset="assets/web/media-october-2026-gym-august-weights-480.webp 480w, assets/web/media-october-2026-gym-august-weights-960.webp 960w, assets/web/media-october-2026-gym-august-weights-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>The Dumbbell Wall</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/img/gym-photo-sled-harness.jpg" aria-label="Sled pulling harness, worn and in use"><img src="assets/web/img-gym-photo-sled-harness-960.webp" alt="Sled pulling harness worn and in use" width="1200" height="1593" loading="lazy" srcset="assets/web/img-gym-photo-sled-harness-480.webp 480w, assets/web/img-gym-photo-sled-harness-960.webp 960w, assets/web/img-gym-photo-sled-harness-1200.webp 1200w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>Sled Harness — In Use</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/media/october-2026/gym-july-turf.jpg" aria-label="Turf floor setup near the dumbbells"><img src="assets/web/media-october-2026-gym-july-turf-960.webp" alt="Original gym photograph of the turf floor setup near the dumbbells" width="1200" height="1600" loading="lazy" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>Turf Floor Setup</figcaption>
-    </figure></li>
-    <li><figure class="gear-photo">
-      <button type="button" data-full="assets/media/october-2026/gym-july-session.jpg" aria-label="Machine corner of the gym"><img src="assets/web/media-october-2026-gym-july-session-960.webp" alt="Original gym photograph of the machine corner of the gym" width="1205" height="1600" loading="lazy" srcset="assets/web/media-october-2026-gym-july-session-480.webp 480w, assets/web/media-october-2026-gym-july-session-960.webp 960w, assets/web/media-october-2026-gym-july-session-1205.webp 1205w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></button>
-      <figcaption>Machine Corner</figcaption>
-    </figure></li>
-  </ul>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="gear-photos.html"><span class="pager__dir">← Previous</span><span class="pager__label">Gym photo journal</span></a><a class="pager__next" rel="next" href="gear-resistance.html"><span class="pager__dir">Next →</span><span class="pager__label">Resistance bands</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-gym-bench-august-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title" id="hudT">The <em>rig</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#rig"><small>Folder 01</small><strong>The rig in pictures.</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Gear"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html" aria-current="page">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--note">
+<span class="callout__title">The Physics Behind It</span>
+<p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
+</aside></div>
+<section class="hud-folder" id="rig" aria-labelledby="rig-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="rig-t">The rig in pictures.</h2><span class="hud-folder__meta">The Real Inventory</span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
+<ul class="gear-photos" data-gallery="">
+<li><figure class="gear-photo">
+<button aria-label="The Rig — Bands, Clips &amp; Rope Handle" data-full="assets/img/gear-rope-carabiners.jpg" type="button"><img alt="The rig — resistance tubing, carabiner clips, and the single-arm tricep rope" decoding="async" height="1460" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-gear-rope-carabiners-960.webp" srcset="assets/web/img-gear-rope-carabiners-480.webp 480w, assets/web/img-gear-rope-carabiners-960.webp 960w, assets/web/img-gear-rope-carabiners-1100.webp 1100w" width="1100"/></button>
+<figcaption>The Rig — Bands, Clips &amp; Rope Handle</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Full Kinetic Rig" data-full="assets/img/gear-rig-setup.jpg" type="button"><img alt="Full kinetic rig with plyo box and kettlebells" decoding="async" height="1460" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-gear-rig-setup-960.webp" srcset="assets/web/img-gear-rig-setup-480.webp 480w, assets/web/img-gear-rig-setup-960.webp 960w, assets/web/img-gear-rig-setup-1100.webp 1100w" width="1100"/></button>
+<figcaption>Full Kinetic Rig</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Rig &amp; adjustable bench station" data-full="assets/media/october-2026/gym-turf-rig.jpg" type="button"><img alt="Original photo of the gym rig, adjustable bench and turf training area" decoding="async" height="1205" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-turf-rig-960.webp" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" width="1600"/></button>
+<figcaption>Rig &amp; Bench Station</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Dumbbell rack, full run" data-full="assets/media/october-2026/gym-august-weights.jpg" type="button"><img alt="Original gym photograph of the dumbbell rack, full run of weights" decoding="async" height="1600" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-august-weights-960.webp" srcset="assets/web/media-october-2026-gym-august-weights-480.webp 480w, assets/web/media-october-2026-gym-august-weights-960.webp 960w, assets/web/media-october-2026-gym-august-weights-1600.webp 1600w" width="1600"/></button>
+<figcaption>The Dumbbell Wall</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Sled pulling harness, worn and in use" data-full="assets/img/gym-photo-sled-harness.jpg" type="button"><img alt="Sled pulling harness worn and in use" decoding="async" height="1593" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-gym-photo-sled-harness-960.webp" srcset="assets/web/img-gym-photo-sled-harness-480.webp 480w, assets/web/img-gym-photo-sled-harness-960.webp 960w, assets/web/img-gym-photo-sled-harness-1200.webp 1200w" width="1200"/></button>
+<figcaption>Sled Harness — In Use</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Turf floor setup near the dumbbells" data-full="assets/media/october-2026/gym-july-turf.jpg" type="button"><img alt="Original gym photograph of the turf floor setup near the dumbbells" decoding="async" height="1600" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-july-turf-960.webp" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" width="1200"/></button>
+<figcaption>Turf Floor Setup</figcaption>
+</figure></li>
+<li><figure class="gear-photo">
+<button aria-label="Machine corner of the gym" data-full="assets/media/october-2026/gym-july-session.jpg" type="button"><img alt="Original gym photograph of the machine corner of the gym" decoding="async" height="1600" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-july-session-960.webp" srcset="assets/web/media-october-2026-gym-july-session-480.webp 480w, assets/web/media-october-2026-gym-july-session-960.webp 960w, assets/web/media-october-2026-gym-july-session-1205.webp 1205w" width="1205"/></button>
+<figcaption>Machine Corner</figcaption>
+</figure></li>
+</ul></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-photos.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Gym photo journal</span></a><a class="pager__next" href="gear-resistance.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Resistance bands</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -243,5 +221,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

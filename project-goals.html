@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="project-goals" data-group="home">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,131 +58,109 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="PROJECT 100">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>PROJECT 100</span></h2>
-    <ul class="rail__list">
-      <li><a href="project-story.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">The story</span></a></li>
-      <li><a href="project-goals.html" aria-current="page"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Goals &amp; roadmap</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-objective-100lbs-smm-960.webp" alt="The objective: 100 lb of skeletal muscle mass" width="1200" height="654" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w, assets/web/img-objective-100lbs-smm-1200.webp 1200w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · HOME</span>
-    <h1>Goals &amp; roadmap</h1>
-  </div>
-</header>
-
-<section class="section" id="mission" aria-labelledby="mission-title">
-  <div class="section__head">
-    <span class="eyebrow">The Mission</span>
-    <h2 id="mission-title">The last 11.8 lbs.</h2>
-    <p class="lead">Goal: 100 lb bioimpedance-estimated skeletal muscle mass · below 15% body fat. Track measurements, waist, performance and symptoms together. Aspirational; no guaranteed result.</p>
-  </div>
-
-  <ul class="grid grid--3 home-goals">
-    <li class="card card--pad home-goal">
-      <span class="stat__label">Skeletal Muscle Mass</span>
-      <p class="home-goal__nums"><span class="home-goal__now">88.2</span><span class="home-goal__arrow">→</span><span class="home-goal__target">100</span><span class="home-goal__unit">lbs</span></p>
-      <progress class="home-goal__bar" value="78" max="100" aria-hidden="true"></progress>
-      <p class="card__meta">+11.8 lb from the recorded baseline to the target</p>
-    </li>
-    <li class="card card--pad home-goal">
-      <span class="stat__label">Body Fat</span>
-      <p class="home-goal__nums"><span class="home-goal__now">22.9%</span><span class="home-goal__arrow">→</span><span class="home-goal__target">&lt;15%</span></p>
-      <progress class="home-goal__bar" value="55" max="100" aria-hidden="true"></progress>
-      <p class="card__meta">Personal body-fat aspiration</p>
-    </li>
-    <li class="card card--pad home-goal">
-      <span class="stat__label">FFMI (Fat-Free Mass Index)</span>
-      <p class="home-goal__nums"><span class="home-goal__now">23.86</span><span class="home-goal__arrow">→</span><span class="home-goal__target">25.71</span></p>
-      <progress class="home-goal__bar" value="82" max="100" aria-hidden="true"></progress>
-      <p class="card__meta">Historical planning trajectory; not a biological ceiling</p>
-    </li>
-  </ul>
-
-  <div class="stack">
-    <aside class="callout callout--note">
-      <p>BIA estimates skeletal muscle from water-sensitive algorithms. Creatine, glycogen and electrolytes can move the estimate without new contractile tissue. <a href="fit-protocol-baseline.html#ch1">Read the measurement rules</a>.</p>
-    </aside>
-    <aside class="callout callout--warn" id="reported-smm-history">
-      <span class="callout__title">Reported measurement history</span>
-      <p>June 28, 2025: 82.0 lb estimated SMM. December 14, 2025: 88.2 lb estimated SMM, used for the February 2026 baseline lock. The reported change is +6.2 lb in estimated SMM; original scan reports remain to be verified. These readings do not establish a gain of 6.2 lb of dry muscle tissue.</p>
-      <p>Planned review window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme and comparable measurement conditions. This is a planned review, not a completed scan or a deadline for reaching the goal.</p>
-    </aside>
-    <aside class="callout callout--accent home-laws">
-      <span class="callout__title">The Four Laws</span>
-      <p>EAT. SLEEP. TRAIN. REPEAT. Four words, zero exceptions — the entire operating system. Break one law and the other three stop compounding.</p>
-    </aside>
-  </div>
-</section>
-
-<details class="acc home-roadmap-acc" open>
-  <summary>Open the planning roadmap</summary>
-  <div class="acc__body">
-    <section id="roadmap" aria-labelledby="roadmap-title">
-      <div class="section__head">
-        <span class="eyebrow">The Roadmap</span>
-        <h2 id="roadmap-title">The long-term excavation.</h2>
-        <p class="lead">Plan: quarterly review · comparable measurements · symptom-guided progression. No fixed growth rate or completion deadline.</p>
-      </div>
-      <aside class="callout callout--danger home-rule">
-        <span class="callout__title">Non-Negotiable</span>
-        <p>LOAD FOLLOWS TOLERANCE. A rigid +2.5 lb every three weeks is not a current V2.0 prescription. If pain changes form or neurological signs appear, stop and assess.</p>
-      </aside>
-      <ol class="grid grid--3 home-phases">
-        <li class="card card--pad home-phase">
-          <span class="home-phase__num">I</span>
-          <span class="home-phase__months">Months 1–3</span>
-          <h3 class="card__title">Rebuild the routine</h3>
-          <p>Regular training, sleep and repeatable setups come first.</p>
-          <p class="card__meta home-phase__foot">Historical planning phase · Rebuild the routine</p>
-        </li>
-        <li class="card card--pad home-phase">
-          <span class="home-phase__num">II</span>
-          <span class="home-phase__months">Months 4–8</span>
-          <h3 class="card__title">Repeat the loading signal</h3>
-          <p>Supported work and recovery guide progression; no automatic load escalation.</p>
-          <p class="card__meta home-phase__foot">Historical planning phase · Repeat the loading signal</p>
-        </li>
-        <li class="card card--pad home-phase">
-          <span class="home-phase__num">III</span>
-          <span class="home-phase__months">Months 9–12</span>
-          <h3 class="card__title">Review and adjust</h3>
-          <p>Compare body composition, waist and function under consistent conditions.</p>
-          <p class="card__meta home-phase__foot">Historical planning phase · Review and adjust</p>
-        </li>
-      </ol>
-    </section>
-  </div>
-</details>
-
-<section class="cta home-cta" aria-labelledby="cta-title">
-  <span class="eyebrow">Follow the Excavation</span>
-  <h2 id="cta-title">88.2 lbs down.<br>11.8 to go.</h2>
-  <p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
-  <div class="btn-row">
-    <a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
-    <a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
-  </div>
-</section>
-
-<section class="section" id="biometric-milestone" aria-labelledby="biometric-title">
-  <div class="section__head">
-    <h2 id="biometric-title">Biometric record</h2>
-  </div>
-  <div class="card card--pad card--accent home-record">
-    <p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p>
-    <p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p>
-    <a class="btn btn--ghost btn--sm" href="biometrics.html">Timeline and scan plan ↗</a>
-  </div>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="project-story.html"><span class="pager__dir">← Previous</span><span class="pager__label">The story</span></a><a class="pager__next" rel="next" href="biometrics.html"><span class="pager__dir">Next →</span><span class="pager__label">Biometrics</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-objective-100lbs-smm-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · HOME</span><h1 class="hud-title" id="hudT">Goals &amp; <em>roadmap</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#mission"><small>Folder 01</small><strong>The last 11.8 lbs.</strong></a><a class="hud-chip hud-chip--link" href="#notes-2"><small>Folder 02</small><strong>Open the planning roadmap</strong></a><a class="hud-chip hud-chip--link" href="#biometric-milestone"><small>Folder 03</small><strong>Biometric record</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="PROJECT 100"><li><a href="project-story.html">The story</a></li><li><a href="project-goals.html" aria-current="page">Goals &amp; roadmap</a></li></ul>
+<section class="hud-folder" id="mission" aria-labelledby="mission-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="mission-t">The last 11.8 lbs.</h2><span class="hud-folder__meta">The Mission</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#mission-details"><li id="mission-c1"><a class="hud-card hud-card--text" href="#mission-c1" data-hud-card aria-expanded="false" aria-controls="mission-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">Goal: 100 lb bioimpedance-estimated skeletal muscle mass · below 15% body fat. Track measurements, waist, performance…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="mission-details" data-hud-details data-gallery><article class="hud-detail" id="mission-c1-d" data-hud-detail aria-label="The last 11.8 lbs. details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>The last 11.8 lbs.</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close The last 11.8 lbs.">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="lead">Goal: 100 lb bioimpedance-estimated skeletal muscle mass · below 15% body fat. Track measurements, waist, performance and symptoms together. Aspirational; no guaranteed result.</p>
+<ul class="grid grid--3 home-goals">
+<li class="card card--pad home-goal">
+<span class="stat__label">Skeletal Muscle Mass</span>
+<p class="home-goal__nums"><span class="home-goal__now">88.2</span><span class="home-goal__arrow">→</span><span class="home-goal__target">100</span><span class="home-goal__unit">lbs</span></p>
+<progress aria-hidden="true" class="home-goal__bar" max="100" value="78"></progress>
+<p class="card__meta">+11.8 lb from the recorded baseline to the target</p>
+</li>
+<li class="card card--pad home-goal">
+<span class="stat__label">Body Fat</span>
+<p class="home-goal__nums"><span class="home-goal__now">22.9%</span><span class="home-goal__arrow">→</span><span class="home-goal__target">&lt;15%</span></p>
+<progress aria-hidden="true" class="home-goal__bar" max="100" value="55"></progress>
+<p class="card__meta">Personal body-fat aspiration</p>
+</li>
+<li class="card card--pad home-goal">
+<span class="stat__label">FFMI (Fat-Free Mass Index)</span>
+<p class="home-goal__nums"><span class="home-goal__now">23.86</span><span class="home-goal__arrow">→</span><span class="home-goal__target">25.71</span></p>
+<progress aria-hidden="true" class="home-goal__bar" max="100" value="82"></progress>
+<p class="card__meta">Historical planning trajectory; not a biological ceiling</p>
+</li>
+</ul>
+<aside class="callout callout--note">
+<p>BIA estimates skeletal muscle from water-sensitive algorithms. Creatine, glycogen and electrolytes can move the estimate without new contractile tissue. <a href="fit-protocol-baseline.html#ch1">Read the measurement rules</a>.</p>
+</aside>
+<aside class="callout callout--warn" id="reported-smm-history">
+<span class="callout__title">Reported measurement history</span>
+<p>June 28, 2025: 82.0 lb estimated SMM. December 14, 2025: 88.2 lb estimated SMM, used for the February 2026 baseline lock. The reported change is +6.2 lb in estimated SMM; original scan reports remain to be verified. These readings do not establish a gain of 6.2 lb of dry muscle tissue.</p>
+<p>Planned review window: December 14–21, 2026, using the same InBody unit at Gym Fit Forme and comparable measurement conditions. This is a planned review, not a completed scan or a deadline for reaching the goal.</p>
+</aside>
+<aside class="callout callout--accent home-laws">
+<span class="callout__title">The Four Laws</span>
+<p>EAT. SLEEP. TRAIN. REPEAT. Four words, zero exceptions — the entire operating system. Break one law and the other three stop compounding.</p>
+</aside></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="notes-2" aria-labelledby="notes-2-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="notes-2-t">Open the planning roadmap</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#notes-2-details"><li id="notes-2-c1"><a class="hud-card hud-card--text" href="#notes-2-c1" data-hud-card aria-expanded="false" aria-controls="notes-2-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint"></span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="notes-2-details" data-hud-details data-gallery><article class="hud-detail" id="notes-2-c1-d" data-hud-detail aria-label="Open the planning roadmap details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Open the planning roadmap</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Open the planning roadmap">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><section aria-labelledby="roadmap-title" id="roadmap">
+<div class="section__head">
+<span class="eyebrow">The Roadmap</span>
+<h2 id="roadmap-title">The long-term excavation.</h2>
+<p class="lead">Plan: quarterly review · comparable measurements · symptom-guided progression. No fixed growth rate or completion deadline.</p>
+</div>
+<aside class="callout callout--danger home-rule">
+<span class="callout__title">Non-Negotiable</span>
+<p>LOAD FOLLOWS TOLERANCE. A rigid +2.5 lb every three weeks is not a current V2.0 prescription. If pain changes form or neurological signs appear, stop and assess.</p>
+</aside>
+<ol class="grid grid--3 home-phases">
+<li class="card card--pad home-phase">
+<span class="home-phase__num">I</span>
+<span class="home-phase__months">Months 1–3</span>
+<h3 class="card__title">Rebuild the routine</h3>
+<p>Regular training, sleep and repeatable setups come first.</p>
+<p class="card__meta home-phase__foot">Historical planning phase · Rebuild the routine</p>
+</li>
+<li class="card card--pad home-phase">
+<span class="home-phase__num">II</span>
+<span class="home-phase__months">Months 4–8</span>
+<h3 class="card__title">Repeat the loading signal</h3>
+<p>Supported work and recovery guide progression; no automatic load escalation.</p>
+<p class="card__meta home-phase__foot">Historical planning phase · Repeat the loading signal</p>
+</li>
+<li class="card card--pad home-phase">
+<span class="home-phase__num">III</span>
+<span class="home-phase__months">Months 9–12</span>
+<h3 class="card__title">Review and adjust</h3>
+<p>Compare body composition, waist and function under consistent conditions.</p>
+<p class="card__meta home-phase__foot">Historical planning phase · Review and adjust</p>
+</li>
+</ol>
+</section></div></div></article></div>
+</div></section>
+<div class="hud-inline hud-prose"><section aria-labelledby="cta-title" class="cta home-cta">
+<span class="eyebrow">Follow the Excavation</span>
+<h2 id="cta-title">88.2 lbs down.<br/>11.8 to go.</h2>
+<p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
+<a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
+</div>
+</section></div>
+<section class="hud-folder" id="biometric-milestone" aria-labelledby="biometric-milestone-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="biometric-milestone-t">Biometric record</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="card card--pad card--accent home-record">
+<p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p>
+<p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p>
+<a class="btn btn--ghost btn--sm" href="biometrics.html">Timeline and scan plan ↗</a>
+</div></div>
+</div></section>
+<section class="hud-folder hud-folder--deep" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-baseline.html"><small>FIT PROTOCOL</small><strong>Goals &amp; baseline</strong><span>Where the numbers start</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol.html"><small>FIT PROTOCOL</small><strong>FIT PROTOCOL</strong><span>The full protocol overview</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="project-story.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">The story</span></a><a class="pager__next" href="biometrics.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Biometrics</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -299,5 +278,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

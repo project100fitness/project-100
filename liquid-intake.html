@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="liquid-intake" data-group="liquid">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -59,240 +60,246 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 <div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-hydration-loop-960.webp" alt="" width="960" height="540" srcset="assets/web/media-october-2026-hydration-loop-480.webp 480w, assets/web/media-october-2026-hydration-loop-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · LIQUID INTAKE</span>
-    <h1>Liquid Intake</h1>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-hydration-loop-960.webp')">
+  <span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span>
+  <div class="hud-hero__text">
+    <span class="hud-eyebrow">PROJECT_100 &middot; Liquid intake</span>
+    <h1 class="hud-title" id="hudT">Liquid <em>vectors</em></h1>
+    <p class="hud-lede">Seven drink files: what goes in the shaker, when to drink it, and which branch of the day you are on. Tap a file to open it.</p>
+    <div class="hud-chips">
+      <span class="hud-chip"><small>Files</small><strong>7 vectors</strong></span>
+      <span class="hud-chip"><small>Branches</small><strong>3 day types</strong></span>
+      <span class="hud-chip hud-chip--warn"><small>Rule</small><strong>V1 &ne; V6 same day</strong></span>
+    </div>
   </div>
-</header>
-
-<aside class="callout callout--accent nut-intro" id="liquid-description">
-  <div class="nut-intro__text">
-    <span class="callout__title">Liquid Intake</span>
-    <p>Seven drink protocols · ingredients, preparation and descriptive downloads. Open a vector for its recipe; follow the morning, rest or evening branch. V1 and V6 are never combined on the same day. Personal record, not a prescription.</p>
-  </div>
-  <img class="nut-intro__art" src="assets/media/illustration-design/j04.webp" alt="" width="1000" height="667" loading="lazy" decoding="async">
-</aside>
-
-<section class="section" id="liquid-files" aria-labelledby="liquid-files-title">
-  <div class="section__head">
-    <h2 id="liquid-files-title">Seven recorded files</h2>
-  </div>
-  <ul class="nut-vec-list" data-gallery data-fold-group>
-    <li class="fold-item">
-    <details class="fold nut-vec--v3" id="vector-v3" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 Recovery poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v3-480.webp 480w, assets/web/media-vector-artwork-portraits-v3-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 01</span><h3 class="fold__name">V3 RECOVERY</h3><span class="fold__hint">Daily anchor; optional when consumed on rest days</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v3.png" aria-label="Enlarge the V3 Recovery poster"><img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 Recovery poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v3-480.webp 480w, assets/web/media-vector-artwork-portraits-v3-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> Cold filtered water; shaker volume unspecified</p>
-          <ul class="nut-vec__ingredients">
-          <li>MuscleMeds Carnivor Beef Protein Isolate (33.9 g Canadian scoop)</li>
-          <li>PROMISE Pure Marine Collagen Peptan 10 g</li>
-          <li>Rootalive Organic Gelatinized Black Maca 5 g</li>
-          <li>ALLMAX Liquid L- Carnitine 1500 (15 mL / 1,500 mg)</li>
-          <li>MegaFood C Defense Gummy (1, chewed)</li>
-          <li>NAKA Platinum Vital Greens (20 mL separate flush)</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> 04:00; training and rest</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v3-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v3.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v3.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v1" id="vector-v1" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 Ignition poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v1-480.webp 480w, assets/web/media-vector-artwork-portraits-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 02</span><h3 class="fold__name">V1 IGNITION</h3><span class="fold__hint">Morning training only (State A)</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v1.png" aria-label="Enlarge the V1 Ignition poster"><img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 Ignition poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v1-480.webp 480w, assets/web/media-vector-artwork-portraits-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 500-600 mL cold filtered water</p>
-          <ul class="nut-vec__ingredients">
-          <li>ALLMAX Impact Igniter Xtreme 2.0 (2 scoops / 28 g)</li>
-          <li>ALLMAX MuscleEAA Xtreme (1 scoop / 17.73 g)</li>
-          <li>PeakO2 2,000 mg</li>
-          <li>Betaine Anhydrous 2,500 mg</li>
-          <li>Citrulline Malate 2:1 (4-6 g)</li>
-          <li>Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately.</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> 06:00 pre- gym; morning training only</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v1-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v1.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v1.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v2" id="vector-v2" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 Refuel poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v2-480.webp 480w, assets/web/media-vector-artwork-portraits-v2-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 03</span><h3 class="fold__name">V2 REFUEL</h3><span class="fold__hint">During the training session (States A and C)</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v2.png" aria-label="Enlarge the V2 Refuel poster"><img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 Refuel poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v2-480.webp 480w, assets/web/media-vector-artwork-portraits-v2-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 600-750 mL cold filtered water</p>
-          <ul class="nut-vec__ingredients">
-          <li>Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1)</li>
-          <li>RapiDrem Electrolyte Powder (1 scoop, about 6.5 g)</li>
-          <li>Kirkland Himalayan Pink Salt 1/16 tsp</li>
-          <li>2-3 Medjool dates chewed solid, separately</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> During the training session (09:30 morning reference); moves with the evening workout in State C.</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v2-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v2.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v2.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v4" id="vector-v4" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 Reload poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v4-480.webp 480w, assets/web/media-vector-artwork-portraits-v4-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 04</span><h3 class="fold__name">V4 RELOAD</h3><span class="fold__hint">After the workout (States A and C); R-ALA remains separate</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v4.png" aria-label="Enlarge the V4 Reload poster"><img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 Reload poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v4-480.webp 480w, assets/web/media-vector-artwork-portraits-v4-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 350-450 mL room-temperature water</p>
-          <ul class="nut-vec__ingredients">
-          <li>BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving)</li>
-          <li>Rootalive Beetroot Powder 7 g raw</li>
-          <li>Proline Pure Creatine HCl 750 mg active</li>
-          <li>Kirkland Himalayan Salt 1/16 tsp</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.</p>
-        <p>Whole R-ALA 300 mg is taken separately before the shaker.</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v4-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v4.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v4.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v5" id="vector-v5" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 Transport poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v5-480.webp 480w, assets/web/media-vector-artwork-portraits-v5-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 05</span><h3 class="fold__name">V5 TRANSPORT</h3><span class="fold__hint">Rest days only (State B)</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v5.png" aria-label="Enlarge the V5 Transport poster"><img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 Transport poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v5-480.webp 480w, assets/web/media-vector-artwork-portraits-v5-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 500 mL cold filtered water</p>
-          <ul class="nut-vec__ingredients">
-          <li>Proline Pure Creatine HCl 750 mg</li>
-          <li>PROMISE Pure Marine Collagen 10 g</li>
-          <li>ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)</li>
-          <li>RapiDrem Electrolyte Powder (1 scoop)</li>
-          <li>Kirkland Himalayan Salt 1/16 tsp</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> 16:00-16:30; rest branch only</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v5-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v5.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v5.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v10" id="vector-v10" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 Shutdown poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v10-480.webp 480w, assets/web/media-vector-artwork-portraits-v10-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 06</span><h3 class="fold__name">V10 SHUTDOWN</h3><span class="fold__hint">Night anchor across all three states</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v10.png" aria-label="Enlarge the V10 Shutdown poster"><img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 Shutdown poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v10-480.webp 480w, assets/web/media-vector-artwork-portraits-v10-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature</p>
-          <ul class="nut-vec__ingredients">
-          <li>SD Pharmaceuticals Creatine HCl 750 mg</li>
-          <li>North Coast Naturals Fermented L-Glutamine 5 g</li>
-          <li>AOR Pure Glycine Powder 3-5 g</li>
-          <li>optional half-scoop Medi-C Plus (2.5 g)</li>
-          <li>rare Niyama Hey Relax full scoop</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> Night anchor (18:30 reference); morning training, rest and evening-training branches. Tisane at a comfortable temperature.</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v10-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v10.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v10.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-    <li class="fold-item">
-    <details class="fold nut-vec--v6" id="vector-v6" data-fold>
-      <summary class="fold__summary">
-        <span class="fold__thumb"><img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 Pump poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v6-480.webp 480w, assets/web/media-vector-artwork-portraits-v6-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"></span>
-        <span class="fold__title"><span class="fold__eyebrow">FILE 07</span><h3 class="fold__name">V6 PUMP</h3><span class="fold__hint">Evening training only (State C); replaces V1</span></span>
-        <span class="fold__mark" aria-hidden="true"></span>
-      </summary>
-      <div class="fold__panel"><div class="fold__inner"><div class="fold__sheet">
-        <figure class="fold__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v6.png" aria-label="Enlarge the V6 Pump poster"><img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 Pump poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-portraits-v6-480.webp 480w, assets/web/media-vector-artwork-portraits-v6-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></figure>
-        <div class="fold__text nut-vec__body">
-          <p class="nut-vec__base"><strong>Base</strong> 500–600 mL cold filtered water</p>
-          <ul class="nut-vec__ingredients">
-          <li>ALLMAX Impact PUMP Xtreme (Blue Raspberry): 2 scoops / 31 g</li>
-          <li>ALLMAX MuscleEAA Xtreme (Cherry Limeade): 1 scoop / 17.73 g</li>
-          <li>Compound Solutions / ALLMAX PeakO2: 2,000 mg by mass</li>
-          <li>NOW Betaine Anhydrous (TMG): 2,500 mg</li>
-          <li>ALLMAX Essentials Citrulline Malate 2:1: 4–6 g</li>
-          <li>ALLMAX Essentials Pure Taurine Powder: 2–3 g</li>
-          <li>AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water</li>
-          </ul>
-          <p class="nut-vec__protocol"><strong>Protocol</strong> Evening training override; 20–30 minutes before the evening session. Citicoline is a separate capsule at T−30 minutes. Never combined with V1 on the same calendar day.</p>
-        <p>No added salt or creatine HCl in this shaker.</p>
-          <div class="nut-vec__links">
-            <a class="btn" download="project100-v6-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v6.png">Save descriptive diagram</a>
-            <span class="nut-vec__sep" aria-hidden="true">·</span>
-            <a class="btn btn--ghost" href="fit-protocol-vector-v6.html">Full protocol details →</a>
-          </div>
-        </div>
-      </div></div></div>
-    </details>
-    </li>
-  </ul>
 </section>
 
-<section class="section" id="liquid-overview" aria-label="Branch summary">
-  <ul class="nut-branches">
-    <li><strong>Morning training</strong> V1 before the session</li>
-    <li><strong>Rest</strong> V1 and V6 inactive</li>
-    <li><strong>Evening training</strong> V6 replaces V1</li>
-  </ul>
-  <aside class="callout callout--warn">
-    <p>V1 and V6 are never combined on the same day. Recipes document the personal record, not a prescription.</p>
-  </aside>
+<section class="hud-folder" id="liquid-files" aria-labelledby="hudF1">
+  <div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="hudF1">The seven files</h2><span class="hud-folder__meta">Tap a card to open</span></div>
+  <div class="hud-folder__body">
+    <p class="hud-note"><strong>How it works</strong> Each card opens its recipe, ingredients and a big poster you can enlarge and save.</p>
+    <ul class="hud-cards" data-hud-cards>
+      <li id="vector-v3"><a class="hud-card hud-c-v3" href="#vector-v3" data-hud-card aria-expanded="false" aria-controls="vector-v3-d">
+        <span class="hud-card__tag"><span>FILE 01</span><span>V3</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v3-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V3 RECOVERY</span><span class="hud-card__hint">Daily anchor; optional when consumed on rest days</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v1"><a class="hud-card hud-c-v1" href="#vector-v1" data-hud-card aria-expanded="false" aria-controls="vector-v1-d">
+        <span class="hud-card__tag"><span>FILE 02</span><span>V1</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v1-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V1 IGNITION</span><span class="hud-card__hint">Morning training only (State A)</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v2"><a class="hud-card hud-c-v2" href="#vector-v2" data-hud-card aria-expanded="false" aria-controls="vector-v2-d">
+        <span class="hud-card__tag"><span>FILE 03</span><span>V2</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v2-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V2 REFUEL</span><span class="hud-card__hint">During the training session (States A and C)</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v4"><a class="hud-card hud-c-v4" href="#vector-v4" data-hud-card aria-expanded="false" aria-controls="vector-v4-d">
+        <span class="hud-card__tag"><span>FILE 04</span><span>V4</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v4-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V4 RELOAD</span><span class="hud-card__hint">After the workout (States A and C); R-ALA remains separate</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v5"><a class="hud-card hud-c-v5" href="#vector-v5" data-hud-card aria-expanded="false" aria-controls="vector-v5-d">
+        <span class="hud-card__tag"><span>FILE 05</span><span>V5</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v5-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V5 TRANSPORT</span><span class="hud-card__hint">Rest days only (State B)</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v10"><a class="hud-card hud-c-v10" href="#vector-v10" data-hud-card aria-expanded="false" aria-controls="vector-v10-d">
+        <span class="hud-card__tag"><span>FILE 06</span><span>V10</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v10-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V10 SHUTDOWN</span><span class="hud-card__hint">Night anchor across all three states</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+      <li id="vector-v6"><a class="hud-card hud-c-v6" href="#vector-v6" data-hud-card aria-expanded="false" aria-controls="vector-v6-d">
+        <span class="hud-card__tag"><span>FILE 07</span><span>V6</span></span>
+        <span class="hud-card__img"><img src="assets/web/media-vector-artwork-portraits-v6-480.webp" alt="" width="480" height="853" loading="lazy" decoding="async"></span>
+        <span class="hud-card__foot"><span class="hud-card__name">V6 PUMP</span><span class="hud-card__hint">Evening training only (State C); replaces V1</span></span>
+        <span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+    </ul>
+    <div class="hud-details" data-hud-details data-gallery>
+    <article class="hud-detail hud-c-v3" id="vector-v3-d" data-hud-detail aria-label="V3 RECOVERY details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 01</b><h3>V3 RECOVERY</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V3 RECOVERY">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;Daily anchor; optional when consumed on rest days</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v3.png" aria-label="Enlarge the V3 Recovery poster"><img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 Recovery poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v3.png" download="project100-v3-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">Cold filtered water; shaker volume unspecified</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 6</span><ol class="hud-list"><li>MuscleMeds Carnivor Beef Protein Isolate (33.9 g Canadian scoop)</li><li>PROMISE Pure Marine Collagen Peptan 10 g</li><li>Rootalive Organic Gelatinized Black Maca 5 g</li><li>ALLMAX Liquid L- Carnitine 1500 (15 mL / 1,500 mg)</li><li>MegaFood C Defense Gummy (1, chewed)</li><li>NAKA Platinum Vital Greens (20 mL separate flush)</li></ol></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">04:00; training and rest</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v3-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v3.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v3.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v1" id="vector-v1-d" data-hud-detail aria-label="V1 IGNITION details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 02</b><h3>V1 IGNITION</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V1 IGNITION">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;Morning training only (State A)</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v1.png" aria-label="Enlarge the V1 Ignition poster"><img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 Ignition poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v1.png" download="project100-v1-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">500-600 mL cold filtered water</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 6</span><ol class="hud-list"><li>ALLMAX Impact Igniter Xtreme 2.0 (2 scoops / 28 g)</li><li>ALLMAX MuscleEAA Xtreme (1 scoop / 17.73 g)</li><li>PeakO2 2,000 mg</li><li>Betaine Anhydrous 2,500 mg</li><li>Citrulline Malate 2:1 (4-6 g)</li><li>Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately.</li></ol></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">06:00 pre- gym; morning training only</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v1-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v1.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v1.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v2" id="vector-v2-d" data-hud-detail aria-label="V2 REFUEL details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 03</b><h3>V2 REFUEL</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V2 REFUEL">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;During the training session (States A and C)</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v2.png" aria-label="Enlarge the V2 Refuel poster"><img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 Refuel poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v2.png" download="project100-v2-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">600-750 mL cold filtered water</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 4</span><ol class="hud-list"><li>Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1)</li><li>RapiDrem Electrolyte Powder (1 scoop, about 6.5 g)</li><li>Kirkland Himalayan Pink Salt 1/16 tsp</li><li>2-3 Medjool dates chewed solid, separately</li></ol></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">During the training session (09:30 morning reference); moves with the evening workout in State C.</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v2-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v2.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v2.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v4" id="vector-v4-d" data-hud-detail aria-label="V4 RELOAD details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 04</b><h3>V4 RELOAD</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V4 RELOAD">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;After the workout (States A and C); R-ALA remains separate</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v4.png" aria-label="Enlarge the V4 Reload poster"><img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 Reload poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v4.png" download="project100-v4-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">350-450 mL room-temperature water</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 4</span><ol class="hud-list"><li>BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving)</li><li>Rootalive Beetroot Powder 7 g raw</li><li>Proline Pure Creatine HCl 750 mg active</li><li>Kirkland Himalayan Salt 1/16 tsp</li></ol><p class="hud-note" style="margin:var(--s-3) 0 0">Whole R-ALA 300 mg is taken separately before the shaker.</p></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v4-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v4.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v4.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v5" id="vector-v5-d" data-hud-detail aria-label="V5 TRANSPORT details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 05</b><h3>V5 TRANSPORT</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V5 TRANSPORT">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;Rest days only (State B)</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v5.png" aria-label="Enlarge the V5 Transport poster"><img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 Transport poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v5.png" download="project100-v5-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">500 mL cold filtered water</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 5</span><ol class="hud-list"><li>Proline Pure Creatine HCl 750 mg</li><li>PROMISE Pure Marine Collagen 10 g</li><li>ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)</li><li>RapiDrem Electrolyte Powder (1 scoop)</li><li>Kirkland Himalayan Salt 1/16 tsp</li></ol></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">16:00-16:30; rest branch only</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v5-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v5.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v5.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v10" id="vector-v10-d" data-hud-detail aria-label="V10 SHUTDOWN details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 06</b><h3>V10 SHUTDOWN</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V10 SHUTDOWN">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;Night anchor across all three states</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v10.png" aria-label="Enlarge the V10 Shutdown poster"><img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 Shutdown poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v10.png" download="project100-v10-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">800 mL Traditional Medicinals Hibiscus Tisane, comfortable temperature</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 5</span><ol class="hud-list"><li>SD Pharmaceuticals Creatine HCl 750 mg</li><li>North Coast Naturals Fermented L-Glutamine 5 g</li><li>AOR Pure Glycine Powder 3-5 g</li><li>optional half-scoop Medi-C Plus (2.5 g)</li><li>rare Niyama Hey Relax full scoop</li></ol></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">Night anchor (18:30 reference); morning training, rest and evening-training branches. Tisane at a comfortable temperature.</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v10-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v10.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v10.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="hud-detail hud-c-v6" id="vector-v6-d" data-hud-detail aria-label="V6 PUMP details">
+      <div class="hud-detail__bar">
+        <div class="hud-detail__ribbon"><b>FILE 07</b><h3>V6 PUMP</h3></div>
+        <div class="hud-detail__nav">
+          <button class="hud-nav" type="button" data-hud-prev aria-label="Previous file">&#8249;</button>
+          <button class="hud-nav" type="button" data-hud-next aria-label="Next file">&#8250;</button>
+          <button class="hud-nav" type="button" data-hud-close aria-label="Close V6 PUMP">&#215;</button>
+        </div>
+      </div>
+      <p class="hud-detail__hint"><strong style="color:var(--hud-amber)">WHEN</strong> &nbsp;Evening training only (State C); replaces V1</p>
+      <div class="hud-detail__grid">
+        <figure class="hud-detail__art"><button type="button" class="zoom" data-full="assets/media/vector-artwork/portraits/v6.png" aria-label="Enlarge the V6 Pump poster"><img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 Pump poster: the shaker and the recorded ingredients with their amounts" width="941" height="1672" loading="lazy" decoding="async"><span class="zoom__hint" aria-hidden="true">Tap to enlarge</span></button>
+          <a class="hud-save" href="assets/media/vector-artwork/portraits/v6.png" download="project100-v6-poster.png">&#8595; Save full poster</a></figure>
+        <div class="hud-detail__body">
+          <div class="hud-panel"><span class="hud-label hud-label--cyan">Base</span><p class="hud-base">500–600 mL cold filtered water</p></div>
+          <div class="hud-panel"><span class="hud-label">Ingredients &middot; 7</span><ol class="hud-list"><li>ALLMAX Impact PUMP Xtreme (Blue Raspberry): 2 scoops / 31 g</li><li>ALLMAX MuscleEAA Xtreme (Cherry Limeade): 1 scoop / 17.73 g</li><li>Compound Solutions / ALLMAX PeakO2: 2,000 mg by mass</li><li>NOW Betaine Anhydrous (TMG): 2,500 mg</li><li>ALLMAX Essentials Citrulline Malate 2:1: 4–6 g</li><li>ALLMAX Essentials Pure Taurine Powder: 2–3 g</li><li>AOR Xerenoos Citicoline: 1 capsule / 250 mg, swallowed separately with water</li></ol><p class="hud-note" style="margin:var(--s-3) 0 0">No added salt or creatine HCl in this shaker.</p></div>
+          <div class="hud-panel"><span class="hud-label hud-label--amber">Protocol</span><p class="hud-proto">Evening training override; 20–30 minutes before the evening session. Citicoline is a separate capsule at T−30 minutes. Never combined with V1 on the same calendar day.</p></div>
+          <div class="hud-actions">
+            <a class="hud-btn" download="project100-v6-complete-ingredients.png" href="assets/downloads/complete-vector-cards/readable-j04-v6.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M5 20h14"/></svg>Save descriptive diagram</a>
+            <a class="hud-btn hud-btn--ghost" href="fit-protocol-vector-v6.html">Full protocol &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
 </section>
+
+<section class="hud-folder" id="liquid-overview" aria-labelledby="hudF2">
+  <div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="hudF2">Which day are you on?</h2><span class="hud-folder__meta">Branch map</span></div>
+  <div class="hud-folder__body">
+    <ol class="hud-map">
+      <li class="hud-node"><span class="hud-node__hex">1</span><span class="hud-node__txt"><b>Morning training</b><span>V1 before the session</span></span></li>
+      <li class="hud-node hud-node--off"><span class="hud-node__hex">2</span><span class="hud-node__txt"><b>Rest day</b><span>V1 and V6 inactive</span></span></li>
+      <li class="hud-node"><span class="hud-node__hex">3</span><span class="hud-node__txt"><b>Evening training</b><span>V6 replaces V1</span></span></li>
+    </ol>
+    <div class="hud-alert" role="note"><p><strong>V1 and V6 are never combined on the same day.</strong> These recipes document a personal record, not a prescription.</p></div>
+  </div>
+</section>
+
 
     <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-nutrition-notes.html"><span class="pager__dir">← Previous</span><span class="pager__label">Nutrition notes</span></a><a class="pager__next" rel="next" href="gear-shop.html"><span class="pager__dir">Next →</span><span class="pager__label">Gear folders</span></a>
     </nav>
@@ -414,5 +421,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="mineral-chemistry" data-group="chemistry">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -72,137 +73,122 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-pill-organizer-february-2026-960.webp" alt="" width="2048" height="1535" srcset="assets/web/media-october-2026-pill-organizer-february-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-february-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-february-2026-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">FIT PROTOCOL · OCTOBER 2026</span>
-    <h1>Mineral Chemistry</h1>
-    <p class="lead">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p>
-  </div>
-</header>
-
-<section class="section" id="accounting" aria-labelledby="accounting-title">
-  <div class="section__head">
-    <h2 id="accounting-title">Recorded intake scenarios</h2>
-  </div>
-  <aside class="callout callout--warn nut-before">
-    <p>Partial accounting from your October 6 records. These scenarios depend on the selected products and optional servings; they exclude unlisted food. Upper limits have different scopes and are not target doses.</p>
-  </aside>
-  <div class="nut-facts">
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Magnesium</h3>
-      <p class="nut-fact__value">341 mg training · 100 mg rest</p>
-      <p>Known supplemental base: 240 mg glycinate + 1 mg EAA + 100 mg RapiDrem on training days; RapiDrem alone on the recorded rest branch. Medi-C half serving adds 105 mg: training 446 mg / rest 205 mg. Hey Relax adds 200 mg: 541 / 300 mg; both add-ons 646 / 405 mg. Adult supplemental/medication UL: 350 mg; food magnesium is excluded from that UL.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Calcium</h3>
-      <p class="nut-fact__value">1,536.5 mg training scenario · 1,216 mg rest</p>
-      <p>Includes 945 mL Silk at the recorded 1,134 mg calcium. Training supplements 402.5 mg include the conditional 200 mg CanPrev tablet; rest RapiDrem adds 82 mg. Without that tablet, subtract 200 mg from the training scenario. Other food is not counted. Total-intake UL: 2,500 mg at ages 19–50; 2,000 mg at 51+.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Zinc</h3>
-      <p class="nut-fact__value">28.78 mg training · 3.78 mg rest</p>
-      <p>Training: 25 mg multivitamin + 3.78 mg recorded Silk contribution. Rest skips the multivitamin. Other food is excluded. Adult total-intake UL: 40 mg.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Potassium</h3>
-      <p class="nut-fact__value">1,000 mg per RapiDrem scoop</p>
-      <p>Applies when V2 or V5 is consumed. Other food and beverages are excluded. No established general UL does not imply unlimited supplemental intake.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Sodium</h3>
-      <p class="nut-fact__value">233 mg training · 59 mg rest, partial</p>
-      <p>Training: two 1/16 tsp salt portions at 59 mg each + 115 mg BioSteel. Rest: one salt portion. Igniter and other formula sodium are not included, so these are not daily totals. Recheck the current RapiDrem label before reconciling its ingredient and nutrition declarations.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Vitamin C</h3>
-      <p class="nut-fact__value">452.9 mg training scenario · 150 mg rest scenario</p>
-      <p>Assumes the listed products are consumed, including conditional Liver GI and meal enzymes. Medi-C half serving adds 1,000 mg: 1,452.9 / 1,150 mg. Full serving adds 2,000 mg: training 2,452.9 mg. Adult total-intake UL: 2,000 mg. Other food is excluded.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Biotin</h3>
-      <p class="nut-fact__value">425 mcg training</p>
-      <p>300 mcg multivitamin + 125 mcg EAA. Neither is included in the recorded rest branch; a complete rest-day total is not established. Tell the testing clinician about biotin; assay-specific instructions take priority over a fixed hold time.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Boron</h3>
-      <p class="nut-fact__value">4 mg training · 3 mg rest</p>
-      <p>Training: 3 mg standalone capsule + 1 mg multivitamin. Rest: standalone capsule only. Adult total-intake UL: 20 mg.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Creatine HCl</h3>
-      <p class="nut-fact__value">1,500 mg when both recorded drinks are consumed</p>
-      <p>Training: Proline 750 mg in V4 + SD Pharmaceuticals 750 mg in V10. Rest: Proline 750 mg in V5 + SD Pharmaceuticals 750 mg in V10. The Canadian Carnivor serving records no added creatine. Share creatine use with the clinician interpreting kidney markers.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Caffeine</h3>
-      <p class="nut-fact__value">Approximately 413–443 mg, morning branch</p>
-      <p>Recorded Igniter estimate: approximately 373 mg + tea estimate 40–70 mg. Other sources are excluded. Health Canada guidance for adults: 400 mg/day. Evening V6 has no added caffeine; tea still counts.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__name">Piperine</h3>
-      <p class="nut-fact__value">14.5 mg training · 9.5 mg rest</p>
-      <p>Recorded TestoFX contribution 9.5 mg + curcumin product 5 mg on training days. Rest skips that curcumin grid. Review the full product list alongside medications; no safe upper limit is claimed here.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="vector-chemistry" aria-labelledby="vector-chemistry-title">
-  <div class="section__head">
-    <h2 id="vector-chemistry-title">Vector contributions</h2>
-  </div>
-  <div class="grid grid--3">
-    <article class="card card--pad">
-      <h3 class="card__title">Training · V2 + V4</h3>
-      <p>RapiDrem contributes the recorded potassium, magnesium and calcium. BioSteel and two pink-salt portions contribute to the partial sodium account.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">Rest · V5</h3>
-      <p>One RapiDrem scoop and one pink-salt portion when the drink is consumed. The training multivitamin and EAA do not carry into this branch.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">Night · V10</h3>
-      <p>SD Pharmaceuticals creatine HCl 750 mg. Optional Medi-C or Hey Relax changes the totals; record the serving actually taken.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="payloads" aria-labelledby="payloads-title">
-  <div class="section__head">
-    <h2 id="payloads-title">Product payloads</h2>
-  </div>
-  <div class="grid grid--3">
-    <article class="card card--pad">
-      <h3 class="card__title">BioSteel · 36 g</h3>
-      <p>Recorded half serving: 12 g protein, 19 g carbohydrate, 125 kcal, 90.5 mg calcium and 115 mg sodium.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">RapiDrem · one scoop</h3>
-      <p>Recorded label amounts: 1,000 mg potassium, 100 mg magnesium, 82 mg calcium and 45 mg vitamin C. Confirm your current container.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">Medi-C · 2.5 g, conditional</h3>
-      <p>Latest cross-check records the magnesium-ascorbate version: 105 mg magnesium, 1,000 mg vitamin C and 650 mg lysine. This differs from the older calcium formula; confirm the package before applying these numbers.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="sources" aria-labelledby="sources-title">
-  <div class="section__head">
-    <h2 id="sources-title">Sources and limits</h2>
-    <p>Product amounts are transcribed from supplied records, not independently verified laboratory results. Totals are conditional sums, not complete dietary intake or a safety guarantee.</p>
-  </div>
-  <ul class="nut-links">
-    <li><a href="https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · magnesium</a></li>
-    <li><a href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · calcium</a></li>
-    <li><a href="https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · vitamin C</a></li>
-    <li><a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/caffeine-foods.html" rel="noopener" target="_blank">Health Canada · caffeine guidance</a></li>
-  </ul>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-margins.html"><span class="pager__dir">← Previous</span><span class="pager__label">Safety margins</span></a><a class="pager__next" rel="next" href="fit-protocol-training.html"><span class="pager__dir">Next →</span><span class="pager__label">Training mechanics</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-february-2026-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · OCTOBER 2026</span><h1 class="hud-title" id="hudT">Mineral <em>Chemistry</em></h1><p class="hud-lede">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#accounting"><small>Folder 01</small><strong>Recorded intake scenarios</strong></a><a class="hud-chip hud-chip--link" href="#vector-chemistry"><small>Folder 02</small><strong>Vector contributions</strong></a><a class="hud-chip hud-chip--link" href="#payloads"><small>Folder 03</small><strong>Product payloads</strong></a><a class="hud-chip hud-chip--link" href="#sources"><small>Folder 04</small><strong>Sources and limits</strong></a></div></div></section>
+<section class="hud-folder" id="accounting" aria-labelledby="accounting-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="accounting-t">Recorded intake scenarios</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#accounting-details"><li id="accounting-c1"><a class="hud-card hud-card--text" href="#accounting-c1" data-hud-card aria-expanded="false" aria-controls="accounting-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">Partial accounting from your October 6 records. These scenarios depend on the selected products and optional…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="accounting-details" data-hud-details data-gallery><article class="hud-detail" id="accounting-c1-d" data-hud-detail aria-label="Recorded intake scenarios details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Recorded intake scenarios</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Recorded intake scenarios">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><aside class="callout callout--warn nut-before">
+<p>Partial accounting from your October 6 records. These scenarios depend on the selected products and optional servings; they exclude unlisted food. Upper limits have different scopes and are not target doses.</p>
+</aside>
+<div class="nut-facts">
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Magnesium</h3>
+<p class="nut-fact__value">341 mg training · 100 mg rest</p>
+<p>Known supplemental base: 240 mg glycinate + 1 mg EAA + 100 mg RapiDrem on training days; RapiDrem alone on the recorded rest branch. Medi-C half serving adds 105 mg: training 446 mg / rest 205 mg. Hey Relax adds 200 mg: 541 / 300 mg; both add-ons 646 / 405 mg. Adult supplemental/medication UL: 350 mg; food magnesium is excluded from that UL.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Calcium</h3>
+<p class="nut-fact__value">1,536.5 mg training scenario · 1,216 mg rest</p>
+<p>Includes 945 mL Silk at the recorded 1,134 mg calcium. Training supplements 402.5 mg include the conditional 200 mg CanPrev tablet; rest RapiDrem adds 82 mg. Without that tablet, subtract 200 mg from the training scenario. Other food is not counted. Total-intake UL: 2,500 mg at ages 19–50; 2,000 mg at 51+.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Zinc</h3>
+<p class="nut-fact__value">28.78 mg training · 3.78 mg rest</p>
+<p>Training: 25 mg multivitamin + 3.78 mg recorded Silk contribution. Rest skips the multivitamin. Other food is excluded. Adult total-intake UL: 40 mg.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Potassium</h3>
+<p class="nut-fact__value">1,000 mg per RapiDrem scoop</p>
+<p>Applies when V2 or V5 is consumed. Other food and beverages are excluded. No established general UL does not imply unlimited supplemental intake.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Sodium</h3>
+<p class="nut-fact__value">233 mg training · 59 mg rest, partial</p>
+<p>Training: two 1/16 tsp salt portions at 59 mg each + 115 mg BioSteel. Rest: one salt portion. Igniter and other formula sodium are not included, so these are not daily totals. Recheck the current RapiDrem label before reconciling its ingredient and nutrition declarations.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Vitamin C</h3>
+<p class="nut-fact__value">452.9 mg training scenario · 150 mg rest scenario</p>
+<p>Assumes the listed products are consumed, including conditional Liver GI and meal enzymes. Medi-C half serving adds 1,000 mg: 1,452.9 / 1,150 mg. Full serving adds 2,000 mg: training 2,452.9 mg. Adult total-intake UL: 2,000 mg. Other food is excluded.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Biotin</h3>
+<p class="nut-fact__value">425 mcg training</p>
+<p>300 mcg multivitamin + 125 mcg EAA. Neither is included in the recorded rest branch; a complete rest-day total is not established. Tell the testing clinician about biotin; assay-specific instructions take priority over a fixed hold time.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Boron</h3>
+<p class="nut-fact__value">4 mg training · 3 mg rest</p>
+<p>Training: 3 mg standalone capsule + 1 mg multivitamin. Rest: standalone capsule only. Adult total-intake UL: 20 mg.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Creatine HCl</h3>
+<p class="nut-fact__value">1,500 mg when both recorded drinks are consumed</p>
+<p>Training: Proline 750 mg in V4 + SD Pharmaceuticals 750 mg in V10. Rest: Proline 750 mg in V5 + SD Pharmaceuticals 750 mg in V10. The Canadian Carnivor serving records no added creatine. Share creatine use with the clinician interpreting kidney markers.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Caffeine</h3>
+<p class="nut-fact__value">Approximately 413–443 mg, morning branch</p>
+<p>Recorded Igniter estimate: approximately 373 mg + tea estimate 40–70 mg. Other sources are excluded. Health Canada guidance for adults: 400 mg/day. Evening V6 has no added caffeine; tea still counts.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__name">Piperine</h3>
+<p class="nut-fact__value">14.5 mg training · 9.5 mg rest</p>
+<p>Recorded TestoFX contribution 9.5 mg + curcumin product 5 mg on training days. Rest skips that curcumin grid. Review the full product list alongside medications; no safe upper limit is claimed here.</p>
+</article>
+</div></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="vector-chemistry" aria-labelledby="vector-chemistry-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="vector-chemistry-t">Vector contributions</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="grid grid--3">
+<article class="card card--pad">
+<h3 class="card__title">Training · V2 + V4</h3>
+<p>RapiDrem contributes the recorded potassium, magnesium and calcium. BioSteel and two pink-salt portions contribute to the partial sodium account.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">Rest · V5</h3>
+<p>One RapiDrem scoop and one pink-salt portion when the drink is consumed. The training multivitamin and EAA do not carry into this branch.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">Night · V10</h3>
+<p>SD Pharmaceuticals creatine HCl 750 mg. Optional Medi-C or Hey Relax changes the totals; record the serving actually taken.</p>
+</article>
+</div></div>
+</div></section>
+<section class="hud-folder" id="payloads" aria-labelledby="payloads-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="payloads-t">Product payloads</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="grid grid--3">
+<article class="card card--pad">
+<h3 class="card__title">BioSteel · 36 g</h3>
+<p>Recorded half serving: 12 g protein, 19 g carbohydrate, 125 kcal, 90.5 mg calcium and 115 mg sodium.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">RapiDrem · one scoop</h3>
+<p>Recorded label amounts: 1,000 mg potassium, 100 mg magnesium, 82 mg calcium and 45 mg vitamin C. Confirm your current container.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">Medi-C · 2.5 g, conditional</h3>
+<p>Latest cross-check records the magnesium-ascorbate version: 105 mg magnesium, 1,000 mg vitamin C and 650 mg lysine. This differs from the older calcium formula; confirm the package before applying these numbers.</p>
+</article>
+</div></div>
+</div></section>
+<section class="hud-folder" id="sources" aria-labelledby="sources-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 04</span><h2 class="hud-folder__title" id="sources-t">Sources and limits</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p>Product amounts are transcribed from supplied records, not independently verified laboratory results. Totals are conditional sums, not complete dietary intake or a safety guarantee.</p>
+<ul class="nut-links">
+<li><a href="https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · magnesium</a></li>
+<li><a href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · calcium</a></li>
+<li><a href="https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/" rel="noopener" target="_blank">NIH ODS · vitamin C</a></li>
+<li><a href="https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/caffeine-foods.html" rel="noopener" target="_blank">Health Canada · caffeine guidance</a></li>
+</ul></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-margins.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Safety margins</span></a><a class="pager__next" href="fit-protocol-training.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Training mechanics</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -340,5 +326,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

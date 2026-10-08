@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="fit-protocol-labs" data-group="monitoring">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -70,89 +71,63 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero pb-hero--plain" id="top">
-  <div class="page-hero__text">
-    <span class="eyebrow">FIT PROTOCOL · V2.0</span>
-    <h1>Lab monitoring</h1>
-  </div>
-</header>
-
-<section class="chap" id="part6-lab-integrity" data-category="Safety &amp; Clinical" aria-labelledby="part6-title">
-  <div class="section__head">
-    <span class="eyebrow">Safety &amp; Clinical</span>
-    <h2 id="part6-title">Part VI · Laboratory Integrity</h2>
-  </div>
-
-  <div class="prose">
-    <p class="source-ref">Encyclopedia V2.0 · PDF page 22</p>
-    <h3>Part VI - Diagnostic laboratory integrity playbook</h3>
-  </div>
-
-  <details class="acc" open>
-    <summary>The three measurement confounders</summary>
-    <div class="acc__body">
-      <div class="table-wrap table--cards">
-        <table>
-          <caption>Encyclopedia V2.0 · PDF page 22</caption>
-          <thead><tr><th scope="col">Confounder</th><th scope="col">Mechanism</th><th scope="col">Distorted results</th><th scope="col">Corrective action</th></tr></thead>
-          <tbody>
-            <tr><td data-label="Confounder">Biotin 425 mcg on training days</td><td data-label="Mechanism">Streptavidin-biotin immunoassay interference</td><td data-label="Distorted results">Falsely high free T4/T3, testosterone, cortisol; falsely low TSH, troponin, PTH</td><td data-label="Corrective action">Tell the laboratory. Follow assay-specific hold instructions. No universal 72-hour rule.</td></tr>
-            <tr><td data-label="Confounder">Creatine HCl 1.5 g/day</td><td data-label="Mechanism">Expanded creatinine pool</td><td data-label="Distorted results">Depressed creatinine-based eGFR without renal injury</td><td data-label="Corrective action">Request Cystatin C eGFR for renal interpretation.</td></tr>
-            <tr><td data-label="Confounder">Afternoon testosterone</td><td data-label="Mechanism">Diurnal decline</td><td data-label="Distorted results">7.4 nmol/L at 13:28 reads as deficiency falsely</td><td data-label="Corrective action">Two fasting morning draws, 07:00-09:30, on separate days.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </details>
-
-  <details class="acc" open>
-    <summary>Playbook rules</summary>
-    <div class="acc__body prose">
-      <ul class="pb-rules">
-        <li>March 2026 laboratories predate the May supplement stack. Never cite them for or against the current stack.</li>
-        <li>Record creatine, biotin and caffeine on the laboratory requisition note or patient portal message.</li>
-        <li>Creatine kinase (CK) after hard training is expected to rise; time draws away from peak sessions when CK interpretation matters and tell the clinician the training date.</li>
-        <li>Any troponin concern bypasses supplement reasoning entirely: emergency assessment first.</li>
-        <li>Monitoring plan: quarterly standardized BIA and waist; sleep, digestion and performance logs weekly; laboratory panel timed to clinical need with the confounders above disclosed. That cadence converts this Encyclopedia from a record into a surveillance system.</li>
-      </ul>
-    </div>
-  </details>
-</section>
-
-<details class="acc pb-notes" id="guide-page-10">
-  <summary>Daily guide notes · Labs and Monitoring — Analysis</summary>
-  <div class="acc__body prose">
-    <p class="source-ref">Guidebook V2.0 · PDF page 10</p>
-    <h3>Labs and Monitoring — Analysis</h3>
-    <h4>WHY YOUR LABS NEED CONTEXT</h4>
-    <p>Two published cautions govern every blood draw in Project 100 (Encyclopedia Part VI). First, biotin (425 mcg on the training branch) interferes with immunoassays: depending on the assay, results can read falsely high or falsely low — classically troponin can read falsely low and several hormone assays can skew. There is no universal 72-hour biotin hold: disclose it and follow assay-specific instructions. Second, creatine HCl (1.5 g daily) expands the creatinine pool, so kidney checks should include cystatin-C alongside creatinine. March laboratory results predate the May supplement stack — do not read them as a verdict on the current stack. An afternoon testosterone result is non-diagnostic; hormone interpretation needs two fasting morning draws.</p>
-    <div class="table-wrap table--cards">
-      <table>
-        <caption>Guidebook V2.0 · PDF page 10</caption>
-        <thead><tr><th scope="col">Before any draw</th><th scope="col">Do this</th></tr></thead>
-        <tbody>
-          <tr><td data-label="Before any draw">Biotin 425 mcg on training days</td><td data-label="Do this">Disclose to the lab; hold only per assay-specific instruction</td></tr>
-          <tr><td data-label="Before any draw">Creatine HCl 1.5 g/day</td><td data-label="Do this">Request cystatin-C alongside creatinine</td></tr>
-          <tr><td data-label="Before any draw">Full stack</td><td data-label="Do this">Bring the pill grid (page 7) printed</td></tr>
-          <tr><td data-label="Before any draw">Symptoms</td><td data-label="Do this">Bring the symptom-code log, dated</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <h4>THE DAILY MONITORING MINIMUM</h4>
-    <ul class="pb-rules">
-      <li>Sleep duration and quality; morning HRV where available</li>
-      <li>Session RPE and completion, honest on stimulant days</li>
-      <li>GI tolerance (the osmotic stack announces itself here first)</li>
-      <li>Mood and headache (the cholinergic stack announces itself here first)</li>
-    </ul>
-  </div>
-</details>
-
-<p class="chap__source">Source: <a href="fit-protocol-labs.html#part6-lab-integrity">Open the focused protocol file ↗</a></p>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-monitoring.html"><span class="pager__dir">← Previous</span><span class="pager__label">Metabolic context</span></a><a class="pager__next" rel="next" href="fit-protocol-troubleshooting.html"><span class="pager__dir">Next →</span><span class="pager__label">Troubleshooting</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V2.0</span><h1 class="hud-title" id="hudT">Lab <em>monitoring</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#part6-lab-integrity"><small>Folder 01</small><strong>Part VI · Laboratory…</strong></a><a class="hud-chip hud-chip--link" href="#notes-2"><small>Folder 02</small><strong>Daily guide notes · Labs…</strong></a></div></div></section>
+<section class="hud-folder" id="part6-lab-integrity" aria-labelledby="part6-lab-integrity-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="part6-lab-integrity-t">Part VI · Laboratory Integrity</h2><span class="hud-folder__meta">Safety &amp; Clinical</span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="source-ref">Encyclopedia V2.0 · PDF page 22</p>
+<h3>Part VI - Diagnostic laboratory integrity playbook</h3></div>
+<ul class="hud-cards hud-cards--2" data-hud-cards data-hud-for="#part6-lab-integrity-details"><li id="part6-lab-integrity-c1"><a class="hud-card hud-card--text" href="#part6-lab-integrity-c1" data-hud-card aria-expanded="false" aria-controls="part6-lab-integrity-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">The three measurement confounders</span><span class="hud-card__hint"></span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+<li id="part6-lab-integrity-c2"><a class="hud-card hud-card--text" href="#part6-lab-integrity-c2" data-hud-card aria-expanded="false" aria-controls="part6-lab-integrity-c2-d"><span class="hud-card__tag"><span>02</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Playbook rules</span><span class="hud-card__hint">5 entries · March 2026 laboratories predate the May supplement…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="part6-lab-integrity-details" data-hud-details data-gallery><article class="hud-detail" id="part6-lab-integrity-c1-d" data-hud-detail aria-label="The three measurement confounders details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Part VI · Laboratory Integrity</b><h3>The three measurement confounders</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close The three measurement confounders">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><table>
+<caption>Encyclopedia V2.0 · PDF page 22</caption>
+<thead><tr><th scope="col">Confounder</th><th scope="col">Mechanism</th><th scope="col">Distorted results</th><th scope="col">Corrective action</th></tr></thead>
+<tbody>
+<tr><td data-label="Confounder">Biotin 425 mcg on training days</td><td data-label="Mechanism">Streptavidin-biotin immunoassay interference</td><td data-label="Distorted results">Falsely high free T4/T3, testosterone, cortisol; falsely low TSH, troponin, PTH</td><td data-label="Corrective action">Tell the laboratory. Follow assay-specific hold instructions. No universal 72-hour rule.</td></tr>
+<tr><td data-label="Confounder">Creatine HCl 1.5 g/day</td><td data-label="Mechanism">Expanded creatinine pool</td><td data-label="Distorted results">Depressed creatinine-based eGFR without renal injury</td><td data-label="Corrective action">Request Cystatin C eGFR for renal interpretation.</td></tr>
+<tr><td data-label="Confounder">Afternoon testosterone</td><td data-label="Mechanism">Diurnal decline</td><td data-label="Distorted results">7.4 nmol/L at 13:28 reads as deficiency falsely</td><td data-label="Corrective action">Two fasting morning draws, 07:00-09:30, on separate days.</td></tr>
+</tbody>
+</table></div></div></article>
+<article class="hud-detail" id="part6-lab-integrity-c2-d" data-hud-detail aria-label="Playbook rules details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Part VI · Laboratory Integrity</b><h3>Playbook rules</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Playbook rules">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><ul class="pb-rules">
+<li>March 2026 laboratories predate the May supplement stack. Never cite them for or against the current stack.</li>
+<li>Record creatine, biotin and caffeine on the laboratory requisition note or patient portal message.</li>
+<li>Creatine kinase (CK) after hard training is expected to rise; time draws away from peak sessions when CK interpretation matters and tell the clinician the training date.</li>
+<li>Any troponin concern bypasses supplement reasoning entirely: emergency assessment first.</li>
+<li>Monitoring plan: quarterly standardized BIA and waist; sleep, digestion and performance logs weekly; laboratory panel timed to clinical need with the confounders above disclosed. That cadence converts this Encyclopedia from a record into a surveillance system.</li>
+</ul></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="notes-2" aria-labelledby="notes-2-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="notes-2-t">Daily guide notes · Labs and Monitoring — Analysis</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#notes-2-details"><li id="guide-page-10"><a class="hud-card hud-card--text" href="#guide-page-10" data-hud-card aria-expanded="false" aria-controls="guide-page-10-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">Two published cautions govern every blood draw in Project 100 (Encyclopedia Part VI). First, biotin (425 mcg on the…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="notes-2-details" data-hud-details data-gallery><article class="hud-detail" id="guide-page-10-d" data-hud-detail aria-label="Daily guide notes · Labs and Monitoring — Analysis details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Daily guide notes · Labs and Monitoring — Analysis</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Daily guide notes · Labs and Monitoring — Analysis">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="source-ref">Guidebook V2.0 · PDF page 10</p>
+<h3>Labs and Monitoring — Analysis</h3>
+<h4>WHY YOUR LABS NEED CONTEXT</h4>
+<p>Two published cautions govern every blood draw in Project 100 (Encyclopedia Part VI). First, biotin (425 mcg on the training branch) interferes with immunoassays: depending on the assay, results can read falsely high or falsely low — classically troponin can read falsely low and several hormone assays can skew. There is no universal 72-hour biotin hold: disclose it and follow assay-specific instructions. Second, creatine HCl (1.5 g daily) expands the creatinine pool, so kidney checks should include cystatin-C alongside creatinine. March laboratory results predate the May supplement stack — do not read them as a verdict on the current stack. An afternoon testosterone result is non-diagnostic; hormone interpretation needs two fasting morning draws.</p>
+<div class="table-wrap table--cards">
+<table>
+<caption>Guidebook V2.0 · PDF page 10</caption>
+<thead><tr><th scope="col">Before any draw</th><th scope="col">Do this</th></tr></thead>
+<tbody>
+<tr><td data-label="Before any draw">Biotin 425 mcg on training days</td><td data-label="Do this">Disclose to the lab; hold only per assay-specific instruction</td></tr>
+<tr><td data-label="Before any draw">Creatine HCl 1.5 g/day</td><td data-label="Do this">Request cystatin-C alongside creatinine</td></tr>
+<tr><td data-label="Before any draw">Full stack</td><td data-label="Do this">Bring the pill grid (page 7) printed</td></tr>
+<tr><td data-label="Before any draw">Symptoms</td><td data-label="Do this">Bring the symptom-code log, dated</td></tr>
+</tbody>
+</table>
+</div>
+<h4>THE DAILY MONITORING MINIMUM</h4>
+<ul class="pb-rules">
+<li>Sleep duration and quality; morning HRV where available</li>
+<li>Session RPE and completion, honest on stimulant days</li>
+<li>GI tolerance (the osmotic stack announces itself here first)</li>
+<li>Mood and headache (the cholinergic stack announces itself here first)</li>
+</ul></div></div></article></div>
+<div class="hud-inline hud-prose"><p class="chap__source">Source: <a href="fit-protocol-labs.html#part6-lab-integrity">Open the focused protocol file ↗</a></p></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-monitoring.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Metabolic context</span></a><a class="pager__next" href="fit-protocol-troubleshooting.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Troubleshooting</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -290,5 +265,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

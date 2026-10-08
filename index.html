@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "author": {"@type": "Person", "name": "Bogdan Dospi", "sameAs": ["https://www.instagram.com/fudge_fit/"]}, "name": "PROJECT 100", "url": "https://project100.fit/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline."}, "name": "What is PROJECT 100?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Neither, run separately \u2014 both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition."}, "name": "Is this a bulk or a cut?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Workout page is the full training log \u2014 every block, filterable by category, with real dates and engagement, updated as sessions happen."}, "name": "Where can I follow the day-to-day training?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FIT PROTOCOL is the system behind the lived record: focused files for daily execution, vectors, nutrition, training and monitoring."}, "name": "What\u0027s the Fit Protocol?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation \u2014 nothing theoretical, all logged."}, "name": "How is the nutrition handled?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "New training blocks, recovery meals, and protocol updates post to @fudge_fit on Instagram as they happen \u2014 the site catches up from there."}, "name": "Where do new updates post first?"}]}</script>
 </head>
@@ -62,175 +63,155 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="layout layout--flush">
   <main class="main" id="content" tabindex="-1">
 <header class="home-hero" id="top">
-  <video class="home-hero__img" data-src="assets/video/hero-loop.mp4" data-always poster="assets/img/hero-loop-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true" tabindex="-1" width="960" height="540"></video>
-  <button class="video-toggle" type="button" aria-label="Pause background video" aria-pressed="false">❚❚</button>
-  <div class="wrap home-hero__inner">
-    <span class="eyebrow">PROJECT 100 · Bogdan’s Muscle Mass Excavation</span>
-    <h1>88.2 → <span>100</span> LBS<br>OF MUSCLE.</h1>
-    <p class="lead">A personal return to training at 46. The goal: 100 lb of measured skeletal muscle, built through consistent training, food and recovery.</p>
-    <p class="home-motto">Eat <span>·</span> Sleep <span>·</span> Train <span>·</span> Repeat</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="#explore">Explore the files</a>
-      <a class="btn home-btn-light" href="project-story.html">Read the story</a>
-    </div>
-  </div>
+<video aria-hidden="true" autoplay="" class="home-hero__img" data-always="" data-src="assets/video/hero-loop.mp4" height="540" loop="" muted="" playsinline="" poster="assets/img/hero-loop-poster.jpg" preload="metadata" tabindex="-1" width="960"></video>
+<button aria-label="Pause background video" aria-pressed="false" class="video-toggle" type="button">❚❚</button>
+<div class="wrap home-hero__inner">
+<span class="eyebrow">PROJECT 100 · Bogdan’s Muscle Mass Excavation</span>
+<h1>88.2 → <span>100</span> LBS<br/>OF MUSCLE.</h1>
+<p class="lead">A personal return to training at 46. The goal: 100 lb of measured skeletal muscle, built through consistent training, food and recovery.</p>
+<p class="home-motto">Eat <span>·</span> Sleep <span>·</span> Train <span>·</span> Repeat</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="#explore">Explore the files</a>
+<a class="btn home-btn-light" href="project-story.html">Read the story</a>
+</div>
+</div>
 </header>
-
-<div class="wrap">
-  <ul class="stats home-stats">
-    <li class="stat stat--accent" data-tone="now"><span class="stat__value">88.2 lbs</span><span class="stat__label">recorded SMM baseline</span></li>
-    <li class="stat" data-tone="goal"><span class="stat__value">100 lbs</span><span class="stat__label">SMM target</span></li>
-    <li class="stat" data-tone="goal"><span class="stat__value">&lt;15%</span><span class="stat__label">body fat target</span></li>
-    <li class="stat"><span class="stat__value">46</span><span class="stat__label">years old · 5'7"</span></li>
-  </ul>
-
-  <section class="goalmeter" aria-labelledby="goalmeter-t">
-    <div class="goalmeter__head">
-      <h2 class="goalmeter__title" id="goalmeter-t">Status vs goal</h2>
-      <p class="goalmeter__key" aria-hidden="true"><span class="k-now"><i></i>Now</span><span class="k-goal"><i></i>Goal</span></p>
-    </div>
-    <div class="goalmeter__grid">
-      <div class="meter" style="--p:88.2%;--g:100%;--mix:12%">
-        <div class="meter__top"><span class="meter__name">Skeletal muscle mass</span><span class="meter__nums"><span class="meter__now" data-countup>88.2 lb</span><span class="meter__sep">/</span><span class="meter__goal">100 lb</span></span></div>
-        <div class="meter__track" role="img" aria-label="88.2 pounds recorded against a 100 pound goal"><span class="meter__fill"></span><span class="meter__tick" data-label="Goal"></span></div>
-        <div class="meter__scale" aria-hidden="true"><span>0</span><span>100 lb</span></div>
-        <p class="meter__note"><strong>11.8 lb to go.</strong> Recorded baseline from the Dec 2025 bioimpedance scan.</p>
-      </div>
-      <div class="meter" style="--p:75%;--g:50%;--mix:70%">
-        <div class="meter__top"><span class="meter__name">Body fat</span><span class="meter__nums"><span class="meter__now" data-countup>22.5%</span><span class="meter__sep">→</span><span class="meter__goal">&lt;15%</span></span></div>
-        <div class="meter__track" role="img" aria-label="22.5 percent estimated body fat against a goal of under 15 percent"><span class="meter__fill"></span><span class="meter__tick" data-label="Goal"></span></div>
-        <div class="meter__scale" aria-hidden="true"><span>0%</span><span>30%</span></div>
-        <p class="meter__note"><strong>About 7.5 points to lose.</strong> Current figure is an estimate, not a new scan.</p>
-      </div>
-    </div>
-    <p class="goalmeter__foot">Self-reported and bioimpedance-estimated figures. Personal goals, no guaranteed timeline.</p>
-  </section>
+<div class="wrap hud-wrap"><div class="hud-intro hud-prose"><ul class="stats home-stats">
+<li class="stat stat--accent" data-tone="now"><span class="stat__value">88.2 lbs</span><span class="stat__label">recorded SMM baseline</span></li>
+<li class="stat" data-tone="goal"><span class="stat__value">100 lbs</span><span class="stat__label">SMM target</span></li>
+<li class="stat" data-tone="goal"><span class="stat__value">&lt;15%</span><span class="stat__label">body fat target</span></li>
+<li class="stat"><span class="stat__value">46</span><span class="stat__label">years old · 5'7"</span></li>
+</ul>
+<section aria-labelledby="goalmeter-t" class="goalmeter">
+<div class="goalmeter__head">
+<h2 class="goalmeter__title" id="goalmeter-t">Status vs goal</h2>
+<p aria-hidden="true" class="goalmeter__key"><span class="k-now"><i></i>Now</span><span class="k-goal"><i></i>Goal</span></p>
 </div>
-
-<section class="section" id="explore" aria-labelledby="explore-title">
-  <div class="wrap">
-    <div class="section__head">
-      <h2 id="explore-title">Explore PROJECT_100.</h2>
-    </div>
-    <section class="carousel carousel--rows2 carousel--file" id="home-files" data-carousel data-count="6" aria-labelledby="home-files-t">
-      <header class="carousel__head"><h3 class="carousel__title" id="home-files-t">Open a file</h3><span class="carousel__count">6 files</span></header>
-      <div class="carousel__stage"><ul class="carousel__track home-folders">
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="project-story.html">
-          <div class="card__media"><img src="assets/web/media-october-2026-bogdan-november-2025-960.webp" alt="Bogdan in November 2025, original photograph" width="1205" height="1600" srcset="assets/web/media-october-2026-bogdan-november-2025-480.webp 480w, assets/web/media-october-2026-bogdan-november-2025-960.webp 960w, assets/web/media-october-2026-bogdan-november-2025-1205.webp 1205w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async" fetchpriority="high"></div>
-          <div class="card__body">
-            <h3 class="card__title">The story</h3>
-          </div>
-        </a>
-      </li>
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="project-goals.html">
-          <div class="card__media"><img src="assets/web/img-objective-100lbs-smm-960.webp" alt="The objective: 100 lb skeletal muscle mass" width="1200" height="654" loading="lazy" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w, assets/web/img-objective-100lbs-smm-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
-          <div class="card__body">
-            <h3 class="card__title">Goals &amp; roadmap</h3>
-          </div>
-        </a>
-      </li>
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="fit-workout.html">
-          <div class="card__media"><img src="assets/web/media-october-2026-bogdan-gym-session-960.webp" alt="Bogdan during a gym training session" width="1600" height="1600" loading="lazy" srcset="assets/web/media-october-2026-bogdan-gym-session-480.webp 480w, assets/web/media-october-2026-bogdan-gym-session-960.webp 960w, assets/web/media-october-2026-bogdan-gym-session-1600.webp 1600w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
-          <div class="card__body">
-            <h3 class="card__title">Training log</h3>
-          </div>
-        </a>
-      </li>
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="fit-nutrition.html">
-          <div class="card__media"><img src="assets/web/img-mega-salad-mango-chickpea-960.webp" alt="Mega salad with mango and chickpeas" width="1200" height="900" loading="lazy" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
-          <div class="card__body">
-            <h3 class="card__title">Nutrition folders</h3>
-          </div>
-        </a>
-      </li>
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="gear-shop.html">
-          <div class="card__media"><img src="assets/web/media-october-2026-gym-turf-rig-960.webp" alt="The home gym turf and resistance rig" width="1600" height="1205" loading="lazy" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
-          <div class="card__body">
-            <h3 class="card__title">Gear folders</h3>
-          </div>
-        </a>
-      </li>
-      <li class="carousel__item">
-        <a class="card card--link home-folder" href="fit-protocol.html">
-          <div class="card__media"><img src="assets/web/img-protocol-systemic-fueling-800.webp" alt="Systemic fueling, the documented protocol" width="800" height="1200" loading="lazy" srcset="assets/web/img-protocol-systemic-fueling-480.webp 480w, assets/web/img-protocol-systemic-fueling-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
-          <div class="card__body">
-            <h3 class="card__title">The documented system</h3>
-          </div>
-        </a>
-      </li>
-      </ul></div>
-    </section>
-  </div>
-</section>
-
-<div class="wrap">
-  <section class="cta home-cta" aria-labelledby="cta-title">
-    <span class="eyebrow">Follow the Excavation</span>
-    <h2 id="cta-title">88.2 lbs down.<br>11.8 to go.</h2>
-    <p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
-      <a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
-    </div>
-  </section>
+<div class="goalmeter__grid">
+<div class="meter" style="--p:88.2%;--g:100%;--mix:12%">
+<div class="meter__top"><span class="meter__name">Skeletal muscle mass</span><span class="meter__nums"><span class="meter__now" data-countup="">88.2 lb</span><span class="meter__sep">/</span><span class="meter__goal">100 lb</span></span></div>
+<div aria-label="88.2 pounds recorded against a 100 pound goal" class="meter__track" role="img"><span class="meter__fill"></span><span class="meter__tick" data-label="Goal"></span></div>
+<div aria-hidden="true" class="meter__scale"><span>0</span><span>100 lb</span></div>
+<p class="meter__note"><strong>11.8 lb to go.</strong> Recorded baseline from the Dec 2025 bioimpedance scan.</p>
 </div>
-
-<section class="section section--tint home-faq" id="faq" aria-labelledby="faq-title">
-  <div class="wrap">
-    <div class="section__head">
-      <span class="eyebrow">Questions</span>
-      <h2 id="faq-title">Frequently Asked.</h2>
-    </div>
-    <div class="home-faq__list">
-      <details class="acc">
-        <summary>What is PROJECT 100?</summary>
-        <div class="acc__body"><p>A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline.</p></div>
-      </details>
-      <details class="acc">
-        <summary>Is this a bulk or a cut?</summary>
-        <div class="acc__body"><p>Neither, run separately — both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition.</p></div>
-      </details>
-      <details class="acc">
-        <summary>Where can I follow the day-to-day training?</summary>
-        <div class="acc__body"><p>The Fit Workout page is the full training log — every block, filterable by category, with real dates and engagement, updated as sessions happen.</p></div>
-      </details>
-      <details class="acc">
-        <summary>What's the Fit Protocol?</summary>
-        <div class="acc__body"><p>FIT PROTOCOL is the system behind the lived record: focused files for daily execution, vectors, nutrition, training and monitoring.</p></div>
-      </details>
-      <details class="acc">
-        <summary>How is the nutrition handled?</summary>
-        <div class="acc__body"><p>The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation — nothing theoretical, all logged.</p></div>
-      </details>
-      <details class="acc">
-        <summary>Where do new updates post first?</summary>
-        <div class="acc__body"><p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> on Instagram as they happen — the site catches up from there.</p></div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="biometric-milestone" aria-labelledby="biometric-title">
-  <div class="wrap">
-    <div class="section__head">
-      <h2 id="biometric-title">Biometric record</h2>
-    </div>
-    <div class="card card--pad card--accent home-record">
-      <p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p>
-      <p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p>
-      <a class="btn btn--ghost btn--sm" href="biometrics.html">Timeline and scan plan ↗</a>
-    </div>
-  </div>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="gear-safety.html"><span class="pager__dir">← Previous</span><span class="pager__label">Hardware safety</span></a><a class="pager__next" rel="next" href="project-story.html"><span class="pager__dir">Next →</span><span class="pager__label">The story</span></a>
-    </nav>
-  </main>
+<div class="meter" style="--p:75%;--g:50%;--mix:70%">
+<div class="meter__top"><span class="meter__name">Body fat</span><span class="meter__nums"><span class="meter__now" data-countup="">22.5%</span><span class="meter__sep">→</span><span class="meter__goal">&lt;15%</span></span></div>
+<div aria-label="22.5 percent estimated body fat against a goal of under 15 percent" class="meter__track" role="img"><span class="meter__fill"></span><span class="meter__tick" data-label="Goal"></span></div>
+<div aria-hidden="true" class="meter__scale"><span>0%</span><span>30%</span></div>
+<p class="meter__note"><strong>About 7.5 points to lose.</strong> Current figure is an estimate, not a new scan.</p>
+</div>
+</div>
+<p class="goalmeter__foot">Self-reported and bioimpedance-estimated figures. Personal goals, no guaranteed timeline.</p>
+</section></div>
+<section class="hud-folder" id="explore" aria-labelledby="explore-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="explore-t">Explore PROJECT_100.</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><section aria-labelledby="home-files-t" class="carousel carousel--rows2 carousel--file" data-carousel="" data-count="6" id="home-files">
+<header class="carousel__head"><h3 class="carousel__title" id="home-files-t">Open a file</h3><span class="carousel__count">6 files</span></header>
+<div class="carousel__stage"><ul class="carousel__track home-folders">
+<li class="carousel__item">
+<a class="card card--link home-folder" href="project-story.html">
+<div class="card__media"><img alt="Bogdan in November 2025, original photograph" decoding="async" fetchpriority="high" height="1600" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-bogdan-november-2025-960.webp" srcset="assets/web/media-october-2026-bogdan-november-2025-480.webp 480w, assets/web/media-october-2026-bogdan-november-2025-960.webp 960w, assets/web/media-october-2026-bogdan-november-2025-1205.webp 1205w" width="1205"/></div>
+<div class="card__body">
+<h3 class="card__title">The story</h3>
+</div>
+</a>
+</li>
+<li class="carousel__item">
+<a class="card card--link home-folder" href="project-goals.html">
+<div class="card__media"><img alt="The objective: 100 lb skeletal muscle mass" decoding="async" height="654" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-objective-100lbs-smm-960.webp" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w, assets/web/img-objective-100lbs-smm-1200.webp 1200w" width="1200"/></div>
+<div class="card__body">
+<h3 class="card__title">Goals &amp; roadmap</h3>
+</div>
+</a>
+</li>
+<li class="carousel__item">
+<a class="card card--link home-folder" href="fit-workout.html">
+<div class="card__media"><img alt="Bogdan during a gym training session" decoding="async" height="1600" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-bogdan-gym-session-960.webp" srcset="assets/web/media-october-2026-bogdan-gym-session-480.webp 480w, assets/web/media-october-2026-bogdan-gym-session-960.webp 960w, assets/web/media-october-2026-bogdan-gym-session-1600.webp 1600w" width="1600"/></div>
+<div class="card__body">
+<h3 class="card__title">Training log</h3>
+</div>
+</a>
+</li>
+<li class="carousel__item">
+<a class="card card--link home-folder" href="fit-nutrition.html">
+<div class="card__media"><img alt="Mega salad with mango and chickpeas" decoding="async" height="900" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-mega-salad-mango-chickpea-960.webp" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" width="1200"/></div>
+<div class="card__body">
+<h3 class="card__title">Nutrition folders</h3>
+</div>
+</a>
+</li>
+<li class="carousel__item">
+<a class="card card--link home-folder" href="gear-shop.html">
+<div class="card__media"><img alt="The home gym turf and resistance rig" decoding="async" height="1205" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-gym-turf-rig-960.webp" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" width="1600"/></div>
+<div class="card__body">
+<h3 class="card__title">Gear folders</h3>
+</div>
+</a>
+</li>
+<li class="carousel__item">
+<a class="card card--link home-folder" href="fit-protocol.html">
+<div class="card__media"><img alt="Systemic fueling, the documented protocol" decoding="async" height="1200" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-protocol-systemic-fueling-800.webp" srcset="assets/web/img-protocol-systemic-fueling-480.webp 480w, assets/web/img-protocol-systemic-fueling-800.webp 800w" width="800"/></div>
+<div class="card__body">
+<h3 class="card__title">The documented system</h3>
+</div>
+</a>
+</li>
+</ul></div>
+</section></div>
+</div></section>
+<div class="hud-inline hud-prose"><section aria-labelledby="cta-title" class="cta home-cta">
+<span class="eyebrow">Follow the Excavation</span>
+<h2 id="cta-title">88.2 lbs down.<br/>11.8 to go.</h2>
+<p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> as they happen. Eat. Sleep. Train. Repeat.</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Follow @fudge_fit ↗</a>
+<a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
+</div>
+</section></div>
+<section class="hud-folder" id="faq" aria-labelledby="faq-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="faq-t">Frequently Asked.</h2><span class="hud-folder__meta">Questions</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#faq-details"><li id="faq-c1"><a class="hud-card hud-card--text" href="#faq-c1" data-hud-card aria-expanded="false" aria-controls="faq-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">What is PROJECT 100? A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="faq-details" data-hud-details data-gallery><article class="hud-detail" id="faq-c1-d" data-hud-detail aria-label="Frequently Asked. details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Frequently Asked.</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Frequently Asked.">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><div class="home-faq__list">
+<details class="acc">
+<summary>What is PROJECT 100?</summary>
+<div class="acc__body"><p>A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline.</p></div>
+</details>
+<details class="acc">
+<summary>Is this a bulk or a cut?</summary>
+<div class="acc__body"><p>Neither, run separately — both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition.</p></div>
+</details>
+<details class="acc">
+<summary>Where can I follow the day-to-day training?</summary>
+<div class="acc__body"><p>The Fit Workout page is the full training log — every block, filterable by category, with real dates and engagement, updated as sessions happen.</p></div>
+</details>
+<details class="acc">
+<summary>What's the Fit Protocol?</summary>
+<div class="acc__body"><p>FIT PROTOCOL is the system behind the lived record: focused files for daily execution, vectors, nutrition, training and monitoring.</p></div>
+</details>
+<details class="acc">
+<summary>How is the nutrition handled?</summary>
+<div class="acc__body"><p>The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation — nothing theoretical, all logged.</p></div>
+</details>
+<details class="acc">
+<summary>Where do new updates post first?</summary>
+<div class="acc__body"><p>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a> on Instagram as they happen — the site catches up from there.</p></div>
+</details>
+</div></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="biometric-milestone" aria-labelledby="biometric-milestone-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="biometric-milestone-t">Biometric record</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="card card--pad card--accent home-record">
+<p><strong>14 December 2025:</strong> 88.2 lb skeletal muscle · 197.1 lb body weight · 22.9% body fat.</p>
+<p>October weight: 200.1 lb. Muscle value is carried forward; the next scan is planned for December.</p>
+<a class="btn btn--ghost btn--sm" href="biometrics.html">Timeline and scan plan ↗</a>
+</div></div>
+</div></section></div>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-safety.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Hardware safety</span></a><a class="pager__next" href="project-story.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">The story</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -349,5 +330,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

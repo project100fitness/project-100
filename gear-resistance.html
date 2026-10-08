@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="gear-resistance" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,135 +58,111 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
-    <ul class="rail__list">
-      <li><a href="gear-shop.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
-      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
-      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
-      <li><a href="gear-rig.html"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
-      <li><a href="gear-resistance.html" aria-current="page"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
-      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
-      <li><a href="gear-anchors.html"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
-      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
-      <li><a href="gear-safety.html"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-gear-item-tubing-308.webp" alt="" width="308" height="540" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · GEAR</span>
-    <h1>Resistance bands</h1>
-  </div>
-</header>
-<aside class="callout callout--note">
-  <span class="callout__title">The Physics Behind It</span>
-  <p>The manifest lists a 360 lb KUZARO set and a 330 lb HPYGN set. These are combined nominal ratings; band tension changes with the tubes selected and their stretch. The kit collection allows different resistance combinations.</p>
-</aside>
-
-<section class="section" id="armory-resistance" data-main-source="gear-shop.html:armory-resistance" aria-labelledby="armory-resistance-title">
-  <div class="section__head">
-    <span class="eyebrow">The Real Inventory</span>
-    <h2 id="armory-resistance-title">High-Tensile Resistance</h2>
-    <p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
-  </div>
-
-  <section class="gear-group" data-gear-category="resistance" aria-labelledby="armory-resistance-resistance-title">
-    <h3 class="gear-group__title" id="armory-resistance-resistance-title">Band systems &amp; resistance grades</h3>
-    <ul class="gear-list" data-gallery>
-      <li class="gear-list__wide"><article class="card gear-item gear-item--wide" data-gear-page="1" data-gear-record="kuzaro" id="kuzaro-multi-kit">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-tubing.jpg" aria-label="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set"><img src="assets/web/img-gear-item-tubing-308.webp" alt="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set" width="308" height="540" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">KUZARO · Multi-band setup</h4>
-          <span class="tag tag--teal gear-item__spec">6 BUNDLES · 4 KITS</span>
-          <p>Six named matched-band configurations form the KUZARO setup. Bundle ratings describe the selected tubes; resistance changes with stretch.</p>
-          <div class="gear-bundles">
-            <h5 class="gear-bundles__title">Hex-Grid bundle directory</h5>
-            <div class="gear-bundles__grid">
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Juggernaut</span><span class="gear-bundle__force">255 lb</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">3 × 85 lb · matched bundle</strong><span class="gear-bundle__color"> · Solid black</span></p>
-                  <p class="gear-bundle__use">Chest · Chest presses, standing presses and horizontal pushing.</p>
-                </div>
-              </details>
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Titan</span><span class="gear-bundle__force">195 lb</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">3 × 65 lb · matched bundle</strong><span class="gear-bundle__color"> · Dark gray</span></p>
-                  <p class="gear-bundle__use">Back · Rows, lat pull-downs and posterior-chain work.</p>
-                </div>
-              </details>
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Enforcer</span><span class="gear-bundle__force">165 lb</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">3 × 55 lb · matched bundle</strong><span class="gear-bundle__color"> · Medium gray</span></p>
-                  <p class="gear-bundle__use">Triceps · Overhand/underhand extensions, press-downs and lockout work.</p>
-                </div>
-              </details>
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Viper</span><span class="gear-bundle__force">135 lb</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">3 × 45 lb · matched bundle</strong><span class="gear-bundle__color"> · Medium-light gray</span></p>
-                  <p class="gear-bundle__use">Reserve / drop sets · Shoulder raises, drop sets and finisher work.</p>
-                </div>
-              </details>
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Scalpel</span><span class="gear-bundle__force">105 lb</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">3 × 35 lb · matched bundle</strong><span class="gear-bundle__color"> · Light gray</span></p>
-                  <p class="gear-bundle__use">Delts / isolation · Deltoid flys, precise isolation and warm-up sets.</p>
-                </div>
-              </details>
-              <details class="acc gear-bundle">
-                <summary><span class="gear-bundle__name">Twin Cobras</span><span class="gear-bundle__force">75 lb / hand</span></summary>
-                <div class="acc__body">
-                  <p><strong class="gear-bundle__comp">2 × 75 lb · separate bands</strong><span class="gear-bundle__color"> · Very dark gray / soft black</span></p>
-                  <p class="gear-bundle__use">Biceps / unilateral · Two separate bands for unilateral curls, one band per hand with individual factory clips.</p>
-                </div>
-              </details>
-            </div>
-            <details class="acc">
-              <summary>Individual tube grades · 360 lb listed set</summary>
-              <div class="acc__body">
-                <ul class="gear-grades">
-                  <li><strong>35 lb · 15.9 kg</strong> <span>Light gray</span></li>
-                  <li><strong>45 lb · 20.4 kg</strong> <span>Medium-light gray</span></li>
-                  <li><strong>55 lb · 24.9 kg</strong> <span>Medium gray</span></li>
-                  <li><strong>65 lb · 29.5 kg</strong> <span>Dark gray</span></li>
-                  <li><strong>75 lb · 34.0 kg</strong> <span>Very dark gray / soft black</span></li>
-                  <li><strong>85 lb · 38.5 kg</strong> <span>Solid black</span></li>
-                </ul>
-              </div>
-            </details>
-            <details class="acc">
-              <summary>Bundle connections &amp; protective tape</summary>
-              <div class="acc__body">
-                <p class="bundle-connections">Black Renfrew cloth tape at the joint loops, replacing rigid plastic ties. Eight JRSGS carabiners in the documented bundle setup. Twin Cobras use individual factory clips.</p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </article></li>
-      <li class="gear-list__wide"><article class="card gear-item gear-item--wide" data-gear-page="1" data-gear-record="hpygn-bands">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-hpygn-bands.jpg" aria-label="Photo: the HPYGN kit&#x27;s three weight-tagged resistance bands, 45/55/65 lb"><img src="assets/web/img-gear-item-hpygn-bands-700.webp" alt="Photo: the HPYGN kit&#x27;s three weight-tagged resistance bands, 45/55/65 lb" width="700" height="1198" loading="lazy" srcset="assets/web/img-gear-item-hpygn-bands-480.webp 480w, assets/web/img-gear-item-hpygn-bands-700.webp 700w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">HPYGN Heavy-Duty Compression System</h4>
-          <span class="tag tag--teal gear-item__spec">330 LB SET</span>
-          <p>Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Recorded short-band configuration: two 65 lb bands, doubled and shortened at the low Iron Tower anchor, routed into the Tribe bar’s rotating eyelets. Their nominal ratings total 130 lb; resistance changes with stretch.</p>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-
-  <p class="gear-note">Equipment identities and listed ratings follow the supplied PROJECT 100 visual recognition database. Tube ratings, combined set ratings and force at a particular stretch are different measurements.</p>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-gear-item-tubing-308.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title" id="hudT">Resistance <em>bands</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#armory-resistance"><small>Folder 01</small><strong>High-Tensile Resistance</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Gear"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html" aria-current="page">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--note">
+<span class="callout__title">The Physics Behind It</span>
+<p>The manifest lists a 360 lb KUZARO set and a 330 lb HPYGN set. These are combined nominal ratings; band tension changes with the tubes selected and their stretch. The kit collection allows different resistance combinations.</p>
+</aside></div>
+<section class="hud-folder" id="armory-resistance" aria-labelledby="armory-resistance-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="armory-resistance-t">High-Tensile Resistance</h2><span class="hud-folder__meta">The Real Inventory</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#armory-resistance-details"><li id="armory-resistance-c1"><a class="hud-card hud-card--text" href="#armory-resistance-c1" data-hud-card aria-expanded="false" aria-controls="armory-resistance-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="armory-resistance-details" data-hud-details data-gallery><article class="hud-detail" id="armory-resistance-c1-d" data-hud-detail aria-label="High-Tensile Resistance details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>High-Tensile Resistance</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close High-Tensile Resistance">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
+<section aria-labelledby="armory-resistance-resistance-title" class="gear-group" data-gear-category="resistance">
+<h3 class="gear-group__title" id="armory-resistance-resistance-title">Band systems &amp; resistance grades</h3>
+<ul class="gear-list" data-gallery="">
+<li class="gear-list__wide"><article class="card gear-item gear-item--wide" data-gear-page="1" data-gear-record="kuzaro" id="kuzaro-multi-kit">
+<div class="card__media"><button aria-label="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set" class="gear-item__zoom" data-full="assets/img/gear-item-tubing.jpg" type="button"><img alt="Photo: resistance tubing bundle on the rig, KUZARO Pure Triad set" decoding="async" height="540" loading="lazy" src="assets/web/img-gear-item-tubing-308.webp" width="308"/></button></div>
+<div class="card__body">
+<h4 class="card__title">KUZARO · Multi-band setup</h4>
+<span class="tag tag--teal gear-item__spec">6 BUNDLES · 4 KITS</span>
+<p>Six named matched-band configurations form the KUZARO setup. Bundle ratings describe the selected tubes; resistance changes with stretch.</p>
+<div class="gear-bundles">
+<h5 class="gear-bundles__title">Hex-Grid bundle directory</h5>
+<div class="gear-bundles__grid">
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Juggernaut</span><span class="gear-bundle__force">255 lb</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">3 × 85 lb · matched bundle</strong><span class="gear-bundle__color"> · Solid black</span></p>
+<p class="gear-bundle__use">Chest · Chest presses, standing presses and horizontal pushing.</p>
+</div>
+</details>
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Titan</span><span class="gear-bundle__force">195 lb</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">3 × 65 lb · matched bundle</strong><span class="gear-bundle__color"> · Dark gray</span></p>
+<p class="gear-bundle__use">Back · Rows, lat pull-downs and posterior-chain work.</p>
+</div>
+</details>
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Enforcer</span><span class="gear-bundle__force">165 lb</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">3 × 55 lb · matched bundle</strong><span class="gear-bundle__color"> · Medium gray</span></p>
+<p class="gear-bundle__use">Triceps · Overhand/underhand extensions, press-downs and lockout work.</p>
+</div>
+</details>
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Viper</span><span class="gear-bundle__force">135 lb</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">3 × 45 lb · matched bundle</strong><span class="gear-bundle__color"> · Medium-light gray</span></p>
+<p class="gear-bundle__use">Reserve / drop sets · Shoulder raises, drop sets and finisher work.</p>
+</div>
+</details>
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Scalpel</span><span class="gear-bundle__force">105 lb</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">3 × 35 lb · matched bundle</strong><span class="gear-bundle__color"> · Light gray</span></p>
+<p class="gear-bundle__use">Delts / isolation · Deltoid flys, precise isolation and warm-up sets.</p>
+</div>
+</details>
+<details class="acc gear-bundle">
+<summary><span class="gear-bundle__name">Twin Cobras</span><span class="gear-bundle__force">75 lb / hand</span></summary>
+<div class="acc__body">
+<p><strong class="gear-bundle__comp">2 × 75 lb · separate bands</strong><span class="gear-bundle__color"> · Very dark gray / soft black</span></p>
+<p class="gear-bundle__use">Biceps / unilateral · Two separate bands for unilateral curls, one band per hand with individual factory clips.</p>
+</div>
+</details>
+</div>
+<details class="acc">
+<summary>Individual tube grades · 360 lb listed set</summary>
+<div class="acc__body">
+<ul class="gear-grades">
+<li><strong>35 lb · 15.9 kg</strong> <span>Light gray</span></li>
+<li><strong>45 lb · 20.4 kg</strong> <span>Medium-light gray</span></li>
+<li><strong>55 lb · 24.9 kg</strong> <span>Medium gray</span></li>
+<li><strong>65 lb · 29.5 kg</strong> <span>Dark gray</span></li>
+<li><strong>75 lb · 34.0 kg</strong> <span>Very dark gray / soft black</span></li>
+<li><strong>85 lb · 38.5 kg</strong> <span>Solid black</span></li>
+</ul>
+</div>
+</details>
+<details class="acc">
+<summary>Bundle connections &amp; protective tape</summary>
+<div class="acc__body">
+<p class="bundle-connections">Black Renfrew cloth tape at the joint loops, replacing rigid plastic ties. Eight JRSGS carabiners in the documented bundle setup. Twin Cobras use individual factory clips.</p>
+</div>
+</details>
+</div>
+</div>
+</article></li>
+<li class="gear-list__wide"><article class="card gear-item gear-item--wide" data-gear-page="1" data-gear-record="hpygn-bands">
+<div class="card__media"><button aria-label="Photo: the HPYGN kit's three weight-tagged resistance bands, 45/55/65 lb" class="gear-item__zoom" data-full="assets/img/gear-item-hpygn-bands.jpg" type="button"><img alt="Photo: the HPYGN kit's three weight-tagged resistance bands, 45/55/65 lb" decoding="async" height="1198" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-hpygn-bands-700.webp" srcset="assets/web/img-gear-item-hpygn-bands-480.webp 480w, assets/web/img-gear-item-hpygn-bands-700.webp 700w" width="700"/></button></div>
+<div class="card__body">
+<h4 class="card__title">HPYGN Heavy-Duty Compression System</h4>
+<span class="tag tag--teal gear-item__spec">330 LB SET</span>
+<p>Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Recorded short-band configuration: two 65 lb bands, doubled and shortened at the low Iron Tower anchor, routed into the Tribe bar’s rotating eyelets. Their nominal ratings total 130 lb; resistance changes with stretch.</p>
+</div>
+</article></li>
+</ul>
 </section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="gear-rig.html"><span class="pager__dir">← Previous</span><span class="pager__label">The rig</span></a><a class="pager__next" rel="next" href="gear-grips.html"><span class="pager__dir">Next →</span><span class="pager__label">Grips &amp; handles</span></a>
-    </nav>
-  </main>
+<p class="gear-note">Equipment identities and listed ratings follow the supplied PROJECT 100 visual recognition database. Tube ratings, combined set ratings and force at a particular stretch are different measurements.</p></div></div></article></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-rig.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">The rig</span></a><a class="pager__next" href="gear-grips.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Grips &amp; handles</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -303,5 +280,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="biometrics" data-group="biometrics">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -59,146 +60,129 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 <div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-gym-august-weights-960.webp" alt="" width="1600" height="1600" srcset="assets/web/media-october-2026-gym-august-weights-480.webp 480w, assets/web/media-october-2026-gym-august-weights-960.webp 960w, assets/web/media-october-2026-gym-august-weights-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT 100 · OCTOBER 2026</span>
-    <h1>Biometrics</h1>
-    <p class="lead">Dated measurements, clearly marked estimates and the next scan plan.</p>
-  </div>
-</header>
-
-<section class="section" id="timeline" aria-labelledby="timeline-title">
-  <div class="section__head">
-    <h2 id="timeline-title">Dated record</h2>
-  </div>
-  <ol class="timeline nut-timeline">
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">2024 baseline</h3>
-        <p class="nut-entry__value">226.2 lb · 72.3 lb SMM · 37.0% body fat</p>
-        <p>Historical values transcribed from the supplied record.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">28 June 2025</h3>
-        <p class="nut-entry__value">82.0 lb SMM</p>
-        <p>Only skeletal muscle mass supplied for this entry.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">14 December 2025</h3>
-        <p class="nut-entry__value">197.1 lb · 88.2 lb SMM · 22.9% body fat</p>
-        <p>Dated benchmark recorded at Gym Fit Forme; 89.4 kg body weight / 40 kg SMM.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry nut-entry--unverified">
-        <h3 class="nut-entry__date">April 2026</h3>
-        <p class="nut-entry__value">191.5 lb · 93.7 lb SMM · 30.2% body fat</p>
-        <p>Operator-reported, unverified entry. Excluded from the progress trend.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">24 July 2026</h3>
-        <p class="nut-entry__value">FFMI 25.71</p>
-        <p>Recorded index; not a measurement of skeletal muscle or a validated muscle ceiling.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">August 2026</h3>
-        <p class="nut-entry__value">13.6% body fat, reported</p>
-        <p>Document milestone; the supporting scan image was not supplied with this addon.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry">
-        <h3 class="nut-entry__date">September–October 2026</h3>
-        <p class="nut-entry__value">200.1 lb body weight</p>
-        <p>88.2 lb SMM is carried forward, not newly scanned. Approximately 22.5% body fat is an estimate. Weight change cannot establish muscle or water gain.</p>
-      </article>
-    </li>
-    <li>
-      <article class="card card--pad nut-entry nut-entry--planned">
-        <h3 class="nut-entry__date">14–21 December 2026</h3>
-        <p class="nut-entry__value">Planned follow-up</p>
-        <p>Same unit at Gym Fit Forme where possible. A planned appointment is not a result.</p>
-      </article>
-    </li>
-  </ol>
-</section>
-
-<section class="section" id="corridor" aria-labelledby="corridor-title">
-  <div class="section__head">
-    <h2 id="corridor-title">Planning bands</h2>
-  </div>
-  <div class="grid grid--3">
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__value">90–93 lb SMM</h3>
-      <p>Planning range, not a demonstrated physiological limit.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__value">92–97 lb BIA readout</h3>
-      <p>Anticipated printout range in the supplied plan; hydration and measurement conditions affect comparison.</p>
-    </article>
-    <article class="card card--pad nut-fact">
-      <h3 class="nut-fact__value">100 lb stretch target</h3>
-      <p>A stretch readout goal. No claim of 100 lb dry contractile muscle.</p>
-    </article>
-  </div>
-  <aside class="callout callout--note nut-after">
-    <p>FFMI describes fat-free mass relative to height. Fat-free mass includes water, bone and organs as well as muscle; it cannot by itself establish a skeletal-muscle ceiling.</p>
-  </aside>
-</section>
-
-<section class="section" id="scan-controls" aria-labelledby="scan-controls-title">
-  <div class="section__head">
-    <h2 id="scan-controls-title">Comparable scans</h2>
-  </div>
-  <div class="grid grid--3">
-    <article class="card card--pad">
-      <h3 class="card__title">Use consistent conditions</h3>
-      <p>Same device and time of day; record food, fluid and recent training. Follow the testing centre’s preparation instructions.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">Record the context</h3>
-      <p>The supplied plan uses a waking, post-void, pre-workout scan and avoids heavy training immediately beforehand. Do not deliberately dehydrate to change a result.</p>
-    </article>
-    <article class="card card--pad">
-      <h3 class="card__title">Keep the original result</h3>
-      <p>Save the dated scan sheet. Compare measured values with measured values; mark carried values and estimates separately.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="review" aria-labelledby="review-title">
-  <div class="section__head">
-    <h2 id="review-title">Next review</h2>
-    <p class="lead">Planned window: 14–21 December 2026. Replace estimates only after the new scan is available.</p>
-  </div>
-  <div class="btn-row nut-after">
-    <a class="btn btn--primary" href="mineral-chemistry.html">Open mineral accounting ↗</a>
-  </div>
-  <details class="acc">
-    <summary>Sources and measurement limits</summary>
-    <div class="acc__body">
-      <p>Values: supplied October 6, 2026 integration PDF and cross-check document. Original scan sheets were not supplied in this addon.</p>
-      <p><a href="https://inbodyusa.com/general/technology/">InBody: body composition and fat-free mass</a></p>
-    </div>
-  </details>
-  <figure class="media nut-photo">
-    <button type="button" class="zoom" data-full="assets/media/october-2026/bogdan-august-mirror.jpg" aria-label="Enlarge: August training progress portrait; photograph, not a body-composition measurement"><img src="assets/web/media-october-2026-bogdan-august-mirror-960.webp" data-full="assets/media/october-2026/bogdan-august-mirror.jpg" alt="August training progress portrait; photograph, not a body-composition measurement" width="1600" height="1600" loading="lazy" srcset="assets/web/media-october-2026-bogdan-august-mirror-480.webp 480w, assets/web/media-october-2026-bogdan-august-mirror-960.webp 960w, assets/web/media-october-2026-bogdan-august-mirror-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button>
-    <figcaption>Training journal · August 2026. Photos do not verify scan values.</figcaption>
-  </figure>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="project-goals.html"><span class="pager__dir">← Previous</span><span class="pager__label">Goals &amp; roadmap</span></a><a class="pager__next" rel="next" href="fit-workout.html"><span class="pager__dir">Next →</span><span class="pager__label">Training log</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-gym-august-weights-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT 100 · OCTOBER 2026</span><h1 class="hud-title" id="hudT"><em>Biometrics</em></h1><p class="hud-lede">Dated measurements, clearly marked estimates and the next scan plan.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#timeline"><small>Folder 01</small><strong>Dated record</strong></a><a class="hud-chip hud-chip--link" href="#corridor"><small>Folder 02</small><strong>Planning bands</strong></a><a class="hud-chip hud-chip--link" href="#scan-controls"><small>Folder 03</small><strong>Comparable scans</strong></a><a class="hud-chip hud-chip--link" href="#review"><small>Folder 04</small><strong>Next review</strong></a></div></div></section>
+<section class="hud-folder" id="timeline" aria-labelledby="timeline-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="timeline-t">Dated record</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#timeline-details"><li id="timeline-c1"><a class="hud-card hud-card--text" href="#timeline-c1" data-hud-card aria-expanded="false" aria-controls="timeline-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">8 entries · 2024 baseline 226.2 lb · 72.3 lb SMM · 37.0% body fat…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="timeline-details" data-hud-details data-gallery><article class="hud-detail" id="timeline-c1-d" data-hud-detail aria-label="Dated record details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Dated record</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Dated record">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><ol class="timeline nut-timeline">
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">2024 baseline</h3>
+<p class="nut-entry__value">226.2 lb · 72.3 lb SMM · 37.0% body fat</p>
+<p>Historical values transcribed from the supplied record.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">28 June 2025</h3>
+<p class="nut-entry__value">82.0 lb SMM</p>
+<p>Only skeletal muscle mass supplied for this entry.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">14 December 2025</h3>
+<p class="nut-entry__value">197.1 lb · 88.2 lb SMM · 22.9% body fat</p>
+<p>Dated benchmark recorded at Gym Fit Forme; 89.4 kg body weight / 40 kg SMM.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry nut-entry--unverified">
+<h3 class="nut-entry__date">April 2026</h3>
+<p class="nut-entry__value">191.5 lb · 93.7 lb SMM · 30.2% body fat</p>
+<p>Operator-reported, unverified entry. Excluded from the progress trend.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">24 July 2026</h3>
+<p class="nut-entry__value">FFMI 25.71</p>
+<p>Recorded index; not a measurement of skeletal muscle or a validated muscle ceiling.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">August 2026</h3>
+<p class="nut-entry__value">13.6% body fat, reported</p>
+<p>Document milestone; the supporting scan image was not supplied with this addon.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry">
+<h3 class="nut-entry__date">September–October 2026</h3>
+<p class="nut-entry__value">200.1 lb body weight</p>
+<p>88.2 lb SMM is carried forward, not newly scanned. Approximately 22.5% body fat is an estimate. Weight change cannot establish muscle or water gain.</p>
+</article>
+</li>
+<li>
+<article class="card card--pad nut-entry nut-entry--planned">
+<h3 class="nut-entry__date">14–21 December 2026</h3>
+<p class="nut-entry__value">Planned follow-up</p>
+<p>Same unit at Gym Fit Forme where possible. A planned appointment is not a result.</p>
+</article>
+</li>
+</ol></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="corridor" aria-labelledby="corridor-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="corridor-t">Planning bands</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="grid grid--3">
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__value">90–93 lb SMM</h3>
+<p>Planning range, not a demonstrated physiological limit.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__value">92–97 lb BIA readout</h3>
+<p>Anticipated printout range in the supplied plan; hydration and measurement conditions affect comparison.</p>
+</article>
+<article class="card card--pad nut-fact">
+<h3 class="nut-fact__value">100 lb stretch target</h3>
+<p>A stretch readout goal. No claim of 100 lb dry contractile muscle.</p>
+</article>
+</div>
+<aside class="callout callout--note nut-after">
+<p>FFMI describes fat-free mass relative to height. Fat-free mass includes water, bone and organs as well as muscle; it cannot by itself establish a skeletal-muscle ceiling.</p>
+</aside></div>
+</div></section>
+<section class="hud-folder" id="scan-controls" aria-labelledby="scan-controls-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="scan-controls-t">Comparable scans</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div class="grid grid--3">
+<article class="card card--pad">
+<h3 class="card__title">Use consistent conditions</h3>
+<p>Same device and time of day; record food, fluid and recent training. Follow the testing centre’s preparation instructions.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">Record the context</h3>
+<p>The supplied plan uses a waking, post-void, pre-workout scan and avoids heavy training immediately beforehand. Do not deliberately dehydrate to change a result.</p>
+</article>
+<article class="card card--pad">
+<h3 class="card__title">Keep the original result</h3>
+<p>Save the dated scan sheet. Compare measured values with measured values; mark carried values and estimates separately.</p>
+</article>
+</div></div>
+</div></section>
+<section class="hud-folder" id="review" aria-labelledby="review-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 04</span><h2 class="hud-folder__title" id="review-t">Next review</h2><span class="hud-folder__meta">2 cards · tap to open</span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="lead">Planned window: 14–21 December 2026. Replace estimates only after the new scan is available.</p>
+<div class="btn-row nut-after">
+<a class="btn btn--primary" href="mineral-chemistry.html">Open mineral accounting ↗</a>
+</div></div>
+<ul class="hud-cards hud-cards--2" data-hud-cards data-hud-for="#review-details"><li id="review-c1"><a class="hud-card hud-card--text" href="#review-c1" data-hud-card aria-expanded="false" aria-controls="review-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Sources and measurement limits</span><span class="hud-card__hint">Values: supplied October 6, 2026 integration PDF and cross-check document. Original scan sheets were not supplied in…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li>
+<li id="review-c2"><a class="hud-card" href="#review-c2" data-hud-card aria-expanded="false" aria-controls="review-c2-d"><span class="hud-card__tag"><span>02</span><span>PHOTO</span></span><span class="hud-card__img"><img src="assets/web/media-october-2026-bogdan-august-mirror-480.webp" alt="" width="1600" height="1600" loading="lazy" decoding="async"></span><span class="hud-card__foot"><span class="hud-card__name">Training journal · August 2026. Photos do not verify…</span><span class="hud-card__hint">Photo · tap to open and enlarge</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="review-details" data-hud-details data-gallery><article class="hud-detail" id="review-c1-d" data-hud-detail aria-label="Sources and measurement limits details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Next review</b><h3>Sources and measurement limits</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Sources and measurement limits">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p>Values: supplied October 6, 2026 integration PDF and cross-check document. Original scan sheets were not supplied in this addon.</p>
+<p><a href="https://inbodyusa.com/general/technology/">InBody: body composition and fat-free mass</a></p></div></div></article>
+<article class="hud-detail" id="review-c2-d" data-hud-detail aria-label="Training journal · August 2026. Photos do not verify… details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Next review</b><h3>Training journal · August 2026. Photos do not verify…</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Training journal · August 2026. Photos do not verify…">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><figure class="media nut-photo">
+<button aria-label="Enlarge: August training progress portrait; photograph, not a body-composition measurement" class="zoom" data-full="assets/media/october-2026/bogdan-august-mirror.jpg" type="button"><img alt="August training progress portrait; photograph, not a body-composition measurement" data-full="assets/media/october-2026/bogdan-august-mirror.jpg" decoding="async" height="1600" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-bogdan-august-mirror-960.webp" srcset="assets/web/media-october-2026-bogdan-august-mirror-480.webp 480w, assets/web/media-october-2026-bogdan-august-mirror-960.webp 960w, assets/web/media-october-2026-bogdan-august-mirror-1600.webp 1600w" width="1600"/><span aria-hidden="true" class="zoom__hint">Enlarge</span></button>
+<figcaption>Training journal · August 2026. Photos do not verify scan values.</figcaption>
+</figure></div></div></article></div>
+</div></section>
+<section class="hud-folder hud-folder--deep" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-monitoring.html"><small>FIT PROTOCOL</small><strong>Metabolic context</strong><span>What is tracked and why</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol-labs.html"><small>FIT PROTOCOL</small><strong>Lab monitoring</strong><span>Blood work and thresholds</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="project-goals.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Goals &amp; roadmap</span></a><a class="pager__next" href="fit-workout.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Training log</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -316,5 +300,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

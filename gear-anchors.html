@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="gear-anchors" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,144 +58,122 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
-    <ul class="rail__list">
-      <li><a href="gear-shop.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
-      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
-      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
-      <li><a href="gear-rig.html"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
-      <li><a href="gear-resistance.html"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
-      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
-      <li><a href="gear-anchors.html" aria-current="page"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
-      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
-      <li><a href="gear-safety.html"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-gear-item-carabiner-1000.webp" alt="" width="1000" height="708" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · GEAR</span>
-    <h1>Bars, straps &amp; anchors</h1>
-  </div>
-</header>
-<aside class="callout callout--note">
-  <span class="callout__title">The Physics Behind It</span>
-  <p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
-</aside>
-
-<section class="section" id="armory-anchors" data-main-source="gear-shop.html:armory-anchors" aria-labelledby="armory-anchors-title">
-  <div class="section__head">
-    <span class="eyebrow">The Real Inventory</span>
-    <h2 id="armory-anchors-title">Bars, connections &amp; anchors</h2>
-    <p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
-  </div>
-  <section class="gear-group" data-gear-category="structural" aria-labelledby="armory-anchors-structural-title">
-    <h3 class="gear-group__title" id="armory-anchors-structural-title">Bars, harnesses &amp; extension straps</h3>
-    <ul class="gear-list" data-gallery>
-      <li><article class="card gear-item" data-gear-page="2" data-gear-record="tribe">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-resistance-bar.jpg" aria-label="Photo: the chrome modular resistance bar"><img src="assets/web/img-gear-item-resistance-bar-500.webp" alt="Photo: the chrome modular resistance bar" width="500" height="175" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">Tribe Lifting Modular Resistance Bar</h4>
-          <span class="tag tag--teal gear-item__spec">3 PIECES · 360° SWIVELS</span>
-          <p>Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item gear-item--text" data-gear-page="2" data-gear-record="hpygn-bar">
-        <div class="card__body">
-          <h4 class="card__title">HPYGN Heavy Pilates Structural Bar</h4>
-          <span class="tag tag--teal gear-item__spec">Foam-padded steel</span>
-          <p>Black steel bar covered in dense non-slip black foam. Its nylon terminal straps have distinctive red edge stitching.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item" data-gear-page="2" data-gear-record="extensions">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-thefitguy-ext-straps.jpg" aria-label="Photo: the THEFITGUY ultimate extension straps"><img src="assets/web/img-gear-item-thefitguy-ext-straps-700.webp" alt="Photo: the THEFITGUY ultimate extension straps" width="700" height="724" loading="lazy" srcset="assets/web/img-gear-item-thefitguy-ext-straps-480.webp 480w, assets/web/img-gear-item-thefitguy-ext-straps-700.webp 700w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">THEFITGUY Ultimate Extension Straps</h4>
-          <span class="tag tag--teal gear-item__spec">Dual D-ring straps</span>
-          <p>Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item" data-gear-page="2" data-gear-record="sled">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-sled-belt.jpg" aria-label="Photo: the padded neoprene harness hanging on the rig"><img src="assets/web/img-gear-item-sled-belt-1000.webp" alt="Photo: the padded neoprene harness hanging on the rig" width="1000" height="807" loading="lazy" srcset="assets/web/img-gear-item-sled-belt-480.webp 480w, assets/web/img-gear-item-sled-belt-1000.webp 1000w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">THEFITGUY Sled Pulling Belt &amp; Straps Kit</h4>
-          <span class="tag tag--teal gear-item__spec">2 × 9.8 FT · 4 HOOKS</span>
-          <p>Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.</p>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-  <section class="gear-group" data-gear-category="connections" aria-labelledby="armory-anchors-connections-title">
-    <h3 class="gear-group__title" id="armory-anchors-connections-title">Connection hardware &amp; bundle sleeves</h3>
-    <ul class="gear-list" data-gallery>
-      <li><article class="card gear-item gear-item--text" data-gear-page="2" data-gear-record="oak">
-        <div class="card__body">
-          <h4 class="card__title">Oak-Sports Heavy-Duty Carabiners</h4>
-          <span class="tag tag--teal gear-item__spec">25 kN · 5,600 LB</span>
-          <p>Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item" data-gear-page="2" data-gear-record="jrsgs">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-carabiner.jpg" aria-label="Photo: JRSGS 25kN locking carabiners"><img src="assets/web/img-gear-item-carabiner-1000.webp" alt="Photo: JRSGS 25kN locking carabiners" width="1000" height="708" loading="lazy" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">JRSGS Rock Locking Clips</h4>
-          <span class="tag tag--teal gear-item__spec">25 kN · 2 VARIANTS</span>
-          <p>Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item" data-gear-page="3" data-gear-record="sleeves">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-cablegeeker.jpg" aria-label="Photo: the CableGeeker neoprene cable management sleeves with cable ties"><img src="assets/web/img-gear-item-cablegeeker-500.webp" alt="Photo: the CableGeeker neoprene cable management sleeves with cable ties" width="500" height="522" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">Neoprene Cable / Bundle Management Sleeves</h4>
-          <span class="tag tag--teal gear-item__spec">1.5 IN</span>
-          <p>Flexible black wraps enclosing multi-band arrays. The reversible split-seam sleeves use a continuous hook-and-loop closure for bundle management and contact shielding.</p>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-  <section class="gear-group" data-gear-category="anchors" aria-labelledby="armory-anchors-anchors-title">
-    <h3 class="gear-group__title" id="armory-anchors-anchors-title">Anchor infrastructure</h3>
-    <ul class="gear-list" data-gallery>
-      <li><article class="card gear-item" data-gear-page="3" data-gear-record="vehiclex">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-vehiclex.jpg" aria-label="Photo: the VEHICLEX axle tie-down straps"><img src="assets/web/img-gear-item-vehiclex-700.webp" alt="Photo: the VEHICLEX axle tie-down straps" width="700" height="692" loading="lazy" srcset="assets/web/img-gear-item-vehiclex-480.webp 480w, assets/web/img-gear-item-vehiclex-700.webp 700w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">VEHICLEX Axle Tie-Down Straps</h4>
-          <span class="tag tag--teal gear-item__spec">Sleeved webbing</span>
-          <p>Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p>
-        </div>
-      </article></li>
-      <li><article class="card gear-item" data-gear-page="3" data-gear-record="nilight">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-nilight.jpg" aria-label="Photo: the NILIGHT soft loop anchor straps"><img src="assets/web/img-gear-item-nilight-500.webp" alt="Photo: the NILIGHT soft loop anchor straps" width="500" height="543" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">NILIGHT Soft Loop Anchor Straps</h4>
-          <span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span>
-          <p>Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.</p>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-  <section class="gear-group" data-gear-category="additional" aria-labelledby="armory-anchors-additional-title">
-    <h3 class="gear-group__title" id="armory-anchors-additional-title">Additional items in the lived inventory</h3>
-    <ul class="gear-list" data-gallery>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-xstrap.jpg" aria-label="Photo: the XSTRAP soft loop tie-down straps"><img src="assets/web/img-gear-item-xstrap-500.webp" alt="Photo: the XSTRAP soft loop tie-down straps" width="500" height="505" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">XSTRAP Standard Motorcycle Soft Loop Tie-Down Straps</h4>
-          <span class="tag tag--teal gear-item__spec">Soft Loop</span>
-          <p>Woven soft-loop anchor straps, originally built for motorcycle tie-down duty — repurposed as a second non-marking anchor-strap option alongside the Nilight set.</p>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-  <p class="gear-note">Equipment identities and listed ratings follow the supplied PROJECT 100 visual recognition database. Tube ratings, combined set ratings and force at a particular stretch are different measurements.</p>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-gear-item-carabiner-1000.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title" id="hudT">Bars, straps &amp; <em>anchors</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#armory-anchors"><small>Folder 01</small><strong>Bars, connections &amp;…</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Gear"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html" aria-current="page">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--note">
+<span class="callout__title">The Physics Behind It</span>
+<p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
+</aside></div>
+<section class="hud-folder" id="armory-anchors" aria-labelledby="armory-anchors-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="armory-anchors-t">Bars, connections &amp; anchors</h2><span class="hud-folder__meta">The Real Inventory</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#armory-anchors-details"><li id="armory-anchors-c1"><a class="hud-card hud-card--text" href="#armory-anchors-c1" data-hud-card aria-expanded="false" aria-controls="armory-anchors-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="armory-anchors-details" data-hud-details data-gallery><article class="hud-detail" id="armory-anchors-c1-d" data-hud-detail aria-label="Bars, connections &amp; anchors details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Bars, connections &amp; anchors</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Bars, connections &amp; anchors">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="lead">The actual rig, band-by-band and handle-by-handle — straight from the PROJ3K_100 equipment manifest, not stock photos.</p>
+<section aria-labelledby="armory-anchors-structural-title" class="gear-group" data-gear-category="structural">
+<h3 class="gear-group__title" id="armory-anchors-structural-title">Bars, harnesses &amp; extension straps</h3>
+<ul class="gear-list" data-gallery="">
+<li><article class="card gear-item" data-gear-page="2" data-gear-record="tribe">
+<div class="card__media"><button aria-label="Photo: the chrome modular resistance bar" class="gear-item__zoom" data-full="assets/img/gear-item-resistance-bar.jpg" type="button"><img alt="Photo: the chrome modular resistance bar" decoding="async" height="175" loading="lazy" src="assets/web/img-gear-item-resistance-bar-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">Tribe Lifting Modular Resistance Bar</h4>
+<span class="tag tag--teal gear-item__spec">3 PIECES · 360° SWIVELS</span>
+<p>Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.</p>
+</div>
+</article></li>
+<li><article class="card gear-item gear-item--text" data-gear-page="2" data-gear-record="hpygn-bar">
+<div class="card__body">
+<h4 class="card__title">HPYGN Heavy Pilates Structural Bar</h4>
+<span class="tag tag--teal gear-item__spec">Foam-padded steel</span>
+<p>Black steel bar covered in dense non-slip black foam. Its nylon terminal straps have distinctive red edge stitching.</p>
+</div>
+</article></li>
+<li><article class="card gear-item" data-gear-page="2" data-gear-record="extensions">
+<div class="card__media"><button aria-label="Photo: the THEFITGUY ultimate extension straps" class="gear-item__zoom" data-full="assets/img/gear-item-thefitguy-ext-straps.jpg" type="button"><img alt="Photo: the THEFITGUY ultimate extension straps" decoding="async" height="724" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-thefitguy-ext-straps-700.webp" srcset="assets/web/img-gear-item-thefitguy-ext-straps-480.webp 480w, assets/web/img-gear-item-thefitguy-ext-straps-700.webp 700w" width="700"/></button></div>
+<div class="card__body">
+<h4 class="card__title">THEFITGUY Ultimate Extension Straps</h4>
+<span class="tag tag--teal gear-item__spec">Dual D-ring straps</span>
+<p>Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.</p>
+</div>
+</article></li>
+<li><article class="card gear-item" data-gear-page="2" data-gear-record="sled">
+<div class="card__media"><button aria-label="Photo: the padded neoprene harness hanging on the rig" class="gear-item__zoom" data-full="assets/img/gear-item-sled-belt.jpg" type="button"><img alt="Photo: the padded neoprene harness hanging on the rig" decoding="async" height="807" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-sled-belt-1000.webp" srcset="assets/web/img-gear-item-sled-belt-480.webp 480w, assets/web/img-gear-item-sled-belt-1000.webp 1000w" width="1000"/></button></div>
+<div class="card__body">
+<h4 class="card__title">THEFITGUY Sled Pulling Belt &amp; Straps Kit</h4>
+<span class="tag tag--teal gear-item__spec">2 × 9.8 FT · 4 HOOKS</span>
+<p>Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.</p>
+</div>
+</article></li>
+</ul>
 </section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="gear-grips.html"><span class="pager__dir">← Previous</span><span class="pager__label">Grips &amp; handles</span></a><a class="pager__next" rel="next" href="gear-recovery.html"><span class="pager__dir">Next →</span><span class="pager__label">Recovery tools</span></a>
-    </nav>
-  </main>
+<section aria-labelledby="armory-anchors-connections-title" class="gear-group" data-gear-category="connections">
+<h3 class="gear-group__title" id="armory-anchors-connections-title">Connection hardware &amp; bundle sleeves</h3>
+<ul class="gear-list" data-gallery="">
+<li><article class="card gear-item gear-item--text" data-gear-page="2" data-gear-record="oak">
+<div class="card__body">
+<h4 class="card__title">Oak-Sports Heavy-Duty Carabiners</h4>
+<span class="tag tag--teal gear-item__spec">25 kN · 5,600 LB</span>
+<p>Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.</p>
+</div>
+</article></li>
+<li><article class="card gear-item" data-gear-page="2" data-gear-record="jrsgs">
+<div class="card__media"><button aria-label="Photo: JRSGS 25kN locking carabiners" class="gear-item__zoom" data-full="assets/img/gear-item-carabiner.jpg" type="button"><img alt="Photo: JRSGS 25kN locking carabiners" decoding="async" height="708" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-carabiner-1000.webp" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" width="1000"/></button></div>
+<div class="card__body">
+<h4 class="card__title">JRSGS Rock Locking Clips</h4>
+<span class="tag tag--teal gear-item__spec">25 kN · 2 VARIANTS</span>
+<p>Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.</p>
+</div>
+</article></li>
+<li><article class="card gear-item" data-gear-page="3" data-gear-record="sleeves">
+<div class="card__media"><button aria-label="Photo: the CableGeeker neoprene cable management sleeves with cable ties" class="gear-item__zoom" data-full="assets/img/gear-item-cablegeeker.jpg" type="button"><img alt="Photo: the CableGeeker neoprene cable management sleeves with cable ties" decoding="async" height="522" loading="lazy" src="assets/web/img-gear-item-cablegeeker-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">Neoprene Cable / Bundle Management Sleeves</h4>
+<span class="tag tag--teal gear-item__spec">1.5 IN</span>
+<p>Flexible black wraps enclosing multi-band arrays. The reversible split-seam sleeves use a continuous hook-and-loop closure for bundle management and contact shielding.</p>
+</div>
+</article></li>
+</ul>
+</section>
+<section aria-labelledby="armory-anchors-anchors-title" class="gear-group" data-gear-category="anchors">
+<h3 class="gear-group__title" id="armory-anchors-anchors-title">Anchor infrastructure</h3>
+<ul class="gear-list" data-gallery="">
+<li><article class="card gear-item" data-gear-page="3" data-gear-record="vehiclex">
+<div class="card__media"><button aria-label="Photo: the VEHICLEX axle tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-vehiclex.jpg" type="button"><img alt="Photo: the VEHICLEX axle tie-down straps" decoding="async" height="692" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-vehiclex-700.webp" srcset="assets/web/img-gear-item-vehiclex-480.webp 480w, assets/web/img-gear-item-vehiclex-700.webp 700w" width="700"/></button></div>
+<div class="card__body">
+<h4 class="card__title">VEHICLEX Axle Tie-Down Straps</h4>
+<span class="tag tag--teal gear-item__spec">Sleeved webbing</span>
+<p>Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p>
+</div>
+</article></li>
+<li><article class="card gear-item" data-gear-page="3" data-gear-record="nilight">
+<div class="card__media"><button aria-label="Photo: the NILIGHT soft loop anchor straps" class="gear-item__zoom" data-full="assets/img/gear-item-nilight.jpg" type="button"><img alt="Photo: the NILIGHT soft loop anchor straps" decoding="async" height="543" loading="lazy" src="assets/web/img-gear-item-nilight-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">NILIGHT Soft Loop Anchor Straps</h4>
+<span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span>
+<p>Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.</p>
+</div>
+</article></li>
+</ul>
+</section>
+<section aria-labelledby="armory-anchors-additional-title" class="gear-group" data-gear-category="additional">
+<h3 class="gear-group__title" id="armory-anchors-additional-title">Additional items in the lived inventory</h3>
+<ul class="gear-list" data-gallery="">
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: the XSTRAP soft loop tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-xstrap.jpg" type="button"><img alt="Photo: the XSTRAP soft loop tie-down straps" decoding="async" height="505" loading="lazy" src="assets/web/img-gear-item-xstrap-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">XSTRAP Standard Motorcycle Soft Loop Tie-Down Straps</h4>
+<span class="tag tag--teal gear-item__spec">Soft Loop</span>
+<p>Woven soft-loop anchor straps, originally built for motorcycle tie-down duty — repurposed as a second non-marking anchor-strap option alongside the Nilight set.</p>
+</div>
+</article></li>
+</ul>
+</section>
+<p class="gear-note">Equipment identities and listed ratings follow the supplied PROJECT 100 visual recognition database. Tube ratings, combined set ratings and force at a particular stretch are different measurements.</p></div></div></article></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-grips.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Grips &amp; handles</span></a><a class="pager__next" href="gear-recovery.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Recovery tools</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -312,5 +291,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

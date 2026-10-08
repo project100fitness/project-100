@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="fit-protocol-interactions" data-group="supplements">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -71,71 +72,56 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-pill-organizer-may-2026-960.webp" alt="" width="1528" height="2037" srcset="assets/web/media-october-2026-pill-organizer-may-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-may-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-may-2026-1528.webp 1528w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">FIT PROTOCOL · V3.2</span>
-    <h1>Interactions</h1>
-  </div>
-</header>
-
-<section class="chap" id="part4-cascades" data-category="Safety &amp; Clinical" aria-labelledby="part4-title">
-  <div class="section__head">
-    <span class="eyebrow">Safety &amp; Clinical</span>
-    <h2 id="part4-title">Part IV · The Four Interaction Cascades</h2>
-  </div>
-
-  <div class="prose">
-    <p class="source-ref">Encyclopedia V3.2</p>
-    <h3>Part IV - The four interaction cascades: master matrix</h3>
-    <p class="lead">The operational record is sound. Risk concentrates in four interactions, not in any single ingredient. Read this matrix before changing any dose.</p>
-  </div>
-
-  <div class="table-wrap table--cards pb-matrix">
-    <table>
-      <caption>Encyclopedia V3.2</caption>
-      <thead><tr><th scope="col">#</th><th scope="col">Cascade</th><th scope="col">Components and summed dose</th><th scope="col">Mechanism</th><th scope="col">Practical consequence</th></tr></thead>
-      <tbody>
-        <tr>
-          <td data-label="#" class="pb-matrix__num">1</td>
-          <td data-label="Cascade" class="pb-matrix__name">Piperine drug-<wbr>clearance inhibition</td>
-          <td data-label="Components and summed dose">TESTOFX BioPerine 9.5 mg + Curcumin BioPerine 5 mg = 14.5 mg/day (training days)</td>
-          <td data-label="Mechanism">Inhibits intestinal P-glycoprotein and hepatic CYP3A4 plus phase-II glucuronidation</td>
-          <td data-label="Practical consequence">Raises systemic exposure to co-administered drugs and to the stack itself. Disclose to prescribers.</td>
-        </tr>
-        <tr>
-          <td data-label="#" class="pb-matrix__num">2</td>
-          <td data-label="Cascade" class="pb-matrix__name">ALA to insulin autoimmune syndrome</td>
-          <td data-label="Components and summed dose">R-ALA 300 mg + glycogen-<wbr>depleted training + only 19 g carbohydrate in V4</td>
-          <td data-label="Mechanism">Health Canada flags alpha-lipoic acid for IAS (Hirata disease) in HLA-DRB1*0406 / *0403 carriers</td>
-          <td data-label="Practical consequence">Hypoglycaemia symptoms post-<wbr>training need glucose awareness, not stimulant escalation.</td>
-        </tr>
-        <tr>
-          <td data-label="#" class="pb-matrix__num">3</td>
-          <td data-label="Cascade" class="pb-matrix__name">Osmotic GI stack without a gallbladder</td>
-          <td data-label="Components and summed dose">Magnesium 341-646 mg + high-<wbr>dose vitamin C + continuous bile trickle</td>
-          <td data-label="Mechanism">Osmotic water draw compounds bile-related stool looseness</td>
-          <td data-label="Practical consequence">Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</td>
-        </tr>
-        <tr>
-          <td data-label="#" class="pb-matrix__num">4</td>
-          <td data-label="Cascade" class="pb-matrix__name">Stimulant stack at the ceiling</td>
-          <td data-label="Components and summed dose">IGNITER about 373 mg caffeine + TeaCrine (theacrine half-life 16-20 h) + Dynamine + theobromine + Earl Grey 40-70 mg</td>
-          <td data-label="Mechanism">Overlapping methylxanthine exposure across the day</td>
-          <td data-label="Practical consequence">Exposure regularly crosses the 400 mg/day guidance; sleep is the limiting organ.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <aside class="callout callout--danger prose">
-    <p><strong>Rule:</strong> never treat a cascade symptom by adding its opposite drug class from a supplement shelf. Bradycardia, recurrent hypoglycaemia symptoms, jaundice or progressive weakness are clinical presentations.</p>
-  </aside>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-supplements.html"><span class="pager__dir">← Previous</span><span class="pager__label">Pills &amp; accounting</span></a><a class="pager__next" rel="next" href="fit-protocol-margins.html"><span class="pager__dir">Next →</span><span class="pager__label">Safety margins</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-may-2026-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V3.2</span><h1 class="hud-title" id="hudT"><em>Interactions</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#part4-cascades"><small>Folder 01</small><strong>Part IV · The Four…</strong></a></div></div></section>
+<section class="hud-folder" id="part4-cascades" aria-labelledby="part4-cascades-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="part4-cascades-t">Part IV · The Four Interaction Cascades</h2><span class="hud-folder__meta">Safety &amp; Clinical</span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="source-ref">Encyclopedia V3.2</p></div>
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#part4-cascades-details"><li id="part4-cascades-c1"><a class="hud-card hud-card--text" href="#part4-cascades-c1" data-hud-card aria-expanded="false" aria-controls="part4-cascades-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Part IV - The four interaction cascades: master matrix</span><span class="hud-card__hint">The operational record is sound. Risk concentrates in four interactions, not in any single ingredient. Read this…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="part4-cascades-details" data-hud-details data-gallery><article class="hud-detail" id="part4-cascades-c1-d" data-hud-detail aria-label="Part IV - The four interaction cascades: master matrix details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Part IV · The Four Interaction Cascades</b><h3>Part IV - The four interaction cascades: master matrix</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Part IV - The four interaction cascades: master matrix">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="lead">The operational record is sound. Risk concentrates in four interactions, not in any single ingredient. Read this matrix before changing any dose.</p>
+<div class="table-wrap table--cards pb-matrix">
+<table>
+<caption>Encyclopedia V3.2</caption>
+<thead><tr><th scope="col">#</th><th scope="col">Cascade</th><th scope="col">Components and summed dose</th><th scope="col">Mechanism</th><th scope="col">Practical consequence</th></tr></thead>
+<tbody>
+<tr>
+<td class="pb-matrix__num" data-label="#">1</td>
+<td class="pb-matrix__name" data-label="Cascade">Piperine drug-<wbr/>clearance inhibition</td>
+<td data-label="Components and summed dose">TESTOFX BioPerine 9.5 mg + Curcumin BioPerine 5 mg = 14.5 mg/day (training days)</td>
+<td data-label="Mechanism">Inhibits intestinal P-glycoprotein and hepatic CYP3A4 plus phase-II glucuronidation</td>
+<td data-label="Practical consequence">Raises systemic exposure to co-administered drugs and to the stack itself. Disclose to prescribers.</td>
+</tr>
+<tr>
+<td class="pb-matrix__num" data-label="#">2</td>
+<td class="pb-matrix__name" data-label="Cascade">ALA to insulin autoimmune syndrome</td>
+<td data-label="Components and summed dose">R-ALA 300 mg + glycogen-<wbr/>depleted training + only 19 g carbohydrate in V4</td>
+<td data-label="Mechanism">Health Canada flags alpha-lipoic acid for IAS (Hirata disease) in HLA-DRB1*0406 / *0403 carriers</td>
+<td data-label="Practical consequence">Hypoglycaemia symptoms post-<wbr/>training need glucose awareness, not stimulant escalation.</td>
+</tr>
+<tr>
+<td class="pb-matrix__num" data-label="#">3</td>
+<td class="pb-matrix__name" data-label="Cascade">Osmotic GI stack without a gallbladder</td>
+<td data-label="Components and summed dose">Magnesium 341-646 mg + high-<wbr/>dose vitamin C + continuous bile trickle</td>
+<td data-label="Mechanism">Osmotic water draw compounds bile-related stool looseness</td>
+<td data-label="Practical consequence">Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</td>
+</tr>
+<tr>
+<td class="pb-matrix__num" data-label="#">4</td>
+<td class="pb-matrix__name" data-label="Cascade">Stimulant stack at the ceiling</td>
+<td data-label="Components and summed dose">IGNITER about 373 mg caffeine + TeaCrine (theacrine half-life 16-20 h) + Dynamine + theobromine + Earl Grey 40-70 mg</td>
+<td data-label="Mechanism">Overlapping methylxanthine exposure across the day</td>
+<td data-label="Practical consequence">Exposure regularly crosses the 400 mg/day guidance; sleep is the limiting organ.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="callout callout--danger prose">
+<p><strong>Rule:</strong> never treat a cascade symptom by adding its opposite drug class from a supplement shelf. Bradycardia, recurrent hypoglycaemia symptoms, jaundice or progressive weakness are clinical presentations.</p>
+</aside></div></div></article></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-supplements.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Pills &amp; accounting</span></a><a class="pager__next" href="fit-protocol-margins.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Safety margins</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -273,5 +259,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

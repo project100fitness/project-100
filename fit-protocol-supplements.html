@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="fit-protocol-supplements" data-group="supplements">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -71,126 +72,110 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<div class="pb-page">
-  <!-- 2026-10-07 Bogdan: 💊 The 21+2 Pill Grid — Daily Stages - hard coded -->
-  <section class="pb-grid card card--accent card--pad" aria-labelledby="pb-grid-title">
-    <h2 id="pb-grid-title"><span aria-hidden="true">💊</span> The 21+2 Pill Grid — Daily Stages</h2>
-    <ul class="stats">
-      <li class="stat"><span class="stat__value">21+2</span><span class="stat__label">Total Pills</span></li>
-      <li class="stat"><span class="stat__value">6</span><span class="stat__label">Stages</span></li>
-      <li class="stat"><span class="stat__value">05:30</span><span class="stat__label">First Pill</span></li>
-      <li class="stat"><span class="stat__value">Night</span><span class="stat__label">Last Stage</span></li>
-    </ul>
-    <dl class="kv pb-grid__stages">
-      <dt>Wake (05:30):</dt><dd>Citicoline 250mg — cholinergic primer, swallowed whole before anything else.</dd>
-      <dt>Primer:</dt><dd>Morning supplements to prepare the system for V1.</dd>
-      <dt>Meal 1 / DMZ:</dt><dd>Digestive enzymes (Pure Encapsulations) with meals — critical post-gallbladder. Boron 3mg standalone.</dd>
-      <dt>Night:</dt><dd>Wind-down supplements for recovery and sleep.</dd>
-      <dt>Cofactors:</dt><dd>Supporting nutrients that enable the main actives to work.</dd>
-    </dl>
-    <aside class="callout callout--accent">
-      <p><strong>Formula-native rule:</strong> DMAE, Huperzine-A, and other compounds come from the tubs — never as standalone pills.</p>
-    </aside>
-    <p class="pb-grid__note"><em>See daily-pill-cards.html for the visual stage cards. Boron = 1 capsule (3mg New Roots). NMN = California Gold 175mg. Tart cherry = Inno Nutrition.</em></p>
-  </section>
-
-  <header class="page-hero" id="top">
-    <img class="page-hero__img" src="assets/web/media-october-2026-pill-organizer-february-2026-960.webp" alt="" width="2048" height="1535" srcset="assets/web/media-october-2026-pill-organizer-february-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-february-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-february-2026-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
-    <div class="page-hero__text">
-      <span class="eyebrow">FIT PROTOCOL · V3.2</span>
-      <h1>Pills &amp; accounting</h1>
-    </div>
-  </header>
-
-  <aside class="callout callout--note pb-summary" id="metrics-summary">
-    <img class="pb-summary__art" src="assets/media/illustration-design/j18.webp" alt="" width="558" height="1000" loading="lazy" decoding="async">
-    <div class="pb-summary__text">
-      <span class="callout__title">Recorded accounting at a glance</span>
-      <p>Creatine HCl: 1.5 g total when both listed doses are consumed — V4 + V10 on training days, or V5 + V10 on rest days, each at 750 mg. Carnivor contributes zero added creatine in the recorded Canadian panel.</p>
-      <p>Boron: one 3 mg capsule. Zinc Supreme: removed. Separate copper: paused. Optional items remain optional.</p>
-    </div>
-  </aside>
-
-  <section class="chap" id="ch8" data-category="Supplements" aria-labelledby="ch8-title">
-    <div class="section__head">
-      <span class="eyebrow">Supplements</span>
-      <h2 id="ch8-title">Pill groups</h2>
-    </div>
-    <aside class="callout callout--note prose">
-      <p>Counts are capsules and softgels, not product names. Conditional and intermittent units stay separate. Training groups are skipped on the recorded rest branch; wake items and meal enzymes remain.</p>
-    </aside>
-
-    <ul class="pb-groups">
-      <li><article class="card card--pad pb-group">
-        <h3 class="pb-group__title">Wake</h3>
-        <p class="pb-group__count">4 regular capsules · 1 intermittent</p>
-        <p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p>
-      </article></li>
-      <li><article class="card card--pad pb-group">
-        <h3 class="pb-group__title">Meal 1</h3>
-        <p class="pb-group__count">5 capsules</p>
-        <p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p>
-      </article></li>
-      <li><article class="card card--pad pb-group">
-        <h3 class="pb-group__title">Pre-workout</h3>
-        <p class="pb-group__count">1 capsule</p>
-        <p>AOR Xerenoos citicoline: 1 / 250 mg, separate from V1 or V6.</p>
-      </article></li>
-      <li><article class="card card--pad pb-group">
-        <h3 class="pb-group__title">Lunch / DMZ</h3>
-        <p class="pb-group__count">8 regular units · up to 2 conditional</p>
-        <p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin 475 mg + BioPerine 5 mg: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p>
-      </article></li>
-      <li><article class="card card--pad pb-group">
-        <h3 class="pb-group__title">Afternoon cofactors</h3>
-        <p class="pb-group__count">5 capsules</p>
-        <p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p>
-      </article></li>
-      <li><article class="card card--pad pb-group">
-        <span class="tag tag--teal pb-group__tag">Night</span>
-        <h3 class="pb-group__title">Night</h3>
-        <p class="pb-group__count">3 regular capsules · 1 conditional</p>
-        <p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p>
-      </article></li>
-    </ul>
-
-    <p class="chap__next"><a class="btn btn--ghost" href="mineral-chemistry.html">Mineral, vitamin and stimulant accounting ↗</a></p>
-  </section>
-
-  <details class="acc pb-notes" id="guide-page-7">
-    <summary>Daily guide notes · Pills — the 21+2 Grid, Analysed</summary>
-    <div class="acc__body prose">
-      <p class="source-ref">Guidebook V3.3</p>
-      <h3>Pills — the 21+2 Grid, Analysed</h3>
-      <p>The pill grid is the highest-trust page in the book: 23 audited records (Encyclopedia Ch. 8), each with a status that was decided once and does not drift. This page adds the interaction analysis behind each status.</p>
-      <div class="table-wrap table--cards">
-        <table>
-          <caption>Guidebook V3.3</caption>
-          <thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">Analysis</th></tr></thead>
-          <tbody>
-            <tr><td data-label="Status">Active</td><td data-label="Meaning">Take as scheduled</td><td data-label="Analysis">Re-checked against the full stack, not alone</td></tr>
-            <tr><td data-label="Status">Removed — Zinc Supreme</td><td data-label="Meaning">Do not take</td><td data-label="Analysis">System zinc already totals ~25 mg; removal prevents copper antagonism from worsening</td></tr>
-            <tr><td data-label="Status">Paused — Copper</td><td data-label="Meaning">Held pending review</td><td data-label="Analysis">Paused because zinc status governs copper need; recheck by lab, not by feeling</td></tr>
-            <tr><td data-label="Status">Locked — Boron 1 x 3 mg</td><td data-label="Meaning">Fixed dose</td><td data-label="Analysis">Locked low; boron shifts hormone binding, so the dose is a monitoring decision, not a growth lever</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>The rule that protects the grid: nothing enters the grid without a stacked analysis (mechanism + interaction + margin + monitor + stop rule). A good ingredient in the wrong stack is a bad protocol.</p>
-      <h4>HIGHEST-ATTENTION INTERACTIONS IN THE GRID</h4>
-      <ul class="pb-rules">
-        <li>Piperine-containing items can inhibit CYP3A4 and P-glycoprotein, slowing clearance of many medications. Any prescription change must be checked against piperine timing.</li>
-        <li>Biotin (425 mcg on the training branch) interferes with common lab assays (see Labs page) — the grid and the lab calendar are linked.</li>
-        <li>Piperine total: about 14.5 mg on training days (9.5 + 5 mg) and 9.5 mg on rest days — the dose behind the CYP3A4 / P-glycoprotein caution above.</li>
-      </ul>
-    </div>
-  </details>
-
-  <p class="chap__source">Source: <a href="fit-protocol-supplements.html#ch8">Open the focused protocol file ↗</a></p>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-february-2026-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V3.2</span><h1 class="hud-title" id="hudT">Pills &amp; <em>accounting</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#folder-1"><small>Folder 01</small><strong>💊 The 21+2 Pill Grid…</strong></a><a class="hud-chip hud-chip--link" href="#ch8"><small>Folder 02</small><strong>Pill groups</strong></a><a class="hud-chip hud-chip--link" href="#notes-3"><small>Folder 03</small><strong>Daily guide notes · Pills…</strong></a></div></div></section>
+<section class="hud-folder" id="folder-1" aria-labelledby="folder-1-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="folder-1-t">💊 The 21+2 Pill Grid — Daily Stages</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#folder-1-details"><li id="folder-1-c1"><a class="hud-card hud-card--text" href="#folder-1-c1" data-hud-card aria-expanded="false" aria-controls="folder-1-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">4 entries · 21+2 Total Pills</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="folder-1-details" data-hud-details data-gallery><article class="hud-detail" id="folder-1-c1-d" data-hud-detail aria-label="💊 The 21+2 Pill Grid — Daily Stages details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>💊 The 21+2 Pill Grid — Daily Stages</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close 💊 The 21+2 Pill Grid — Daily Stages">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><ul class="stats">
+<li class="stat"><span class="stat__value">21+2</span><span class="stat__label">Total Pills</span></li>
+<li class="stat"><span class="stat__value">6</span><span class="stat__label">Stages</span></li>
+<li class="stat"><span class="stat__value">05:30</span><span class="stat__label">First Pill</span></li>
+<li class="stat"><span class="stat__value">Night</span><span class="stat__label">Last Stage</span></li>
+</ul>
+<dl class="kv pb-grid__stages">
+<dt>Wake (05:30):</dt><dd>Citicoline 250mg — cholinergic primer, swallowed whole before anything else.</dd>
+<dt>Primer:</dt><dd>Morning supplements to prepare the system for V1.</dd>
+<dt>Meal 1 / DMZ:</dt><dd>Digestive enzymes (Pure Encapsulations) with meals — critical post-gallbladder. Boron 3mg standalone.</dd>
+<dt>Night:</dt><dd>Wind-down supplements for recovery and sleep.</dd>
+<dt>Cofactors:</dt><dd>Supporting nutrients that enable the main actives to work.</dd>
+</dl>
+<aside class="callout callout--accent">
+<p><strong>Formula-native rule:</strong> DMAE, Huperzine-A, and other compounds come from the tubs — never as standalone pills.</p>
+</aside>
+<p class="pb-grid__note"><em>See daily-pill-cards.html for the visual stage cards. Boron = 1 capsule (3mg New Roots). NMN = California Gold 175mg. Tart cherry = Inno Nutrition.</em></p></div></div></article></div>
+<div class="hud-inline hud-prose"><aside class="callout callout--note pb-summary" id="metrics-summary">
+<img alt="" class="pb-summary__art" decoding="async" height="1000" loading="lazy" src="assets/media/illustration-design/j18.webp" width="558"/>
+<div class="pb-summary__text">
+<span class="callout__title">Recorded accounting at a glance</span>
+<p>Creatine HCl: 1.5 g total when both listed doses are consumed — V4 + V10 on training days, or V5 + V10 on rest days, each at 750 mg. Carnivor contributes zero added creatine in the recorded Canadian panel.</p>
+<p>Boron: one 3 mg capsule. Zinc Supreme: removed. Separate copper: paused. Optional items remain optional.</p>
 </div>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-nutrition.html"><span class="pager__dir">← Previous</span><span class="pager__label">Food &amp; nutrition</span></a><a class="pager__next" rel="next" href="fit-protocol-interactions.html"><span class="pager__dir">Next →</span><span class="pager__label">Interactions</span></a>
-    </nav>
-  </main>
+</aside></div>
+</div></section>
+<section class="hud-folder" id="ch8" aria-labelledby="ch8-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="ch8-t">Pill groups</h2><span class="hud-folder__meta">Supplements</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#ch8-details"><li id="ch8-c1"><a class="hud-card hud-card--text" href="#ch8-c1" data-hud-card aria-expanded="false" aria-controls="ch8-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">Counts are capsules and softgels, not product names. Conditional and intermittent units stay separate. Training…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="ch8-details" data-hud-details data-gallery><article class="hud-detail" id="ch8-c1-d" data-hud-detail aria-label="Pill groups details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Pill groups</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Pill groups">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><aside class="callout callout--note prose">
+<p>Counts are capsules and softgels, not product names. Conditional and intermittent units stay separate. Training groups are skipped on the recorded rest branch; wake items and meal enzymes remain.</p>
+</aside>
+<ul class="pb-groups">
+<li><article class="card card--pad pb-group">
+<h3 class="pb-group__title">Wake</h3>
+<p class="pb-group__count">4 regular capsules · 1 intermittent</p>
+<p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p>
+</article></li>
+<li><article class="card card--pad pb-group">
+<h3 class="pb-group__title">Meal 1</h3>
+<p class="pb-group__count">5 capsules</p>
+<p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p>
+</article></li>
+<li><article class="card card--pad pb-group">
+<h3 class="pb-group__title">Pre-workout</h3>
+<p class="pb-group__count">1 capsule</p>
+<p>AOR Xerenoos citicoline: 1 / 250 mg, separate from V1 or V6.</p>
+</article></li>
+<li><article class="card card--pad pb-group">
+<h3 class="pb-group__title">Lunch / DMZ</h3>
+<p class="pb-group__count">8 regular units · up to 2 conditional</p>
+<p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin 475 mg + BioPerine 5 mg: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p>
+</article></li>
+<li><article class="card card--pad pb-group">
+<h3 class="pb-group__title">Afternoon cofactors</h3>
+<p class="pb-group__count">5 capsules</p>
+<p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p>
+</article></li>
+<li><article class="card card--pad pb-group">
+<span class="tag tag--teal pb-group__tag">Night</span>
+<h3 class="pb-group__title">Night</h3>
+<p class="pb-group__count">3 regular capsules · 1 conditional</p>
+<p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p>
+</article></li>
+</ul>
+<p class="chap__next"><a class="btn btn--ghost" href="mineral-chemistry.html">Mineral, vitamin and stimulant accounting ↗</a></p></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="notes-3" aria-labelledby="notes-3-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="notes-3-t">Daily guide notes · Pills — the 21+2 Grid, Analysed</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#notes-3-details"><li id="guide-page-7"><a class="hud-card hud-card--text" href="#guide-page-7" data-hud-card aria-expanded="false" aria-controls="guide-page-7-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">The pill grid is the highest-trust page in the book: 23 audited records (Encyclopedia Ch. 8), each with a status that…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="notes-3-details" data-hud-details data-gallery><article class="hud-detail" id="guide-page-7-d" data-hud-detail aria-label="Daily guide notes · Pills — the 21+2 Grid, Analysed details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Daily guide notes · Pills — the 21+2 Grid, Analysed</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Daily guide notes · Pills — the 21+2 Grid, Analysed">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="source-ref">Guidebook V3.3</p>
+<h3>Pills — the 21+2 Grid, Analysed</h3>
+<p>The pill grid is the highest-trust page in the book: 23 audited records (Encyclopedia Ch. 8), each with a status that was decided once and does not drift. This page adds the interaction analysis behind each status.</p>
+<div class="table-wrap table--cards">
+<table>
+<caption>Guidebook V3.3</caption>
+<thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">Analysis</th></tr></thead>
+<tbody>
+<tr><td data-label="Status">Active</td><td data-label="Meaning">Take as scheduled</td><td data-label="Analysis">Re-checked against the full stack, not alone</td></tr>
+<tr><td data-label="Status">Removed — Zinc Supreme</td><td data-label="Meaning">Do not take</td><td data-label="Analysis">System zinc already totals ~25 mg; removal prevents copper antagonism from worsening</td></tr>
+<tr><td data-label="Status">Paused — Copper</td><td data-label="Meaning">Held pending review</td><td data-label="Analysis">Paused because zinc status governs copper need; recheck by lab, not by feeling</td></tr>
+<tr><td data-label="Status">Locked — Boron 1 x 3 mg</td><td data-label="Meaning">Fixed dose</td><td data-label="Analysis">Locked low; boron shifts hormone binding, so the dose is a monitoring decision, not a growth lever</td></tr>
+</tbody>
+</table>
+</div>
+<p>The rule that protects the grid: nothing enters the grid without a stacked analysis (mechanism + interaction + margin + monitor + stop rule). A good ingredient in the wrong stack is a bad protocol.</p>
+<h4>HIGHEST-ATTENTION INTERACTIONS IN THE GRID</h4>
+<ul class="pb-rules">
+<li>Piperine-containing items can inhibit CYP3A4 and P-glycoprotein, slowing clearance of many medications. Any prescription change must be checked against piperine timing.</li>
+<li>Biotin (425 mcg on the training branch) interferes with common lab assays (see Labs page) — the grid and the lab calendar are linked.</li>
+<li>Piperine total: about 14.5 mg on training days (9.5 + 5 mg) and 9.5 mg on rest days — the dose behind the CYP3A4 / P-glycoprotein caution above.</li>
+</ul></div></div></article></div>
+<div class="hud-inline hud-prose"><p class="chap__source">Source: <a href="fit-protocol-supplements.html#ch8">Open the focused protocol file ↗</a></p></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-nutrition.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Food &amp; nutrition</span></a><a class="pager__next" href="fit-protocol-interactions.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Interactions</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -328,5 +313,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

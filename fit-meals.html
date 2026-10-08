@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="fit-meals" data-group="nutrition">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,91 +58,73 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Nutrition">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Nutrition</span></h2>
-    <ul class="rail__list">
-      <li><a href="fit-nutrition.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Nutrition overview</span></a></li>
-      <li><a href="fit-meals.html" aria-current="page"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Meals &amp; recipes</span></a></li>
-      <li><a href="fit-nutrition-notes.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Nutrition notes</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-carnivore-omelette-800.webp" alt="" width="800" height="1423" srcset="assets/web/img-carnivore-omelette-480.webp 480w, assets/web/img-carnivore-omelette-800.webp 800w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · NUTRITION</span>
-    <h1>Meals &amp; recipes</h1>
-  </div>
-</header>
-
-<aside class="callout callout--accent">
-  <span class="callout__title">Operating Law</span>
-  <p>Historical plan: 252 g protein · 69 g fat. Whole-day intake remains unverified. See the source notes for context.</p>
-</aside>
-
-<section class="section" id="reels" aria-labelledby="reels-title">
-  <div class="section__head">
-    
-    <h2 id="reels-title">The Meals</h2>
-  </div>
-  <div class="filters" data-filter-group="nutMealRows" role="group" aria-label="Jump to a meal category">
-    <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-    <button class="filter" type="button" data-filter="smoothies" aria-pressed="false">Protein Smoothies</button>
-    <button class="filter" type="button" data-filter="bowls" aria-pressed="false">Recovery Bowls</button>
-    <button class="filter" type="button" data-filter="wraps" aria-pressed="false">Wraps &amp; Handhelds</button>
-    <button class="filter" type="button" data-filter="meat" aria-pressed="false">Meat &amp; Carnivore</button>
-    <button class="filter" type="button" data-filter="treats" aria-pressed="false">Treats &amp; Fat Bombs</button>
-    <button class="filter" type="button" data-filter="salads" aria-pressed="false">Mega Salads</button>
-  </div>
-  <div class="carousels" id="nutMealRows">
-    <section class="carousel carousel--media" id="row-smoothies" data-carousel data-cat="smoothies" data-count="1" aria-labelledby="row-smoothies-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-smoothies-title">Protein Smoothies</h3><span class="carousel__count">1 item</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><a aria-label="Protein Berries Smoothie" class="card card--link nut-meal" href="https://www.instagram.com/p/DckF9_4gIe0/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-protein-berries-smoothie-800.webp" alt="Blender jug for the Protein Berries smoothie, reel cover with the macros printed over it" width="800" height="1423" loading="lazy" srcset="assets/web/img-protein-berries-smoothie-480.webp 480w, assets/web/img-protein-berries-smoothie-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-      </ul></div>
-    </section>
-    <section class="carousel carousel--media" id="row-bowls" data-carousel data-cat="bowls" data-count="2" aria-labelledby="row-bowls-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-bowls-title">Recovery Bowls</h3><span class="carousel__count">2 items</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><a aria-label="Anabolic Recovery Bowl" class="card card--link nut-meal" href="https://www.instagram.com/p/DbrMLlegGOL/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-anabolic-recovery-bowl-800.webp" alt="Large bowl of chickpeas, vegetables and toppings for the Anabolic Recovery Bowl" width="800" height="450" loading="lazy" srcset="assets/web/img-anabolic-recovery-bowl-480.webp 480w, assets/web/img-anabolic-recovery-bowl-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-        <li class="carousel__item"><a aria-label="Dark Choco Blueberry Recovery" class="card card--link nut-meal" href="https://www.instagram.com/p/Dc_n4SHAEnb/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-choco-blueberry-recovery-800.webp" alt="Blender with oats and berries for the Dark Choco Blueberry recovery, reel cover" width="800" height="1423" loading="lazy" srcset="assets/web/img-choco-blueberry-recovery-480.webp 480w, assets/web/img-choco-blueberry-recovery-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-      </ul></div>
-    </section>
-    <section class="carousel carousel--media" id="row-wraps" data-carousel data-cat="wraps" data-count="1" aria-labelledby="row-wraps-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-wraps-title">Wraps &amp; Handhelds</h3><span class="carousel__count">1 item</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><a aria-label="Post-Workout Protein Wrap" class="card card--link nut-meal" href="https://www.instagram.com/p/DdCRC82AhaT/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-protein-wrap-trio-800.webp" alt="Three protein wraps cut in half on a white plate, with the macro blueprint printed below" width="800" height="1423" loading="lazy" srcset="assets/web/img-protein-wrap-trio-480.webp 480w, assets/web/img-protein-wrap-trio-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-      </ul></div>
-    </section>
-    <section class="carousel carousel--media" id="row-meat" data-carousel data-cat="meat" data-count="2" aria-labelledby="row-meat-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-meat-title">Meat &amp; Carnivore</h3><span class="carousel__count">2 items</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><a aria-label="Post-Workout Carnivore Omelette" class="card card--link nut-meal" href="https://www.instagram.com/p/DcwahczACPq/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-carnivore-omelette-800.webp" alt="Plate of scrambled carnivore omelette beside keto tortillas, reel cover with the macros" width="800" height="1423" loading="lazy" srcset="assets/web/img-carnivore-omelette-480.webp 480w, assets/web/img-carnivore-omelette-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-        <li class="carousel__item"><a aria-label="Post-Workout Air Fry Meals" class="card card--link nut-meal" href="https://www.instagram.com/p/DbOragtABpa/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-post-workout-air-fry-meals-721.webp" alt="Air fryer basket with a post-workout meal cooking, reel cover" width="721" height="1283" loading="lazy" srcset="assets/web/img-post-workout-air-fry-meals-480.webp 480w, assets/web/img-post-workout-air-fry-meals-721.webp 721w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-      </ul></div>
-    </section>
-    <section class="carousel carousel--media" id="row-treats" data-carousel data-cat="treats" data-count="1" aria-labelledby="row-treats-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-treats-title">Treats &amp; Fat Bombs</h3><span class="carousel__count">1 item</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><a aria-label="Protein Choco Fudge" class="card card--link nut-meal" href="https://www.instagram.com/p/Db13qBAAji5/" target="_blank" rel="noopener"><div class="card__media"><img src="assets/web/img-protein-choco-fudge-800.webp" alt="Jar of protein choco fudge beside a box of All-Bran Buds and a tub of glutamine, reel cover" width="800" height="1438" loading="lazy" srcset="assets/web/img-protein-choco-fudge-480.webp 480w, assets/web/img-protein-choco-fudge-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div></a></li>
-      </ul></div>
-    </section>
-    <section class="carousel carousel--media" id="row-salads" data-carousel data-cat="salads" data-count="2" aria-labelledby="row-salads-title">
-      <header class="carousel__head"><h3 class="carousel__title" id="row-salads-title">Mega Salads</h3><span class="carousel__count">2 items</span></header>
-      <div class="carousel__stage"><ul class="carousel__track">
-        <li class="carousel__item"><article class="card nut-meal"><div class="card__media"><button type="button" class="zoom" data-full="assets/img/mega-salad-mango-chickpea.jpg" aria-label="Enlarge: Mega salad with mango, chickpeas, kale and feta"><img src="assets/web/img-mega-salad-mango-chickpea-960.webp" alt="Mega salad with mango, chickpeas, kale and feta" width="1200" height="900" loading="lazy" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></div></article></li>
-        <li class="carousel__item"><article class="card nut-meal"><div class="card__media"><button type="button" class="zoom" data-full="assets/img/mega-salad-kale-tuna.jpg" aria-label="Enlarge: Mega salad with kale, tuna, beans and avocado dressing"><img src="assets/web/img-mega-salad-kale-tuna-960.webp" alt="Mega salad with kale, tuna, beans and avocado dressing" width="1200" height="900" loading="lazy" srcset="assets/web/img-mega-salad-kale-tuna-480.webp 480w, assets/web/img-mega-salad-kale-tuna-960.webp 960w, assets/web/img-mega-salad-kale-tuna-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"><span class="zoom__hint" aria-hidden="true">Enlarge</span></button></div></article></li>
-      </ul></div>
-    </section>
-  </div>
-
-<footer class="after-note"><span class="eyebrow">Straight From <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a></span></footer>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-carnivore-omelette-800.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · NUTRITION</span><h1 class="hud-title" id="hudT">Meals &amp; <em>recipes</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#reels"><small>Folder 01</small><strong>The Meals</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Nutrition"><li><a href="fit-nutrition.html">Nutrition overview</a></li><li><a href="fit-meals.html" aria-current="page">Meals &amp; recipes</a></li><li><a href="fit-nutrition-notes.html">Nutrition notes</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--accent">
+<span class="callout__title">Operating Law</span>
+<p>Historical plan: 252 g protein · 69 g fat. Whole-day intake remains unverified. See the source notes for context.</p>
+</aside></div>
+<section class="hud-folder" id="reels" aria-labelledby="reels-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="reels-t">The Meals</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><div aria-label="Jump to a meal category" class="filters" data-filter-group="nutMealRows" role="group">
+<button aria-pressed="true" class="filter" data-filter="all" type="button">All</button>
+<button aria-pressed="false" class="filter" data-filter="smoothies" type="button">Protein Smoothies</button>
+<button aria-pressed="false" class="filter" data-filter="bowls" type="button">Recovery Bowls</button>
+<button aria-pressed="false" class="filter" data-filter="wraps" type="button">Wraps &amp; Handhelds</button>
+<button aria-pressed="false" class="filter" data-filter="meat" type="button">Meat &amp; Carnivore</button>
+<button aria-pressed="false" class="filter" data-filter="treats" type="button">Treats &amp; Fat Bombs</button>
+<button aria-pressed="false" class="filter" data-filter="salads" type="button">Mega Salads</button>
+</div>
+<div class="carousels" id="nutMealRows">
+<section aria-labelledby="row-smoothies-title" class="carousel carousel--media" data-carousel="" data-cat="smoothies" data-count="1" id="row-smoothies">
+<header class="carousel__head"><h3 class="carousel__title" id="row-smoothies-title">Protein Smoothies</h3><span class="carousel__count">1 item</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a aria-label="Protein Berries Smoothie" class="card card--link nut-meal" href="https://www.instagram.com/p/DckF9_4gIe0/" rel="noopener" target="_blank"><div class="card__media"><img alt="Blender jug for the Protein Berries smoothie, reel cover with the macros printed over it" decoding="async" height="1423" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-protein-berries-smoothie-800.webp" srcset="assets/web/img-protein-berries-smoothie-480.webp 480w, assets/web/img-protein-berries-smoothie-800.webp 800w" width="800"/></div></a></li>
+</ul></div>
 </section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-nutrition.html"><span class="pager__dir">← Previous</span><span class="pager__label">Nutrition overview</span></a><a class="pager__next" rel="next" href="fit-nutrition-notes.html"><span class="pager__dir">Next →</span><span class="pager__label">Nutrition notes</span></a>
-    </nav>
-  </main>
+<section aria-labelledby="row-bowls-title" class="carousel carousel--media" data-carousel="" data-cat="bowls" data-count="2" id="row-bowls">
+<header class="carousel__head"><h3 class="carousel__title" id="row-bowls-title">Recovery Bowls</h3><span class="carousel__count">2 items</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a aria-label="Anabolic Recovery Bowl" class="card card--link nut-meal" href="https://www.instagram.com/p/DbrMLlegGOL/" rel="noopener" target="_blank"><div class="card__media"><img alt="Large bowl of chickpeas, vegetables and toppings for the Anabolic Recovery Bowl" decoding="async" height="450" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-anabolic-recovery-bowl-800.webp" srcset="assets/web/img-anabolic-recovery-bowl-480.webp 480w, assets/web/img-anabolic-recovery-bowl-800.webp 800w" width="800"/></div></a></li>
+<li class="carousel__item"><a aria-label="Dark Choco Blueberry Recovery" class="card card--link nut-meal" href="https://www.instagram.com/p/Dc_n4SHAEnb/" rel="noopener" target="_blank"><div class="card__media"><img alt="Blender with oats and berries for the Dark Choco Blueberry recovery, reel cover" decoding="async" height="1423" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-choco-blueberry-recovery-800.webp" srcset="assets/web/img-choco-blueberry-recovery-480.webp 480w, assets/web/img-choco-blueberry-recovery-800.webp 800w" width="800"/></div></a></li>
+</ul></div>
+</section>
+<section aria-labelledby="row-wraps-title" class="carousel carousel--media" data-carousel="" data-cat="wraps" data-count="1" id="row-wraps">
+<header class="carousel__head"><h3 class="carousel__title" id="row-wraps-title">Wraps &amp; Handhelds</h3><span class="carousel__count">1 item</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a aria-label="Post-Workout Protein Wrap" class="card card--link nut-meal" href="https://www.instagram.com/p/DdCRC82AhaT/" rel="noopener" target="_blank"><div class="card__media"><img alt="Three protein wraps cut in half on a white plate, with the macro blueprint printed below" decoding="async" height="1423" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-protein-wrap-trio-800.webp" srcset="assets/web/img-protein-wrap-trio-480.webp 480w, assets/web/img-protein-wrap-trio-800.webp 800w" width="800"/></div></a></li>
+</ul></div>
+</section>
+<section aria-labelledby="row-meat-title" class="carousel carousel--media" data-carousel="" data-cat="meat" data-count="2" id="row-meat">
+<header class="carousel__head"><h3 class="carousel__title" id="row-meat-title">Meat &amp; Carnivore</h3><span class="carousel__count">2 items</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a aria-label="Post-Workout Carnivore Omelette" class="card card--link nut-meal" href="https://www.instagram.com/p/DcwahczACPq/" rel="noopener" target="_blank"><div class="card__media"><img alt="Plate of scrambled carnivore omelette beside keto tortillas, reel cover with the macros" decoding="async" height="1423" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-carnivore-omelette-800.webp" srcset="assets/web/img-carnivore-omelette-480.webp 480w, assets/web/img-carnivore-omelette-800.webp 800w" width="800"/></div></a></li>
+<li class="carousel__item"><a aria-label="Post-Workout Air Fry Meals" class="card card--link nut-meal" href="https://www.instagram.com/p/DbOragtABpa/" rel="noopener" target="_blank"><div class="card__media"><img alt="Air fryer basket with a post-workout meal cooking, reel cover" decoding="async" height="1283" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-post-workout-air-fry-meals-721.webp" srcset="assets/web/img-post-workout-air-fry-meals-480.webp 480w, assets/web/img-post-workout-air-fry-meals-721.webp 721w" width="721"/></div></a></li>
+</ul></div>
+</section>
+<section aria-labelledby="row-treats-title" class="carousel carousel--media" data-carousel="" data-cat="treats" data-count="1" id="row-treats">
+<header class="carousel__head"><h3 class="carousel__title" id="row-treats-title">Treats &amp; Fat Bombs</h3><span class="carousel__count">1 item</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a aria-label="Protein Choco Fudge" class="card card--link nut-meal" href="https://www.instagram.com/p/Db13qBAAji5/" rel="noopener" target="_blank"><div class="card__media"><img alt="Jar of protein choco fudge beside a box of All-Bran Buds and a tub of glutamine, reel cover" decoding="async" height="1438" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-protein-choco-fudge-800.webp" srcset="assets/web/img-protein-choco-fudge-480.webp 480w, assets/web/img-protein-choco-fudge-800.webp 800w" width="800"/></div></a></li>
+</ul></div>
+</section>
+<section aria-labelledby="row-salads-title" class="carousel carousel--media" data-carousel="" data-cat="salads" data-count="2" id="row-salads">
+<header class="carousel__head"><h3 class="carousel__title" id="row-salads-title">Mega Salads</h3><span class="carousel__count">2 items</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><article class="card nut-meal"><div class="card__media"><button aria-label="Enlarge: Mega salad with mango, chickpeas, kale and feta" class="zoom" data-full="assets/img/mega-salad-mango-chickpea.jpg" type="button"><img alt="Mega salad with mango, chickpeas, kale and feta" decoding="async" height="900" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-mega-salad-mango-chickpea-960.webp" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" width="1200"/><span aria-hidden="true" class="zoom__hint">Enlarge</span></button></div></article></li>
+<li class="carousel__item"><article class="card nut-meal"><div class="card__media"><button aria-label="Enlarge: Mega salad with kale, tuna, beans and avocado dressing" class="zoom" data-full="assets/img/mega-salad-kale-tuna.jpg" type="button"><img alt="Mega salad with kale, tuna, beans and avocado dressing" decoding="async" height="900" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-mega-salad-kale-tuna-960.webp" srcset="assets/web/img-mega-salad-kale-tuna-480.webp 480w, assets/web/img-mega-salad-kale-tuna-960.webp 960w, assets/web/img-mega-salad-kale-tuna-1200.webp 1200w" width="1200"/><span aria-hidden="true" class="zoom__hint">Enlarge</span></button></div></article></li>
+</ul></div>
+</section>
+</div>
+<footer class="after-note"><span class="eyebrow">Straight From <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">@fudge_fit</a></span></footer></div>
+</div></section>
+<section class="hud-folder hud-folder--deep" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-nutrition.html"><small>FIT PROTOCOL</small><strong>Food &amp; nutrition</strong><span>Full nutrition chapters in FIT PROTOCOL</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-nutrition.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Nutrition overview</span></a><a class="pager__next" href="fit-nutrition-notes.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Nutrition notes</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -259,5 +242,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

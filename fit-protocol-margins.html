@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="fit-protocol-margins" data-group="supplements">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -71,37 +72,28 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero pb-hero--plain" id="top">
-  <div class="page-hero__text">
-    <span class="eyebrow">FIT PROTOCOL · V2.0</span>
-    <h1>Safety margins</h1>
-  </div>
-</header>
-
-<section class="chap" id="part5-margins" data-category="Safety &amp; Clinical" aria-labelledby="part5-title">
-  <div class="section__head">
-    <h2 id="part5-title">Current intake margins</h2>
-  </div>
-  <aside class="callout callout--note prose">
-    <p>Compare conditional sums with the applicable reference. The magnesium UL covers supplements and medication; calcium and vitamin C limits cover total intake. A value below a limit does not establish personal safety.</p>
-  </aside>
-  <p class="chap__next"><a class="btn btn--primary" href="mineral-chemistry.html#accounting">Open the current scenario calculations ↗</a></p>
-</section>
-
-<details class="acc pb-notes" id="guide-page-8">
-  <summary>Daily guide notes</summary>
-  <div class="acc__body prose">
-    <h3>Current intake margins</h3>
-    <aside class="callout callout--note">
-      <p>Compare conditional sums with the applicable reference. The magnesium UL covers supplements and medication; calcium and vitamin C limits cover total intake. A value below a limit does not establish personal safety.</p>
-    </aside>
-    <p class="chap__next"><a class="btn btn--ghost" href="mineral-chemistry.html#accounting">Open the current scenario calculations ↗</a></p>
-  </div>
-</details>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-interactions.html"><span class="pager__dir">← Previous</span><span class="pager__label">Interactions</span></a><a class="pager__next" rel="next" href="mineral-chemistry.html"><span class="pager__dir">Next →</span><span class="pager__label">Mineral Chemistry</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V2.0</span><h1 class="hud-title" id="hudT">Safety <em>margins</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#part5-margins"><small>Folder 01</small><strong>Current intake margins</strong></a><a class="hud-chip hud-chip--link" href="#notes-2"><small>Folder 02</small><strong>Daily guide notes</strong></a></div></div></section>
+<section class="hud-folder" id="part5-margins" aria-labelledby="part5-margins-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="part5-margins-t">Current intake margins</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><aside class="callout callout--note prose">
+<p>Compare conditional sums with the applicable reference. The magnesium UL covers supplements and medication; calcium and vitamin C limits cover total intake. A value below a limit does not establish personal safety.</p>
+</aside>
+<p class="chap__next"><a class="btn btn--primary" href="mineral-chemistry.html#accounting">Open the current scenario calculations ↗</a></p></div>
+</div></section>
+<section class="hud-folder" id="notes-2" aria-labelledby="notes-2-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="notes-2-t">Daily guide notes</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#notes-2-details"><li id="guide-page-8"><a class="hud-card hud-card--text" href="#guide-page-8" data-hud-card aria-expanded="false" aria-controls="guide-page-8-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">Compare conditional sums with the applicable reference. The magnesium UL covers supplements and medication; calcium…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="notes-2-details" data-hud-details data-gallery><article class="hud-detail" id="guide-page-8-d" data-hud-detail aria-label="Daily guide notes details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Daily guide notes</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Daily guide notes">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><h3>Current intake margins</h3>
+<aside class="callout callout--note">
+<p>Compare conditional sums with the applicable reference. The magnesium UL covers supplements and medication; calcium and vitamin C limits cover total intake. A value below a limit does not establish personal safety.</p>
+</aside>
+<p class="chap__next"><a class="btn btn--ghost" href="mineral-chemistry.html#accounting">Open the current scenario calculations ↗</a></p></div></div></article></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-interactions.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Interactions</span></a><a class="pager__next" href="mineral-chemistry.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Mineral Chemistry</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -239,5 +231,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

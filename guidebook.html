@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="guidebook" data-group="daily">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -72,97 +73,80 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<div class="chap-page">
-<aside class="card card--pad card--accent chap-manual" aria-labelledby="manual-title">
-  <h2 class="card__title" id="manual-title"><span aria-hidden="true">📖</span> Guidebook V3.3 — Daily Manual</h2>
-  <ul class="stats">
-    <li class="stat"><span class="stat__value">31</span><span class="stat__label">Pages</span></li>
-    <li class="stat"><span class="stat__value">V3.3</span><span class="stat__label">Version</span></li>
-    <li class="stat"><span class="stat__value">Daily</span><span class="stat__label">Use</span></li>
-  </ul>
-  <div class="prose">
-    <p><strong>Practical daily manual:</strong> 31 pages designed for day-to-day reference. Not the full encyclopedia — the actionable companion.</p>
-    <p><strong>What it covers:</strong> Daily protocols, pill grids, vector timing, and quick-reference tables for training days.</p>
-    <p><strong>How to use:</strong> Keep open during the day for vector timing and dose checks. The Encyclopedia is for deep study; this is for doing.</p>
-    <p class="muted"><em>Download from the Library. Pairs with Encyclopedia V3.2 (75 pages) for the complete system.</em></p>
-  </div>
-</aside>
-
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-pill-organizer-may-2026-960.webp" alt="" width="1528" height="2037" srcset="assets/web/media-october-2026-pill-organizer-may-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-may-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-may-2026-1528.webp 1528w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">Door 3 · Run It Daily · V3.3</span>
-    <h1>Today</h1>
-  </div>
-</header>
-
-<section class="section chap-branch" id="today" aria-labelledby="today-title">
-  <div class="section__head">
-    <h2 id="today-title">Today at a glance</h2>
-  </div>
-
-  <input class="chap-branch__input" type="radio" name="branch" id="branch-training" value="training" checked>
-  <input class="chap-branch__input" type="radio" name="branch" id="branch-rest" value="rest">
-  <input class="chap-branch__input" type="radio" name="branch" id="branch-evening" value="evening">
-  <div class="chap-branch__tabs" role="group" aria-label="Day branch">
-    <label for="branch-training">Morning gym</label>
-    <label for="branch-rest">Rest day</label>
-    <label for="branch-evening">Evening gym</label>
-    <span class="visually-hidden" id="dayStatus" aria-live="polite"></span>
-  </div>
-
-  <aside class="callout callout--note chap-branch__note">
-    <p>Choose one branch. V1 for morning training, V6 for evening training; neither on rest days. Times follow the workout and meals rather than rigid clock deadlines.</p>
-  </aside>
-
-  <div class="chap-branch__panels">
-      <ol class="chap-clock chap-branch__panel" data-branch="training">
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Meal 1</h3><p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Before morning training · V1</h3><p>ALLMAX Impact Igniter Xtreme 2.0: 2 scoops / 28 g. ALLMAX MuscleEAA: 1 scoop / 17.73 g. ALLMAX PeakO2 2,000 mg. NOW betaine 2,500 mg. Citrulline malate 2:1: 4–6 g. Taurine: 2–3 g. Cold filtered water: 500–600 mL. Citicoline 250 mg is a separate capsule.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">During training · V2</h3><p>BCAA Hyper Clear: 1 scoop / 7.5 g BCAA, 2:1:1. RapiDrem: 1 scoop, approximately 6.5 g. Kirkland Himalayan pink salt: 1/16 tsp. Water: 600–750 mL. Two or three Medjool dates are separate food.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">After training · V4</h3><p>BioSteel Recovery Protein Plus: 1 scoop / 36 g, half the listed full serving. Rootalive beetroot 7 g. Proline Nutrition creatine HCl 750 mg. Kirkland Himalayan pink salt: 1/16 tsp. Room-temperature water: 350–450 mL. AOR R-lipoic acid: one whole 300 mg capsule, separate before the drink.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Lunch / DMZ</h3><p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Afternoon</h3><p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Night capsules</h3><p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
-      </ol>
-      <ol class="chap-clock chap-branch__panel" data-branch="evening">
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Meal 1</h3><p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Lunch / DMZ</h3><p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Afternoon</h3><p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Before evening training · V6</h3><p>ALLMAX PUMP Xtreme: 2 scoops / 31 g. ALLMAX MuscleEAA: 1 scoop / 17.73 g. ALLMAX PeakO2 2,000 mg. NOW betaine 2,500 mg. Citrulline malate 2:1: 4–6 g. Taurine: 2–3 g. Cold filtered water: 500–600 mL. No added caffeine, creatine or pink salt; total sodium is not established as zero. Citicoline 250 mg is separate.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">During training · V2</h3><p>BCAA Hyper Clear: 1 scoop / 7.5 g BCAA, 2:1:1. RapiDrem: 1 scoop, approximately 6.5 g. Kirkland Himalayan pink salt: 1/16 tsp. Water: 600–750 mL. Two or three Medjool dates are separate food.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">After training · V4</h3><p>BioSteel Recovery Protein Plus: 1 scoop / 36 g, half the listed full serving. Rootalive beetroot 7 g. Proline Nutrition creatine HCl 750 mg. Kirkland Himalayan pink salt: 1/16 tsp. Room-temperature water: 350–450 mL. AOR R-lipoic acid: one whole 300 mg capsule, separate before the drink.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Night capsules</h3><p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
-      </ol>
-      <ol class="chap-clock chap-branch__panel" data-branch="rest">
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3, when consumed</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">With meals</h3><p>Digestive Enzymes Ultra: 1 capsule with each recorded meal. The training meal, lunch, afternoon and night pill grids are skipped.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">V5, when consumed</h3><p>Proline Nutrition creatine HCl 750 mg. PROMISE marine collagen 10 g. ALLMAX L-carnitine 15 mL / 1,500 mg. RapiDrem: 1 scoop. Kirkland Himalayan pink salt: 1/16 tsp. Cold water: 500 mL.</p></li>
-        <li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10, when consumed</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
-      </ol>
-  </div>
-</section>
-
-<nav aria-label="Related files">
-  <ul class="file-grid">
-      <li><a class="file-card" href="fit-protocol-fuel.html"><img class="file-card__thumb" src="assets/web/img-protocol-24hr-clock-1000.webp" alt="" width="1000" height="545" loading="lazy" srcset="assets/web/img-protocol-24hr-clock-480.webp 480w, assets/web/img-protocol-24hr-clock-1000.webp 1000w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 01</span><span class="file-card__title">Daily clock</span><span class="file-card__cta">Open file ↗</span></span></a></li>
-      <li><a class="file-card" href="fit-protocol-vectors.html"><img class="file-card__thumb" src="assets/web/media-vector-artwork-ingredients-v1-941.webp" alt="" width="941" height="1672" loading="lazy" srcset="assets/web/media-vector-artwork-ingredients-v1-480.webp 480w, assets/web/media-vector-artwork-ingredients-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 02</span><span class="file-card__title">Vector folders</span><span class="file-card__cta">Open file ↗</span></span></a></li>
-      <li><a class="file-card" href="fit-protocol-checklists.html"><img class="file-card__thumb" src="assets/web/media-october-2026-pill-organizer-may-2026-960.webp" alt="" width="1528" height="2037" loading="lazy" srcset="assets/web/media-october-2026-pill-organizer-may-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-may-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-may-2026-1528.webp 1528w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span><span class="file-card__num">FILE 03</span><span class="file-card__title">Checklists</span><span class="file-card__cta">Open file ↗</span></span></a></li>
-      <li><a class="file-card file-card--no-thumb" href="fit-protocol-troubleshooting.html"><span><span class="file-card__num">FILE 04</span><span class="file-card__title">Troubleshooting</span><span class="file-card__cta">Open file ↗</span></span></a></li>
-  </ul>
-</nav>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-may-2026-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">Door 3 · Run It Daily · V3.3</span><h1 class="hud-title" id="hudT"><em>Today</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#folder-1"><small>Folder 01</small><strong>📖 Guidebook V3.3 — Daily…</strong></a><a class="hud-chip hud-chip--link" href="#today"><small>Folder 02</small><strong>Today at a glance</strong></a></div></div></section>
+<section class="hud-folder" id="folder-1" aria-labelledby="folder-1-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="folder-1-t">📖 Guidebook V3.3 — Daily Manual</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><ul class="stats">
+<li class="stat"><span class="stat__value">31</span><span class="stat__label">Pages</span></li>
+<li class="stat"><span class="stat__value">V3.3</span><span class="stat__label">Version</span></li>
+<li class="stat"><span class="stat__value">Daily</span><span class="stat__label">Use</span></li>
+</ul>
+<p><strong>Practical daily manual:</strong> 31 pages designed for day-to-day reference. Not the full encyclopedia — the actionable companion.</p>
+<p><strong>What it covers:</strong> Daily protocols, pill grids, vector timing, and quick-reference tables for training days.</p>
+<p><strong>How to use:</strong> Keep open during the day for vector timing and dose checks. The Encyclopedia is for deep study; this is for doing.</p>
+<p class="muted"><em>Download from the Library. Pairs with Encyclopedia V3.2 (75 pages) for the complete system.</em></p></div>
+</div></section>
+<section class="hud-folder" id="today" aria-labelledby="today-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="today-t">Today at a glance</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><input checked="" class="chap-branch__input" id="branch-training" name="branch" type="radio" value="training"/>
+<input class="chap-branch__input" id="branch-rest" name="branch" type="radio" value="rest"/>
+<input class="chap-branch__input" id="branch-evening" name="branch" type="radio" value="evening"/>
+<div aria-label="Day branch" class="chap-branch__tabs" role="group">
+<label for="branch-training">Morning gym</label>
+<label for="branch-rest">Rest day</label>
+<label for="branch-evening">Evening gym</label>
+<span aria-live="polite" class="visually-hidden" id="dayStatus"></span>
 </div>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-constraints.html"><span class="pager__dir">← Previous</span><span class="pager__label">Constraints</span></a><a class="pager__next" rel="next" href="daily-pill-cards.html"><span class="pager__dir">Next →</span><span class="pager__label">Pill cards</span></a>
-    </nav>
-  </main>
+<aside class="callout callout--note chap-branch__note">
+<p>Choose one branch. V1 for morning training, V6 for evening training; neither on rest days. Times follow the workout and meals rather than rigid clock deadlines.</p>
+</aside>
+<div class="chap-branch__panels">
+<ol class="chap-clock chap-branch__panel" data-branch="training">
+<li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Meal 1</h3><p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Before morning training · V1</h3><p>ALLMAX Impact Igniter Xtreme 2.0: 2 scoops / 28 g. ALLMAX MuscleEAA: 1 scoop / 17.73 g. ALLMAX PeakO2 2,000 mg. NOW betaine 2,500 mg. Citrulline malate 2:1: 4–6 g. Taurine: 2–3 g. Cold filtered water: 500–600 mL. Citicoline 250 mg is a separate capsule.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">During training · V2</h3><p>BCAA Hyper Clear: 1 scoop / 7.5 g BCAA, 2:1:1. RapiDrem: 1 scoop, approximately 6.5 g. Kirkland Himalayan pink salt: 1/16 tsp. Water: 600–750 mL. Two or three Medjool dates are separate food.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">After training · V4</h3><p>BioSteel Recovery Protein Plus: 1 scoop / 36 g, half the listed full serving. Rootalive beetroot 7 g. Proline Nutrition creatine HCl 750 mg. Kirkland Himalayan pink salt: 1/16 tsp. Room-temperature water: 350–450 mL. AOR R-lipoic acid: one whole 300 mg capsule, separate before the drink.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Lunch / DMZ</h3><p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Afternoon</h3><p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Night capsules</h3><p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
+</ol>
+<ol class="chap-clock chap-branch__panel" data-branch="evening">
+<li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Meal 1</h3><p>Kyolic 104: 2. NAC: 1 / 900 mg. NMN: 1 / 175 mg. Digestive Enzymes Ultra: 1 with the meal.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Lunch / DMZ</h3><p>PureGenomics: 1. Omega 800: 1 softgel. UriCare: 2. KITABIO pumpkin seed / saw palmetto: 3 softgels. Curcumin: 1. Conditional: CanPrev calcium 1 / 200 mg; Liver GI 1.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Afternoon</h3><p>Higher Health beef liver: 3 / 1.5 g. Ligament Restore: 2. Meal-time enzymes are counted with their meal.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Before evening training · V6</h3><p>ALLMAX PUMP Xtreme: 2 scoops / 31 g. ALLMAX MuscleEAA: 1 scoop / 17.73 g. ALLMAX PeakO2 2,000 mg. NOW betaine 2,500 mg. Citrulline malate 2:1: 4–6 g. Taurine: 2–3 g. Cold filtered water: 500–600 mL. No added caffeine, creatine or pink salt; total sodium is not established as zero. Citicoline 250 mg is separate.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">During training · V2</h3><p>BCAA Hyper Clear: 1 scoop / 7.5 g BCAA, 2:1:1. RapiDrem: 1 scoop, approximately 6.5 g. Kirkland Himalayan pink salt: 1/16 tsp. Water: 600–750 mL. Two or three Medjool dates are separate food.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">After training · V4</h3><p>BioSteel Recovery Protein Plus: 1 scoop / 36 g, half the listed full serving. Rootalive beetroot 7 g. Proline Nutrition creatine HCl 750 mg. Kirkland Himalayan pink salt: 1/16 tsp. Room-temperature water: 350–450 mL. AOR R-lipoic acid: one whole 300 mg capsule, separate before the drink.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Night capsules</h3><p>Pure magnesium glycinate: 2 / 240 mg elemental magnesium. Tart cherry: 1 / 500 mg. Milk thistle: 1 only when selected; dose not supplied.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
+</ol>
+<ol class="chap-clock chap-branch__panel" data-branch="rest">
+<li class="chap-clock__step"><h3 class="chap-clock__title">Wake</h3><p>TESTOFX: 3 capsules. New Roots boron: 1 capsule / 3 mg. LactoBif 100: 1 capsule, intermittent.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Morning · V3, when consumed</h3><p>Carnivor: 1 Canadian scoop / 33.9 g (23 g protein; no added creatine). PROMISE marine collagen 10 g. Rootalive black maca 5 g. ALLMAX L-carnitine 15 mL / 1,500 mg. Water. Separate: one gummy and NAKA Mint Vital Greens 20 mL.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">With meals</h3><p>Digestive Enzymes Ultra: 1 capsule with each recorded meal. The training meal, lunch, afternoon and night pill grids are skipped.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">V5, when consumed</h3><p>Proline Nutrition creatine HCl 750 mg. PROMISE marine collagen 10 g. ALLMAX L-carnitine 15 mL / 1,500 mg. RapiDrem: 1 scoop. Kirkland Himalayan pink salt: 1/16 tsp. Cold water: 500 mL.</p></li>
+<li class="chap-clock__step"><h3 class="chap-clock__title">Night · V10, when consumed</h3><p>SD Pharmaceuticals Natural Series creatine HCl 750 mg. North Coast Naturals glutamine 5 g. AOR glycine 3–5 g. Traditional Medicinals hibiscus tisane: 800 mL, at a comfortable drinking temperature, in an insulated thermos. Optional: Medi-C 2.5 g; Hey Relax is a rare add-on. Confirm the current Medi-C formulation before using its label totals.</p></li>
+</ol>
+</div></div>
+<div class="hud-inline hud-prose"><nav aria-label="Related files">
+<ul class="file-grid">
+<li><a class="file-card" href="fit-protocol-fuel.html"><img alt="" class="file-card__thumb" decoding="async" height="545" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-protocol-24hr-clock-1000.webp" srcset="assets/web/img-protocol-24hr-clock-480.webp 480w, assets/web/img-protocol-24hr-clock-1000.webp 1000w" width="1000"/><span><span class="file-card__num">FILE 01</span><span class="file-card__title">Daily clock</span><span class="file-card__cta">Open file ↗</span></span></a></li>
+<li><a class="file-card" href="fit-protocol-vectors.html"><img alt="" class="file-card__thumb" decoding="async" height="1672" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-vector-artwork-ingredients-v1-941.webp" srcset="assets/web/media-vector-artwork-ingredients-v1-480.webp 480w, assets/web/media-vector-artwork-ingredients-v1-941.webp 941w" width="941"/><span><span class="file-card__num">FILE 02</span><span class="file-card__title">Vector folders</span><span class="file-card__cta">Open file ↗</span></span></a></li>
+<li><a class="file-card" href="fit-protocol-checklists.html"><img alt="" class="file-card__thumb" decoding="async" height="2037" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-pill-organizer-may-2026-960.webp" srcset="assets/web/media-october-2026-pill-organizer-may-2026-480.webp 480w, assets/web/media-october-2026-pill-organizer-may-2026-960.webp 960w, assets/web/media-october-2026-pill-organizer-may-2026-1528.webp 1528w" width="1528"/><span><span class="file-card__num">FILE 03</span><span class="file-card__title">Checklists</span><span class="file-card__cta">Open file ↗</span></span></a></li>
+<li><a class="file-card file-card--no-thumb" href="fit-protocol-troubleshooting.html"><span><span class="file-card__num">FILE 04</span><span class="file-card__title">Troubleshooting</span><span class="file-card__cta">Open file ↗</span></span></a></li>
+</ul>
+</nav></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-constraints.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Constraints</span></a><a class="pager__next" href="daily-pill-cards.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Pill cards</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -300,5 +284,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

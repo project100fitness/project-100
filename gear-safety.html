@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="gear-safety" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,151 +58,122 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
-    <ul class="rail__list">
-      <li><a href="gear-shop.html"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
-      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
-      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
-      <li><a href="gear-rig.html"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
-      <li><a href="gear-resistance.html"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
-      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
-      <li><a href="gear-anchors.html"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
-      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
-      <li><a href="gear-safety.html" aria-current="page"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-gear-item-carabiner-1000.webp" alt="" width="1000" height="708" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · GEAR</span>
-    <h1>Hardware safety</h1>
-  </div>
-</header>
-<aside class="callout callout--note">
-  <span class="callout__title">The Physics Behind It</span>
-  <p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
-</aside>
-
-<section class="section" id="safety" data-main-source="gear-shop.html:safety" aria-labelledby="safety-title">
-  <div class="section__head">
-    <span class="eyebrow">Rated Hardware</span>
-    <h2 id="safety-title">Safety Protocols</h2>
-    <p>A handful of items in this rig aren't just gym accessories — they're the same class of hardware used in mountain-climbing protection and heavy-vehicle tie-down: forged, gate-locking carabiners and high-tensile webbing straps built to industrial breaking-strength standards. Here's how they're actually rigged into the setup, and the checks that keep that load path safe.</p>
-  </div>
-
-  <ol class="gear-chain">
-    <li class="gear-chain__step"><span class="gear-chain__n">1</span><div><h3 class="gear-chain__title">Structural Anchor</h3><p>The rig's welded steel crossbar, or a non-marking soft-loop strap choked directly around it.</p></div></li>
-    <li class="gear-chain__step"><span class="gear-chain__n">2</span><div><h3 class="gear-chain__title">Tie-Down Strap</h3><p>VEHICLEX / THEFITGUY webbing extends the anchor point out to a forged steel D-ring terminal.</p></div></li>
-    <li class="gear-chain__step"><span class="gear-chain__n">3</span><div><h3 class="gear-chain__title">Locking Carabiner</h3><p>A JRSGS 25kN gate-lock clip closes the chain — gate faced away from the pull, locked shut.</p></div></li>
-    <li class="gear-chain__step"><span class="gear-chain__n">4</span><div><h3 class="gear-chain__title">Band / Handle</h3><p>The working resistance — tubing, a grip handle, a rope attachment — clips in last, closest to the load.</p></div></li>
-    <li class="gear-chain__step"><span class="gear-chain__n">5</span><div><h3 class="gear-chain__title">You</h3><p>The working end of the chain — only ever as strong as the weakest link rigged in behind it.</p></div></li>
-  </ol>
-
-  <section class="gear-group" aria-labelledby="safety-rated-title">
-    <h3 class="gear-group__title" id="safety-rated-title">Climbing &amp; Vehicle-Rated Hardware</h3>
-    <ul class="gear-list" data-gallery>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-carabiner.jpg" aria-label="Photo: JRSGS 25kN locking carabiners"><img src="assets/web/img-gear-item-carabiner-1000.webp" alt="Photo: JRSGS 25kN locking carabiners" width="1000" height="708" loading="lazy" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">JRSGS Rock Locking Clips</h4>
-          <span class="tag tag--teal gear-item__spec">25 kN · 2 VARIANTS</span>
-          <p>Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.</p>
-          <span class="tag tag--accent gear-item__badge">Climbing-Grade Rating</span>
-        </div>
-      </article></li>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-vehiclex.jpg" aria-label="Photo: the VEHICLEX axle tie-down straps"><img src="assets/web/img-gear-item-vehiclex-700.webp" alt="Photo: the VEHICLEX axle tie-down straps" width="700" height="692" loading="lazy" srcset="assets/web/img-gear-item-vehiclex-480.webp 480w, assets/web/img-gear-item-vehiclex-700.webp 700w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">VEHICLEX Axle Tie-Down Straps</h4>
-          <span class="tag tag--teal gear-item__spec">Sleeved webbing</span>
-          <p>Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p>
-          <span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
-        </div>
-      </article></li>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-thefitguy-ext-straps.jpg" aria-label="Photo: the THEFITGUY ultimate extension straps"><img src="assets/web/img-gear-item-thefitguy-ext-straps-700.webp" alt="Photo: the THEFITGUY ultimate extension straps" width="700" height="724" loading="lazy" srcset="assets/web/img-gear-item-thefitguy-ext-straps-480.webp 480w, assets/web/img-gear-item-thefitguy-ext-straps-700.webp 700w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">THEFITGUY Ultimate Extension Straps</h4>
-          <span class="tag tag--teal gear-item__spec">Dual D-ring straps</span>
-          <p>Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.</p>
-          <span class="tag tag--accent gear-item__badge">Aircraft-Grade Webbing</span>
-        </div>
-      </article></li>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-nilight.jpg" aria-label="Photo: the NILIGHT soft loop anchor straps"><img src="assets/web/img-gear-item-nilight-500.webp" alt="Photo: the NILIGHT soft loop anchor straps" width="500" height="543" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">NILIGHT Soft Loop Anchor Straps</h4>
-          <span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span>
-          <p>Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.</p>
-          <span class="tag tag--accent gear-item__badge">Non-Marking Anchor</span>
-        </div>
-      </article></li>
-      <li><article class="card gear-item">
-        <div class="card__media"><button class="gear-item__zoom" type="button" data-full="assets/img/gear-item-xstrap.jpg" aria-label="Photo: XSTRAP motorcycle soft loop tie-down straps"><img src="assets/web/img-gear-item-xstrap-500.webp" alt="XSTRAP motorcycle soft loop tie-down straps" width="500" height="505" loading="lazy" decoding="async"></button></div>
-        <div class="card__body">
-          <h4 class="card__title">XSTRAP Motorcycle Soft Loop Tie-Downs</h4>
-          <span class="tag tag--teal gear-item__spec">Soft Loop</span>
-          <p>Woven soft-loop straps built for securing a motorcycle in transit — a second non-marking anchor option alongside the Nilight set.</p>
-          <span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
-        </div>
-      </article></li>
-    </ul>
-  </section>
-
-  <div class="gear-checks">
-    <section class="card card--pad gear-checks__col gear-checks__col--ok" aria-labelledby="gear-checks-ok">
-      <h3 id="gear-checks-ok">Advantages</h3>
-      <ul class="gear-checks__list">
-        <li>Every anchor point breaks down and reconfigures in seconds — nothing bolted or permanently mounted.</li>
-        <li>Soft-loop and tie-down straps don't mark or wear the structural steel the way a bare hook or band would.</li>
-        <li>Locking gates prevent the accidental unclipping a plain resistance-band loop is prone to mid-set.</li>
-        <li>Rated in kN / lbs, so the hardware's actual failure point sits well above anything the bands can pull.</li>
-      </ul>
-    </section>
-    <section class="card card--pad gear-checks__col gear-checks__col--warn" aria-labelledby="gear-checks-warn">
-      <h3 id="gear-checks-warn">Safety Measures</h3>
-      <ul class="gear-checks__list">
-        <li>Match hardware rating to the heaviest band in the line with real margin — never eyeball it as "strong enough."</li>
-        <li>Carabiner gate faces away from the direction of pull, fully closed and locked, checked before every set.</li>
-        <li>Webbing inspected before use — any cut, fraying, or UV-bleaching gets that strap retired immediately, no exceptions.</li>
-        <li>No daisy-chaining mismatched hardware — every link in the setup should carry its own independent rating.</li>
-        <li>Carabiners loaded along the spine only — side- or gate-loading drops rated strength dramatically.</li>
-        <li>No shock-loading — bands are let out under control, never snapped or dropped into a sudden stop.</li>
-      </ul>
-    </section>
-  </div>
-
-  <aside class="callout callout--warn">
-    <p>Ratings above reflect the manufacturer specs printed on the hardware itself. This is a home-gym rig, not a certified climbing or industrial rigging system — so those numbers are treated as a floor to stay well under, not a target to push toward.</p>
-  </aside>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-gear-item-carabiner-1000.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title" id="hudT">Hardware <em>safety</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#safety"><small>Folder 01</small><strong>Safety Protocols</strong></a><a class="hud-chip hud-chip--link" href="#gear-source"><small>Folder 02</small><strong>The system behind the…</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Gear"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html" aria-current="page">Hardware safety</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--note">
+<span class="callout__title">The Physics Behind It</span>
+<p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
+</aside></div>
+<section class="hud-folder" id="safety" aria-labelledby="safety-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="safety-t">Safety Protocols</h2><span class="hud-folder__meta">Rated Hardware</span></div>
+<div class="hud-folder__body">
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#safety-details"><li id="safety-c1"><a class="hud-card hud-card--text" href="#safety-c1" data-hud-card aria-expanded="false" aria-controls="safety-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Open the full section</span><span class="hud-card__hint">A handful of items in this rig aren&#x27;t just gym accessories — they&#x27;re the same class of hardware used in…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="safety-details" data-hud-details data-gallery><article class="hud-detail" id="safety-c1-d" data-hud-detail aria-label="Safety Protocols details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Full section</b><h3>Safety Protocols</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Safety Protocols">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p>A handful of items in this rig aren't just gym accessories — they're the same class of hardware used in mountain-climbing protection and heavy-vehicle tie-down: forged, gate-locking carabiners and high-tensile webbing straps built to industrial breaking-strength standards. Here's how they're actually rigged into the setup, and the checks that keep that load path safe.</p>
+<ol class="gear-chain">
+<li class="gear-chain__step"><span class="gear-chain__n">1</span><div><h3 class="gear-chain__title">Structural Anchor</h3><p>The rig's welded steel crossbar, or a non-marking soft-loop strap choked directly around it.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">2</span><div><h3 class="gear-chain__title">Tie-Down Strap</h3><p>VEHICLEX / THEFITGUY webbing extends the anchor point out to a forged steel D-ring terminal.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">3</span><div><h3 class="gear-chain__title">Locking Carabiner</h3><p>A JRSGS 25kN gate-lock clip closes the chain — gate faced away from the pull, locked shut.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">4</span><div><h3 class="gear-chain__title">Band / Handle</h3><p>The working resistance — tubing, a grip handle, a rope attachment — clips in last, closest to the load.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">5</span><div><h3 class="gear-chain__title">You</h3><p>The working end of the chain — only ever as strong as the weakest link rigged in behind it.</p></div></li>
+</ol>
+<section aria-labelledby="safety-rated-title" class="gear-group">
+<h3 class="gear-group__title" id="safety-rated-title">Climbing &amp; Vehicle-Rated Hardware</h3>
+<ul class="gear-list" data-gallery="">
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: JRSGS 25kN locking carabiners" class="gear-item__zoom" data-full="assets/img/gear-item-carabiner.jpg" type="button"><img alt="Photo: JRSGS 25kN locking carabiners" decoding="async" height="708" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-carabiner-1000.webp" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" width="1000"/></button></div>
+<div class="card__body">
+<h4 class="card__title">JRSGS Rock Locking Clips</h4>
+<span class="tag tag--teal gear-item__spec">25 kN · 2 VARIANTS</span>
+<p>Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.</p>
+<span class="tag tag--accent gear-item__badge">Climbing-Grade Rating</span>
+</div>
+</article></li>
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: the VEHICLEX axle tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-vehiclex.jpg" type="button"><img alt="Photo: the VEHICLEX axle tie-down straps" decoding="async" height="692" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-vehiclex-700.webp" srcset="assets/web/img-gear-item-vehiclex-480.webp 480w, assets/web/img-gear-item-vehiclex-700.webp 700w" width="700"/></button></div>
+<div class="card__body">
+<h4 class="card__title">VEHICLEX Axle Tie-Down Straps</h4>
+<span class="tag tag--teal gear-item__spec">Sleeved webbing</span>
+<p>Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p>
+<span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
+</div>
+</article></li>
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: the THEFITGUY ultimate extension straps" class="gear-item__zoom" data-full="assets/img/gear-item-thefitguy-ext-straps.jpg" type="button"><img alt="Photo: the THEFITGUY ultimate extension straps" decoding="async" height="724" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-thefitguy-ext-straps-700.webp" srcset="assets/web/img-gear-item-thefitguy-ext-straps-480.webp 480w, assets/web/img-gear-item-thefitguy-ext-straps-700.webp 700w" width="700"/></button></div>
+<div class="card__body">
+<h4 class="card__title">THEFITGUY Ultimate Extension Straps</h4>
+<span class="tag tag--teal gear-item__spec">Dual D-ring straps</span>
+<p>Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.</p>
+<span class="tag tag--accent gear-item__badge">Aircraft-Grade Webbing</span>
+</div>
+</article></li>
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: the NILIGHT soft loop anchor straps" class="gear-item__zoom" data-full="assets/img/gear-item-nilight.jpg" type="button"><img alt="Photo: the NILIGHT soft loop anchor straps" decoding="async" height="543" loading="lazy" src="assets/web/img-gear-item-nilight-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">NILIGHT Soft Loop Anchor Straps</h4>
+<span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span>
+<p>Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.</p>
+<span class="tag tag--accent gear-item__badge">Non-Marking Anchor</span>
+</div>
+</article></li>
+<li><article class="card gear-item">
+<div class="card__media"><button aria-label="Photo: XSTRAP motorcycle soft loop tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-xstrap.jpg" type="button"><img alt="XSTRAP motorcycle soft loop tie-down straps" decoding="async" height="505" loading="lazy" src="assets/web/img-gear-item-xstrap-500.webp" width="500"/></button></div>
+<div class="card__body">
+<h4 class="card__title">XSTRAP Motorcycle Soft Loop Tie-Downs</h4>
+<span class="tag tag--teal gear-item__spec">Soft Loop</span>
+<p>Woven soft-loop straps built for securing a motorcycle in transit — a second non-marking anchor option alongside the Nilight set.</p>
+<span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
+</div>
+</article></li>
+</ul>
 </section>
-
-<section class="section" id="gear-source" data-main-source="gear-shop.html:gear-source" aria-labelledby="gear-source-title">
-  <h2 id="gear-source-title">The system behind the hardware</h2>
-  <aside class="callout callout--note">
-    <p>Band resistance changes with extension. Supported setups and symptom response matter; no piece of hardware guarantees zero spinal load. <a href="fit-protocol-training.html#ch6">Read the current loading logic</a>.</p>
-  </aside>
-  <details class="acc" open>
-    <summary>Clinical notes · five lenses</summary>
-    <div class="acc__body">
-      <dl class="kv">
-        <dt>Mechanism</dt><dd>Repeatable supported loading and controlled ranges.</dd>
-        <dt>Stack interaction</dt><dd>Spine, nerve, shoulder and elbow constraints govern exercise selection before ambition.</dd>
-        <dt>Margin</dt><dd>Manufacturer ratings are not a guarantee for a home rig; inspect the entire anchor-to-user chain.</dd>
-        <dt>Monitor</dt><dd>Record setup, range, pain response and changes in hand strength.</dd>
-        <dt>Stop rule</dt><dd>Progressive weakness, new numbness or bowel/bladder changes stop the session and require assessment.</dd>
-      </dl>
-      <p class="source-ref">Encyclopedia V2.0 · Chapters 3, 6 · Annex II · <a href="fit-protocol-interactions.html#part4-cascades">Read the source cascades</a></p>
-    </div>
-  </details>
+<div class="gear-checks">
+<section aria-labelledby="gear-checks-ok" class="card card--pad gear-checks__col gear-checks__col--ok">
+<h3 id="gear-checks-ok">Advantages</h3>
+<ul class="gear-checks__list">
+<li>Every anchor point breaks down and reconfigures in seconds — nothing bolted or permanently mounted.</li>
+<li>Soft-loop and tie-down straps don't mark or wear the structural steel the way a bare hook or band would.</li>
+<li>Locking gates prevent the accidental unclipping a plain resistance-band loop is prone to mid-set.</li>
+<li>Rated in kN / lbs, so the hardware's actual failure point sits well above anything the bands can pull.</li>
+</ul>
 </section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="gear-recovery.html"><span class="pager__dir">← Previous</span><span class="pager__label">Recovery tools</span></a><a class="pager__next" rel="next" href="index.html"><span class="pager__dir">Next →</span><span class="pager__label">Home</span></a>
-    </nav>
-  </main>
+<section aria-labelledby="gear-checks-warn" class="card card--pad gear-checks__col gear-checks__col--warn">
+<h3 id="gear-checks-warn">Safety Measures</h3>
+<ul class="gear-checks__list">
+<li>Match hardware rating to the heaviest band in the line with real margin — never eyeball it as "strong enough."</li>
+<li>Carabiner gate faces away from the direction of pull, fully closed and locked, checked before every set.</li>
+<li>Webbing inspected before use — any cut, fraying, or UV-bleaching gets that strap retired immediately, no exceptions.</li>
+<li>No daisy-chaining mismatched hardware — every link in the setup should carry its own independent rating.</li>
+<li>Carabiners loaded along the spine only — side- or gate-loading drops rated strength dramatically.</li>
+<li>No shock-loading — bands are let out under control, never snapped or dropped into a sudden stop.</li>
+</ul>
+</section>
+</div>
+<aside class="callout callout--warn">
+<p>Ratings above reflect the manufacturer specs printed on the hardware itself. This is a home-gym rig, not a certified climbing or industrial rigging system — so those numbers are treated as a floor to stay well under, not a target to push toward.</p>
+</aside></div></div></article></div>
+</div></section>
+<section class="hud-folder" id="gear-source" aria-labelledby="gear-source-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="gear-source-t">The system behind the hardware</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><aside class="callout callout--note">
+<p>Band resistance changes with extension. Supported setups and symptom response matter; no piece of hardware guarantees zero spinal load. <a href="fit-protocol-training.html#ch6">Read the current loading logic</a>.</p>
+</aside></div>
+<ul class="hud-cards hud-cards--1" data-hud-cards data-hud-for="#gear-source-details"><li id="gear-source-c1"><a class="hud-card hud-card--text" href="#gear-source-c1" data-hud-card aria-expanded="false" aria-controls="gear-source-c1-d"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Clinical notes · five lenses</span><span class="hud-card__hint">Mechanism Repeatable supported loading and controlled ranges. Stack interaction Spine, nerve, shoulder and elbow…</span></span><span class="hud-card__plus" aria-hidden="true">+</span></a></li></ul>
+<div class="hud-details" id="gear-source-details" data-hud-details data-gallery><article class="hud-detail" id="gear-source-c1-d" data-hud-detail aria-label="Clinical notes · five lenses details"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>The system behind the hardware</b><h3>Clinical notes · five lenses</h3></div><div class="hud-detail__nav"><button class="hud-nav" type="button" data-hud-prev aria-label="Previous card">&#8249;</button><button class="hud-nav" type="button" data-hud-next aria-label="Next card">&#8250;</button><button class="hud-nav" type="button" data-hud-close aria-label="Close Clinical notes · five lenses">&#215;</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><dl class="kv">
+<dt>Mechanism</dt><dd>Repeatable supported loading and controlled ranges.</dd>
+<dt>Stack interaction</dt><dd>Spine, nerve, shoulder and elbow constraints govern exercise selection before ambition.</dd>
+<dt>Margin</dt><dd>Manufacturer ratings are not a guarantee for a home rig; inspect the entire anchor-to-user chain.</dd>
+<dt>Monitor</dt><dd>Record setup, range, pain response and changes in hand strength.</dd>
+<dt>Stop rule</dt><dd>Progressive weakness, new numbness or bowel/bladder changes stop the session and require assessment.</dd>
+</dl>
+<p class="source-ref">Encyclopedia V2.0 · Chapters 3, 6 · Annex II · <a href="fit-protocol-interactions.html#part4-cascades">Read the source cascades</a></p></div></div></article></div>
+</div></section>
+<section class="hud-folder hud-folder--deep" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-joints.html"><small>FIT PROTOCOL</small><strong>Joints &amp; recovery</strong><span>The protocol side of joint safety</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-recovery.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Recovery tools</span></a><a class="pager__next" href="index.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Home</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -319,5 +291,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="protocol" data-page="fit-protocol-fuel" data-group="daily">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -72,69 +73,58 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </aside>
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/img-protocol-24hr-clock-1000.webp" alt="" width="1000" height="545" srcset="assets/web/img-protocol-24hr-clock-480.webp 480w, assets/web/img-protocol-24hr-clock-1000.webp 1000w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">FIT PROTOCOL · V2.0</span>
-    <h1>Daily clock</h1>
-  </div>
-</header>
-
-<section class="callout callout--accent chap-registry" aria-labelledby="registry-title">
-  <h2 class="callout__title" id="registry-title">Vector registry · 5 October 2026</h2>
-  <p>Morning: V3, V1, V2, V4, V10. Rest: V3 when consumed, V5, V10. Evening override: V3, V6, V2 during the session, V4 afterward, V10 at night. V1 and V6 are never combined on the same calendar day; both are inactive on rest days. V7–V9 have no supplied records.</p>
-  <p>V6 supersedes the older unnumbered, permanently inactive PUMP designation. Existing artwork may still say PUMP; the page record and descriptive downloads carry V6.</p>
-</section>
-
-<section class="chap" id="ch4" data-category="System" aria-labelledby="ch4-title">
-  <div class="section__head">
-    <h2 id="ch4-title">Workout-relative sequence</h2>
-    <p class="lead">Morning: V1. Evening: V6. Rest: neither. Both training branches use V2 during training and V4 afterwards.</p>
-  </div>
-
-  <div class="grid grid--3 chap-branches">
-    <article class="card card--pad card--accent">
-      <h3 class="card__title">Morning training</h3>
-      <ol class="chap-flow">
-        <li>Wake <span aria-hidden="true">→</span></li>
-        <li>V3 <span aria-hidden="true">→</span></li>
-        <li>meal 1 <span aria-hidden="true">→</span></li>
-        <li>V1 + separate citicoline <span aria-hidden="true">→</span></li>
-        <li>V2 <span aria-hidden="true">→</span></li>
-        <li>V4 <span aria-hidden="true">→</span></li>
-        <li>lunch <span aria-hidden="true">→</span></li>
-        <li>afternoon cofactors <span aria-hidden="true">→</span></li>
-        <li>night capsules <span aria-hidden="true">→</span></li>
-        <li>V10.</li>
-      </ol>
-    </article>
-    <article class="card card--pad card--accent">
-      <h3 class="card__title">Evening training</h3>
-      <ol class="chap-flow">
-        <li>Wake <span aria-hidden="true">→</span></li>
-        <li>V3 <span aria-hidden="true">→</span></li>
-        <li>meal 1 <span aria-hidden="true">→</span></li>
-        <li>lunch <span aria-hidden="true">→</span></li>
-        <li>afternoon cofactors <span aria-hidden="true">→</span></li>
-        <li>V6 + separate citicoline <span aria-hidden="true">→</span></li>
-        <li>V2 <span aria-hidden="true">→</span></li>
-        <li>V4 <span aria-hidden="true">→</span></li>
-        <li>night capsules <span aria-hidden="true">→</span></li>
-        <li>V10.</li>
-      </ol>
-    </article>
-    <article class="card card--pad card--accent">
-      <h3 class="card__title">Rest</h3>
-      <p>Wake items; meal enzymes with meals. V3, V5 and V10 when consumed. Training pill grids are skipped.</p>
-    </article>
-  </div>
-
-  <p class="chap__next"><a class="btn btn--primary" href="guidebook.html#today">Choose your complete day branch ↗</a></p>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="daily-pill-cards.html"><span class="pager__dir">← Previous</span><span class="pager__label">Pill cards</span></a><a class="pager__next" rel="next" href="fit-protocol-checklists.html"><span class="pager__dir">Next →</span><span class="pager__label">Checklists</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-protocol-24hr-clock-1000.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V2.0</span><h1 class="hud-title" id="hudT">Daily <em>clock</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#folder-1"><small>Folder 01</small><strong>Vector registry · 5…</strong></a><a class="hud-chip hud-chip--link" href="#ch4"><small>Folder 02</small><strong>Workout-relative sequence</strong></a></div></div></section>
+<section class="hud-folder" id="folder-1" aria-labelledby="folder-1-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="folder-1-t">Vector registry · 5 October 2026</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p>Morning: V3, V1, V2, V4, V10. Rest: V3 when consumed, V5, V10. Evening override: V3, V6, V2 during the session, V4 afterward, V10 at night. V1 and V6 are never combined on the same calendar day; both are inactive on rest days. V7–V9 have no supplied records.</p>
+<p>V6 supersedes the older unnumbered, permanently inactive PUMP designation. Existing artwork may still say PUMP; the page record and descriptive downloads carry V6.</p></div>
+</div></section>
+<section class="hud-folder" id="ch4" aria-labelledby="ch4-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="ch4-t">Workout-relative sequence</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><p class="lead">Morning: V1. Evening: V6. Rest: neither. Both training branches use V2 during training and V4 afterwards.</p>
+<div class="grid grid--3 chap-branches">
+<article class="card card--pad card--accent">
+<h3 class="card__title">Morning training</h3>
+<ol class="chap-flow">
+<li>Wake <span aria-hidden="true">→</span></li>
+<li>V3 <span aria-hidden="true">→</span></li>
+<li>meal 1 <span aria-hidden="true">→</span></li>
+<li>V1 + separate citicoline <span aria-hidden="true">→</span></li>
+<li>V2 <span aria-hidden="true">→</span></li>
+<li>V4 <span aria-hidden="true">→</span></li>
+<li>lunch <span aria-hidden="true">→</span></li>
+<li>afternoon cofactors <span aria-hidden="true">→</span></li>
+<li>night capsules <span aria-hidden="true">→</span></li>
+<li>V10.</li>
+</ol>
+</article>
+<article class="card card--pad card--accent">
+<h3 class="card__title">Evening training</h3>
+<ol class="chap-flow">
+<li>Wake <span aria-hidden="true">→</span></li>
+<li>V3 <span aria-hidden="true">→</span></li>
+<li>meal 1 <span aria-hidden="true">→</span></li>
+<li>lunch <span aria-hidden="true">→</span></li>
+<li>afternoon cofactors <span aria-hidden="true">→</span></li>
+<li>V6 + separate citicoline <span aria-hidden="true">→</span></li>
+<li>V2 <span aria-hidden="true">→</span></li>
+<li>V4 <span aria-hidden="true">→</span></li>
+<li>night capsules <span aria-hidden="true">→</span></li>
+<li>V10.</li>
+</ol>
+</article>
+<article class="card card--pad card--accent">
+<h3 class="card__title">Rest</h3>
+<p>Wake items; meal enzymes with meals. V3, V5 and V10 when consumed. Training pill grids are skipped.</p>
+</article>
+</div>
+<p class="chap__next"><a class="btn btn--primary" href="guidebook.html#today">Choose your complete day branch ↗</a></p></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="daily-pill-cards.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Pill cards</span></a><a class="pager__next" href="fit-protocol-checklists.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Checklists</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -272,5 +262,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>

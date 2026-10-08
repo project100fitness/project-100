@@ -27,6 +27,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=8ed17b31">
+<link rel="stylesheet" href="assets/css/hud.css?v=6c0c6906">
 </head>
 <body data-site="main" data-page="gear-shop" data-group="gear">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -57,56 +58,34 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </nav>
 </header>
 
-<div class="layout layout--rail">
-  <aside class="rail" aria-label="Gear">
-    <h2 class="rail__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Gear</span></h2>
-    <ul class="rail__list">
-      <li><a href="gear-shop.html" aria-current="page"><span class="rail__num" aria-hidden="true">01</span><span class="rail__label">Gear folders</span></a></li>
-      <li><a href="gear-gym.html"><span class="rail__num" aria-hidden="true">02</span><span class="rail__label">Gym walkthroughs</span></a></li>
-      <li><a href="gear-photos.html"><span class="rail__num" aria-hidden="true">03</span><span class="rail__label">Gym photo journal</span></a></li>
-      <li><a href="gear-rig.html"><span class="rail__num" aria-hidden="true">04</span><span class="rail__label">The rig</span></a></li>
-      <li><a href="gear-resistance.html"><span class="rail__num" aria-hidden="true">05</span><span class="rail__label">Resistance bands</span></a></li>
-      <li><a href="gear-grips.html"><span class="rail__num" aria-hidden="true">06</span><span class="rail__label">Grips &amp; handles</span></a></li>
-      <li><a href="gear-anchors.html"><span class="rail__num" aria-hidden="true">07</span><span class="rail__label">Straps &amp; anchors</span></a></li>
-      <li><a href="gear-recovery.html"><span class="rail__num" aria-hidden="true">08</span><span class="rail__label">Recovery tools</span></a></li>
-      <li><a href="gear-safety.html"><span class="rail__num" aria-hidden="true">09</span><span class="rail__label">Hardware safety</span></a></li>
-    </ul>
-  </aside>
+<div class="layout">
   <main class="main" id="content" tabindex="-1">
-<header class="page-hero" id="top">
-  <img class="page-hero__img" src="assets/web/media-october-2026-gym-turf-rig-960.webp" alt="" width="1600" height="1205" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high">
-  <div class="page-hero__text">
-    <span class="eyebrow">PROJECT_100 · GEAR</span>
-    <h1>Gear folders</h1>
-  </div>
-</header>
-<aside class="callout callout--note">
-  <span class="callout__title">The Physics Behind It</span>
-  <p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
-</aside>
-
-<section class="section" id="gear-files" aria-labelledby="gear-files-title">
-  <div class="section__head">
-    <h2 id="gear-files-title">Choose a gear file.</h2>
-  </div>
-  <section class="carousel carousel--rows2 carousel--file" id="gear-file-row" data-carousel data-count="8" aria-labelledby="gear-file-row-t">
-    <header class="carousel__head"><h3 class="carousel__title" id="gear-file-row-t">Gear files</h3><span class="carousel__count">8 files</span></header>
-    <div class="carousel__stage"><ul class="carousel__track">
-    <li class="carousel__item"><a class="file-card" href="gear-gym.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-august-floor-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-august-floor-480.webp 480w, assets/web/media-october-2026-gym-august-floor-960.webp 960w, assets/web/media-october-2026-gym-august-floor-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span> <span class="file-card__title">Gym walkthroughs</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-photos.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-july-turf-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span> <span class="file-card__title">Gym photo journal</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-rig.html"><img class="file-card__thumb" src="assets/web/media-october-2026-gym-bench-august-960.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/media-october-2026-gym-bench-august-480.webp 480w, assets/web/media-october-2026-gym-bench-august-960.webp 960w, assets/web/media-october-2026-gym-bench-august-1600.webp 1600w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span> <span class="file-card__title">The rig</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-resistance.html"><img class="file-card__thumb" src="assets/web/img-gear-item-tubing-308.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span> <span class="file-card__title">Resistance bands</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-grips.html"><img class="file-card__thumb" src="assets/web/img-gear-item-angles90-699.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-angles90-480.webp 480w, assets/web/img-gear-item-angles90-699.webp 699w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span> <span class="file-card__title">Grips &amp; handles</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-anchors.html"><img class="file-card__thumb" src="assets/web/img-gear-item-carabiner-1000.webp" alt="" width="76" height="76" loading="lazy" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" sizes="(min-width: 1280px) 60rem, 100vw" decoding="async"><span> <span class="file-card__title">Straps &amp; anchors</span></span></a></li>
-    <li class="carousel__item"><a class="file-card" href="gear-recovery.html"><img class="file-card__thumb" src="assets/web/img-gear-item-miaoke-500.webp" alt="" width="76" height="76" loading="lazy" decoding="async"><span> <span class="file-card__title">Recovery tools</span></span></a></li>
-    <li class="carousel__item"><a class="file-card file-card--no-thumb" href="gear-safety.html"><span> <span class="file-card__title">Hardware safety</span></span></a></li>
-    </ul></div>
-  </section>
-</section>
-
-    <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="liquid-intake.html"><span class="pager__dir">← Previous</span><span class="pager__label">Liquid Intake</span></a><a class="pager__next" rel="next" href="gear-gym.html"><span class="pager__dir">Next →</span><span class="pager__label">Gym walkthroughs</span></a>
-    </nav>
-  </main>
+<section class="hud-hero" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/media-october-2026-gym-turf-rig-960.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title" id="hudT">Gear <em>folders</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#gear-files"><small>Folder 01</small><strong>Choose a gear file.</strong></a></div></div></section>
+<ul class="subnav hud-subnav" aria-label="Gear"><li><a href="gear-shop.html" aria-current="page">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html">Hardware safety</a></li></ul>
+<div class="hud-intro hud-prose"><aside class="callout callout--note">
+<span class="callout__title">The Physics Behind It</span>
+<p>Recorded band setup: 360 lb nominal rating. Tension increases with stretch; actual force varies by configuration.</p>
+</aside></div>
+<section class="hud-folder" id="gear-files" aria-labelledby="gear-files-t">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="gear-files-t">Choose a gear file.</h2><span class="hud-folder__meta"></span></div>
+<div class="hud-folder__body">
+<div class="hud-inline hud-prose"><section aria-labelledby="gear-file-row-t" class="carousel carousel--rows2 carousel--file" data-carousel="" data-count="8" id="gear-file-row">
+<header class="carousel__head"><h3 class="carousel__title" id="gear-file-row-t">Gear files</h3><span class="carousel__count">8 files</span></header>
+<div class="carousel__stage"><ul class="carousel__track">
+<li class="carousel__item"><a class="file-card" href="gear-gym.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-august-floor-960.webp" srcset="assets/web/media-october-2026-gym-august-floor-480.webp 480w, assets/web/media-october-2026-gym-august-floor-960.webp 960w, assets/web/media-october-2026-gym-august-floor-1600.webp 1600w" width="76"/><span> <span class="file-card__title">Gym walkthroughs</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-photos.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-july-turf-960.webp" srcset="assets/web/media-october-2026-gym-july-turf-480.webp 480w, assets/web/media-october-2026-gym-july-turf-960.webp 960w, assets/web/media-october-2026-gym-july-turf-1200.webp 1200w" width="76"/><span> <span class="file-card__title">Gym photo journal</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-rig.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/media-october-2026-gym-bench-august-960.webp" srcset="assets/web/media-october-2026-gym-bench-august-480.webp 480w, assets/web/media-october-2026-gym-bench-august-960.webp 960w, assets/web/media-october-2026-gym-bench-august-1600.webp 1600w" width="76"/><span> <span class="file-card__title">The rig</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-resistance.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" src="assets/web/img-gear-item-tubing-308.webp" width="76"/><span> <span class="file-card__title">Resistance bands</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-grips.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-gear-item-angles90-699.webp" srcset="assets/web/img-gear-item-angles90-480.webp 480w, assets/web/img-gear-item-angles90-699.webp 699w" width="76"/><span> <span class="file-card__title">Grips &amp; handles</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-anchors.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" sizes="(min-width: 1280px) 60rem, 100vw" src="assets/web/img-gear-item-carabiner-1000.webp" srcset="assets/web/img-gear-item-carabiner-480.webp 480w, assets/web/img-gear-item-carabiner-1000.webp 1000w" width="76"/><span> <span class="file-card__title">Straps &amp; anchors</span></span></a></li>
+<li class="carousel__item"><a class="file-card" href="gear-recovery.html"><img alt="" class="file-card__thumb" decoding="async" height="76" loading="lazy" src="assets/web/img-gear-item-miaoke-500.webp" width="76"/><span> <span class="file-card__title">Recovery tools</span></span></a></li>
+<li class="carousel__item"><a class="file-card file-card--no-thumb" href="gear-safety.html"><span> <span class="file-card__title">Hardware safety</span></span></a></li>
+</ul></div>
+</section></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="liquid-intake.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Liquid Intake</span></a><a class="pager__next" href="gear-gym.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Gym walkthroughs</span></a>
+</nav>
+</main>
 </div>
 
 <footer class="site-foot">
@@ -224,5 +203,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 <script src="assets/js/site.js?v=cfd3fa75" defer></script>
+<script src="assets/js/hud.js?v=eac03beb" defer></script>
 </body>
 </html>
