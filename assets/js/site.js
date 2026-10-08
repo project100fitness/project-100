@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-08 update 8: downloads bar, looping footer rows; @ links panel, looping auto-scroll carousels, count-up numbers). */
+/* PROJECT 100 – site script (2026-10-08 update 9: card colours; @ links panel, looping auto-scroll carousels, count-up numbers). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */

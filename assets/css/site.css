@@ -29,10 +29,12 @@
   --line-strong: #bdbab2;
 
   /* brand */
-  --accent: #c8102e;           /* red used for text/links on --surface */
-  --accent-strong: #c8102e;    /* red used as a filled background */
-  --accent-ink: #ffffff;       /* text on filled red */
-  --accent-soft: #fbe7ea;
+  --accent: #b83a00;           /* orange used for text/links on --surface (5.7:1 on white) */
+  --accent-strong: #c2410c;    /* orange used as a filled background (white text 5.2:1) */
+  --accent-ink: #ffffff;       /* text on filled orange */
+  --accent-soft: #fdeadd;
+  --brand-orange: #e8500a;     /* the bright card orange: glows, borders, decoration only */
+  --amber: #ffb400;            /* the card amber: lines, bars, text on dark */
   --accent-2: #0b7b82;         /* teal, secondary data colour */
   --accent-2-soft: #dff2f3;
 
@@ -46,8 +48,8 @@
 
   --focus: #1b5fe0;
   --scrim: rgba(10, 11, 15, .62);
-  --glow: color-mix(in srgb, var(--accent-strong) 60%, transparent);       /* red tab glow */
-  --glow-wash: color-mix(in srgb, var(--accent-strong) 16%, transparent);  /* faint fill above the accent line */
+  --glow: color-mix(in srgb, var(--brand-orange) 62%, transparent);        /* orange tab glow */
+  --glow-wash: color-mix(in srgb, var(--brand-orange) 16%, transparent);   /* faint fill above the accent line */
   --shadow-1: 0 1px 2px rgba(20, 20, 30, .06), 0 1px 1px rgba(20, 20, 30, .04);
   --shadow-2: 0 8px 24px rgba(20, 20, 30, .10), 0 2px 6px rgba(20, 20, 30, .06);
   --shadow-3: 0 24px 60px rgba(10, 11, 15, .28);
@@ -97,10 +99,10 @@
     --muted: #8f95a5;
     --line: #262a33;
     --line-strong: #3a3f4b;
-    --accent: #ff566a;
-    --accent-strong: #e6273f;
+    --accent: #ff8a3d;
+    --accent-strong: #c2410c;
     --accent-ink: #ffffff;
-    --accent-soft: #2a1519;
+    --accent-soft: #2b1a0e;
     --accent-2: #46d6cf;
     --accent-2-soft: #10282a;
     --ok: #4ad394;
@@ -131,10 +133,10 @@
   --muted: #8f95a5;
   --line: #262a33;
   --line-strong: #3a3f4b;
-  --accent: #ff566a;
-  --accent-strong: #e6273f;
+  --accent: #ff8a3d;
+  --accent-strong: #c2410c;
   --accent-ink: #ffffff;
-  --accent-soft: #2a1519;
+  --accent-soft: #2b1a0e;
   --accent-2: #46d6cf;
   --accent-2-soft: #10282a;
   --ok: #4ad394;
@@ -1060,7 +1062,7 @@ input[type="search"], input[type="text"], select {
 .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgb(8 9 12 / .88) 0%, rgb(8 9 12 / .35) 55%, rgb(8 9 12 / .1) 100%); }
 .page-hero__text { padding: var(--s-5) clamp(var(--s-4), 4vw, var(--s-7)) var(--s-5); max-width: 46rem; }
 .page-hero h1 { margin: 0; color: #fff; font-size: var(--step-4); }
-.page-hero .eyebrow { color: #ff8d9b; }
+.page-hero .eyebrow { color: #ffb400; }
 .page-hero .lead { color: rgb(243 244 247 / .86); margin: var(--s-2) 0 0; }
 
 /* ---- file cards (the "FILE 01 · Open file ↗" folders) ---------------- */
@@ -1132,8 +1134,8 @@ input[type="search"], input[type="text"], select {
 .cta h2 { color: #fff; }
 .cta p { color: rgb(243 244 247 / .8); max-width: 38rem; margin-inline: auto; }
 .cta .btn-row { justify-content: center; margin-top: var(--s-4); }
-.cta a:not(.btn) { color: #ff8d9b; }
-.cta .eyebrow { color: #ff8d9b; }
+.cta a:not(.btn) { color: #ffb400; }
+.cta .eyebrow { color: #ffb400; }
 .cta .btn--ghost { color: #fff; border-color: rgb(255 255 255 / .45); }
 .cta .btn--ghost:hover { border-color: #fff; background: rgb(255 255 255 / .1); }
 
@@ -1354,7 +1356,7 @@ input[type="search"], input[type="text"], select {
 .home-hero, .home-cta, .home-era {
   --on-dark: var(--inverse-text);
   --on-dark-2: rgb(243 244 247 / .82);
-  --on-dark-accent: #ff8d9b;
+  --on-dark-accent: #ffb400;
 }
 
 /* ---- home hero (full-bleed, flush page) ------------------------------- */
@@ -2508,3 +2510,9 @@ h2.vec-record__title { font-size: var(--step--1); }
 .dl-file .btn { min-height: 2.5rem; }
 .dl-modal__more { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; color: var(--muted); font-size: var(--step--1); }
 button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor: pointer; }
+
+/* ===== 90-update9: business-card tones ===== */
+/* header: orange line with an amber hairline under it, like the stripes on the card */
+.site-head { box-shadow: 0 2px 0 -1px var(--amber); }
+.page-hero .eyebrow, .cta .eyebrow { color: var(--amber); }
+.btn--primary { box-shadow: 0 6px 18px -8px var(--glow); }
