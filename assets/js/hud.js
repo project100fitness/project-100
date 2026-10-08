@@ -21,7 +21,7 @@
     if (!wrap) return;
     var details = [].slice.call(wrap.querySelectorAll('[data-hud-detail]'));
     var byId = {}; details.forEach(function (d) { byId[d.id] = d; });
-    var stage = document.createElement('li'); stage.className = 'hud-stage'; stage.setAttribute('aria-live', 'polite');
+    var stage = document.createElement('div'); stage.className = 'hud-stage'; stage.setAttribute('aria-live', 'polite');
     var current = null;
 
     function cols() { return getComputedStyle(list).gridTemplateColumns.split(' ').length || 1; }
@@ -44,7 +44,12 @@
       var finish = function () { d.classList.remove('is-closing'); park(d); if (stage.parentNode) stage.parentNode.removeChild(stage); };
       if (reduce || opts.instant) finish();
       else { d.classList.add('is-closing'); setTimeout(finish, 260); }
-      if (opts.focus && card) card.focus({ preventScroll: true });
+      if (opts.focus && card) {
+        card.focus({ preventScroll: true });
+        // after closing, bring you back to the card you opened if it is off screen
+        var r = card.getBoundingClientRect();
+        if (r.top < 0 || r.bottom > window.innerHeight) card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      }
       if (!opts.keepHash && history.replaceState && location.hash && cardForHash(location.hash.slice(1))) history.replaceState(null, '', location.pathname + location.search);
     }
 
@@ -58,15 +63,13 @@
       cards.forEach(function (c) { setState(c, c === card); });
       list.classList.add('is-open');
       stage.appendChild(d);
-      var anchor = lastInRow(card);
-      anchor.parentNode.insertBefore(stage, anchor.nextSibling);
+      list.parentNode.insertBefore(stage, list);   // always ABOVE every card, never between rows
       d.classList.remove('is-closing');
       if (history.replaceState) history.replaceState(null, '', (card.getAttribute('href') || '#' + id));
       if (!opts.noScroll) {
-        var top = card.getBoundingClientRect().top;
         var head = document.getElementById('siteHead'), off = (head ? head.offsetHeight : 0) + 12;
-        // keep the card row and the start of the stage in view
-        var y = window.pageYOffset + stage.getBoundingClientRect().top - off - Math.min(card.offsetHeight * 0.6, 160);
+        // bring the top of the opened card just under the header
+        var y = window.pageYOffset + stage.getBoundingClientRect().top - off;
         window.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
       }
     }
@@ -97,8 +100,6 @@
     window.addEventListener('resize', function () {
       if (!current) return;
       var c = cols(); if (c === lastCols) return; lastCols = c;
-      var card = cards.filter(function (x) { return x.getAttribute('aria-controls') === current.id; })[0];
-      var anchor = lastInRow(card); anchor.parentNode.insertBefore(stage, anchor.nextSibling);
     });
     // deep link: page.html#vector-v4 opens that card
     function fromHash() {
