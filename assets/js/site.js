@@ -339,6 +339,8 @@
     var panel = P.$('#fabPanel'), at = P.$('#fabAt');
     if (panel && !panel.hidden) { panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
     if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+    var want = from && from.getAttribute ? from.getAttribute('data-dl-doc') : null;   /* the bar's two halves pick their own file */
+    P.$$('.dl-file', dlg).forEach(function (f) { var on = !!want && f.getAttribute('data-doc') === want; f.classList.toggle('is-picked', on); if (on && f.scrollIntoView) f.scrollIntoView({ block: 'nearest' }); });
     var close = P.$('[data-dl-close]', dlg); if (close) close.focus();
   }
   function close() {

@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=89fe11fc">
+<link rel="stylesheet" href="assets/css/site.css?v=6f75bb8a">
 </head>
 <body data-site="protocol" data-page="fit-protocol-monitoring" data-group="monitoring">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -233,15 +233,15 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 
-<div class="dl-bar" id="dlBar" role="region" aria-label="Free downloads"><button class="dl-bar__open" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg><span class="dl-bar__txt"><strong>Free downloads</strong><small>Encyclopedia V3.2 · Guidebook V3.3 — PDF</small></span><span class="dl-bar__cta">Open</span></button><button class="dl-bar__x" type="button" data-dl-hide aria-label="Hide the downloads bar">&times;</button></div>
+<div class="dl-bar" id="dlBar" role="region" aria-label="Free downloads"><div class="dl-bar__inner"><div class="dl-bar__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg><span><strong>Free manuals</strong><small>Publications &middot; PDF</small></span></div><button class="dl-bar__half dl-bar__half--enc" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="enc"><img class="dl-bar__cover" src="assets/web/dl-cover-enc-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">Free PDF<span> manual</span></span><strong>Encyclopedia</strong><small>V3.2 &middot; 75 pages</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button><button class="dl-bar__half dl-bar__half--guide" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="guide"><img class="dl-bar__cover" src="assets/web/dl-cover-guide-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">Free PDF<span> manual</span></span><strong>Guidebook</strong><small>V3.3 &middot; 31 pages</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button><button class="dl-bar__x" type="button" data-dl-hide aria-label="Hide the downloads bar">&times;</button></div></div>
 <dialog class="dl-modal" id="dlModal" aria-labelledby="dlTitle">
   <div class="dl-modal__head"><h2 id="dlTitle">Free downloads</h2><button class="pop-close" type="button" data-dl-close aria-label="Close downloads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="dl-modal__body">
-    <article class="dl-file"><img src="assets/web/img-v2-encyclopedia-v32-cover-480.webp" alt="Encyclopedia V3.2 cover" width="480" height="680" loading="lazy" decoding="async"><div><h3>Encyclopedia V3.2</h3><p>The full reference · 75 pages · PDF · 13.3 MB</p><a class="btn btn--primary" download="project-100-encyclopedia-v3-2-2026-10-06.pdf" href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf">Download PDF</a></div></article>
-    <article class="dl-file"><img src="assets/web/img-v2-guidebook-v33-cover-480.webp" alt="Guidebook V3.3 cover" width="480" height="680" loading="lazy" decoding="async"><div><h3>Guidebook V3.3</h3><p>The daily guide · 31 pages · PDF · 5.4 MB</p><a class="btn btn--primary" download="project-100-guidebook-v3-3-2026-10-06.pdf" href="assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf">Download PDF</a></div></article>
+    <article class="dl-file" data-doc="enc"><img src="assets/web/img-v2-encyclopedia-v32-cover-480.webp" alt="Encyclopedia V3.2 cover" width="480" height="680" loading="lazy" decoding="async"><div><h3>Encyclopedia V3.2</h3><p>The full reference · 75 pages · PDF · 13.3 MB</p><a class="btn btn--primary" download="project-100-encyclopedia-v3-2-2026-10-06.pdf" href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf">Download PDF</a></div></article>
+    <article class="dl-file" data-doc="guide"><img src="assets/web/img-v2-guidebook-v33-cover-480.webp" alt="Guidebook V3.3 cover" width="480" height="680" loading="lazy" decoding="async"><div><h3>Guidebook V3.3</h3><p>The daily guide · 31 pages · PDF · 5.4 MB</p><a class="btn btn--primary" download="project-100-guidebook-v3-3-2026-10-06.pdf" href="assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf">Download PDF</a></div></article>
     <p class="dl-modal__more"><span>Free to keep and share.</span><a href="library.html">All files &rarr;</a></p>
   </div>
 </dialog>
-<script src="assets/js/site.js?v=042574b4" defer></script>
+<script src="assets/js/site.js?v=8f6d7f87" defer></script>
 </body>
 </html>
