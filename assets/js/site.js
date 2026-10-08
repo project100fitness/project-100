@@ -321,19 +321,27 @@
 })();
 
 /* ===== 36-downloads.js ===== */
-/* Bottom bar "Free downloads" on every page. Tapping it (or the "Downloads" row in the @ panel) opens a pop-out with the
-   Encyclopedia and the Guidebook PDFs. The little x hides the bar for the rest of the visit. Without JS the bar is simply not shown. */
+/* "Free downloads" pop-out (Encyclopedia + Guidebook PDFs) opens from the "Downloads" row in the @ panel on every page.
+   On the home page and Fit Protocol only, a two-half bar rises into view as the page approaches its end (tied to the scroll
+   position) and is fully up at the very bottom; scrolling back up lowers it again. */
 (function () {
   'use strict';
-  var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal');
-  if (!bar || !dlg) return;
-  var KEY = 'p100-dlbar-hidden', last = null;
-  function stored() { try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
-  function keep() { try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode */ } }
-  function show(on) {
-    bar.hidden = !on;
-    document.body.classList.toggle('has-dlbar', on);
+  var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal'), last = null, ticking = false, last_p = -1;
+  if (!dlg) return;
+  var RANGE = 420;                                                    /* px before the very end of the page where the bar starts rising */
+  function check() {
+    ticking = false;
+    if (!bar) return;
+    var left = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+    var range = Math.min(RANGE, window.innerHeight * 0.55);
+    var p = left <= 2 ? 1 : Math.max(0, Math.min(1, 1 - left / range));   /* 0 = hidden below the screen, 1 = fully up at the very bottom */
+    if (p === last_p) return;
+    last_p = p;
+    bar.style.setProperty('--dl-p', p.toFixed(3));
+    document.documentElement.style.setProperty('--dl-p', p.toFixed(3));
+    bar.classList.toggle('is-in', p > 0);
   }
+  function queue() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }
   function open(from) {
     last = from || null;
     var panel = P.$('#fabPanel'), at = P.$('#fabAt');
@@ -351,11 +359,15 @@
     var o = e.target.closest('[data-dl-open]');
     if (o) { e.preventDefault(); open(o); return; }
     if (e.target.closest('[data-dl-close]')) { e.preventDefault(); close(); return; }
-    if (e.target.closest('[data-dl-hide]')) { e.preventDefault(); keep(); show(false); return; }
     if (e.target === dlg) close();                                   /* tap on the dimmed backdrop */
     else if (dlg.open && e.target.closest('a[download]')) setTimeout(close, 400);
   });
-  show(!stored());
+  if (bar) {
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    window.addEventListener('load', queue);
+    queue();
+  }
 })();
 
 /* ===== 58-marquee.js ===== */
