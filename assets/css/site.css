@@ -2328,3 +2328,52 @@ h2.vec-record__title { font-size: var(--step--1); }
 .pill-g--opt { stroke-dasharray: 3 2.5; stroke: var(--muted); }
 .pcard__note, .pcard__rule { margin: var(--s-3) 0 0; color: var(--muted); font-size: var(--step--1); }
 .pcard__rule { margin-top: var(--s-5); }
+
+/* ===== 62-update6: @ panel rows, carousel pause button, count-up tones, status-vs-goal meters (2026-10-07) ===== */
+.fab-panel__list li:nth-child(8) { animation-delay: .30s; } .fab-panel__list li:nth-child(9) { animation-delay: .34s; }
+.fab-panel { z-index: 46; }
+
+.carousel__pp {
+  display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-left: auto; padding: 0;
+  border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.carousel__pp svg { width: .9rem; height: .9rem; }
+.carousel__pp:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); }
+.carousel__pp[hidden] { display: none; }
+.carousel__btn[hidden], .carousel__bar[hidden] { display: none; }
+.carousel.is-loop .carousel__item { scroll-snap-align: none; }
+
+/* current figures vs goal figures */
+.stat[data-tone="now"] { border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--line)); }
+.stat[data-tone="now"] .stat__value { color: var(--accent); }
+.stat[data-tone="goal"] { border-color: color-mix(in srgb, var(--ok) 55%, var(--line)); background: color-mix(in srgb, var(--ok-soft) 70%, var(--surface)); }
+.stat[data-tone="goal"] .stat__value { color: var(--ok); }
+.stat__value.is-counting { text-shadow: 0 0 18px var(--glow); }
+.stat[data-tone="goal"] .stat__value.is-counting { text-shadow: 0 0 18px color-mix(in srgb, var(--ok) 55%, transparent); }
+
+.goalmeter { margin: var(--s-6) 0 0; padding: var(--s-5); border: 1px solid var(--line); border-radius: var(--r-4); background: var(--surface); box-shadow: var(--shadow-1, none); }
+.goalmeter__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3rem var(--s-4); margin-bottom: var(--s-4); }
+.goalmeter__title { margin: 0; font-size: var(--step-1); letter-spacing: -.01em; }
+.goalmeter__key { display: flex; gap: var(--s-4); font-size: var(--step--2); font-weight: 750; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.goalmeter__key i { display: inline-block; width: .7rem; height: .7rem; margin-right: .4rem; border-radius: 50%; vertical-align: -.05rem; }
+.goalmeter__key .k-now i { background: var(--accent-strong); } .goalmeter__key .k-goal i { background: var(--ok); }
+.goalmeter__grid { display: grid; gap: var(--s-5); grid-template-columns: 1fr; }
+@media (min-width: 720px) { .goalmeter__grid { grid-template-columns: 1fr 1fr; } }
+.meter__top { margin-bottom: 1.05rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .1rem var(--s-3); }
+.meter__name { font-weight: 800; letter-spacing: .01em; }
+.meter__nums { font-variant-numeric: tabular-nums; font-size: var(--step-1); font-weight: 800; letter-spacing: -.02em; }
+.meter__now { color: var(--accent); }
+.meter__sep { color: var(--muted); font-weight: 600; margin: 0 .15em; }
+.meter__goal { color: var(--ok); }
+.meter__track { position: relative; height: 1.05rem; margin: .55rem 0 .35rem; border-radius: 99px; background: var(--surface-3); overflow: visible; }
+.meter__fill { position: absolute; left: 0; top: 0; bottom: 0; width: var(--p, 0%); min-width: .5rem; border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent-strong), color-mix(in srgb, var(--accent-strong) var(--mix, 40%), var(--ok)));
+  box-shadow: 0 0 14px -2px var(--glow); transition: width 1.5s cubic-bezier(.2,.8,.2,1); }
+.meter.is-armed .meter__fill { width: 0; }
+.meter__tick { position: absolute; top: -.3rem; bottom: -.3rem; left: var(--g, 100%); width: 3px; margin-left: -1.5px; border-radius: 2px; background: var(--ok); box-shadow: 0 0 10px -1px color-mix(in srgb, var(--ok) 70%, transparent); }
+.meter__tick::after { content: attr(data-label); position: absolute; bottom: calc(100% + .1rem); right: -.1rem; font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ok); white-space: nowrap; }
+.meter__scale { display: flex; justify-content: space-between; font-size: .7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meter__note { margin: .35rem 0 0; font-size: var(--step--1); color: var(--muted); }
+.goalmeter__foot { margin: var(--s-4) 0 0; font-size: var(--step--2); color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .meter__fill { transition: none; } }
