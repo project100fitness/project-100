@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#f5f4f1" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0a0b0e" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<title>PROJECT 100 — FIT PROTOCOL | Biometrics</title>
+<meta content="FIT PROTOCOL biometrics: the measured arc, the honest corridor, FFMI reconciliation, laboratory mandates, scan-day controls and the scan log — Encyclopedia V3.2." name="description"/>
+<link href="https://project100.fit/fit-protocol-biometrics.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="PROJECT 100" property="og:site_name"/>
+<meta content="PROJECT 100 — FIT PROTOCOL | Biometrics" property="og:title"/>
+<meta content="FIT PROTOCOL biometrics: the measured arc, the honest corridor, FFMI reconciliation, laboratory mandates, scan-day controls and the scan log — Encyclopedia V3.2." property="og:description"/>
+<meta content="https://project100.fit/fit-protocol-biometrics.html" property="og:url"/>
+<meta content="https://project100.fit/assets/img/v2/social-fit-protocol.png" property="og:image"/>
+<meta content="PROJECT 100 — FIT PROTOCOL | Biometrics" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<script>
+/* theme first, so there is no flash: saved choice wins, else the OS decides */
+try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
+document.documentElement.classList.add('js');
+/* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
+if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
+</script>
+<link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
+<link href="assets/css/site.css?v=8ed17b31" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=76a625b5" rel="stylesheet"/>
+</head>
+<body data-group="monitoring" data-page="fit-protocol-biometrics" data-site="protocol">
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-head" id="siteHead">
+<div class="site-head__bar">
+<a aria-label="FIT PROTOCOL – home" class="brand" href="fit-protocol.html"><span class="brand__accent">FIT</span><span>PROTOCOL</span></a>
+<div class="site-head__actions">
+<button aria-label="Switch colour theme" class="icon-btn" id="themeToggle" type="button">
+<svg aria-hidden="true" class="i-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+<svg aria-hidden="true" class="i-moon" fill="currentColor" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<button aria-controls="menu" aria-haspopup="dialog" class="icon-btn menu-btn" id="menuBtn" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+<span class="menu-btn__label">Menu</span>
+</button>
+</div>
+</div>
+<nav aria-label="FIT PROTOCOL sections" class="tabs">
+<ul class="tabs__list">
+<li><a class="tab" href="fit-protocol.html">Overview</a></li>
+<li><a class="tab" href="fit-protocol-baseline.html">Baseline</a></li>
+<li><a class="tab" href="guidebook.html">Daily</a></li>
+<li><a class="tab" href="fit-protocol-vectors.html">Liquid Intake</a></li>
+<li><a class="tab" href="fit-protocol-nutrition.html">Nutrition</a></li>
+<li><a class="tab" href="fit-protocol-supplements.html">Supplements</a></li>
+<li><a class="tab" href="fit-protocol-training.html">Training</a></li><li><a class="tab" href="fit-protocol-gear.html">Gear</a></li>
+<li><a aria-current="page" class="tab" href="fit-protocol-monitoring.html">Monitoring</a></li>
+<li><a class="tab" href="fit-protocol-troubleshooting.html">Fixes</a></li>
+<li><a class="tab" href="mineral-chemistry.html">Minerals</a></li>
+</ul>
+</nav>
+</header>
+<div class="layout layout--rail">
+<aside aria-label="Monitoring" class="rail">
+<h2 class="rail__title"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Monitoring</span></h2>
+<ul class="rail__list">
+<li><a href="fit-protocol-monitoring.html"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Metabolic context</span></a></li>
+<li><a href="fit-protocol-labs.html"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">Lab monitoring</span></a></li>
+<li><a aria-current="page" href="fit-protocol-biometrics.html"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Biometrics</span></a></li></ul>
+</aside>
+<main class="main" id="content" tabindex="-1"><section aria-labelledby="hudT" class="hud-hero" id="top" style="--hud-bg-img:url('/assets/web/img-objective-100lbs-smm-960.webp')"><span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V3.2</span><h1 class="hud-title" id="hudT"><em>Biometrics</em></h1><p class="hud-lede">Dates, not adjectives: the measured arc, the honest corridor and the controls that keep next December’s number comparable.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#arc"><small>Folder 01</small><strong>The measured arc</strong></a><a class="hud-chip hud-chip--link" href="#corridor"><small>Folder 02</small><strong>Three readings of one goal</strong></a><a class="hud-chip hud-chip--link" href="#honest"><small>Folder 03</small><strong>Measuring honestly</strong></a><a class="hud-chip hud-chip--link" href="#lenses"><small>Folder 04</small><strong>Five lenses on the measured arc</strong></a><a class="hud-chip hud-chip--link" href="#ahead"><small>Folder 05</small><strong>The road ahead</strong></a><a class="hud-chip hud-chip--link" href="#log"><small>Folder 06</small><strong>Scan log</strong></a></div></div></section>
+<section aria-labelledby="arc-t" class="hud-folder" id="arc">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="arc-t">The measured arc</h2><a class="hud-folder__link" href="biometrics.html">Main site: Biometrics <span aria-hidden="true">→</span></a></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">Every point is a dated InBody record or a documented milestone; unverified figures stay out of the trend.</p>
+<ul class="hud-cards hud-cards--1" data-hud-cards="" data-hud-for="#arc-details"><li id="arc-table"><a aria-controls="arc-table-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#arc-table"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Date, SMM, weight and body fat</span><span class="hud-card__hint">Six records from the 2024 baseline to the current profile</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="arc-details"><article aria-label="Date, SMM, weight and body fat details" class="hud-detail" data-hud-detail="" id="arc-table-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>The measured arc</b><h3>Date, SMM, weight and body fat</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Date, SMM, weight and body fat" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="hud-lead">This is the proof chapter. Every point below is a dated InBody record or a documented milestone. Where a figure is unverified, it is labelled unverified and left out of the trend.</p>
+<p class="hud-note">My SMM arc: +9.7 lb to June 2025, +6.2 lb more to the December 2025 benchmark. The corridor above is where I judge the next scan.</p>
+<p class="hud-note">Body fat, documented: August 2026 at 13.6% is the sub-15% milestone, achieved and recorded — not a target I still describe as pending.</p>
+<div class="table-wrap table--cards"><table><thead><tr><th scope="col">Date</th><th scope="col">SMM</th><th scope="col">Weight</th><th scope="col">Body fat</th><th scope="col">Status</th></tr></thead><tbody><tr><td data-label="Date"><strong>2024 baseline</strong></td><td data-label="SMM">72.3 lb</td><td data-label="Weight">226.2 lb</td><td data-label="Body fat">37.0%</td><td data-label="Status">Starting InBody record</td></tr><tr><td data-label="Date"><strong>28 Jun 2025</strong></td><td data-label="SMM">82.0 lb</td><td data-label="Weight">—</td><td data-label="Body fat">—</td><td data-label="Status">Recorded scan</td></tr><tr><td data-label="Date"><strong>14 Dec 2025</strong></td><td data-label="SMM">88.2 lb</td><td data-label="Weight">197.1 lb</td><td data-label="Body fat">22.9%</td><td data-label="Status">Benchmark lock, Gym Fit Forme</td></tr><tr><td data-label="Date"><strong>Apr 2026</strong></td><td data-label="SMM">93.7 lb</td><td data-label="Weight">191.5 lb</td><td data-label="Body fat">30.2%</td><td data-label="Status">Operator-reported — UNVERIFIED, excluded from the trend line</td></tr><tr><td data-label="Date"><strong>Aug 2026</strong></td><td data-label="SMM">—</td><td data-label="Weight">—</td><td data-label="Body fat">13.6%</td><td data-label="Status">Documented sub-15% milestone</td></tr><tr><td data-label="Date"><strong>Sep-Oct 2026</strong></td><td data-label="SMM">88.2 lb carried</td><td data-label="Weight">200.1 lb</td><td data-label="Body fat">~22.5% est.</td><td data-label="Status">Current profile, baseline carried</td></tr></tbody></table></div><p class="hud-source">Encyclopedia V3.2 · Chapter 19 · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=47">PDF page 47 ↗</a></p></div></div></article></div>
+</div></section>
+<section aria-labelledby="corridor-t" class="hud-folder" id="corridor">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="corridor-t">Three readings of one goal</h2><span class="hud-folder__meta">2 cards · tap to open</span></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">100 lb is the disclosed stretch, 90–93 lb the validated true-tissue corridor and 92–97 lb what a hydrated BIA printout may read on top of it.</p>
+<ul class="hud-cards hud-cards--2" data-hud-cards="" data-hud-for="#corridor-details"><li id="corridor-ffmi"><a aria-controls="corridor-ffmi-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#corridor-ffmi"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">The FFMI reconciliation</span><span class="hud-card__hint">Why the corridor is 90–93 lb and not a rounded guess</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li>
+<li id="corridor-controls"><a aria-controls="corridor-controls-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#corridor-controls"><span class="hud-card__tag"><span>02</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Scan-day controls</span><span class="hud-card__hint">How the next number stays honest</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="corridor-details"><article aria-label="The FFMI reconciliation details" class="hud-detail" data-hud-detail="" id="corridor-ffmi-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Three readings of one goal</b><h3>The FFMI reconciliation</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close The FFMI reconciliation" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="hud-note">100 lb is the disclosed stretch. 90-93 lb is the validated true-tissue corridor. 92-97 lb is what a standardized, hydrated BIA printout may read on top of that tissue.</p>
+<h4>The FFMI reconciliation</h4>
+<div class="table-wrap table--cards"><table><thead><tr><th scope="col">Step</th><th scope="col">Value</th><th scope="col">Reading</th></tr></thead><tbody><tr><td data-label="Step"><strong>Recorded FFMI</strong></td><td data-label="Value">25.71 (24 Jul 2026)</td><td data-label="Reading">The frame-math check on my own numbers at 170 cm</td></tr><tr><td data-label="Step"><strong>Fat-free mass at that FFMI</strong></td><td data-label="Value">162-164 lb at 14.5% body fat</td><td data-label="Reading">What my frame carries at the documented leanness</td></tr><tr><td data-label="Step"><strong>True SMM at 56-57% partition</strong></td><td data-label="Value">91.5-93.0 lb</td><td data-label="Reading">Why the corridor is 90-93, not a rounded guess</td></tr><tr><td data-label="Step"><strong>FFM a true 100 lb SMM would need</strong></td><td data-label="Value">~172-175 lb, FFMI ~27.2</td><td data-label="Reading">Beyond the usual 25.0-25.5 drug-free boundary — why 100 stays a stretch</td></tr></tbody></table></div><p class="hud-source">Encyclopedia V3.2 · Chapter 19 continued · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=48">PDF page 48 ↗</a></p></div></div></article>
+<article aria-label="Scan-day controls details" class="hud-detail" data-hud-detail="" id="corridor-controls-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Three readings of one goal</b><h3>Scan-day controls</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Scan-day controls" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><div class="hud-boxes"><div class="hud-box"><b>The morning</b><p>Fasted, on waking, post-void, before training, before fluids. Same InBody unit at Gym Fit Forme as the 14 Dec 2025 benchmark.</p></div><div class="hud-box"><b>The 24 hours before</b><p>At least a 24-hour buffer after heavy lifting. No sauna, no alcohol in the prior 24 hours. Normal dinner, normal hydration the night before.</p></div><div class="hud-box"><b>What I will report</b><p>SMM, total weight and body fat from that single visit, with time, last meal, last workout and sleep logged beside the printout.</p></div><div class="hud-box"><b>The window</b><p>14–21 December 2026 — twelve months after the benchmark, under the same controls. Whether to deload the week before stays my open decision.</p></div></div><p>BIA reads water (Chapter 14): creatine, betaine, taurine, glycogen and potassium can move a printout 2-4 lb with no new contractile protein. Controls do not remove that — they make it repeatable, so a change means tissue, not weather.</p><p class="hud-source">Encyclopedia V3.2 · Chapter 19 continued · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=48">PDF page 48 ↗</a></p></div></div></article></div>
+</div></section>
+<section aria-labelledby="honest-t" class="hud-folder" id="honest">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="honest-t">Measuring honestly</h2><a class="hud-folder__link" href="fit-protocol-labs.html">FIT: Lab monitoring <span aria-hidden="true">→</span></a></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">A scan reads water. My job is to make it comparable.</p>
+<ul class="hud-cards hud-cards--2" data-hud-cards="" data-hud-for="#honest-details"><li id="honest-ffmi"><a aria-controls="honest-ffmi-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#honest-ffmi"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">The FFMI check on my own numbers</span><span class="hud-card__hint">170 cm, FFMI 25.71 and what a true 100 lb would need</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li>
+<li id="honest-labs"><a aria-controls="honest-labs-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#honest-labs"><span class="hud-card__tag"><span>02</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Five laboratory mandates</span><span class="hud-card__hint">Cystatin C, biotin, morning draws, hepatic panel and the R-ALA firewall</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="honest-details"><article aria-label="The FFMI check on my own numbers details" class="hud-detail" data-hud-detail="" id="honest-ffmi-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Measuring honestly</b><h3>The FFMI check on my own numbers</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close The FFMI check on my own numbers" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p class="hud-lead">Bioelectrical impedance does not weigh dry muscle. It estimates SMM from body water, so creatine, electrolytes, glycogen and a large drink can move the printout by 2 to 4 lb without any new contractile tissue.</p>
+<h4>The FFMI check on my own numbers</h4>
+<div class="table-wrap table--cards"><table><thead><tr><th scope="col">Step</th><th scope="col">Value</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td data-label="Step"><strong>Height</strong></td><td data-label="Value">170 cm</td><td data-label="Meaning">My frame for every index</td></tr><tr><td data-label="Step"><strong>FFMI 25.71 check</strong></td><td data-label="Value">162-164 lb fat-free mass at 14.5% body fat</td><td data-label="Meaning">Points to 91.5-93.0 lb true SMM at a 56-57% partition</td></tr><tr><td data-label="Step"><strong>For a true 100 lb SMM</strong></td><td data-label="Value">~172-175 lb fat-free mass, FFMI ~27.2</td><td data-label="Meaning">Beyond the usual drug-free 25.0-25.5 boundary — why 100 stays a stretch</td></tr></tbody></table></div><p class="hud-source">Encyclopedia V3.2 · Chapter 14 · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=30">PDF page 30 ↗</a></p></div></div></article>
+<article aria-label="Five laboratory mandates details" class="hud-detail" data-hud-detail="" id="honest-labs-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Measuring honestly</b><h3>Five laboratory mandates</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Five laboratory mandates" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><h4>My laboratory honesty — five mandates I keep</h4>
+<div class="table-wrap table--cards"><table><thead><tr><th scope="col">Mandate</th><th scope="col">My dose / fact</th><th scope="col">What I do</th></tr></thead><tbody><tr><td data-label="Mandate"><strong>Creatinine vs. Cystatin C</strong></td><td data-label="My dose / fact">Creatine HCl 1.5 g/day + 200.1 lb chassis</td><td data-label="What I do">Request Cystatin C eGFR — creatinine alone falsely reads as kidney decline</td></tr><tr><td data-label="Mandate"><strong>Biotin disclosure</strong></td><td data-label="My dose / fact">425 mcg/day on training days</td><td data-label="What I do">Disclose 425 mcg/day to the laboratory and follow assay-specific instructions only.</td></tr><tr><td data-label="Mandate"><strong>Morning endocrine sampling</strong></td><td data-label="My dose / fact">Historical 13:28 draw read 7.4 nmol/L</td><td data-label="What I do">Two fasting morning draws, 07:00-09:30, on separate days — an afternoon value is a trough, not a diagnostic verdict</td></tr><tr><td data-label="Mandate"><strong>Hepatic enzymes</strong></td><td data-label="My dose / fact">Ashwagandha + curcumin with 14.5 mg training-day piperine; historical steatosis noted</td><td data-label="What I do">Periodic comprehensive hepatic panel (ALT, AST, GGT, ALP, total bilirubin); hard training can raise AST/CK, so timing is recorded with the result</td></tr><tr><td data-label="Mandate"><strong>R-ALA firewall</strong></td><td data-label="My dose / fact">300 mg capsule, whole</td><td data-label="What I do">Never opened into liquid; glucose awareness first for post-training tremor or sweating</td></tr></tbody></table></div>
+<ul class="hud-points"><li><strong>Old labs:</strong> My March 2026 results predate my May stack — I do not use them as a verdict on it.</li><li><strong>One device:</strong> Same InBody unit, same conditions, twelve months apart — that is the only comparison I trust.</li></ul><p class="hud-source">Encyclopedia V3.2 · Chapter 14 · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=30">PDF page 30 ↗</a></p></div></div></article></div>
+</div></section>
+<section aria-labelledby="lenses-t" class="hud-folder" id="lenses">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 04</span><h2 class="hud-folder__title" id="lenses-t">Five lenses on the measured arc</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">The corridor is a tissue claim, not a scale claim.</p>
+<ul class="hud-cards hud-cards--1" data-hud-cards="" data-hud-for="#lenses-details"><li id="lenses-five"><a aria-controls="lenses-five-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#lenses-five"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Physiology, measurement, training, nutrition and laboratory</span><span class="hud-card__hint">Five readings of the same arc</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="lenses-details"><article aria-label="Physiology, measurement, training, nutrition and laboratory details" class="hud-detail" data-hud-detail="" id="lenses-five-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Five lenses on the measured arc</b><h3>Physiology, measurement, training, nutrition and laboratory</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Physiology, measurement, training, nutrition and laboratory" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><p><strong>Lens 1 — Physiology.</strong> At 170 cm and age 46, my reconciled ceiling (FFM 162-164 lb at 14.5%, FFMI 25.71) yields 91.5-93.0 lb true SMM at a 56-57% SMM/FFM partition. The 90-93 lb corridor is therefore a tissue claim, not a scale claim. BIA adds 2-4 lb of osmolyte-and glycogen-driven intracellular water (creatine HCl 1.5 g/day, betaine 2,500 mg, taurine 3-4 g, potassium 1,000 mg/scoop) — the 92-97 lb printout corridor is the same tissue read wet.</p>
+<p><strong>Lens 2 — Measurement.</strong> BIA is a conductivity estimate. My controls (fasted, waking, post-void, same unit, 24 h buffer) shrink pre-analytical variance so that quarter-to-quarter deltas mean tissue, not hydration theatre. The unverified Apr 2026 scan is the worked example: 93.7 lb at 30.2% body fat is internally inconsistent with the Dec-to-Aug trajectory and stays excluded until re-measured.</p>
+<p><strong>Lens 3 — Training.</strong> The telemetry justifies supported, repeatable loading over heroic sessions: connective tissue remodels at roughly one-third muscle speed at 46, so the hex-grid and chest-supported work (Ch. 6) are the delivery system for the corridor, not an accessory to it.</p>
+<p><strong>Lens 4 — Nutrition &amp; vectors.</strong> The same osmolytes that inflate BIA are functional in the vectors (Ch. 8, 20, 21): betaine as methyl donor/osmolyte, taurine for bile conjugation in a post-cholecystectomy gut, creatine in two 750 mg pulses outside the pump shakers. Measurement honesty and formulation intent are read together — never separately.</p>
+<p><strong>Lens 5 — Laboratory integrity.</strong> Biotin 425 mcg is disclosed, not washed out; testosterone verdicts require morning fasting draws (the 13:28, 7.4 nmol/L afternoon value is my cited non-diagnostic example). A scan and a lab value earn belief the same way: declared conditions, comparable repeats.</p><p class="hud-source">Encyclopedia V3.2 · Chapter 19 — 5-lens · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=49">PDF page 49 ↗</a></p></div></div></article></div>
+</div></section>
+<section aria-labelledby="ahead-t" class="hud-folder" id="ahead">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 05</span><h2 class="hud-folder__title" id="ahead-t">The road ahead</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">My next scan is already a controlled experiment.</p>
+<ul class="hud-cards hud-cards--1" data-hud-cards="" data-hud-for="#ahead-details"><li id="ahead-scan"><a aria-controls="ahead-scan-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#ahead-scan"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Next scan: 14–21 December 2026</span><span class="hud-card__hint">When, where, how I will judge it and the scan-day checklist</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="ahead-details"><article aria-label="Next scan: 14–21 December 2026 details" class="hud-detail" data-hud-detail="" id="ahead-scan-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>The road ahead</b><h3>Next scan: 14–21 December 2026</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Next scan: 14–21 December 2026" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><div class="hud-boxes"><div class="hud-box"><b>When and where</b><p>14–21 December 2026 — Gym Fit Forme, same InBody unit as the 14 Dec 2025 benchmark.</p></div><div class="hud-box"><b>Conditions</b><p>Fasted, on waking, post-void, before training and before fluids. Normal hydration. At least a 24-hour buffer after heavy sessions; no sauna or alcohol in the prior 24 hours.</p></div><div class="hud-box"><b>What I will report</b><p>SMM, total weight and body fat from that single visit — with time, last meal and last workout noted.</p></div><div class="hud-box"><b>Open decision</b><p>Whether to run a standardized deload week before the scan so swelling does not blur the baseline.</p></div></div><h4>How I will judge the result</h4>
+<ul class="hud-points"><li><strong>90-93 lb true tissue</strong> is success in the validated corridor.</li><li><strong>92-97 lb on the printout</strong> under full hydration is the expected BIA range for that tissue.</li><li><strong>Weekly logs</strong> (performance, sleep, digestion, waist, photos) matter more than one noisy reading.</li></ul>
+<h4>Scan-day checklist</h4>
+<div class="table-wrap table--cards"><table><thead><tr><th scope="col">Step</th><th scope="col">Detail</th><th scope="col">Why</th></tr></thead><tbody><tr><td data-label="Step"><strong>Night before</strong></td><td data-label="Detail">Normal dinner, normal hydration, no late stimulants</td><td data-label="Why">A heroic restriction the night before is just another artifact</td></tr><tr><td data-label="Step"><strong>Morning</strong></td><td data-label="Detail">Wake, void, fasted, no training, no large drink</td><td data-label="Why">Removes the acute water shifts the device cannot separate from tissue</td></tr><tr><td data-label="Step"><strong>Buffer</strong></td><td data-label="Detail">No heavy session in the prior 24 hours</td><td data-label="Why">Clears localized edema that reads as lean mass</td></tr><tr><td data-label="Step"><strong>Record</strong></td><td data-label="Detail">Time, last meal, last workout, sleep logged with the printout</td><td data-label="Why">Next year's comparison needs this year's conditions</td></tr></tbody></table></div><p class="hud-source">Encyclopedia V3.2 · Chapter 15 · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=31">PDF page 31 ↗</a></p></div></div></article></div>
+</div></section>
+<section aria-labelledby="log-t" class="hud-folder" id="log">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 06</span><h2 class="hud-folder__title" id="log-t">Scan log</h2><span class="hud-folder__meta">1 card · tap to open</span></div>
+<div class="hud-folder__body">
+<p class="hud-takeaway">Standardized (S) and hydrated-peak (H) readings are never averaged together.</p>
+<ul class="hud-cards hud-cards--1" data-hud-cards="" data-hud-for="#log-details"><li id="log-table"><a aria-controls="log-table-d" aria-expanded="false" class="hud-card hud-card--text" data-hud-card="" href="#log-table"><span class="hud-card__tag"><span>01</span><span>Open</span></span><span class="hud-card__foot"><span class="hud-card__name">Six rows, one planned</span><span class="hud-card__hint">Date, class, weight, SMM, body fat and notes</span></span><span aria-hidden="true" class="hud-card__plus">+</span></a></li></ul>
+<div class="hud-details" data-gallery="" data-hud-details="" id="log-details"><article aria-label="Six rows, one planned details" class="hud-detail" data-hud-detail="" id="log-table-d"><div class="hud-detail__bar"><div class="hud-detail__ribbon"><b>Scan log</b><h3>Six rows, one planned</h3></div><div class="hud-detail__nav"><button aria-label="Previous card" class="hud-nav" data-hud-prev="" type="button">‹</button><button aria-label="Next card" class="hud-nav" data-hud-next="" type="button">›</button><button aria-label="Close Six rows, one planned" class="hud-nav" data-hud-close="" type="button">×</button></div></div><div class="hud-detail__grid hud-detail__grid--solo"><div class="hud-detail__body hud-prose"><div class="table-wrap table--cards"><table><thead><tr><th scope="col">Date</th><th scope="col">Class</th><th scope="col">Weight</th><th scope="col">SMM</th><th scope="col">Body fat</th><th scope="col">Notes</th></tr></thead><tbody><tr><td data-label="Date"><strong>2024 baseline</strong></td><td data-label="Class">S</td><td data-label="Weight">226.2 lb</td><td data-label="SMM">72.3 lb</td><td data-label="Body fat">37.0%</td><td data-label="Notes">Historical starting point</td></tr><tr><td data-label="Date"><strong>28 Jun 2025</strong></td><td data-label="Class">S</td><td data-label="Weight">—</td><td data-label="SMM">82.0 lb</td><td data-label="Body fat">—</td><td data-label="Notes">+9.7 lb vs 2024</td></tr><tr><td data-label="Date"><strong>14 Dec 2025</strong></td><td data-label="Class">S</td><td data-label="Weight">197.1 lb</td><td data-label="SMM">88.2 lb</td><td data-label="Body fat">22.9%</td><td data-label="Notes">Benchmark, Gym Fit Forme</td></tr><tr><td data-label="Date"><strong>Apr 2026</strong></td><td data-label="Class">Unverified</td><td data-label="Weight">191.5 lb</td><td data-label="SMM">93.7 lb</td><td data-label="Body fat">30.2%</td><td data-label="Notes">Excluded from corridor judgment</td></tr><tr><td data-label="Date"><strong>Aug 2026</strong></td><td data-label="Class">S</td><td data-label="Weight">—</td><td data-label="SMM">—</td><td data-label="Body fat">13.6%</td><td data-label="Notes">Sub-15% milestone documented</td></tr><tr><td data-label="Date"><strong>14-21 Dec 2026</strong></td><td data-label="Class">S planned</td><td data-label="Weight">TBD</td><td data-label="SMM">TBD</td><td data-label="Body fat">TBD</td><td data-label="Notes">Same unit, full controls (Ch. 14, 19). I report SMM + total weight when done.</td></tr></tbody></table></div>
+<p>S = standardized (fasted, waking, post-void, same unit, 24 h buffer). H = hydrated peak (fed/hydrated training-block reading, e.g., Sep-Oct 2026: 200.1 lb / ~22.5% est. / 88.2 lb carried baseline). Classes are never averaged together.</p><p class="hud-source">Encyclopedia V3.2 · Appendix B · <a href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf#page=66">PDF page 66 ↗</a></p></div></div></article></div>
+</div></section>
+<nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="fit-protocol-labs.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Lab monitoring</span></a><a class="pager__next" href="fit-protocol-troubleshooting.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Troubleshooting</span></a></nav></main>
+</div>
+<footer class="site-foot">
+<div class="site-foot__inner">
+<div>
+<h2>FIT PROTOCOL</h2>
+<p class="site-foot__lede">The documented system behind the record: daily execution, vectors, nutrition, training and monitoring.</p>
+<a class="site-foot__switch" href="index.html"><span aria-hidden="true">↔</span> Switch to PROJECT 100</a>
+</div>
+<div>
+<h2>Explore</h2>
+<ul><li><a href="fit-protocol.html">Overview</a></li><li><a href="fit-protocol-baseline.html">Baseline</a></li><li><a href="guidebook.html">Daily</a></li><li><a href="fit-protocol-vectors.html">Liquid Intake</a></li><li><a href="fit-protocol-nutrition.html">Nutrition</a></li><li><a href="fit-protocol-supplements.html">Supplements</a></li><li><a href="fit-protocol-training.html">Training</a></li><li><a href="fit-protocol-monitoring.html">Monitoring</a></li><li><a href="fit-protocol-troubleshooting.html">Fixes</a></li><li><a href="mineral-chemistry.html">Minerals</a></li>
+<li><a href="library.html">Guidebook · Files · Downloads</a></li>
+</ul>
+</div>
+<div>
+<h2>Elsewhere</h2>
+<ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">Gym playlist</a></li>
+</ul>
+</div>
+<p class="site-foot__legal">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
+</div>
+</footer>
+<a aria-label="Previous page: Gear" class="edge edge--prev" href="fit-protocol-gear.html" rel="prev" title="Previous: Gear"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" viewbox="0 0 24 24"><path d="M15 5l-7 7 7 7"></path></svg></a>
+<a aria-label="Next page: Fixes" class="edge edge--next" href="fit-protocol-troubleshooting.html" rel="next" title="Next: Fixes"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></a>
+<div class="fab-dock" id="fabDock">
+<button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at" id="fabAt" type="button"><span aria-hidden="true">@</span></button>
+<div aria-label="Links and contact" class="fab-panel" hidden="" id="fabPanel" role="group">
+<div class="fab-panel__head"><p class="fab-panel__title">Links</p><button aria-label="Close links" class="pop-close" data-pop-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<ul class="fab-panel__list">
+<li><button class="fab-row" data-dl-open="" type="button"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"></path></svg></span><span class="fab-row__txt"><strong>Downloads</strong><small>Encyclopedia &amp; Guidebook PDF</small></span></button></li>
+<li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
+<li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small>project100.fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small>instagram.com/fudge_fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small>youtube.com/@FUDGE_fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small>facebook.com/fudge.fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small>tiktok.com/@bogdan_dospi</small></span></a></li>
+<li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small>twitch.tv/cyberk1llaTTV</small></span></a></li>
+<li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small>Spotify playlist</small></span></a></li>
+</ul>
+</div>
+</div>
+<a aria-label="Switch to PROJECT 100" class="fab-switch" href="index.html"><span aria-hidden="true" class="fab-switch__glyph">↔</span><span>PROJECT 100</span></a>
+<dialog aria-labelledby="menuTitle" class="menu" id="menu">
+<div class="menu__head">
+<h2 class="menu__title" id="menuTitle">Menu</h2>
+<button aria-label="Close menu" class="icon-btn" data-menu-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
+</div>
+<div class="menu__body">
+<div class="menu__sites">
+<a class="menu__site" href="index.html"><small>Switch to</small><strong>PROJECT 100</strong></a>
+<a class="menu__site" href="fit-protocol.html"><small>You are here</small><strong>FIT PROTOCOL</strong></a>
+</div>
+<section class="menu__section">
+<h3>FIT PROTOCOL pages</h3>
+<div class="menu__group">
+<p class="menu__group-title">Baseline</p>
+<ul class="menu__list"><li><a href="fit-protocol-baseline.html">Goals &amp; baseline</a></li><li><a href="fit-protocol-history.html">Return to training</a></li><li><a href="fit-protocol-constraints.html">Constraints</a></li>
+<li><a href="fit-protocol-mission.html">Mission &amp; record</a></li></ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Daily</p>
+<ul class="menu__list"><li><a href="guidebook.html">Today</a></li><li><a href="daily-pill-cards.html">Pill cards</a></li><li><a href="fit-protocol-fuel.html">Daily clock</a></li><li><a href="fit-protocol-checklists.html">Checklists</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Liquid Intake</p>
+<ul class="menu__list"><li><a href="fit-protocol-vectors.html">Vector folders</a></li><li><a href="fit-protocol-vector-v3.html">V3 RECOVERY</a></li><li><a href="fit-protocol-vector-v1.html">V1 IGNITION</a></li><li><a href="fit-protocol-vector-v2.html">V2 REFUEL</a></li><li><a href="fit-protocol-vector-v4.html">V4 RELOAD</a></li><li><a href="fit-protocol-vector-v5.html">V5 TRANSPORT</a></li><li><a href="fit-protocol-vector-v10.html">V10 SHUTDOWN</a></li><li><a href="fit-protocol-vector-v6.html">V6 PUMP</a></li><li><a href="fit-protocol-vector-reference.html">Vector notes</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Nutrition</p>
+<ul class="menu__list"><li><a href="fit-protocol-nutrition.html">Food &amp; nutrition</a></li>
+<li><a href="fit-protocol-meals.html">Meals &amp; fuel</a></li></ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Supplements</p>
+<ul class="menu__list"><li><a href="fit-protocol-supplements.html">Pills &amp; accounting</a></li><li><a href="fit-protocol-interactions.html">Interactions</a></li><li><a href="fit-protocol-margins.html">Safety margins</a></li>
+<li><a href="fit-protocol-dose.html">Dose accounting</a></li><li><a href="fit-protocol-pathways.html">Pathways</a></li></ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Training</p>
+<ul class="menu__list"><li><a href="fit-protocol-training.html">Training mechanics</a></li><li><a href="fit-protocol-progression.html">Progression</a></li><li><a href="fit-protocol-joints.html">Joints &amp; recovery</a></li>
+</ul>
+</div><div class="menu__group"><p class="menu__group-title">Gear</p><ul class="menu__list"><li><a href="fit-protocol-gear.html">Gear &amp; bands</a></li></ul></div>
+<div class="menu__group">
+<p class="menu__group-title">Monitoring</p>
+<ul class="menu__list"><li><a href="fit-protocol-monitoring.html">Metabolic context</a></li><li><a href="fit-protocol-labs.html">Lab monitoring</a></li>
+<li><a aria-current="page" href="fit-protocol-biometrics.html">Biometrics</a></li></ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Fixes</p>
+<ul class="menu__list"><li><a href="fit-protocol-troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">Minerals</p>
+<ul class="menu__list"><li><a href="mineral-chemistry.html">Mineral Chemistry</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title">More</p>
+<ul class="menu__list"><li><a href="library.html">Downloads</a></li>
+</ul>
+</div>
+</section>
+<section class="menu__section">
+<h3>Downloads</h3>
+<div class="menu__links"><a class="menu__link" href="library.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Guidebook · Files · Downloads</span></a></div>
+</section>
+<section class="menu__section">
+<h3>Links &amp; contact</h3>
+<div class="menu__links">
+<a class="menu__link" href="mailto:project100@gmail.com"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small>project100@gmail.com</small></span></a>
+<a class="menu__link" href="index.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg><span>Project 100 Blueprint<small>project100.fit</small></span></a>
+<a class="menu__link" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg><span>Instagram<small>instagram.com/fudge_fit</small></span></a>
+<a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg><span>YouTube<small>youtube.com/@FUDGE_fit</small></span></a>
+<a class="menu__link" href="https://www.facebook.com/fudge.fit" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg><span>Facebook<small>facebook.com/fudge.fit</small></span></a>
+<a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg><span>TikTok<small>tiktok.com/@bogdan_dospi</small></span></a>
+<a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg><span>Twitch<small>twitch.tv/cyberk1llaTTV</small></span></a>
+<a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg><span>Gym playlist<small>Spotify playlist</small></span></a>
+</div>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="dlTitle" class="dl-modal" id="dlModal">
+<div class="dl-modal__head"><h2 id="dlTitle">Free downloads</h2><button aria-label="Close downloads" class="pop-close" data-dl-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<div class="dl-modal__body">
+<article class="dl-file" data-doc="enc"><img alt="Encyclopedia V3.2 cover" decoding="async" height="680" loading="lazy" src="assets/web/img-v2-encyclopedia-v32-cover-480.webp" width="480"/><div><h3>Encyclopedia V3.2</h3><p>The full reference · 75 pages · PDF · 13.3 MB</p><a class="btn btn--primary" download="project-100-encyclopedia-v3-2-2026-10-06.pdf" href="assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf">Download PDF</a></div></article>
+<article class="dl-file" data-doc="guide"><img alt="Guidebook V3.3 cover" decoding="async" height="680" loading="lazy" src="assets/web/img-v2-guidebook-v33-cover-480.webp" width="480"/><div><h3>Guidebook V3.3</h3><p>The daily guide · 31 pages · PDF · 5.4 MB</p><a class="btn btn--primary" download="project-100-guidebook-v3-3-2026-10-06.pdf" href="assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf">Download PDF</a></div></article>
+<p class="dl-modal__more"><span>Free to keep and share.</span><a href="library.html">All files →</a></p>
+</div>
+</dialog>
+<script defer="" src="assets/js/site.js?v=cfd3fa75"></script>
+<script defer="" src="assets/js/hud.js?v=eac03beb"></script>
+</body>
+</html>
