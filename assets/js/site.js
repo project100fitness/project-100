@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-08 update 9: card colours; @ links panel, looping auto-scroll carousels, count-up numbers). */
+/* PROJECT 100 – site script (2026-10-08 update 10: video cards open a pop-up player; rows pause while a pop-up is open). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */
@@ -63,6 +63,70 @@
   if (cur) list.scrollLeft = Math.max(0, cur.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2);
 })();
 
+/* ===== 05-back.js ===== */
+/* Back button / Back gesture: closes whatever is open on top (menu, download box, image viewer) instead of leaving the site.
+   Every native <dialog> that opens adds one history entry; Back (or closing it any other way) removes it again. */
+(function () {
+  'use strict';
+  var P = window.P100, proto = window.HTMLDialogElement && HTMLDialogElement.prototype, pending = [], timer = 0;
+  if (!proto || !history.pushState) { P.afterLayer = function (fn) { fn(); }; return; }
+  function flush() { clearTimeout(timer); timer = 0; var q = pending; pending = []; q.forEach(function (f) { f(); }); }
+  /* run fn once a dialog's history entry has been removed (so a link click inside a dialog cannot race the Back step) */
+  P.afterLayer = function (fn) { if (!timer && !pending.length) { fn(); return; } pending.push(fn); };
+  var showModal = proto.showModal;
+  proto.showModal = function () {
+    var d = this, was = d.open;
+    showModal.apply(d, arguments);
+    if (was || !d.open) return;
+    var st = {}; try { st = Object.assign({}, history.state); } catch (e) { /* ignore */ }
+    st.p100dlg = 1;
+    history.pushState(st, '', location.href);
+    d.addEventListener('close', function () {
+      if (history.state && history.state.p100dlg) {
+        history.back();
+        timer = setTimeout(flush, 300);            /* safety net if no popstate arrives */
+      }
+    }, { once: true });
+  };
+  window.addEventListener('popstate', function (e) {
+    if (!(e.state && e.state.p100dlg)) P.$$('dialog[open]').forEach(function (d) { d.close(); });
+    flush();
+  });
+  /* coming back to a page whose saved entry says "dialog open" while none is: neutralise it */
+  function heal() { if (history.state && history.state.p100dlg && !document.querySelector('dialog[open]')) { var st = Object.assign({}, history.state); delete st.p100dlg; history.replaceState(st, '', location.href); } }
+  window.addEventListener('pageshow', heal); heal();
+  /* links clicked inside an open dialog: close it first, then follow the link, so the history stays tidy */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('dialog[open] a[href]');
+    if (!a || e.defaultPrevented || e.button || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    if ((a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+    var href = a.getAttribute('href'), dlg = a.closest('dialog');
+    if (!href || /^(mailto|tel|sms):/i.test(href)) return;
+    e.preventDefault();
+    var url = a.href, same = url.split('#')[0] === location.href.split('#')[0];
+    if (history.state && history.state.p100dlg) { clearTimeout(timer); timer = setTimeout(flush, 400); }   /* hold the link until the Back step is done */
+    dlg.close();
+    P.afterLayer(function () { if (same && href.charAt(0) === '#') location.hash = href; else location.assign(url); });
+  });
+})();
+
+/* ===== external links: always a new tab ===== */
+(function () {
+  'use strict';
+  function fix(root) {
+    (root.querySelectorAll ? root.querySelectorAll('a[href^="http"]') : []).forEach(function (a) {
+      var u; try { u = new URL(a.href); } catch (e) { return; }
+      if (u.host === location.host || a.hasAttribute('download')) return;
+      a.target = '_blank';
+      var r = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      ['noopener', 'noreferrer'].forEach(function (k) { if (r.indexOf(k) < 0) r.push(k); });
+      a.setAttribute('rel', r.join(' '));
+    });
+  }
+  fix(document);
+  document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href^="http"]'); if (a) fix(a.parentNode || document); }, true);
+})();
+
 /* ===== 30-menu.js ===== */
 /* Site menu: one native <dialog> replaces the old links panel, page drawer and floating switch. */
 (function () {
@@ -86,8 +150,6 @@
   });
   dlg.addEventListener('click', function (e) {
     if (e.target === dlg || e.target.closest('[data-menu-close]')) close();
-    var a = e.target.closest('a[href^="#"]');
-    if (a) close();
   });
 })();
 
@@ -187,7 +249,7 @@
    become a set you can step through. Uses a native <dialog>, so focus, Esc and the backdrop come for free. */
 (function () {
   'use strict';
-  var P = window.P100, dlg, img, cap, dl, full, set = [], idx = 0, opener;
+  var P = window.P100, dlg, img, cap, dl, full, post, set = [], idx = 0, opener;
   function build() {
     if (dlg) return;
     dlg = document.createElement('dialog');
@@ -199,9 +261,10 @@
       '<button type="button" class="lightbox__btn" data-lb="next" aria-label="Next image">›</button>' +
       '<a class="lightbox__btn" data-lb="download" download aria-label="Download image">↓</a>' +
       '<a class="lightbox__btn" data-lb="full" target="_blank" rel="noopener" aria-label="Open full size">↗</a>' +
+      '<a class="lightbox__btn" data-lb="post" target="_blank" rel="noopener" aria-label="Open the Instagram post" hidden>Instagram ↗</a>' +
       '<button type="button" class="lightbox__btn" data-lb="close" aria-label="Close">×</button></div>';
     document.body.appendChild(dlg);
-    img = P.$('img', dlg); cap = P.$('figcaption', dlg); dl = P.$('[data-lb="download"]', dlg); full = P.$('[data-lb="full"]', dlg);
+    img = P.$('img', dlg); cap = P.$('figcaption', dlg); dl = P.$('[data-lb="download"]', dlg); full = P.$('[data-lb="full"]', dlg); post = P.$('[data-lb="post"]', dlg);
     dlg.addEventListener('click', function (e) {
       var b = e.target.closest('[data-lb]'), k = b && b.dataset.lb;
       if (k === 'close' || e.target === dlg) dlg.close();
@@ -212,6 +275,17 @@
       if (e.key === 'ArrowLeft') show(idx - 1);
       if (e.key === 'ArrowRight') show(idx + 1);
     });
+    /* phones: swipe the picture left / right to step through the set */
+    (function () {
+      var sx = 0, sy = 0, t0 = 0, fig = P.$('.lightbox__fig', dlg);
+      fig.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { t0 = 0; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; t0 = Date.now(); }, { passive: true });
+      fig.addEventListener('touchend', function (e) {
+        if (!t0 || set.length < 2 || !e.changedTouches.length) return;
+        var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        if (Date.now() - t0 < 700 && Math.abs(dx) > 55 && Math.abs(dy) < Math.abs(dx) * .6) show(idx + (dx < 0 ? 1 : -1));
+        t0 = 0;
+      }, { passive: true });
+    })();
     dlg.addEventListener('close', function () { document.documentElement.classList.remove('no-scroll'); if (opener) opener.focus(); img.removeAttribute('src'); });
   }
   function srcOf(el) { return el.getAttribute('data-full') || (el.querySelector('img') || el).currentSrc || el.src; }
@@ -221,6 +295,7 @@
     var el = set[idx], src = srcOf(el);
     img.src = src; img.alt = labelOf(el); cap.textContent = labelOf(el);
     dl.href = src; dl.setAttribute('download', src.split('/').pop().split('?')[0]); full.href = src;
+    post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
   }
   document.addEventListener('click', function (e) {
@@ -245,19 +320,66 @@
   'use strict';
   var P = window.P100;
 
+  /* Click-to-play opens a bigger pop-up player (native <dialog>, same look as the image viewer). Nothing from YouTube loads until a card is
+     tapped, the player is removed again on close, and the rows behind it stop drifting while it is open. Prev / next step through the row. */
+  var vdlg, vbox, vtitle, vlink, vset = [], vidx = 0, vopener;
+  function vbuild() {
+    if (vdlg) return;
+    vdlg = document.createElement('dialog');
+    vdlg.className = 'lightbox lightbox--video'; vdlg.setAttribute('aria-label', 'Video player');
+    vdlg.innerHTML =
+      '<div class="lightbox__bar"><span class="lightbox__title"></span>' +
+      '<button type="button" class="lightbox__btn" data-vp="prev" aria-label="Previous video">‹</button>' +
+      '<button type="button" class="lightbox__btn" data-vp="next" aria-label="Next video">›</button>' +
+      '<a class="lightbox__btn" data-vp="yt" target="_blank" rel="noopener" aria-label="Open on YouTube">YouTube ↗</a>' +
+      '<button type="button" class="lightbox__btn" data-vp="close" aria-label="Close video">×</button></div>' +
+      '<div class="vplayer"><div class="vplayer__frame"></div></div>';
+    document.body.appendChild(vdlg);
+    vbox = vdlg.querySelector('.vplayer__frame'); vtitle = vdlg.querySelector('.lightbox__title'); vlink = vdlg.querySelector('[data-vp="yt"]');
+    vdlg.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-vp]'), k = b && b.dataset.vp;
+      if (k === 'close' || e.target === vdlg) vdlg.close();
+      if (k === 'prev') vshow(vidx - 1);
+      if (k === 'next') vshow(vidx + 1);
+    });
+    vdlg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') vshow(vidx - 1);
+      if (e.key === 'ArrowRight') vshow(vidx + 1);
+    });
+    vdlg.addEventListener('close', function () {
+      vbox.innerHTML = '';                                           /* removes the player, so the sound stops */
+      document.documentElement.classList.remove('no-scroll');
+      if (vopener) { try { vopener.focus({ preventScroll: true }); } catch (x) {} }
+    });
+  }
+  function vlabel(b) { return (b.getAttribute('aria-label') || 'Video').replace(/^Play:\s*/, ''); }
+  function vshow(i) {
+    vidx = (i + vset.length) % vset.length;
+    var b = vset[vidx], id = b.dataset.yt;
+    vbox.innerHTML = '';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0';
+    f.title = vlabel(b);
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; web-share; fullscreen';
+    f.allowFullscreen = true;
+    vbox.appendChild(f);
+    vtitle.textContent = vlabel(b);
+    vlink.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
+    P.$$('[data-vp="prev"],[data-vp="next"]', vdlg).forEach(function (n) { n.hidden = vset.length < 2; });
+  }
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-yt]');
-    if (!t || t.dataset.playing) return;
+    if (!t) return;
     e.preventDefault();
-    t.dataset.playing = '1';
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(t.dataset.yt) + '?autoplay=1&playsinline=1&rel=0';
-    f.title = t.getAttribute('aria-label') || 'Video';
-    f.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
-    f.allowFullscreen = true;
-    f.loading = 'lazy';
-    t.appendChild(f);
-    t.classList.add('is-playing');
+    vbuild();
+    var row = t.closest('.carousel') || t.closest('[data-gallery]');
+    vset = row ? P.$$('[data-yt]', row).filter(function (x) { return !x.closest('[data-clone]'); }) : [t];
+    var at = vset.indexOf(t);
+    if (at < 0) vset.forEach(function (x, n) { if (at < 0 && x.dataset.yt === t.dataset.yt) at = n; });   /* a cloned card in the looping row */
+    vopener = t.closest('[data-clone]') ? null : t;
+    vshow(Math.max(0, at));
+    if (vdlg.showModal) vdlg.showModal(); else vdlg.setAttribute('open', '');
+    document.documentElement.classList.add('no-scroll');
   });
 
   var conn = navigator.connection || {};
@@ -528,7 +650,7 @@
       var w = Math.max(.12, Math.min(1, track.clientWidth / setW));
       thumb.style.width = (w * 100) + '%'; thumb.style.left = (Math.min(f, 1 - w) * 100) + '%';
     }
-    function playing() { return active && !userPaused && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
+    function playing() { return active && !userPaused && !document.documentElement.classList.contains('no-scroll') && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
       pp.innerHTML = userPaused ? PLAY : PAUSE;
       pp.setAttribute('aria-label', userPaused ? 'Start auto-scroll' : 'Pause auto-scroll');
