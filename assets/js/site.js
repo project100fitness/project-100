@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-08 update 10: video cards open a pop-up player; rows pause while a pop-up is open). */
+/* PROJECT 100 – site script (2026-10-08 update 12: page-link rows and chapter cards open a preview pop-up). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */
@@ -382,6 +382,72 @@
     document.documentElement.classList.add('no-scroll');
   });
 
+  /* Preview pop-up for page-link rows ([data-preview] carousels): a bigger picture, the title and an "Open page" button, so a stray tap
+     never throws a visitor off the page. Text-only cards (the story chapters) open as a large readable card. Prev / next step through the row. */
+  var pdlg, pimg, pkick, ptitle, ptext, pgo, pset = [], pidx = 0, popener;
+  function pbuild() {
+    if (pdlg) return;
+    pdlg = document.createElement('dialog');
+    pdlg.className = 'lightbox lightbox--card'; pdlg.setAttribute('aria-label', 'Preview');
+    pdlg.innerHTML =
+      '<div class="lightbox__bar"><span class="lightbox__title"></span>' +
+      '<button type="button" class="lightbox__btn" data-pv="prev" aria-label="Previous">‹</button>' +
+      '<button type="button" class="lightbox__btn" data-pv="next" aria-label="Next">›</button>' +
+      '<button type="button" class="lightbox__btn" data-pv="close" aria-label="Close">×</button></div>' +
+      '<div class="pv"><img class="pv__img" alt=""><div class="pv__body"><p class="pv__kick"></p><h3 class="pv__title"></h3><p class="pv__text"></p>' +
+      '<a class="lightbox__btn pv__go" data-pv="go">Open page →</a></div></div>';
+    document.body.appendChild(pdlg);
+    pimg = pdlg.querySelector('.pv__img'); pkick = pdlg.querySelector('.pv__kick'); ptitle = pdlg.querySelector('.pv__title'); ptext = pdlg.querySelector('.pv__text'); pgo = pdlg.querySelector('.pv__go');
+    pdlg.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-pv]'), k = b && b.dataset.pv;
+      if (k === 'close' || e.target === pdlg) pdlg.close();
+      if (k === 'prev') pshow(pidx - 1);
+      if (k === 'next') pshow(pidx + 1);
+    });
+    pdlg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') pshow(pidx - 1);
+      if (e.key === 'ArrowRight') pshow(pidx + 1);
+    });
+    pdlg.addEventListener('close', function () {
+      document.documentElement.classList.remove('no-scroll');
+      pimg.removeAttribute('src');
+      if (popener) { try { popener.focus({ preventScroll: true }); } catch (x) {} }
+    });
+  }
+  function pbiggest(img) {
+    var ss = img.getAttribute('srcset'), best = img.getAttribute('src'), w = 0;
+    if (ss) ss.split(',').forEach(function (c) { var q = c.trim().split(/\s+/), n = parseInt(q[1], 10) || 0; if (n >= w) { w = n; best = q[0]; } });
+    return best;
+  }
+  function ptxt(el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; }
+  function pshow(i) {
+    pidx = (i + pset.length) % pset.length;
+    var it = pset[pidx], a = it.querySelector('a[href]'), im = it.querySelector('img');
+    var title = ptxt(it.querySelector('.card__title,.file-card__title,h3,h4')) || (a && a.getAttribute('aria-label')) || '';
+    var kick = [ptxt(it.querySelector('.home-era__num')), ptxt(it.querySelector('.home-era__range'))].filter(Boolean).join(' · ');
+    var para = ptxt(it.querySelector('p'));
+    pdlg.querySelector('.lightbox__title').textContent = title;
+    ptitle.textContent = title; pkick.textContent = kick; pkick.hidden = !kick; ptext.textContent = para; ptext.hidden = !para;
+    if (im) { pimg.src = pbiggest(im); pimg.alt = im.alt || title; pimg.hidden = false; } else { pimg.removeAttribute('src'); pimg.hidden = true; }
+    if (a) { pgo.href = a.getAttribute('href'); pgo.hidden = false; } else { pgo.removeAttribute('href'); pgo.hidden = true; }
+    P.$$('[data-pv="prev"],[data-pv="next"]', pdlg).forEach(function (n) { n.hidden = pset.length < 2; });
+  }
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button > 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var it = e.target.closest('[data-preview] .carousel__item');
+    if (!it) return;
+    var row = it.closest('[data-preview]');
+    if (it.querySelector('a[href]') && !e.target.closest('a[href]')) return;      /* only a tap on the card itself */
+    if (!it.querySelector('a[href]') && e.target.closest('a,button')) return;
+    e.preventDefault();
+    pbuild();
+    pset = P.$$('.carousel__item', row);
+    popener = it.querySelector('a[href]') || null;
+    pshow(Math.max(0, pset.indexOf(it)));
+    if (pdlg.showModal) pdlg.showModal(); else pdlg.setAttribute('open', '');
+    document.documentElement.classList.add('no-scroll');
+  });
+
   var conn = navigator.connection || {};
   P.$$('video[data-src]').forEach(function (v) {
     if (P.reduceMotion.matches || conn.saveData) return;       /* poster only */
@@ -576,14 +642,16 @@
 })();
 
 /* ===== 62-carousel.js ===== */
-/* Looping, auto-scrolling carousels ([data-carousel]). Structure: .carousel > .carousel__head + .carousel__stage > .carousel__track > .carousel__item.
-   - drifts slowly on its own so it is obvious there is more to see. A touch, a drag or a tap pauses it for a moment and it then
-     carries on by itself; hovering with a mouse pauses it while the pointer is over the row; the round Pause button stops it for good.
-   - loops in both directions (the row is cloned only when it really overflows); drag, wheel, arrow keys and a thick position bar.
+/* Carousels ([data-carousel]). Structure: .carousel > .carousel__head + .carousel__stage > .carousel__track > .carousel__item.
+   - Rows that are wider than the screen drift on their own, left to right until the last card, rest a moment, then drift back to the
+     first card, and so on. Nothing loops or repeats: every card appears once, so a visitor always knows where they are.
+   - A touch, drag, wheel or tap pauses it for a moment and it then carries on from wherever the visitor left it; hovering with a
+     mouse pauses it; the round Pause button stops it for good. While a pop-up viewer is open every row stands still.
+   - A thick position bar underneath shows where you are (click or drag it to jump); arrow keys work when the row has focus.
    - "reduce motion": no automatic movement unless the visitor presses Play. Without JS it is a normal scroll-snap strip. */
 (function () {
   'use strict';
-  var P = window.P100, SPEED = 34, RESUME = 2200;          /* px per second; ms of calm before it drifts again */
+  var P = window.P100, SPEED = 34, RESUME = 2200, REST = 1400;   /* px per second; ms of calm after a touch; ms of rest at either end */
   var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
   function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
@@ -602,53 +670,21 @@
     if (head) head.appendChild(pp);
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
-    var active = false, setW = 0, base = 0, lastW = -1, pos = null, last = 0, hold = 0, inView = true, lastAuto = -1;
+    var active = false, lastW = -1, pos = null, last = 0, hold = 0, dir = 1, inView = true, lastAuto = 0;
     var mouseOver = false, touching = false, keyFocus = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
 
-    function teardown() {
-      P.$$('[data-clone]', track).forEach(function (n) { n.remove(); });
-      root.classList.remove('is-loop'); active = false; pos = null;
-    }
-    function tame(clone) {
-      clone.setAttribute('data-clone', ''); clone.setAttribute('aria-hidden', 'true');
-      P.$$('[id]', clone).forEach(function (n) { n.removeAttribute('id'); });
-      P.$$('a,button,input,select,textarea,[tabindex]', clone).forEach(function (n) { n.setAttribute('tabindex', '-1'); });
-    }
-    function gapPx() { var g = getComputedStyle(track); return parseFloat(g.columnGap) || parseFloat(g.gap) || 0; }
-    function build() {
-      var w = track.clientWidth; lastW = w;
-      teardown();
-      if (w < 40) return;                                   /* hidden (filtered out) – measure again when it shows */
-      var first = items[0], lastIt = items[items.length - 1];
-      var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gapPx();
-      if (natural <= w + 4) { pp.hidden = true; bar.hidden = true; return; }        /* everything already fits */
-      pp.hidden = false; bar.hidden = false;
-      var n = Math.min(4, Math.max(1, Math.ceil(w * 1.5 / natural)));
-      var before = document.createDocumentFragment(), after = document.createDocumentFragment(), i, k, c;
-      for (k = 0; k < n; k++) {
-        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); after.appendChild(c); }
-        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); before.appendChild(c); }
-      }
-      track.insertBefore(before, items[0]); track.appendChild(after);
-      root.classList.add('is-loop'); active = true;
-      var firstClone = lastIt.nextElementSibling;
-      setW = firstClone ? firstClone.offsetLeft - items[0].offsetLeft : natural;
-      base = items[0].offsetLeft;
-      track.scrollLeft = base; lastAuto = base; pos = null; sync();
-    }
-    function wrap() {
-      if (!active || !setW) return;
-      var x = track.scrollLeft;
-      if (x < base - setW * 0.5 || x >= base + setW * 1.5) { track.scrollLeft = base + (((x - base) % setW) + setW) % setW; pos = null; }
-      else if (x < base) { track.scrollLeft = x + setW; pos = null; }
-      else if (x >= base + setW) { track.scrollLeft = x - setW; pos = null; }
-      lastAuto = track.scrollLeft;
+    function maxScroll() { return Math.max(0, track.scrollWidth - track.clientWidth); }
+    function measure() {
+      lastW = track.clientWidth;
+      var over = lastW >= 40 && maxScroll() > 4;                        /* hidden (filtered out) or everything already fits: nothing to drift */
+      active = over; pp.hidden = !over; bar.hidden = !over;
+      root.classList.toggle('is-drift', over);
+      pos = null; lastAuto = track.scrollLeft; sync();
     }
     function sync() {
-      if (!active || !setW) return;
-      var f = ((((track.scrollLeft - base) % setW) + setW) % setW) / setW;
-      var w = Math.max(.12, Math.min(1, track.clientWidth / setW));
-      thumb.style.width = (w * 100) + '%'; thumb.style.left = (Math.min(f, 1 - w) * 100) + '%';
+      if (!active) return;
+      var m = maxScroll() || 1, w = Math.max(.12, Math.min(1, track.clientWidth / track.scrollWidth)), f = Math.max(0, Math.min(1, track.scrollLeft / m));
+      thumb.style.width = (w * 100) + '%'; thumb.style.left = (f * (1 - w) * 100) + '%';
     }
     function playing() { return active && !userPaused && !document.documentElement.classList.contains('no-scroll') && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
@@ -660,14 +696,19 @@
       raf = requestAnimationFrame(tick);
       var dt = Math.min(64, ts - last); last = ts;
       if (!playing()) { pos = null; return; }
-      if (pos === null) pos = track.scrollLeft;
-      pos += SPEED * dt / 1000;
-      if (pos >= base + setW) pos -= setW;
+      var m = maxScroll();
+      if (pos === null) {
+        pos = track.scrollLeft;
+        if (pos >= m - 1) dir = -1; else if (pos <= 1) dir = 1;          /* picked up at an end: head the other way */
+      }
+      pos += dir * SPEED * dt / 1000;
+      if (pos >= m) { pos = m; dir = -1; hold = now() + REST; }          /* reached the last card: rest, then back */
+      else if (pos <= 0) { pos = 0; dir = 1; hold = now() + REST; }       /* back at the first card: rest, then forward */
       track.scrollLeft = pos; lastAuto = track.scrollLeft; sync();
     }
     function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
-    function step() { var c = items[0]; return c ? c.getBoundingClientRect().width + gapPx() : track.clientWidth * .8; }
-    function go(dir) { holdFor(RESUME + 2500); track.scrollBy({ left: dir * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
+    function step() { var c = items[0]; var g = getComputedStyle(track); return c ? c.getBoundingClientRect().width + (parseFloat(g.columnGap) || parseFloat(g.gap) || 0) : track.clientWidth * .8; }
+    function go(d) { holdFor(RESUME + 2500); track.scrollBy({ left: d * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
 
     pp.addEventListener('click', function () { userPaused = !userPaused; pos = null; label(); });
     track.addEventListener('keydown', function (e) {
@@ -675,10 +716,10 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
     });
-    /* any scroll that did not come from the drift itself (finger, wheel, bar, keys) keeps it calm, then it resumes */
+    /* any scroll that did not come from the drift itself (finger, wheel, bar, keys) keeps it calm, then it resumes from there */
     track.addEventListener('scroll', function () {
       if (Math.abs(track.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = track.scrollLeft; }
-      sync(); clearTimeout(idle); idle = setTimeout(wrap, 140);
+      sync();
     }, { passive: true });
     track.addEventListener('wheel', function () { holdFor(RESUME + 800); }, { passive: true });
     /* mouse only: a finger never "hovers", so touch screens cannot get stuck paused */
@@ -717,12 +758,12 @@
       });
     })();
 
-    /* the thick bar underneath: where you are in the loop; click or drag it to jump */
+    /* the thick bar underneath: where you are in the row; click or drag it to jump */
     (function () {
       var drag = false;
       function jump(e) {
         var r = bar.getBoundingClientRect(), f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
-        track.scrollLeft = base + f * setW; holdFor(RESUME + 1500);
+        track.scrollLeft = f * maxScroll(); holdFor(RESUME + 1500);
       }
       bar.addEventListener('pointerdown', function (e) { drag = true; try { bar.setPointerCapture(e.pointerId); } catch (x) {} jump(e); });
       bar.addEventListener('pointermove', function (e) { if (drag) jump(e); });
@@ -733,10 +774,11 @@
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .12 }).observe(root);
     }
-    function remeasure() { if (track.clientWidth !== lastW) build(); }
+    function remeasure() { if (track.clientWidth !== lastW) measure(); }
     if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(stage); else window.addEventListener('resize', remeasure);
-    window.addEventListener('load', function () { build(); });          /* images / fonts settled */
-    label(); build();
+    window.addEventListener('load', measure);                           /* images / fonts settled */
+    label(); measure();
+    hold = now() + 1600;                                               /* open on the first card for a moment, then start drifting */
     if (!raf) raf = requestAnimationFrame(function (t) { last = t; tick(t); });
   }
   P.initCarousels = function (scope) { P.$$('[data-carousel]', scope).forEach(init); };

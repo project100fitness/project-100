@@ -43,6 +43,22 @@
     function park(d) { if (d && d.parentNode !== wrap) wrap.appendChild(d); }
     function setState(card, on) { if (card) card.setAttribute('aria-expanded', on ? 'true' : 'false'); }
 
+    /* History: opening a card by tap adds ONE entry, so the Back button/gesture closes the card instead of leaving the page. */
+    function setHist(card, id, mode) {
+      if (!history.pushState) return;
+      var url = card.getAttribute('href') || '#' + id, st = history.state || {};
+      if (st.hud) history.replaceState({ hud: id, pushed: st.pushed }, '', url);          // switching card: same entry
+      else if (mode === 'user') history.pushState({ hud: id, pushed: true }, '', url);     // tap: new entry
+      else history.replaceState({ hud: id, pushed: mode === 'hash' }, '', url);           // arrived by link / bookmark
+    }
+    function userClose(o) {
+      var st = history.state;
+      if (current && st && st.hud && st.pushed) {
+        var d = current; history.back();                                                     // popstate closes it
+        setTimeout(function () { if (current === d) close(o); }, 350);
+      } else close(o);
+    }
+
     function close(opts) {
       opts = opts || {};
       if (!current) return;
@@ -57,14 +73,14 @@
         var r = card.getBoundingClientRect();
         if (r.top < 0 || r.bottom > window.innerHeight) card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       }
-      if (!opts.keepHash && history.replaceState && location.hash && cardForHash(location.hash.slice(1))) history.replaceState(null, '', location.pathname + location.search);
+      if (!opts.keepHash && history.replaceState && ((history.state && history.state.hud) || (location.hash && cardForHash(location.hash.slice(1))))) history.replaceState(null, '', location.pathname + location.search);
     }
 
     function open(card, opts) {
       opts = opts || {};
       var id = card.getAttribute('aria-controls'), d = byId[id];
       if (!d) return;
-      if (current === d) { close({ focus: true }); return; }
+      if (current === d) { userClose({ focus: true }); return; }
       registry.forEach(function (g) { if (g !== me && g.isOpen()) g.close({ instant: true, keepHash: true }); });
       if (current) close({ instant: true, keepHash: true });
       current = d;
@@ -73,7 +89,7 @@
       stage.appendChild(d);
       list.parentNode.insertBefore(stage, list);   // always ABOVE every card, never between rows
       d.classList.remove('is-closing');
-      if (history.replaceState) history.replaceState(null, '', (card.getAttribute('href') || '#' + id));
+      if (!opts.nohist) setHist(card, id, opts.mode || 'user');
       if (!opts.noScroll) {
         var head = document.getElementById('siteHead'), off = (head ? head.offsetHeight : 0) + 12;
         // bring the top of the opened card just under the header
@@ -95,13 +111,13 @@
     function onBtn(e) {
       var b = e.target.closest('[data-hud-close],[data-hud-prev],[data-hud-next]');
       if (!b) return;
-      if (b.hasAttribute('data-hud-close')) close({ focus: true });
+      if (b.hasAttribute('data-hud-close')) userClose({ focus: true });
       else step(b.hasAttribute('data-hud-prev') ? -1 : 1);
     }
     wrap.addEventListener('click', onBtn);
     stage.addEventListener('click', onBtn);
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && current && !document.querySelector('dialog[open]')) close({ focus: true });
+      if (e.key === 'Escape' && current && !document.querySelector('dialog[open]')) userClose({ focus: true });
     });
     // re-seat the stage if the column count changes (rotate, resize)
     var lastCols = 0;
@@ -110,11 +126,17 @@
       var c = cols(); if (c === lastCols) return; lastCols = c;
     });
     // deep link: page.html#vector-v4 opens that card
-    function fromHash() {
+    function fromHash(opts) {
       var card = cardForHash(location.hash.slice(1));
-      if (card && current !== byId[card.getAttribute('aria-controls')]) open(card, { noScroll: false });
+      if (card && current !== byId[card.getAttribute('aria-controls')]) open(card, { noScroll: false, mode: opts && opts.initial ? 'initial' : 'hash' });
     }
-    window.addEventListener('hashchange', fromHash);
+    window.addEventListener('hashchange', function () { fromHash(); });
+    // Back / Forward: follow the history entry
+    window.addEventListener('popstate', function (e) {
+      var st = e.state, card = st && st.hud && cards.filter(function (c) { return c.getAttribute('aria-controls') === st.hud; })[0];
+      if (card) { if (current !== byId[st.hud]) open(card, { nohist: true, noScroll: true }); }
+      else if (current && !(location.hash && cardForHash(location.hash.slice(1)))) close({ focus: true, keepHash: true });
+    });
     // map nodes (or any [data-hud-open="detail-id"]) open the matching card
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-hud-open]'); if (!t) return;
@@ -122,6 +144,6 @@
       if (card) { e.preventDefault(); if (current && byId[card.getAttribute('aria-controls')] === current) { stage.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; } open(card); }
     });
     lastCols = cols();
-    if (location.hash) setTimeout(fromHash, 60);
+    if (location.hash) setTimeout(function () { fromHash({ initial: true }); }, 60);
   });
 })();
