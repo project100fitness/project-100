@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=0c22e79c">
+<link rel="stylesheet" href="assets/css/site.css?v=693ef97e">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "author": {"@type": "Person", "name": "Bogdan Dospi", "sameAs": ["https://www.instagram.com/fudge_fit/"]}, "name": "PROJECT 100", "url": "https://project100.fit/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline."}, "name": "What is PROJECT 100?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Neither, run separately \u2014 both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition."}, "name": "Is this a bulk or a cut?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Workout page is the full training log \u2014 every block, filterable by category, with real dates and engagement, updated as sessions happen."}, "name": "Where can I follow the day-to-day training?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FIT PROTOCOL is the system behind the lived record: focused files for daily execution, vectors, nutrition, training and monitoring."}, "name": "What\u0027s the Fit Protocol?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation \u2014 nothing theoretical, all logged."}, "name": "How is the nutrition handled?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "New training blocks, recovery meals, and protocol updates post to @fudge_fit on Instagram as they happen \u2014 the site catches up from there."}, "name": "Where do new updates post first?"}]}</script>
 </head>
@@ -112,16 +112,14 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     <div class="section__head">
       <h2 id="explore-title">Explore PROJECT_100.</h2>
     </div>
-    <section class="carousel carousel--file" id="home-files" data-carousel data-count="6" aria-labelledby="home-files-t">
+    <section class="carousel carousel--rows2 carousel--file" id="home-files" data-carousel data-count="6" aria-labelledby="home-files-t">
       <header class="carousel__head"><h3 class="carousel__title" id="home-files-t">Open a file</h3><span class="carousel__count">6 files</span></header>
       <div class="carousel__stage"><ul class="carousel__track home-folders">
       <li class="carousel__item">
         <a class="card card--link home-folder" href="project-story.html">
           <div class="card__media"><img src="assets/web/media-october-2026-bogdan-november-2025-960.webp" alt="Bogdan in November 2025, original photograph" width="1205" height="1600" srcset="assets/web/media-october-2026-bogdan-november-2025-480.webp 480w, assets/web/media-october-2026-bogdan-november-2025-960.webp 960w, assets/web/media-october-2026-bogdan-november-2025-1205.webp 1205w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async" fetchpriority="high"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 01</span>
             <h3 class="card__title">The story</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -129,9 +127,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
         <a class="card card--link home-folder" href="project-goals.html">
           <div class="card__media"><img src="assets/web/img-objective-100lbs-smm-960.webp" alt="The objective: 100 lb skeletal muscle mass" width="1200" height="654" loading="lazy" srcset="assets/web/img-objective-100lbs-smm-480.webp 480w, assets/web/img-objective-100lbs-smm-960.webp 960w, assets/web/img-objective-100lbs-smm-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 02</span>
             <h3 class="card__title">Goals &amp; roadmap</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -139,9 +135,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
         <a class="card card--link home-folder" href="fit-workout.html">
           <div class="card__media"><img src="assets/web/media-october-2026-bogdan-gym-session-960.webp" alt="Bogdan during a gym training session" width="1600" height="1600" loading="lazy" srcset="assets/web/media-october-2026-bogdan-gym-session-480.webp 480w, assets/web/media-october-2026-bogdan-gym-session-960.webp 960w, assets/web/media-october-2026-bogdan-gym-session-1600.webp 1600w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 03</span>
             <h3 class="card__title">Training log</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -149,9 +143,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
         <a class="card card--link home-folder" href="fit-nutrition.html">
           <div class="card__media"><img src="assets/web/img-mega-salad-mango-chickpea-960.webp" alt="Mega salad with mango and chickpeas" width="1200" height="900" loading="lazy" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 04</span>
             <h3 class="card__title">Nutrition folders</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -159,9 +151,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
         <a class="card card--link home-folder" href="gear-shop.html">
           <div class="card__media"><img src="assets/web/media-october-2026-gym-turf-rig-960.webp" alt="The home gym turf and resistance rig" width="1600" height="1205" loading="lazy" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 05</span>
             <h3 class="card__title">Gear folders</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -169,9 +159,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
         <a class="card card--link home-folder" href="fit-protocol.html">
           <div class="card__media"><img src="assets/web/img-protocol-systemic-fueling-800.webp" alt="Systemic fueling, the documented protocol" width="800" height="1200" loading="lazy" srcset="assets/web/img-protocol-systemic-fueling-480.webp 480w, assets/web/img-protocol-systemic-fueling-800.webp 800w" sizes="(min-width: 640px) 20rem, 50vw" decoding="async"></div>
           <div class="card__body">
-            <span class="home-folder__num">FILE 06</span>
             <h3 class="card__title">The documented system</h3>
-            <span class="home-folder__cta">Open file ↗</span>
           </div>
         </a>
       </li>
@@ -273,7 +261,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   <a class="fab fab--back" id="fabBack" href="index.html" aria-label="Go back" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
   <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
   <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
-    <p class="fab-panel__title">Links</p>
+    <div class="fab-panel__head"><p class="fab-panel__title">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <ul class="fab-panel__list">
       <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
       <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v5H19M9 12h7M9 16h7"/></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small>project100.fit</small></span></a></li>
@@ -351,6 +339,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 
-<script src="assets/js/site.js?v=80b76892" defer></script>
+<script src="assets/js/site.js?v=9a24d650" defer></script>
 </body>
 </html>

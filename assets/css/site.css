@@ -386,14 +386,16 @@ input[type="search"], input[type="text"], select {
 }
 .tabs__list {
   display: flex;
-  flex-wrap: wrap;                 /* every tab is always on screen: one row when it fits, more rows when not */
+  flex-wrap: nowrap;               /* one row; on a phone it swipes sideways instead of stacking into a block */
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none;
   gap: .25rem;
   margin: 0;
   padding: .35rem var(--gutter) 0;
   padding-inline: max(var(--gutter), calc((100% - 80rem) / 2));
   list-style: none;
 }
-.tabs__list li { margin: 0; flex: 1 1 auto; display: flex; }
+.tabs__list::-webkit-scrollbar { display: none; }
+.tabs__list li { margin: 0; flex: 1 0 auto; display: flex; scroll-snap-align: center; }
 .tab {
   flex: 1;
   display: flex;
@@ -603,10 +605,11 @@ input[type="search"], input[type="text"], select {
 }
 @media (min-width: 800px) { .site-foot__inner { grid-template-columns: 1.4fr 1fr 1fr; } }
 .site-foot h2 { font-size: var(--step--2); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: var(--s-3); }
-.site-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; }
-.site-foot li { margin: 0; }
-.site-foot li a { display: inline-block; padding: .3rem 0; color: var(--text-2); text-decoration: none; font-weight: 550; }
-.site-foot li a:hover { color: var(--accent); text-decoration: underline; }
+.site-foot ul { list-style: none; margin: 0; padding: 0 0 .35rem; display: flex; flex-wrap: nowrap; gap: .5rem; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity; }
+.site-foot ul::-webkit-scrollbar { display: none; }
+.site-foot li { margin: 0; flex: none; scroll-snap-align: start; }
+.site-foot li a { display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 1rem; border: 1px solid var(--line-strong); border-radius: 99px; background: var(--surface); color: var(--text-2); text-decoration: none; font-weight: 650; white-space: nowrap; transition: border-color .15s, color .15s; }
+.site-foot li a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .site-foot__lede { color: var(--text-2); max-width: 28rem; margin-bottom: var(--s-4); }
 .site-foot__switch { display: inline-flex; gap: .5rem; align-items: center; min-height: 2.75rem; padding: 0 1rem; border-radius: var(--r-2); background: var(--accent-strong); color: var(--accent-ink); font-weight: 700; text-decoration: none; }
 .site-foot__switch:hover { filter: brightness(1.08); text-decoration: none; }
@@ -895,8 +898,10 @@ input[type="search"], input[type="text"], select {
 .chip-row { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 
 /* filter chips (buttons) */
-.filters { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: 0 0 var(--s-5); }
+.filters { display: flex; flex-wrap: nowrap; gap: var(--s-2); margin: 0 0 var(--s-4); padding-bottom: .35rem; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity; }
+.filters::-webkit-scrollbar { display: none; }
 .filter {
+  flex: none; white-space: nowrap; scroll-snap-align: start;
   min-height: 2.5rem; padding: 0 .95rem;
   border: 1px solid var(--line-strong); border-radius: var(--r-2);
   background: var(--surface); color: var(--text-2);
@@ -1168,7 +1173,7 @@ input[type="search"], input[type="text"], select {
   scrollbar-width: auto;
   scrollbar-color: var(--accent-strong) var(--surface-3);
 }
-.carousel__track::-webkit-scrollbar { height: .6rem; }
+.carousel__track::-webkit-scrollbar { height: 1rem; }
 .carousel__track::-webkit-scrollbar-track { background: var(--surface-3); border-radius: 99px; }
 .carousel__track::-webkit-scrollbar-thumb { background: var(--accent-strong); border-radius: 99px; }
 .carousel__track:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: var(--r-2); }
@@ -1200,8 +1205,8 @@ input[type="search"], input[type="text"], select {
 
 /* the bar underneath: where you are in the loop; drag or click it to jump */
 .carousel__bar {
-  position: relative; height: .6rem; margin-top: .1rem;
-  border-radius: 99px; background: var(--surface-3);
+  position: relative; height: 1rem; margin-top: .2rem;
+  border-radius: 99px; background: var(--surface-3); box-shadow: inset 0 0 0 1px var(--line);
   cursor: pointer; touch-action: none;
 }
 .carousel__thumb { position: absolute; top: 0; bottom: 0; border-radius: 99px; background: var(--accent-strong); box-shadow: 0 0 10px -2px var(--glow); }
@@ -2377,3 +2382,72 @@ h2.vec-record__title { font-size: var(--step--1); }
 .meter__note { margin: .35rem 0 0; font-size: var(--step--1); color: var(--muted); }
 .goalmeter__foot { margin: var(--s-4) 0 0; font-size: var(--step--2); color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .meter__fill { transition: none; } }
+
+/* ===== 70-update7: one info card, then the illustrated content; pop-out close buttons; image-only carousels ===== */
+/* the single glowing information card that opens a page */
+.page-hero + .callout, .page-hero + .vec-key, .vec-page > .vec-key, .goalmeter, .callout.chap-registry {
+  border: 1px solid color-mix(in srgb, var(--accent-strong) 70%, var(--line));
+  border-left-width: 4px; border-left-color: var(--accent-strong);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-strong) 10%, var(--surface)), var(--surface) 65%);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-strong) 18%, transparent), 0 0 26px -8px var(--glow), var(--shadow-2, none);
+  border-radius: var(--r-3);
+}
+.page-hero + .callout .callout__title, .vec-key .vec-key__title { color: var(--accent); }
+/* everything that is only background information sits at the bottom of a page, quietly */
+.after-note { display: grid; gap: .35rem; margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px dashed var(--line-strong); color: var(--muted); font-size: var(--step--1); }
+.after-note .eyebrow { margin: 0; }
+.after-note .lead { margin: 0; font-size: inherit; color: inherit; }
+.vec-more { display: grid; gap: var(--s-4); }
+.vec-more .vec-facts { margin: 0; }
+
+/* page heads take less phone screen so the carousels show without scrolling */
+@media (max-width: 719px) {
+  .page-hero { min-height: 8.5rem; margin-bottom: var(--s-4); }
+  .page-hero h1 { font-size: var(--step-3); }
+  .page-hero__text { padding-block: var(--s-4); }
+  .section { padding-block: var(--s-5); }
+  .section__head { margin-bottom: var(--s-3); }
+}
+
+/* carousels: pictures only (the title is in the picture or the row heading); a thick red bar shows where you are */
+.carousel--media { --c-w: 9.8rem; }
+@media (min-width: 720px) { .carousel--media { --c-w: 13rem; } }
+.carousel--media .carousel__item { display: block; }
+.carousel--media .carousel__item > .card { height: auto; background: transparent; border: 0; box-shadow: none; }
+.carousel--media .card__media { aspect-ratio: 3 / 4; height: auto; border-radius: var(--r-3); overflow: hidden; border: 1px solid var(--line-strong); background: var(--surface-3); }
+.carousel--media .card__media img, .carousel--media .card__media .yt, .carousel--media .card__media .yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel--media .card--link:hover { transform: none; box-shadow: none; }
+.carousel--media .card--link:hover .card__media { border-color: var(--accent); box-shadow: 0 0 20px -6px var(--glow); }
+.carousel--media .card__media > a { display: block; height: 100%; }
+
+/* rows of file cards that go two deep, so six to eight pages are in view at once instead of one long line */
+.carousel--rows2 .carousel__track { display: grid; grid-template-rows: repeat(2, auto); grid-auto-flow: column; grid-auto-columns: var(--c-w); gap: var(--c-gap); }
+.carousel--rows2 .carousel__item { flex: none; width: auto; }
+.carousel--rows2 .home-folder .card__media { aspect-ratio: 16 / 10; }
+.carousel--rows2 .card__body { padding: var(--s-2) var(--s-3) var(--s-3); gap: 0; }
+.carousel--rows2 .card__title { font-size: var(--step-0); line-height: 1.2; }
+.carousel--hub .chap-hub__card .card__media { aspect-ratio: 16 / 10; }
+.carousel--hub .chap-hub__card .card__media img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 719px) { .carousel--rows2 { --c-w: 10.2rem; } .carousel--file.carousel--rows2 .file-card { padding: .5rem; } }
+
+/* the @ links panel: a Close X in its corner */
+.fab-panel__head { position: sticky; top: -.6rem; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: -.6rem -.6rem .35rem; padding: .55rem .6rem .4rem .9rem; background: var(--surface); border-radius: var(--r-4) var(--r-4) 0 0; }
+.fab-panel__head .fab-panel__title { margin: 0; }
+.pop-close { display: grid; place-items: center; flex: none; width: 2.6rem; height: 2.6rem; padding: 0; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface-2); color: var(--text); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.pop-close svg { width: 1.15rem; height: 1.15rem; }
+.pop-close:hover, .pop-close:focus-visible { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); }
+.lightbox__btn[data-lb="close"] { font-size: 1.6rem; }
+
+/* footer columns may shrink so their link rows scroll instead of widening the page */
+.site-foot__inner { grid-template-columns: minmax(0, 1fr); }
+.site-foot__inner > div { min-width: 0; }
+@media (min-width: 800px) { .site-foot__inner { grid-template-columns: 1.4fr 1fr 1fr; } }
+.carousel__stage, .section, .wrap { min-width: 0; }
+
+/* compact key-fact tiles: two or three across on a phone, not one long column */
+.vec-key__stats { grid-template-columns: repeat(auto-fit, minmax(min(100%, 5.6rem), 1fr)); gap: var(--s-2); }
+@media (max-width: 719px) { .vec-key .stat { padding: var(--s-2) var(--s-3); } .vec-key .stat__value { font-size: var(--step-1); } .vec-key__title { font-size: var(--step-1); margin-bottom: var(--s-3); } }
+/* file cards in the two-row carousels: picture on top, name below */
+.carousel--rows2 .file-card { grid-template-columns: minmax(0, 1fr); align-content: start; gap: .4rem; padding: .5rem; }
+.carousel--rows2 .file-card__thumb { width: 100%; height: auto; aspect-ratio: 16 / 10; }
+.carousel--rows2 .file-card__title { font-size: var(--step-0); }

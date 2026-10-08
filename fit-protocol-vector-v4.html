@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=0c22e79c">
+<link rel="stylesheet" href="assets/css/site.css?v=693ef97e">
 </head>
 <body data-site="protocol" data-page="fit-protocol-vector-v4" data-group="vectors">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -78,7 +78,14 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </aside>
   <main class="main" id="content" tabindex="-1">
 <div class="vec-page vec--v4">
-  <section class="vec-key" aria-labelledby="vec-key-title">
+<header class="page-hero" id="top">
+    <img class="page-hero__img" src="assets/web/img-featured-fuel-check-960.webp" alt="" width="960" height="540" srcset="assets/web/img-featured-fuel-check-480.webp 480w, assets/web/img-featured-fuel-check-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
+    <div class="page-hero__text">
+      <span class="eyebrow">FIT PROTOCOL · V2.0</span>
+      <h1>V4 RELOAD</h1>
+    </div>
+  </header>
+<section class="vec-key" aria-labelledby="vec-key-title">
     <h2 class="vec-key__title" id="vec-key-title"><span aria-hidden="true">🔄</span> V4 RELOAD — Post-Training</h2>
     <ul class="stats vec-key__stats">
       <li class="stat"><span class="stat__value">300mg</span><span class="stat__label">R-ALA</span></li>
@@ -86,22 +93,12 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
       <li class="stat"><span class="stat__value">7g</span><span class="stat__label">Beetroot</span></li>
       <li class="stat"><span class="stat__value">750mg</span><span class="stat__label">Creatine HCl</span></li>
     </ul>
-    <ul class="vec-facts">
-      <li><strong class="vec-facts__label">R-ALA (300mg):</strong> <span>R-alpha lipoic acid — taken with water BEFORE the shake. Antioxidant and glucose disposal agent. Swallowed whole, not in shaker.</span></li>
-      <li><strong class="vec-facts__label">Recovery Protein (36g half-serving):</strong> <span>BioSteel — 12g protein, 19g carbs, 125 kcal. The 2:1 carb-to-protein ratio drives glycogen replenishment post-training.</span></li>
-      <li><strong class="vec-facts__label">Beetroot (7g):</strong> <span>Natural nitrate source for nitric oxide. Extends the pump post-workout and supports blood flow for nutrient delivery.</span></li>
-      <li><strong class="vec-facts__label">Creatine HCl (750mg):</strong> <span>Dose 1 of 2 (second dose in V10). HCl form — no loading, no bloating. Daily saturation across V4 + V10.</span></li>
-    </ul>
-    <aside class="callout callout--note vec-key__note"><p><em>After training, 11:00. The anabolic window stack — fast carbs + protein + creatine for recovery.</em></p></aside>
+    
+    
   </section>
+  
 
-  <header class="page-hero" id="top">
-    <img class="page-hero__img" src="assets/web/img-featured-fuel-check-960.webp" alt="" width="960" height="540" srcset="assets/web/img-featured-fuel-check-480.webp 480w, assets/web/img-featured-fuel-check-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
-    <div class="page-hero__text">
-      <span class="eyebrow">FIT PROTOCOL · V2.0</span>
-      <h1>V4 RELOAD</h1>
-    </div>
-  </header>
+  
 
   <section class="vec-sheet" id="vector-v4" aria-labelledby="vector-v4-title">
     <figure class="vec-sheet__art">
@@ -154,6 +151,13 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     <p class="vec-record__when">After training</p>
     <p>BioSteel Recovery Protein Plus: 1 scoop / 36 g, half the listed full serving. Rootalive beetroot 7 g. Proline Nutrition creatine HCl 750 mg. Kirkland Himalayan pink salt: 1/16 tsp. Room-temperature water: 350–450 mL. AOR R-lipoic acid: one whole 300 mg capsule, separate before the drink.</p>
   </section>
+
+<section class="vec-more" aria-label="Recorded details"><ul class="vec-facts">
+      <li><strong class="vec-facts__label">R-ALA (300mg):</strong> <span>R-alpha lipoic acid — taken with water BEFORE the shake. Antioxidant and glucose disposal agent. Swallowed whole, not in shaker.</span></li>
+      <li><strong class="vec-facts__label">Recovery Protein (36g half-serving):</strong> <span>BioSteel — 12g protein, 19g carbs, 125 kcal. The 2:1 carb-to-protein ratio drives glycogen replenishment post-training.</span></li>
+      <li><strong class="vec-facts__label">Beetroot (7g):</strong> <span>Natural nitrate source for nitric oxide. Extends the pump post-workout and supports blood flow for nutrient delivery.</span></li>
+      <li><strong class="vec-facts__label">Creatine HCl (750mg):</strong> <span>Dose 1 of 2 (second dose in V10). HCl form — no loading, no bloating. Daily saturation across V4 + V10.</span></li>
+    </ul><aside class="callout callout--note vec-key__note"><p><em>After training, 11:00. The anabolic window stack — fast carbs + protein + creatine for recovery.</em></p></aside></section>
 </div>
 
     <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-vector-v2.html"><span class="pager__dir">← Previous</span><span class="pager__label">V2 REFUEL</span></a><a class="pager__next" rel="next" href="fit-protocol-vector-v5.html"><span class="pager__dir">Next →</span><span class="pager__label">V5 TRANSPORT</span></a>
@@ -189,7 +193,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   <a class="fab fab--back" id="fabBack" href="fit-protocol.html" aria-label="Go back" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
   <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
   <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
-    <p class="fab-panel__title">Links</p>
+    <div class="fab-panel__head"><p class="fab-panel__title">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <ul class="fab-panel__list">
       <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
       <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v5H19M9 12h7M9 16h7"/></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small>project100.fit</small></span></a></li>
@@ -287,6 +291,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 
-<script src="assets/js/site.js?v=80b76892" defer></script>
+<script src="assets/js/site.js?v=9a24d650" defer></script>
 </body>
 </html>

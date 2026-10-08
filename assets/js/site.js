@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-07 update 6: @ links panel, looping auto-scroll carousels, count-up numbers). */
+/* PROJECT 100 – site script (2026-10-08 update 7: @ links panel, looping auto-scroll carousels, count-up numbers). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */
@@ -312,28 +312,25 @@
     if (isOpen() && !panel.contains(e.target) && !btn.contains(e.target)) close();
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) close(true); });
-  panel.addEventListener('click', function (e) { if (e.target.closest('a')) setTimeout(function () { close(); }, 60); });
+  panel.addEventListener('click', function (e) {
+    if (e.target.closest('[data-pop-close]')) { close(true); return; }
+    if (e.target.closest('a')) setTimeout(function () { close(); }, 60);
+  });
   /* opening the site menu or scrolling a long way closes the panel so it never sits over content */
   var menu = P.$('#menuBtn'); if (menu) menu.addEventListener('click', function () { close(); });
 })();
 
 /* ===== 62-carousel.js ===== */
 /* Looping, auto-scrolling carousels ([data-carousel]). Structure: .carousel > .carousel__head + .carousel__stage > .carousel__track > .carousel__item.
-   - drifts slowly on its own so it is obvious there is more to see; pauses on hover / touch / focus / drag and via a Pause button
-   - loops in both directions (the row is cloned only when it really overflows); prev / next buttons, drag, wheel and a position bar
-   - respects "reduce motion": no automatic movement unless the visitor presses Play. Without JS it stays a normal scroll-snap strip. */
+   - drifts slowly on its own so it is obvious there is more to see. A touch, a drag or a tap pauses it for a moment and it then
+     carries on by itself; hovering with a mouse pauses it while the pointer is over the row; the round Pause button stops it for good.
+   - loops in both directions (the row is cloned only when it really overflows); drag, wheel, arrow keys and a thick position bar.
+   - "reduce motion": no automatic movement unless the visitor presses Play. Without JS it is a normal scroll-snap strip. */
 (function () {
   'use strict';
-  var P = window.P100, SPEED = 30;             /* px per second */
-  var ICON = { prev: 'M15 18l-6-6 6-6', next: 'M9 6l6 6-6 6' };
+  var P = window.P100, SPEED = 34, RESUME = 2200;          /* px per second; ms of calm before it drifts again */
   var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-  function svgBtn(dir, label) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.className = 'carousel__btn carousel__btn--' + dir; b.setAttribute('aria-label', label);
-    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + ICON[dir] + '"/></svg>';
-    return b;
-  }
   function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
 
   function init(root) {
@@ -343,16 +340,15 @@
     root.dataset.ready = '1';
     if (items.length < 2) { root.classList.add('is-single'); return; }
 
-    var prev = svgBtn('prev', 'Previous'), next = svgBtn('next', 'Next');
-    var bar = document.createElement('div'); bar.className = 'carousel__bar'; bar.innerHTML = '<span class="carousel__thumb"></span>';
+    var bar = document.createElement('div'); bar.className = 'carousel__bar'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span class="carousel__thumb"></span>';
     var thumb = bar.firstChild;
     var pp = document.createElement('button'); pp.type = 'button'; pp.className = 'carousel__pp';
-    stage.appendChild(prev); stage.appendChild(next); stage.appendChild(bar);
+    stage.appendChild(bar);
     if (head) head.appendChild(pp);
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
-    var active = false, setW = 0, base = 0, lastW = -1, pos = null, last = 0, hold = 0, inView = true;
-    var hover = false, touching = false, focused = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
+    var active = false, setW = 0, base = 0, lastW = -1, pos = null, last = 0, hold = 0, inView = true, lastAuto = -1;
+    var mouseOver = false, touching = false, keyFocus = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
 
     function teardown() {
       P.$$('[data-clone]', track).forEach(function (n) { n.remove(); });
@@ -363,15 +359,15 @@
       P.$$('[id]', clone).forEach(function (n) { n.removeAttribute('id'); });
       P.$$('a,button,input,select,textarea,[tabindex]', clone).forEach(function (n) { n.setAttribute('tabindex', '-1'); });
     }
+    function gapPx() { var g = getComputedStyle(track); return parseFloat(g.columnGap) || parseFloat(g.gap) || 0; }
     function build() {
       var w = track.clientWidth; lastW = w;
       teardown();
-      if (w < 40) return;                                   /* hidden (filtered out) – measure later */
+      if (w < 40) return;                                   /* hidden (filtered out) – measure again when it shows */
       var first = items[0], lastIt = items[items.length - 1];
-      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gap;
-      if (natural <= w + 4) { pp.hidden = true; prev.hidden = next.hidden = bar.hidden = true; return; }   /* everything already fits */
-      pp.hidden = false; prev.hidden = next.hidden = bar.hidden = false;
+      var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gapPx();
+      if (natural <= w + 4) { pp.hidden = true; bar.hidden = true; return; }        /* everything already fits */
+      pp.hidden = false; bar.hidden = false;
       var n = Math.min(4, Math.max(1, Math.ceil(w * 1.5 / natural)));
       var before = document.createDocumentFragment(), after = document.createDocumentFragment(), i, k, c;
       for (k = 0; k < n; k++) {
@@ -380,10 +376,10 @@
       }
       track.insertBefore(before, items[0]); track.appendChild(after);
       root.classList.add('is-loop'); active = true;
-      var firstClone = P.$$('[data-clone]', track).filter(function (el) { return el.previousElementSibling === lastIt || (el.previousElementSibling && el.previousElementSibling === items[items.length - 1]); })[0];
+      var firstClone = lastIt.nextElementSibling;
       setW = firstClone ? firstClone.offsetLeft - items[0].offsetLeft : natural;
       base = items[0].offsetLeft;
-      track.scrollLeft = base; pos = null; sync();
+      track.scrollLeft = base; lastAuto = base; pos = null; sync();
     }
     function wrap() {
       if (!active || !setW) return;
@@ -391,14 +387,15 @@
       if (x < base - setW * 0.5 || x >= base + setW * 1.5) { track.scrollLeft = base + (((x - base) % setW) + setW) % setW; pos = null; }
       else if (x < base) { track.scrollLeft = x + setW; pos = null; }
       else if (x >= base + setW) { track.scrollLeft = x - setW; pos = null; }
+      lastAuto = track.scrollLeft;
     }
     function sync() {
       if (!active || !setW) return;
       var f = ((((track.scrollLeft - base) % setW) + setW) % setW) / setW;
-      var w = Math.max(.1, Math.min(1, track.clientWidth / setW));
+      var w = Math.max(.12, Math.min(1, track.clientWidth / setW));
       thumb.style.width = (w * 100) + '%'; thumb.style.left = (Math.min(f, 1 - w) * 100) + '%';
     }
-    function playing() { return active && !userPaused && inView && !hover && !touching && !focused && !document.hidden && now() > hold; }
+    function playing() { return active && !userPaused && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
       pp.innerHTML = userPaused ? PLAY : PAUSE;
       pp.setAttribute('aria-label', userPaused ? 'Start auto-scroll' : 'Pause auto-scroll');
@@ -411,36 +408,39 @@
       if (pos === null) pos = track.scrollLeft;
       pos += SPEED * dt / 1000;
       if (pos >= base + setW) pos -= setW;
-      track.scrollLeft = pos; sync();
+      track.scrollLeft = pos; lastAuto = track.scrollLeft; sync();
     }
-    function holdFor(ms) { hold = now() + ms; pos = null; }
-    function step() { var c = items[0]; return c ? c.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0) : track.clientWidth * .8; }
-    function go(dir) {
-      holdFor(7000);
-      track.scrollBy({ left: dir * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' });
-    }
+    function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
+    function step() { var c = items[0]; return c ? c.getBoundingClientRect().width + gapPx() : track.clientWidth * .8; }
+    function go(dir) { holdFor(RESUME + 2500); track.scrollBy({ left: dir * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
 
-    prev.addEventListener('click', function () { go(-1); });
-    next.addEventListener('click', function () { go(1); });
     pp.addEventListener('click', function () { userPaused = !userPaused; pos = null; label(); });
     track.addEventListener('keydown', function (e) {
       if (e.target !== track) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
     });
+    /* any scroll that did not come from the drift itself (finger, wheel, bar, keys) keeps it calm, then it resumes */
     track.addEventListener('scroll', function () {
+      if (Math.abs(track.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = track.scrollLeft; }
       sync(); clearTimeout(idle); idle = setTimeout(wrap, 140);
     }, { passive: true });
-    track.addEventListener('wheel', function () { holdFor(4000); }, { passive: true });
-    root.addEventListener('mouseenter', function () { hover = true; });
-    root.addEventListener('mouseleave', function () { hover = false; holdFor(600); });
+    track.addEventListener('wheel', function () { holdFor(RESUME + 800); }, { passive: true });
+    /* mouse only: a finger never "hovers", so touch screens cannot get stuck paused */
+    root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouseOver = true; });
+    root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouseOver = false; holdFor(500); } });
     track.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
-    function endTouch() { touching = false; holdFor(4500); }
+    function endTouch() { touching = false; holdFor(RESUME + 800); }
     track.addEventListener('touchend', endTouch, { passive: true });
     track.addEventListener('touchcancel', endTouch, { passive: true });
-    root.addEventListener('focusin', function () { focused = true; });
-    root.addEventListener('focusout', function () { focused = false; holdFor(1500); });
-    document.addEventListener('visibilitychange', function () { pos = null; });
+    window.addEventListener('blur', function () { touching = false; mouseOver = false; });
+    /* keyboard focus pauses; a tap that merely leaves focus on a card does not */
+    var usingKeys = false;
+    document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || e.key.indexOf('Arrow') === 0) usingKeys = true; }, true);
+    ['pointerdown', 'touchstart', 'mousedown'].forEach(function (ev) { document.addEventListener(ev, function () { usingKeys = false; keyFocus = false; }, true); });
+    root.addEventListener('focusin', function () { keyFocus = usingKeys; });
+    root.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
+    document.addEventListener('visibilitychange', function () { pos = null; holdFor(400); });
 
     /* mouse drag on the row */
     (function () {
@@ -458,16 +458,16 @@
       window.addEventListener('pointerup', function () {
         if (!down) return; down = false;
         setTimeout(function () { track.classList.remove('is-dragging'); }, 0);
-        if (moved) holdFor(4500);
+        holdFor(RESUME);
       });
     })();
 
-    /* position bar: click or drag to jump around the loop */
+    /* the thick bar underneath: where you are in the loop; click or drag it to jump */
     (function () {
       var drag = false;
       function jump(e) {
         var r = bar.getBoundingClientRect(), f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
-        track.scrollLeft = base + f * setW; holdFor(6000);
+        track.scrollLeft = base + f * setW; holdFor(RESUME + 1500);
       }
       bar.addEventListener('pointerdown', function (e) { drag = true; try { bar.setPointerCapture(e.pointerId); } catch (x) {} jump(e); });
       bar.addEventListener('pointermove', function (e) { if (drag) jump(e); });

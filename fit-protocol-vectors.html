@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=0c22e79c">
+<link rel="stylesheet" href="assets/css/site.css?v=693ef97e">
 </head>
 <body data-site="protocol" data-page="fit-protocol-vectors" data-group="vectors">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -78,7 +78,14 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </aside>
   <main class="main" id="content" tabindex="-1">
 <div class="vec-page vec--all">
-  <section class="vec-key" aria-labelledby="vec-key-title">
+<header class="page-hero" id="top">
+    <img class="page-hero__img" src="assets/web/img-featured-fuel-check-960.webp" alt="" width="960" height="540" srcset="assets/web/img-featured-fuel-check-480.webp 480w, assets/web/img-featured-fuel-check-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
+    <div class="page-hero__text">
+      <span class="eyebrow">FIT PROTOCOL · V2.0</span>
+      <h1>Liquid Intake</h1>
+    </div>
+  </header>
+<section class="vec-key" aria-labelledby="vec-key-title">
     <h2 class="vec-key__title" id="vec-key-title"><span aria-hidden="true">🧬</span> The Vector System — 7 Daily Protocols</h2>
     <ul class="stats vec-key__stats">
       <li class="stat"><span class="stat__value">7</span><span class="stat__label">Vectors</span></li>
@@ -86,33 +93,28 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
       <li class="stat"><span class="stat__value">06:00</span><span class="stat__label">First Dose</span></li>
       <li class="stat"><span class="stat__value">18:30</span><span class="stat__label">Last Dose</span></li>
     </ul>
-    <ul class="vec-facts">
-      <li><strong class="vec-facts__label">V1 Ignition (06:00):</strong> <span>Morning adrenergic drive — Igniter Xtreme + EAAs + PeakO2. The launch sequence.</span></li>
-      <li><strong class="vec-facts__label">V2 Refuel (09:30):</strong> <span>Intra-workout — BCAAs + electrolytes + dates. Fuel during the session.</span></li>
-      <li><strong class="vec-facts__label">V3 Recovery (04:00):</strong> <span>Morning priming — beef protein + collagen + maca. Actually taken before V1 (04:00).</span></li>
-      <li><strong class="vec-facts__label">V4 Reload (11:00):</strong> <span>Post-training — R-ALA + recovery protein + creatine. The anabolic window.</span></li>
-      <li><strong class="vec-facts__label">V5 Transport:</strong> <span>Nutrient delivery vector (see individual page).</span></li>
-      <li><strong class="vec-facts__label">V6 Pump (Evening):</strong> <span>Stim-free — Pump Xtreme + creatine + betaine. Dormant since May 2026 but stays in canon.</span></li>
-      <li><strong class="vec-facts__label">V10 Shutdown (18:30):</strong> <span>Evening anchor — glutamine + glycine + collagen PM + hibiscus. Sleep preparation.</span></li>
-    </ul>
-    <aside class="callout callout--note vec-key__note"><p><em>Each vector has its own page with full ingredient breakdowns. State A: V3,V1,V2,V4,V10. State B: V3,V5,V10. State C: V3,V6,V2,V4,V10.</em></p></aside>
+    
+    
   </section>
+  
 
-  <header class="page-hero" id="top">
-    <img class="page-hero__img" src="assets/web/img-featured-fuel-check-960.webp" alt="" width="960" height="540" srcset="assets/web/img-featured-fuel-check-480.webp 480w, assets/web/img-featured-fuel-check-960.webp 960w" sizes="100vw" decoding="async" fetchpriority="high">
-    <div class="page-hero__text">
-      <span class="eyebrow">FIT PROTOCOL · V2.0</span>
-      <h1>Liquid Intake</h1>
-    </div>
-  </header>
+  
 
-  <aside class="callout callout--note vec-rules" id="metrics-summary">
-    <span class="callout__title">Branch rules at a glance</span>
-    <p>V1: morning training. V6: evening training. At most one per calendar day; both are inactive on rest days.</p>
-    <p>V4 uses BioSteel Recovery Protein Plus, one 36 g scoop / half-serving. V2 and V5 use RapiDrem electrolytes.</p>
-  </aside>
+  
 
-  <section class="vec-files" aria-labelledby="vec-files-title">
+  <section class="carousel carousel--portrait" id="imgModal" data-carousel data-count="7" aria-labelledby="imgModalTitle">
+    <header class="carousel__head" id="imgCarFullview"><h2 class="carousel__title" id="imgModalTitle">Vector gallery</h2><span class="carousel__count" id="imgCarDots">7 posters · tap to enlarge</span></header>
+    <div class="carousel__stage" id="imgCarDownload"><ul class="carousel__track" id="imgCarTrack" data-gallery>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v1.png" aria-label="V1 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v1-480.webp 480w, assets/web/media-vector-artwork-portraits-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v2.png" aria-label="V2 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v2-480.webp 480w, assets/web/media-vector-artwork-portraits-v2-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v3.png" aria-label="V3 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v3-480.webp 480w, assets/web/media-vector-artwork-portraits-v3-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v4.png" aria-label="V4 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v4-480.webp 480w, assets/web/media-vector-artwork-portraits-v4-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v5.png" aria-label="V5 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v5-480.webp 480w, assets/web/media-vector-artwork-portraits-v5-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v6.png" aria-label="V6 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v6-480.webp 480w, assets/web/media-vector-artwork-portraits-v6-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v10.png" aria-label="V10 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v10-480.webp 480w, assets/web/media-vector-artwork-portraits-v10-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
+      </ul></div>
+  </section>
+<section class="vec-files" aria-labelledby="vec-files-title">
     <h2 class="visually-hidden" id="vec-files-title">Vector files</h2>
     <div class="vec-files__list" data-gallery data-fold-group>
 <details class="fold vec--v3" id="vector-v3" data-fold>
@@ -403,18 +405,21 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </div>
   </section>
 
-  <section class="carousel carousel--portrait" id="imgModal" data-carousel data-count="7" aria-labelledby="imgModalTitle">
-    <header class="carousel__head" id="imgCarFullview"><h2 class="carousel__title" id="imgModalTitle">Vector gallery</h2><span class="carousel__count" id="imgCarDots">7 posters · tap to enlarge</span></header>
-    <div class="carousel__stage" id="imgCarDownload"><ul class="carousel__track" id="imgCarTrack" data-gallery>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v1.png" aria-label="V1 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v1-941.webp" alt="V1 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v1-480.webp 480w, assets/web/media-vector-artwork-portraits-v1-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v2.png" aria-label="V2 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v2-941.webp" alt="V2 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v2-480.webp 480w, assets/web/media-vector-artwork-portraits-v2-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v3.png" aria-label="V3 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v3-941.webp" alt="V3 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v3-480.webp 480w, assets/web/media-vector-artwork-portraits-v3-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v4.png" aria-label="V4 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v4-941.webp" alt="V4 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v4-480.webp 480w, assets/web/media-vector-artwork-portraits-v4-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v5.png" aria-label="V5 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v5-941.webp" alt="V5 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v5-480.webp 480w, assets/web/media-vector-artwork-portraits-v5-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v6.png" aria-label="V6 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v6-941.webp" alt="V6 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v6-480.webp 480w, assets/web/media-vector-artwork-portraits-v6-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-        <li class="carousel__item"><button type="button" data-full="assets/media/vector-artwork/portraits/v10.png" aria-label="V10 portrait, full view"><img src="assets/web/media-vector-artwork-portraits-v10-941.webp" alt="V10 portrait with its recorded formula" width="941" height="1672" loading="lazy" decoding="async" srcset="assets/web/media-vector-artwork-portraits-v10-480.webp 480w, assets/web/media-vector-artwork-portraits-v10-941.webp 941w" sizes="(min-width: 1280px) 60rem, 100vw"></button></li>
-      </ul></div>
-  </section>
+  
+
+<section class="vec-more" aria-label="Recorded details"><aside class="callout callout--note vec-rules" id="metrics-summary">
+    <span class="callout__title">Branch rules at a glance</span>
+    <p>V1: morning training. V6: evening training. At most one per calendar day; both are inactive on rest days.</p>
+    <p>V4 uses BioSteel Recovery Protein Plus, one 36 g scoop / half-serving. V2 and V5 use RapiDrem electrolytes.</p>
+  </aside><ul class="vec-facts">
+      <li><strong class="vec-facts__label">V1 Ignition (06:00):</strong> <span>Morning adrenergic drive — Igniter Xtreme + EAAs + PeakO2. The launch sequence.</span></li>
+      <li><strong class="vec-facts__label">V2 Refuel (09:30):</strong> <span>Intra-workout — BCAAs + electrolytes + dates. Fuel during the session.</span></li>
+      <li><strong class="vec-facts__label">V3 Recovery (04:00):</strong> <span>Morning priming — beef protein + collagen + maca. Actually taken before V1 (04:00).</span></li>
+      <li><strong class="vec-facts__label">V4 Reload (11:00):</strong> <span>Post-training — R-ALA + recovery protein + creatine. The anabolic window.</span></li>
+      <li><strong class="vec-facts__label">V5 Transport:</strong> <span>Nutrient delivery vector (see individual page).</span></li>
+      <li><strong class="vec-facts__label">V6 Pump (Evening):</strong> <span>Stim-free — Pump Xtreme + creatine + betaine. Dormant since May 2026 but stays in canon.</span></li>
+      <li><strong class="vec-facts__label">V10 Shutdown (18:30):</strong> <span>Evening anchor — glutamine + glycine + collagen PM + hibiscus. Sleep preparation.</span></li>
+    </ul><aside class="callout callout--note vec-key__note"><p><em>Each vector has its own page with full ingredient breakdowns. State A: V3,V1,V2,V4,V10. State B: V3,V5,V10. State C: V3,V6,V2,V4,V10.</em></p></aside></section>
 </div>
 
     <nav class="pager" aria-label="Previous and next page"><a class="pager__prev" rel="prev" href="fit-protocol-checklists.html"><span class="pager__dir">← Previous</span><span class="pager__label">Checklists</span></a><a class="pager__next" rel="next" href="fit-protocol-vector-v3.html"><span class="pager__dir">Next →</span><span class="pager__label">V3 RECOVERY</span></a>
@@ -450,7 +455,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   <a class="fab fab--back" id="fabBack" href="fit-protocol.html" aria-label="Go back" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></a>
   <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
   <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
-    <p class="fab-panel__title">Links</p>
+    <div class="fab-panel__head"><p class="fab-panel__title">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <ul class="fab-panel__list">
       <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small>project100@gmail.com</small></span></a></li>
       <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v5H19M9 12h7M9 16h7"/></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small>project100.fit</small></span></a></li>
@@ -548,6 +553,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </dialog>
 
-<script src="assets/js/site.js?v=80b76892" defer></script>
+<script src="assets/js/site.js?v=9a24d650" defer></script>
 </body>
 </html>
