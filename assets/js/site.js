@@ -358,7 +358,7 @@
 
 /* ===== 58-marquee.js ===== */
 /* Footer "Explore" and "Elsewhere" link rows drift sideways by themselves, forever (the row is cloned so it has no end).
-   A finger, the mouse or keyboard focus pauses it; ~2 s after you let go it carries on. Reduced motion: a plain swipe row. */
+   A finger, the mouse or keyboard focus pauses it; ~2 s after you let go it carries on. */
 (function () {
   'use strict';
   var P = window.P100, SPEED = 30, RESUME = 2000;
@@ -378,7 +378,7 @@
     }
     function build() {
       var w = ul.clientWidth; lastW = w; teardown();
-      if (w < 40 || P.reduceMotion.matches) return;
+      if (w < 40) return;                                            /* runs even with "reduce motion": it is a slow, small, pausable drift the site owner wants always on */
       var first = items[0], lastIt = items[items.length - 1];
       var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gapPx();
       if (natural <= w + 4) return;                                  /* everything fits: nothing to scroll */

@@ -608,6 +608,9 @@ input[type="search"], input[type="text"], select {
 .pager__prev:only-child { grid-column: 1; }
 @media (max-width: 639px) { .pager__next { grid-column: 1; text-align: right; } }
 
+/* on full-width (flush) pages the previous/next boxes sit in the same column as the menu */
+.layout--flush .pager { width: min(100% - 2 * var(--gutter), var(--content-w)); margin-inline: auto; }
+
 /* ---- footer ---------------------------------------------------------- */
 .site-foot {
   margin-top: auto;
@@ -1417,11 +1420,12 @@ input[type="search"], input[type="text"], select {
 .layout--flush .home-cta { margin-block: 0; }
 
 /* ---- FAQ -------------------------------------------------------------- */
-.home-faq__list { max-width: 48rem; }
+.home-faq__list { max-width: none; }
+@media (min-width: 52rem) { .home-faq__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3) var(--s-4); align-items: start; } .home-faq__list .acc { margin: 0; } }
 .home-faq .acc { background: var(--surface); }
 
 /* ---- biometric record card ------------------------------------------- */
-.home-record { max-width: 46rem; gap: 0; }
+.home-record { max-width: none; gap: 0; }
 .home-record p:last-of-type { margin-bottom: var(--s-4); }
 .home-record .btn { align-self: flex-start; }
 
