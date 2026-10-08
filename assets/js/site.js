@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-08 update 12: page-link rows and chapter cards open a preview pop-up). */
+/* PROJECT 100 – site script (2026-10-08 update 13: selector rows drift + fade + position bar; video pop-up fallback link). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */
@@ -289,11 +289,17 @@
     dlg.addEventListener('close', function () { document.documentElement.classList.remove('no-scroll'); if (opener) opener.focus(); img.removeAttribute('src'); });
   }
   function srcOf(el) { return el.getAttribute('data-full') || (el.querySelector('img') || el).currentSrc || el.src; }
+  /* what the viewer shows: the biggest web version from the card's own srcset (fast on phones); the hi-res original stays behind Download / Full size */
+  function viewOf(el) {
+    var im = el.matches('img') ? el : el.querySelector('img'), ss = im && im.getAttribute('srcset'), best = '', w = 0;
+    if (ss) ss.split(',').forEach(function (c) { var q = c.trim().split(/\s+/), n = parseInt(q[1], 10) || 0; if (n > w && n <= 1700) { w = n; best = q[0]; } });
+    return best || srcOf(el);
+  }
   function labelOf(el) { var i = el.matches('img') ? el : el.querySelector('img'); return el.getAttribute('aria-label') || (i && i.alt) || ''; }
   function show(i) {
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
-    img.src = src; img.alt = labelOf(el); cap.textContent = labelOf(el);
+    img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
     dl.href = src; dl.setAttribute('download', src.split('/').pop().split('?')[0]); full.href = src;
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
@@ -322,7 +328,7 @@
 
   /* Click-to-play opens a bigger pop-up player (native <dialog>, same look as the image viewer). Nothing from YouTube loads until a card is
      tapped, the player is removed again on close, and the rows behind it stop drifting while it is open. Prev / next step through the row. */
-  var vdlg, vbox, vtitle, vlink, vset = [], vidx = 0, vopener;
+  var vdlg, vbox, vtitle, vlink, valt, vset = [], vidx = 0, vopener;
   function vbuild() {
     if (vdlg) return;
     vdlg = document.createElement('dialog');
@@ -333,9 +339,10 @@
       '<button type="button" class="lightbox__btn" data-vp="next" aria-label="Next video">›</button>' +
       '<a class="lightbox__btn" data-vp="yt" target="_blank" rel="noopener" aria-label="Open on YouTube">YouTube ↗</a>' +
       '<button type="button" class="lightbox__btn" data-vp="close" aria-label="Close video">×</button></div>' +
-      '<div class="vplayer"><div class="vplayer__frame"></div></div>';
+      '<div class="vplayer"><div class="vplayer__frame"></div>' +
+      '<a class="vplayer__alt" data-vp="alt" target="_blank" rel="noopener">Not playing? Watch it on YouTube \u2197</a></div>';
     document.body.appendChild(vdlg);
-    vbox = vdlg.querySelector('.vplayer__frame'); vtitle = vdlg.querySelector('.lightbox__title'); vlink = vdlg.querySelector('[data-vp="yt"]');
+    vbox = vdlg.querySelector('.vplayer__frame'); vtitle = vdlg.querySelector('.lightbox__title'); vlink = vdlg.querySelector('[data-vp="yt"]'); valt = vdlg.querySelector('[data-vp="alt"]');
     vdlg.addEventListener('click', function (e) {
       var b = e.target.closest('[data-vp]'), k = b && b.dataset.vp;
       if (k === 'close' || e.target === vdlg) vdlg.close();
@@ -358,13 +365,14 @@
     var b = vset[vidx], id = b.dataset.yt;
     vbox.innerHTML = '';
     var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0';
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0&modestbranding=1' + (/^https?:$/.test(location.protocol) ? '&origin=' + encodeURIComponent(location.origin) : '');
+    f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');            /* YouTube refuses to play when it is told nothing about the page (in-app browsers) */
     f.title = vlabel(b);
     f.allow = 'autoplay; encrypted-media; picture-in-picture; web-share; fullscreen';
     f.allowFullscreen = true;
     vbox.appendChild(f);
     vtitle.textContent = vlabel(b);
-    vlink.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
+    vlink.href = valt.href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(id);
     P.$$('[data-vp="prev"],[data-vp="next"]', vdlg).forEach(function (n) { n.hidden = vset.length < 2; });
   }
   document.addEventListener('click', function (e) {
@@ -455,7 +463,7 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
-          if (!v.src) { v.src = v.dataset.src; v.load(); }
+          if (!v.src) { v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src; v.load(); }   /* phones get the small clip */
           var p = v.play(); if (p && p.catch) p.catch(function () {});
         } else { v.pause(); }
       });
@@ -783,6 +791,66 @@
   }
   P.initCarousels = function (scope) { P.$$('[data-carousel]', scope).forEach(init); };
   P.initCarousels(document);
+})();
+
+/* ===== 63-rowhint.js ===== */
+/* Selector rows (.filters = category chips, .subnav = page chips): rows wider than the screen show a fade on the side that has more,
+   a thin position bar underneath, and drift left to right and back like the carousels, so nobody misses the hidden choices.
+   A touch / tap / hover pauses it; it never runs under "reduce motion" or while a pop-up is open. */
+(function () {
+  'use strict';
+  var P = window.P100, SPEED = 30, REST = 1200, RESUME = 3200;
+  function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
+  function init(row) {
+    if (row.dataset.hint) return; row.dataset.hint = '1';
+    var bar = document.createElement('div'); bar.className = 'rowbar'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span></span>';
+    var thumb = bar.firstChild; row.parentNode.insertBefore(bar, row.nextSibling);
+    var active = false, pos = null, dir = 1, hold = now() + 1800, last = 0, lastAuto = 0, inView = true, touching = false, mouse = false, keyFocus = false, usingKeys = false, lastW = -1;
+    var still = P.reduceMotion.matches;
+    function max() { return Math.max(0, row.scrollWidth - row.clientWidth); }
+    function paint() {
+      var m = max(), x = row.scrollLeft;
+      row.style.setProperty('--fl', active && x > 4 ? '2.2rem' : '0px');
+      row.style.setProperty('--fr', active && x < m - 4 ? '2.8rem' : '0px');
+      if (!active) return;
+      var w = Math.max(.14, Math.min(1, row.clientWidth / row.scrollWidth));
+      thumb.style.width = (w * 100) + '%'; thumb.style.left = (Math.min(1, x / (m || 1)) * (1 - w) * 100) + '%';
+    }
+    function measure() {
+      lastW = row.clientWidth; active = lastW >= 40 && max() > 4;
+      row.classList.toggle('is-drift', active); bar.hidden = !active; pos = null; lastAuto = row.scrollLeft; paint();
+    }
+    function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
+    function playing() { return active && !still && inView && !touching && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
+    function tick(ts) {
+      requestAnimationFrame(tick);
+      var dt = Math.min(64, ts - last); last = ts;
+      if (!playing()) { pos = null; return; }
+      var m = max();
+      if (pos === null) { pos = row.scrollLeft; if (pos >= m - 1) dir = -1; else if (pos <= 1) dir = 1; }
+      pos += dir * SPEED * dt / 1000;
+      if (pos >= m) { pos = m; dir = -1; hold = now() + REST; } else if (pos <= 0) { pos = 0; dir = 1; hold = now() + REST; }
+      row.scrollLeft = pos; lastAuto = row.scrollLeft; paint();
+    }
+    row.addEventListener('scroll', function () { if (Math.abs(row.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = row.scrollLeft; } paint(); }, { passive: true });
+    row.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
+    function endTouch() { touching = false; holdFor(RESUME); }
+    row.addEventListener('touchend', endTouch, { passive: true }); row.addEventListener('touchcancel', endTouch, { passive: true });
+    row.addEventListener('wheel', function () { holdFor(RESUME); }, { passive: true });
+    row.addEventListener('click', function () { holdFor(RESUME + 2500); });
+    row.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouse = true; });
+    row.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouse = false; holdFor(500); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || e.key.indexOf('Arrow') === 0) usingKeys = true; }, true);
+    ['pointerdown', 'touchstart', 'mousedown'].forEach(function (ev) { document.addEventListener(ev, function () { usingKeys = false; keyFocus = false; }, true); });
+    row.addEventListener('focusin', function () { keyFocus = usingKeys; }); row.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .2 }).observe(row);
+    function remeasure() { if (row.clientWidth !== lastW) measure(); }
+    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(row); else window.addEventListener('resize', remeasure);
+    window.addEventListener('load', measure);
+    measure(); requestAnimationFrame(function (t) { last = t; tick(t); });
+  }
+  P.initRowHints = function (scope) { P.$$('.filters, .subnav', scope).forEach(init); };
+  P.initRowHints(document);
 })();
 
 /* ===== 65-countup.js ===== */

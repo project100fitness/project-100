@@ -564,20 +564,6 @@ input[type="search"], input[type="text"], select {
 }
 .subnav::-webkit-scrollbar { display: none; }
 .subnav li { margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
-.subnav a {
-  display: block;
-  padding: .45rem .85rem;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--r-2);
-  background: var(--surface);
-  color: var(--text-2);
-  font-size: var(--step--1);
-  font-weight: 650;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.subnav a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-.subnav a[aria-current="page"], .subnav a.is-active { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); }
 .layout--flush > .subnav { width: min(100% - 2 * var(--gutter), var(--content-w)); margin: var(--s-5) auto 0; }
 
 /* ---- pager (previous / next page) ------------------------------------ */
@@ -919,15 +905,47 @@ input[type="search"], input[type="text"], select {
 /* filter chips (buttons) */
 .filters { display: flex; flex-wrap: nowrap; gap: var(--s-2); margin: 0 0 var(--s-4); padding-bottom: .35rem; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity; }
 .filters::-webkit-scrollbar { display: none; }
-.filter {
-  flex: none; white-space: nowrap; scroll-snap-align: start;
-  min-height: 2.5rem; padding: 0 .95rem;
-  border: 1px solid var(--line-strong); border-radius: var(--r-2);
+
+/* ---- selector chips (.filter, .subnav a): a tab with a coloured corner flag and an underline that fills when it is the chosen one.
+   The flag colour cycles orange / teal / amber along the row, so the row reads as a set of different choices. ---- */
+.filters, .subnav { --fl: 0px; --fr: 0px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fl), #000 calc(100% - var(--fr)), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 var(--fl), #000 calc(100% - var(--fr)), transparent); }
+.filters.is-drift, .subnav.is-drift { scroll-snap-type: none; margin-bottom: .45rem; }
+.filter, .subnav a {
+  --chip: var(--brand-orange);
+  position: relative; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--line-strong); border-radius: 3px 14px 3px 14px;
   background: var(--surface); color: var(--text-2);
-  font-size: var(--step--1); font-weight: 650;
+  font-size: var(--step--1); font-weight: 700; letter-spacing: .005em; white-space: nowrap;
+  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
 }
-.filter:hover { border-color: var(--accent); color: var(--accent); }
-.filter[aria-pressed="true"] { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--accent-ink); }
+.filters > .filter:nth-child(3n+2), .subnav > li:nth-child(3n+2) > a { --chip: var(--accent-2); }
+.filters > .filter:nth-child(3n+3), .subnav > li:nth-child(3n+3) > a { --chip: var(--amber); }
+.filter::before, .subnav a::before {                                  /* corner flag */
+  content: ""; position: absolute; z-index: -1; top: 0; left: 0;
+  border-style: solid; border-width: .72rem .72rem 0 0; border-color: var(--chip) transparent transparent transparent;
+  transition: border-width .2s var(--ease);
+}
+.filter::after, .subnav a::after {                                    /* underline */
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 3px; background: var(--chip);
+  transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease);
+}
+.filter { flex: none; scroll-snap-align: start; min-height: 2.6rem; padding: 0 1.05rem 0 1.4rem; }
+.subnav a { display: block; padding: .6rem 1.05rem .6rem 1.4rem; }
+.filter:hover, .subnav a:hover { border-color: var(--chip); color: var(--text); text-decoration: none; }
+.filter:hover::after, .subnav a:hover::after { transform: scaleX(.45); }
+.filter[aria-pressed="true"], .subnav a[aria-current="page"], .subnav a.is-active {
+  background: color-mix(in srgb, var(--chip) 15%, var(--surface)); border-color: var(--chip); color: var(--text); font-weight: 800;
+}
+.filter[aria-pressed="true"]::before, .subnav a[aria-current="page"]::before, .subnav a.is-active::before { border-width: 1.05rem 1.05rem 0 0; }
+.filter[aria-pressed="true"]::after, .subnav a[aria-current="page"]::after, .subnav a.is-active::after { transform: scaleX(1); }
+.filter:focus-visible, .subnav a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* thin position bar under a scrolling selector row */
+.rowbar { position: relative; height: 4px; margin: 0 0 var(--s-4); border-radius: 99px; background: var(--surface-3); overflow: hidden; }
+.rowbar[hidden] { display: none; }
+.rowbar span { position: absolute; top: 0; bottom: 0; border-radius: 99px; background: linear-gradient(90deg, var(--brand-orange), var(--amber)); }
 
 /* ---- cards ----------------------------------------------------------- */
 .card {
@@ -2480,8 +2498,10 @@ h2.vec-record__title { font-size: var(--step--1); }
 .pv__go { margin-top: var(--s-2); min-height: 3rem; padding: 0 1.4rem; background: var(--accent-strong); border-color: var(--accent-strong); font-size: var(--step-0); }
 .pv__go:hover { filter: brightness(1.1); }
 .pv [hidden] { display: none !important; }
-.vplayer { display: grid; place-items: center; flex: 1; min-height: 0; padding: var(--s-3); background: #000; }
+.vplayer { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-2); flex: 1; min-height: 0; padding: var(--s-3); background: #000; }
 .vplayer__frame { aspect-ratio: 9 / 16; height: min(76dvh, 44rem, calc((96vw - 2rem) * 16 / 9)); background: #000; border-radius: var(--r-2); overflow: hidden; }
+.vplayer__alt { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 var(--s-3); font-size: var(--step--1); font-weight: 750; color: var(--amber); text-decoration: underline; text-underline-offset: .2em; }
+.vplayer__alt:hover { color: #fff; }
 .vplayer__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 
 /* rows of file cards that go two deep, so six to eight pages are in view at once instead of one long line */
