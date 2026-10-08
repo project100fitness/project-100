@@ -1,4 +1,4 @@
-/* PROJECT 100 – site script (2026-10-08 update 7: @ links panel, looping auto-scroll carousels, count-up numbers). */
+/* PROJECT 100 – site script (2026-10-08 update 8: downloads bar, looping footer rows; @ links panel, looping auto-scroll carousels, count-up numbers). */
 /* ===== 00-core.js ===== */
 /* PROJECT 100 – site script. Small, dependency-free, progressive enhancement:
    every page is fully readable and navigable with JavaScript turned off. */
@@ -318,6 +318,125 @@
   });
   /* opening the site menu or scrolling a long way closes the panel so it never sits over content */
   var menu = P.$('#menuBtn'); if (menu) menu.addEventListener('click', function () { close(); });
+})();
+
+/* ===== 36-downloads.js ===== */
+/* Bottom bar "Free downloads" on every page. Tapping it (or the "Downloads" row in the @ panel) opens a pop-out with the
+   Encyclopedia and the Guidebook PDFs. The little x hides the bar for the rest of the visit. Without JS the bar is simply not shown. */
+(function () {
+  'use strict';
+  var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal');
+  if (!bar || !dlg) return;
+  var KEY = 'p100-dlbar-hidden', last = null;
+  function stored() { try { return sessionStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+  function keep() { try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* private mode */ } }
+  function show(on) {
+    bar.hidden = !on;
+    document.body.classList.toggle('has-dlbar', on);
+  }
+  function open(from) {
+    last = from || null;
+    var panel = P.$('#fabPanel'), at = P.$('#fabAt');
+    if (panel && !panel.hidden) { panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
+    if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+    var close = P.$('[data-dl-close]', dlg); if (close) close.focus();
+  }
+  function close() {
+    if (typeof dlg.close === 'function' && dlg.open) dlg.close(); else dlg.removeAttribute('open');
+    if (last && document.contains(last) && last.offsetParent !== null) { try { last.focus(); } catch (e) { /* ignore */ } }
+  }
+  document.addEventListener('click', function (e) {
+    var o = e.target.closest('[data-dl-open]');
+    if (o) { e.preventDefault(); open(o); return; }
+    if (e.target.closest('[data-dl-close]')) { e.preventDefault(); close(); return; }
+    if (e.target.closest('[data-dl-hide]')) { e.preventDefault(); keep(); show(false); return; }
+    if (e.target === dlg) close();                                   /* tap on the dimmed backdrop */
+    else if (dlg.open && e.target.closest('a[download]')) setTimeout(close, 400);
+  });
+  show(!stored());
+})();
+
+/* ===== 58-marquee.js ===== */
+/* Footer "Explore" and "Elsewhere" link rows drift sideways by themselves, forever (the row is cloned so it has no end).
+   A finger, the mouse or keyboard focus pauses it; ~2 s after you let go it carries on. Reduced motion: a plain swipe row. */
+(function () {
+  'use strict';
+  var P = window.P100, SPEED = 30, RESUME = 2000;
+  function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
+  function init(ul) {
+    if (ul.dataset.marquee) return;
+    var items = P.$$(':scope > li', ul);
+    if (items.length < 2) return;
+    var active = false, setW = 0, base = 0, pos = null, last = 0, hold = 0, lastAuto = -1, lastW = -1;
+    var inView = true, mouseOver = false, touching = false, keyFocus = false, usingKeys = false, idle = 0;
+
+    function gapPx() { var g = getComputedStyle(ul); return parseFloat(g.columnGap) || parseFloat(g.gap) || 0; }
+    function teardown() { P.$$(':scope > [data-clone]', ul).forEach(function (n) { n.remove(); }); ul.removeAttribute('data-marquee'); active = false; pos = null; }
+    function tame(c) {
+      c.setAttribute('data-clone', ''); c.setAttribute('aria-hidden', 'true');
+      P.$$('a,button', c).forEach(function (n) { n.setAttribute('tabindex', '-1'); });
+    }
+    function build() {
+      var w = ul.clientWidth; lastW = w; teardown();
+      if (w < 40 || P.reduceMotion.matches) return;
+      var first = items[0], lastIt = items[items.length - 1];
+      var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gapPx();
+      if (natural <= w + 4) return;                                  /* everything fits: nothing to scroll */
+      var n = Math.min(4, Math.max(1, Math.ceil(w * 1.5 / natural)));
+      var before = document.createDocumentFragment(), after = document.createDocumentFragment(), i, k, c;
+      for (k = 0; k < n; k++) {
+        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); after.appendChild(c); }
+        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); before.appendChild(c); }
+      }
+      ul.insertBefore(before, items[0]); ul.appendChild(after);
+      ul.setAttribute('data-marquee', '1'); active = true;
+      var firstClone = lastIt.nextElementSibling;
+      setW = firstClone ? firstClone.offsetLeft - items[0].offsetLeft : natural;
+      base = items[0].offsetLeft; ul.scrollLeft = base; lastAuto = base; pos = null;
+    }
+    function wrap() {
+      if (!active || !setW) return;
+      var x = ul.scrollLeft;
+      if (x < base - setW * 0.5 || x >= base + setW * 1.5) ul.scrollLeft = base + (((x - base) % setW) + setW) % setW;
+      else if (x < base) ul.scrollLeft = x + setW;
+      else if (x >= base + setW) ul.scrollLeft = x - setW;
+      lastAuto = ul.scrollLeft; pos = null;
+    }
+    function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
+    function playing() { return active && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
+    function tick(ts) {
+      requestAnimationFrame(tick);
+      var dt = Math.min(64, ts - last); last = ts;
+      if (!playing()) { pos = null; return; }
+      if (pos === null) pos = ul.scrollLeft;
+      pos += SPEED * dt / 1000;
+      if (pos >= base + setW) pos -= setW;
+      ul.scrollLeft = pos; lastAuto = ul.scrollLeft;
+    }
+    ul.addEventListener('scroll', function () {
+      if (Math.abs(ul.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = ul.scrollLeft; }
+      clearTimeout(idle); idle = setTimeout(wrap, 140);
+    }, { passive: true });
+    ul.addEventListener('wheel', function () { holdFor(RESUME + 800); }, { passive: true });
+    ul.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouseOver = true; });
+    ul.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouseOver = false; holdFor(500); } });
+    ul.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
+    function endTouch() { touching = false; holdFor(RESUME + 600); }
+    ul.addEventListener('touchend', endTouch, { passive: true });
+    ul.addEventListener('touchcancel', endTouch, { passive: true });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || /^Arrow/.test(e.key)) usingKeys = true; }, true);
+    ['pointerdown', 'touchstart', 'mousedown'].forEach(function (t) { document.addEventListener(t, function () { usingKeys = false; }, true); });
+    ul.addEventListener('focusin', function () { keyFocus = usingKeys; });
+    ul.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
+    document.addEventListener('visibilitychange', function () { pos = null; holdFor(400); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .1 }).observe(ul);
+    function remeasure() { if (ul.clientWidth !== lastW) build(); }
+    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(ul.parentNode); else window.addEventListener('resize', remeasure);
+    window.addEventListener('load', build);
+    build();
+    requestAnimationFrame(function (t) { last = t; tick(t); });
+  }
+  P.$$('.site-foot ul').forEach(init);
 })();
 
 /* ===== 62-carousel.js ===== */
