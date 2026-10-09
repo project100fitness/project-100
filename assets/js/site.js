@@ -325,7 +325,7 @@
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
     dlg.classList.remove('is-wide'); img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
-    dl.href = src; dl.setAttribute('download', src.split('/').pop().split('?')[0]); full.href = src;
+    var org = el.getAttribute('data-orig') || src; dl.href = org; dl.setAttribute('download', org.split('/').pop().split('?')[0]); full.href = src;   /* data-orig = hi-res original (download); data-full = web version */
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
   }
@@ -929,4 +929,81 @@
   }, { threshold: .35 });
   counters.forEach(function (c) { c.el._cu = c; c.el.textContent = c.pre + fmt(0, c.dec, c.comma) + c.suf; io.observe(c.el); });
   meters.forEach(function (m) { m.classList.add('is-armed'); io.observe(m); });
+})();
+
+/* ===== 72-recview.js ===== */
+/* Record viewer: subject tabs (vector / state / stage / gym step) + style-edition tabs. One picture is shown at a time and only the selected one is fetched;
+   the native recipe text beside it never changes with the style. Without JavaScript the edition links simply open the pictures. */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function arrowNav(list, cur, e, go) {
+    var k = e.key, n = list.length, i = list.indexOf(cur), t = -1;
+    if (k === 'ArrowRight' || k === 'ArrowDown') t = (i + 1) % n;
+    else if (k === 'ArrowLeft' || k === 'ArrowUp') t = (i - 1 + n) % n;
+    else if (k === 'Home') t = 0; else if (k === 'End') t = n - 1;
+    if (t < 0) return; e.preventDefault(); go(t, true);
+  }
+  function hydrate(panel) {
+    all('img[data-src]', panel).forEach(function (im) {
+      var ss = im.getAttribute('data-srcset'); if (ss) im.setAttribute('srcset', ss);
+      im.src = im.getAttribute('data-src'); im.removeAttribute('data-src'); im.removeAttribute('data-srcset');
+    });
+  }
+  function initPanel(panel) {
+    var eds = all('[data-rv-ed]', panel), fig = panel.querySelector('[data-rv-fig]'); if (!eds.length || !fig) return;
+    var list = panel.querySelector('[data-rv-eds]'), link = fig.querySelector('.rv-link'), im = fig.querySelector('img'), frame = fig.querySelector('.rv-frame'),
+        capt = fig.querySelector('[data-rv-capt]'), kind = fig.querySelector('[data-rv-kind]'), dl = fig.querySelector('[data-rv-dl]'), size = fig.querySelector('[data-rv-size]');
+    list.setAttribute('role', 'tablist'); all('li', list).forEach(function (li) { li.setAttribute('role', 'presentation'); });
+    fig.setAttribute('role', 'tabpanel');
+    eds.forEach(function (a, n) {
+      a.id = a.id || (panel.id + '-ed' + n); a.setAttribute('role', 'tab');
+    });
+    function pick(n, focus) {
+      var a = eds[n];
+      eds.forEach(function (x, m) { var on = m === n; x.classList.toggle('is-on', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
+      fig.setAttribute('aria-labelledby', a.id);
+      var w = +a.dataset.w, h = +a.dataset.h, wide = w > h;
+      im.removeAttribute('src'); im.setAttribute('sizes', wide ? '(min-width: 56rem) 60rem, 96vw' : '(min-width: 56rem) 26rem, min(100vw, 24rem)');
+      im.setAttribute('srcset', a.dataset.srcset); im.src = a.dataset.src; im.alt = a.dataset.alt; im.width = w; im.height = h;
+      frame.style.aspectRatio = w + ' / ' + h; panel.classList.toggle('is-wide', wide);
+      link.dataset.full = a.dataset.full; link.dataset.orig = a.dataset.orig; link.href = a.dataset.full; link.setAttribute('aria-label', 'Enlarge: ' + a.dataset.alt);
+      capt.textContent = a.dataset.cap; kind.textContent = a.dataset.kind; dl.href = a.dataset.orig; size.textContent = a.dataset.size;
+      if (!reduce) { fig.classList.remove('is-swap'); void fig.offsetWidth; fig.classList.add('is-swap'); }
+      if (focus) a.focus();
+    }
+    eds.forEach(function (a, n) {
+      a.addEventListener('click', function (e) { e.preventDefault(); pick(n, false); });
+      a.addEventListener('keydown', function (e) { arrowNav(eds, a, e, pick); });
+    });
+    var start = Math.max(0, eds.findIndex(function (a) { return a.classList.contains('is-on'); }));
+    eds.forEach(function (x, m) { var on = m === start; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
+    fig.setAttribute('aria-labelledby', eds[start].id);
+  }
+  function init(root) {
+    var tabs = all('[data-rv-tab]', root), panels = all('[data-rv-panel]', root);
+    panels.forEach(initPanel);
+    if (!tabs.length) return;
+    function pick(i, focus) {
+      tabs.forEach(function (t, n) { var on = n === i; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; t.classList.toggle('is-on', on); panels[n].hidden = !on; });
+      hydrate(panels[i]);
+      if (focus) tabs[i].focus();
+      try { tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest' }); } catch (x) {}
+    }
+    tabs.forEach(function (t, n) {
+      t.addEventListener('click', function () { pick(n, false); });
+      t.addEventListener('keydown', function (e) { arrowNav(tabs, t, e, pick); });
+    });
+    root._rvPick = pick; root._rvPanels = panels;
+  }
+  all('[data-recview]').forEach(init);
+  /* deep links: #rv-day-c opens State C, #rv-cards-v4 opens V4, and so on */
+  function fromHash() {
+    var id = (location.hash || '').slice(1); if (!/^rv-/.test(id)) return;
+    all('[data-recview]').some(function (r) {
+      var ps = r._rvPanels || []; for (var i = 0; i < ps.length; i++) if (ps[i].id === id) { r._rvPick(i, false); r.scrollIntoView({ block: 'start' }); return true; }
+    });
+  }
+  fromHash(); window.addEventListener('hashchange', fromHash);
 })();
