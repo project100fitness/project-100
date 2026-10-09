@@ -2638,3 +2638,20 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .kv { display: block; line-height: 1.45; }
 .kv + .kv { margin-top: .3rem; }
 .kv__k { font-weight: 800; color: var(--accent); }
+
+
+/* ===== update 15: illustrated boards - light on phones, richer on computers (2026-10-09) ===== */
+@media (max-width: 999.98px) { .desk-only { display: none !important; } }
+@media (min-width: 1000px) { .phone-only { display: none !important; } }
+.deskart-off .desk-only { display: none !important; }
+.carousel--art .carousel__track { align-items: flex-start; }
+.carousel--art .art-item { flex: 0 0 var(--c-w); }
+.carousel--art .art-item--w { flex-basis: min(82vw, 21rem); }
+@media (min-width: 720px) { .carousel--art .art-item--w { flex-basis: 26rem; } }
+.carousel--art .card__media { border-bottom: 1px solid var(--line); }
+.carousel--art .card__media img { object-fit: contain; }
+.carousel--art .carousel__item > .card { display: flex; flex-direction: column; height: auto; }
+.art-cap { display: block; padding: var(--s-2) var(--s-3) var(--s-3); font-size: var(--step--1); font-weight: 750; line-height: 1.25; color: var(--text); text-wrap: balance; }
+.art-note { margin: 0 0 var(--s-3); font-size: var(--step--1); line-height: 1.45; color: var(--text-2); }
+.lightbox.is-wide .lightbox__fig { justify-items: start; align-content: start; overflow: auto; }
+.lightbox.is-wide .lightbox__fig img { width: 230vw; max-width: none; height: auto; max-height: none; }

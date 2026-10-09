@@ -244,6 +244,29 @@
   P.initScrollers(document);
 })();
 
+/* ===== 64-deskart.js ===== */
+/* Phone-light / desktop-rich: pictures marked .desk-only carry their address in data-desk-src and are only fetched on screens
+   1000px wide or more (and not when Data Saver is on). On a phone they are hidden and cost zero bytes. */
+(function () {
+  'use strict';
+  var mq = window.matchMedia ? window.matchMedia('(min-width: 1000px)') : null, done = false, saver = false;
+  try { var c = navigator.connection; saver = !!(c && c.saveData); } catch (e) {}
+  if (saver) { document.documentElement.classList.add('deskart-off'); return; }
+  function run() {
+    if (done || !mq || !mq.matches) return;
+    done = true;
+    Array.prototype.forEach.call(document.querySelectorAll('img[data-desk-src]'), function (im) {
+      var ss = im.getAttribute('data-desk-srcset');
+      if (ss) im.setAttribute('srcset', ss);
+      im.src = im.getAttribute('data-desk-src');
+      im.removeAttribute('data-desk-src'); im.removeAttribute('data-desk-srcset');
+    });
+    document.documentElement.classList.add('has-deskart');
+  }
+  run();
+  if (mq) { if (mq.addEventListener) mq.addEventListener('change', run); else if (mq.addListener) mq.addListener(run); }
+})();
+
 /* ===== 70-lightbox.js ===== */
 /* Image lightbox. Any element with data-full="<big image>" opens it; elements inside the same [data-gallery]
    become a set you can step through. Uses a native <dialog>, so focus, Esc and the backdrop come for free. */
@@ -280,13 +303,15 @@
       var sx = 0, sy = 0, t0 = 0, fig = P.$('.lightbox__fig', dlg);
       fig.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { t0 = 0; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; t0 = Date.now(); }, { passive: true });
       fig.addEventListener('touchend', function (e) {
-        if (!t0 || set.length < 2 || !e.changedTouches.length) return;
+        if (!t0 || set.length < 2 || !e.changedTouches.length || dlg.classList.contains('is-wide')) return;
         var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
         if (Date.now() - t0 < 700 && Math.abs(dx) > 55 && Math.abs(dy) < Math.abs(dx) * .6) show(idx + (dx < 0 ? 1 : -1));
         t0 = 0;
       }, { passive: true });
     })();
-    dlg.addEventListener('close', function () { document.documentElement.classList.remove('no-scroll'); if (opener) opener.focus(); img.removeAttribute('src'); });
+    /* wide dense boards on a phone: show them big and let the picture be dragged around (and pinch-zoomed) instead of squeezing them to thumbnail size */
+    img.addEventListener('load', function () { var wide = img.naturalWidth / (img.naturalHeight || 1) > 1.4 && window.innerWidth < 720; dlg.classList.toggle('is-wide', wide); if (wide) { var f = img.parentNode.parentNode; f.scrollLeft = 0; f.scrollTop = 0; } });
+    dlg.addEventListener('close', function () { dlg.classList.remove('is-wide'); document.documentElement.classList.remove('no-scroll'); if (opener) opener.focus(); img.removeAttribute('src'); });
   }
   function srcOf(el) { return el.getAttribute('data-full') || (el.querySelector('img') || el).currentSrc || el.src; }
   /* what the viewer shows: the biggest web version from the card's own srcset (fast on phones); the hi-res original stays behind Download / Full size */
@@ -299,7 +324,7 @@
   function show(i) {
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
-    img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
+    dlg.classList.remove('is-wide'); img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
     dl.href = src; dl.setAttribute('download', src.split('/').pop().split('?')[0]); full.href = src;
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
@@ -310,7 +335,7 @@
     e.preventDefault();
     build();
     var g = t.closest('[data-gallery]');
-    set = g ? P.$$('[data-full]', g).filter(function (x) { return !x.closest('[data-clone]'); }) : [t];
+    set = g ? P.$$('[data-full]', g).filter(function (x) { if (x.closest('[data-clone]')) return false; var d = x.closest('.desk-only'); return !d || getComputedStyle(d).display !== 'none'; }) : [t];
     opener = t;
     var at = set.indexOf(t);
     if (at < 0) { var want = srcOf(t); set.forEach(function (x, n) { if (at < 0 && srcOf(x) === want) at = n; }); }
