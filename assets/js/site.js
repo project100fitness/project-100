@@ -948,7 +948,7 @@
   function hydrate(panel) {
     all('img[data-src]', panel).forEach(function (im) {
       var ss = im.getAttribute('data-srcset'); if (ss) im.setAttribute('srcset', ss);
-      im.src = im.getAttribute('data-src'); im.removeAttribute('data-src'); im.removeAttribute('data-srcset');
+      im.loading = 'eager'; im.src = im.getAttribute('data-src'); im.removeAttribute('data-src'); im.removeAttribute('data-srcset');
     });
   }
   function initPanel(panel) {
@@ -965,7 +965,7 @@
       eds.forEach(function (x, m) { var on = m === n; x.classList.toggle('is-on', on); x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
       fig.setAttribute('aria-labelledby', a.id);
       var w = +a.dataset.w, h = +a.dataset.h, wide = w > h;
-      im.removeAttribute('src'); im.setAttribute('sizes', wide ? '(min-width: 56rem) 60rem, 96vw' : '(min-width: 56rem) 26rem, min(100vw, 24rem)');
+      im.loading = 'eager'; im.setAttribute('sizes', wide ? '(min-width: 56rem) 60rem, 96vw' : '(min-width: 56rem) 26rem, min(100vw, 24rem)');
       im.setAttribute('srcset', a.dataset.srcset); im.src = a.dataset.src; im.alt = a.dataset.alt; im.width = w; im.height = h;
       frame.style.aspectRatio = w + ' / ' + h; panel.classList.toggle('is-wide', wide);
       link.dataset.full = a.dataset.full; link.dataset.orig = a.dataset.orig; link.href = a.dataset.full; link.setAttribute('aria-label', 'Enlarge: ' + a.dataset.alt);
