@@ -2655,3 +2655,11 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .art-note { margin: 0 0 var(--s-3); font-size: var(--step--1); line-height: 1.45; color: var(--text-2); }
 .lightbox.is-wide .lightbox__fig { justify-items: start; align-content: start; overflow: auto; }
 .lightbox.is-wide .lightbox__fig img { width: 230vw; max-width: none; height: auto; max-height: none; }
+/* update 15b: single pictures on a phone are shown bigger; lead blocks sit right under the page head */
+@media (max-width: 999.98px) {
+  .carousel--art .art-item--w { flex-basis: min(88%, 21rem); }
+  .carousel--art.art-solo .art-item--w { flex-basis: min(100%, 21rem); }
+  .carousel--art.art-solo .art-item--p { flex-basis: min(72%, 15rem); }
+}
+.carousel--art + .carousel--art { margin-top: var(--s-5); }
+.art-folder .btn { margin-top: var(--s-2); }
