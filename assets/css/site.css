@@ -2944,3 +2944,11 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
   .gear-item:not(.gear-item--wide) .card__media { min-height: 0; aspect-ratio: 4 / 3; align-self: start; }
   .gear-item:not(.gear-item--wide) .card__body { flex: 1; width: auto; }
 }
+
+/* Originals fit the available screen until the visitor chooses zoom. */
+.lightbox:not(.lightbox--video):not(.lightbox--card) { height: 96dvh; }
+.lightbox__bar { flex-shrink: 0; }
+.lightbox__fig { grid-template-rows: minmax(0, 1fr) auto; }
+.lightbox__fig img { min-height: 0; height: 100%; width: 100%; max-height: 100%; object-fit: contain; }
+.lightbox.is-wide .lightbox__fig { display: block; }
+.lightbox.is-wide .lightbox__fig img { width: max(100%, 180vw); height: auto; max-width: none; max-height: none; }
