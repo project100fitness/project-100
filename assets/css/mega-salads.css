@@ -132,3 +132,11 @@ html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{backgro
 .nutrition-salads .filters .filter[aria-pressed="true"]{background:#294d37;color:#fff;border-color:#527a60}
 .nutrition-salads .salad-estimate-key{color:var(--text-2)}
 .nutrition-salads .salad-card{color:#edf0e9}
+
+/* Dressing above the photo; arrows beside the photo, independent of nutrition. */
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{margin:.7rem .85rem;text-align:center;align-self:start;min-width:0}
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice select{max-width:100%;font-size:.95rem}
+.nutrition-salads .salad-photo-area{position:relative;align-self:start;min-width:0}
+.nutrition-salads .salad-photo-area .salad-photo{display:block;width:100%}
+.nutrition-salads .salad-photo-area .salad-dressing-navigation{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:.4rem;margin:0;pointer-events:none}
+.nutrition-salads .salad-photo-area .salad-card-arrow{pointer-events:auto;box-shadow:0 2px 8px #0008;background:#713616ee}
