@@ -28,6 +28,15 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=visitor-flow-20261010">
 <link rel="stylesheet" href="assets/css/hud.css?v=validated-folder-flow-20261010">
+<style>
+/* Compact journal: keep the photo and its controls together. */
+#journal .jr__wrap{gap:.75rem;margin-top:.75rem;padding:.75rem}
+#journal .jr__stage{max-height:55svh}
+#journal .jr__panel{gap:.25rem;padding-top:0}
+#journal .jr__date{font-size:clamp(1.7rem,4vw,2.7rem)}
+#journal .jr__ctl{margin-top:.35rem}
+@media(min-width:900px){#journal .jr__wrap{grid-template-columns:minmax(0,26rem) minmax(0,1fr);column-gap:1.25rem}}
+</style>
 </head>
 <body data-site="main" data-page="biometrics" data-group="biometrics">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -81,7 +90,6 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="jr__date" data-jr-date>19 Nov 2025</p>
 <p class="jr__place" data-jr-place>Mirror selfie · gym</p>
 <p class="jr__cap" data-jr-cap>First entry: weighted vest on.</p>
-<ul class="jr__meta"><li><b>Source</b> phone camera photo</li><li><b>Shows</b> a day in the journal, not a scan value</li><li><b>Download</b> full frame from the viewer</li></ul>
 <div class="jr__ctl"><button class="jr__btn" type="button" data-jr-prev aria-label="Previous photo">&#8249;</button><button class="jr__btn jr__btn--pp" type="button" data-jr-pp aria-pressed="true"><span data-jr-pplabel>Pause</span></button><button class="jr__btn" type="button" data-jr-next aria-label="Next photo">&#8250;</button></div>
 </div>
 <ul class="jr__strip" data-jr-strip aria-label="All journal photos, oldest to newest">
