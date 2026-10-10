@@ -1007,3 +1007,112 @@
   }
   fromHash(); window.addEventListener('hashchange', fromHash);
 })();
+
+/* ===== 73-journal.js ===== */
+/* Biometrics selfie journal: a stage that plays through dated photos (crossfade, scan-line, pointer tilt, swipe, arrow keys),
+   a bordered thumbnail strip, and a flip-through of one training session. Pictures open in the shared viewer ([data-gallery] links). */
+(function () {
+  'use strict';
+  var root = document.querySelector('[data-journal]');
+  if (!root) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var q = function (s, r) { return (r || root).querySelector(s); }, qa = function (s, r) { return [].slice.call((r || root).querySelectorAll(s)); };
+  var stage = q('[data-jr-stage]'), img = q('[data-jr-img]'), bg = q('[data-jr-bg]'), frame = q('[data-jr-frame]'), prog = q('[data-jr-prog]');
+  var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
+  var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
+  var pp = q('[data-jr-pp]'), ppl = q('[data-jr-pplabel]');
+  var DUR = 6000, i = 0, timer = 0, playing = !reduce, inView = false, holdUntil = 0, swiped = false;
+  if (!stage || !thumbs.length) return;
+  root.style.setProperty('--jr-dur', DUR + 'ms');
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function show(n, user) {
+    var len = thumbs.length; i = (n + len) % len;
+    var b = thumbs[i], d = b.dataset;
+    img.classList.remove('is-in');
+    var next = new Image();
+    var done = function () {
+      img.srcset = d.srcset; img.src = d.src; img.alt = d.alt; img.width = +d.w; img.height = +d.h;
+      bg.style.backgroundImage = "url('" + d.bg + "')";
+      void img.offsetWidth; img.classList.add('is-in');
+    };
+    next.onload = next.onerror = done;
+    next.sizes = img.sizes; next.srcset = d.srcset; next.src = d.src;
+    if (next.complete) done();
+    t.n.textContent = pad(i + 1); t.date.textContent = d.date; t.place.textContent = d.place; t.cap.textContent = d.cap; t.stamp.textContent = d.date.toUpperCase();
+    thumbs.forEach(function (x, k) { if (k === i) x.setAttribute('aria-current', 'true'); else x.removeAttribute('aria-current'); });
+    var li = b.parentNode, want = li.offsetLeft - (strip.clientWidth - li.offsetWidth) / 2;
+    try { strip.scrollTo({ left: Math.max(0, want), behavior: reduce || !user ? 'auto' : 'smooth' }); } catch (e) { strip.scrollLeft = Math.max(0, want); }
+    schedule();
+  }
+  function schedule() {
+    clearTimeout(timer); prog.classList.remove('run'); void prog.offsetWidth;
+    if (!playing || reduce) return;
+    if (inView && !document.hidden) prog.classList.add('run');
+    timer = setTimeout(tick, DUR);
+  }
+  function tick() {
+    if (!playing || !inView || document.hidden || Date.now() < holdUntil || stage.matches(':hover')) { schedule(); return; }
+    show(i + 1, false);
+  }
+  function setPlay(on) {
+    playing = on && !reduce; pp.setAttribute('aria-pressed', playing ? 'true' : 'false'); ppl.textContent = playing ? 'Pause' : 'Play'; schedule();
+  }
+  pp.addEventListener('click', function () { setPlay(!playing); });
+  q('[data-jr-prev]').addEventListener('click', function () { holdUntil = Date.now() + 9000; show(i - 1, true); });
+  q('[data-jr-next]').addEventListener('click', function () { holdUntil = Date.now() + 9000; show(i + 1, true); });
+  thumbs.forEach(function (b, k) { b.addEventListener('click', function () { holdUntil = Date.now() + 9000; show(k, true); }); });
+  document.addEventListener('visibilitychange', schedule);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }, { threshold: 0.35 }).observe(stage);
+  } else { inView = true; }
+
+  /* open the shared viewer on the matching hidden gallery link */
+  function openViewer() { if (links[i]) links[i].click(); }
+  q('[data-jr-open]').addEventListener('click', function (e) { if (swiped) { swiped = false; e.preventDefault(); return; } openViewer(); });
+  stage.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); holdUntil = Date.now() + 9000; show(i + 1, true); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); holdUntil = Date.now() + 9000; show(i - 1, true); }
+  });
+
+  /* swipe on touch, tilt with a mouse */
+  var sx = 0, sy = 0, down = false;
+  stage.addEventListener('pointerdown', function (e) { holdUntil = Date.now() + 9000; if (e.pointerType === 'mouse') return; down = true; sx = e.clientX; sy = e.clientY; swiped = false; });
+  stage.addEventListener('pointerup', function (e) {
+    if (!down) return; down = false;
+    var dx = e.clientX - sx, dy = e.clientY - sy;
+    if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.4) { swiped = true; show(i + (dx < 0 ? 1 : -1), true); setTimeout(function () { swiped = false; }, 350); }
+  });
+  stage.addEventListener('pointercancel', function () { down = false; });
+  if (!reduce) {
+    stage.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      var r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      frame.style.setProperty('--ry', ((x - .5) * 9).toFixed(2) + 'deg'); frame.style.setProperty('--rx', ((.5 - y) * 7).toFixed(2) + 'deg');
+      frame.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); frame.style.setProperty('--gy', (y * 100).toFixed(1) + '%'); stage.classList.add('is-tilt');
+    });
+    stage.addEventListener('pointerleave', function () { frame.style.setProperty('--rx', '0deg'); frame.style.setProperty('--ry', '0deg'); stage.classList.remove('is-tilt'); });
+  }
+  img.classList.add('is-in'); thumbs[0].setAttribute('aria-current', 'true');
+  setPlay(playing);
+
+  /* session flip-through: six frames, stop-motion style */
+  var seq = q('[data-jr-seq]'), fimg = q('[data-jr-flipimg]'), flip = q('[data-jr-flip]'), fc = q('[data-jr-fc]'), fr = qa('.jr__f', seq), fpp = q('[data-jr-flippp]');
+  if (seq && fimg && fr.length) {
+    var k = 0, ft = 0, fplay = !reduce, fview = false;
+    var fshow = function (n) {
+      k = (n + fr.length) % fr.length; var b = fr[k];
+      fimg.src = b.getAttribute('data-src'); fc.textContent = 'FRAME ' + (k + 1) + ' / ' + fr.length;
+      fr.forEach(function (x, m) { x.classList.toggle('is-cur', m === k); });
+      flip.classList.remove('is-tick'); void flip.offsetWidth; flip.classList.add('is-tick');
+    };
+    var fsched = function () { clearInterval(ft); if (fplay && fview && !document.hidden) ft = setInterval(function () { fshow(k + 1); }, 750); };
+    var fset = function (on) { fplay = on && !reduce; fpp.setAttribute('aria-pressed', fplay ? 'true' : 'false'); fpp.firstChild.textContent = fplay ? 'Pause' : 'Play'; fsched(); };
+    fpp.addEventListener('click', function () { fset(!fplay); });
+    fr.forEach(function (b, m) { b.addEventListener('mouseenter', function () { if (fplay) fset(false); fshow(m); }); });
+    q('[data-jr-flipopen]').addEventListener('click', function () { fr[k].click(); });
+    document.addEventListener('visibilitychange', fsched);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { fview = es[0].isIntersecting; fsched(); }, { threshold: 0.3 }).observe(flip); else fview = true;
+    fr[0].classList.add('is-cur'); fset(fplay);
+  }
+})();
