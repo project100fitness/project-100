@@ -38,7 +38,7 @@ if(typeof module!=='undefined'&&module.exports)module.exports=api;
 if(!root.document)return;
 const doc=root.document,gallery=doc.getElementById('salad-gallery');if(!gallery)return;
 const mobile=root.matchMedia('(max-width:599px)');
-let filter='all',expanded=false,indexOpen=false,current=0,chosen=[];
+let filter='all',indexOpen=false,current=0,chosen=[];
 const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g','g'];
 function range(lo,hi,unit){return Math.round(lo)+'–'+Math.round(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
@@ -47,8 +47,8 @@ previous.type=next.type=browse.type='button';previous.setAttribute('aria-label',
 function visibleCards(){return Array.from(gallery.children).filter(c=>!c.hidden);}
 function updatePosition(){const cards=visibleCards();if(!cards.length)return;const left=gallery.getBoundingClientRect().left;current=cards.reduce((best,c,i)=>Math.abs(c.getBoundingClientRect().left-left)<Math.abs(cards[best].getBoundingClientRect().left-left)?i:best,0);const label=(current+1)+' / '+cards.length;if(position.textContent!==label)position.textContent=label;previous.disabled=current===0;next.disabled=current===cards.length-1;overview.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));}
 function goTo(i){const cards=visibleCards(),card=cards[Math.max(0,Math.min(i,cards.length-1))];if(!card)return;gallery.scrollTo({left:gallery.scrollLeft+card.getBoundingClientRect().left-gallery.getBoundingClientRect().left,behavior:root.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
-function toggleOverview(){indexOpen=!indexOpen;overview.hidden=!indexOpen;browse.setAttribute('aria-expanded',String(indexOpen));const more=doc.getElementById('salad-more');more.setAttribute('aria-expanded',String(indexOpen));more.textContent=indexOpen?'Close salad overview':'Show all '+chosen.length+' salads';if(indexOpen)overview.scrollIntoView({block:'nearest',behavior:'auto'});}
-function layout(){gallery.querySelectorAll('.salad-card').forEach((c,i)=>c.hidden=!mobile.matches&&!expanded&&i>=6);const cards=visibleCards(),step=mobile.matches?1:2;cards.forEach((c,i)=>{const buttons=c.querySelectorAll('.salad-card-arrow');buttons[0].hidden=i<step;buttons[1].hidden=i+step>=cards.length;});nav.hidden=!mobile.matches;overview.hidden=!mobile.matches||!indexOpen;gallery.setAttribute('aria-label',mobile.matches?'Salads — swipe or use Previous and Next':'Two rows of salad cards — scroll horizontally to browse');const more=doc.getElementById('salad-more');more.hidden=!mobile.matches&&chosen.length<=6;more.textContent=mobile.matches?(indexOpen?'Close salad overview':'Show all '+chosen.length+' salads'):(expanded?'Show six salads':'Show all '+chosen.length+' salads');more.setAttribute('aria-expanded',String(mobile.matches?indexOpen:expanded));updatePosition();}
+function toggleOverview(){indexOpen=!indexOpen;overview.hidden=!indexOpen;browse.setAttribute('aria-expanded',String(indexOpen));if(indexOpen)overview.scrollIntoView({block:'nearest',behavior:'auto'});}
+function layout(){gallery.querySelectorAll('.salad-card').forEach(c=>c.hidden=false);const cards=visibleCards(),step=mobile.matches?1:2;cards.forEach((c,i)=>{const buttons=c.querySelectorAll('.salad-card-arrow');buttons[0].hidden=i<step;buttons[1].hidden=i+step>=cards.length;});nav.hidden=!mobile.matches;overview.hidden=!mobile.matches||!indexOpen;gallery.setAttribute('aria-label',mobile.matches?'Salads — swipe or use Previous and Next':'Two rows of salad cards — scroll horizontally to browse');updatePosition();}
 previous.addEventListener('click',()=>goTo(current-1));next.addEventListener('click',()=>goTo(current+1));browse.addEventListener('click',toggleOverview);gallery.addEventListener('scroll',updatePosition,{passive:true});gallery.addEventListener('keydown',e=>{if(e.target!==gallery)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();goTo(current+(e.key==='ArrowRight'?1:-1));}});mobile.addEventListener('change',layout);
 function draw(){gallery.scrollLeft=0;gallery.replaceChildren();chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();overview.replaceChildren();browse.textContent='All '+chosen.length+' salads';current=0;indexOpen=false;browse.setAttribute('aria-expanded','false');
 chosen.forEach((p,i)=>{
@@ -79,7 +79,6 @@ chosen.forEach((p,i)=>{
  select.addEventListener('change',update);update();
 });
 doc.getElementById('salad-count').textContent=chosen.length+' salads';layout();}
-doc.querySelectorAll('[data-salad-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.saladFilter;expanded=false;doc.querySelectorAll('[data-salad-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw();}));
-doc.getElementById('salad-more').setAttribute('aria-controls','salad-overview salad-gallery');
-doc.getElementById('salad-more').addEventListener('click',()=>{if(mobile.matches){toggleOverview();}else{expanded=!expanded;layout();}});draw();
+doc.querySelectorAll('[data-salad-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.saladFilter;doc.querySelectorAll('[data-salad-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw();}));
+draw();
 })(typeof window==='undefined'?globalThis:window);
