@@ -57,7 +57,7 @@ chosen.forEach((p,i)=>{
  const photo=el('button',null,'salad-photo zoom');photo.type='button';photo.dataset.full='assets/web/mega-salads/'+p.id+'-1200.webp';photo.setAttribute('aria-label','Enlarge '+p.title);
  const img=el('img');img.src='assets/web/mega-salads/'+p.id+'-480.webp';
  // This photo's existing 1200px asset is empty; retain the valid preview.
- if(p.id==='20260923_151755'){photo.dataset.full=img.src;img.srcset=img.src+' 480w';}else img.srcset=img.src+' 480w, '+photo.dataset.full+' 1200w';
+ if(p.id==='20260923_151755'||p.id==='20260708_135631'){photo.dataset.full=img.src;img.srcset=img.src+' 480w';}else img.srcset=img.src+' 480w, '+photo.dataset.full+' 1200w';
  photo.dataset.orig='assets/media/mega-salads/originals/'+p.id+'.jpg';photo.dataset.full=photo.dataset.orig;
  img.sizes='(min-width: 900px) 30vw, (min-width: 600px) 48vw, 100vw';img.alt=p.title;img.loading='lazy';img.decoding='async';photo.append(img);
  const body=el('div',null,'salad-card__body'),time=el('time',p.id.slice(0,4)+'-'+p.id.slice(4,6)+'-'+p.id.slice(6,8));time.dateTime=time.textContent;

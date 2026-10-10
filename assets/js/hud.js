@@ -81,7 +81,7 @@
       if (!current) return;
       var d = current, card = cards.filter(function (c) { return c.getAttribute('aria-controls') === d.id; })[0];
       current = null; setState(card, false); list.classList.remove('is-open');
-      var finish = function () { d.classList.remove('is-closing'); park(d); if (stage.parentNode) stage.parentNode.removeChild(stage); };
+      var finish = function () { d.classList.remove('is-closing'); if (current === d) return; park(d); if (!current && stage.parentNode) stage.parentNode.removeChild(stage); };
       if (reduce || opts.instant) finish();
       else { d.classList.add('is-closing'); setTimeout(finish, 260); }
       if (opts.focus && card) {
