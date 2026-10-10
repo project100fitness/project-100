@@ -136,7 +136,7 @@
   if (!dlg || !openBtn) return;
   /* The home page is already available from the brand and primary navigation.
      Remove its redundant address card from the hamburger menu only. */
-  P.$('.menu__links a.menu__link', dlg).forEach(function (link) {
+  Array.prototype.slice.call(dlg.querySelectorAll('.menu__links a.menu__link')).forEach(function (link) {
     if (link.textContent.toLowerCase().indexOf('project 100 blueprint') !== -1) link.remove();
   });
   function open() {
