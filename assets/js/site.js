@@ -526,6 +526,17 @@
   'use strict';
   var P = window.P100, btn = P.$('#fabAt'), panel = P.$('#fabPanel');
   if (!btn || !panel) return;
+  /* Keep the @ panel focused on contact and social links. Downloads remain available
+     from the existing bottom bar and the main site menu; only these two panel rows go. */
+  var removeRows = [panel.querySelector('[data-dl-open]')].concat(
+    Array.prototype.slice.call(panel.querySelectorAll('a.fab-row')).filter(function (link) {
+      return (link.textContent + ' ' + link.href).toLowerCase().indexOf('project100.fit') !== -1;
+    })
+  );
+  removeRows.forEach(function (item) {
+    var row = item && item.closest('li');
+    if (row) row.remove();
+  });
   function isOpen() { return !panel.hidden; }
   function open() { panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
   function close(refocus) { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); if (refocus) btn.focus(); }
