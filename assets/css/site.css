@@ -2889,14 +2889,11 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .flipc__sheen { position: absolute; inset: 0; border-radius: var(--r-2); pointer-events: none; opacity: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .28) 50%, transparent 65%); background-size: 260% 100%; background-position: 120% 0; mix-blend-mode: overlay; }
 .flipc.is-turning .flipc__sheen { animation: flipc-sheen var(--dur, .95s) ease-out both; }
 @keyframes flipc-sheen { 0% { opacity: 0; background-position: 120% 0; } 25% { opacity: 1; } 100% { opacity: 0; background-position: -20% 0; } }
-.flipc__bar { display: flex; align-items: center; gap: .7rem; min-width: 0; }
+.flipc__bar { position: absolute; left: .55rem; bottom: .55rem; z-index: 2; display: inline-flex; align-items: center; gap: .5rem; max-width: calc(100% - 1.1rem); padding: .3rem .65rem; border-radius: 999px; background: rgb(8 10 14 / .72); color: #fff; backdrop-filter: blur(4px); pointer-events: none; }
 .flipc__dots { display: inline-flex; gap: .3rem; }
-.flipc__dots i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--line-strong); transition: background .3s, transform .3s; }
-.flipc__dots i.is-on { background: var(--accent); transform: scale(1.25); }
-.flipc__cap { flex: 1; min-width: 0; font-size: var(--step--1); color: var(--text); line-height: 1.25; }
-.flipc__btn { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.75rem; padding: .4rem 1rem; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font: inherit; font-size: .85rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
-.flipc__btn svg { width: 1.1rem; height: 1.1rem; }
-.flipc__btn:hover { background: var(--accent); color: var(--accent-ink, #fff); }
+.flipc__dots i { width: .5rem; height: .5rem; border-radius: 50%; background: rgb(255 255 255 / .4); transition: background .3s, transform .3s; }
+.flipc__dots i.is-on { background: var(--hud-amber, #ffb020); transform: scale(1.25); }
+.flipc__cap { min-width: 0; font-size: .74rem; font-weight: 700; letter-spacing: .02em; color: #fff; line-height: 1.2; }
 .flipc__meta { display: flex; flex-wrap: wrap; gap: .2rem .75rem; margin: 0; font-size: var(--step--1); color: var(--text-2); }
 @media (max-width: 55.99rem) { .flipc { max-width: min(100%, 24rem); } }
 @media (prefers-reduced-motion: reduce) { .flipc__card { transition: none; } .flipc.is-turning .flipc__sheen { animation: none; } }

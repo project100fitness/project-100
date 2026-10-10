@@ -1107,7 +1107,7 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function init(root) {
-    var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'), cap = root.querySelector('[data-flip-cap]'),
+    var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]') || (root.closest('.hud-detail') || document).querySelector('[data-flip-btn]'), cap = root.querySelector('[data-flip-cap]'),
         dl = root.querySelector('[data-flip-dl]'), size = root.querySelector('[data-flip-size]'), dots = all('.flipc__dots i', root),
         faces = all('.flipc__face', root), caps = (root.dataset.caps || '').split('|'), origs = (root.dataset.origs || '').split('|'), sizes = (root.dataset.sizes || '').split('|');
     if (!card || !btn || faces.length < 2) return;
