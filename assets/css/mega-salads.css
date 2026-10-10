@@ -37,3 +37,5 @@
 .salad-archive-macro{font-size:.8rem!important;color:var(--item-accent);margin:.4rem 0 .7rem}.salad-card details+details{margin-top:.5rem}.salad-baselines table{font-variant-numeric:tabular-nums}.salad-baselines caption{text-align:left;padding:.75rem 0;color:#b8c9bd}
 
 .salad-dressing-choice{display:flex;flex-direction:column;gap:.5rem;font-weight:650;max-width:32rem}.salad-dressing-choice select{padding:.75rem;min-height:44px;background:#111a1d;color:#eef3ed;border:1px solid #a9c9b463;border-radius:8px;font:inherit}.salad-dressing [hidden]{display:none!important}#balsamic-dressing-fields{border-top:1px solid #c4a8bb40;margin-top:1rem;padding-top:1rem}#balsamic-dressing-fields h3{color:var(--salad-plum)}
+
+.salad-dressing-choice input{padding:.75rem;min-height:44px;background:#111a1d;color:#eef3ed;border:1px solid #a9c9b463;border-radius:8px;font:inherit}.salad-dressing-choice span{font-size:.8rem;font-weight:400;color:#b4c3ba}

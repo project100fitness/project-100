@@ -23,11 +23,12 @@ function update(){const form=document.getElementById('salad-builder'),d=new Form
  const incomplete=light&&(!entered('oliveMl')||!entered('glazeMl')||(get('glazeMl')>0&&!entered('glazeCarbs')));
  const base=sum(parts),dressing=heavy?sum([['avocado',get('avocado')],['oil',get('oil')*14],['vinegar',get('vinegar')]]):[0,0,0,0,0];
  if(light){const oil=get('oliveMl')*.91,carbs=get('glazeMl')/15*get('glazeCarbs'),vinegar=get('wineVinegarMl');dressing[0]+=oil*8.84+carbs*4+vinegar*.18;dressing[2]+=carbs+vinegar*.0004;dressing[3]+=oil;}
- const total=add(base,dressing);
- ['base','dressing','total'].forEach((key,j)=>{const values=[base,dressing,total][j];document.querySelectorAll('[data-macro="'+key+'"]').forEach((el,i)=>el.textContent=incomplete&&key!=='base'?'—':Math.round(values[i])+(i?' g':' kcal'));});
+ const fraction=d.get("dressingEaten")===null||d.get("dressingEaten")===undefined?1:Math.max(0,Math.min(100,get("dressingEaten")))/100;
+ const modeled=dressing.map(x=>x*fraction),total=add(base,modeled);
+ ['base','dressing','total'].forEach((key,j)=>{const values=[base,modeled,total][j];document.querySelectorAll('[data-macro="'+key+'"]').forEach((el,i)=>el.textContent=incomplete&&key!=='base'?'—':Math.round(values[i])+(i?' g':' kcal'));});
  const notes=[];if(heavy)notes.push(get('oil')+' tbsp avocado oil + '+get('avocado')+' g edible avocado + '+get('vinegar')+' g white vinegar');if(light)notes.push(get('oliveMl')+' mL olive oil + '+get('glazeMl')+' mL balsamic glaze + '+get('wineVinegarMl')+' mL white wine vinegar');
- document.getElementById('dressing-note').textContent=incomplete?'Enter the olive-oil and glaze amounts, plus glaze label carbohydrate when glaze is used, to estimate the dressing and whole bowl.':(notes.length?notes.join(' · ')+'. Seasonings and unmeasured marinades are excluded.':'No dressing selected.');
- document.getElementById('meal-portion').textContent=incomplete?'Base estimate is available; dressed-bowl and half-bowl totals await the dressing amounts.':'Whole bowl estimate. Per half bowl: '+Math.round(total[0]/2)+' kcal · '+Math.round(total[1]/2)+' g protein.';
+ document.getElementById('dressing-note').textContent=incomplete?'Enter the olive-oil and glaze amounts, plus glaze label carbohydrate when glaze is used, to estimate the dressing and whole bowl.':(notes.length?notes.join(' · ')+'. Modeled as '+Math.round(fraction*100)+'% eaten; 100% represents the prepared batch. Seasonings and unmeasured marinades are excluded.':'No dressing selected.');
+ document.getElementById('meal-portion').textContent=incomplete?'Base estimate is available; dressed-bowl and half-bowl totals await the dressing amounts.':'Portion-model estimate, not measured consumption. Per half bowl: '+Math.round(total[0]/2)+' kcal · '+Math.round(total[1]/2)+' g protein.';
 }
 const form=document.getElementById('salad-builder');form.addEventListener('input',update);form.addEventListener('change',update);form.addEventListener('reset',()=>setTimeout(update,0));update();
 })();
