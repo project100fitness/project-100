@@ -27,7 +27,13 @@
     var me = { isOpen: function () { return !!current; }, close: function (o) { close(o); } };
     registry.push(me);
 
-    function cols() { return getComputedStyle(list).gridTemplateColumns.split(' ').length || 1; }
+    function cols() {
+      var its = [].slice.call(list.children).filter(function (x) { return x !== stage && !x.classList.contains('hud-stage'); });
+      if (!its.length) return 1;
+      var top = its[0].offsetTop, n = 0;
+      for (var q = 0; q < its.length; q++) { if (Math.abs(its[q].offsetTop - top) < 4) n++; else break; }
+      return Math.max(1, n);
+    }
     function lastInRow(card) {
       var li = card.parentNode, items = [].slice.call(list.children).filter(function (x) { return x !== stage; });
       var i = items.indexOf(li), c = cols(), end = Math.min(items.length - 1, (Math.floor(i / c) + 1) * c - 1);

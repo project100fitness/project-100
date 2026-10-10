@@ -138,10 +138,16 @@
 .hud-note strong { color: var(--hud-amber); letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; margin-right: .4rem; }
 
 /* ---------- FILE CARDS (closed state) ---------- */
-.hud-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(.6rem, 1.4vw, 1rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 40rem) { .hud-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 64rem) { .hud-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.hud-cards > li { min-width: 0; }
+/* Card rows: a centred, wrapping row. --cols is the number of cards per row; a short last row sits in the middle instead of leaving a gap on one side. */
+.hud-cards { --g: clamp(.6rem, 1.4vw, 1rem); --cols: 2; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--g); }
+@media (min-width: 40rem) { .hud-cards { --cols: 3; } }
+@media (min-width: 64rem) { .hud-cards { --cols: 4; } }
+.hud-cards > li { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--g)) / var(--cols)); min-width: 0; }
+/* text cards need width to be readable at a glance: one per row on phones */
+@media (max-width: 39.99rem) { .hud-cards:has(> li > .hud-card--text) { --cols: 1; } }
+/* counts that would leave one card alone on the last row use a different number of columns */
+@media (min-width: 40rem) and (max-width: 63.99rem) { .hud-cards:has(> li:nth-child(4):last-child) { --cols: 2; } }
+@media (min-width: 64rem) { .hud-cards:has(> li:nth-child(3):last-child), .hud-cards:has(> li:nth-child(5):last-child), .hud-cards:has(> li:nth-child(9):last-child) { --cols: 3; } }
 .hud-card {
   --c: var(--brand-orange);
   position: relative; display: grid; grid-template-rows: auto 1fr auto; grid-template-columns: minmax(0, 1fr); min-width: 0; height: 100%;
@@ -178,7 +184,7 @@
 .hud-details { display: grid; gap: var(--s-4); }
 .js .hud-details { display: contents; }
 .js .hud-detail { display: none; }
-.hud-cards > li.hud-stage { grid-column: 1 / -1; }
+.hud-cards > li.hud-stage, .hud-cards > .hud-stage { flex: 0 0 100%; }
 .hud-detail { --c: var(--brand-orange); position: relative; border: 1px solid var(--c); background: linear-gradient(180deg, var(--hud-bg-3), var(--hud-bg-2) 40%, var(--hud-bg)); color: var(--hud-ink);
   border-radius: 4px var(--hud-cut) 4px var(--hud-cut); box-shadow: 0 0 28px -10px var(--c); }
 .js .hud-stage .hud-detail { display: block; animation: hud-open .42s var(--hud-ease) both; }
@@ -283,7 +289,7 @@
 @media (max-width: 599px) { .hud-card__tag { letter-spacing: .1em; font-size: .64rem; } .hud-card__pills { max-width: 100%; } }
 .hud-card__hint { padding-right: 2.1rem; }
 .hud-card__name { overflow-wrap: normal; word-break: normal; hyphens: none; }
-@media (min-width: 64rem) { .hud-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 64rem) { .hud-cards--3 { --cols: 3; } }
 
 /* hex badge must win over the generic .hud-node span rule */
 .hud-node > .hud-node__hex { display: grid; width: 3.4rem; height: 3.1rem; color: #04202c; font-size: 1.15rem; }
@@ -339,9 +345,9 @@
 /* ====================================================================================
    GENERIC PAGES (Update 18+): the same folder / card system on every page
    ==================================================================================== */
-.hud-cards--1 { grid-template-columns: minmax(0, 1fr) !important; }
-.hud-cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-@media (max-width: 34rem) { .hud-cards--2 { grid-template-columns: minmax(0, 1fr) !important; } }
+.hud-cards.hud-cards--1 { --cols: 1; }
+.hud-cards.hud-cards--2 { --cols: 2; }
+@media (max-width: 34rem) { .hud-cards.hud-cards--2 { --cols: 1; } }
 .hud-card--text { grid-template-rows: auto 1fr; }
 .hud-card--text .hud-card__foot { display: flex; flex-direction: column; justify-content: center; min-height: 5.4rem; padding: .75rem 3rem .85rem .9rem; border-top: 0; }
 .hud-card--text .hud-card__hint { -webkit-line-clamp: 3; }
@@ -417,3 +423,9 @@
   .hud-prose .table--cards td:first-child { background: var(--hud-bg-3); }
   .hud-prose .table--cards td:first-child::before { display: none; }
 }
+
+/* a folder with a single item shows it directly (no card to tap) */
+.hud-open { margin-top: var(--s-3); min-width: 0; }
+.hud-takeaway + .hud-open, .hud-inline + .hud-open { margin-top: var(--s-4); }
+.hud-open > .hud-open__t { margin: 0 0 var(--s-2); font-size: var(--step-1); letter-spacing: .01em; color: var(--hud-ink); }
+.hud-open > :where(section) > .section__head { margin-bottom: var(--s-3); }
