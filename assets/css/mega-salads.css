@@ -15,3 +15,6 @@
 .salad-page button:focus-visible,.salad-page summary:focus-visible,.salad-page input:focus-visible,.salad-page select:focus-visible{outline:3px solid #afe0c0;outline-offset:3px}
 @media(max-width:850px){.salad-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.salad-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.salad-gallery{gap:.6rem}.salad-card__body{padding:.65rem}.salad-card h3{font-size:1rem}.salad-roles,.salad-goals{grid-template-columns:1fr}.salad-macros{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:.8rem}.salad-macros b{font-size:1.1rem}.salad-page .hud-chips{gap:.5rem}.salad-page p{font-size:1rem}}
+
+/* Integrated nutrition section: no fixed card height or empty image padding. */
+.nutrition-salads{margin-top:1.5rem;min-width:0}.nutrition-salads .hud-folder{margin:1.1rem 0}.nutrition-salads .salad-card .salad-photo{height:auto}.nutrition-salads .salad-card{height:auto}.nutrition-salads .salad-gallery{align-items:start}.nutrition-salads .hud-folder__title{font-size:clamp(1.1rem,2.2vw,1.65rem)}
