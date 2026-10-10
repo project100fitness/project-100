@@ -1129,13 +1129,13 @@
   var reduce = false; // Project owner requests animated presentation.
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function init(root) {
-    var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'), cap = root.querySelector('[data-flip-cap]'),
+    var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'),
         dl = root.querySelector('[data-flip-dl]'), dots = all('.pcap__dots i', root),
         faces = all('.flipc__face', root), caps = (root.dataset.caps || '').split('|'), origs = (root.dataset.origs || '').split('|'), sizes = (root.dataset.sizes || '').split('|');
     if (!card || !btn || faces.length < 2) return;
     var turns = 0, side = 0, timer = 0, hold = 0, seen = false, hover = false, first = true;
     function show() {
-      root.dataset.side = side; cap.textContent = caps[side] || ''; if (dl) { dl.href = origs[side] || dl.href; var lab = 'Download the original image (PNG, ' + (sizes[side] || '') + ')'; dl.setAttribute('aria-label', lab); dl.title = 'Download original · PNG ' + (sizes[side] || ''); }
+      root.dataset.side = side; btn.setAttribute('aria-label', 'Flip to ' + (caps[1 - side] || 'the other side')); if (dl) { dl.href = origs[side] || dl.href; var lab = 'Download the original image (PNG, ' + (sizes[side] || '') + ')'; dl.setAttribute('aria-label', lab); dl.title = 'Download original · PNG ' + (sizes[side] || ''); }
       dots.forEach(function (d, i) { d.classList.toggle('is-on', i === side); });
       faces.forEach(function (f, i) { if (i === side) { f.removeAttribute('aria-hidden'); f.removeAttribute('tabindex'); } else { f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1; } });
     }
