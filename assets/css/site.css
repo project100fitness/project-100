@@ -2876,3 +2876,27 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
   .jr__frame { transition: none; transform: none !important; } .jr__stamp i, .jr__fc i { animation: none; }
   .jr__flip.is-tick img { animation: none; } .jr__thumb, .jr__f { transition: none; }
 }
+
+/* ===== update 19: two-sided flip cards (main-site vector cards) ===== */
+.flipc { display: grid; gap: var(--s-3); min-width: 0; width: 100%; max-width: 26rem; justify-self: center; }
+.flipc__stage { position: relative; width: 100%; perspective: 1400px; border-radius: var(--r-2); }
+.flipc__card { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(var(--turn, 0deg)); transition: transform var(--dur, .95s) cubic-bezier(.3, .7, .2, 1); will-change: transform; }
+.flipc__face { position: absolute; inset: 0; display: block; overflow: hidden; border: 1px solid var(--line-strong); border-radius: var(--r-2); background: #0b0c10; backface-visibility: hidden; -webkit-backface-visibility: hidden; cursor: zoom-in; box-shadow: 0 18px 38px -22px rgb(0 0 0 / .75); }
+.flipc__face--b { transform: rotateY(180deg); }
+.flipc__face img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.flipc[data-side="0"] .flipc__face--b, .flipc[data-side="1"] .flipc__face--a { pointer-events: none; }
+.flipc__face:focus-visible, .flipc__btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.flipc__sheen { position: absolute; inset: 0; border-radius: var(--r-2); pointer-events: none; opacity: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .28) 50%, transparent 65%); background-size: 260% 100%; background-position: 120% 0; mix-blend-mode: overlay; }
+.flipc.is-turning .flipc__sheen { animation: flipc-sheen var(--dur, .95s) ease-out both; }
+@keyframes flipc-sheen { 0% { opacity: 0; background-position: 120% 0; } 25% { opacity: 1; } 100% { opacity: 0; background-position: -20% 0; } }
+.flipc__bar { display: flex; align-items: center; gap: .7rem; min-width: 0; }
+.flipc__dots { display: inline-flex; gap: .3rem; }
+.flipc__dots i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--line-strong); transition: background .3s, transform .3s; }
+.flipc__dots i.is-on { background: var(--accent); transform: scale(1.25); }
+.flipc__cap { flex: 1; min-width: 0; font-size: var(--step--1); color: var(--text); line-height: 1.25; }
+.flipc__btn { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.75rem; padding: .4rem 1rem; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font: inherit; font-size: .85rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.flipc__btn svg { width: 1.1rem; height: 1.1rem; }
+.flipc__btn:hover { background: var(--accent); color: var(--accent-ink, #fff); }
+.flipc__meta { display: flex; flex-wrap: wrap; gap: .2rem .75rem; margin: 0; font-size: var(--step--1); color: var(--text-2); }
+@media (max-width: 55.99rem) { .flipc { max-width: min(100%, 24rem); } }
+@media (prefers-reduced-motion: reduce) { .flipc__card { transition: none; } .flipc.is-turning .flipc__sheen { animation: none; } }

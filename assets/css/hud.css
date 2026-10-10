@@ -429,3 +429,11 @@
 .hud-takeaway + .hud-open, .hud-inline + .hud-open { margin-top: var(--s-4); }
 .hud-open > .hud-open__t { margin: 0 0 var(--s-2); font-size: var(--step-1); letter-spacing: .01em; color: var(--hud-ink); }
 .hud-open > :where(section) > .section__head { margin-bottom: var(--s-3); }
+
+/* update 19: card header on phones - the title gets the full row, the arrows sit under it (no more "IGNITIO / N") */
+@media (max-width: 40rem) {
+  .hud-detail__bar { flex-wrap: wrap; padding: 0 .6rem .5rem 0; }
+  .hud-detail__ribbon { flex: 1 1 100%; max-width: 100%; padding-right: 1.2rem; }
+  .hud-detail__ribbon h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  .hud-detail__nav { margin-left: auto; padding-top: .5rem; }
+}
