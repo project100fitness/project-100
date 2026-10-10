@@ -140,3 +140,30 @@ html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{backgro
 .nutrition-salads .salad-photo-area .salad-photo{display:block;width:100%}
 .nutrition-salads .salad-photo-area .salad-dressing-navigation{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:.4rem;margin:0;pointer-events:none}
 .nutrition-salads .salad-photo-area .salad-card-arrow{pointer-events:auto;box-shadow:0 2px 8px #0008;background:#713616ee}
+
+/* Ingredient explanations follow the daily plan and inherit the page theme. */
+#salad-ingredient-roles .salad-role{background:var(--hud-bg-3);border-color:var(--hud-line);color:var(--hud-ink)}
+#salad-ingredient-roles .salad-role p{color:var(--hud-ink);font-size:1rem}
+#salad-ingredient-roles .salad-role small{color:var(--hud-ink-2)}
+#salad-ingredient-roles .salad-role summary{min-height:44px;font-size:1rem;line-height:1.45}
+#salad-ingredient-roles .salad-role summary::after{color:var(--hud-ink)}
+
+#salad-ingredient-roles .meal-ingredient-group{margin:.65rem 0;border:1px solid var(--hud-line);border-radius:10px;padding:.65rem .85rem}
+#salad-ingredient-roles .meal-ingredient-group>summary{min-height:44px;cursor:pointer;font-size:1.05rem;font-weight:700;line-height:1.4;color:var(--hud-ink)}
+
+.nutrition-ingredient-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+#salad-ingredient-roles .ingredient-category{--category-accent:#72b791;margin:0;border-top:3px solid var(--category-accent);padding:.85rem;background:var(--hud-bg-3);min-width:0}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="1"]{--category-accent:#d0ab72}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="2"]{--category-accent:#de9876}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="3"]{--category-accent:#82b482}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="4"]{--category-accent:#89b8d5}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="5"]{--category-accent:#b694cb}
+#salad-ingredient-roles .ingredient-category>summary{display:flex;justify-content:space-between;gap:.75rem;align-items:center;list-style:none}
+#salad-ingredient-roles .ingredient-category>summary::-webkit-details-marker{display:none}
+#salad-ingredient-roles .ingredient-category>summary small{display:block;font-size:.85rem;font-weight:400;color:var(--hud-ink-2);margin-top:.35rem}
+#salad-ingredient-roles .ingredient-category>summary b{font-size:.85rem;border:1px solid var(--category-accent);border-radius:50%;width:2rem;height:2rem;display:grid;place-items:center;flex:none}
+#salad-ingredient-roles .ingredient-category>summary b::after{content:'+';font-size:.85rem}
+#salad-ingredient-roles .ingredient-category[open]>summary b::after{content:'−'}
+#salad-ingredient-roles .ingredient-category .salad-roles{grid-template-columns:1fr}
+#salad-ingredient-roles .ingredient-role-tags{font-size:.85rem!important;font-weight:650;color:var(--hud-ink-2)!important;border-left:2px solid var(--category-accent);padding-left:.65rem}
+@media(max-width:599px){.nutrition-ingredient-categories{grid-template-columns:1fr}}
