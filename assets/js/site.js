@@ -1043,20 +1043,22 @@
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
   var pp = q('[data-jr-pp]'), ppl = q('[data-jr-pplabel]');
-  var DUR = 6000, i = 0, timer = 0, playing = true, inView = false, holdUntil = 0, swiped = false, hovering = false;
+  var DUR = 6000, i = 0, timer = 0, playing = true, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function show(n, user) {
     var len = thumbs.length; i = (n + len) % len;
+    elapsed = 0; last = null; loading = true; var version = ++loadVersion, completed = false; prog.style.transform = 'scaleX(0)'; schedule();
     var b = thumbs[i], d = b.dataset;
     img.classList.remove('is-in');
     var next = new Image();
     var done = function () {
+      if (completed || version !== loadVersion) return; completed = true;
       img.srcset = d.srcset; img.src = d.src; img.alt = d.alt; img.width = +d.w; img.height = +d.h;
       bg.style.backgroundImage = "url('" + d.bg + "')";
-      void img.offsetWidth; img.classList.add('is-in');
+      void img.offsetWidth; img.classList.add('is-in'); loading = false; schedule();
     };
     next.onload = next.onerror = done;
     next.sizes = img.sizes; next.srcset = d.srcset; next.src = d.src;
@@ -1067,23 +1069,29 @@
     try { strip.scrollTo({ left: Math.max(0, want), behavior: reduce || !user ? 'auto' : 'smooth' }); } catch (e) { strip.scrollLeft = Math.max(0, want); }
     schedule();
   }
+  /* One clock controls both the fill and the image change. Pauses freeze both. */
   function schedule() {
-    clearTimeout(timer); prog.classList.remove('run'); void prog.offsetWidth;
-    if (!playing) return;
-    if (inView && !document.hidden) prog.classList.add('run');
-    timer = setTimeout(tick, Math.max(DUR, holdUntil - Date.now() + 60));
+    rootWindowCancel(); last = null;
+    if (!playing || !inView || document.hidden || hovering || loading) return;
+    timer = requestAnimationFrame(tick);
   }
-  function tick() {
-    if (!playing || !inView || document.hidden || hovering || Date.now() < holdUntil) { schedule(); return; }
-    show(i + 1, false);
+  function rootWindowCancel() { if (timer) cancelAnimationFrame(timer); timer = 0; }
+  function tick(now) {
+    timer = 0;
+    if (!playing || !inView || document.hidden || hovering || loading) { last = null; return; }
+    if (last !== null) elapsed += now - last;
+    last = now;
+    prog.style.transform = 'scaleX(' + Math.min(1, elapsed / DUR) + ')';
+    if (elapsed >= DUR) { show(i + 1, false); return; }
+    timer = requestAnimationFrame(tick);
   }
   function setPlay(on) {
     playing = !!on; pp.setAttribute('aria-pressed', playing ? 'true' : 'false'); ppl.textContent = playing ? 'Pause' : 'Play'; schedule();
   }
   pp.addEventListener('click', function () { setPlay(!playing); });
-  q('[data-jr-prev]').addEventListener('click', function () { holdUntil = Date.now() + 4000; show(i - 1, true); });
-  q('[data-jr-next]').addEventListener('click', function () { holdUntil = Date.now() + 4000; show(i + 1, true); });
-  thumbs.forEach(function (b, k) { b.addEventListener('click', function () { holdUntil = Date.now() + 4000; show(k, true); }); });
+  q('[data-jr-prev]').addEventListener('click', function () { show(i - 1, true); });
+  q('[data-jr-next]').addEventListener('click', function () { show(i + 1, true); });
+  thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
   document.addEventListener('visibilitychange', schedule);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }, { threshold: 0.2 }).observe(stage);
@@ -1093,15 +1101,15 @@
   function openViewer() { if (links[i]) links[i].click(); }
   q('[data-jr-open]').addEventListener('click', function (e) { if (swiped) { swiped = false; e.preventDefault(); return; } openViewer(); });
   stage.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { e.preventDefault(); holdUntil = Date.now() + 4000; show(i + 1, true); }
-    else if (e.key === 'ArrowLeft') { e.preventDefault(); holdUntil = Date.now() + 4000; show(i - 1, true); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(i + 1, true); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1, true); }
   });
 
   /* swipe on touch, tilt with a mouse */
   var sx = 0, sy = 0, down = false;
-  stage.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; } });
+  stage.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
   stage.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; schedule(); } });
-  stage.addEventListener('pointerdown', function (e) { holdUntil = Date.now() + 4000; if (e.pointerType === 'mouse') return; down = true; sx = e.clientX; sy = e.clientY; swiped = false; });
+  stage.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') return; down = true; sx = e.clientX; sy = e.clientY; swiped = false; });
   stage.addEventListener('pointerup', function (e) {
     if (!down) return; down = false;
     var dx = e.clientX - sx, dy = e.clientY - sy;

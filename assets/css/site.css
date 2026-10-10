@@ -2800,7 +2800,7 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .jr__open:focus-visible { outline: 2px solid var(--jr-amber); outline-offset: -4px; }
 .jr__prog { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,.12); pointer-events: none; }
 .jr__prog i { display: block; height: 100%; width: 100%; background: var(--jr-amber); transform: scaleX(0); transform-origin: left; }
-.jr__prog i.run { animation: jr-prog var(--jr-dur, 6s) linear forwards; }
+.jr__prog i { animation: none; }
 @keyframes jr-prog { to { transform: scaleX(1); } }
 
 .jr__panel { display: grid; align-content: start; gap: .35rem; min-width: 0; }
