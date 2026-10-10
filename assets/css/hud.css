@@ -159,9 +159,9 @@
 }
 .hud-card:hover { transform: translateY(-4px); filter: brightness(1.08); text-decoration: none; color: var(--hud-ink); }
 .hud-card:focus-visible { outline: 3px solid var(--hud-amber); outline-offset: 2px; }
-.hud-card__tag { padding: .32rem .7rem; background: var(--c); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
+.hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
 .hud-card__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--hud-dark-1); }
-.hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; transition: transform .5s var(--hud-ease); }
+.hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: transform .5s var(--hud-ease); }
 .hud-card:hover .hud-card__img img { transform: scale(1.05); }
 .hud-card__img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(10 11 14 / .85)); }
 .hud-card__img::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; /* shine sweep on hover */
