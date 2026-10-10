@@ -2883,7 +2883,8 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 
 /* ===== update 20: one-line picture caption = description + round download arrow (replaces "Download original PNG x MB" text and tap hints) ===== */
 .pcap { display: flex; align-items: center; gap: .6rem; min-width: 0; margin: 0; }
-.pcap--flip { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.pcap--flip { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+.pcap--flip .pcap__flip { justify-self: start; }
 .pcap--flip .pcap__dl { justify-self: end; }
 .pcap__flip { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 2.75rem; padding: .4rem 1.1rem; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent); color: var(--accent-ink, #fff); font: inherit; font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
 .pcap__flip svg { width: 1.1rem; height: 1.1rem; }
