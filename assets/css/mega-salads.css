@@ -123,3 +123,12 @@ html[data-theme="light"] .nutrition-salads .salad-card-metrics span,html[data-th
 .nutrition-salads .salad-recipe-details summary::after{content:'+';flex:none;font-size:1.4rem;color:#ffae72}.nutrition-salads .salad-recipe-details[open] summary::after{content:'−'}
 html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{background:#fff0e2;color:#713616}
 @media(max-width:599px){.nutrition-salads .salad-dressing-navigation{margin-top:.65rem;margin-bottom:.65rem}.nutrition-salads .salad-browser-nav{justify-content:space-between}.nutrition-salads .salad-gallery{scroll-margin-top:8rem}}
+
+/* Contrast remains readable when the operating system chooses light mode. */
+.nutrition-dashboard h2{color:#edf2ed}
+.nutrition-salads .hud-folder__title{color:var(--text)}
+.nutrition-salads .hud-folder__tab{background:#17251f;color:#dce7e1}
+.nutrition-salads .filters .filter{background:#17251f;color:#dce7e1}
+.nutrition-salads .filters .filter[aria-pressed="true"]{background:#294d37;color:#fff;border-color:#527a60}
+.nutrition-salads .salad-estimate-key{color:var(--text-2)}
+.nutrition-salads .salad-card{color:#edf0e9}
