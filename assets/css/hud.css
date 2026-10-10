@@ -433,3 +433,9 @@
   .hud-detail__ribbon { padding-right: 1.6rem; }
   .hud-detail__ribbon h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 }
+
+/* Compact vector purpose, composition and usage summaries. */
+.vector-purpose p { margin: .55rem 0; line-height: 1.5; font-size: clamp(.95rem, 1.3vw, 1.05rem); }
+.vector-purpose p:first-child { margin-top: .4rem; }
+.vector-purpose p:last-child { margin-bottom: 0; }
+.vector-purpose strong { color: var(--text); }
