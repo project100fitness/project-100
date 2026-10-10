@@ -3,7 +3,7 @@
  'use strict';
  var mobile=window.matchMedia('(max-width:719px),(max-width:1023px) and (pointer:coarse)'),gesture=null;
  var skip='a,button,input,select,textarea,summary,dialog,.ingredient-tip,.rail,[data-carousel],[data-recview],.salad-gallery,.scroller__track,.tabs';
- function offset(){var h=document.getElementById('siteHead');return h&&h.getAttribute('data-hidden')!=='true'?h.getBoundingClientRect().height+12:12;}
+ function offset(){var h=document.getElementById('siteHead'),bar=document.querySelector('.rail-toggle'),off=h&&h.getAttribute('data-hidden')!=='true'?h.getBoundingClientRect().height+12:12;if(bar&&bar.getBoundingClientRect().height)off=Math.max(off,bar.getBoundingClientRect().bottom+12);return off;}
  function destination(start,dir){
   var off=offset(),view=Math.max(180,window.innerHeight-off-24),max=Math.max(0,document.documentElement.scrollHeight-window.innerHeight),stops=[0,max];
   document.querySelectorAll('.main>.hud-hero,.main>.page-hero,.main>.home-hero,.main>section,.main .hud-folder,.main .goalmeter').forEach(function(el){
