@@ -2909,3 +2909,38 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .ingredient-tip p { margin: .35rem 0; }
 .ingredient-tip a { color: #ffc18e; font-size: .78rem; }
 .ingredient-tip > div + div { margin-top: .8rem; padding-top: .8rem; border-top: 1px solid #ffffff26; }
+
+/* Shared compact information layout for gear, meals and capsule stages. */
+.item-purpose { margin: .65rem 0; padding: .6rem .8rem; border-inline-start: 3px solid #ff7a19; background: #ff7a1910; overflow-wrap: anywhere; }
+.item-purpose p { margin: .35rem 0; font-size: .95rem; line-height: 1.5; }
+.item-purpose strong { color: var(--text); }
+.item-specs { margin-top: .3rem; font-size: .95rem; line-height: 1.5; }
+.item-specs > summary { cursor: pointer; color: var(--accent); font-weight: 700; padding: .5rem 0; }
+.item-specs[open] > summary { margin-bottom: .35rem; }
+.item-specs p { margin: .35rem 0; }
+.gear-item { align-items: start; }
+.gear-item .card__media { width: 100%; align-self: start; }
+.gear-item .card__body { min-width: 0; width: 100%; overflow-wrap: anywhere; }
+.gear-item--wide .card__media { aspect-ratio: 4 / 3; max-height: 20rem; align-self: start; }
+.gear-item .card__title.ingredient-row { padding-right: 2.5rem !important; }
+.gear-item .ingredient-info { top: 0; right: 0; }
+.gear-bundle__name.ingredient-row { display: inline-block; min-height: 2rem; padding-right: 2.5rem !important; }
+.gear-bundle__name .ingredient-info { top: 0; right: 0; }
+.item-caption { padding: .7rem .8rem; background: var(--surface); border-inline-start: 3px solid #44d4d5; border-radius: 0 0 .3rem .3rem; overflow-wrap: anywhere; }
+.item-caption strong { display: block; font-size: .95rem; line-height: 1.35; }
+.item-caption p { font-size: .9rem; line-height: 1.45; margin: .4rem 0 0; color: var(--text-2); }
+.ingredient-info { width: 2rem; height: 2rem; }
+.ingredient-tip { max-height: min(420px, calc(100dvh - 24px)); overflow: auto; padding-right: 2.5rem; }
+.ingredient-tip__close { position: absolute; right: .4rem; top: .4rem; width: 2rem; height: 2rem; padding: 0; border: 0; border-radius: .25rem; color: #edf4f6; background: #ffffff12; font-size: 1.35rem; cursor: pointer; }
+.ingredient-tip__close:focus-visible { outline: 2px solid #ff7a19; outline-offset: 2px; }
+.ingredient-tip > div + div { margin-top: .8rem; padding-top: .8rem; border-top: 1px solid #ffffff26; }
+.ingredient-tip__close + div { margin-top: 0; padding-top: 0; border-top: 0; }
+.item-facts-table td.ingredient-row { position: relative; padding-right: 3rem !important; }
+.item-facts-table .ingredient-info { top: .35rem; right: .35rem; }
+@media (min-width: 800px) {
+  .gear-item--wide .card__body { flex: 1; width: auto; }
+}
+@media (max-width: 559px) {
+  .gear-item:not(.gear-item--wide) .card__media { min-height: 0; aspect-ratio: 4 / 3; align-self: start; }
+  .gear-item:not(.gear-item--wide) .card__body { flex: 1; width: auto; }
+}
