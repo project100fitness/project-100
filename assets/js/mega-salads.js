@@ -17,10 +17,17 @@ function add(a,b){return a.map((x,i)=>x+b[i]);}
 function update(){const form=document.getElementById('salad-builder'),d=new FormData(form),get=k=>Number(d.get(k)||0);
  const parts=[['romaine',get('romaine')],['beans',get('beans')],['pepper',get('pepper')],['cucumber',get('cucumber')],['kale',get('kale')],['beets',get('beets')],['olives',get('olives')],['lupini',get('lupini')],['feta',get('feta')],['tomato',get('tomato')],['cabbage',get('cabbage')],['spinach',get('spinach')],['egg',get('eggs')*50],['chicken',get('extraChicken')]];
  if(d.get('protein')!=='none')parts.push([d.get('protein'),get('proteinGrams')]);
- const base=sum(parts),dressing=sum([['avocado',get('avocado')],['oil',get('oil')*14],['vinegar',get('vinegar')]]),total=add(base,dressing);
- ['base','dressing','total'].forEach((key,j)=>{const values=[base,dressing,total][j];document.querySelectorAll('[data-macro="'+key+'"]').forEach((el,i)=>el.textContent=Math.round(values[i])+(i?' g':' kcal'));});
- document.getElementById('dressing-note').textContent=get('oil')+' tbsp oil + '+get('avocado')+' g edible avocado + '+get('vinegar')+' g white vinegar. Seasonings and unmeasured marinades are excluded.';
- document.getElementById('meal-portion').textContent='Whole bowl estimate. Per half bowl: '+Math.round(total[0]/2)+' kcal · '+Math.round(total[1]/2)+' g protein.';
+ const mode=d.get('dressingMode')||'avocado',heavy=mode==='avocado'||mode==='mixed',light=mode==='balsamic'||mode==='mixed';
+ const hp=document.getElementById('avocado-dressing-fields'),lp=document.getElementById('balsamic-dressing-fields');if(hp)hp.hidden=!heavy;if(lp)lp.hidden=!light;
+ const entered=k=>d.get(k)!==null&&d.get(k)!==undefined&&d.get(k)!=='';
+ const incomplete=light&&(!entered('oliveMl')||!entered('glazeMl')||(get('glazeMl')>0&&!entered('glazeCarbs')));
+ const base=sum(parts),dressing=heavy?sum([['avocado',get('avocado')],['oil',get('oil')*14],['vinegar',get('vinegar')]]):[0,0,0,0,0];
+ if(light){const oil=get('oliveMl')*.91,carbs=get('glazeMl')/15*get('glazeCarbs'),vinegar=get('wineVinegarMl');dressing[0]+=oil*8.84+carbs*4+vinegar*.18;dressing[2]+=carbs+vinegar*.0004;dressing[3]+=oil;}
+ const total=add(base,dressing);
+ ['base','dressing','total'].forEach((key,j)=>{const values=[base,dressing,total][j];document.querySelectorAll('[data-macro="'+key+'"]').forEach((el,i)=>el.textContent=incomplete&&key!=='base'?'—':Math.round(values[i])+(i?' g':' kcal'));});
+ const notes=[];if(heavy)notes.push(get('oil')+' tbsp avocado oil + '+get('avocado')+' g edible avocado + '+get('vinegar')+' g white vinegar');if(light)notes.push(get('oliveMl')+' mL olive oil + '+get('glazeMl')+' mL balsamic glaze + '+get('wineVinegarMl')+' mL white wine vinegar');
+ document.getElementById('dressing-note').textContent=incomplete?'Enter the olive-oil and glaze amounts, plus glaze label carbohydrate when glaze is used, to estimate the dressing and whole bowl.':(notes.length?notes.join(' · ')+'. Seasonings and unmeasured marinades are excluded.':'No dressing selected.');
+ document.getElementById('meal-portion').textContent=incomplete?'Base estimate is available; dressed-bowl and half-bowl totals await the dressing amounts.':'Whole bowl estimate. Per half bowl: '+Math.round(total[0]/2)+' kcal · '+Math.round(total[1]/2)+' g protein.';
 }
 const form=document.getElementById('salad-builder');form.addEventListener('input',update);form.addEventListener('change',update);form.addEventListener('reset',()=>setTimeout(update,0));update();
 })();
