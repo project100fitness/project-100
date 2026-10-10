@@ -43,3 +43,12 @@
  .meter__note,.goalmeter__foot{font-size:.85rem;line-height:1.4}
  .goalmeter__foot{margin-top:.65rem}
 }
+
+.rail-toggle-space{display:none}
+@media(max-width:719px),(max-width:1023px) and (pointer:coarse){
+ .rail-toggle{position:fixed;top:calc(var(--mobile-rail-top,0px) + .4rem);left:.75rem;right:.75rem;width:calc(100% - 1.5rem);z-index:45;transition:top .28s var(--ease)}
+ .rail-toggle-space{display:block;min-height:3.65rem}
+ .rail-toggle__category{flex:none;font-size:.95rem}
+ body[data-site="protocol"] .main [id]{scroll-margin-top:calc(var(--mobile-rail-top,0px) + 4.25rem)}
+}
+@media print{.rail-toggle-space{display:none!important}}
