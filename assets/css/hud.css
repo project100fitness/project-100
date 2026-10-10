@@ -436,6 +436,3 @@
   .hud-detail__ribbon { padding-right: 1.6rem; }
   .hud-detail__ribbon h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 }
-/* flip button lives in the card header (replaces the arrows' room) */
-.hud-nav--flip { width: auto; display: inline-flex; align-items: center; gap: .4rem; padding: 0 .8rem; font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-color: var(--c); }
-.hud-nav--flip svg { width: 1.05rem; height: 1.05rem; }

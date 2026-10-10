@@ -2889,11 +2889,24 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .flipc__sheen { position: absolute; inset: 0; border-radius: var(--r-2); pointer-events: none; opacity: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .28) 50%, transparent 65%); background-size: 260% 100%; background-position: 120% 0; mix-blend-mode: overlay; }
 .flipc.is-turning .flipc__sheen { animation: flipc-sheen var(--dur, .95s) ease-out both; }
 @keyframes flipc-sheen { 0% { opacity: 0; background-position: 120% 0; } 25% { opacity: 1; } 100% { opacity: 0; background-position: -20% 0; } }
-.flipc__bar { position: absolute; left: .55rem; bottom: .55rem; z-index: 2; display: inline-flex; align-items: center; gap: .5rem; max-width: calc(100% - 1.1rem); padding: .3rem .65rem; border-radius: 999px; background: rgb(8 10 14 / .72); color: #fff; backdrop-filter: blur(4px); pointer-events: none; }
-.flipc__dots { display: inline-flex; gap: .3rem; }
-.flipc__dots i { width: .5rem; height: .5rem; border-radius: 50%; background: rgb(255 255 255 / .4); transition: background .3s, transform .3s; }
-.flipc__dots i.is-on { background: var(--hud-amber, #ffb020); transform: scale(1.25); }
-.flipc__cap { min-width: 0; font-size: .74rem; font-weight: 700; letter-spacing: .02em; color: #fff; line-height: 1.2; }
-.flipc__meta { display: flex; flex-wrap: wrap; gap: .2rem .75rem; margin: 0; font-size: var(--step--1); color: var(--text-2); }
 @media (max-width: 55.99rem) { .flipc { max-width: min(100%, 24rem); } }
 @media (prefers-reduced-motion: reduce) { .flipc__card { transition: none; } .flipc.is-turning .flipc__sheen { animation: none; } }
+
+/* ===== update 20: one-line picture caption = description + round download arrow (replaces "Download original PNG x MB" text and tap hints) ===== */
+.pcap { display: flex; align-items: center; gap: .6rem; min-width: 0; margin: 0; }
+.pcap--flip { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.pcap--flip .pcap__dl { justify-self: end; }
+.pcap__flip { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; min-height: 2.75rem; padding: .4rem 1.1rem; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent); color: var(--accent-ink, #fff); font: inherit; font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.pcap__flip svg { width: 1.1rem; height: 1.1rem; }
+.pcap__flip:hover { filter: brightness(1.08); }
+.pcap__flip:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.pcap__t { flex: 1; min-width: 0; font-size: var(--step--1); font-weight: 700; line-height: 1.3; color: var(--text); }
+.pcap__dots { display: inline-flex; gap: .3rem; flex: 0 0 auto; }
+.pcap__dots i { width: .5rem; height: .5rem; border-radius: 50%; background: var(--line-strong); transition: background .3s, transform .3s; }
+.pcap__dots i.is-on { background: var(--accent); transform: scale(1.25); }
+.pcap__dl { flex: 0 0 auto; display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--accent); border-radius: 50%; color: var(--accent); background: transparent; text-decoration: none; transition: background .2s, color .2s; }
+.pcap__dl svg { width: 1.2rem; height: 1.2rem; }
+.pcap__dl:hover, .pcap__dl:focus-visible { background: var(--accent); color: var(--accent-ink, #fff); }
+.pcap__dl:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.rv-panel:not(.is-wide) .pcap { max-width: 26rem; }
+@media (max-width: 55.99rem) { .rv-panel:not(.is-wide) .pcap { max-width: min(100%, 24rem); margin-inline: auto; } }
