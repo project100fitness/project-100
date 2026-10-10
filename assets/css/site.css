@@ -2958,3 +2958,14 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 :root{--site-corner-inset:max(.75rem,var(--gutter),calc((100% - var(--content-w))/2))}
 .fab-dock{left:max(var(--site-corner-inset),env(safe-area-inset-left,0px))}
 .fab-switch{right:max(var(--site-corner-inset),env(safe-area-inset-right,0px))}
+
+/* Reserve a clear lane for information markers beside card text and amounts. */
+.ingredient-row,
+.gear-item .card__title.ingredient-row,
+.gear-bundle__name.ingredient-row,
+.item-facts-table td.ingredient-row {
+  box-sizing: border-box;
+  padding-right: 4rem !important;
+  min-height: 3.3rem;
+}
+.ingredient-row > :not(.ingredient-info) { min-width: 0; overflow-wrap: anywhere; }
