@@ -22,7 +22,16 @@
     if (!wrap) return;
     var details = [].slice.call(wrap.querySelectorAll('[data-hud-detail]'));
     var byId = {}; details.forEach(function (d) { byId[d.id] = d; });
-    var stage = document.createElement('div'); stage.className = 'hud-stage' + (details.length < 2 ? ' hud-stage--single' : ''); stage.setAttribute('aria-live', 'polite');
+    var flow = list.hasAttribute('data-hud-flow');
+    var stage = document.createElement(flow ? 'li' : 'div'); stage.className = 'hud-stage' + (details.length < 2 ? ' hud-stage--single' : ''); stage.setAttribute('aria-live', 'polite');
+    if (flow) details.forEach(function (d) {
+      var topNav = d.querySelector('.hud-detail__nav');
+      if (!topNav) return;
+      var position = document.createElement('span'); position.setAttribute('data-hud-position', ''); position.className = 'hud-flow-position'; topNav.insertBefore(position, topNav.children[1]);
+      var bottom = topNav.cloneNode(true); bottom.classList.add('hud-flow-bottom');
+      bottom.querySelector('[data-hud-prev]').textContent = '‹ Previous'; bottom.querySelector('[data-hud-next]').textContent = 'Next ›';
+      d.appendChild(bottom);
+    });
     var current = null;
     var me = { isOpen: function () { return !!current; }, close: function (o) { close(o); } };
     registry.push(me);
@@ -36,8 +45,9 @@
     }
     function lastInRow(card) {
       var li = card.parentNode, items = [].slice.call(list.children).filter(function (x) { return x !== stage; });
-      var i = items.indexOf(li), c = cols(), end = Math.min(items.length - 1, (Math.floor(i / c) + 1) * c - 1);
-      return items[end];
+      var top = li.offsetTop, last = li;
+      items.forEach(function (item) { if (Math.abs(item.offsetTop - top) < 4) last = item; });
+      return last;
     }
     function cardForHash(h) {
       var hit = cards.filter(function (c) { return c.getAttribute('href') === '#' + h || c.getAttribute('aria-controls') === h; })[0];
@@ -93,7 +103,9 @@
       cards.forEach(function (c) { setState(c, c === card); });
       list.classList.add('is-open');
       stage.appendChild(d);
-      list.parentNode.insertBefore(stage, list);   // always ABOVE every card, never between rows
+      if (flow) { var rowEnd = lastInRow(card); list.insertBefore(stage, rowEnd.nextSibling); }
+      else list.parentNode.insertBefore(stage, list);
+      if (flow) d.querySelectorAll('[data-hud-position]').forEach(function (x) { x.textContent = (cards.indexOf(card) + 1) + ' of ' + cards.length; });
       d.classList.remove('is-closing');
       if (!opts.nohist) setHist(card, id, opts.mode || 'user');
       if (!opts.noScroll) {
@@ -129,7 +141,8 @@
     var lastCols = 0;
     window.addEventListener('resize', function () {
       if (!current) return;
-      var c = cols(); if (c === lastCols) return; lastCols = c;
+      var c = cols(); lastCols = c;
+      if (flow) { var active = cards.filter(function (x) { return x.getAttribute('aria-expanded') === 'true'; })[0]; if (active) { stage.remove(); var end = lastInRow(active); list.insertBefore(stage, end.nextSibling); } }
     });
     // deep link: page.html#vector-v4 opens that card
     function fromHash(opts) {
