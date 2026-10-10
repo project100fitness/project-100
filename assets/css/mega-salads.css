@@ -191,3 +191,9 @@ html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{backgro
 .nutrition-salads .salad-card__body>.salad-dressing-navigation time{text-align:center;padding-top:0;font-size:.75rem}
 .nutrition-salads .salad-card__body>.salad-dressing-navigation .salad-card-arrow{min-height:44px}
 @media(max-width:599px){.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{flex:none;margin:.7rem .85rem;align-self:center}.nutrition-salads .salad-card__body{border-top:0}}
+
+/* All salads are available immediately; prominent scrollbar below both rows. */
+.nutrition-salads .salad-gallery{scrollbar-width:auto;scrollbar-color:#ed8b48 #182321;padding-bottom:1.1rem}
+.nutrition-salads .salad-gallery::-webkit-scrollbar{height:22px}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:#182321;border:1px solid #ed8b4855;border-radius:10px}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:#ed8b48;border:4px solid #182321;border-radius:10px;min-width:48px}
