@@ -423,8 +423,7 @@
     document.documentElement.classList.add('no-scroll');
   });
 
-  /* Preview pop-up for page-link rows ([data-preview] carousels): a bigger picture, the title and an "Open page" button, so a stray tap
-     never throws a visitor off the page. Text-only cards (the story chapters) open as a large readable card. Prev / next step through the row. */
+  /* Reading previews are for unlinked text cards. Linked cards use native navigation. */
   var pdlg, pimg, pkick, ptitle, ptext, pgo, pset = [], pidx = 0, popener;
   function pbuild() {
     if (pdlg) return;
@@ -478,8 +477,8 @@
     var it = e.target.closest('[data-preview] .carousel__item');
     if (!it) return;
     var row = it.closest('[data-preview]');
-    if (it.querySelector('a[href]') && !e.target.closest('a[href]')) return;      /* only a tap on the card itself */
-    if (!it.querySelector('a[href]') && e.target.closest('a,button')) return;
+    if (it.querySelector('a[href]')) return; /* A page card opens its destination directly. */
+    if (e.target.closest('a,button')) return;
     e.preventDefault();
     pbuild();
     pset = P.$$('.carousel__item', row);
