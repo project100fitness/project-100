@@ -2763,3 +2763,10 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
   .rv-eds li { flex: none; scroll-snap-align: start; }
   .rv-eds li:last-child { padding-right: 2.5rem; }
 }
+
+/* ---- update 17: the day picture inside the Guidebook branch panels (no step number, full width) ---- */
+.chap-clock__pic { counter-increment: none; padding-left: var(--s-4); }
+.chap-clock__pic::before { content: none; display: none; }
+@media (min-width: 640px) { .chap-clock__pic { padding-left: var(--s-5); } }
+.chap-clock__pic .rv-in { margin: var(--s-3) 0; }
+.chap-clock__pic .acc { margin-top: var(--s-3); }
