@@ -2899,3 +2899,13 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .pcap__dl:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .rv-panel:not(.is-wide) .pcap { max-width: 26rem; }
 @media (max-width: 55.99rem) { .rv-panel:not(.is-wide) .pcap { max-width: min(100%, 24rem); margin-inline: auto; } }
+
+.ingredient-row { position: relative; padding-right: 2.8rem !important; }
+.ingredient-info { position: absolute; right: .65rem; top: .65rem; width: 1.5rem; height: 1.5rem; border: 1px solid #44d4d5; border-radius: 50%; color: #44d4d5; background: #182329; font: 700 .85rem/1 sans-serif; cursor: pointer; }
+.ingredient-info:focus-visible { outline: 2px solid #ff7a19; outline-offset: 3px; }
+.ingredient-tip { position: fixed; z-index: 10000; box-sizing: border-box; width: min(320px, calc(100vw - 24px)); padding: 1rem; color: #edf4f6; background: #14242c; border: 1px solid #44d4d5; border-left: 3px solid #ff7a19; border-radius: .4rem; box-shadow: 0 12px 32px #0009; font-size: .9rem; line-height: 1.45; }
+.ingredient-tip[hidden] { display: none; }
+.ingredient-tip strong { color: #44d4d5; }
+.ingredient-tip p { margin: .35rem 0; }
+.ingredient-tip a { color: #ffc18e; font-size: .78rem; }
+.ingredient-tip > div + div { margin-top: .8rem; padding-top: .8rem; border-top: 1px solid #ffffff26; }
