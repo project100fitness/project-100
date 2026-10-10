@@ -40,24 +40,25 @@
 })();
 
 /* ===== 20-header.js ===== */
-/* Header: hide while reading downwards, show again on any upward scroll; centre the current tab. */
+/* Header: only shown near the very top of the page (or while something inside it has keyboard focus), so it never covers the picture or card being read.
+   Scrolling up in the middle of a page does NOT bring it back; scroll to the top for the menu. Also centres the current tab. */
 (function () {
   'use strict';
   var P = window.P100, head = P.$('#siteHead');
   if (!head) return;
-  var last = window.scrollY, ticking = false;
+  var SHOW_BELOW = 140, ticking = false;
   function update() {
-    var y = window.scrollY, dy = y - last;
-    if (head.contains(document.activeElement) && document.activeElement !== document.body) { head.dataset.hidden = 'false'; }
-    else if (y < 160 || dy < -4) { head.dataset.hidden = 'false'; }
-    else if (dy > 6) { head.dataset.hidden = 'true'; }
-    if (Math.abs(dy) > 6) last = y;
+    var y = window.scrollY;
+    if (head.contains(document.activeElement) && document.activeElement !== document.body) head.dataset.hidden = 'false';
+    else head.dataset.hidden = y < SHOW_BELOW ? 'false' : 'true';
     ticking = false;
   }
   window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }, { passive: true });
   head.addEventListener('focusin', function () { head.dataset.hidden = 'false'; });
+  head.addEventListener('focusout', function () { setTimeout(update, 0); });
+  update();
 
   var list = P.$('.tabs__list'), cur = list && P.$('[aria-current="page"]', list);
   if (cur) list.scrollLeft = Math.max(0, cur.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2);
