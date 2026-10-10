@@ -439,3 +439,10 @@
 .vector-purpose p:first-child { margin-top: .4rem; }
 .vector-purpose p:last-child { margin-bottom: 0; }
 .vector-purpose strong { color: var(--text); }
+
+/* Keep animated artwork inside its column as protocol text grows. */
+.hud-detail__grid { align-items: start; }
+.hud-detail__grid > .flipc { align-self: start; min-width: 0; width: 100%; max-width: 100%; }
+.hud-detail__grid > .flipc .flipc__stage { min-width: 0; width: 100%; align-self: start; }
+.hud-detail__body { min-width: 0; }
+.vector-purpose { padding: .6rem .8rem; border-inline-start: 3px solid var(--hud-amber); background: color-mix(in srgb, var(--amber) 8%, transparent); overflow-wrap: anywhere; }
