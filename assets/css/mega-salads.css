@@ -43,3 +43,29 @@
 /* Nutrition dashboard uses the site's existing count-up animation hooks. */
 .nutrition-dashboard{margin:1.3rem 0;padding:clamp(1rem,2.5vw,1.8rem);border:1px solid #ffffff25;border-radius:14px;background:linear-gradient(130deg,#16212b,#10171c)}.nutrition-dashboard h2{font-size:clamp(1.2rem,2.6vw,1.8rem);margin:.4rem 0 1rem}.nutrition-metrics{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin:1rem 0;padding:0;list-style:none}.nutrition-metric{--metric-accent:#acd0b9;position:relative;text-align:left!important;padding:1rem!important;min-width:0;border:1px solid #ffffff20!important;border-top:2px solid var(--metric-accent)!important;border-radius:10px;background:#ffffff04!important}.nutrition-metric[data-metric="energy"]{--metric-accent:#edb07c}.nutrition-metric[data-metric="protein"],.nutrition-metric[data-metric="smm"]{--metric-accent:#a8d5ba}.nutrition-metric[data-metric="carbs"]{--metric-accent:#d7c38a}.nutrition-metric[data-metric="fat"]{--metric-accent:#d4aac7}.nutrition-metric[data-metric="water"]{--metric-accent:#8ec9e2}.nutrition-metric .stat__value,.nutrition-metric .metric-range{color:var(--metric-accent)!important;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:750;line-height:1.2;font-variant-numeric:tabular-nums}.metric-range{display:flex;align-items:center;gap:.2rem;white-space:nowrap}.metric-range i{font-style:normal;opacity:.5;font-size:.8em}.nutrition-metric__unit{display:block;font-size:.75rem;color:#b9c6cb;letter-spacing:.1em;margin:.3rem 0}.nutrition-metric .stat__label{display:block;font-size:.95rem;color:#edf2ed}.nutrition-metric small{display:block;color:#a7b8be;font-size:.75rem;margin-top:.35rem}.nutrition-dashboard__note{font-size:.85rem!important;color:#b4c2c6;line-height:1.5;margin:.8rem 0}.salad-range-board{margin:1.2rem 0}.salad-plan-share{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.65rem;margin:1rem 0}.salad-plan-share article{padding:.8rem;background:#ffffff04;border-radius:8px;border:1px solid #a9c9b425;min-width:0}.salad-plan-share strong,.salad-plan-share b,.salad-plan-share small{display:block}.salad-plan-share strong{font-size:.8rem;color:#b6c9bf}.salad-plan-share b{font-size:1.15rem;margin:.4rem 0;color:#e8f0e7;font-variant-numeric:tabular-nums}.salad-plan-share small{font-size:.75rem;color:#b3c1be}.salad-plan-share progress{width:100%;height:5px;margin:.5rem 0;accent-color:#a9c9b4}.salad-goal-tracker{margin:1.5rem 0;border-top:1px solid #a9c9b425;padding-top:1rem}.salad-fluid-sodium{padding:.9rem;border-left:2px solid #8ec9e2;background:#8ec9e209;line-height:1.6}
 @media(max-width:850px){.nutrition-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.salad-plan-share{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:520px){.nutrition-metric{padding:.75rem!important}.salad-plan-share{grid-template-columns:repeat(2,minmax(0,1fr))}.nutrition-metric .stat__value,.nutrition-metric .metric-range{font-size:1.65rem}}
+
+/* Main Nutrition: recipe cards with one dressing choice and compact combined totals. */
+.nutrition-salads .salad-card-choice{display:grid;gap:.35rem;margin:.75rem 0;font-weight:650;font-size:.95rem}
+.nutrition-salads .salad-card-choice select{min-height:44px;max-width:100%;width:100%;font:inherit;font-size:1rem;border:1px solid #a9c9b463;border-radius:8px;padding:.65rem;background:#111a1d;color:#eef3ed}
+.nutrition-salads .salad-card-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+.nutrition-salads .salad-card-metrics div{min-width:0;padding:.5rem;background:#ffffff05;border-radius:6px}
+.nutrition-salads .salad-card-metrics div:first-child{grid-column:1/-1}
+.nutrition-salads .salad-card-metrics b,.nutrition-salads .salad-card-metrics span{display:block}
+.nutrition-salads .salad-card-metrics b{font-size:1.05rem;font-variant-numeric:tabular-nums;color:#a8d5ba;overflow-wrap:anywhere}
+.nutrition-salads .salad-card-metrics div:first-child b{color:#edb07c;font-size:1.35rem}
+.nutrition-salads .salad-card-metrics span{font-size:.85rem;color:#c3cec8}
+.nutrition-salads .salad-ingredient-preview{font-size:.9rem;line-height:1.45;margin:.5rem 0}
+.nutrition-salads .salad-recipe-details{margin-top:.85rem;border-top:1px solid #ffffff20;padding-top:.65rem}
+.nutrition-salads summary{min-height:44px;display:flex;align-items:center;font-size:.95rem;cursor:pointer}
+.nutrition-salads .salad-recipe-details li{margin:.3rem 0}
+.nutrition-salads .salad-dressing-guide,.nutrition-salads .salad-source-notes{border:1px solid #a9c9b440;border-radius:10px;padding:.5rem .85rem;margin:.75rem 0}
+.nutrition-salads .salad-dressing-recipes{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.nutrition-salads .salad-estimate-key{font-size:.9rem;line-height:1.5;color:#b4c3ba}
+.nutrition-salads .salad-identification-note{border-left:2px solid #d7c18c;padding-left:.7rem}
+.nutrition-salads .salad-card h3{min-height:0}
+html[data-theme="light"] .nutrition-salads .salad-card{background:#f7f8f3;color:#202c25}
+html[data-theme="light"] .nutrition-salads .salad-card h3,html[data-theme="light"] .nutrition-salads summary{color:#202c25}
+html[data-theme="light"] .nutrition-salads .salad-card-metrics b,html[data-theme="light"] .nutrition-salads .salad-card time{color:#28523d}
+html[data-theme="light"] .nutrition-salads .salad-card-metrics div:first-child b{color:#85501d}
+html[data-theme="light"] .nutrition-salads .salad-card-metrics span,html[data-theme="light"] .nutrition-salads .salad-estimate-key{color:#43574b}
+@media(max-width:599px){.nutrition-salads .salad-gallery{grid-template-columns:1fr}.nutrition-salads .salad-card__body{padding:1rem}.nutrition-salads .salad-photo{aspect-ratio:16/9}.nutrition-salads .salad-dressing-recipes{grid-template-columns:1fr}.nutrition-salads .salad-card h3{font-size:1.15rem}.nutrition-salads .salad-card-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
