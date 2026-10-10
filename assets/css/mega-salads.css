@@ -71,24 +71,22 @@ html[data-theme="light"] .nutrition-salads .salad-card-metrics span,html[data-th
 @media(max-width:599px){.nutrition-salads .salad-gallery{grid-template-columns:1fr}.nutrition-salads .salad-card__body{padding:1rem}.nutrition-salads .salad-photo{aspect-ratio:16/9}.nutrition-salads .salad-dressing-recipes{grid-template-columns:1fr}.nutrition-salads .salad-card h3{font-size:1.15rem}.nutrition-salads .salad-card-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* Two horizontal rows: shared fields keep each row of cards aligned. */
-.nutrition-salads .salad-gallery{display:grid;grid-template-columns:none;grid-template-rows:repeat(16,auto);grid-auto-flow:column;grid-auto-columns:clamp(17rem,31vw,21rem);align-items:stretch;gap:.5rem 1rem;overflow-x:scroll;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:auto;scrollbar-color:#d86724 #182321;padding:.25rem 0 1rem;max-width:100%;min-width:0}
+.nutrition-salads .salad-gallery{display:grid;grid-template-columns:none;grid-template-rows:repeat(14,auto);grid-auto-flow:column;grid-auto-columns:clamp(17rem,31vw,21rem);align-items:stretch;gap:.5rem 1rem;overflow-x:scroll;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:auto;scrollbar-color:#d86724 #182321;padding:.25rem 0 1rem;max-width:100%;min-width:0}
 .nutrition-salads .salad-gallery::-webkit-scrollbar{height:14px}
 .nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:#182321;border-radius:8px}
 .nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:#d86724;border:3px solid #182321;border-radius:8px}
-.nutrition-salads .salad-gallery .salad-card{display:grid;grid-template-rows:subgrid;grid-row:auto/span 8;height:auto;scroll-snap-align:start;transform:none;padding-bottom:.8rem;min-width:0}
+.nutrition-salads .salad-gallery .salad-card{display:grid;grid-template-rows:subgrid;grid-row:auto/span 7;height:auto;scroll-snap-align:start;transform:none;padding-bottom:.8rem;min-width:0}
 .nutrition-salads .salad-gallery .salad-card__body{display:contents}
 .nutrition-salads .salad-gallery .salad-card__body>*{margin-left:.85rem;margin-right:.85rem}
 .nutrition-salads .salad-gallery .salad-photo{aspect-ratio:4/3;align-self:start}
 .nutrition-salads .salad-gallery .salad-card time{padding-top:.5rem}
 .nutrition-salads .salad-gallery .salad-card h3{margin-top:.25rem;margin-bottom:.25rem;font-size:1.1rem}
 .nutrition-salads .salad-gallery .salad-ingredient-preview{margin-top:0;margin-bottom:.25rem}
-.nutrition-salads .salad-gallery .salad-card-status{font-size:.9rem;line-height:1.45;margin-top:0;margin-bottom:0;color:#d7c18c}
 .nutrition-salads .salad-gallery .salad-card-choice{margin-top:.25rem;margin-bottom:.25rem;align-self:end}
 .nutrition-salads .salad-gallery .salad-recipe-details{align-self:start;margin-top:.4rem}
 .nutrition-salads #salad-more{display:flex;width:100%;max-width:none;min-height:56px;justify-content:center;align-items:center;margin:1rem 0;font-size:1.05rem;text-align:center;box-sizing:border-box}
 .nutrition-salads .salad-gallery:focus-visible{outline:3px solid #afe0c0;outline-offset:3px}
-html[data-theme="light"] .nutrition-salads .salad-card-status{color:#76521e}
-@supports not (grid-template-rows:subgrid){.nutrition-salads .salad-gallery{grid-template-rows:repeat(2,auto)}.nutrition-salads .salad-gallery .salad-card{grid-row:auto;display:flex;flex-direction:column}.nutrition-salads .salad-gallery .salad-card__body{display:flex;flex:1;flex-direction:column;padding:.75rem 0}.nutrition-salads .salad-gallery .salad-card h3{min-height:3rem}.nutrition-salads .salad-gallery .salad-ingredient-preview{min-height:9rem}.nutrition-salads .salad-gallery .salad-card-status{min-height:5rem}.nutrition-salads .salad-gallery .salad-recipe-details{margin-top:auto}}
+@supports not (grid-template-rows:subgrid){.nutrition-salads .salad-gallery{grid-template-rows:repeat(2,auto)}.nutrition-salads .salad-gallery .salad-card{grid-row:auto;display:flex;flex-direction:column}.nutrition-salads .salad-gallery .salad-card__body{display:flex;flex:1;flex-direction:column;padding:.75rem 0}.nutrition-salads .salad-gallery .salad-card h3{min-height:3rem}.nutrition-salads .salad-gallery .salad-ingredient-preview{min-height:9rem}.nutrition-salads .salad-gallery .salad-recipe-details{margin-top:auto}}
 @media(max-width:599px){.nutrition-salads .salad-gallery{grid-auto-columns:min(85vw,20rem);gap:.5rem .75rem}.nutrition-salads #salad-more{min-height:60px;font-size:1rem}}
 
 .nutrition-salads .salad-gallery .salad-card:nth-child(odd){margin-bottom:1rem}

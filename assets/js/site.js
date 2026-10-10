@@ -319,19 +319,15 @@
     img.addEventListener('load', function () { var wide = img.naturalWidth / (img.naturalHeight || 1) > 1.4 && window.innerWidth < 720; dlg.classList.toggle('is-wide', wide); if (wide) { var f = img.parentNode.parentNode; f.scrollLeft = 0; f.scrollTop = 0; } });
     dlg.addEventListener('close', function () { dlg.classList.remove('is-wide'); document.documentElement.classList.remove('no-scroll'); if (opener) opener.focus(); img.removeAttribute('src'); });
   }
-  function srcOf(el) { return el.getAttribute('data-full') || (el.querySelector('img') || el).currentSrc || el.src; }
-  /* what the viewer shows: the biggest web version from the card's own srcset (fast on phones); the hi-res original stays behind Download / Full size */
-  function viewOf(el) {
-    var im = el.matches('img') ? el : el.querySelector('img'), ss = im && im.getAttribute('srcset'), best = '', w = 0;
-    if (ss) ss.split(',').forEach(function (c) { var q = c.trim().split(/\s+/), n = parseInt(q[1], 10) || 0; if (n > w && n <= 1700) { w = n; best = q[0]; } });
-    return best || srcOf(el);
-  }
+  function srcOf(el) { return el.getAttribute('data-orig') || el.getAttribute('data-full') || (el.querySelector('img') || el).currentSrc || el.src; }
+  /* Explicit originals take priority for viewing, opening and downloading. */
+  function viewOf(el) { return srcOf(el); }
   function labelOf(el) { var i = el.matches('img') ? el : el.querySelector('img'); return el.getAttribute('aria-label') || (i && i.alt) || ''; }
   function show(i) {
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
     dlg.classList.remove('is-wide'); img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
-    var org = el.getAttribute('data-orig') || src; dl.href = org; dl.setAttribute('download', org.split('/').pop().split('?')[0]); full.href = src;   /* data-orig = hi-res original (download); data-full = web version */
+    var org = el.getAttribute('data-orig') || src; dl.href = org; dl.setAttribute('download', org.split('/').pop().split('?')[0]); full.href = org;   /* data-orig = hi-res original (download); data-full = web version */
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
   }

@@ -47,14 +47,11 @@ chosen.slice(0,expanded?chosen.length:6).forEach(p=>{
  const img=el('img');img.src='assets/web/mega-salads/'+p.id+'-480.webp';
  // This photo's existing 1200px asset is empty; retain the valid preview.
  if(p.id==='20260923_151755'){photo.dataset.full=img.src;img.srcset=img.src+' 480w';}else img.srcset=img.src+' 480w, '+photo.dataset.full+' 1200w';
+ photo.dataset.orig='assets/media/mega-salads/originals/'+p.id+'.jpg';photo.dataset.full=photo.dataset.orig;
  img.sizes='(min-width: 900px) 30vw, (min-width: 600px) 48vw, 100vw';img.alt=p.title;img.loading='lazy';img.decoding='async';photo.append(img);
  const body=el('div',null,'salad-card__body'),time=el('time',p.id.slice(0,4)+'-'+p.id.slice(4,6)+'-'+p.id.slice(6,8));time.dateTime=time.textContent;
  const amounts=recipePortions(p),count=eggCount(p),wholeCan=amounts.beans!==portions.beans;
  body.append(time,el('h3',p.title),el('p',p.ingredients.map(k=>k==='egg'?count+' boiled eggs':k==='beans'&&wholeCan?'1 whole can mixed beans':names[k].replace('Drained ','')).join(' · '),'salad-ingredient-preview'));
- const status=el('p',null,'salad-card-status');
- if(p.note&&/excluded|excludes/.test(p.note))status.textContent='Partial estimate: unidentified protein topping excluded.';
- if(p.id==='20260925_113245')status.textContent='Two-egg recipe variant with mixed beans and lupini; eggs in this photo need confirmation.';
- body.append(status);
  const choice=el('label','Dressing','salad-card-choice'),select=el('select');select.setAttribute('aria-label','Dressing for '+p.title);
  [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);body.append(choice);
  const results=el('div',null,'salad-card-metrics');results.setAttribute('aria-live','polite');body.append(results);
