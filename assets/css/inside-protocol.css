@@ -1,0 +1,31 @@
+#art-preview .protocol-intro { margin: 0 0 1rem; }
+.protocol-accordion { display: grid; gap: .7rem; margin-bottom: 1.2rem; }
+.protocol-panel { --edge: #16d7e3; min-width: 0; border: 1px solid color-mix(in srgb, var(--edge) 55%, transparent); border-inline-start: 4px solid var(--edge); border-radius: .75rem; overflow: hidden; background: var(--surface, #101419); }
+.protocol-panel:nth-child(even) { --edge: #ffac35; }
+.protocol-panel[open] { box-shadow: 0 0 18px color-mix(in srgb, var(--edge) 16%, transparent); }
+.protocol-panel__head { display: flex; align-items: center; gap: .85rem; padding: .75rem 1rem; cursor: pointer; list-style: none; }
+.protocol-panel__head::-webkit-details-marker { display: none; }
+.protocol-panel__head:focus-visible { outline: 3px solid var(--edge); outline-offset: -4px; }
+.protocol-panel__number { font-weight: 800; color: var(--edge); font-size: 1.15rem; }
+.protocol-panel__preview { width: 100px; height: 58px; object-fit: contain; border-radius: .3rem; background: #070c10; flex: none; }
+.protocol-panel__label { display: grid; gap: .2rem; min-width: 0; flex: 1; }
+.protocol-panel__label strong { font-size: clamp(1rem, 2vw, 1.3rem); }
+.protocol-panel__label > span { font-size: .9rem; opacity: .8; }
+.protocol-panel__toggle { color: var(--edge); font-size: 1.65rem; line-height: 1; transition: transform .25s ease; }
+.protocol-panel[open] .protocol-panel__toggle { transform: rotate(45deg); }
+.protocol-panel__body { padding: .35rem .7rem .7rem; }
+.protocol-panel__image { display: block; background: #070c10; border-radius: .35rem; overflow: hidden; }
+.protocol-panel__image img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+.protocol-panel[open] .protocol-panel__body { animation: protocol-reveal .3s ease-out; }
+@keyframes protocol-reveal { from { opacity: .2; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) {
+  .protocol-panel__head { padding: .65rem; gap: .55rem; }
+  .protocol-panel__preview { width: 68px; height: 44px; }
+  .protocol-panel__label > span { font-size: .8rem; }
+  .protocol-panel__number { font-size: .9rem; }
+  .protocol-panel__body { padding: .25rem .3rem .3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .protocol-panel[open] .protocol-panel__body { animation: none; }
+  .protocol-panel__toggle { transition: none; }
+}
