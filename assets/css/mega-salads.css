@@ -1,0 +1,17 @@
+/* Compact photo journal, native ingredient details and editable portions. */
+.salad-page .hud-folder__body{padding:clamp(1rem,3vw,2rem)}
+.salad-page .hud-folder__body>p{max-width:85ch;line-height:1.6}
+.salad-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}
+.salad-card{overflow:hidden;border:1px solid #ffffff25;border-radius:12px;background:#111923}
+.salad-photo{display:block;width:100%;padding:0;border:0;cursor:zoom-in;position:relative;aspect-ratio:4/3;background:#080d12}
+.salad-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.salad-photo:hover img{transform:scale(1.025)}
+.salad-card__body{padding:1rem}.salad-card time{font-size:.8rem;color:#aab9c8}.salad-card h3{font-size:1.05rem;line-height:1.35;margin:.5rem 0}.salad-card details{font-size:.9rem;line-height:1.5}.salad-card summary{cursor:pointer;color:#cfdee9}
+.salad-roles,.salad-goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+.salad-role,.salad-goals article,.salad-dressing,.salad-estimates article{padding:1rem;border:1px solid #ffffff22;border-radius:10px;background:#101923}
+.salad-role summary{cursor:pointer;font-weight:700}.salad-role small{display:block;font-weight:400;color:#a5c6b4;margin-top:.25rem}.salad-role p,.salad-goals p{line-height:1.6;margin-top:.7rem}
+.salad-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}.salad-controls label{display:flex;flex-direction:column;gap:.4rem;font-weight:600}.salad-controls input,.salad-controls select{width:100%;min-height:44px;border:1px solid #648077;border-radius:6px;background:#0a1119;color:#fff;padding:.65rem;font:inherit}.salad-controls label>span{font-size:.8rem;color:#a8b6c6;font-weight:400}
+.salad-dressing{border-color:#68a383;margin:1rem 0}.salad-estimates{display:grid;gap:.8rem}.salad-estimates h3{font-size:1rem;margin:0 0 .7rem}.salad-macros{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}.salad-macros span{font-size:.8rem;color:#b9c6d3}.salad-macros b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.25rem}.salad-total{border-color:#81b99a!important;background:#13251e!important}
+.salad-page button:focus-visible,.salad-page summary:focus-visible,.salad-page input:focus-visible,.salad-page select:focus-visible{outline:3px solid #afe0c0;outline-offset:3px}
+@media(max-width:850px){.salad-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.salad-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.salad-gallery{gap:.6rem}.salad-card__body{padding:.65rem}.salad-card h3{font-size:1rem}.salad-roles,.salad-goals{grid-template-columns:1fr}.salad-macros{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:.8rem}.salad-macros b{font-size:1.1rem}.salad-page .hud-chips{gap:.5rem}.salad-page p{font-size:1rem}}
