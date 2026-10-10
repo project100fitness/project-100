@@ -453,3 +453,9 @@
 .hud-flow-bottom{display:flex;justify-content:center;align-items:center;gap:.65rem;padding:1rem;border-top:1px solid #ffffff25}
 .hud-flow-bottom .hud-nav{width:auto;min-width:44px;padding:.6rem;font-size:1rem}
 @media(max-width:39.99rem){.hud-cards--vector-flow{--cols:1}.hud-cards--vector-flow>li:not(.hud-stage){max-width:26rem;width:100%}}
+
+/* All expandable folders use the same inline reading flow. */
+.hud-cards--inline-flow>.hud-stage{list-style:none;min-width:0}
+.hud-cards--inline-flow .hud-detail__nav [data-hud-prev],.hud-cards--inline-flow .hud-detail__nav [data-hud-next]{display:inline-flex}
+.hud-cards--inline-flow .hud-stage--single [data-hud-prev],.hud-cards--inline-flow .hud-stage--single [data-hud-next]{display:none}
+@media(max-width:40rem){.hud-cards--inline-flow .hud-detail__bar{flex-wrap:wrap}.hud-cards--inline-flow .hud-detail__nav{flex-wrap:wrap}.hud-cards--inline-flow .hud-flow-bottom{margin-left:0;justify-content:center;width:100%;box-sizing:border-box}}

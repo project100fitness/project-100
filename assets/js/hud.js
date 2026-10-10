@@ -11,7 +11,7 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  var reduce = false; // Project owner requests animated presentation.
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var groups = document.querySelectorAll('[data-hud-cards]');
   if (!groups.length) return;
   var registry = [];   // every folder's card group, so opening one closes the others
@@ -22,7 +22,8 @@
     if (!wrap) return;
     var details = [].slice.call(wrap.querySelectorAll('[data-hud-detail]'));
     var byId = {}; details.forEach(function (d) { byId[d.id] = d; });
-    var flow = list.hasAttribute('data-hud-flow');
+    var flow = true;
+    list.classList.add('hud-cards--inline-flow');
     var stage = document.createElement(flow ? 'li' : 'div'); stage.className = 'hud-stage' + (details.length < 2 ? ' hud-stage--single' : ''); stage.setAttribute('aria-live', 'polite');
     if (flow) details.forEach(function (d) {
       var topNav = d.querySelector('.hud-detail__nav');
@@ -120,7 +121,7 @@
       if (!current) return;
       var i = details.indexOf(current), n = details.length;
       var card = cards.filter(function (c) { return c.getAttribute('aria-controls') === details[(i + dir + n) % n].id; })[0];
-      if (card) open(card);
+      if (card) { open(card); current.setAttribute('tabindex', '-1'); current.focus({ preventScroll: true }); }
     }
 
     cards.forEach(function (card) {
