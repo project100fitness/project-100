@@ -40,7 +40,7 @@ const doc=root.document,gallery=doc.getElementById('salad-gallery');if(!gallery)
 let filter='all',expanded=false;const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g','g'];
 function range(lo,hi,unit){return Math.round(lo)+'–'+Math.round(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
-function draw(){gallery.replaceChildren();const chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();
+function draw(){gallery.scrollLeft=0;gallery.replaceChildren();const chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();
 chosen.slice(0,expanded?chosen.length:6).forEach(p=>{
  const card=el('article',null,'salad-card');card.dataset.saladCategory=p.category;
  const photo=el('button',null,'salad-photo zoom');photo.type='button';photo.dataset.full='assets/web/mega-salads/'+p.id+'-1200.webp';photo.setAttribute('aria-label','Enlarge '+p.title);
@@ -51,8 +51,10 @@ chosen.slice(0,expanded?chosen.length:6).forEach(p=>{
  const body=el('div',null,'salad-card__body'),time=el('time',p.id.slice(0,4)+'-'+p.id.slice(4,6)+'-'+p.id.slice(6,8));time.dateTime=time.textContent;
  const amounts=recipePortions(p),count=eggCount(p),wholeCan=amounts.beans!==portions.beans;
  body.append(time,el('h3',p.title),el('p',p.ingredients.map(k=>k==='egg'?count+' boiled eggs':k==='beans'&&wholeCan?'1 whole can mixed beans':names[k].replace('Drained ','')).join(' · '),'salad-ingredient-preview'));
- if(p.note&&/excluded|excludes/.test(p.note))body.append(el('p','Partial estimate: unidentified protein topping excluded.','salad-identification-note'));
- if(p.id==='20260925_113245')body.append(el('p','Two-egg recipe variant with mixed beans and lupini; eggs in this photo need confirmation.','salad-identification-note'));
+ const status=el('p',null,'salad-card-status');
+ if(p.note&&/excluded|excludes/.test(p.note))status.textContent='Partial estimate: unidentified protein topping excluded.';
+ if(p.id==='20260925_113245')status.textContent='Two-egg recipe variant with mixed beans and lupini; eggs in this photo need confirmation.';
+ body.append(status);
  const choice=el('label','Dressing','salad-card-choice'),select=el('select');select.setAttribute('aria-label','Dressing for '+p.title);
  [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);body.append(choice);
  const results=el('div',null,'salad-card-metrics');results.setAttribute('aria-live','polite');body.append(results);
