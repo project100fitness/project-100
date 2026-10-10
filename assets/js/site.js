@@ -521,7 +521,15 @@
       buttons.forEach(function (b) { var on = b.dataset.filter === cat; b.setAttribute('aria-pressed', String(on)); b.classList.toggle('is-active', on); });
       var n = 0;
       cards.forEach(function (c) { var show = cat === 'all' || c.dataset.cat === cat; c.hidden = !show; if (show) n++; });
-      var live = P.$('[data-filter-status]', group.parentElement); if (live) live.textContent = n + (n === 1 ? ' entry' : ' entries');
+      var live = P.$('[data-filter-status]', group.parentElement);
+      if (live) {
+        var rows = cards.filter(function(c) { return !c.hidden; });
+        var grouped = rows.length && rows.every(function(c) { return c.hasAttribute('data-count'); });
+        if (grouped) {
+          var total = rows.reduce(function(sum, c) { return sum + Number(c.dataset.count || 0); }, 0);
+          live.textContent = total + (total === 1 ? ' item' : ' items') + ' · ' + n + (n === 1 ? ' category' : ' categories');
+        } else live.textContent = n + (n === 1 ? ' entry' : ' entries');
+      }
       if (push) { var u = new URL(location.href); if (cat === 'all') u.searchParams.delete(param); else u.searchParams.set(param, cat); history.replaceState(null, '', u); }
     }
     buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.filter, true); }); });
@@ -1168,4 +1176,15 @@
     show();
   }
   all('[data-flip]').forEach(init);
+})();
+
+/* A vocabulary link opens its native disclosure before the reader arrives. */
+(function(){
+  function revealTerms(){
+    if(location.hash !== '#protocol-terms') return;
+    var terms=document.getElementById('protocol-terms');
+    if(terms && terms.tagName === 'DETAILS') terms.open=true;
+  }
+  window.addEventListener('hashchange',revealTerms);
+  revealTerms();
 })();

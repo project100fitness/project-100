@@ -2969,3 +2969,22 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
   min-height: 3.3rem;
 }
 .ingredient-row > :not(.ingredient-info) { min-width: 0; overflow-wrap: anywhere; }
+
+/* Visitor context, topic choices and a compact vocabulary reference. */
+.visitor-route{margin:.75rem 0;font-size:1rem;line-height:1.55;overflow-wrap:anywhere}
+.visitor-route--terms{font-size:.95rem;margin:.6rem 0 1rem}
+.visitor-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.visitor-topic-grid>a{display:flex;flex-direction:column;gap:.45rem;padding:1rem;border:1px solid var(--line);border-inline-start:3px solid var(--accent);border-radius:.5rem;background:var(--surface);color:var(--text);text-decoration:none}
+.visitor-topic-grid>a strong{font-size:1.1rem;color:var(--accent)}
+.visitor-topic-grid>a span{font-size:1rem;line-height:1.5}
+.visitor-topic-grid>a:hover,.visitor-topic-grid>a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.visitor-terms{margin-top:1rem;border:1px solid var(--line);border-radius:.5rem;background:var(--surface)}
+.visitor-terms>summary{display:flex;justify-content:space-between;gap:1rem;padding:1rem;cursor:pointer;font-weight:700;font-size:1.05rem}
+.visitor-terms>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.visitor-terms dl{margin:0;padding:0 1rem 1rem;font-size:1rem;line-height:1.55}
+.visitor-terms dt{font-weight:700;color:var(--accent);margin-top:.75rem}
+.visitor-terms dd{margin:.25rem 0 0}
+#start-here .carousel{margin-top:1rem}
+#start-here .visitor-route a,.visitor-route--terms a{text-underline-offset:.2em}
+.art-cap::before{content:'⤢ ';color:var(--accent);font-weight:700}
+@media(max-width:40rem){.visitor-topic-grid{grid-template-columns:1fr}.visitor-route--terms{font-size:1rem}}

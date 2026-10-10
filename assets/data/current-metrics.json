@@ -12,7 +12,7 @@
     "weight_kg": 90.76,
     "weight_period": "September–October 2026; exact measurement date not supplied",
     "baseline_smm_lb": 88.2,
-    "baseline_smm_scan_date_reported": "2025-12-14",
+    "baseline_smm_scan_date_reported": "2025-12-02",
     "baseline_lock_period": "February 2026",
     "baseline_body_fat_percent": 22.9,
     "current_body_fat_percent_estimated": 22.5,
@@ -71,6 +71,7 @@
     "Corrected BioSteel Hydration wording to Recovery Protein Plus for V4.",
     "Replaced XOR=1 with at-most-one V1/V6 rule, including rest-day inactivity.",
     "Preserved four owned KUZARO kits and six named bundles in existing gear registry.",
-    "Excluded unsupported personal biological ceiling and fixed BIA water-offset claims."
+    "Excluded unsupported personal biological ceiling and fixed BIA water-offset claims.",
+    "Owner confirmed the benchmark scan date as 2 December 2025 on 10 October 2026; measurement values and planned review window are unchanged."
   ]
 }
