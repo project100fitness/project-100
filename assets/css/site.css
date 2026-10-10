@@ -279,14 +279,7 @@ input[type="search"], input[type="text"], select {
 .prose { max-width: var(--prose-w); }
 .no-scroll { overflow: hidden; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-  }
-}
+
 
 /* ===== 20-shell.css ===== */
 /* ==========================================================================
@@ -463,7 +456,7 @@ input[type="search"], input[type="text"], select {
 @media (min-width: 720px) {
   .tab[aria-current="page"] { animation: tab-open .6s cubic-bezier(.2,.9,.3,1.25) both, tab-breathe 3.2s ease-in-out .7s infinite; }
 }
-@media (prefers-reduced-motion: reduce) { .tab[aria-current="page"] { animation: none !important; } }
+
 
 /* ---- layout ---------------------------------------------------------- */
 .layout {
@@ -765,7 +758,7 @@ input[type="search"], input[type="text"], select {
 .fab-row--primary:hover { background: var(--accent-strong); filter: brightness(1.08); }
 .fab-row--primary .fab-row__ic { background: rgba(255,255,255,.2); color: #fff; }
 .fab-row--primary small { color: rgba(255,255,255,.85); }
-@media (prefers-reduced-motion: reduce) { .fab-panel, .fab-panel__list li { animation: none; opacity: 1; } }
+
 
 .fab-switch {
   position: fixed;
@@ -1315,7 +1308,7 @@ input[type="search"], input[type="text"], select {
   .fold__mark { width: 1.8rem; height: 1.8rem; }
   .fold__inner { margin-inline: var(--s-3); }
 }
-@media (prefers-reduced-motion: reduce) { .fold__mark { transition: none; } }
+
 @media print { .fold > .fold__panel { display: block; height: auto !important; } }
 
 /* ---- zoom: any illustration that opens the hi-res viewer ------------------------- */
@@ -2400,7 +2393,7 @@ h2.vec-record__title { font-size: var(--step--1); }
 .meter__scale { display: flex; justify-content: space-between; font-size: .7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .meter__note { margin: .35rem 0 0; font-size: var(--step--1); color: var(--muted); }
 .goalmeter__foot { margin: var(--s-4) 0 0; font-size: var(--step--2); color: var(--muted); }
-@media (prefers-reduced-motion: reduce) { .meter__fill { transition: none; } }
+
 
 /* ===== 70-update7: one info card, then the illustrated content; pop-out close buttons; image-only carousels ===== */
 /* the single glowing information card that opens a page */
@@ -2570,7 +2563,7 @@ h2.vec-record__title { font-size: var(--step--1); }
   .dl-bar__kick span { display: none; }                 /* "Free PDF" only on phones */
 }
 @media (max-width: 389px) { .dl-bar__cover { display: none; } .dl-bar__half { padding-inline: .6rem; } .dl-bar__txt strong { font-size: .8rem; letter-spacing: 0; } }
-@media (prefers-reduced-motion: reduce) { .dl-bar__label svg { animation: none; } }
+
 .has-dlbar { padding-bottom: calc(var(--dl-h) + var(--dl-gap) + env(safe-area-inset-bottom, 0px)); }   /* room for the bar under the footer (pages that have one) */
 .fab-dock, .fab-switch { bottom: calc(.75rem + var(--dl-p, 0) * (var(--dl-h) + var(--dl-gap)) + env(safe-area-inset-bottom, 0px)); }   /* the corner buttons ride up with the bar */
 .dl-file.is-picked { outline: 2px solid var(--accent-strong); outline-offset: 3px; border-radius: var(--r-3, 14px); }
@@ -2700,7 +2693,7 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .rv-frame img { display: block; width: 100%; height: auto; object-fit: contain; }
 .rv-fig.is-swap .rv-frame img { animation: rv-fade .28s ease both; }
 @keyframes rv-fade { from { opacity: .15; } to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .rv-fig.is-swap .rv-frame img { animation: none; } }
+
 .rv-cap { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .75rem; font-size: var(--step--1); color: var(--text-2); line-height: 1.4; }
 .rv-cap b { color: var(--text); }
 .rv-dl { font-weight: 700; }
@@ -2871,11 +2864,7 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
   .jr__frames { grid-template-columns: repeat(3, minmax(0, 13rem)); }
 }
 @media (hover: none) { .jr__stage { cursor: default; } }
-@media (prefers-reduced-motion: reduce) {
-  .jr__img.is-in { animation: none; opacity: 1; } .jr__img.is-in ~ .jr__sweep, .jr__prog i.run { animation: none; }
-  .jr__frame { transition: none; transform: none !important; } .jr__stamp i, .jr__fc i { animation: none; }
-  .jr__flip.is-tick img { animation: none; } .jr__thumb, .jr__f { transition: none; }
-}
+
 
 /* ===== update 19: two-sided flip cards (main-site vector cards) ===== */
 .flipc { display: grid; gap: var(--s-3); min-width: 0; width: 100%; max-width: 26rem; justify-self: center; }
@@ -2890,7 +2879,7 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 .flipc.is-turning .flipc__sheen { animation: flipc-sheen var(--dur, .95s) ease-out both; }
 @keyframes flipc-sheen { 0% { opacity: 0; background-position: 120% 0; } 25% { opacity: 1; } 100% { opacity: 0; background-position: -20% 0; } }
 @media (max-width: 55.99rem) { .flipc { max-width: min(100%, 24rem); } }
-@media (prefers-reduced-motion: reduce) { .flipc__card { transition: none; } .flipc.is-turning .flipc__sheen { animation: none; } }
+
 
 /* ===== update 20: one-line picture caption = description + round download arrow (replaces "Download original PNG x MB" text and tap hints) ===== */
 .pcap { display: flex; align-items: center; gap: .6rem; min-width: 0; margin: 0; }

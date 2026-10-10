@@ -25,7 +25,4 @@
   .protocol-panel__number { font-size: .9rem; }
   .protocol-panel__body { padding: .25rem .3rem .3rem; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .protocol-panel[open] .protocol-panel__body { animation: none; }
-  .protocol-panel__toggle { transition: none; }
-}
+

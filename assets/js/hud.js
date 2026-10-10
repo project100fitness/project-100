@@ -11,7 +11,7 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; // Project owner requests animated presentation.
   var groups = document.querySelectorAll('[data-hud-cards]');
   if (!groups.length) return;
   var registry = [];   // every folder's card group, so opening one closes the others

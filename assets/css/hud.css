@@ -239,10 +239,7 @@
 .hud-alert strong { color: var(--danger); }
 
 /* ---------- reduced motion + phones ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .hud-scan::before, .hud-hero .hud-title, .hud-hero .hud-lede, .hud-hero .hud-chip, .js .hud-stage .hud-detail { animation: none !important; }
-  .hud-card, .hud-card__img img, .hud-card__img::before, .hud-btn { transition: none; }
-}
+
 @media (max-width: 599px) {
   .hud-title { transform: skewX(-4deg); }
   .hud-folder__meta { margin-left: 0; width: 100%; }
@@ -339,7 +336,7 @@
 /* animated title accent, in the site's own orange and amber */
 .hud-title em { background: linear-gradient(100deg, var(--brand-orange) 20%, var(--amber) 50%, var(--brand-orange) 80%) 0 0 / 220% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--brand-orange); animation: hud-shine 5s ease-in-out infinite; }
 @keyframes hud-shine { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
-@media (prefers-reduced-motion: reduce) { .hud-title em { animation: none; } }
+
 .hud-chip--warn strong { color: #ff6b7d; }
 
 /* ====================================================================================
@@ -376,7 +373,7 @@
 .hud-deeplink span { color: var(--hud-ink-2); font-size: var(--step--1); }
 .hud-deeplink i { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 1.5rem; color: var(--brand-orange); }
 .hud-folder--deep .hud-folder__tab { background: linear-gradient(180deg, var(--amber), var(--brand-orange)); }
-@media (prefers-reduced-motion: reduce) { .hud-chip--link, .hud-deeplink { transition: none; } }
+
 .hud-prose > table, .hud-inline > table, .hud-intro > table { display: block; max-width: 100%; overflow-x: auto; }
 
 .hud-cards > li:has(> .hud-card--text) { align-self: start; }
@@ -390,7 +387,7 @@
 .hud-folder__link { margin-left: auto; align-self: center; display: inline-flex; align-items: center; gap: .4rem; padding: .35rem .8rem; border: 1px solid var(--brand-orange); border-radius: 999px; color: var(--brand-orange); font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; background: color-mix(in srgb, var(--brand-orange) 8%, transparent); transition: background .2s, color .2s; }
 .hud-folder__link:hover, .hud-folder__link:focus-visible { background: var(--brand-orange); color: #1c1300; text-decoration: none; }
 .hud-hero .hud-lede { font-size: var(--step-1); font-weight: 600; line-height: 1.35; max-width: 52ch; }
-@media (prefers-reduced-motion: reduce) { .hud-folder__link { transition: none; } }
+
 
 /* ---- book-sourced FIT pages (V3.2): stats, boxes, lists, sources ------------ */
 .hud-prose .hud-lead { font-size: var(--step-1); line-height: 1.5; color: var(--hud-ink); max-width: 70ch; }

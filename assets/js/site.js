@@ -7,7 +7,7 @@
   var P = window.P100 = window.P100 || {};
   P.$ = function (s, r) { return (r || document).querySelector(s); };
   P.$$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  P.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  P.reduceMotion = { matches: false }; // Project owner requests motion on all devices.
   P.store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
@@ -489,8 +489,12 @@
 
   var conn = navigator.connection || {};
   P.$$('video[data-src]').forEach(function (v) {
-    if (P.reduceMotion.matches || conn.saveData) return;       /* poster only */
-    if (!('IntersectionObserver' in window)) return;
+    if (conn.saveData && !v.hasAttribute('data-always')) return;       /* poster only */
+    if (!('IntersectionObserver' in window)) {
+      v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
+      var fallbackPlay = v.play(); if (fallbackPlay && fallbackPlay.catch) fallbackPlay.catch(function () {});
+      return;
+    }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
@@ -953,7 +957,7 @@
    the native recipe text beside it never changes with the style. Without JavaScript the edition links simply open the pictures. */
 (function () {
   'use strict';
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; // Project owner requests animated presentation.
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function arrowNav(list, cur, e, go) {
     var k = e.key, n = list.length, i = list.indexOf(cur), t = -1;
@@ -1032,7 +1036,7 @@
   'use strict';
   var root = document.querySelector('[data-journal]');
   if (!root) return;
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; // Project owner requests animated presentation.
   var q = function (s, r) { return (r || root).querySelector(s); }, qa = function (s, r) { return [].slice.call((r || root).querySelectorAll(s)); };
   var stage = q('[data-jr-stage]'), img = q('[data-jr-img]'), bg = q('[data-jr-bg]'), frame = q('[data-jr-frame]'), prog = q('[data-jr-prog]');
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
@@ -1121,7 +1125,7 @@
    turns on tap of the Flip button, pauses while hovered or just used. Reduced motion: no automatic turning. Both sides open in the shared lightbox. */
 (function () {
   'use strict';
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; // Project owner requests animated presentation.
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function init(root) {
     var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'), cap = root.querySelector('[data-flip-cap]'),
