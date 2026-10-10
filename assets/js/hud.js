@@ -98,6 +98,7 @@
       var id = card.getAttribute('aria-controls'), d = byId[id];
       if (!d) return;
       if (current === d) { userClose({ focus: true }); return; }
+      var cardTop = card.getBoundingClientRect().top;
       registry.forEach(function (g) { if (g !== me && g.isOpen()) g.close({ instant: true, keepHash: true }); });
       if (current) close({ instant: true, keepHash: true });
       current = d;
@@ -109,11 +110,15 @@
       if (flow) d.querySelectorAll('[data-hud-position]').forEach(function (x) { x.textContent = (cards.indexOf(card) + 1) + ' of ' + cards.length; });
       d.classList.remove('is-closing');
       if (!opts.nohist) setHist(card, id, opts.mode || 'user');
-      if (!opts.noScroll) {
+      if (!opts.noScroll && opts.reveal) {
         var head = document.getElementById('siteHead'), off = (head ? head.offsetHeight : 0) + 12;
         // bring the top of the opened card just under the header
         var y = window.pageYOffset + stage.getBoundingClientRect().top - off;
         window.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
+      } else if (!opts.noScroll) {
+        // Keep the tapped card in place when an earlier panel collapses.
+        var shift = card.getBoundingClientRect().top - cardTop;
+        if (Math.abs(shift) > 1) window.scrollBy({ top: shift, behavior: 'instant' });
       }
     }
 
@@ -121,7 +126,7 @@
       if (!current) return;
       var i = details.indexOf(current), n = details.length;
       var card = cards.filter(function (c) { return c.getAttribute('aria-controls') === details[(i + dir + n) % n].id; })[0];
-      if (card) { open(card); current.setAttribute('tabindex', '-1'); current.focus({ preventScroll: true }); }
+      if (card) { open(card, { reveal: true }); current.setAttribute('tabindex', '-1'); current.focus({ preventScroll: true }); }
     }
 
     cards.forEach(function (card) {
@@ -148,7 +153,7 @@
     // deep link: page.html#vector-v4 opens that card
     function fromHash(opts) {
       var card = cardForHash(location.hash.slice(1));
-      if (card && current !== byId[card.getAttribute('aria-controls')]) open(card, { noScroll: false, mode: opts && opts.initial ? 'initial' : 'hash' });
+      if (card && current !== byId[card.getAttribute('aria-controls')]) open(card, { noScroll: false, reveal: true, mode: opts && opts.initial ? 'initial' : 'hash' });
     }
     window.addEventListener('hashchange', function () { fromHash(); });
     // Back / Forward: follow the history entry
@@ -161,7 +166,7 @@
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-hud-open]'); if (!t) return;
       var card = cards.filter(function (c) { return c.getAttribute('aria-controls') === t.getAttribute('data-hud-open'); })[0];
-      if (card) { e.preventDefault(); if (current && byId[card.getAttribute('aria-controls')] === current) { stage.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; } open(card); }
+      if (card) { e.preventDefault(); if (current && byId[card.getAttribute('aria-controls')] === current) { return; } open(card); }
     });
     lastCols = cols();
     if (location.hash) setTimeout(function () { fromHash({ initial: true }); }, 60);
