@@ -52,3 +52,25 @@
  body[data-site="protocol"] .main [id]{scroll-margin-top:calc(var(--mobile-rail-top,0px) + 4.25rem)}
 }
 @media print{.rail-toggle-space{display:none!important}}
+
+/* Preserve complete thumbnail artwork on mobile, including ingredient rows. */
+@media(max-width:719px),(max-width:1023px) and (pointer:coarse){
+ .hud-card:not(.hud-card--tile) .hud-card__img img,
+ .card__media img,
+ .carousel--media .card__media img,
+ .carousel--hub .chap-hub__card .card__media img,
+ .file-card__thumb,
+ .fold__thumb img,
+ .chap-thumbs img,
+ .home-photos img,
+ .home-stations img,
+ .jr__thumb img,
+ .jr__flip img,
+ .jr__f img,
+ .nutrition-salads .salad-gallery .salad-photo img,
+ .salad-browser-pick img{object-fit:contain;object-position:center;transform:none}
+ .hud-card:not(.hud-card--tile) .hud-card__img::after{background:none}
+ .hud-card:hover .hud-card__img img,
+ .home-folder:hover .card__media img,
+ .salad-photo:hover img{transform:none}
+}
