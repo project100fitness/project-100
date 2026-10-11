@@ -74,3 +74,18 @@
  .home-folder:hover .card__media img,
  .salad-photo:hover img{transform:none}
 }
+
+/* Let touch and keyboard users see the cover's light sweep as well. */
+@keyframes mobile-cover-shine{
+ from{background-position:140% 0}
+ to{background-position:-40% 0}
+}
+@media(max-width:719px),(max-width:1023px) and (pointer:coarse){
+ .hud-card:is(:hover,:focus-within,:active) .hud-card__img::before{
+  background-position:-40% 0;
+  animation:mobile-cover-shine .85s var(--hud-ease) both;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .hud-card .hud-card__img::before{animation:none!important;transition:none}
+}
