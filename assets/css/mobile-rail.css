@@ -89,3 +89,18 @@
 @media(prefers-reduced-motion:reduce){
  .hud-card .hud-card__img::before{animation:none!important;transition:none}
 }
+
+/* Shared light sweep for image covers on both sites. */
+:is(.card__media:has(img),.fold__thumb,.salad-photo){position:relative;overflow:hidden}
+:is(.card__media:has(img),.fold__thumb,.salad-photo)::before{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(105deg,transparent 38%,rgb(255 255 255 / .22) 50%,transparent 62%);
+ background-size:260% 100%;background-position:140% 0;
+}
+:is(.card,.fold__summary):is(:hover,:focus-within,:active) :is(.card__media:has(img),.fold__thumb)::before,
+.salad-photo:is(:hover,:focus-within,:active)::before{
+ animation:mobile-cover-shine .85s var(--ease) both;
+}
+@media(prefers-reduced-motion:reduce){
+ :is(.card__media:has(img),.fold__thumb,.salad-photo)::before{animation:none!important}
+}
