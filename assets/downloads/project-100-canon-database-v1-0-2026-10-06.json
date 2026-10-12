@@ -119,13 +119,13 @@
   },
   "pill_grids": {
     "wake_pack_0330": {"rule": "Daily foundation, stays on rest days", "items": [
-      {"item": "TestoFX complex", "dose": "Per label (Testofen/fenugreek 500mg, tongkat 250mg, boron 9.5mg class payload)", "use": "Hormone-support pathway input; morning anchor"},
-      {"item": "Boron", "dose": "9.5mg (in complex) + 1mg multi contribution", "use": "Mineral-balance and SHBG-context input"},
+      {"item": "TestoFX complex", "dose": "Per label; boron is a separate New Roots Herbal 3mg capsule, not a TestoFX payload", "use": "Hormone-support pathway input; morning anchor"},
+      {"item": "Boron (New Roots Herbal)", "dose": "1 standalone capsule, 3mg", "use": "Mineral-balance and SHBG-context input"},
       {"item": "LactoBif probiotic (California Gold LactoBif 100)", "dose": "Intermittent, per schedule (100B CFU)", "use": "Gut microbiome support; not a daily automatic"}
     ]},
     "first_meal_grid_0500": {"rule": "With breakfast; enzymes ride the meal even on State B", "items": [
       {"item": "Kyolic Formula 104", "dose": "2 caps (600mg aged garlic extract / 380mg lecithin)", "use": "Cardiovascular-support sulfur compounds; with food"},
-      {"item": "NMN (Codeage NMN Platinum)", "dose": "1 cap 175mg", "use": "NAD+ precursor for cellular energy and repair"},
+      {"item": "NMN (California Gold Nutrition)", "dose": "1 cap 175mg", "use": "NAD+ precursor for cellular energy and repair"},
       {"item": "NAC (Pure Encapsulations)", "dose": "1 cap 900mg", "use": "Cysteine donor; glutathione synthesis substrate"},
       {"item": "Digestive Enzymes Ultra (Pure Encapsulations)", "dose": "1 cap (1,500 FIP lipase)", "use": "Meal fat handling with continuous bile trickle (no gallbladder)"}
     ]},
@@ -280,7 +280,7 @@
     "ALLMAX MuscleEAA Xtreme full panel: cards give 10g EAA / 5.3g BCAA (+ 2g glutamine, 1g carnitine, 200mg Alpha-GPC on the Cherry Limeade V6 card); full supplement-facts panel was not photo-read.",
     "Medi-C Plus half-scoop in V10/night: recorded 'where used' — night-stage context, not a locked daily dose.",
     "CanPrev Calcium Bis-Glycinate 200mg: 'lab-declared'; no protocol timing assigned.",
-    "TestoFX: 'per label' in books (Testofen/fenugreek 500mg, tongkat 250mg, boron 9.5mg class payload); exact per-capsule breakdown not transcribed.",
+    "TestoFX: per label; exact per-capsule breakdown not transcribed. Boron is a separate New Roots Herbal capsule, 3mg; do not attribute 9.5mg boron to TestoFX.",
     "DMAE base conversion: 500mg DMAE bitartrate ~= 185mg DMAE base (standard ~37% conversion) — marked approximate.",
     "Tea caffeine 40-70mg and theobromine ~100mg (cocoa): estimates carried from the audit.",
     "Vega Sport, C4 Sport, KetoCuts formulas: retail-derived, NOT his-tub verified — flagged for verification."
