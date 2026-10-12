@@ -19,8 +19,8 @@ Project 100 is my personal, fully documented supplement + training protocol: 7 v
 - **V10 Shutdown (18:30, 6 items):** creatine HCl 750 mg · glutamine 5 g · glycine 3–5 g · hibiscus 800 mL · **bovine collagen 10 g (PM)** · Medi-C Plus half-scoop where used (1000 mg C / 105 mg Mg / 650 mg lysine).
 
 ## Pill grids
-- **Wake 03:30 (daily):** TestoFX complex · boron 9.5 mg (+1 mg multi) · LactoBif (intermittent).
-- **First meal 05:00:** Kyolic 2 caps (600/380 mg) · NMN 175 mg · NAC 900 mg · PE Digestive Enzymes Ultra 1 cap.
+- **Wake 03:30 (daily):** TestoFX complex (per label) · New Roots Herbal boron: 1 standalone capsule, 3 mg · LactoBif (intermittent).
+- **First meal 05:00:** Kyolic 2 caps (600/380 mg) · California Gold Nutrition NMN: 1 capsule, 175 mg · NAC 900 mg · PE Digestive Enzymes Ultra 1 cap.
 - **Primer 05:30 / T-30:** citicoline 250 mg, swallowed whole.
 - **Lunch 12:00 (training, 10 caps):** PureGenomics multi (biotin 425 mcg disclosed) · Omega 800 (EPA 480/DHA 320) · curcumin 475 + piperine 5 mg · Liver-GI 50/50/47.5 mg · UriCare + pumpkin/saw palmetto.
 - **Afternoon 15:30 (training, 5 caps):** beef liver + Ligament Restore. Copper paused.
