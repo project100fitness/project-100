@@ -1188,3 +1188,6 @@
   window.addEventListener('hashchange',revealTerms);
   revealTerms();
 })();
+
+/* Kinetics follows Workout in the main-site menu. */
+(()=>{function addKinetics(){if(document.body.dataset.site!=="main")return;document.querySelectorAll(".menu__list a[href=\"fit-workout.html\"]").forEach(a=>{const li=a.closest("li");if(!li||li.parentElement.querySelector("a[href=\"kinetics.html\"]"))return;const n=document.createElement("li"),link=document.createElement("a");link.href="kinetics.html";link.textContent="Kinetics";n.append(link);li.after(n)})}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",addKinetics);else addKinetics()})();
