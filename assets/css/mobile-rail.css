@@ -86,9 +86,7 @@
   animation:mobile-cover-shine .85s var(--hud-ease) both;
  }
 }
-@media(prefers-reduced-motion:reduce){
- .hud-card .hud-card__img::before{animation:none!important;transition:none}
-}
+
 
 /* Shared light sweep for image covers on both sites. */
 :is(.card__media:has(img),.fold__thumb,.salad-photo){position:relative;overflow:hidden}
@@ -101,6 +99,4 @@
 .salad-photo:is(:hover,:focus-within,:active)::before{
  animation:mobile-cover-shine .85s var(--ease) both;
 }
-@media(prefers-reduced-motion:reduce){
- :is(.card__media:has(img),.fold__thumb,.salad-photo)::before{animation:none!important}
-}
+

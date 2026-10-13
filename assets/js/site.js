@@ -730,11 +730,11 @@
     var thumb = bar.firstChild;
     var pp = document.createElement('button'); pp.type = 'button'; pp.className = 'carousel__pp';
     stage.appendChild(bar);
-    if (head) head.appendChild(pp);
+    /* Motion stays active; no permanent pause control. */
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
     var active = false, lastW = -1, pos = null, last = 0, hold = 0, dir = 1, inView = true, lastAuto = 0;
-    var mouseOver = false, touching = false, keyFocus = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
+    var mouseOver = false, touching = false, keyFocus = false, userPaused = false, idle = 0, raf = 0;
 
     function maxScroll() { return Math.max(0, track.scrollWidth - track.clientWidth); }
     function measure() {
@@ -773,7 +773,7 @@
     function step() { var c = items[0]; var g = getComputedStyle(track); return c ? c.getBoundingClientRect().width + (parseFloat(g.columnGap) || parseFloat(g.gap) || 0) : track.clientWidth * .8; }
     function go(d) { holdFor(RESUME + 2500); track.scrollBy({ left: d * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
 
-    pp.addEventListener('click', function () { userPaused = !userPaused; pos = null; label(); });
+
     track.addEventListener('keydown', function (e) {
       if (e.target !== track) return;
       if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
@@ -1050,7 +1050,7 @@
   var stage = q('[data-jr-stage]'), img = q('[data-jr-img]'), bg = q('[data-jr-bg]'), frame = q('[data-jr-frame]'), prog = q('[data-jr-prog]');
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
-  var pp = q('[data-jr-pp]'), ppl = q('[data-jr-pplabel]');
+
   var DUR = 6000, i = 0, timer = 0, playing = true, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
@@ -1094,9 +1094,9 @@
     timer = requestAnimationFrame(tick);
   }
   function setPlay(on) {
-    playing = !!on; pp.setAttribute('aria-pressed', playing ? 'true' : 'false'); ppl.textContent = playing ? 'Pause' : 'Play'; schedule();
+    playing = true; schedule();
   }
-  pp.addEventListener('click', function () { setPlay(!playing); });
+  /* Journal slideshow always plays between interactions. */
   q('[data-jr-prev]').addEventListener('click', function () { show(i - 1, true); });
   q('[data-jr-next]').addEventListener('click', function () { show(i + 1, true); });
   thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });

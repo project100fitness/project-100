@@ -182,7 +182,7 @@ html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{backgro
 #salad-ingredient-roles .ingredient-category>summary:hover::after{background:color-mix(in srgb,var(--category-accent) 28%,var(--hud-bg))}
 #salad-ingredient-roles .ingredient-category>summary:focus-visible{outline:3px solid var(--category-accent);outline-offset:5px;border-radius:6px}
 @media(max-width:599px){#salad-ingredient-roles .ingredient-category>summary{grid-template-columns:minmax(0,1fr) auto 44px;gap:.45rem}#salad-ingredient-roles .ingredient-category>summary::after{width:44px;height:48px}}
-@media(prefers-reduced-motion:reduce){#salad-ingredient-roles .ingredient-category{transition:none}}
+
 
 /* Full-width dressing and arrows at the information panel's upper corners. */
 .nutrition-salads .salad-gallery .salad-card>.salad-card-choice{box-sizing:border-box;width:calc(100% - 1.7rem);max-width:calc(100% - 1.7rem);justify-self:center;align-self:stretch;text-align:center;min-width:0}

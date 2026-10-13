@@ -26,6 +26,6 @@
   var t=e.changedTouches[0],dy=t.clientY-g.y,dx=t.clientX-g.x,elapsed=performance.now()-g.time;
   if(elapsed>300||Math.abs(dy)<60||Math.abs(dy)<Math.abs(dx)*1.5||Math.abs(dy)/Math.max(1,elapsed)<.45)return;
   var target=destination(g.scroll,dy<0?1:-1);
-  requestAnimationFrame(function(){window.scrollTo({top:window.scrollY,behavior:'instant'});window.scrollTo({top:target,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});});
+  requestAnimationFrame(function(){window.scrollTo({top:window.scrollY,behavior:'instant'});window.scrollTo({top:target,behavior:'smooth'});});
  },{passive:true});
 })();
