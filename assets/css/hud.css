@@ -433,12 +433,8 @@
 .hud-open > .hud-open__t { margin: 0 0 var(--s-2); font-size: var(--step-1); letter-spacing: .01em; color: var(--hud-ink); }
 .hud-open > :where(section) > .section__head { margin-bottom: var(--s-3); }
 
-/* update 19: on phones the card header keeps only the title and the close button (previous/next arrows hidden: scroll to the next card instead) */
-@media (max-width: 40rem) {
-  .hud-detail__nav [data-hud-prev], .hud-detail__nav [data-hud-next] { display: none; }
-  .hud-detail__ribbon { padding-right: 1.6rem; }
-  .hud-detail__ribbon h3 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
-}
+/* Compact detail ribbon padding without overriding wrapping or navigation. */
+@media (max-width: 40rem) { .hud-detail__ribbon { padding-right: 1.6rem; } }
 
 /* Compact vector purpose, composition and usage summaries. */
 .vector-purpose p { margin: .55rem 0; line-height: 1.5; font-size: clamp(.95rem, 1.3vw, 1.05rem); }
