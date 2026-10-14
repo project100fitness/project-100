@@ -2988,3 +2988,6 @@ button.fab-row { width: 100%; border: 0; font: inherit; text-align: left; cursor
 #start-here .visitor-route a,.visitor-route--terms a{text-underline-offset:.2em}
 .art-cap::before{content:'⤢ ';color:var(--accent);font-weight:700}
 @media(max-width:40rem){.visitor-topic-grid{grid-template-columns:1fr}.visitor-route--terms{font-size:1rem}}
+
+/* Fitted photo swipes navigate; explicit zoom retains two-axis panning. */
+.lightbox:not(.is-wide) .lightbox__fig{touch-action:pan-y pinch-zoom}
