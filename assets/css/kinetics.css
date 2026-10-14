@@ -77,3 +77,17 @@ button:focus-visible,.kin-photo:focus-visible,.kin-exercise summary:focus-visibl
 .kin-pilates-atlas{gap:24px}
 .kin-pilates-file dd,.kin-folder-content .kin-exercise dd{font-size:.95rem}
 }
+
+/* Each movement has its own readable stance and resistance schematic. */
+.kin-movement-diagram{margin:16px 20px;display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);align-items:center;gap:18px;padding-bottom:16px;border-bottom:1px solid var(--kin-line)}
+.kin-movement-diagram .kin-matchstick{width:100%;height:auto;max-height:170px}
+.kin-movement-diagram figcaption{font-size:.9rem;line-height:1.5;font-weight:750;overflow-wrap:anywhere}
+.kin-movement-diagram figcaption small{display:block;font-size:.78rem;font-weight:400;opacity:.75;margin-top:7px}
+.kin-matchstick .km-support{stroke-width:2;opacity:.45}
+
+.kin-exercise[hidden]{display:none!important}
+.kin-exercise,.kin-pilates-file{min-width:0}
+.kin-folder-content .kin-exercise dl,.kin-pilates-file dl{overflow-wrap:anywhere}
+@media(max-width:600px){.kin-movement-diagram{margin:16px;grid-template-columns:1fr;gap:10px}.kin-movement-diagram .kin-matchstick{max-width:240px;max-height:190px;margin:0 auto}.kin-movement-diagram figcaption{text-align:center}.kin-pilates-file>summary>.kin-matchstick{width:52px;flex-basis:52px}}
+
+.kin-diagram-key--portable .kin-key-band,.kin-diagram-key--portable .kin-key-motion,.kin-diagram-key--portable .kin-key-motion:after{border-color:var(--kin-accent)}

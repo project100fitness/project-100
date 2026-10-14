@@ -1,4 +1,65 @@
-(()=>{'use strict';const grid=document.querySelector('.kin-exercises');if(!grid)return;const cards=[...grid.querySelectorAll('[data-kin-group]')],filters=[...document.querySelectorAll('[data-kin-filter]')],search=document.querySelector('#kin-search'),count=document.querySelector('.kin-library-count');let group='all';function apply(){const q=search.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const show=(group==='all'||c.dataset.kinGroup===group)&&c.textContent.toLowerCase().includes(q);c.hidden=!show;if(show)n++;else c.open=false});grid.querySelectorAll('[data-kin-category]').forEach(folder=>{const entries=[...folder.querySelectorAll('[data-kin-group]')],visibleEntries=entries.filter(c=>!c.hidden),matches=visibleEntries.length>0;const badge=folder.querySelector('.kin-folder-count');if(badge){badge.firstChild.textContent=String(visibleEntries.length).padStart(2,'0');badge.setAttribute('aria-label',visibleEntries.length+' of '+entries.length+' movements');}folder.hidden=!matches;if(matches&&(group!=='all'||q))folder.open=true;});count.textContent=n+' movement'+(n===1?'':'s')+(q?' matching “'+search.value.trim()+'”':'');}filters.forEach(b=>b.addEventListener('click',()=>{group=b.dataset.kinFilter;filters.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));apply()}));search.addEventListener('input',apply);const strip=document.querySelector('.kin-strip[data-gallery="kin-portable"]');for(const [selector,dir] of [['.kin-gallery-prev',-1],['.kin-gallery-next',1]]){document.querySelector(selector)?.addEventListener('click',()=>strip.scrollBy({left:dir*strip.clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));}apply();})();
+(() => {
+  'use strict';
+  const grid = document.querySelector('.kin-exercises');
+  if (!grid) return;
+  const cards = [...grid.querySelectorAll('[data-kin-group]')];
+  const folders = [...grid.querySelectorAll('[data-kin-category]')];
+  const filters = [...document.querySelectorAll('[data-kin-filter]')];
+  const search = document.querySelector('#kin-search');
+  const count = document.querySelector('.kin-library-count');
+  let group = 'all';
+  let wasFiltered = false;
+  const folderStates = new Map();
+
+  function apply() {
+    const query = search.value.trim().toLowerCase();
+    const isFiltered = group !== 'all' || query !== '';
+    if (isFiltered && !wasFiltered) {
+      folders.forEach(folder => folderStates.set(folder, folder.open));
+    }
+    let matches = 0;
+    cards.forEach(card => {
+      const show = (group === 'all' || card.dataset.kinGroup === group)
+        && card.textContent.toLowerCase().includes(query);
+      card.hidden = !show;
+      if (show) matches++;
+      else card.open = false;
+    });
+    folders.forEach(folder => {
+      const entries = [...folder.querySelectorAll('[data-kin-group]')];
+      const visibleCount = entries.filter(card => !card.hidden).length;
+      const badge = folder.querySelector('.kin-folder-count');
+      if (badge) {
+        badge.firstChild.textContent = String(visibleCount).padStart(2, '0');
+        badge.setAttribute('aria-label', visibleCount + ' of ' + entries.length + ' movements');
+      }
+      folder.hidden = visibleCount === 0;
+      if (isFiltered && visibleCount) folder.open = true;
+      else if (!isFiltered && wasFiltered) folder.open = folderStates.get(folder) ?? false;
+    });
+    wasFiltered = isFiltered;
+    count.textContent = matches === 0
+      ? 'No movements match. Clear the search or choose All movements.'
+      : matches + ' movement' + (matches === 1 ? '' : 's')
+        + (query ? ' matching “' + search.value.trim() + '”' : '');
+  }
+  filters.forEach(button => button.addEventListener('click', () => {
+    group = button.dataset.kinFilter;
+    filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+    apply();
+  }));
+  search.addEventListener('input', apply);
+  const strip = document.querySelector('.kin-strip[data-gallery="kin-portable"]');
+  if (strip) {
+    for (const [selector, direction] of [['.kin-gallery-prev', -1], ['.kin-gallery-next', 1]]) {
+      document.querySelector(selector)?.addEventListener('click', () => strip.scrollBy({
+        left: direction * strip.clientWidth * .8,
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      }));
+    }
+  }
+  apply();
+})();
 /* Independent photo browsers feed a single scanning display; one automatic pass. */
 (()=>{'use strict';const root=document.querySelector('[data-kin-gallery]'),node=document.querySelector('#kin-gallery-data');if(!root||!node)return;const photos=JSON.parse(node.textContent),pools={all:photos},positions={all:0},q=s=>root.querySelector(s),display=q('[data-kg-display]'),img=q('[data-kg-img]'),open=q('[data-kg-open]'),bg=q('[data-kg-bg]'),progress=q('[data-kg-progress]'),bar=q('[role="progressbar"]'),status=q('[data-kg-status]'),play=q('[data-kg-play]'),seen=new Set();let current='',version=0,elapsed=0,last=0,raf=0,visible=false,loading=false,playing=true;const duration=7000,sequence=photos;
 function updatePreview(pool){const box=q('[data-kg-pool="'+pool+'"]'),photo=pools[pool][positions[pool]];box.querySelector('[data-kg-preview]').src=photo.thumb;box.querySelector('[data-kg-pool-count]').textContent=String(positions[pool]+1).padStart(2,'0')+' / '+String(pools[pool].length).padStart(2,'0');box.classList.toggle('is-selected',photo.id===current);}
