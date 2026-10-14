@@ -1,8 +1,8 @@
 /* Shared large media details: text left, complete image right; phone stack. */
 @media(min-width:620px){
- .hud-detail__body:has(>.rv):has(>.vec-sheet__main){display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(16px,3vw,32px);align-items:start}
- .hud-detail__body:has(>.vec-sheet__main)>.rv{grid-column:2;grid-row:1;min-width:0;justify-self:end;width:100%;max-width:26rem}
- .hud-detail__body:has(>.rv)>.vec-sheet__main{grid-column:1;grid-row:1;min-width:0}
+ :is(.hud-detail__body,.hud-open):has(>.rv):has(>.vec-sheet__main){display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(16px,3vw,32px);align-items:start}
+ :is(.hud-detail__body,.hud-open):has(>.vec-sheet__main)>.rv{grid-column:2;grid-row:1;min-width:0;justify-self:end;width:100%;max-width:26rem}
+ :is(.hud-detail__body,.hud-open):has(>.rv)>.vec-sheet__main{grid-column:1;grid-row:1;min-width:0}
  .hud-detail__grid:has(>.flipc):has(>.hud-detail__body){grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(16px,3vw,32px)}
  .hud-detail__grid>.flipc{grid-column:2;grid-row:1;justify-self:end;max-width:26rem}
  .hud-detail__grid:has(>.flipc)>.hud-detail__body{grid-column:1;grid-row:1;min-width:0}
