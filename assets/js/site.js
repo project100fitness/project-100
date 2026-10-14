@@ -306,15 +306,26 @@
       if (e.key === 'ArrowLeft') show(idx - 1);
       if (e.key === 'ArrowRight') show(idx + 1);
     });
-    /* phones: swipe the picture left / right to step through the set */
+    /* Horizontal gestures browse the queue; zoomed images retain normal panning. */
     (function () {
-      var sx = 0, sy = 0, t0 = 0, fig = P.$('.lightbox__fig', dlg);
-      fig.addEventListener('touchstart', function (e) { if (e.touches.length !== 1) { t0 = 0; return; } sx = e.touches[0].clientX; sy = e.touches[0].clientY; t0 = Date.now(); }, { passive: true });
+      var sx = 0, sy = 0, finger = null, fig = P.$('.lightbox__fig', dlg);
+      function reset() { finger = null; }
+      fig.addEventListener('touchstart', function (e) {
+        reset();
+        if (e.touches.length !== 1 || dlg.classList.contains('is-wide')) return;
+        var touch = e.touches[0];
+        finger = touch.identifier; sx = touch.clientX; sy = touch.clientY;
+      }, { passive: true });
+      fig.addEventListener('touchmove', function (e) {
+        if (e.touches.length !== 1) reset();
+      }, { passive: true });
+      fig.addEventListener('touchcancel', reset, { passive: true });
       fig.addEventListener('touchend', function (e) {
-        if (!t0 || set.length < 2 || !e.changedTouches.length || dlg.classList.contains('is-wide')) return;
-        var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-        if (Date.now() - t0 < 700 && Math.abs(dx) > 55 && Math.abs(dy) < Math.abs(dx) * .6) show(idx + (dx < 0 ? 1 : -1));
-        t0 = 0;
+        var touch = Array.prototype.find.call(e.changedTouches, function (t) { return t.identifier === finger; });
+        var active = finger !== null; reset();
+        if (!active || !touch || set.length < 2 || dlg.classList.contains('is-wide')) return;
+        var dx = touch.clientX - sx, dy = touch.clientY - sy;
+        if (Math.abs(dx) > 45 && Math.abs(dy) < Math.abs(dx) * .75) show(idx + (dx < 0 ? 1 : -1));
       }, { passive: true });
     })();
     /* Every original opens fitted to the viewport; zoom is an explicit action. */
@@ -332,7 +343,7 @@
   function show(i) {
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
-    dlg.classList.remove('is-wide'); var zoom = P.$('[data-lb="zoom"]', dlg); zoom.setAttribute('aria-pressed', 'false'); zoom.textContent = '+'; var fig = img.parentNode; fig.scrollTop = fig.scrollLeft = 0; img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el);
+    dlg.classList.remove('is-wide'); var zoom = P.$('[data-lb="zoom"]', dlg); zoom.setAttribute('aria-pressed', 'false'); zoom.textContent = '+'; var fig = img.parentNode; fig.scrollTop = fig.scrollLeft = 0; img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el) + (set.length > 1 ? ' · ' + (idx + 1) + ' / ' + set.length : '');
     var org = src; dl.href = org; dl.setAttribute('download', org.split('/').pop().split('?')[0]); full.href = org;   /* data-orig = hi-res original (download); data-full = web version */
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });
@@ -344,6 +355,35 @@
     build();
     var g = t.closest('[data-gallery]');
     set = g ? P.$$('[data-full]', g).filter(function (x) { if (x.closest('[data-clone]')) return false; var d = x.closest('.desk-only'); return !d || getComputedStyle(d).display !== 'none'; }) : [t];
+    /* A scanning display has one live link but a complete JSON photo queue. */
+    var source = t.getAttribute('data-gallery-source');
+    if (source) {
+      var data = document.getElementById(source);
+      try {
+        var photos = data && JSON.parse(data.textContent);
+        if (Array.isArray(photos)) {
+          var queue = photos.filter(function (photo) { return photo && typeof photo.src === 'string' && photo.src; }).map(function (photo) {
+            var link = document.createElement('a');
+            link.setAttribute('data-full', photo.src);
+            link.setAttribute('aria-label', photo.title || 'Photo');
+            if (photo.original) link.setAttribute('data-orig', photo.original);
+            if (photo.post) link.setAttribute('data-post', photo.post);
+            return link;
+          });
+          if (queue.length) set = queue;
+        }
+      } catch (error) { /* A malformed optional queue still opens the selected image. */ }
+    } else if (!g && t.matches('.rv-link')) {
+      /* Recipe, pill-stage and day-state panels form a page-ordered queue. */
+      set = P.$$('.rv-link[data-full]', t.closest('main') || document);
+    }
+    /* Responsive copies of the same original are one queue entry. */
+    var sources = new Set();
+    set = set.filter(function (entry) {
+      var src = srcOf(entry);
+      if (sources.has(src)) return false;
+      sources.add(src); return true;
+    });
     opener = t;
     var at = set.indexOf(t);
     if (at < 0) { var want = srcOf(t); set.forEach(function (x, n) { if (at < 0 && srcOf(x) === want) at = n; }); }
