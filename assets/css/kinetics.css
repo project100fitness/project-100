@@ -167,3 +167,27 @@ button:focus-visible,.kin-photo:focus-visible,.kin-exercise summary:focus-visibl
 .kin-source-thumb:focus-visible{outline:2px solid #fff;outline-offset:1px}
 @media(min-width:700px) and (max-width:1100px){.kin-source-thumb{flex-basis:calc((100% - 24px)/4)}}
 @media(max-width:600px){.kin-source-browser{padding-left:36px;padding-right:36px}.kin-source-browser .kin-source-thumb img{height:80px}}
+
+/* Readable information beside the full photo, with controls below both panels. */
+.kin-display{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);height:auto;min-height:0;align-items:stretch}
+.kin-display-open{position:relative;inset:auto;grid-column:2;grid-row:1;min-height:280px;background:#0a1113}
+.kin-display-image{object-fit:contain;object-position:right center}
+.kin-display-open:after{background:linear-gradient(180deg,#02070940,transparent 25%,transparent 85%,#02070940)}
+.kin-display-hud{position:relative;inset:auto;grid-column:1;grid-row:1;pointer-events:auto;padding:20px;gap:14px;background:linear-gradient(145deg,#15252a,#0a141a)}
+.kin-display-top{flex-wrap:wrap;gap:6px;line-height:1.5}
+.kin-display-caption{margin:0;max-width:none}
+.kin-display-caption h4{font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.15;margin:0 0 14px;overflow-wrap:anywhere}
+.kin-display-caption p{font-size:.9rem;line-height:1.5;margin:0 0 10px}
+.kin-display-caption small{font-size:.82rem;line-height:1.55;color:#d0dedc}
+.kin-display-related{font-size:.8rem;line-height:1.5;margin:0;padding-top:12px;border-top:1px solid #b8d9cf33;overflow-wrap:anywhere}
+.kin-display-footer{grid-column:1/-1;grid-row:2;background:#0d1b20;padding:8px 14px 10px}
+.kin-display-footer .kin-display-controls{margin:0 0 7px;font-size:.72rem;line-height:1.4}
+@media(max-width:619px){
+ .kin-display{grid-template-columns:minmax(0,1fr)}
+ .kin-display-open{grid-column:1;grid-row:1;min-height:0;height:230px}
+ .kin-display-image{object-position:center}
+ .kin-display-hud{grid-column:1;grid-row:2;padding:14px;gap:10px}
+ .kin-display-caption h4{margin-bottom:8px}
+ .kin-display-caption p{margin-bottom:6px}
+ .kin-display-footer{grid-row:3}
+}
