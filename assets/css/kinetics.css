@@ -153,3 +153,17 @@ button:focus-visible,.kin-photo:focus-visible,.kin-exercise summary:focus-visibl
   .kin-bundle-panel .kin-bundle-value{justify-self:start}
  }
 }
+
+/* Source carousel retains multiple fitted images and native horizontal scrolling. */
+.kin-source-stack{grid-template-rows:auto auto}
+.kin-source-browser{height:auto;min-height:0;padding:30px 44px 8px;touch-action:auto;box-sizing:border-box}
+.kin-source-browser:after{display:none}
+.kin-source-browser .kin-source-index{top:6px;right:12px}
+.kin-source-rail{position:relative;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#ffbf16 #ffffff20;overscroll-behavior-x:contain;padding:3px 2px 8px}
+.kin-source-thumb{flex:0 0 calc((100% - 8px)/2);min-width:0;padding:0;border:2px solid transparent;border-radius:5px;overflow:hidden;background:#0a1113;color:#fff;cursor:pointer;scroll-snap-align:start;box-sizing:border-box;font:inherit}
+.kin-source-browser .kin-source-thumb img{position:static;display:block;width:100%;height:90px;object-fit:contain;pointer-events:none}
+.kin-source-thumb span{display:block;padding:4px 6px;font-size:.7rem;line-height:1.3;text-align:left;overflow-wrap:anywhere}
+.kin-source-thumb.is-current{border-color:#ffbf16;background:#22312b}
+.kin-source-thumb:focus-visible{outline:2px solid #fff;outline-offset:1px}
+@media(min-width:700px) and (max-width:1100px){.kin-source-thumb{flex-basis:calc((100% - 24px)/4)}}
+@media(max-width:600px){.kin-source-browser{padding-left:36px;padding-right:36px}.kin-source-browser .kin-source-thumb img{height:80px}}
