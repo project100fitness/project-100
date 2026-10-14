@@ -1091,7 +1091,7 @@
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
 
-  var DUR = 6000, i = 0, timer = 0, playing = true, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
+  var DUR = 3500, i = 0, timer = 0, playing = true, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
 
@@ -1204,7 +1204,7 @@
     }
     function schedule() {
       clearTimeout(timer); if (reduce || !seen || hover || document.hidden) return;
-      var wait = Date.now() < hold ? hold - Date.now() : (first ? 2200 : 4200 + Math.random() * 4800); first = false;
+      var wait = Date.now() < hold ? hold - Date.now() : 3500; first = false;
       timer = setTimeout(function () { if (seen && !hover && !document.hidden && Date.now() >= hold) flip(false); schedule(); }, wait);
     }
     btn.addEventListener('click', function () { hold = Date.now() + 16000; flip(true); schedule(); });
