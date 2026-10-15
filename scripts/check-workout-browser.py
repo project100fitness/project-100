@@ -69,6 +69,7 @@ with sync_playwright() as p:
             assert frame.locator(".wg-day-card").count()==7
             assert frame.locator("[data-week-level]").count()==0
             frame.locator('[name="weekly-day-1-notes"]').fill("QA / controlled return")
+            print("NOTE_STATE",engine.name,label,frame.locator('[name="weekly-day-1-notes"]').input_value(),page.evaluate("document.querySelector(\'[data-kd-frame]\').contentWindow.Project100ReadValues()[\'weekly-day-1-notes\']"),flush=True)
             pages,fields,text=downloaded(page,"[data-kd-download]")
             assert pages==1 and len(fields)==7
             assert fields["weekly-day-1-notes"]["/V"]=="QA / controlled return", (engine.name,label,str(fields["weekly-day-1-notes"]["/V"]))
