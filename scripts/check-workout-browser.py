@@ -8,6 +8,8 @@ class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*args):pass
 server=ThreadingHTTPServer(("127.0.0.1",4173),Quiet);threading.Thread(target=server.serve_forever,daemon=True).start()
 base="http://127.0.0.1:4173";out=Path("docs/workout-guides");out.mkdir(parents=True,exist_ok=True);results=[]
+def ready(page,kind):
+    page.wait_for_function("(kind)=>{let f=document.querySelector('[data-kd-frame]'),w=f&&f.contentWindow,d=f&&f.contentDocument;return d&&d.body&&d.body.dataset.document===kind&&d.readyState==='complete'&&typeof w.Project100ExportPDF==='function';}",arg=kind)
 def downloaded(page,selector):
     with page.expect_download(timeout=90000) as info:page.locator(selector).click()
     with tempfile.TemporaryDirectory() as tmp:
@@ -21,7 +23,7 @@ with sync_playwright() as p:
             page.route("**/*",lambda r:r.abort() if r.request.resource_type=="media" else r.continue_())
             page.goto(base+"/kinetics.html?workout=protocol",wait_until="domcontentloaded")
             modal=page.locator("#kinDownloadModal");modal.wait_for(state="visible");frame=page.frame_locator("[data-kd-frame]")
-            frame.locator('body[data-document="protocol"]').wait_for()
+            frame.locator('body[data-document="protocol"]').wait_for();ready(page,"protocol")
             assert page.locator("[data-kd-doc]").count()==18
             assert page.locator('[data-kd-doc="focused"]').count()==1
             assert page.locator('[data-kd-doc^="focused-"]').count()==0
@@ -34,7 +36,7 @@ with sync_playwright() as p:
             assert page.locator(".kd-doc:not([hidden])").count()==1
             page.locator("[data-kd-search]").fill("")
             page.locator('[data-kd-doc="row"]').click()
-            frame.locator('body[data-guide="row"]').wait_for()
+            frame.locator('body[data-guide="row"]').wait_for();ready(page,"guide")
             assert frame.locator(".wg-steps>section").count()==4
             assert frame.locator("[data-resistance]").count()==1
             assert frame.locator(".wg-gauge-row").count()==3
@@ -52,7 +54,7 @@ with sync_playwright() as p:
             assert fields["resistance-row-r2"]["/V"]=="65 x 2 = 130 lb nominal"
             if engine.name=="chromium":page.screenshot(path=str(out/f"unified-{label}-row.png"))
             page.locator('[data-kd-filter="all"]').click();page.locator('[data-kd-doc="book"]').click()
-            frame.locator('body[data-document="book"]').wait_for()
+            frame.locator('body[data-document="book"]').wait_for();ready(page,"book")
             assert frame.locator(".wg-guide").count()==12
             assert frame.locator('[data-resistance="row"] [data-r-level="2"] output').inner_text()=="130 lb nominal / line"
             assert frame.locator('[data-resistance="brace"]').get_attribute("data-mode")=="unloaded"
@@ -63,17 +65,17 @@ with sync_playwright() as p:
                 assert fields["resistance-row-r2"]["/V"]=="65 x 2 = 130 lb nominal"
                 for e in json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())["exercises"]:
                     assert frame.locator("#"+e["id"]+".wg-guide").count()==1
-            page.locator('[data-kd-doc="weekly"]').click();frame.locator('body[data-document="weekly"]').wait_for()
+            page.locator('[data-kd-doc="weekly"]').click();frame.locator('body[data-document="weekly"]').wait_for();ready(page,"weekly")
             assert frame.locator(".wg-day-card").count()==7
             assert frame.locator("[data-week-level]").count()==0
             frame.locator('[name="weekly-day-1-notes"]').fill("QA / controlled return")
             pages,fields,text=downloaded(page,"[data-kd-download]")
             assert pages==1 and len(fields)==7
             assert fields["weekly-day-1-notes"]["/V"]=="QA / controlled return", (engine.name,label,str(fields["weekly-day-1-notes"]["/V"]))
-            page.locator('[data-kd-doc="focused"]').click();frame.locator('body[data-document="focused"]').wait_for()
+            page.locator('[data-kd-doc="focused"]').click();frame.locator('body[data-document="focused"]').wait_for();ready(page,"focused")
             assert frame.locator('section[id^="day-"]').count()==3
             assert frame.locator(".wg-guide").count()==0
-            page.locator('[data-kd-doc="fullbody"]').click();frame.locator('body[data-document="fullbody"]').wait_for()
+            page.locator('[data-kd-doc="fullbody"]').click();frame.locator('body[data-document="fullbody"]').wait_for();ready(page,"fullbody")
             assert frame.locator('section[id^="day-"]').count()==2
             page.locator("[data-kd-close]").click();modal.wait_for(state="hidden")
             page.goto(base+"/downloads/kinetics/focused-days-level-3.html",wait_until="domcontentloaded")
