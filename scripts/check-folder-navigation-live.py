@@ -21,7 +21,7 @@ for attempt in range(40):
     try:
         source=read("index.html")
         assert 'site.css?v=20261015-original-brand' in source and 'data-folder="project"' in source
-        assert 'kinetics.css?v=20261015-clear-guides' in read('kinetics.html')
+        assert 'kinetics.css?v=20261015-unified-protocol' in read('kinetics.html')
         break
     except Exception:
         if attempt==39:raise
