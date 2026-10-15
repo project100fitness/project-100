@@ -11,7 +11,7 @@
       "name": "booklet-level-1.pdf",
       "pages": 21,
       "fields": 25,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "planner-level-2.pdf",
@@ -23,7 +23,7 @@
       "name": "booklet-level-2.pdf",
       "pages": 21,
       "fields": 25,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "planner-level-3.pdf",
@@ -35,7 +35,7 @@
       "name": "booklet-level-3.pdf",
       "pages": 21,
       "fields": 25,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "weekly-planner.pdf",
@@ -47,7 +47,7 @@
       "name": "focused-days-level-1.pdf",
       "pages": 17,
       "fields": 15,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "full-body-level-1.pdf",
@@ -59,7 +59,7 @@
       "name": "focused-days-level-2.pdf",
       "pages": 17,
       "fields": 15,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "full-body-level-2.pdf",
@@ -71,7 +71,7 @@
       "name": "focused-days-level-3.pdf",
       "pages": 17,
       "fields": 15,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "full-body-level-3.pdf",
@@ -83,7 +83,7 @@
       "name": "exercise-guides.pdf",
       "pages": 13,
       "fields": 0,
-      "lowestTextBaseline": 83.64000000000001
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "guide-row.pdf",
@@ -95,67 +95,67 @@
       "name": "guide-press.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 302.53999999999945
+      "lowestTextBaseline": 95.99000000000001
     },
     {
       "name": "guide-pressdown.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 311.6399999999995
+      "lowestTextBaseline": 92.74000000000001
     },
     {
       "name": "guide-lateral.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 302.53999999999945
+      "lowestTextBaseline": 69.14000000000001
     },
     {
       "name": "guide-brace.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 340.8899999999995
+      "lowestTextBaseline": 118.08999999999999
     },
     {
       "name": "guide-sit-stand.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 326.58999999999946
+      "lowestTextBaseline": 105.74000000000001
     },
     {
       "name": "guide-hamstring-curl.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 302.53999999999945
+      "lowestTextBaseline": 83.64000000000001
     },
     {
       "name": "guide-calf-raise.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 326.58999999999946
+      "lowestTextBaseline": 103.59
     },
     {
       "name": "guide-hip-abduction.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 311.6399999999995
+      "lowestTextBaseline": 131.08999999999997
     },
     {
       "name": "guide-scapular-control.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 317.48999999999944
+      "lowestTextBaseline": 121.98999999999998
     },
     {
       "name": "guide-curl.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 317.48999999999944
+      "lowestTextBaseline": 122.63999999999999
     },
     {
       "name": "guide-hip-extension.pdf",
       "pages": 1,
       "fields": 0,
-      "lowestTextBaseline": 341.53999999999945
+      "lowestTextBaseline": 131.73999999999998
     }
   ]
 }
