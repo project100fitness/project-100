@@ -1,8 +1,21 @@
 """Read the already-deployed public site and verify all workout download routes."""
-import json, urllib.request, concurrent.futures
+import json, urllib.request, concurrent.futures, sys, time
 from pathlib import Path
 base="https://project100.fit/"
 paths=["kinetics.html","assets/css/kinetics.css","assets/css/workout-guides.css","assets/js/kinetics-downloads.js","assets/js/workout-guides.js","assets/media/workout-guides/row-three-roles-v1.png","downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip"]
+if "--baseline" not in sys.argv:
+    db=json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())
+    paths += ["assets/media/workout-guides/"+e["art"] for e in db["exercises"] if e["id"]!="row"]
+if "--wait" in sys.argv:
+    target=base+"assets/media/workout-guides/press-three-roles-v1.png"
+    for attempt in range(30):
+        try:
+            with urllib.request.urlopen(target+"?release=20261015",timeout=20) as response:
+                assert response.status==200
+            break
+        except Exception:
+            if attempt==29: raise
+            time.sleep(10)
 paths += ["downloads/kinetics/"+p.name for p in Path("downloads/kinetics").glob("*.html")]
 paths += ["downloads/kinetics/pdf/"+f["name"] for f in json.loads(Path("downloads/kinetics/pdf/build-manifest.json").read_text())["files"]]
 def check(path):

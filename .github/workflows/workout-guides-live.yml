@@ -1,0 +1,23 @@
+name: Verify deployed illustrated workout library
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/media/workout-guides/**'
+      - 'downloads/kinetics/**'
+      - '.github/workflows/workout-guides-live.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check-workout-live.py --wait
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-workout-link-validation
+          path: docs/workout-guides/live-validation-v0.3.json

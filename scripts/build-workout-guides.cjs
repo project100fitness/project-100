@@ -2,7 +2,7 @@
 const fs=require("node:fs"),vm=require("node:vm"),path=require("node:path");
 vm.runInThisContext(fs.readFileSync("assets/js/workout-guides.js","utf8"));
 const api=globalThis.Project100PDF,db=JSON.parse(fs.readFileSync("downloads/kinetics/training-plan-v0.3.json","utf8"));
-const jpegPath=process.argv[2],jpeg=jpegPath?{width:1774,height:887,bytes:fs.readFileSync(jpegPath).toString("latin1")}:null;
+const imageManifest=process.argv[2],jpeg={};if(imageManifest){const meta=JSON.parse(fs.readFileSync(imageManifest,"utf8"));for(const [id,image] of Object.entries(meta))jpeg[id]={width:image.width,height:image.height,bytes:fs.readFileSync(image.path).toString("latin1")};}
 const out="downloads/kinetics/pdf";fs.mkdirSync(out,{recursive:true});
 const manifest=[];
 function save(name,pages,fields){if(pages.some(p=>p.lowest<35))throw Error("Page overflow: "+name);const bytes=api.buildPdf(pages,jpeg);fs.writeFileSync(path.join(out,name),bytes);manifest.push({name,pages:pages.length,fields,lowestTextBaseline:Math.min(...pages.map(p=>p.lowest))});}

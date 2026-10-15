@@ -14,7 +14,7 @@ Page.prototype.p=function(t,size,c,bold,gap){size=size||10;var lines=wrap(t,RIGH
 Page.prototype.heading=function(t){this.y-=6;this.p(t,12,ORANGE,true,5);};
 Page.prototype.top=function(kicker,title,sub){this.p(kicker.toUpperCase(),9,ORANGE,true,10);this.p(title,23,INK,true,8);if(sub)this.p(sub,10,INK,false,10);};
 Page.prototype.rule=function(){this.commands.push("0.75 0.81 0.83 RG 0.6 w "+num(M)+" "+num(this.y)+" m "+num(RIGHT)+" "+num(this.y)+" l S\n");this.y-=12;};
-Page.prototype.image=function(width){width=width||RIGHT-M;var height=width/2;this.commands.push("q "+num(width)+" 0 0 "+num(height)+" "+num((W-width)/2)+" "+num(this.y-height)+" cm /Im1 Do Q\n");this.y-=height+8;this.p("START / softly extended arm                    FINISH / controlled row",8,INK,true,7);};
+Page.prototype.image=function(width,key,caption,aspect){key=key||"row";width=width||RIGHT-M;var height=width/(aspect||2);if(height>260){width*=260/height;height=260;}this.commands.push("q "+num(width)+" 0 0 "+num(height)+" "+num((W-width)/2)+" "+num(this.y-height)+" cm /Im_"+key+" Do Q\n");this.y-=height+8;this.p(caption||"START / softly extended arm                    FINISH / controlled row",8,INK,true,7);};
 Page.prototype.field=function(name,label,value,multiline){this.p(label,8.5,INK,true,2);var height=multiline?34:19;var bottom=this.y-height+3;if(bottom<38)throw new Error("PDF field exceeds page: "+name);this.fields.push({name:name,value:ascii(value||""),rect:[M,bottom,RIGHT,bottom+height],multiline:!!multiline});this.y=bottom-11;};
 function sets(l,d,kind){if(d.kind==="easy"||kind==="control")return 1;var n=kind==="main"?l.mainSets:l.accessorySets;return d.kind==="moderate"?Math.min(2,n):n;}
 function makePages(db,kind,level,guideId,values,hasImage){
@@ -22,7 +22,7 @@ values=values||{};var pages=[],l=db.levels.filter(function(x){return x.level===l
 function add(p){pages.push(p);return p;}
 function caution(p){p.p("Stop for pain, new numbness or weakness, dizziness, loss of grip, moving supports or damaged bands. Keep the recoil path clear. Follow manufacturer limits and individual clinical restrictions.",8.5,INK,false,4);}
 function addGuide(e){var f=e.art?10:11.5;var p=add(new Page(e.name));p.top("PROJECT 100 / EXERCISE GUIDE",e.name,e.pattern+" / "+e.reps);
-if(e.art&&hasImage)p.image(465);
+if(e.art&&hasImage)p.image(465,e.id,e.artCaption,e.artAspect);
 p.p("MAIN: "+e.main,f,RED,true,6);
 p.p("SECONDARY: "+e.secondary,f,BLUE,false,6);
 p.p("BASE / SUPPORT: "+e.base,f,GREEN,false,8);
@@ -112,18 +112,18 @@ r.heading("Progress one factor at a time");r.p("Establish repeatable technique a
 caution(r);r.heading("Source scope");
 r.p("Personal movement names and equipment records come from Kinetics. Supported complements and cues are editorial adaptations. They are not a clinician-approved personal rehabilitation plan.",9);
 Object.keys(db.sources).forEach(function(k){var s=db.sources[k];r.p(s.title,8.5,INK,true,1);r.p(s.url,7.5,INK,false,5);});
-r.p("The separate 12-sheet technique document describes all positions. Only the row currently has a reviewed naturalistic plate; other movements are not represented with the row picture.",8,INK,false,0);
+r.p("The separate 12-sheet technique document describes all positions. Each movement has its own reviewed naturalistic start/finish plate; a pose is not reused for a different exercise.",8,INK,false,0);
 }else throw new Error("Choose a planner or exercise document.");
 return pages;
 }
 function buildPdf(pages,jpeg){
-if(!pages.some(function(p){return p.commands.some(function(c){return c.indexOf("/Im1 Do")>=0;});}))jpeg=null;
-var objects=[null],pageIds=[],fieldIds=[],font1=reserve(),font2=reserve(),catalog=reserve(),pageTree=reserve(),acro=reserve(),img=jpeg?reserve():null;
+var bank=jpeg&&jpeg.bytes?{row:jpeg}:jpeg||{},used={};pages.forEach(function(p){p.commands.forEach(function(c){var m=c.match(/Im_([A-Za-z0-9-]+) Do/);if(m)used[m[1]]=true;});});
+var objects=[null],pageIds=[],fieldIds=[],font1=reserve(),font2=reserve(),catalog=reserve(),pageTree=reserve(),acro=reserve(),imageResources="";
 function reserve(){objects.push("");return objects.length-1;}
 function put(s){var id=reserve();objects[id]=s;return id;}
 objects[font1]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
 objects[font2]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
-if(jpeg)objects[img]="<< /Type /XObject /Subtype /Image /Width "+jpeg.width+" /Height "+jpeg.height+" /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length "+jpeg.bytes.length+" >>\nstream\n"+jpeg.bytes+"\nendstream";
+Object.keys(used).forEach(function(key){var data=bank[key];if(!data)throw new Error("Missing anatomical plate: "+key);var img=reserve();imageResources+=" /Im_"+key+" "+img+" 0 R";objects[img]="<< /Type /XObject /Subtype /Image /Width "+data.width+" /Height "+data.height+" /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length "+data.bytes.length+" >>\nstream\n"+data.bytes+"\nendstream";});
 pages.forEach(function(p,i){var id=reserve();pageIds.push(id);var commands=p.commands.join("")+"BT /F1 8 Tf 0.25 0.32 0.36 rg 1 0 0 1 "+num(M)+" 22 Tm (PROJECT 100 / v0.3 / 15 Oct 2026) Tj ET\nBT /F1 8 Tf 1 0 0 1 510 22 Tm ("+(i+1)+" / "+pages.length+") Tj ET\n";
 var stream=put("<< /Length "+commands.length+" >>\nstream\n"+commands+"endstream"),annots=[];
 p.fields.forEach(function(f){var rect=f.rect,fw=rect[2]-rect[0],fh=rect[3]-rect[1],appearance="q 1 1 1 rg 0 0 "+num(fw)+" "+num(fh)+" re f 0.55 0.64 0.69 RG 0.6 w 0.3 0.3 "+num(fw-.6)+" "+num(fh-.6)+" re S\n";
@@ -133,7 +133,7 @@ var ap=put("<< /Type /XObject /Subtype /Form /BBox [0 0 "+num(fw)+" "+num(fh)+"]
 var widget=put("<< /Type /Annot /Subtype /Widget /FT /Tx /T ("+literal(f.name)+") /V ("+literal(f.value)+") /DV ("+literal(f.value)+") /Rect ["+rect.map(num).join(" ")+"] /P "+id+" 0 R /F 4 /Ff "+(f.multiline?4096:0)+" /DA (/F1 9 Tf 0.09 0.13 0.16 rg) /AP << /N "+ap+" 0 R >> /MK << /BC [0.55 0.64 0.69] /BG [1 1 1] >> /BS << /W 0.6 /S /S >> >>");
 annots.push(widget+" 0 R");fieldIds.push(widget+" 0 R");
 });
-objects[id]="<< /Type /Page /Parent "+pageTree+" 0 R /MediaBox [0 0 "+W+" "+H+"] /Resources << /Font << /F1 "+font1+" 0 R /F2 "+font2+" 0 R >>"+(jpeg?" /XObject << /Im1 "+img+" 0 R >>":"")+" >> /Contents "+stream+" 0 R"+(annots.length?" /Annots ["+annots.join(" ")+"]":"")+" >>";
+objects[id]="<< /Type /Page /Parent "+pageTree+" 0 R /MediaBox [0 0 "+W+" "+H+"] /Resources << /Font << /F1 "+font1+" 0 R /F2 "+font2+" 0 R >>"+(imageResources?" /XObject <<"+imageResources+" >>":"")+" >> /Contents "+stream+" 0 R"+(annots.length?" /Annots ["+annots.join(" ")+"]":"")+" >>";
 });
 objects[pageTree]="<< /Type /Pages /Count "+pages.length+" /Kids ["+pageIds.map(function(x){return x+" 0 R";}).join(" ")+"] >>";
 objects[acro]="<< /Fields ["+fieldIds.join(" ")+"] /DA (/F1 9 Tf 0 g) /DR << /Font << /F1 "+font1+" 0 R >> >> >>";
@@ -149,16 +149,20 @@ var status=document.querySelector(".wg-status"),pdf=document.querySelector("[dat
 function message(t){if(status)status.textContent=t;}
 function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},60000);}
 function formValues(){var o={};document.querySelectorAll("input[name],textarea[name]").forEach(function(el){o[el.name]=el.value;});return o;}
-async function plate(){var img=document.querySelector(".wg-anatomy img");if(!img)return null;if(!img.complete)await new Promise(function(resolve,reject){img.addEventListener("load",resolve,{once:true});img.addEventListener("error",reject,{once:true});});if(!img.naturalWidth)throw new Error("The anatomical illustration has not loaded. Retry after the image appears.");
-var canvas=document.createElement("canvas");canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;var ctx=canvas.getContext("2d");if(!ctx)throw new Error("PDF image export is unavailable; use Print / save as PDF.");ctx.fillStyle="#fff";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0);var data=canvas.toDataURL("image/jpeg",.94).split(",")[1];return {width:canvas.width,height:canvas.height,bytes:atob(data)};}
+async function plate(db){var kind=document.body.dataset.document,ids=[];
+if(kind==="weekly")return {};
+if(kind==="guide")ids=[document.body.dataset.guide];
+else if(kind==="focused"||kind==="fullbody"){db.days.filter(function(d){return kind==="focused"?d.day<=3:d.day===5||d.day===6;}).forEach(function(d){d.slots.forEach(function(s){if(ids.indexOf(s[0])<0)ids.push(s[0]);});});}
+else if(kind==="guides")ids=db.exercises.map(function(e){return e.id;});else ids=["row"];
+var bank={};for(var i=0;i<ids.length;i++){var e=db.exercises.find(function(x){return x.id===ids[i];});if(!e||!e.art)continue;var img=new Image();img.src=new URL("../../assets/media/workout-guides/"+e.art,location.href).href;await img.decode();var canvas=document.createElement("canvas");canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;var ctx=canvas.getContext("2d");if(!ctx)throw new Error("Image export unavailable; download the ready-made PDF instead.");ctx.fillStyle="#fff";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0);bank[e.id]={width:canvas.width,height:canvas.height,bytes:atob(canvas.toDataURL("image/jpeg",.90).split(",")[1])};}return bank;}
 if(pdf)pdf.addEventListener("click",async function(){pdf.disabled=true;message("Preparing your PDF on this device...");try{var response=await fetch("training-plan-v0.3.json",{cache:"no-cache"});if(!response.ok)throw new Error("The plan database could not load. Use Print / save as PDF or retry.");
-var db=await response.json(),kind=document.body.dataset.document,level=Number(document.body.dataset.level||1),art=await plate(),pages=makePages(db,kind,level,document.body.dataset.guide,formValues(),!!art),bytes=buildPdf(pages,art);
+var db=await response.json(),kind=document.body.dataset.document,level=Number(document.body.dataset.level||1),art=await plate(db),pages=makePages(db,kind,level,document.body.dataset.guide,formValues(),!!(art&&Object.keys(art).length)),bytes=buildPdf(pages,art);
 var suffix=kind==="weekly"?"Weekly_Overview":kind==="focused"?"Focused_Days_Level_"+level:kind==="fullbody"?"Full_Body_Level_"+level:kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+document.body.dataset.guide:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_v0.3.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Typed planner entries are included; its log fields remain fillable.");
 }catch(error){message(error.message+" The page remains available to print.");}finally{pdf.disabled=false;}});
 document.querySelectorAll("[data-print]").forEach(function(b){b.addEventListener("click",function(){window.print();});});
 document.querySelectorAll("[data-download-html]").forEach(function(b){b.addEventListener("click",async function(){b.disabled=true;try{var clone=document.documentElement.cloneNode(true);clone.querySelectorAll("input[name],textarea[name]").forEach(function(el){var source=document.getElementsByName(el.name)[0];if(!source)return;if(el.tagName==="TEXTAREA")el.textContent=source.value;else el.setAttribute("value",source.value);});
 var sheet=clone.querySelector('link[rel="stylesheet"]'),res=await fetch(sheet.href);if(!res.ok)throw new Error("Could not load styles.");var style=document.createElement("style");style.textContent=await res.text();sheet.replaceWith(style);
-var images=clone.querySelectorAll("img");for(var i=0;i<images.length;i++){var original=document.querySelectorAll("img")[i];if(!original.complete||!original.naturalWidth)throw new Error("Wait for the image to load, then retry.");var c=document.createElement("canvas");c.width=original.naturalWidth;c.height=original.naturalHeight;c.getContext("2d").drawImage(original,0,0);images[i].src=c.toDataURL("image/png");}
+var images=clone.querySelectorAll("img");for(var i=0;i<images.length;i++){var original=document.querySelectorAll("img")[i];if(!original.complete||!original.naturalWidth){var loaded=new Image();loaded.src=original.currentSrc||original.src;await loaded.decode();original=loaded;}var c=document.createElement("canvas");c.width=original.naturalWidth;c.height=original.naturalHeight;var copyctx=c.getContext("2d");copyctx.fillStyle="#fff";copyctx.fillRect(0,0,c.width,c.height);copyctx.drawImage(original,0,0);images[i].src=c.toDataURL("image/jpeg",.9);}
 clone.querySelectorAll("script").forEach(function(s){s.remove();});var base=document.createElement("base");base.href=location.href;clone.querySelector("head").prepend(base);var toolbar=clone.querySelector(".wg-toolbar");if(toolbar)toolbar.remove();var note=document.createElement("p");note.style="padding:16px;color:white;font:14px Arial";note.textContent="Offline HTML copy. Use your browser Print menu to save or print a PDF. Navigation links return to the website.";clone.querySelector("body").prepend(note);
 save(new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"}),"PROJECT100_"+(document.body.dataset.document||"Guide")+"_v0.3.html");message("The self-contained HTML copy is ready, with image, styles and typed entries included.");
 }catch(e){message("HTML download could not finish: "+e.message);}finally{b.disabled=false;}});});
