@@ -107,6 +107,7 @@ with sync_playwright() as p:
             folders=page.locator("details.fold,details.kin-category-folder")
             if folders.count():
                 folder=folders.first
+                folder.evaluate("(el)=>el.open=false")
                 folder.locator("summary").first.click()
                 assert folder.evaluate("(el)=>el.open")
                 folder.locator("summary").first.click()
@@ -129,7 +130,7 @@ with sync_playwright() as p:
             if path=="index.html":
                 page.evaluate("scrollTo(0,document.documentElement.scrollHeight)")
                 page.wait_for_timeout(500)
-                page.locator('[data-dl-open="enc"]').first.click()
+                page.locator('[data-dl-open][data-dl-doc="enc"]').first.click()
                 page.locator("#dlModal[open]").wait_for()
                 assert page.locator('#dlModal a[download]').count()>=3
                 page.locator("[data-dl-close]").click()
