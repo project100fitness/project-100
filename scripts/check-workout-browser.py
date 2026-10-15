@@ -63,7 +63,7 @@ with sync_playwright() as p:
                 assert fields["resistance-row-r2"]["/V"]=="65 x 2 = 130 lb nominal"
                 for e in json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())["exercises"]:
                     assert frame.locator("#"+e["id"]+".wg-guide").count()==1
-            page.locator('[data-kd-doc="weekly"]').click();frame.locator(".wg-weekly").wait_for()
+            page.locator('[data-kd-doc="weekly"]').click();frame.locator('body[data-document="weekly"]').wait_for()
             assert frame.locator(".wg-day-card").count()==7
             assert frame.locator("[data-week-level]").count()==0
             frame.locator('[name="weekly-day-1-notes"]').fill("QA / controlled return")
