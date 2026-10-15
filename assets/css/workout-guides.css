@@ -57,4 +57,4 @@
 @media(max-width:760px){.wg-exercise-visual{grid-template-columns:1fr;gap:16px}.wg-resistance{padding:16px}.wg-resistance p{font-size:15px}.wg-exercise-visual .wg-phases{grid-template-columns:1fr 1fr}.wg-equipment-cards{grid-template-columns:1fr}.wg-gauge-row strong{font-size:15px}.wg-gauge-row summary{min-height:90px}.wg-gauge-row summary:after{font-size:13px}}
 @media print{.wg-exercise-visual{grid-template-columns:minmax(0,1fr) 45mm;gap:5mm}.wg-resistance{padding:6pt}.wg-resistance h3{font-size:11pt}.wg-resistance p,.wg-resistance strong{font-size:8pt}.wg-gauge-row summary{min-height:0;padding:5pt}.wg-gauge-row summary:after,.wg-gauge-inputs{display:none}.wg-gauge-row output{font-size:9pt}.wg-gauge-row meter{height:5pt}.wg-equipment-cards{grid-template-columns:1fr 1fr}.wg-equipment-cards article{padding:8pt}.wg-protocol-list li{font-size:10pt}.wg-protocol>section{break-inside:avoid}}
 
-.wg-gauge-row summary>*{pointer-events:none}
+.wg-gauge-row summary>output,.wg-gauge-row summary>meter{pointer-events:none}
