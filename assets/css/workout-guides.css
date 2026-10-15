@@ -26,7 +26,7 @@
 @media(max-width:620px){.wg-phases{grid-template-columns:1fr}.wg-guide h1{font-size:28px}}
 @media print{.wg-phases{grid-template-columns:1fr 1fr;gap:8pt}.wg-guide h1{font-size:22pt}}
 
-.wg-embedded .wg-toolbar,.wg-embedded .wg-levels,.wg-embedded .wg-screen-note{display:none}.wg-embedded main{padding-top:12px}.wg-embedded{background:#e8edef}
+.wg-embedded .wg-toolbar,.wg-embedded .wg-levels,.wg-embedded .wg-screen-note,.wg-embedded main>.wg-legend{display:none}.wg-embedded main{padding-top:12px}.wg-embedded{background:#e8edef}.wg-embedded .wg-guide h1{font-size:clamp(21px,4.5vw,28px);margin:8px 0}.wg-embedded .wg-guide{padding:18px}.wg-embedded .wg-guide .wg-sheet-head p{margin:6px 0}
 
 .wg-actions .wg-ready-pdf{display:flex;align-items:center;justify-content:center;background:#f26b11;color:#171b20;border:1px solid #f26b11;border-radius:7px;padding:12px 17px;font:700 14px Arial,sans-serif;text-decoration:none;min-height:46px}.wg-static-downloads{margin:20px 0;padding-top:12px;border-top:1px solid #c5d1d7}.wg-static-downloads p{font-size:13px}
 

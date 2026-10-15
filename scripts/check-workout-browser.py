@@ -56,6 +56,7 @@ with sync_playwright() as p:
         frame.locator('body[data-guide="row"]').wait_for()
         frame.locator(".wg-phase img").first.wait_for()
         page.wait_for_function("document.querySelector('[data-kd-frame]').contentDocument.querySelector('.wg-phase img').naturalWidth>0")
+        assert frame.locator(".wg-phase img").first.bounding_box()["y"] < height-100
         page.screenshot(path=str(out/("browser-"+label+"-row.png")))
         page.locator("[data-kd-close]").click()
         modal.wait_for(state="hidden");page.wait_for_timeout(450)
@@ -95,6 +96,13 @@ with sync_playwright() as p:
                 dest=Path(tmp)/"illustrated.pdf";illustrated.value.save_as(dest)
                 r=PdfReader(dest);assert len(r.pages)==17 and len(r.get_fields())==15
                 assert any(page.get("/Resources",{}).get("/XObject") for page in r.pages)
+            with page.expect_download(timeout=60000) as offline:
+                page.locator("[data-download-html]").click()
+            with tempfile.TemporaryDirectory() as tmp:
+                dest=Path(tmp)/"offline.html";offline.value.save_as(dest)
+                content=dest.read_text()
+                assert "data:image/jpeg;base64," in content
+                assert "<style>" in content and "<script" not in content
         assert not errors, errors
         checks.append({"viewport":label,"width":width,"height":height,"status":"passed","checks":["full-view open/close","weekly preview","two on-page placements","20 browse documents","focused guide filter","17-page PDF download","search","naturalistic row preview","end-scroll bar","Escape close","filled one-page PDF export","canonical field value","no uncaught JavaScript errors"]})
         context.close()
