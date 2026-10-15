@@ -10,7 +10,7 @@
   "checks": [
     "one active folder per page",
     "all original routes preserved",
-    "per-section colours",
+    "original orange/amber/graphite brand palette",
     "side-only active glow",
     "no navigation animation",
     "centred content-aligned navigation",
