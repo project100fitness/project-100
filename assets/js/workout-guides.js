@@ -1,0 +1,129 @@
+/* PROJECT 100 browser PDF exporter. No external libraries, tracking or server submissions. */
+(function(){
+"use strict";
+var W=595.28,H=841.89,M=38,RIGHT=W-M,INK=[0.09,0.13,0.16],ORANGE=[0.62,0.23,0],RED=[0.66,0.13,0.13],BLUE=[0.12,0.33,0.62],GREEN=[0.13,0.40,0.23];
+function ascii(v){return String(v==null?"":v).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[–—−]/g,"-").replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/·/g," / ").replace(/→/g," > ").replace(/[^\x20-\x7e\n]/g,"");}
+function literal(v){return ascii(v).replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");}
+function num(v){return Number(v).toFixed(2);}
+function color(c){return c.map(num).join(" ");}
+function wrap(v,width,size){var max=Math.max(12,Math.floor(width/(size*.55))),words=ascii(v).trim().split(/\s+/),out=[],line="";
+words.forEach(function(word){while(word.length>max){if(line){out.push(line);line="";}out.push(word.slice(0,max));word=word.slice(max);}if(!word)return;if((line+" "+word).trim().length>max){out.push(line);line=word;}else line=(line+" "+word).trim();});if(line)out.push(line);return out;}
+function Page(title){this.title=title;this.commands=[];this.fields=[];this.y=H-M;this.lowest=H-M;}
+Page.prototype.text=function(t,x,y,size,c,bold){if(y<33)throw new Error("PDF layout exceeds page: "+this.title);this.lowest=Math.min(this.lowest,y);this.commands.push("BT /"+(bold?"F2":"F1")+" "+num(size)+" Tf "+color(c||INK)+" rg 1 0 0 1 "+num(x)+" "+num(y)+" Tm ("+literal(t)+") Tj ET\n");};
+Page.prototype.p=function(t,size,c,bold,gap){size=size||10;var lines=wrap(t,RIGHT-M,size);for(var i=0;i<lines.length;i++){this.text(lines[i],M,this.y,size,c,bold);this.y-=size*1.30;}this.y-=gap==null?6:gap;};
+Page.prototype.heading=function(t){this.y-=6;this.p(t,12,ORANGE,true,5);};
+Page.prototype.top=function(kicker,title,sub){this.p(kicker.toUpperCase(),9,ORANGE,true,10);this.p(title,23,INK,true,8);if(sub)this.p(sub,10,INK,false,10);};
+Page.prototype.rule=function(){this.commands.push("0.75 0.81 0.83 RG 0.6 w "+num(M)+" "+num(this.y)+" m "+num(RIGHT)+" "+num(this.y)+" l S\n");this.y-=12;};
+Page.prototype.image=function(width){width=width||RIGHT-M;var height=width/2;this.commands.push("q "+num(width)+" 0 0 "+num(height)+" "+num((W-width)/2)+" "+num(this.y-height)+" cm /Im1 Do Q\n");this.y-=height+8;this.p("START / softly extended arm                    FINISH / controlled row",8,INK,true,7);};
+Page.prototype.field=function(name,label,value,multiline){this.p(label,8.5,INK,true,2);var height=multiline?34:19;var bottom=this.y-height+3;if(bottom<38)throw new Error("PDF field exceeds page: "+name);this.fields.push({name:name,value:ascii(value||""),rect:[M,bottom,RIGHT,bottom+height],multiline:!!multiline});this.y=bottom-11;};
+function sets(l,d,kind){if(d.kind==="easy"||kind==="control")return 1;var n=kind==="main"?l.mainSets:l.accessorySets;return d.kind==="moderate"?Math.min(2,n):n;}
+function makePages(db,kind,level,guideId,values,hasImage){
+values=values||{};var pages=[],l=db.levels.filter(function(x){return x.level===level;})[0],eBy={};db.exercises.forEach(function(e){eBy[e.id]=e;});
+function add(p){pages.push(p);return p;}
+function caution(p){p.p("Stop for pain, new numbness or weakness, dizziness, loss of grip, moving supports or damaged bands. Keep the recoil path clear. Follow manufacturer limits and individual clinical restrictions.",8.5,INK,false,4);}
+function addGuide(e){var p=add(new Page(e.name));p.top("PROJECT 100 / EXERCISE GUIDE",e.name,e.pattern+" / "+e.reps);
+if(e.art&&hasImage)p.image(465);
+p.p("MAIN: "+e.main,9,RED,true,4);
+p.p("SECONDARY: "+e.secondary,9,BLUE,false,4);
+p.p("BASE / SUPPORT: "+e.base,9,GREEN,false,6);
+[["01 / Check the setup",e.setup],["02 / Set the base and brace",e.position],["03 / Move with control",e.move],["04 / Limit the range and return",e.range]].forEach(function(pair){p.p(pair[0],9,ORANGE,true,1);p.p(pair[1],9,INK,false,4);});
+p.p("WATCH FOR: "+e.check+" EASIER: "+e.easier,8.5,INK,false,4);
+p.p("Soft joints, normal breathing. Colours describe exercise roles, not measured activation. Hidden muscles are named in text. No fixed resistance is prescribed.",7.5,INK,false,4);
+caution(p);
+p.p("Sources: "+e.sources.map(function(k){return db.sources[k].title;}).join("; ")+". Full source links: project100.fit/downloads/kinetics/index.html",7,INK,false,0);
+}
+if(kind==="guide"){if(!eBy[guideId])throw new Error("Unknown guide");addGuide(eBy[guideId]);}
+else if(kind==="guides"){var intro=add(new Page("Technique sheet index"));intro.top("PROJECT 100 / 12 TECHNIQUE SHEETS","Understand the whole position.");
+intro.p("Educational draft. Current symptoms, restrictions and tolerated loads have not been confirmed. Review suitability with a qualified clinician or trainer where injury, pain or medical restrictions apply.",10);
+intro.heading("Three roles / one complete position");
+intro.p("MAIN / RED: intended movement focus.",11,RED,true);
+intro.p("SECONDARY / BLUE: movement assistants and local joint control.",11,BLUE,true);
+intro.p("BASE / GREEN: postural support and stable contact points.",11,GREEN,true);
+intro.p("BAND / ORANGE-EDGED CHARCOAL: the resistance line at every level. Colour never specifies load.");
+intro.heading("Read in order: setup > base and brace > move > return");
+intro.p("Inspect the equipment and stable supports first. Warm up with comfortable activity and rehearse unloaded. Brace gently while breathing; avoid forced joint locks. Use only a range you can control.");
+db.exercises.forEach(function(e,i){intro.p((i+1)+". "+e.name,10,INK,false,3);});
+caution(intro);db.exercises.forEach(addGuide);
+}else if(kind==="planner"){
+if(!l)throw new Error("Unknown intensity level");
+var p=add(new Page("Weekly map"));p.top("PROJECT 100 / FIVE-DAY PLANNER / LEVEL "+level,"Your week. Built on control.");
+p.p("Three focused days, rest, moderate full body, easy full-body practice, rest. Day 6 becomes rest if recovery or control is reduced.",11);
+p.p("Educational draft; current restrictions and tolerated loads remain unconfirmed. This is not an individualized rehabilitation prescription.",9);
+p.heading("Your seven-day map");db.days.forEach(function(d){p.p("DAY "+d.day+" / "+d.title,11,INK,true,4);});
+p.heading("Level "+level+" / effort and volume");
+p.p("Focused days: "+l.mainSets+" main sets; "+l.accessorySets+" accessory sets. One easy set for control drills. Leave "+l.rir+"+ good repetitions in reserve. Full body A is capped at two sets; day 6 remains one easy set and 5+ repetitions in reserve.");
+p.p("Rest about 60-120 seconds between sets, longer if breathing or control needs it. The listed volume is a starting point, not a test.");
+p.p("Equipment ceiling: "+l.kits+" kit(s), "+l.maxBandsPerLine+" band(s) per working line. More available equipment does not require more resistance. No named bundle is assigned automatically.");
+p.p("Use unloaded or bodyweight practice where needed. Even a 35 lb labelled band may be too much. Label sums are not measured hand force, hardware ratings or free-weight equivalents.",9);
+p.p("RED / Main. BLUE / Secondary. GREEN / Base and support. The band stays orange-edged charcoal at every intensity level.",9);
+var how=add(new Page("Setup and load selection"));how.top("READ BEFORE TRAINING","Set the base. Then move.");
+how.p("Inspect anchors, bands, clips and interfaces; use stable supports. Warm up with 5-10 minutes of comfortable activity and unloaded movement rehearsal.");
+[["01 / Base","Plant feet and establish bench or chair contacts. Keep joints soft instead of forcing a hard knee or elbow lock."],["02 / Brace and support","Firm the trunk gently while breathing normally. Keep the intended support areas quiet without freezing joints that need to move."],["03 / Main action","Move smoothly through a comfortable arc. Exhale on effort, keep grip neutral where possible and keep recoil away from the face."],["04 / Return and check","Control the recoil. End the set before twisting, shrugging, leaning or loss of balance changes the movement."]].forEach(function(x){how.heading(x[0]);how.p(x[1]);});
+how.heading("Equipment and progression");how.p(db.loadRule);
+how.p("One KUZARO kit contains one each of 35, 45, 55, 65, 75 and 85 lb bands. Use one limb at a time if identical paired lines are unavailable; do not mismatch sides.");
+how.p("HPYGN is separate: four 65 lb bands total, two per side = 130 lb nominal each side and 260 lb combined nominal. These are label sums, not measured resistance.");
+caution(how);
+db.days.filter(function(d){return d.slots.length;}).forEach(function(d){var q=add(new Page("Day "+d.day));q.top("DAY "+d.day+" / LEVEL "+level,d.title,d.focus);
+if(d.kind==="easy")q.p("EASY PRACTICE: one set, 5+ good repetitions in reserve, no progression. Choose rest if not recovered from day 5.",10,ORANGE,true);
+d.slots.forEach(function(slot,i){var e=eBy[slot[0]];q.p((i+1)+". "+e.name+" / "+sets(l,d,slot[1])+" set(s) / "+e.reps,10,INK,true,3);q.p("Main: "+e.main,8.5,RED,false,2);q.p("Base cue: "+e.position,8.5,INK,false,6);});
+q.p("Effort: "+(d.kind==="easy"?5:l.rir)+"+ good reps in reserve; control drills stay easy. Read each technique sheet before training. Rest 60-120 seconds or longer as needed.",8.5,INK,false,9);
+q.heading("Record the setup and response");
+[["date","Date"],["band","Band label / count per line"],["anchor","Anchor height / starting distance"],["reps","Reps / effort / comfortable range"],["response","During-session and next-day response"]].forEach(function(pair){var name="day-"+d.day+"-"+pair[0];q.field(name,pair[1],values[name],pair[0]==="response");});
+q.p("Stop for symptoms or lost control. Reduce load rather than force the target.",8,INK,false,0);
+});
+var r=add(new Page("Recovery and sources"));r.top("RECOVERY / PROGRESSION / SOURCES","Recover before repeating.");
+r.p(db.recoveryRule);r.p("Rest on days 4 and 7. Check comfortable daily movement, grip, joint symptoms and ability to repeat the setup. Use another rest day or reduce the session if control or recovery is reduced.");
+r.heading("Progress one factor at a time");r.p("Establish repeatable technique and comfortable range first. Add repetitions within the range before considering a small resistance increase. Reassess control after each change. No level requires the heaviest bundles.");
+caution(r);r.heading("Source scope");
+r.p("Personal movement names and equipment records come from Kinetics. Supported complements and cues are editorial adaptations. They are not a clinician-approved personal rehabilitation plan.",9);
+Object.keys(db.sources).forEach(function(k){var s=db.sources[k];r.p(s.title,8.5,INK,true,1);r.p(s.url,7.5,INK,false,5);});
+r.p("The separate 12-sheet technique document describes all positions. Only the row currently has a reviewed naturalistic plate; other movements are not represented with the row picture.",8,INK,false,0);
+}else throw new Error("Choose a planner or exercise document.");
+return pages;
+}
+function buildPdf(pages,jpeg){
+var objects=[null],pageIds=[],fieldIds=[],font1=reserve(),font2=reserve(),catalog=reserve(),pageTree=reserve(),acro=reserve(),img=jpeg?reserve():null;
+function reserve(){objects.push("");return objects.length-1;}
+function put(s){var id=reserve();objects[id]=s;return id;}
+objects[font1]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+objects[font2]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
+if(jpeg)objects[img]="<< /Type /XObject /Subtype /Image /Width "+jpeg.width+" /Height "+jpeg.height+" /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length "+jpeg.bytes.length+" >>\nstream\n"+jpeg.bytes+"\nendstream";
+pages.forEach(function(p,i){var id=reserve();pageIds.push(id);var commands=p.commands.join("")+"BT /F1 8 Tf 0.25 0.32 0.36 rg 1 0 0 1 "+num(M)+" 22 Tm (PROJECT 100 / v0.3 / 15 Oct 2026) Tj ET\nBT /F1 8 Tf 1 0 0 1 510 22 Tm ("+(i+1)+" / "+pages.length+") Tj ET\n";
+var stream=put("<< /Length "+commands.length+" >>\nstream\n"+commands+"endstream"),annots=[];
+p.fields.forEach(function(f){var rect=f.rect,fw=rect[2]-rect[0],fh=rect[3]-rect[1],appearance="q 1 1 1 rg 0 0 "+num(fw)+" "+num(fh)+" re f 0.55 0.64 0.69 RG 0.6 w 0.3 0.3 "+num(fw-.6)+" "+num(fh-.6)+" re S\n";
+var ls=wrap(f.value,fw-10,9).slice(0,f.multiline?2:1);
+ls.forEach(function(t,j){appearance+="BT /F1 9 Tf 0.09 0.13 0.16 rg 1 0 0 1 5 "+num(fh-12-j*11)+" Tm ("+literal(t)+") Tj ET\n";});appearance+="Q\n";
+var ap=put("<< /Type /XObject /Subtype /Form /BBox [0 0 "+num(fw)+" "+num(fh)+"] /Resources << /Font << /F1 "+font1+" 0 R >> >> /Length "+appearance.length+" >>\nstream\n"+appearance+"endstream");
+var widget=put("<< /Type /Annot /Subtype /Widget /FT /Tx /T ("+literal(f.name)+") /V ("+literal(f.value)+") /DV ("+literal(f.value)+") /Rect ["+rect.map(num).join(" ")+"] /P "+id+" 0 R /F 4 /Ff "+(f.multiline?4096:0)+" /DA (/F1 9 Tf 0.09 0.13 0.16 rg) /AP << /N "+ap+" 0 R >> /MK << /BC [0.55 0.64 0.69] /BG [1 1 1] >> /BS << /W 0.6 /S /S >> >>");
+annots.push(widget+" 0 R");fieldIds.push(widget+" 0 R");
+});
+objects[id]="<< /Type /Page /Parent "+pageTree+" 0 R /MediaBox [0 0 "+W+" "+H+"] /Resources << /Font << /F1 "+font1+" 0 R /F2 "+font2+" 0 R >>"+(jpeg?" /XObject << /Im1 "+img+" 0 R >>":"")+" >> /Contents "+stream+" 0 R"+(annots.length?" /Annots ["+annots.join(" ")+"]":"")+" >>";
+});
+objects[pageTree]="<< /Type /Pages /Count "+pages.length+" /Kids ["+pageIds.map(function(x){return x+" 0 R";}).join(" ")+"] >>";
+objects[acro]="<< /Fields ["+fieldIds.join(" ")+"] /DA (/F1 9 Tf 0 g) /DR << /Font << /F1 "+font1+" 0 R >> >> >>";
+objects[catalog]="<< /Type /Catalog /Pages "+pageTree+" 0 R"+(fieldIds.length?" /AcroForm "+acro+" 0 R":"")+" >>";
+var out="%PDF-1.4\n%\xe2\xe3\xcf\xd3\n",offsets=[0];for(var j=1;j<objects.length;j++){offsets.push(out.length);out+=j+" 0 obj\n"+objects[j]+"\nendobj\n";}
+var start=out.length;out+="xref\n0 "+objects.length+"\n0000000000 65535 f \n";for(var a=1;a<objects.length;a++)out+=String(offsets[a]).padStart(10,"0")+" 00000 n \n";out+="trailer\n<< /Size "+objects.length+" /Root "+catalog+" 0 R >>\nstartxref\n"+start+"\n%%EOF\n";
+var bytes=new Uint8Array(out.length);for(var n=0;n<out.length;n++)bytes[n]=out.charCodeAt(n)&255;return bytes;
+}
+globalThis.Project100PDF={makePages:makePages,buildPdf:buildPdf,wrap:wrap};
+if(typeof document==="undefined")return;
+if(new URLSearchParams(location.search).get("embed")==="1")document.body.classList.add("wg-embedded");
+var status=document.querySelector(".wg-status"),pdf=document.querySelector("[data-download-pdf]");
+function message(t){if(status)status.textContent=t;}
+function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},60000);}
+function formValues(){var o={};document.querySelectorAll("input[name],textarea[name]").forEach(function(el){o[el.name]=el.value;});return o;}
+async function plate(){var img=document.querySelector(".wg-anatomy img");if(!img)return null;if(!img.complete)await new Promise(function(resolve,reject){img.addEventListener("load",resolve,{once:true});img.addEventListener("error",reject,{once:true});});if(!img.naturalWidth)throw new Error("The anatomical illustration has not loaded. Retry after the image appears.");
+var canvas=document.createElement("canvas");canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;var ctx=canvas.getContext("2d");if(!ctx)throw new Error("PDF image export is unavailable; use Print / save as PDF.");ctx.fillStyle="#fff";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0);var data=canvas.toDataURL("image/jpeg",.94).split(",")[1];return {width:canvas.width,height:canvas.height,bytes:atob(data)};}
+if(pdf)pdf.addEventListener("click",async function(){pdf.disabled=true;message("Preparing your PDF on this device...");try{var response=await fetch("training-plan-v0.3.json",{cache:"no-cache"});if(!response.ok)throw new Error("The plan database could not load. Use Print / save as PDF or retry.");
+var db=await response.json(),kind=document.body.dataset.document,level=Number(document.body.dataset.level||1),art=await plate(),pages=makePages(db,kind,level,document.body.dataset.guide,formValues(),!!art),bytes=buildPdf(pages,art);
+var suffix=kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+document.body.dataset.guide:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_v0.3.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Typed planner entries are included; its log fields remain fillable.");
+}catch(error){message(error.message+" The page remains available to print.");}finally{pdf.disabled=false;}});
+document.querySelectorAll("[data-print]").forEach(function(b){b.addEventListener("click",function(){window.print();});});
+document.querySelectorAll("[data-download-html]").forEach(function(b){b.addEventListener("click",async function(){b.disabled=true;try{var clone=document.documentElement.cloneNode(true);clone.querySelectorAll("input[name],textarea[name]").forEach(function(el){var source=document.getElementsByName(el.name)[0];if(!source)return;if(el.tagName==="TEXTAREA")el.textContent=source.value;else el.setAttribute("value",source.value);});
+var sheet=clone.querySelector('link[rel="stylesheet"]'),res=await fetch(sheet.href);if(!res.ok)throw new Error("Could not load styles.");var style=document.createElement("style");style.textContent=await res.text();sheet.replaceWith(style);
+var images=clone.querySelectorAll("img");for(var i=0;i<images.length;i++){var original=document.querySelectorAll("img")[i];if(!original.complete||!original.naturalWidth)throw new Error("Wait for the image to load, then retry.");var c=document.createElement("canvas");c.width=original.naturalWidth;c.height=original.naturalHeight;c.getContext("2d").drawImage(original,0,0);images[i].src=c.toDataURL("image/png");}
+clone.querySelectorAll("script").forEach(function(s){s.remove();});var base=document.createElement("base");base.href=location.href;clone.querySelector("head").prepend(base);var toolbar=clone.querySelector(".wg-toolbar");if(toolbar)toolbar.remove();var note=document.createElement("p");note.style="padding:16px;color:white;font:14px Arial";note.textContent="Offline HTML copy. Use your browser Print menu to save or print a PDF. Navigation links return to the website.";clone.querySelector("body").prepend(note);
+save(new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"}),"PROJECT100_"+(document.body.dataset.document||"Guide")+"_v0.3.html");message("The self-contained HTML copy is ready, with image, styles and typed entries included.");
+}catch(e){message("HTML download could not finish: "+e.message);}finally{b.disabled=false;}});});
+})();
