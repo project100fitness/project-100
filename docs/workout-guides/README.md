@@ -32,3 +32,5 @@ The second validation pass runs Chromium against a local copy of the published s
 Responsive QA also checks that the whole modal and footer remain within the viewport. The mobile weekly map displays day cards instead of requiring sideways scrolling. Technique body text is enlarged on small screens. Teal labels have separate light/dark theme contrast values.
 
 The dated ZIP contains every PDF, the plan database and approved row artwork for offline use. It passes a ZIP CRC check and verifies the expected PDF count. The full website source is backed up separately after deployment. PDF contact sheets are provided as compact JPEG and detailed PNG, with individual row/weekly render previews for visual review.
+
+The dialog cancels any in-progress background smooth scroll before opening, temporarily uses immediate root scrolling while open, and restores the previous scroll settings on close. This prevents a Chromium mobile paint offset during deep-link navigation; the browser check inspects both geometry and a rendered header pixel.

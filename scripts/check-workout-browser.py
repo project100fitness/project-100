@@ -37,16 +37,7 @@ with sync_playwright() as p:
         geometry=modal.evaluate("(el)=>({box:el.getBoundingClientRect().toJSON(),top:getComputedStyle(el).top,height:getComputedStyle(el).height,inset:getComputedStyle(el).inset,position:getComputedStyle(el).position,transform:getComputedStyle(el).transform,scroll:scrollY,innerHeight:innerHeight,viewport:visualViewport?{offsetTop:visualViewport.offsetTop,height:visualViewport.height}:null})")
         pixel=Image.open(io.BytesIO(shot)).convert("RGB").getpixel((width//2,20))
         print("MODAL_GEOMETRY",label,json.dumps(geometry),"TOP_PIXEL",pixel,flush=True)
-        if all(v>210 for v in pixel):
-            state=page.evaluate("""() => {let sels=['html','body','#kinDownloadModal','.kd-head','.kd-controls','.kd-workspace','.kd-footer'];return {hit:document.elementFromPoint(innerWidth/2,20)?.outerHTML?.slice(0,250),styles:sels.map(s=>{let e=document.querySelector(s),c=getComputedStyle(e);return {s,rect:e.getBoundingClientRect().toJSON(),bg:c.backgroundColor,overflow:c.overflow,opacity:c.opacity,transform:c.transform,padding:c.padding,display:c.display,align:c.alignItems,justify:c.justifyContent,scroll:e.scrollTop};})};}""")
-            print("PAINT_STATE",json.dumps(state),flush=True)
-            probes=[("body-overflow","document.documentElement.style.overflow='';document.body.style.overflow='hidden'"),("instant-root-scroll","document.documentElement.style.scrollBehavior='auto';scrollTo({top:scrollY,behavior:'instant'})"),("root-top","scrollTo({top:0,behavior:'instant'})")]
-            for name,script in probes:
-                page.evaluate(script);page.wait_for_timeout(200)
-                b=page.screenshot()
-                p0=Image.open(io.BytesIO(b)).convert("RGB").getpixel((width//2,20))
-                print("PAINT_PROBE",name,p0,flush=True)
-            raise AssertionError(("Modal screenshot has a blank top region",geometry,pixel))
+        assert not all(v>210 for v in pixel), ("Blank region above dialog",geometry,pixel)
         page.locator('[data-kd-filter="focused"]').click()
         assert page.locator(".kd-doc:not([hidden])").count()==3
         frame.locator('body[data-document="focused"]').wait_for()
@@ -68,8 +59,11 @@ with sync_playwright() as p:
         page.screenshot(path=str(out/("browser-"+label+"-row.png")))
         page.locator("[data-kd-close]").click()
         modal.wait_for(state="hidden");page.wait_for_timeout(450)
+        page.locator("#workout-downloads").screenshot(path=str(out/("browser-"+label+"-focused-card.png")))
+        page.locator("#full-body-downloads").screenshot(path=str(out/("browser-"+label+"-fullbody-card.png")))
         page.evaluate("scrollTo(0,document.documentElement.scrollHeight)")
         page.locator("[data-kd-bar]").wait_for(state="visible")
+        page.screenshot(path=str(out/("browser-"+label+"-end-bar.png")))
         page.locator('[data-kd-bar] [data-kd-open="weekly"]').click()
         modal.wait_for(state="visible")
         assert page.locator("[data-kd-document-title]").inner_text()=="The one-page weekly planner"
