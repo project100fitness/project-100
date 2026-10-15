@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "engine": "Chromium",
+  "viewports": [
+    {
+      "viewport": "phone",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "full-view open/close",
+        "weekly preview",
+        "two on-page placements",
+        "20 browse documents",
+        "focused guide filter",
+        "17-page PDF download",
+        "search",
+        "naturalistic row preview",
+        "end-scroll bar",
+        "Escape close",
+        "filled one-page PDF export",
+        "canonical field value",
+        "no uncaught JavaScript errors"
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "width": 768,
+      "height": 1024,
+      "status": "passed",
+      "checks": [
+        "full-view open/close",
+        "weekly preview",
+        "two on-page placements",
+        "20 browse documents",
+        "focused guide filter",
+        "17-page PDF download",
+        "search",
+        "naturalistic row preview",
+        "end-scroll bar",
+        "Escape close",
+        "filled one-page PDF export",
+        "canonical field value",
+        "no uncaught JavaScript errors"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "full-view open/close",
+        "weekly preview",
+        "two on-page placements",
+        "20 browse documents",
+        "focused guide filter",
+        "17-page PDF download",
+        "search",
+        "naturalistic row preview",
+        "end-scroll bar",
+        "Escape close",
+        "filled one-page PDF export",
+        "canonical field value",
+        "no uncaught JavaScript errors"
+      ]
+    }
+  ]
+}

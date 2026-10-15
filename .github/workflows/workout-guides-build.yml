@@ -1,0 +1,68 @@
+name: Build and validate workout guide PDFs
+on:
+  pull_request:
+    paths:
+      - 'assets/js/workout-guides.js'
+      - 'assets/media/workout-guides/**'
+      - 'downloads/kinetics/training-plan-v0.3.json'
+      - 'scripts/build-workout-guides.cjs'
+      - 'scripts/validate-workout-guides.py'
+      - '.github/workflows/workout-guides-build.yml'
+      - 'scripts/check-workout-browser.py'
+      - 'assets/js/kinetics-downloads.js'
+      - 'assets/css/workout-guides.css'
+      - 'assets/css/kinetics.css'
+      - 'kinetics.html'
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.head_ref, 'workout-guides-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          sparse-checkout: |
+            assets/js
+            assets/css
+            assets/fonts
+            assets/media/workout-guides
+            downloads/kinetics
+            scripts
+            docs/workout-guides
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF validation tools
+        run: |
+          python -m pip install pypdf Pillow playwright
+          python -m playwright install --with-deps chromium
+          if ! command -v pdftoppm >/dev/null; then sudo apt-get update && sudo apt-get install -y poppler-utils; fi
+      - name: Prepare the row plate
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          im=Image.open("assets/media/workout-guides/row-three-roles-v1.png").convert("RGB")
+          assert im.size==(1774,887), im.size
+          im.save("/tmp/project100-row.jpg",quality=94)
+          PY
+      - name: Build PDFs and verify every rendered page
+        run: |
+          node --check assets/js/workout-guides.js
+          node scripts/build-workout-guides.cjs /tmp/project100-row.jpg
+          python scripts/validate-workout-guides.py
+      - name: Check phone, tablet and desktop browser behavior
+        run: python scripts/check-workout-browser.py
+      - name: Save validated downloads to the review branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/kinetics/pdf downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip docs/workout-guides
+          if ! git diff --cached --quiet; then
+            git commit -m "Build and validate printable workout guide downloads"
+            git push
+          fi
