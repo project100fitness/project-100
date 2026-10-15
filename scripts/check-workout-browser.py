@@ -13,7 +13,7 @@ def ready(page,kind):
 def downloaded(page,selector):
     with page.expect_download(timeout=90000) as info:page.locator(selector).click()
     with tempfile.TemporaryDirectory() as tmp:
-        dest=Path(tmp)/"guide.pdf";info.value.save_as(dest);r=PdfReader(dest);fields=r.get_fields() or {};return len(r.pages),fields,[p.extract_text() for p in r.pages]
+        dest=Path(tmp)/"guide.pdf";info.value.save_as(dest);r=PdfReader(dest);fields=r.get_fields() or {};print("PDF_EXPORT",info.value.suggested_filename,{"weeklyNote":str(fields.get("weekly-day-1-notes",{}).get("/V",""))},flush=True);return len(r.pages),fields,[p.extract_text() for p in r.pages]
 with sync_playwright() as p:
     for engine in [p.chromium,p.firefox,p.webkit]:
         browser=engine.launch()

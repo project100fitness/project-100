@@ -180,7 +180,7 @@ function message(t){if(status)status.textContent=t;}
 function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},60000);}
 function formValues(){var o={};document.querySelectorAll("input[name],textarea[name],select[name]").forEach(function(el){o[el.name]=el.value;});return o;}
 async function plate(db){var kind=document.body.dataset.document,ids=[];
-if(kind==="weekly"||kind==="protocol")return {};
+if(kind==="weekly"||kind==="protocol"||kind==="focused"||kind==="fullbody")return {};
 if(kind==="guide")ids=[document.body.dataset.guide];
 else if(kind==="focused"||kind==="fullbody"){db.days.filter(function(d){return kind==="focused"?d.day<=3:d.day===5||d.day===6;}).forEach(function(d){d.slots.forEach(function(s){if(ids.indexOf(s[0])<0)ids.push(s[0]);});});}
 else if(kind==="guides"||kind==="book")ids=db.exercises.map(function(e){return e.id;});else ids=["row"];
