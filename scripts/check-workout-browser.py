@@ -26,6 +26,9 @@ with sync_playwright() as p:
         frame.locator(".wg-weekly").wait_for()
         assert frame.locator(".wg-day-card").count()==7
         assert frame.locator(".wg-choice-cards>section").count()==3
+        frame.locator('[data-week-level][value="2"]').check()
+        assert "level-2" in frame.locator(".wg-day-open").first.get_attribute("href")
+        frame.locator('[data-week-level][value="1"]').check()
         frame.locator('a[href="#your-week"]').click()
         assert frame.locator("#your-week").is_visible()
         assert page.locator(".kin-downloads").count()==2

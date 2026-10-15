@@ -10,6 +10,7 @@ function saveValues(){if(!selected||!frame.contentDocument)return;try{if(frame.c
 function updateBar(){scrollQueued=false;if(!bar||!section)return;var left=document.documentElement.scrollHeight-(window.scrollY+window.innerHeight),range=Math.min(420,window.innerHeight*.55),p=Math.max(0,Math.min(1,1-left/range));bar.hidden=dialog.open||p<=0||window.innerHeight<540;bar.style.opacity=String(p);bar.style.setProperty("--kd-rise",String(p));}
 function queueBar(){if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateBar);}}
 function renderSelection(moveFrame,fragment){
+dialog.dataset.category=selected.category;dialog.dataset.results=String(filtered.length);
 dialog.querySelectorAll("[data-kd-doc]").forEach(function(b){var on=b.dataset.kdDoc===selected.id;b.setAttribute("aria-pressed",String(on));if(on)b.scrollIntoView({block:"nearest",inline:"nearest",behavior:"auto"});});
 dialog.querySelector("[data-kd-eyebrow]").textContent=selected.eyebrow;
 dialog.querySelector(".kd-preview-note").textContent=selected.category==="weekly"?"The weekly map links the two detailed guides. Its PDF has seven fillable daily note fields.":selected.category==="focused"||selected.category==="fullbody"?"This detailed guide includes the session sheets and the matching technique instructions. Resistance is individually selected; open an exercise link for the complete steps.":"Main, secondary and base roles are exercise-specific. Every exercise has its own reviewed naturalistic plate.";

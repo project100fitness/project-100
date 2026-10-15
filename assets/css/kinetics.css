@@ -223,3 +223,6 @@ button:focus-visible,.kin-photo:focus-visible,.kin-exercise summary:focus-visibl
 html[data-theme="dark"] .kin-downloads--fullbody{--fullbody-accent:#79d8d0}@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .kin-downloads--fullbody{--fullbody-accent:#79d8d0}}
 
 .kin-downloads-levels a small{font-size:.78rem;font-weight:500;line-height:1.4}.kin-downloads-days{margin:16px 0;padding-left:24px;font-size:.95rem;line-height:1.7}.kin-downloads-legend span small{display:block;font-size:.78rem;font-weight:500;line-height:1.5;margin-top:3px}.kin-downloads-copy .kin-downloads-note{font-size:.82rem;line-height:1.6}.kin-downloads-copy .kin-downloads-steps{font-size:.9rem;font-weight:650}.kin-display-open-icon{top:24px;right:24px}
+
+/* Give single-document views the full reading width. */
+.kd-modal[data-results="1"] .kd-workspace{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}.kd-modal[data-results="1"] .kd-library{display:none}.kd-modal[data-category="weekly"] .kd-role-key{display:none}.kd-preview-note{font-size:.75rem}.kd-document-head>div>span{font-size:.82rem;line-height:1.5}.kd-doc b{font-size:.88rem}.kd-doc em{font-size:.75rem;line-height:1.5}
