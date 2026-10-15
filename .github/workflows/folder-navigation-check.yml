@@ -24,6 +24,7 @@ jobs:
             assets/css
             assets/js
             assets/fonts
+            downloads/kinetics
             scripts
             docs/folder-navigation
       - uses: actions/setup-python@v5

@@ -98,6 +98,44 @@ with sync_playwright() as p:
                         assert page.locator('.tab[href="library.html"]').evaluate("(el)=>document.activeElement===el")
                     page.close()
                 context.close()
+        # Exercise matching folders and download browsers on actual pages.
+        context=browser.new_context(viewport={"width":390,"height":844},color_scheme="dark")
+        context.route("**/*",quiet_media);page=context.new_page()
+        for path in ["index.html","kinetics.html","fit-protocol-vectors.html","liquid-intake.html"]:
+            page.close();page=context.new_page()
+            check(page,path,390)
+            folders=page.locator("details.fold,details.kin-category-folder")
+            if folders.count():
+                folder=folders.first
+                folder.locator("summary").first.click()
+                assert folder.evaluate("(el)=>el.open")
+                folder.locator("summary").first.click()
+                assert not folder.evaluate("(el)=>el.open")
+            records=page.locator(".rv-tab")
+            if records.count()>1:
+                records.nth(1).click()
+                assert records.nth(1).get_attribute("aria-selected")=="true"
+            if path=="kinetics.html":
+                page.locator('[data-kin-filter="triceps"]').click()
+                assert page.locator('[data-kin-group="triceps"]:visible').count()>0
+                page.locator('[data-kin-filter="all"]').click()
+                page.locator('[data-kd-open="focused-1"]').first.click()
+                page.locator("#kinDownloadModal[open]").wait_for()
+                page.frame_locator("[data-kd-frame]").locator('body[data-document="focused"]').wait_for()
+                page.locator('[data-kd-filter="guides"]').click()
+                assert page.locator(".kd-doc:not([hidden])").count()==13
+                page.locator("[data-kd-close]").click()
+                page.locator("#kinDownloadModal").wait_for(state="hidden")
+            if path=="index.html":
+                page.evaluate("scrollTo(0,document.documentElement.scrollHeight)")
+                page.wait_for_timeout(500)
+                page.locator('[data-dl-open="enc"]').first.click()
+                page.locator("#dlModal[open]").wait_for()
+                assert page.locator('#dlModal a[download]').count()>=3
+                page.locator("[data-dl-close]").click()
+                page.locator("#dlModal").wait_for(state="hidden")
+            results.append({"engine":name,"path":path,"width":390,"status":"passed","test":"folder-and-download-interaction"})
+        context.close()
         # Source navigation remains complete without JavaScript.
         context=browser.new_context(java_script_enabled=False,viewport={"width":390,"height":844})
         context.route("**/*",quiet_media);page=context.new_page()
