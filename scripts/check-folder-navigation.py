@@ -139,7 +139,7 @@ with sync_playwright() as p:
                 page.locator("[data-kd-close]").click()
                 page.locator("#kinDownloadModal").wait_for(state="hidden")
             if path=="index.html":
-                page.evaluate("scrollTo(0,document.documentElement.scrollHeight)")
+                page.evaluate("""()=>{document.documentElement.style.scrollBehavior="auto";scrollTo({top:document.documentElement.scrollHeight,behavior:"instant"});dispatchEvent(new Event("scroll"));}""")
                 page.wait_for_timeout(500)
                 page.locator('[data-dl-open][data-dl-doc="enc"]').first.click()
                 page.locator("#dlModal[open]").wait_for()
