@@ -131,7 +131,7 @@ with sync_playwright() as p:
                 page.locator('[data-kin-filter="triceps"]').click()
                 assert page.locator('[data-kin-group="triceps"]:visible').count()>0
                 page.locator('[data-kin-filter="all"]').click()
-                page.locator('[data-kd-open="focused-1"]').first.click()
+                page.locator('[data-kd-open="focused"]').first.click()
                 page.locator("#kinDownloadModal[open]").wait_for()
                 page.frame_locator("[data-kd-frame]").locator('body[data-document="focused"]').wait_for()
                 page.locator('[data-kd-filter="guides"]').click()

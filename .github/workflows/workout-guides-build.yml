@@ -42,7 +42,7 @@ jobs:
       - name: Install PDF validation tools
         run: |
           python -m pip install pypdf Pillow playwright
-          python -m playwright install --with-deps chromium
+          python -m playwright install --with-deps chromium firefox webkit
           if ! command -v pdftoppm >/dev/null; then sudo apt-get update && sudo apt-get install -y poppler-utils; fi
       - name: Prepare reviewed exercise plates
         run: |

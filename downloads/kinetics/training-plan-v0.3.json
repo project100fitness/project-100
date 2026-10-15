@@ -84,7 +84,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / softly extended arm                    FINISH / controlled pull",
-      "artReview": "approved"
+      "artReview": "approved",
+      "resistance": {
+        "mode": "band",
+        "type": "KUZARO-style long-line band",
+        "nominalLb": null,
+        "note": "Record the chosen band rating and count for this exercise. No personal load is assigned."
+      }
     },
     {
       "id": "press",
@@ -111,7 +117,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / handle beside chest                    FINISH / controlled press",
-      "artReview": "approved after correction: rear anchor, continuous band, closed clip and rear-facing handle frame; band length increases during press"
+      "artReview": "approved after correction: rear anchor, continuous band, closed clip and rear-facing handle frame; band length increases during press",
+      "resistance": {
+        "mode": "band",
+        "type": "KUZARO-style long-line band",
+        "nominalLb": null,
+        "note": "Record the chosen band rating and count for this exercise. No personal load is assigned."
+      }
     },
     {
       "id": "pressdown",
@@ -137,7 +149,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / elbows bent                    FINISH / soft elbow extension",
-      "artReview": "approved after reframing: complete high anchor and closed clip visible, bar centre attachment continuous, triceps focus and quiet seated base"
+      "artReview": "approved after reframing: complete high anchor and closed clip visible, bar centre attachment continuous, triceps focus and quiet seated base",
+      "resistance": {
+        "mode": "band",
+        "type": "KUZARO-style long-line band",
+        "nominalLb": null,
+        "note": "Record the chosen band rating and count for this exercise. No personal load is assigned."
+      }
     },
     {
       "id": "lateral",
@@ -164,7 +182,13 @@
       "artHeight": 1024,
       "artAspect": 1.5,
       "artCaption": "START / arms lowered                    FINISH / short comfortable arc",
-      "artReview": "Reviewed unloaded shallow sideways raise; middle deltoid red, shoulder-girdle assistant blue, quiet seated base; no front raise."
+      "artReview": "Reviewed unloaded shallow sideways raise; middle deltoid red, shoulder-girdle assistant blue, quiet seated base; no front raise.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "brace",
@@ -190,7 +214,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "SETUP / balanced sitting                    HOLD / gentle brace and breathing",
-      "artReview": "Reviewed quiet seated bracing and normal breathing; abdominal wall red, seated and foot base green; deep assistants described in text."
+      "artReview": "Reviewed quiet seated bracing and normal breathing; abdominal wall red, seated and foot base green; deep assistants described in text.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "sit-stand",
@@ -216,7 +246,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / seated support                    FINISH / controlled standing",
-      "artReview": "Reviewed seated start and supported standing finish; feet planted; quadriceps red; ambiguous blue outer-thigh patch removed."
+      "artReview": "Reviewed seated start and supported standing finish; feet planted; quadriceps red; ambiguous blue outer-thigh patch removed.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "hamstring-curl",
@@ -243,7 +279,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / heel forward                    FINISH / heel drawn back",
-      "artReview": "approved after anchor correction: front low metal eye and closed clip visible, cuff above ankle, working thigh supported, band length increases; blue denotes local ankle control"
+      "artReview": "approved after anchor correction: front low metal eye and closed clip visible, cuff above ankle, working thigh supported, band length increases; blue denotes local ankle control",
+      "resistance": {
+        "mode": "band",
+        "type": "KUZARO-style long-line band",
+        "nominalLb": null,
+        "note": "Record the chosen band rating and count for this exercise. No personal load is assigned."
+      }
     },
     {
       "id": "calf-raise",
@@ -269,7 +311,13 @@
       "artHeight": 1024,
       "artAspect": 1.5,
       "artCaption": "START / heels down                    FINISH / controlled heel lift",
-      "artReview": "Reviewed heels-down and gentle heels-up positions; calf muscle bellies red, Achilles tendons neutral; stable hand support."
+      "artReview": "Reviewed heels-down and gentle heels-up positions; calf muscle bellies red, Achilles tendons neutral; stable hand support.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "hip-abduction",
@@ -295,7 +343,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / steady stance                    FINISH / small side lift",
-      "artReview": "approved as qualitative surface projection: working outer hip red, local hip assistant blue, stance side and trunk green; stable counter contacts, level pelvis, no bands"
+      "artReview": "approved as qualitative surface projection: working outer hip red, local hip assistant blue, stance side and trunk green; stable counter contacts, level pelvis, no bands",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "scapular-control",
@@ -322,7 +376,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / relaxed shoulders                    FINISH / gentle blade control",
-      "artReview": "Reviewed gentle shoulder-blade motion; middle trapezius region red, rear shoulder assistants blue; neutral neck and seated base."
+      "artReview": "Reviewed gentle shoulder-blade motion; middle trapezius region red, rear shoulder assistants blue; neutral neck and seated base.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     },
     {
       "id": "curl",
@@ -349,7 +409,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / soft elbow extension                    FINISH / controlled curl",
-      "artReview": "Reviewed same working arm in both panels, one handle and continuous low-anchor band; elbow flexion lengthens line; spare arm rests on thigh."
+      "artReview": "Reviewed same working arm in both panels, one handle and continuous low-anchor band; elbow flexion lengthens line; spare arm rests on thigh.",
+      "resistance": {
+        "mode": "band",
+        "type": "KUZARO-style long-line band",
+        "nominalLb": null,
+        "note": "Record the chosen band rating and count for this exercise. No personal load is assigned."
+      }
     },
     {
       "id": "hip-extension",
@@ -375,7 +441,13 @@
       "artHeight": 887,
       "artAspect": 2,
       "artCaption": "START / steady stance                    FINISH / small backward lift",
-      "artReview": "Reviewed small rearward leg motion with quiet pelvis and fixed hand supports; working glute red, posterior thigh blue; stance base green."
+      "artReview": "Reviewed small rearward leg motion with quiet pelvis and fixed hand supports; working glute red, posterior thigh blue; stance base green.",
+      "resistance": {
+        "mode": "unloaded",
+        "type": "No band / bodyweight or gentle control",
+        "nominalLb": null,
+        "note": "Begin as illustrated without added bands. The three band configurations do not apply to this starting version."
+      }
     }
   ],
   "days": [
@@ -534,16 +606,16 @@
       "kits": 2,
       "maxBandsPerLine": 2,
       "mainSets": 2,
-      "accessorySets": 2,
-      "rir": 3
+      "accessorySets": 1,
+      "rir": 4
     },
     {
       "level": 3,
       "kits": 4,
       "maxBandsPerLine": 4,
-      "mainSets": 3,
-      "accessorySets": 2,
-      "rir": 2
+      "mainSets": 2,
+      "accessorySets": 1,
+      "rir": 4
     }
   ],
   "stock": {
@@ -598,5 +670,39 @@
       "equipmentNote": "Placement describes the chapter. Each exercise retains its own equipment; HPYGN short bands are not automatically substituted for long-line movements."
     }
   },
-  "artworkRevision": "all-plates-20261015"
+  "artworkRevision": "all-plates-20261015",
+  "resistanceProtocol": {
+    "version": "2026-10-15-unified",
+    "meaning": "Equipment configurations only; not fixed strength, effort or set-count prescriptions.",
+    "levels": [
+      {
+        "level": 1,
+        "label": "Single band",
+        "kits": 1,
+        "maxBandsPerLine": 1
+      },
+      {
+        "level": 2,
+        "label": "Two-kit options",
+        "kits": 2,
+        "maxBandsPerLine": 2
+      },
+      {
+        "level": 3,
+        "label": "Four-kit options",
+        "kits": 4,
+        "maxBandsPerLine": 4
+      }
+    ],
+    "ratings": [
+      35,
+      45,
+      55,
+      65,
+      75,
+      85
+    ],
+    "forceLabel": "Nominal band-label total per working line",
+    "forceNote": "Label sums are not measured force at the hands; tension changes with stretch and setup."
+  }
 }

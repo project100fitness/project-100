@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "pdfCount": 26,
-  "renderedPages": 197,
+  "pdfCount": 18,
+  "renderedPages": 57,
   "checks": [
     "page counts",
     "fillable canonical field tree",

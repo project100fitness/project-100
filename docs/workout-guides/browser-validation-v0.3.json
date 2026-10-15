@@ -1,68 +1,176 @@
 {
   "status": "passed",
-  "engine": "Chromium",
-  "viewports": [
+  "edition": "unified-protocol",
+  "cases": [
     {
+      "engine": "chromium",
       "viewport": "phone",
-      "width": 390,
-      "height": 844,
       "status": "passed",
       "checks": [
-        "full-view open/close",
-        "weekly preview",
-        "two on-page placements",
-        "20 browse documents",
-        "focused guide filter",
-        "17-page PDF download",
-        "search",
-        "naturalistic row preview",
-        "end-scroll bar",
-        "Escape close",
-        "filled one-page PDF export",
-        "canonical field value",
-        "no uncaught JavaScript errors"
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
       ]
     },
     {
+      "engine": "chromium",
       "viewport": "tablet",
-      "width": 768,
-      "height": 1024,
       "status": "passed",
       "checks": [
-        "full-view open/close",
-        "weekly preview",
-        "two on-page placements",
-        "20 browse documents",
-        "focused guide filter",
-        "17-page PDF download",
-        "search",
-        "naturalistic row preview",
-        "end-scroll bar",
-        "Escape close",
-        "filled one-page PDF export",
-        "canonical field value",
-        "no uncaught JavaScript errors"
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
       ]
     },
     {
+      "engine": "chromium",
       "viewport": "desktop",
-      "width": 1280,
-      "height": 900,
       "status": "passed",
       "checks": [
-        "full-view open/close",
-        "weekly preview",
-        "two on-page placements",
-        "20 browse documents",
-        "focused guide filter",
-        "17-page PDF download",
-        "search",
-        "naturalistic row preview",
-        "end-scroll bar",
-        "Escape close",
-        "filled one-page PDF export",
-        "canonical field value",
-        "no uncaught JavaScript errors"
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "viewport": "phone",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "viewport": "tablet",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "viewport": "desktop",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "viewport": "phone",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "viewport": "tablet",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "viewport": "desktop",
+      "status": "passed",
+      "checks": [
+        "18 unique library documents",
+        "one protocol",
+        "one session edition",
+        "12 unique exercises in book",
+        "R2 65x2 nominal total",
+        "blank unassigned records",
+        "unloaded no-band version",
+        "filled exercise PDF",
+        "shared records across documents",
+        "weekly entered PDF",
+        "legacy-link compatibility",
+        "no horizontal overflow"
       ]
     }
   ]

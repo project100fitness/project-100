@@ -7,17 +7,21 @@ if "--baseline" not in sys.argv:
     db=json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())
     paths += ["assets/media/workout-guides/"+e["art"] for e in db["exercises"] if e["id"]!="row"]
 if "--wait" in sys.argv:
-    target=base+"assets/media/workout-guides/press-three-roles-v1.png"
-    for attempt in range(30):
+    target=base+"downloads/kinetics/protocols.html"
+    for attempt in range(40):
         try:
-            with urllib.request.urlopen(target+"?release=20261015",timeout=20) as response:
+            req=urllib.request.Request(target+"?release=20261015-unified&t="+str(time.time_ns()),headers={"Cache-Control":"no-cache"})
+            with urllib.request.urlopen(req,timeout=20) as response:
                 assert response.status==200
+                assert b"20261015-unified-protocol" in response.read()
             break
         except Exception:
-            if attempt==29: raise
+            if attempt==39:raise
             time.sleep(10)
 paths += ["downloads/kinetics/"+p.name for p in Path("downloads/kinetics").glob("*.html")]
 paths += ["downloads/kinetics/pdf/"+f["name"] for f in json.loads(Path("downloads/kinetics/pdf/build-manifest.json").read_text())["files"]]
+if "--baseline" in sys.argv:
+    paths=["kinetics.html","assets/css/workout-guides.css","downloads/kinetics/guide-row.html","downloads/kinetics/pdf/guide-row.pdf"]
 def check(path):
     req=urllib.request.Request(base+path,headers={"User-Agent":"PROJECT100-download-validation","Cache-Control":"no-cache"})
     with urllib.request.urlopen(req,timeout=45) as r:
