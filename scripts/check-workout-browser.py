@@ -69,7 +69,7 @@ with sync_playwright() as p:
             frame.locator('[name="weekly-day-1-notes"]').fill("QA / controlled return")
             pages,fields,text=downloaded(page,"[data-kd-download]")
             assert pages==1 and len(fields)==7
-            assert fields["weekly-day-1-notes"]["/V"]=="QA / controlled return"
+            assert fields["weekly-day-1-notes"]["/V"]=="QA / controlled return", (engine.name,label,str(fields["weekly-day-1-notes"]["/V"]))
             page.locator('[data-kd-doc="focused"]').click();frame.locator('body[data-document="focused"]').wait_for()
             assert frame.locator('section[id^="day-"]').count()==3
             assert frame.locator(".wg-guide").count()==0
