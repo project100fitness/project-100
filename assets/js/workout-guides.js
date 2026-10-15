@@ -27,7 +27,7 @@ function add(p){pages.push(p);return p;}
 function caution(p){p.p("Stop for pain, new numbness or weakness, dizziness, loss of grip, moving supports or damaged bands. Keep the recoil path clear. Follow manufacturer limits and individual clinical restrictions.",8.5,INK,false,4);}
 function addGuide(e){
 var p=add(new Page(e.name));p.top("PROJECT 100 / FOLLOW-ALONG EXERCISE",e.name,e.pattern+" / "+e.reps+" / choose resistance individually");
-if(e.art&&hasImage)p.image(Math.min(420,185*e.artAspect),e.id,e.artCaption,e.artAspect);
+if(e.art&&hasImage)p.image(Math.min(420,210*e.artAspect),e.id,e.artCaption,e.artAspect);
 var steps=[["1. Prepare your equipment",e.setup],["2. Find a steady position",e.position],["3. Make the movement",e.move],["4. Return slowly",e.range]],gap=12,cw=(RIGHT-M-gap)/2,fs=10;
 for(var row=0;row<2;row++){var pair=steps.slice(row*2,row*2+2),height=Math.max.apply(null,pair.map(function(a){return wrap(a[1],cw-22,fs).length*fs*1.3+40;})),top=p.y;pair.forEach(function(a,col){var x=M+col*(cw+gap);p.box(x,top,cw,height,[1,.97,.94],ORANGE);p.text(a[0],x+11,top-17,10,ORANGE,true);p.column(a[1],x+11,top-34,cw-22,fs,INK,false);});p.y=top-height-10;}
 p.p("HOW YOUR BODY WORKS TOGETHER",9,INK,true,5);
@@ -56,17 +56,17 @@ ids.forEach(function(id){addGuide(eBy[id]);});
 pages.push(full[7]);return pages;
 }
 if(kind==="weekly"){
-var w=add(new Page("One-page weekly planner"));w.top("PROJECT 100 / YOUR PRINTABLE WEEK","Your week. One day at a time.","1. Choose a level below.   2. Find today's session.   3. Follow its illustrated guide.");
+var w=add(new Page("One-page weekly planner"));w.top("PROJECT 100 / YOUR PRINTABLE WEEK","Your week. One day at a time.","Choose a level > find your day > follow its illustrated guide.");
 var cols=(RIGHT-M-16)/3,top=w.y,labels=["Start with less","Add supporting work","Add main-exercise work"];
 db.levels.forEach(function(l,i){var x=M+i*(cols+8);w.box(x,top,cols,68,[1,.96,.92],ORANGE);w.text("LEVEL "+l.level+" / "+labels[i],x+8,top-14,8,ORANGE,true);w.column(l.mainSets+" main sets + "+l.accessorySets+" supporting set"+(l.accessorySets>1?"s":""),x+8,top-29,cols-16,9,INK,true);w.column("Stop while "+l.rir+" more good repetitions are still possible.",x+8,top-45,cols-16,8.5,INK,false);});
 w.y=top-80;w.p("One repetition = one movement. One set = a group of repetitions before a rest.",9,INK,false,5);
 w.p("Control drills stay easy. Day 5: at most two sets. Day 6: one easy set with five more repetitions possible, or rest. Band weight is chosen individually.",8.5,INK,false,8);
 var names=["Push: chest and arms","Legs and hips","Pull: back and arms","Rest and recover","Full body: moderate","Full body: easy practice","Rest and recover"],shortNames={"press":"Chest press","pressdown":"Triceps pressdown","lateral":"Shoulder raise","brace":"Brace and breathe","sit-stand":"Sit-to-stand","hamstring-curl":"Hamstring curl","calf-raise":"Calf raise","hip-abduction":"Side leg lift","row":"Supported row","scapular-control":"Shoulder-blade control","curl":"Neutral-grip curl","hip-extension":"Backward leg lift"};
-db.days.forEach(function(d,i){var top=w.y,height=61;w.box(M,top,RIGHT-M,height,d.kind==="rest"?[.94,.94,.92]:[.98,.98,.97]);w.box(M,top,43,height,d.kind==="rest"?[.88,.88,.85]:[1,.92,.84]);w.text("DAY",M+10,top-16,7,ORANGE,true);w.text(d.day,M+14,top-39,20,ORANGE,true);w.text(names[i],M+54,top-15,11,INK,true);
+db.days.forEach(function(d,i){var top=w.y,height=58;w.box(M,top,RIGHT-M,height,d.kind==="rest"?[.94,.94,.92]:[.98,.98,.97]);w.box(M,top,43,height,d.kind==="rest"?[.88,.88,.85]:[1,.92,.84]);w.text("DAY",M+10,top-16,7,ORANGE,true);w.text(d.day,M+14,top-39,20,ORANGE,true);w.text(names[i],M+54,top-15,11,INK,true);
 var text=d.slots.length?d.slots.map(function(s,j){return (j+1)+". "+shortNames[s[0]];}).join("  /  "):"No strength session. Optional gentle comfortable activity.";
 w.column(text,M+54,top-30,265,8.5,INK,false);
 w.text("MY NOTES / date, work, how it felt",370,top-12,7,INK,true);
-var name="weekly-day-"+d.day+"-notes";w.fields.push({name:name,value:ascii(values[name]||""),rect:[370,top-53,RIGHT-8,top-20],multiline:true});w.y=top-height-7;});
+var name="weekly-day-"+d.day+"-notes";w.fields.push({name:name,value:ascii(values[name]||""),rect:[370,top-53,RIGHT-8,top-20],multiline:true});w.y=top-height-6;});
 w.p("BEFORE YOU MOVE: set your base > brace gently and breathe > move smoothly > return slowly. Stop for pain or lost control.",8.5,INK,true,5);
 w.p("DAYS 1-3: focused-days-level-1.html   /   DAYS 5-6: full-body-level-1.html",8,ORANGE,true,3);
 w.p("Find both at project100.fit/downloads/kinetics/ and choose the matching level. Main red; secondary blue; support green. Bands stay orange-edged charcoal.",7.5,INK,false,3);
@@ -107,7 +107,7 @@ how.p("HPYGN is separate: four 65 lb bands total, two per side = 130 lb nominal 
 caution(how);
 db.days.filter(function(d){return d.slots.length;}).forEach(function(d){var q=add(new Page("Day "+d.day));q.top("DAY "+d.day+" / LEVEL "+level,d.title,d.focus);
 if(d.kind==="easy")q.p("EASY PRACTICE: one set, 5+ more good repetitions still possible, no progression. Choose rest if not recovered from day 5.",10,ORANGE,true);
-d.slots.forEach(function(slot,i){var e=eBy[slot[0]];q.p((i+1)+". "+e.name+" / "+sets(l,d,slot[1])+" set(s) / "+e.reps,10,INK,true,3);q.p("Main: "+e.main,8.5,RED,false,2);q.p("Base cue: "+e.position,8.5,INK,false,6);});
+d.slots.forEach(function(slot,i){var e=eBy[slot[0]],title=(i+1)+". "+e.name+" / "+sets(l,d,slot[1])+" set(s) / "+e.reps,top=q.y,height=wrap(title,RIGHT-M,10).length*13+wrap("Main: "+e.main,RIGHT-M,8.5).length*11.05+wrap("Get into position: "+e.position,RIGHT-M,8.5).length*11.05+19;q.box(M-5,top+5,RIGHT-M+10,height,[1,.97,.94],ORANGE);q.p(title,10,INK,true,3);q.p("Main: "+e.main,8.5,RED,false,2);q.p("Get into position: "+e.position,8.5,INK,false,14);});
 q.p("Effort: "+(d.kind==="easy"?5:l.rir)+"+ more good repetitions still possible; control drills stay easy. Read each technique sheet before training. Rest 60-120 seconds or longer as needed.",8.5,INK,false,9);
 q.heading("Record the setup and response");
 [["date","Date"],["band","Band label / count per line"],["anchor","Anchor height / starting distance"],["reps","Reps / effort / comfortable range"],["response","During-session and next-day response"]].forEach(function(pair){var name="day-"+d.day+"-"+pair[0];q.field(name,pair[1],values[name],pair[0]==="response");});
