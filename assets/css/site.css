@@ -79,7 +79,7 @@
   --prose-w: 44rem;
   --rail-w: 15rem;
   --head-h: 3.5rem;            /* header row 1 */
-  --tabs-h: 4.5rem;           /* header row 2 */
+  --tabs-h: 5rem;           /* header row 2 */
   --header-h: calc(var(--head-h) + var(--tabs-h));
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
@@ -412,7 +412,7 @@ input[type="search"], input[type="text"], select {
   border-radius: 0;
   background: transparent;
   color: var(--text);
-  font-size: .9rem;
+  font-size: 1rem;
   line-height: 1.25;
   font-weight: 750;
   text-align: center;
@@ -483,7 +483,7 @@ input[type="search"], input[type="text"], select {
 @media(max-width:719px) {
   .tabs__list { gap: .5rem; padding-top: .35rem; padding-bottom: .55rem; }
   .tabs__list li { flex: 0 0 auto; }
-  .tab { min-width: 7.4rem; min-height: 3.25rem; font-size: .88rem; padding-inline: 1rem; }
+  .tab { min-width: 8.5rem; min-height: 3.5rem; font-size: 1rem; padding-inline: 1rem; }
 }
 @media(prefers-reduced-motion:reduce) {
   .tab,.tab::before,.tab::after { transition: none; }
@@ -680,7 +680,7 @@ input[type="search"], input[type="text"], select {
 .menu__group-title { font-size: var(--step--1); font-weight: 700; margin: 0 0 .15rem; color: var(--text); }
 .menu__list { list-style: none; margin: 0; padding: 0; display: grid; }
 .menu__list li { margin: 0; }
-.menu__list a { display: block; padding: .4rem .65rem; border-radius: var(--r-1); color: var(--text-2); font-size: var(--step--1); text-decoration: none; font-weight: 550; }
+.menu__list a { display: block; min-height:2.75rem; padding: .55rem .65rem; border-radius: var(--r-1); color: var(--text); font-size: 1rem; text-decoration: none; font-weight: 550; }
 .menu__list a:hover { background: var(--surface-2); color: var(--text); text-decoration: none; }
 .menu__list a[aria-current="page"] { background: var(--surface-2); border-inline-start: 3px solid var(--folder-colour,var(--accent)); color: var(--text); font-weight: 750; }
 .menu__links { display: grid; gap: var(--s-2); }
@@ -902,7 +902,7 @@ input[type="search"], input[type="text"], select {
   position: relative; isolation: isolate; overflow: visible;
   border: 1px solid var(--line); border-radius: 0 0 8px 0;
   background: var(--surface); color: var(--text-2);
-  font-size: var(--step--1); font-weight: 650; white-space: nowrap;
+  font-size: 1rem; font-weight: 650; white-space: nowrap;
   transition: background .18s,color .18s;
 }
 .filters > .filter:nth-child(3n+2),.subnav > li:nth-child(3n+2)>a{--chip:var(--accent-2)}
