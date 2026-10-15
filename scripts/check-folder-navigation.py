@@ -51,7 +51,7 @@ def check(page,path,width):
     assert state["fontSize"]>=16,(path,state)
     assert state["animation"]=="none" and state["boxShadow"]=="none",(path,state)
     assert state["edgeShadow"]!="none" and state["edgeWidth"]=="4px",(path,state)
-    assert len(state["colours"])>=6,(path,state)
+    assert len(state["colours"])==1 and state["colours"][0]=="#e8500a",(path,state)
     alignment=page.evaluate("""()=>{let row=document.querySelector('.tabs__list'),bar=document.querySelector('.site-head__bar'),links=[...row.querySelectorAll('.tab')],r=row.getBoundingClientRect(),b=bar.getBoundingClientRect(),widths=links.map(a=>a.getBoundingClientRect().width),cv=document.createElement('canvas');cv.width=cv.height=1;let ctx=cv.getContext('2d');function rgb(c){ctx.clearRect(0,0,1,1);ctx.fillStyle=c;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data].slice(0,3)}function lum(c){let q=rgb(c).map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)});return q[0]*.2126+q[1]*.7152+q[2]*.0722}function contrast(a,b){let x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)}let ratios=links.map(a=>contrast(getComputedStyle(a).color,getComputedStyle(a,'::before').backgroundColor));return{left:r.left,right:r.right,barLeft:b.left,barRight:b.right,overflow:row.scrollWidth-row.clientWidth,widthSpread:Math.max(...widths)-Math.min(...widths),contrast:Math.min(...ratios)}}""")
     assert abs(alignment["left"]-alignment["barLeft"])<1 and abs(alignment["right"]-alignment["barRight"])<1,(path,alignment)
     assert alignment["contrast"]>=7,(path,alignment)
@@ -166,6 +166,6 @@ for path in shots:
 contact=Image.new("RGB",(1520,210*((len(thumbs)+1)//2)),"#adb9c4")
 for i,im in enumerate(thumbs):contact.paste(im,((i%2)*760,(i//2)*210))
 contact.save(output/"navigation-review.jpg",quality=90)
-report={"status":"passed","authoredPages":len(pages),"browserCases":len(results),"engines":["Chromium","Firefox","WebKit"],"checks":["one active folder per page","all original routes preserved","per-section colours","side-only active glow","no navigation animation","centred content-aligned navigation","equal desktop columns","contained desktop rows","minimum 7:1 folder-label contrast","44px touch targets","active folder visible","direct navigation","dialog open/close","keyboard traversal","JavaScript disabled"],"results":results}
+report={"status":"passed","authoredPages":len(pages),"browserCases":len(results),"engines":["Chromium","Firefox","WebKit"],"checks":["one active folder per page","all original routes preserved","original orange/amber/graphite brand palette","side-only active glow","no navigation animation","centred content-aligned navigation","equal desktop columns","contained desktop rows","minimum 7:1 folder-label contrast","44px touch targets","active folder visible","direct navigation","dialog open/close","keyboard traversal","JavaScript disabled"],"results":results}
 (output/"validation.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps({"status":"passed","authoredPages":len(pages),"browserCases":len(results)}))
