@@ -9,6 +9,7 @@ on:
       - 'scripts/validate-workout-guides.py'
       - '.github/workflows/workout-guides-build.yml'
       - 'scripts/check-workout-browser.py'
+      - 'scripts/check-workout-live.py'
       - 'assets/js/kinetics-downloads.js'
       - 'assets/css/workout-guides.css'
       - 'assets/css/kinetics.css'
@@ -57,6 +58,8 @@ jobs:
           python scripts/validate-workout-guides.py
       - name: Check phone, tablet and desktop browser behavior
         run: python scripts/check-workout-browser.py
+      - name: Verify the deployed public workout URLs
+        run: python scripts/check-workout-live.py
       - name: Save validated downloads to the review branch
         run: |
           git config user.name "github-actions[bot]"

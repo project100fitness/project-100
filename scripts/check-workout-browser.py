@@ -70,14 +70,14 @@ with sync_playwright() as p:
         page.locator("[data-kd-search]").focus();page.keyboard.press("Escape");modal.wait_for(state="hidden")
         page.wait_for_timeout(450)
         page.goto(base+"/downloads/kinetics/weekly-planner.html",wait_until="domcontentloaded")
-        page.locator('[name="weekly-day-1-notes"]').fill("QA / controlled return / comfortable range")
+        page.locator('[name="weekly-day-1-notes"]').fill("QA / 2×65 lb / controlled return")
         with page.expect_download() as generated:
             page.locator("[data-download-pdf]").click()
         with tempfile.TemporaryDirectory() as tmp:
             dest=Path(tmp)/"weekly-filled.pdf";generated.value.save_as(dest)
             r=PdfReader(dest);assert len(r.pages)==1
             fields=r.get_fields();assert len(fields)==7
-            assert fields["weekly-day-1-notes"]["/V"]=="QA / controlled return / comfortable range"
+            assert fields["weekly-day-1-notes"]["/V"]=="QA / 2x65 lb / controlled return"
             widgets=[ref.get_object() for ref in r.pages[0]["/Annots"]]
             assert all(w.get("/AP",{}).get("/N") for w in widgets)
         assert not errors, errors

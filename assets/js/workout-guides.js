@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 var W=595.28,H=841.89,M=38,RIGHT=W-M,INK=[0.09,0.13,0.16],ORANGE=[0.62,0.23,0],RED=[0.66,0.13,0.13],BLUE=[0.12,0.33,0.62],GREEN=[0.13,0.40,0.23];
-function ascii(v){return String(v==null?"":v).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[–—−]/g,"-").replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/·/g," / ").replace(/→/g," > ").replace(/[^\x20-\x7e\n]/g,"");}
+function ascii(v){return String(v==null?"":v).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[–—−]/g,"-").replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/×/g,"x").replace(/≤/g,"<=").replace(/≥/g,">=").replace(/±/g,"+/-").replace(/·/g," / ").replace(/→/g," > ").replace(/[^\x20-\x7e\n]/g,"");}
 function literal(v){return ascii(v).replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");}
 function num(v){return Number(v).toFixed(2);}
 function color(c){return c.map(num).join(" ");}
