@@ -1,0 +1,47 @@
+name: Validate folder navigation
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - 'assets/css/site.css'
+      - 'assets/js/site.js'
+      - 'scripts/check-folder-navigation.py'
+      - '.github/workflows/folder-navigation-check.yml'
+permissions:
+  contents: write
+jobs:
+  navigation:
+    if: github.event.pull_request.head.repo.full_name == github.repository && startsWith(github.head_ref, 'folder-navigation-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          sparse-checkout: |
+            assets/css
+            assets/js
+            assets/fonts
+            scripts
+            docs/folder-navigation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          python -m pip install playwright Pillow
+          python -m playwright install --with-deps chromium firefox webkit
+      - name: Validate source and browser layouts
+        run: |
+          node --check assets/js/site.js
+          python scripts/check-folder-navigation.py
+      - name: Save navigation review evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/folder-navigation
+          if ! git diff --cached --quiet; then
+            git commit -m "Record cross-browser folder navigation review"
+            git push
+          fi
