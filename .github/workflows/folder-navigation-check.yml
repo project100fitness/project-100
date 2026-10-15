@@ -23,6 +23,8 @@ jobs:
           sparse-checkout: |
             assets/css
             assets/js
+            assets/media/kinetics-library
+            assets/media/workout-guides
             assets/fonts
             downloads/kinetics
             scripts
@@ -39,7 +41,9 @@ jobs:
       - name: Validate source and browser layouts
         run: |
           node --check assets/js/site.js
+          node --check assets/js/kinetics.js
           python scripts/check-folder-navigation.py
+          python scripts/check-kinetics-framing.py
       - name: Save navigation review evidence
         run: |
           git config user.name "github-actions[bot]"
