@@ -491,19 +491,9 @@ input[type="search"], input[type="text"], select {
 /* ---- sub-navigation: the left vertical menu (all sizes) / chips only on pages that have no rail */
 .layout--rail { display: grid; grid-template-columns: var(--rail-w) minmax(0, 1fr); gap: var(--s-6); align-items: start; }
 .rail {
-  position: sticky;
-  top: calc(var(--header-h) + var(--s-4));
-  max-height: calc(100dvh - var(--header-h) - var(--s-6));
-  overflow-y: auto;
-  padding: var(--s-4) var(--s-3) var(--s-4);
-  border: 1px solid var(--line);
-  border-radius: var(--r-3);
-  background:
-    repeating-linear-gradient(135deg, transparent 0 11px, color-mix(in srgb, var(--accent) 7%, transparent) 11px 12px),
-    var(--surface);
-  box-shadow: inset 3px 0 0 var(--accent-strong);
-  scrollbar-width: thin;
-  transition: top .28s var(--ease);
+  position: sticky; top: calc(var(--header-h) + var(--s-4)); max-height: calc(100dvh - var(--header-h) - var(--s-6));
+  overflow-y: auto; padding: var(--s-4) var(--s-3); border: 1px solid var(--line); border-inline-start: 3px solid var(--folder-colour,var(--accent));
+  border-radius: 0 0 8px 0; background: var(--surface); scrollbar-width: thin; transition: top .28s var(--ease);
 }
 .rail__title {
   display: flex; align-items: center; gap: .5rem;
@@ -528,7 +518,7 @@ input[type="search"], input[type="text"], select {
   padding: .5rem .7rem .5rem .55rem;
   border: 1px solid var(--line);
   border-left: 3px solid var(--line-strong);
-  border-radius: 2px var(--r-2) var(--r-2) 2px;
+  border-radius: 0 0 7px 0;
   background: var(--surface);
   color: var(--text-2);
   font-size: var(--step--1);
@@ -538,12 +528,11 @@ input[type="search"], input[type="text"], select {
   transition: background .15s, border-color .15s, color .15s, transform .15s var(--ease);
 }
 .rail__num { font: 800 .68rem/1 var(--font-mono); letter-spacing: .04em; color: var(--muted); }
-.rail a:hover { color: var(--text); border-color: var(--accent); border-left-color: var(--accent-strong); transform: translateX(2px); text-decoration: none; }
+.rail a:hover { color: var(--text); background: var(--surface-2); border-left-color: var(--folder-colour,var(--accent)); text-decoration: none; }
 .rail a[aria-current="page"], .rail a.is-active {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: var(--accent-ink);
-  box-shadow: 0 6px 16px -6px var(--glow);
+  background: color-mix(in srgb,var(--folder-colour,var(--accent)) 9%,var(--surface));
+  border-color: var(--line); border-left-color: var(--folder-colour,var(--accent)); color: var(--text);
+  box-shadow: inset 3px 0 0 var(--folder-colour,var(--accent));
 }
 .rail a[aria-current="page"] .rail__num, .rail a.is-active .rail__num { color: inherit; opacity: .85; }
 .site-head[data-hidden="true"] ~ .layout .rail { top: var(--s-4); max-height: calc(100dvh - var(--s-6)); }
@@ -890,41 +879,37 @@ input[type="search"], input[type="text"], select {
 .filters { display: flex; flex-wrap: nowrap; gap: var(--s-2); margin: 0 0 var(--s-4); padding-bottom: .35rem; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; scroll-snap-type: x proximity; }
 .filters::-webkit-scrollbar { display: none; }
 
-/* ---- selector chips (.filter, .subnav a): a tab with a coloured corner flag and an underline that fills when it is the chosen one.
-   The flag colour cycles orange / teal / amber along the row, so the row reads as a set of different choices. ---- */
+/* ---- category folders: angular corner and active colour spine -------- */
 .filters, .subnav { --fl: 0px; --fr: 0px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fl), #000 calc(100% - var(--fr)), transparent);
           mask-image: linear-gradient(90deg, transparent, #000 var(--fl), #000 calc(100% - var(--fr)), transparent); }
 .filters.is-drift, .subnav.is-drift { scroll-snap-type: none; margin-bottom: .45rem; }
 .filter, .subnav a {
-  --chip: var(--brand-orange);
-  position: relative; overflow: hidden; isolation: isolate;
-  border: 1px solid var(--line-strong); border-radius: 3px 14px 3px 14px;
+  --chip: var(--folder-colour,var(--brand-orange));
+  position: relative; isolation: isolate; overflow: visible;
+  border: 1px solid var(--line); border-radius: 0 0 8px 0;
   background: var(--surface); color: var(--text-2);
-  font-size: var(--step--1); font-weight: 700; letter-spacing: .005em; white-space: nowrap;
-  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+  font-size: var(--step--1); font-weight: 650; white-space: nowrap;
+  transition: background .18s,color .18s;
 }
-.filters > .filter:nth-child(3n+2), .subnav > li:nth-child(3n+2) > a { --chip: var(--accent-2); }
-.filters > .filter:nth-child(3n+3), .subnav > li:nth-child(3n+3) > a { --chip: var(--amber); }
-.filter::before, .subnav a::before {                                  /* corner flag */
-  content: ""; position: absolute; z-index: -1; top: 0; left: 0;
-  border-style: solid; border-width: .72rem .72rem 0 0; border-color: var(--chip) transparent transparent transparent;
-  transition: border-width .2s var(--ease);
+.filters > .filter:nth-child(3n+2),.subnav > li:nth-child(3n+2)>a{--chip:var(--accent-2)}
+.filters > .filter:nth-child(3n+3),.subnav > li:nth-child(3n+3)>a{--chip:var(--amber)}
+.filter::before,.subnav a::before{
+  content:"";position:absolute;inset:0 auto 0 -1px;width:3px;background:var(--chip);opacity:.4;pointer-events:none;
 }
-.filter::after, .subnav a::after {                                    /* underline */
-  content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 3px; background: var(--chip);
-  transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease);
+.filter::after,.subnav a::after{
+  content:"";position:absolute;top:0;right:0;width:8px;height:8px;background:var(--bg);clip-path:polygon(0 0,100% 0,100% 100%);pointer-events:none;
 }
-.filter { flex: none; scroll-snap-align: start; min-height: 2.6rem; padding: 0 1.05rem 0 1.4rem; }
-.subnav a { display: block; padding: .6rem 1.05rem .6rem 1.4rem; }
-.filter:hover, .subnav a:hover { border-color: var(--chip); color: var(--text); text-decoration: none; }
-.filter:hover::after, .subnav a:hover::after { transform: scaleX(.45); }
-.filter[aria-pressed="true"], .subnav a[aria-current="page"], .subnav a.is-active {
-  background: color-mix(in srgb, var(--chip) 15%, var(--surface)); border-color: var(--chip); color: var(--text); font-weight: 800;
+.filter{flex:none;scroll-snap-align:start;min-height:2.75rem;padding:0 1.05rem 0 1.25rem}
+.subnav a{display:flex;align-items:center;min-height:2.75rem;padding:.6rem 1.05rem .6rem 1.25rem}
+.filter:hover,.subnav a:hover{background:var(--surface-2);color:var(--text);text-decoration:none}
+.filter[aria-pressed="true"],.subnav a[aria-current="page"],.subnav a.is-active{
+  background:color-mix(in srgb,var(--chip) 9%,var(--surface));color:var(--text);font-weight:800;
 }
-.filter[aria-pressed="true"]::before, .subnav a[aria-current="page"]::before, .subnav a.is-active::before { border-width: 1.05rem 1.05rem 0 0; }
-.filter[aria-pressed="true"]::after, .subnav a[aria-current="page"]::after, .subnav a.is-active::after { transform: scaleX(1); }
-.filter:focus-visible, .subnav a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.filter[aria-pressed="true"]::before,.subnav a[aria-current="page"]::before,.subnav a.is-active::before{
+  opacity:1;box-shadow:0 0 8px color-mix(in srgb,var(--chip) 45%,transparent);
+}
+.filter:focus-visible,.subnav a:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 
 /* thin position bar under a scrolling selector row */
 .rowbar { position: relative; height: 4px; margin: 0 0 var(--s-4); border-radius: 99px; background: var(--surface-3); overflow: hidden; }
@@ -1262,11 +1247,11 @@ input[type="search"], input[type="text"], select {
    Colour comes from --vec-accent (protocol) or --nut-hue (liquid-intake) via the .vec--vN / .nut-vec--vN class.
    ========================================================================== */
 .fold {
-  --fold-accent: var(--vec-accent, var(--nut-hue, var(--accent-strong)));
+  --fold-accent: var(--vec-accent, var(--nut-hue, var(--folder-colour,var(--accent-strong))));
   position: relative;
   border: 1px solid var(--line);
-  border-top: 3px solid var(--fold-accent);
-  border-radius: var(--r-1) var(--r-3) var(--r-3) var(--r-3);   /* folder-tab corner */
+  border-left: 4px solid var(--fold-accent);
+  border-radius: 0 0 8px 0;
   background: var(--surface);
   box-shadow: var(--shadow-1);
   transition: border-color .2s, box-shadow .25s;
@@ -1274,10 +1259,11 @@ input[type="search"], input[type="text"], select {
 .fold::before {                      /* the folder tab */
   content: ""; position: absolute; top: -.55rem; right: 1.25rem;
   width: 5.5rem; height: .55rem;
-  border-radius: .55rem .55rem 0 0; background: var(--fold-accent);
+  clip-path: polygon(0 0,calc(100% - 8px) 0,100% 100%,0 100%); background: var(--fold-accent);
 }
-.fold:hover { border-color: color-mix(in srgb, var(--fold-accent) 55%, var(--line)); box-shadow: var(--shadow-2); }
-.fold[open] { border-color: color-mix(in srgb, var(--fold-accent) 70%, var(--line)); box-shadow: var(--shadow-2); }
+.fold:hover { border-left-color: var(--fold-accent); background: var(--surface-2); }
+.fold[open] { border-left-color:var(--fold-accent); box-shadow:none; }
+.fold[open]::after{content:"";position:absolute;inset:0 auto 0 -4px;width:4px;background:var(--fold-accent);box-shadow:0 0 9px color-mix(in srgb,var(--fold-accent) 45%,transparent);pointer-events:none}
 
 .fold__summary {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--s-4); align-items: center;

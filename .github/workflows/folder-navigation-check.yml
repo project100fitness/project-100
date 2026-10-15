@@ -4,6 +4,9 @@ on:
     paths:
       - '*.html'
       - 'assets/css/site.css'
+      - 'assets/css/hud.css'
+      - 'assets/css/kinetics.css'
+      - 'assets/css/mobile-rail.css'
       - 'assets/js/site.js'
       - 'scripts/check-folder-navigation.py'
       - '.github/workflows/folder-navigation-check.yml'

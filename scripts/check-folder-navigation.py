@@ -55,9 +55,10 @@ with sync_playwright() as p:
     chromium=p.chromium.launch()
     for width in [390,1440]:
         context=chromium.new_context(viewport={"width":width,"height":900},color_scheme="dark")
-        context.route("**/*",quiet_media);page=context.new_page()
+        context.route("**/*",quiet_media)
         for path in pages:
-            state=check(page,path,width);results.append({"engine":"Chromium","path":path,"width":width,"status":"passed","active":state["active"]})
+            page=context.new_page()
+            state=check(page,path,width);results.append({"engine":"Chromium","path":path,"width":width,"status":"passed","active":state["active"]});page.close()
         context.close()
     chromium.close()
     for engine,name in [(p.chromium,"Chromium"),(p.firefox,"Firefox"),(p.webkit,"WebKit")]:
@@ -65,13 +66,20 @@ with sync_playwright() as p:
         for theme in ["light","dark"]:
             for width in [320,768,1440]:
                 context=browser.new_context(viewport={"width":width,"height":900},color_scheme=theme,accept_downloads=True)
-                context.route("**/*",quiet_media);page=context.new_page()
+                context.route("**/*",quiet_media)
                 for path in ["index.html","kinetics.html","fit-protocol.html","library.html"]:
+                    page=context.new_page()
                     state=check(page,path,width)
+                    section=page.locator(".hud-folder").first
+                    if section.count():
+                        assert section.evaluate("(el)=>getComputedStyle(el.querySelector('.hud-folder__body')).borderLeftWidth")=="3px"
                     results.append({"engine":name,"path":path,"width":width,"theme":theme,"status":"passed","active":state["active"]})
                     if name=="Chromium" and path in ["index.html","fit-protocol.html"] and width in [320,768,1440]:
                         shot=output/(path.removesuffix(".html")+"-"+str(width)+"-"+theme+".png")
                         page.locator(".site-head").screenshot(path=str(shot));shots.append(shot)
+                        if page.locator(".hud-folder__head").count():
+                            shot=output/("section-"+path.removesuffix(".html")+"-"+str(width)+"-"+theme+".png")
+                            page.locator(".hud-folder__head").first.screenshot(path=str(shot));shots.append(shot)
                     if path=="index.html":
                         # Clicking an offscreen folder reaches its real destination.
                         link=page.locator('.tabs .tab[href="biometrics.html"]')
@@ -88,6 +96,7 @@ with sync_playwright() as p:
                         first=page.locator(".tabs .tab").first;first.focus()
                         for _ in range(11):page.keyboard.press("Tab")
                         assert page.locator('.tab[href="library.html"]').evaluate("(el)=>document.activeElement===el")
+                    page.close()
                 context.close()
         # Source navigation remains complete without JavaScript.
         context=browser.new_context(java_script_enabled=False,viewport={"width":390,"height":844})

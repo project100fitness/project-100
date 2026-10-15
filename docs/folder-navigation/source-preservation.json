@@ -1,0 +1,281 @@
+{
+  "base": "cd9fe9e0d46e7da95bbe35b8ee72e2bf83328648",
+  "status": "passed",
+  "pages": [
+    {
+      "path": "biometrics.html",
+      "pageContentPreserved": true,
+      "images": 20
+    },
+    {
+      "path": "daily-pill-cards.html",
+      "pageContentPreserved": true,
+      "images": 10
+    },
+    {
+      "path": "fit-meals.html",
+      "pageContentPreserved": true,
+      "images": 35
+    },
+    {
+      "path": "fit-nutrition-notes.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-nutrition.html",
+      "pageContentPreserved": true,
+      "images": 35
+    },
+    {
+      "path": "fit-protocol-baseline.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-biometrics.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-checklists.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-constraints.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-dose.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-fuel.html",
+      "pageContentPreserved": true,
+      "images": 7
+    },
+    {
+      "path": "fit-protocol-gear.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-history.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-interactions.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-joints.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-labs.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-margins.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-meals.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-mission.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-monitoring.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-nutrition.html",
+      "pageContentPreserved": true,
+      "images": 11
+    },
+    {
+      "path": "fit-protocol-pathways.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-progression.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-supplements.html",
+      "pageContentPreserved": true,
+      "images": 5
+    },
+    {
+      "path": "fit-protocol-training.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-troubleshooting.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-vector-reference.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "fit-protocol-vector-v1.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vector-v10.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vector-v2.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vector-v3.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vector-v4.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vector-v5.html",
+      "pageContentPreserved": true,
+      "images": 1
+    },
+    {
+      "path": "fit-protocol-vector-v6.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "fit-protocol-vectors.html",
+      "pageContentPreserved": true,
+      "images": 23
+    },
+    {
+      "path": "fit-protocol.html",
+      "pageContentPreserved": true,
+      "images": 29
+    },
+    {
+      "path": "fit-workout.html",
+      "pageContentPreserved": true,
+      "images": 17
+    },
+    {
+      "path": "gear-anchors.html",
+      "pageContentPreserved": true,
+      "images": 8
+    },
+    {
+      "path": "gear-grips.html",
+      "pageContentPreserved": true,
+      "images": 9
+    },
+    {
+      "path": "gear-gym.html",
+      "pageContentPreserved": true,
+      "images": 9
+    },
+    {
+      "path": "gear-photos.html",
+      "pageContentPreserved": true,
+      "images": 3
+    },
+    {
+      "path": "gear-recovery.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "gear-resistance.html",
+      "pageContentPreserved": true,
+      "images": 2
+    },
+    {
+      "path": "gear-rig.html",
+      "pageContentPreserved": true,
+      "images": 7
+    },
+    {
+      "path": "gear-safety.html",
+      "pageContentPreserved": true,
+      "images": 5
+    },
+    {
+      "path": "gear-shop.html",
+      "pageContentPreserved": true,
+      "images": 7
+    },
+    {
+      "path": "guidebook.html",
+      "pageContentPreserved": true,
+      "images": 6
+    },
+    {
+      "path": "index.html",
+      "pageContentPreserved": true,
+      "images": 19
+    },
+    {
+      "path": "kinetics.html",
+      "pageContentPreserved": true,
+      "images": 4
+    },
+    {
+      "path": "library.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "liquid-intake.html",
+      "pageContentPreserved": true,
+      "images": 21
+    },
+    {
+      "path": "mega-salads.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "mineral-chemistry.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "project-goals.html",
+      "pageContentPreserved": true,
+      "images": 0
+    },
+    {
+      "path": "project-story.html",
+      "pageContentPreserved": true,
+      "images": 7
+    }
+  ]
+}
