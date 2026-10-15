@@ -21,17 +21,52 @@ function makePages(db,kind,level,guideId,values,hasImage){
 values=values||{};var pages=[],l=db.levels.filter(function(x){return x.level===level;})[0],eBy={};db.exercises.forEach(function(e){eBy[e.id]=e;});
 function add(p){pages.push(p);return p;}
 function caution(p){p.p("Stop for pain, new numbness or weakness, dizziness, loss of grip, moving supports or damaged bands. Keep the recoil path clear. Follow manufacturer limits and individual clinical restrictions.",8.5,INK,false,4);}
-function addGuide(e){var p=add(new Page(e.name));p.top("PROJECT 100 / EXERCISE GUIDE",e.name,e.pattern+" / "+e.reps);
+function addGuide(e){var f=e.art?10:11.5;var p=add(new Page(e.name));p.top("PROJECT 100 / EXERCISE GUIDE",e.name,e.pattern+" / "+e.reps);
 if(e.art&&hasImage)p.image(465);
-p.p("MAIN: "+e.main,9,RED,true,4);
-p.p("SECONDARY: "+e.secondary,9,BLUE,false,4);
-p.p("BASE / SUPPORT: "+e.base,9,GREEN,false,6);
-[["01 / Check the setup",e.setup],["02 / Set the base and brace",e.position],["03 / Move with control",e.move],["04 / Limit the range and return",e.range]].forEach(function(pair){p.p(pair[0],9,ORANGE,true,1);p.p(pair[1],9,INK,false,4);});
-p.p("WATCH FOR: "+e.check+" EASIER: "+e.easier,8.5,INK,false,4);
+p.p("MAIN: "+e.main,f,RED,true,6);
+p.p("SECONDARY: "+e.secondary,f,BLUE,false,6);
+p.p("BASE / SUPPORT: "+e.base,f,GREEN,false,8);
+[["01 / Check the setup",e.setup],["02 / Set the base and brace",e.position],["03 / Move with control",e.move],["04 / Limit the range and return",e.range]].forEach(function(pair){p.p(pair[0],f,ORANGE,true,2);p.p(pair[1],f,INK,false,7);});
+p.p("WATCH FOR: "+e.check+" EASIER: "+e.easier,f-.5,INK,false,7);
 p.p("Soft joints, normal breathing. Colours describe exercise roles, not measured activation. Hidden muscles are named in text. No fixed resistance is prescribed.",7.5,INK,false,4);
 caution(p);
 p.p("Sources: "+e.sources.map(function(k){return db.sources[k].title;}).join("; ")+". Full source links: project100.fit/downloads/kinetics/index.html",7,INK,false,0);
 }
+if(kind==="focused"||kind==="fullbody"){
+var full=makePages(db,"planner",level,null,values,hasImage),focused=kind==="focused",chosen=db.days.filter(function(d){return focused?d.day<=3:d.day===5||d.day===6;}),ids=[];
+chosen.forEach(function(d){d.slots.forEach(function(s){if(ids.indexOf(s[0])<0)ids.push(s[0]);});});
+var cover=new Page(focused?"Three focused days":"Two full-body days");
+cover.top("PROJECT 100 / "+(focused?"KUZARO FOCUSED DAYS":"HPYGN / PILATES CHAPTER")+" / LEVEL "+level,focused?"Three days. Clear focus.":"Two days. Whole-body control.");
+cover.p(focused?"Days 1-3 of the weekly planner. Push, supported lower body, then pull. Read the complete position cues before adding resistance.":"Days 5-6 of the weekly planner. A moderate whole-body session followed by easy practice or rest. The second day never becomes another hard full-body session.",11);
+if(hasImage){cover.image(370);cover.p("Technique example / bench-supported row. Red main, blue secondary, green base.",8);}
+chosen.forEach(function(d){cover.heading("DAY "+d.day+" / "+d.title);cover.p(d.focus,10);});
+cover.heading("Level "+level+" baseline");cover.p(l.mainSets+" main sets / "+l.accessorySets+" accessory sets on focused days; one easy set for control drills. Keep "+l.rir+"+ good reps in reserve. Full body A uses at most two sets and full body B only one easy set with 5+ reps in reserve.",10);
+cover.p("Equipment availability is a ceiling, not a prescribed load: "+l.kits+" kit(s), up to "+l.maxBandsPerLine+" band(s) per working line. Use unloaded or bodyweight options where needed.",10);
+if(!focused)cover.p("Equipment map: the supported row, chest press and hamstring curl use individually selected long-line bands. Sit-to-stand, leg lift and bracing begin unloaded. This guide sits in the HPYGN/Pilates chapter for whole-body control; the recorded HPYGN bar patterns remain separate setup references. No automatic substitution of the heavy paired short bands is prescribed.",9);
+cover.p("Use the one-page weekly planner for the seven-day map. The companion "+(focused?"full-body guide covers days 5-6.":"focused-days guide covers days 1-3.")+" Days 4 and 7 are rest.",10);
+caution(cover);
+pages=[cover,full[1]].concat(focused?full.slice(2,5):full.slice(5,7));
+ids.forEach(function(id){addGuide(eBy[id]);});
+pages.push(full[7]);return pages;
+}
+if(kind==="weekly"){
+var w=add(new Page("One-page weekly planner"));w.top("PROJECT 100 / WEEKLY OVERVIEW","Five days. One clear week.","Use the two detailed guide families for technique and level-specific sets.");
+w.p("RED / Main movement focus. BLUE / Secondary assistance and control. GREEN / Base and support. Bands stay orange-edged charcoal at every level.",9);
+w.p("LEVEL 1: 2 main / 1 accessory set; 4+ reps in reserve; one-kit ceiling.",9,INK,true,3);
+w.p("LEVEL 2: 2 main / 2 accessory sets; 3+ reps in reserve; two-kit ceiling.",9,INK,true,3);
+w.p("LEVEL 3: 3 main / 2 accessory sets; 2+ reps in reserve; four-kit ceiling.",9,INK,true,5);
+w.p("Control drills stay easy. Day 5 is capped at two sets; day 6 stays one easy set, 5+ reps in reserve, or rest. No fixed band load is prescribed.",8.5,INK,false,6);
+w.rule();w.p("WEEK / date: ___________________      NOTES / completed work, resistance, response",8.5,INK,true,7);
+db.days.forEach(function(d){
+var y=w.y;w.text("DAY "+d.day,M,y,9,ORANGE,true);w.text(d.title,M+48,y,10,INK,true);
+var list=d.slots.length?d.slots.map(function(s){return eBy[s[0]].name;}).join(" / "):"Rest; optional gentle comfortable activity.";
+var lines=wrap(list,315,8.5);lines.slice(0,3).forEach(function(t,i){w.text(t,M,y-15-i*10.5,8.5,INK,false);});
+var fieldName="weekly-day-"+d.day+"-notes";w.fields.push({name:fieldName,value:ascii(values[fieldName]||""),rect:[370,y-31,RIGHT,y+8],multiline:true});w.y=y-62;
+});
+w.p("Read before training: set a stable base > gently brace and breathe > move in a comfortable range > control the return. Stop for pain or lost control.",8,INK,false,5);
+w.p("Detailed guides: project100.fit/downloads/kinetics/focused-days-level-1.html and full-body-level-1.html. Choose the matching numbered level on either page.",7.5,INK,false,0);return pages;
+}
+
 if(kind==="guide"){if(!eBy[guideId])throw new Error("Unknown guide");addGuide(eBy[guideId]);}
 else if(kind==="guides"){var intro=add(new Page("Technique sheet index"));intro.top("PROJECT 100 / 12 TECHNIQUE SHEETS","Understand the whole position.");
 intro.p("Educational draft. Current symptoms, restrictions and tolerated loads have not been confirmed. Review suitability with a qualified clinician or trainer where injury, pain or medical restrictions apply.",10);
@@ -46,7 +81,7 @@ db.exercises.forEach(function(e,i){intro.p((i+1)+". "+e.name,10,INK,false,3);});
 caution(intro);db.exercises.forEach(addGuide);
 }else if(kind==="planner"){
 if(!l)throw new Error("Unknown intensity level");
-var p=add(new Page("Weekly map"));p.top("PROJECT 100 / FIVE-DAY PLANNER / LEVEL "+level,"Your week. Built on control.");
+var p=add(new Page("Weekly map"));p.top("PROJECT 100 / FIVE-DAY PLANNER / LEVEL "+level,"Your week. Built on control.");if(hasImage){p.image(370);p.p("Technique preview / bench-supported row. Main red, secondary blue, base green.",8,INK,false,6);}
 p.p("Three focused days, rest, moderate full body, easy full-body practice, rest. Day 6 becomes rest if recovery or control is reduced.",11);
 p.p("Educational draft; current restrictions and tolerated loads remain unconfirmed. This is not an individualized rehabilitation prescription.",9);
 p.heading("Your seven-day map");db.days.forEach(function(d){p.p("DAY "+d.day+" / "+d.title,11,INK,true,4);});
@@ -82,6 +117,7 @@ r.p("The separate 12-sheet technique document describes all positions. Only the 
 return pages;
 }
 function buildPdf(pages,jpeg){
+if(!pages.some(function(p){return p.commands.some(function(c){return c.indexOf("/Im1 Do")>=0;});}))jpeg=null;
 var objects=[null],pageIds=[],fieldIds=[],font1=reserve(),font2=reserve(),catalog=reserve(),pageTree=reserve(),acro=reserve(),img=jpeg?reserve():null;
 function reserve(){objects.push("");return objects.length-1;}
 function put(s){var id=reserve();objects[id]=s;return id;}
@@ -117,7 +153,7 @@ async function plate(){var img=document.querySelector(".wg-anatomy img");if(!img
 var canvas=document.createElement("canvas");canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;var ctx=canvas.getContext("2d");if(!ctx)throw new Error("PDF image export is unavailable; use Print / save as PDF.");ctx.fillStyle="#fff";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0);var data=canvas.toDataURL("image/jpeg",.94).split(",")[1];return {width:canvas.width,height:canvas.height,bytes:atob(data)};}
 if(pdf)pdf.addEventListener("click",async function(){pdf.disabled=true;message("Preparing your PDF on this device...");try{var response=await fetch("training-plan-v0.3.json",{cache:"no-cache"});if(!response.ok)throw new Error("The plan database could not load. Use Print / save as PDF or retry.");
 var db=await response.json(),kind=document.body.dataset.document,level=Number(document.body.dataset.level||1),art=await plate(),pages=makePages(db,kind,level,document.body.dataset.guide,formValues(),!!art),bytes=buildPdf(pages,art);
-var suffix=kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+document.body.dataset.guide:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_v0.3.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Typed planner entries are included; its log fields remain fillable.");
+var suffix=kind==="weekly"?"Weekly_Overview":kind==="focused"?"Focused_Days_Level_"+level:kind==="fullbody"?"Full_Body_Level_"+level:kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+document.body.dataset.guide:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_v0.3.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Typed planner entries are included; its log fields remain fillable.");
 }catch(error){message(error.message+" The page remains available to print.");}finally{pdf.disabled=false;}});
 document.querySelectorAll("[data-print]").forEach(function(b){b.addEventListener("click",function(){window.print();});});
 document.querySelectorAll("[data-download-html]").forEach(function(b){b.addEventListener("click",async function(){b.disabled=true;try{var clone=document.documentElement.cloneNode(true);clone.querySelectorAll("input[name],textarea[name]").forEach(function(el){var source=document.getElementsByName(el.name)[0];if(!source)return;if(el.tagName==="TEXTAREA")el.textContent=source.value;else el.setAttribute("value",source.value);});

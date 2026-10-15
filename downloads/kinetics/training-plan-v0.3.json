@@ -78,7 +78,8 @@
         "back",
         "aceBands"
       ],
-      "art": "row-three-roles-v1.png"
+      "art": "row-three-roles-v1.png",
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
     },
     {
       "id": "press",
@@ -98,7 +99,8 @@
       "sources": [
         "aceBands",
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
     },
     {
       "id": "pressdown",
@@ -117,7 +119,8 @@
       "reps": "8-12",
       "sources": [
         "aceBands"
-      ]
+      ],
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
     },
     {
       "id": "lateral",
@@ -137,7 +140,8 @@
       "sources": [
         "shoulder",
         "aceBands"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "brace",
@@ -156,7 +160,8 @@
       "reps": "3 relaxed breaths per hold; 3 holds",
       "sources": [
         "spine"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "sit-stand",
@@ -175,7 +180,8 @@
       "reps": "6-10",
       "sources": [
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "hamstring-curl",
@@ -195,7 +201,8 @@
       "sources": [
         "aceBands",
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
     },
     {
       "id": "calf-raise",
@@ -214,7 +221,8 @@
       "reps": "8-12",
       "sources": [
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "hip-abduction",
@@ -233,7 +241,8 @@
       "reps": "6-10 each side",
       "sources": [
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "scapular-control",
@@ -253,7 +262,8 @@
       "sources": [
         "shoulder",
         "spine"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     },
     {
       "id": "curl",
@@ -273,7 +283,8 @@
       "sources": [
         "nhs",
         "aceBands"
-      ]
+      ],
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
     },
     {
       "id": "hip-extension",
@@ -292,7 +303,8 @@
       "reps": "6-10 each side",
       "sources": [
         "nhs"
-      ]
+      ],
+      "equipmentSystem": "Unloaded / bodyweight / stable support."
     }
   ],
   "days": [
@@ -487,5 +499,32 @@
   },
   "loadAssignment": null,
   "loadRule": "Select resistance only after confirming comfortable motion, control, anchor/attachment ratings and current tolerance. Bodyweight or unloaded practice is valid. A 35 lb labelled band may already be too much. Label sums are not measured hand force or hardware ratings.",
-  "recoveryRule": "Day 6 is easy skill practice, not a second hard full-body session. Rest instead if there is residual fatigue, pain or altered control. No schedule can guarantee injury prevention."
+  "recoveryRule": "Day 6 is easy skill practice, not a second hard full-body session. Rest instead if there is residual fatigue, pain or altered control. No schedule can guarantee injury prevention.",
+  "guideFamilies": {
+    "weekly": {
+      "html": "weekly-planner.html",
+      "pdf": "weekly-planner.pdf",
+      "pages": 1
+    },
+    "focused": {
+      "days": [
+        1,
+        2,
+        3
+      ],
+      "placement": "KUZARO / movement library",
+      "pdfPattern": "focused-days-level-{level}.pdf",
+      "pages": 17
+    },
+    "fullbody": {
+      "days": [
+        5,
+        6
+      ],
+      "placement": "HPYGN / full-body Pilates chapter",
+      "pdfPattern": "full-body-level-{level}.pdf",
+      "pages": 11,
+      "equipmentNote": "Placement describes the chapter. Each exercise retains its own equipment; HPYGN short bands are not automatically substituted for long-line movements."
+    }
+  }
 }

@@ -22,3 +22,9 @@ The local workspace was offline during implementation. Browser/phone interaction
 Convert the 1774 by 887 PNG row plate to RGB JPEG. Run `node scripts/build-workout-guides.cjs PATH_TO_JPEG`, then `python scripts/validate-workout-guides.py` with pypdf, Pillow and pdftoppm installed. The guarded PR workflow does this automatically for same-repository branches beginning `workout-guides-`.
 
 The JSON records source scope and the distinction between personal Kinetics movements and supported editorial adaptations. No uploaded guidebook illustration or full book is redistributed.
+
+## Final requested organisation
+
+Guide A: three focused days, under KUZARO; 17-page detailed PDFs for levels 1-3. Guide B: two full-body days, under the HPYGN/Pilates atlas heading; 11-page PDFs for levels 1-3. The end-scroll bar opens a one-page weekly map, linking to both guide families. The original combined reference booklets remain additional downloads. Each exercise keeps its actual equipment identity.
+
+The second validation pass runs Chromium against a local copy of the published source at phone (390px), tablet (768px) and desktop (1280px) widths. It checks the full-view dialog, filtering, search, both page placements, end-scroll launcher, static PDF download and actual filled weekly PDF export. Browser screenshots and the per-viewport report are retained here when that run passes. This is responsive Chromium testing, not a claim of physical-device or Safari testing.

@@ -7,7 +7,9 @@ const out="downloads/kinetics/pdf";fs.mkdirSync(out,{recursive:true});
 const manifest=[];
 function save(name,pages,fields){if(pages.some(p=>p.lowest<35))throw Error("Page overflow: "+name);const bytes=api.buildPdf(pages,jpeg);fs.writeFileSync(path.join(out,name),bytes);manifest.push({name,pages:pages.length,fields,lowestTextBaseline:Math.min(...pages.map(p=>p.lowest))});}
 const guides=api.makePages(db,"guides",1,null,{},!!jpeg);
-for(const level of db.levels){const p=api.makePages(db,"planner",level.level,null,{},false);save("planner-level-"+level.level+".pdf",p,25);save("booklet-level-"+level.level+".pdf",p.concat(guides),25);}
+for(const level of db.levels){const p=api.makePages(db,"planner",level.level,null,{},!!jpeg);save("planner-level-"+level.level+".pdf",p,25);save("booklet-level-"+level.level+".pdf",p.concat(guides),25);}
+save("weekly-planner.pdf",api.makePages(db,"weekly",1,null,{},false),7);
+for(const l of db.levels){save("focused-days-level-"+l.level+".pdf",api.makePages(db,"focused",l.level,null,{},!!jpeg),15);save("full-body-level-"+l.level+".pdf",api.makePages(db,"fullbody",l.level,null,{},!!jpeg),10);}
 save("exercise-guides.pdf",guides,0);
 for(const e of db.exercises)save("guide-"+e.id+".pdf",api.makePages(db,"guide",1,e.id,{},!!jpeg),0);
 fs.writeFileSync(path.join(out,"build-manifest.json"),JSON.stringify({version:db.version,files:manifest},null,2)+"\n");

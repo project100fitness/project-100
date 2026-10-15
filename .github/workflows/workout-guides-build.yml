@@ -8,6 +8,11 @@ on:
       - 'scripts/build-workout-guides.cjs'
       - 'scripts/validate-workout-guides.py'
       - '.github/workflows/workout-guides-build.yml'
+      - 'scripts/check-workout-browser.py'
+      - 'assets/js/kinetics-downloads.js'
+      - 'assets/css/workout-guides.css'
+      - 'assets/css/kinetics.css'
+      - 'kinetics.html'
 permissions:
   contents: write
 jobs:
@@ -20,6 +25,8 @@ jobs:
           ref: ${{ github.head_ref }}
           sparse-checkout: |
             assets/js
+            assets/css
+            assets/fonts
             assets/media/workout-guides
             downloads/kinetics
             scripts
@@ -32,7 +39,8 @@ jobs:
           python-version: '3.12'
       - name: Install PDF validation tools
         run: |
-          python -m pip install pypdf Pillow
+          python -m pip install pypdf Pillow playwright
+          python -m playwright install --with-deps chromium
           if ! command -v pdftoppm >/dev/null; then sudo apt-get update && sudo apt-get install -y poppler-utils; fi
       - name: Prepare the row plate
         run: |
@@ -47,6 +55,8 @@ jobs:
           node --check assets/js/workout-guides.js
           node scripts/build-workout-guides.cjs /tmp/project100-row.jpg
           python scripts/validate-workout-guides.py
+      - name: Check phone, tablet and desktop browser behavior
+        run: python scripts/check-workout-browser.py
       - name: Save validated downloads to the review branch
         run: |
           git config user.name "github-actions[bot]"
