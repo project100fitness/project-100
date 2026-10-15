@@ -40,7 +40,7 @@ with sync_playwright() as p:
         page.locator('[data-kd-filter="guides"]').click()
         page.locator("[data-kd-search]").fill("hamstring")
         assert page.locator(".kd-doc:not([hidden])").count()==1
-        assert "hamstring" in page.locator("[data-kd-document-title]").inner_text().lower()
+        assert page.locator('[data-kd-doc="hamstring-curl"]').get_attribute("aria-pressed")=="true"
         page.locator("[data-kd-search]").fill("")
         page.locator('[data-kd-doc="row"]').click()
         frame.locator('body[data-guide="row"]').wait_for()
