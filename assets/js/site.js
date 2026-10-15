@@ -60,8 +60,17 @@
   head.addEventListener('focusout', function () { setTimeout(update, 0); });
   update();
 
-  var list = P.$('.tabs__list'), cur = list && P.$('[aria-current="page"]', list);
-  if (cur) list.scrollLeft = Math.max(0, cur.offsetLeft - (list.clientWidth - cur.offsetWidth) / 2);
+  var list = P.$('.tabs__list');
+  function revealCurrent() {
+    var cur = list && P.$('[aria-current="page"]', list);
+    if (!cur) return;
+    var row = list.getBoundingClientRect(), tab = cur.getBoundingClientRect();
+    list.scrollLeft = Math.max(0, list.scrollLeft + tab.left - row.left - (list.clientWidth - tab.width) / 2);
+  }
+  requestAnimationFrame(revealCurrent);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(revealCurrent);
+  if (list && 'ResizeObserver' in window) new ResizeObserver(revealCurrent).observe(list);
+  else window.addEventListener('resize', revealCurrent);
 })();
 
 /* ===== 05-back.js ===== */
@@ -1228,6 +1237,3 @@
   window.addEventListener('hashchange',revealTerms);
   revealTerms();
 })();
-
-/* Kinetics follows Workout in main-site navigation. */
-(()=>{function addKinetics(){if(document.body.dataset.site!=="main")return;document.querySelectorAll('.tabs__list a[href="fit-workout.html"],.menu__list a[href="fit-workout.html"],.site-foot a[href="fit-workout.html"]').forEach(a=>{const li=a.closest('li');if(!li||li.parentElement.querySelector('a[href="kinetics.html"]'))return;const n=document.createElement('li'),link=document.createElement('a');link.href='kinetics.html';link.textContent='Kinetics';link.className=a.className;if(location.pathname.endsWith('/kinetics.html')){a.removeAttribute('aria-current');link.setAttribute('aria-current','page')}n.append(link);li.after(n)})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',addKinetics);else addKinetics()})();
