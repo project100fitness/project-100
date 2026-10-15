@@ -39,7 +39,8 @@ with sync_playwright() as p:
             assert frame.locator("[data-resistance]").count()==1
             assert frame.locator(".wg-gauge-row").count()==3
             assert frame.locator(".wg-gauge-row output").all_text_contents()==["Not recorded"]*3
-            frame.locator('[data-r-level="2"] summary').click()
+            frame.locator('[data-r-level="2"] summary strong').click()
+            assert frame.locator('[data-r-level="2"]').evaluate("(el)=>el.open"), "Resistance editor did not open"
             frame.locator('[data-r-level="2"] [data-r-rating]').select_option("65")
             frame.locator('[data-r-level="2"] [data-r-count]').select_option("2")
             assert frame.locator('[data-r-level="2"] output').inner_text()=="130 lb nominal / line"
