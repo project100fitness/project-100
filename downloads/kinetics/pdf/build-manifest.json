@@ -1,0 +1,119 @@
+{
+  "version": "0.3",
+  "files": [
+    {
+      "name": "planner-level-1.pdf",
+      "pages": 8,
+      "fields": 25,
+      "lowestTextBaseline": 141.64000000000016
+    },
+    {
+      "name": "booklet-level-1.pdf",
+      "pages": 21,
+      "fields": 25,
+      "lowestTextBaseline": 134.64000000000013
+    },
+    {
+      "name": "planner-level-2.pdf",
+      "pages": 8,
+      "fields": 25,
+      "lowestTextBaseline": 141.64000000000016
+    },
+    {
+      "name": "booklet-level-2.pdf",
+      "pages": 21,
+      "fields": 25,
+      "lowestTextBaseline": 134.64000000000013
+    },
+    {
+      "name": "planner-level-3.pdf",
+      "pages": 8,
+      "fields": 25,
+      "lowestTextBaseline": 141.64000000000016
+    },
+    {
+      "name": "booklet-level-3.pdf",
+      "pages": 21,
+      "fields": 25,
+      "lowestTextBaseline": 134.64000000000013
+    },
+    {
+      "name": "exercise-guides.pdf",
+      "pages": 13,
+      "fields": 0,
+      "lowestTextBaseline": 134.64000000000013
+    },
+    {
+      "name": "guide-row.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 134.64000000000013
+    },
+    {
+      "name": "guide-press.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 415.2899999999992
+    },
+    {
+      "name": "guide-pressdown.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 413.33999999999924
+    },
+    {
+      "name": "guide-lateral.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 438.6899999999993
+    },
+    {
+      "name": "guide-brace.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 424.38999999999925
+    },
+    {
+      "name": "guide-sit-stand.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 424.38999999999925
+    },
+    {
+      "name": "guide-hamstring-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 404.2399999999992
+    },
+    {
+      "name": "guide-calf-raise.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 471.1899999999995
+    },
+    {
+      "name": "guide-hip-abduction.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 459.48999999999944
+    },
+    {
+      "name": "guide-scapular-control.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 462.08999999999946
+    },
+    {
+      "name": "guide-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 438.6899999999993
+    },
+    {
+      "name": "guide-hip-extension.pdf",
+      "pages": 1,
+      "fields": 0,
+      "lowestTextBaseline": 471.1899999999995
+    }
+  ]
+}

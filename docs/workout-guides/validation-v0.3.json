@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "pdfCount": 19,
+  "renderedPages": 112,
+  "checks": [
+    "page counts",
+    "fillable canonical field tree",
+    "unique widget names",
+    "field values",
+    "nonempty appearances",
+    "field bounds",
+    "all pages rendered with Poppler"
+  ]
+}
