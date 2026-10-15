@@ -53,5 +53,21 @@ sheet=Image.new("RGB",(cols*310,rows*435),"#aebfc8")
 for i,im in enumerate(thumbs):sheet.paste(im,((i%cols)*310,(i//cols)*435))
 dest=Path("docs/workout-guides");dest.mkdir(parents=True,exist_ok=True)
 sheet.save(dest/"pdf-review-v0.3.png")
+sheet.save(dest/"pdf-review-v0.3.jpg",quality=87)
+for name in ["guide-row","weekly-planner"]:
+    subprocess.run(["pdftoppm","-r","110","-f","1","-singlefile","-png",str(root/(name+".pdf")),str(dest/("review-"+name))],check=True)
 (dest/"validation-v0.3.json").write_text(json.dumps({"status":"passed","pdfCount":len(manifest["files"]),"renderedPages":sum(f["pages"] for f in manifest["files"]),"checks":["page counts","fillable canonical field tree","unique widget names","field values","nonempty appearances","field bounds","all pages rendered with Poppler"]},indent=2)+"\n")
 print("Validated",len(manifest["files"]),"PDFs and rendered all pages.")
+
+# Dated offline PDF bundle. It is independent from the complete source backup.
+from zipfile import ZipFile, ZIP_DEFLATED
+bundle=Path("downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip")
+with ZipFile(bundle,"w",ZIP_DEFLATED) as z:
+    for pdf in sorted(root.glob("*.pdf")): z.write(pdf,"pdf/"+pdf.name)
+    z.write("downloads/kinetics/training-plan-v0.3.json","training-plan-v0.3.json")
+    z.write("assets/media/workout-guides/row-three-roles-v1.png","artwork/row-three-roles-v1.png")
+    z.writestr("START_HERE.txt","PROJECT 100 / WORKOUT GUIDES / 15 OCTOBER 2026\n\nStart with pdf/weekly-planner.pdf.\nGuide A: focused-days-level-1, 2 or 3 (days 1-3).\nGuide B: full-body-level-1, 2 or 3 (days 5-6).\nDays 4 and 7 are rest; day 6 stays easy or becomes rest.\nTechnique sheets explain main focus, secondary assistance, stable base, movement, range and return.\nThe row has the approved naturalistic anatomical plate. Other sheets currently use detailed written guidance.\nBand colour is not a load code. Select resistance individually; labelled pounds are not measured hand force or hardware ratings.\nCurrent symptoms/restrictions/tolerated loads are unconfirmed; this is an educational draft.\nPDF log fields remain fillable. Read the complete positioning and stop rules before training.\n\nLive download centre: https://project100.fit/downloads/kinetics/index.html\n")
+with ZipFile(bundle) as z:
+    assert z.testzip() is None
+    assert len([n for n in z.namelist() if n.endswith(".pdf")])==len(manifest["files"])
+print("Dated PDF bundle validated:",bundle.stat().st_size,"bytes.")

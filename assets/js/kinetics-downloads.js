@@ -56,5 +56,5 @@ var saved=snapshots[selected.id]||{};doc.querySelectorAll("input[name],textarea[
 doc.addEventListener("click",function(e){var a=e.target.closest("a[href]");if(!a)return;var u=new URL(a.href),match=documents.find(function(d){return new URL(d.preview,location.href).pathname===u.pathname&&u.origin===location.origin;});if(match){e.preventDefault();select(match.id);}else if(u.origin!==location.origin){a.target="_blank";a.rel="noopener noreferrer";}});
 }catch(e){/* A full-page link remains available if a browser prevents framed interaction. */}});
 window.addEventListener("scroll",queueBar,{passive:true});window.addEventListener("resize",queueBar);updateBar();
-var requested=new URLSearchParams(location.search).get("workout");if(requested&&get(requested))open(null,requested);
+var requested=new URLSearchParams(location.search).get("workout");if(requested&&get(requested)){var openRequested=function(){requestAnimationFrame(function(){open(null,requested);});};if(document.readyState==="complete")openRequested();else window.addEventListener("load",openRequested,{once:true});}
 })();

@@ -61,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add downloads/kinetics/pdf docs/workout-guides
+          git add downloads/kinetics/pdf downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip docs/workout-guides
           if ! git diff --cached --quiet; then
             git commit -m "Build and validate printable workout guide downloads"
             git push

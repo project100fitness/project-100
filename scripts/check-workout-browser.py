@@ -1,5 +1,6 @@
 """Exercise the published-source UI and actual downloads at three responsive widths."""
-import json, threading, tempfile, functools
+import json, threading, tempfile, functools, io
+from PIL import Image
 from pathlib import Path
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from playwright.sync_api import sync_playwright
@@ -25,13 +26,18 @@ with sync_playwright() as p:
         frame.locator(".wg-weekly").wait_for()
         assert page.locator(".kin-downloads").count()==2
         assert page.locator("#full-body-downloads").count()==1
+        page.wait_for_timeout(350)
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+1")
         box=modal.bounding_box()
         assert box["width"]<=width+1
         assert box["y"]>=-1 and box["y"]+box["height"]<=height+1, box
         foot=page.locator(".kd-footer").bounding_box()
         assert foot["y"]+foot["height"]<=height+1, foot
-        page.screenshot(path=str(out/("browser-"+label+"-weekly.png")))
+        shot=page.screenshot(path=str(out/("browser-"+label+"-weekly.png")))
+        geometry=modal.evaluate("(el)=>({box:el.getBoundingClientRect().toJSON(),top:getComputedStyle(el).top,height:getComputedStyle(el).height,inset:getComputedStyle(el).inset,position:getComputedStyle(el).position,transform:getComputedStyle(el).transform,scroll:scrollY,innerHeight:innerHeight,viewport:visualViewport?{offsetTop:visualViewport.offsetTop,height:visualViewport.height}:null})")
+        pixel=Image.open(io.BytesIO(shot)).convert("RGB").getpixel((width//2,20))
+        print("MODAL_GEOMETRY",label,json.dumps(geometry),"TOP_PIXEL",pixel,flush=True)
+        assert not all(v>210 for v in pixel), ("Modal screenshot has a blank top region",geometry,pixel)
         page.locator('[data-kd-filter="focused"]').click()
         assert page.locator(".kd-doc:not([hidden])").count()==3
         frame.locator('body[data-document="focused"]').wait_for()
