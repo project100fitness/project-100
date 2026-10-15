@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "authoredPages": 55,
-  "browserCases": 182,
+  "browserCases": 194,
   "engines": [
     "Chromium",
     "Firefox",
@@ -985,6 +985,34 @@
       "active": "library.html"
     },
     {
+      "engine": "Chromium",
+      "path": "index.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Chromium",
+      "path": "kinetics.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Chromium",
+      "path": "fit-protocol-vectors.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Chromium",
+      "path": "liquid-intake.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
       "engine": "Firefox",
       "path": "index.html",
       "width": 320,
@@ -1177,6 +1205,34 @@
       "active": "library.html"
     },
     {
+      "engine": "Firefox",
+      "path": "index.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Firefox",
+      "path": "kinetics.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Firefox",
+      "path": "fit-protocol-vectors.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "Firefox",
+      "path": "liquid-intake.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
       "engine": "WebKit",
       "path": "index.html",
       "width": 320,
@@ -1367,6 +1423,34 @@
       "theme": "dark",
       "status": "passed",
       "active": "library.html"
+    },
+    {
+      "engine": "WebKit",
+      "path": "index.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "WebKit",
+      "path": "kinetics.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "WebKit",
+      "path": "fit-protocol-vectors.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
+    },
+    {
+      "engine": "WebKit",
+      "path": "liquid-intake.html",
+      "width": 390,
+      "status": "passed",
+      "test": "folder-and-download-interaction"
     }
   ]
 }
