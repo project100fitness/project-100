@@ -26,7 +26,11 @@ with sync_playwright() as p:
         assert page.locator(".kin-downloads").count()==2
         assert page.locator("#full-body-downloads").count()==1
         assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+1")
-        assert modal.bounding_box()["width"]<=width+1
+        box=modal.bounding_box()
+        assert box["width"]<=width+1
+        assert box["y"]>=-1 and box["y"]+box["height"]<=height+1, box
+        foot=page.locator(".kd-footer").bounding_box()
+        assert foot["y"]+foot["height"]<=height+1, foot
         page.screenshot(path=str(out/("browser-"+label+"-weekly.png")))
         page.locator('[data-kd-filter="focused"]').click()
         assert page.locator(".kd-doc:not([hidden])").count()==3
