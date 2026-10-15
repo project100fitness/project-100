@@ -21,12 +21,12 @@
 
   /* text */
   --text: #15161b;
-  --text-2: #464954;
-  --muted: #666a77;
+  --text-2: #303b49;
+  --muted: #515968;
 
   /* lines */
-  --line: #dcdad4;
-  --line-strong: #bdbab2;
+  --line: #bdc5cf;
+  --line-strong: #8996a5;
 
   /* brand */
   --accent: #b83a00;           /* orange used for text/links on --surface (5.7:1 on white) */
@@ -79,7 +79,7 @@
   --prose-w: 44rem;
   --rail-w: 15rem;
   --head-h: 3.5rem;            /* header row 1 */
-  --tabs-h: 5rem;           /* header row 2 */
+  --tabs-h: 4.5rem;           /* header row 2 */
   --header-h: calc(var(--head-h) + var(--tabs-h));
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
@@ -95,10 +95,10 @@
     --inverse: #0a0b0e;
     --inverse-text: #f3f4f7;
     --text: #eceef3;
-    --text-2: #b9bece;
-    --muted: #8f95a5;
-    --line: #262a33;
-    --line-strong: #3a3f4b;
+    --text-2: #cbd5e1;
+    --muted: #b5bfd0;
+    --line: #3a4657;
+    --line-strong: #63748a;
     --accent: #ff8a3d;
     --accent-strong: #c2410c;
     --accent-ink: #ffffff;
@@ -129,10 +129,10 @@
   --inverse: #0a0b0e;
   --inverse-text: #f3f4f7;
   --text: #eceef3;
-  --text-2: #b9bece;
-  --muted: #8f95a5;
-  --line: #262a33;
-  --line-strong: #3a3f4b;
+  --text-2: #cbd5e1;
+  --muted: #b5bfd0;
+  --line: #3a4657;
+  --line-strong: #63748a;
   --accent: #ff8a3d;
   --accent-strong: #c2410c;
   --accent-ink: #ffffff;
@@ -383,8 +383,9 @@ input[type="search"], input[type="text"], select {
   display: flex;
   flex-wrap: nowrap;
   gap: .6rem;
+  width: min(100% - 2 * var(--gutter),80rem);
   margin: 0 auto;
-  padding: .5rem max(var(--gutter),calc((100% - 80rem)/2)) .65rem;
+  padding: .5rem 0 .65rem;
   list-style: none;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -410,10 +411,10 @@ input[type="search"], input[type="text"], select {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: var(--text-2);
-  font-size: var(--step--1);
-  line-height: 1.2;
-  font-weight: 650;
+  color: var(--text);
+  font-size: .9rem;
+  line-height: 1.25;
+  font-weight: 750;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
@@ -424,7 +425,7 @@ input[type="search"], input[type="text"], select {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--surface);
+  background: color-mix(in srgb,var(--folder-colour) 7%,var(--surface));
   box-shadow: inset 0 0 0 1px var(--line-strong);
   clip-path: polygon(0 0,38% 0,calc(38% + 8px) 8px,calc(100% - 10px) 8px,100% 18px,100% 100%,0 100%);
   pointer-events: none;
@@ -436,7 +437,7 @@ input[type="search"], input[type="text"], select {
   inset: 0 auto 0 0;
   width: 4px;
   background: var(--folder-colour);
-  opacity: .42;
+  opacity: 1;
   pointer-events: none;
   transition: opacity .18s,box-shadow .18s;
 }
@@ -445,7 +446,7 @@ input[type="search"], input[type="text"], select {
 .tab:hover::after { opacity: .85; }
 .tab[aria-current="page"] { color: var(--text); font-weight: 800; }
 .tab[aria-current="page"]::before {
-  background: linear-gradient(90deg,color-mix(in srgb,var(--folder-colour) 12%,var(--surface)),var(--surface) 80%);
+  background: color-mix(in srgb,var(--folder-colour) 18%,var(--surface));
 }
 .tab[aria-current="page"]::after {
   opacity: 1;
@@ -454,23 +455,35 @@ input[type="search"], input[type="text"], select {
 .tab__label { position: relative; }
 .tab[aria-current="page"] .tab__label { text-decoration: underline; text-decoration-color: var(--folder-colour); text-decoration-thickness: 2px; text-underline-offset: .38em; }
 .tab:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
-[data-folder="project"] { --folder-colour: #f07832; }
-[data-folder="training"] { --folder-colour: #f15b68; }
-[data-folder="kinetics"] { --folder-colour: #eab948; }
-[data-folder="liquid"] { --folder-colour: #31b9d1; }
-[data-folder="nutrition"] { --folder-colour: #63b584; }
-[data-folder="gear"] { --folder-colour: #9097ef; }
-[data-folder="metrics"] { --folder-colour: #45b5ab; }
-[data-folder="baseline"] { --folder-colour: #d49c58; }
-[data-folder="daily"] { --folder-colour: #49b8ae; }
-[data-folder="supplements"] { --folder-colour: #b28ad6; }
-[data-folder="fixes"] { --folder-colour: #d77d8a; }
-[data-folder="minerals"] { --folder-colour: #70b8c3; }
-[data-folder="library"] { --folder-colour: #a29bd5; }
+[data-folder="project"] { --folder-colour:#c54a10; --folder-bright:#ff9138; }
+[data-folder="training"] { --folder-colour:#ba2444; --folder-bright:#ff718d; }
+[data-folder="kinetics"] { --folder-colour:#936000; --folder-bright:#f5bf40; }
+[data-folder="liquid"] { --folder-colour:#006f91; --folder-bright:#47d2ef; }
+[data-folder="nutrition"] { --folder-colour:#087447; --folder-bright:#62d49a; }
+[data-folder="gear"] { --folder-colour:#5b43b0; --folder-bright:#b1a1ff; }
+[data-folder="metrics"] { --folder-colour:#006e68; --folder-bright:#56d4c8; }
+[data-folder="baseline"] { --folder-colour:#8f5c1c; --folder-bright:#e6b36d; }
+[data-folder="daily"] { --folder-colour:#08736c; --folder-bright:#5bd8c7; }
+[data-folder="supplements"] { --folder-colour:#783da8; --folder-bright:#d2a1fa; }
+[data-folder="fixes"] { --folder-colour:#a32d50; --folder-bright:#f68eaf; }
+[data-folder="minerals"] { --folder-colour:#176e84; --folder-bright:#78d8ed; }
+[data-folder="library"] { --folder-colour:#6551a3; --folder-bright:#bdaafa; }
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) [data-folder]{--folder-colour:var(--folder-bright)}
+}
+:root[data-theme="dark"] [data-folder]{--folder-colour:var(--folder-bright)}
+@media(min-width:1100px){
+  :root{--tabs-h:4.75rem}
+  body[data-site="protocol"]{--tabs-h:8.75rem;--header-h:calc(var(--head-h) + var(--tabs-h))}
+  .tabs__list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem;overflow:visible;scroll-snap-type:none}
+  body[data-site="protocol"] .tabs__list{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .tabs__list li{min-width:0}
+  .tab{min-width:0;width:100%;min-height:3.5rem;padding-inline:.7rem;white-space:normal}
+}
 @media(max-width:719px) {
   .tabs__list { gap: .5rem; padding-top: .35rem; padding-bottom: .55rem; }
   .tabs__list li { flex: 0 0 auto; }
-  .tab { min-width: 7.4rem; min-height: 3.25rem; font-size: .82rem; padding-inline: 1rem; }
+  .tab { min-width: 7.4rem; min-height: 3.25rem; font-size: .88rem; padding-inline: 1rem; }
 }
 @media(prefers-reduced-motion:reduce) {
   .tab,.tab::before,.tab::after { transition: none; }

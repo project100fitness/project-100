@@ -44,12 +44,19 @@ def check(page,path,width):
     page.wait_for_timeout(60)
     state=page.evaluate("""()=>{let head=document.querySelector('.site-head'),row=head.querySelector('.tabs__list'),links=[...row.querySelectorAll('.tab')],active=row.querySelector('[aria-current=page]'),r=row.getBoundingClientRect(),a=active.getBoundingClientRect(),s=getComputedStyle(active),edge=getComputedStyle(active,'::after');return {tabs:links.length,active:active.getAttribute('href'),activeVisible:a.left>=r.left-1&&a.right<=r.right+1,headWidth:head.getBoundingClientRect().width,headHeight:head.getBoundingClientRect().height,rows:[...new Set(links.map(a=>Math.round(a.getBoundingClientRect().top)))].length,smallTargets:links.filter(a=>a.getBoundingClientRect().height<44).length,animation:s.animationName,boxShadow:s.boxShadow,edgeShadow:edge.boxShadow,edgeWidth:edge.width,colours:[...new Set(links.map(a=>getComputedStyle(a).getPropertyValue('--folder-colour').trim()))],role:active.getAttribute('data-folder')}}""")
     assert state["headWidth"]<=width+1,(path,state)
-    assert state["rows"]==1 and state["smallTargets"]==0,(path,state)
-    assert state["headHeight"]<150,(path,state)
+    expected_rows=2 if width>=1100 and state["tabs"]==12 else 1
+    assert state["rows"]==expected_rows and state["smallTargets"]==0,(path,state)
+    assert state["headHeight"]<220,(path,state)
     assert state["activeVisible"],(path,state)
     assert state["animation"]=="none" and state["boxShadow"]=="none",(path,state)
     assert state["edgeShadow"]!="none" and state["edgeWidth"]=="4px",(path,state)
     assert len(state["colours"])>=6,(path,state)
+    alignment=page.evaluate("""()=>{let row=document.querySelector('.tabs__list'),bar=document.querySelector('.site-head__bar'),links=[...row.querySelectorAll('.tab')],r=row.getBoundingClientRect(),b=bar.getBoundingClientRect(),widths=links.map(a=>a.getBoundingClientRect().width),cv=document.createElement('canvas');cv.width=cv.height=1;let ctx=cv.getContext('2d');function rgb(c){ctx.clearRect(0,0,1,1);ctx.fillStyle=c;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data].slice(0,3)}function lum(c){let q=rgb(c).map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)});return q[0]*.2126+q[1]*.7152+q[2]*.0722}function contrast(a,b){let x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)}let ratios=links.map(a=>contrast(getComputedStyle(a).color,getComputedStyle(a,'::before').backgroundColor));return{left:r.left,right:r.right,barLeft:b.left,barRight:b.right,overflow:row.scrollWidth-row.clientWidth,widthSpread:Math.max(...widths)-Math.min(...widths),contrast:Math.min(...ratios)}}""")
+    assert abs(alignment["left"]-alignment["barLeft"])<1 and abs(alignment["right"]-alignment["barRight"])<1,(path,alignment)
+    assert alignment["contrast"]>=7,(path,alignment)
+    if width>=1100:
+        assert alignment["overflow"]<=1 and alignment["widthSpread"]<1,(path,alignment)
+
     return state
 with sync_playwright() as p:
     chromium=p.chromium.launch()
@@ -77,6 +84,9 @@ with sync_playwright() as p:
                     if name=="Chromium" and path in ["index.html","fit-protocol.html"] and width in [320,768,1440]:
                         shot=output/(path.removesuffix(".html")+"-"+str(width)+"-"+theme+".png")
                         page.locator(".site-head").screenshot(path=str(shot));shots.append(shot)
+                        if width==1440:
+                            page.screenshot(path=str(output/("layout-"+path.removesuffix(".html")+"-"+theme+".png")))
+
                         if page.locator(".hud-folder__head").count():
                             shot=output/("section-"+path.removesuffix(".html")+"-"+str(width)+"-"+theme+".png")
                             page.locator(".hud-folder__head").first.screenshot(path=str(shot));shots.append(shot)
@@ -155,6 +165,6 @@ for path in shots:
 contact=Image.new("RGB",(1520,210*((len(thumbs)+1)//2)),"#adb9c4")
 for i,im in enumerate(thumbs):contact.paste(im,((i%2)*760,(i//2)*210))
 contact.save(output/"navigation-review.jpg",quality=90)
-report={"status":"passed","authoredPages":len(pages),"browserCases":len(results),"engines":["Chromium","Firefox","WebKit"],"checks":["one active folder per page","all original routes preserved","per-section colours","side-only active glow","no navigation animation","single horizontal row","44px touch targets","active folder visible","direct navigation","dialog open/close","keyboard traversal","JavaScript disabled"],"results":results}
+report={"status":"passed","authoredPages":len(pages),"browserCases":len(results),"engines":["Chromium","Firefox","WebKit"],"checks":["one active folder per page","all original routes preserved","per-section colours","side-only active glow","no navigation animation","centred content-aligned navigation","equal desktop columns","contained desktop rows","minimum 7:1 folder-label contrast","44px touch targets","active folder visible","direct navigation","dialog open/close","keyboard traversal","JavaScript disabled"],"results":results}
 (output/"validation.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps({"status":"passed","authoredPages":len(pages),"browserCases":len(results)}))

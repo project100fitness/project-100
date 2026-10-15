@@ -13,14 +13,14 @@ class Navigation(HTMLParser):
     def handle_endtag(self,tag):
         if tag=="nav":self.inside=False
 def read(path):
-    request=urllib.request.Request(base+path+"?nav=20261015-folder-system",headers={"User-Agent":"PROJECT100-navigation-validation","Cache-Control":"no-cache"})
+    request=urllib.request.Request(base+path+"?nav=20261015-aligned-readable&t="+str(time.time_ns()),headers={"User-Agent":"PROJECT100-navigation-validation","Cache-Control":"no-cache"})
     with urllib.request.urlopen(request,timeout=45) as response:
         assert response.status==200
         return response.read().decode("utf-8").replace("\r\n","\n")
 for attempt in range(40):
     try:
         source=read("index.html")
-        assert 'site.css?v=20261015-folder-navigation' in source and 'data-folder="project"' in source
+        assert 'site.css?v=20261015-aligned-readable' in source and 'data-folder="project"' in source
         break
     except Exception:
         if attempt==39:raise
