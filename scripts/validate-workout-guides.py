@@ -12,6 +12,10 @@ for item in manifest["files"]:
     assert len(reader.pages)==item["pages"], item["name"]
     fields=reader.get_fields() or {}
     assert len(fields)==item["fields"], (item["name"],len(fields))
+    if item["name"].startswith("guide-"):
+        key=item["name"][6:-4]
+        images=reader.pages[0]["/Resources"].get("/XObject",{})
+        assert "/Im_"+key in images, ("Wrong exercise image",item["name"])
     widget_names=[]
     for page in reader.pages:
         assert page.extract_text().strip(), ("Empty page",item["name"])
@@ -65,9 +69,11 @@ bundle=Path("downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip")
 with ZipFile(bundle,"w",ZIP_DEFLATED) as z:
     for pdf in sorted(root.glob("*.pdf")): z.write(pdf,"pdf/"+pdf.name)
     z.write("downloads/kinetics/training-plan-v0.3.json","training-plan-v0.3.json")
-    z.write("assets/media/workout-guides/row-three-roles-v1.png","artwork/row-three-roles-v1.png")
-    z.writestr("START_HERE.txt","PROJECT 100 / WORKOUT GUIDES / 15 OCTOBER 2026\n\nStart with pdf/weekly-planner.pdf.\nGuide A: focused-days-level-1, 2 or 3 (days 1-3).\nGuide B: full-body-level-1, 2 or 3 (days 5-6).\nDays 4 and 7 are rest; day 6 stays easy or becomes rest.\nTechnique sheets explain main focus, secondary assistance, stable base, movement, range and return.\nThe row has the approved naturalistic anatomical plate. Other sheets currently use detailed written guidance.\nBand colour is not a load code. Select resistance individually; labelled pounds are not measured hand force or hardware ratings.\nCurrent symptoms/restrictions/tolerated loads are unconfirmed; this is an educational draft.\nPDF log fields remain fillable. Read the complete positioning and stop rules before training.\n\nLive download centre: https://project100.fit/downloads/kinetics/index.html\n")
+    for key,plate in json.loads(Path("/tmp/project100-art.json").read_text()).items(): z.write(plate["path"],"artwork/"+key+".jpg")
+    z.writestr("START_HERE.txt","PROJECT 100 / WORKOUT GUIDES / 15 OCTOBER 2026\n\nStart with pdf/weekly-planner.pdf.\nGuide A: focused-days-level-1, 2 or 3 (days 1-3).\nGuide B: full-body-level-1, 2 or 3 (days 5-6).\nDays 4 and 7 are rest; day 6 stays easy or becomes rest.\nTechnique sheets explain main focus, secondary assistance, stable base, movement, range and return.\nEvery technique sheet includes its own reviewed naturalistic start/finish plate. Colours are illustrative surface projections; read the written muscle roles and positioning cues.\nBand colour is not a load code. Select resistance individually; labelled pounds are not measured hand force or hardware ratings.\nCurrent symptoms/restrictions/tolerated loads are unconfirmed; this is an educational draft.\nPDF log fields remain fillable. Read the complete positioning and stop rules before training.\n\nLive download centre: https://project100.fit/downloads/kinetics/index.html\n")
 with ZipFile(bundle) as z:
     assert z.testzip() is None
     assert len([n for n in z.namelist() if n.endswith(".pdf")])==len(manifest["files"])
+    assert len([n for n in z.namelist() if n.startswith("artwork/")])==12
+assert bundle.stat().st_size<95*1024*1024
 print("Dated PDF bundle validated:",bundle.stat().st_size,"bytes.")

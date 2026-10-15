@@ -56,6 +56,7 @@ with sync_playwright() as p:
         frame.locator('body[data-guide="row"]').wait_for()
         frame.locator(".wg-phase img").first.wait_for()
         page.wait_for_function("document.querySelector('[data-kd-frame]').contentDocument.querySelector('.wg-phase img').naturalWidth>0")
+        assert frame.locator(".wg-phase img").first.bounding_box()["y"] < height-100
         page.screenshot(path=str(out/("browser-"+label+"-row.png")))
         page.locator("[data-kd-close]").click()
         modal.wait_for(state="hidden");page.wait_for_timeout(450)
@@ -80,6 +81,28 @@ with sync_playwright() as p:
             assert fields["weekly-day-1-notes"]["/V"]=="QA / 2x65 lb / controlled return"
             widgets=[ref.get_object() for ref in r.pages[0]["/Annots"]]
             assert all(w.get("/AP",{}).get("/N") for w in widgets)
+        if label=="desktop":
+            db=json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())
+            for exercise in db["exercises"]:
+                page.goto(base+"/downloads/kinetics/guide-"+exercise["id"]+".html",wait_until="domcontentloaded")
+                page.wait_for_function("Array.from(document.querySelectorAll('.wg-phase img')).every(i=>i.complete&&i.naturalWidth>0)")
+                imgs=page.locator(".wg-phase img")
+                assert imgs.count()==2
+                assert all(exercise["art"] in imgs.nth(i).get_attribute("src") for i in range(2))
+            page.goto(base+"/downloads/kinetics/focused-days-level-1.html",wait_until="domcontentloaded")
+            with page.expect_download(timeout=60000) as illustrated:
+                page.locator("[data-download-pdf]").click()
+            with tempfile.TemporaryDirectory() as tmp:
+                dest=Path(tmp)/"illustrated.pdf";illustrated.value.save_as(dest)
+                r=PdfReader(dest);assert len(r.pages)==17 and len(r.get_fields())==15
+                assert any(page.get("/Resources",{}).get("/XObject") for page in r.pages)
+            with page.expect_download(timeout=60000) as offline:
+                page.locator("[data-download-html]").click()
+            with tempfile.TemporaryDirectory() as tmp:
+                dest=Path(tmp)/"offline.html";offline.value.save_as(dest)
+                content=dest.read_text()
+                assert "data:image/jpeg;base64," in content
+                assert "<style>" in content and "<script" not in content
         assert not errors, errors
         checks.append({"viewport":label,"width":width,"height":height,"status":"passed","checks":["full-view open/close","weekly preview","two on-page placements","20 browse documents","focused guide filter","17-page PDF download","search","naturalistic row preview","end-scroll bar","Escape close","filled one-page PDF export","canonical field value","no uncaught JavaScript errors"]})
         context.close()

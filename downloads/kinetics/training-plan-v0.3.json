@@ -19,7 +19,7 @@
       "role": "Postural stabilization and support contacts"
     }
   },
-  "artCaveat": "Color emphasis is illustrative, not a measured activation map. Deep or occluded muscles are named in text rather than painted onto unrelated visible anatomy. Roles change by exercise.",
+  "artCaveat": "Colour is qualitative surface projection, not measured muscle activation or exact tissue boundaries. Some regions are projected beneath clothing. Deep or occluded assistants are explained in the text; absence of a visible colour patch does not mean absence of muscular work.",
   "sources": {
     "aceRow": {
       "title": "ACE - Single-arm Row",
@@ -79,7 +79,12 @@
         "aceBands"
       ],
       "art": "row-three-roles-v1.png",
-      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies.",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / softly extended arm                    FINISH / controlled pull",
+      "artReview": "approved"
     },
     {
       "id": "press",
@@ -100,7 +105,13 @@
         "aceBands",
         "nhs"
       ],
-      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies.",
+      "art": "press-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / handle beside chest                    FINISH / controlled press",
+      "artReview": "approved after correction: rear anchor, continuous band, closed clip and rear-facing handle frame; band length increases during press"
     },
     {
       "id": "pressdown",
@@ -120,7 +131,13 @@
       "sources": [
         "aceBands"
       ],
-      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies.",
+      "art": "pressdown-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / elbows bent                    FINISH / soft elbow extension",
+      "artReview": "approved after reframing: complete high anchor and closed clip visible, bar centre attachment continuous, triceps focus and quiet seated base"
     },
     {
       "id": "lateral",
@@ -141,7 +158,13 @@
         "shoulder",
         "aceBands"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "lateral-three-roles-v1.png",
+      "artWidth": 1536,
+      "artHeight": 1024,
+      "artAspect": 1.5,
+      "artCaption": "START / arms lowered                    FINISH / short comfortable arc",
+      "artReview": "Reviewed unloaded shallow sideways raise; middle deltoid red, shoulder-girdle assistant blue, quiet seated base; no front raise."
     },
     {
       "id": "brace",
@@ -161,7 +184,13 @@
       "sources": [
         "spine"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "brace-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "SETUP / balanced sitting                    HOLD / gentle brace and breathing",
+      "artReview": "Reviewed quiet seated bracing and normal breathing; abdominal wall red, seated and foot base green; deep assistants described in text."
     },
     {
       "id": "sit-stand",
@@ -181,7 +210,13 @@
       "sources": [
         "nhs"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "sit-stand-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / seated support                    FINISH / controlled standing",
+      "artReview": "Reviewed seated start and supported standing finish; feet planted; quadriceps red; ambiguous blue outer-thigh patch removed."
     },
     {
       "id": "hamstring-curl",
@@ -189,7 +224,7 @@
       "origin": "Supported hamstring adaptation",
       "pattern": "Knee flexion",
       "main": "Hamstrings bend the knee, drawing the heel back.",
-      "secondary": "Gastrocnemius can assist knee flexion; hip muscles help keep the thigh aligned.",
+      "secondary": "Gastrocnemius can assist knee flexion. Ankle-positioning muscles hold the foot position; hip muscles keep the thigh aligned.",
       "base": "Chair, opposite planted foot and trunk muscles steady the pelvis. The working thigh stays supported.",
       "setup": "Use a stable chair and a low anchor in front. Attach a manufacturer-approved ankle cuff to a light band, clear of chair legs and the other foot.",
       "position": "Sit tall with the working thigh supported. Start with that heel forward and the knee softly extended; keep the ankle comfortable.",
@@ -202,7 +237,13 @@
         "aceBands",
         "nhs"
       ],
-      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies.",
+      "art": "hamstring-curl-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / heel forward                    FINISH / heel drawn back",
+      "artReview": "approved after anchor correction: front low metal eye and closed clip visible, cuff above ankle, working thigh supported, band length increases; blue denotes local ankle control"
     },
     {
       "id": "calf-raise",
@@ -222,7 +263,13 @@
       "sources": [
         "nhs"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "calf-raise-three-roles-v1.png",
+      "artWidth": 1536,
+      "artHeight": 1024,
+      "artAspect": 1.5,
+      "artCaption": "START / heels down                    FINISH / controlled heel lift",
+      "artReview": "Reviewed heels-down and gentle heels-up positions; calf muscle bellies red, Achilles tendons neutral; stable hand support."
     },
     {
       "id": "hip-abduction",
@@ -242,7 +289,13 @@
       "sources": [
         "nhs"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "hip-abduction-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / steady stance                    FINISH / small side lift",
+      "artReview": "approved as qualitative surface projection: working outer hip red, local hip assistant blue, stance side and trunk green; stable counter contacts, level pelvis, no bands"
     },
     {
       "id": "scapular-control",
@@ -250,7 +303,7 @@
       "origin": "Unloaded preparation for the personal pulling library",
       "pattern": "Scapular control",
       "main": "Middle trapezius and rhomboids gently retract the shoulder blades.",
-      "secondary": "Other scapular and rotator-cuff muscles coordinate the shoulders; this is not a maximal squeeze.",
+      "secondary": "Posterior shoulder and rotator-cuff muscles help steady the arms while the shoulder blades move. Use a gentle movement, not a maximal squeeze.",
       "base": "Chair, feet and light trunk control maintain an upright seated position.",
       "setup": "Sit in a stable chair without a band. Rest hands comfortably on thighs.",
       "position": "Keep neck long, ribs settled and shoulders relaxed. Avoid starting in an exaggerated chest-out posture.",
@@ -263,7 +316,13 @@
         "shoulder",
         "spine"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "scapular-control-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / relaxed shoulders                    FINISH / gentle blade control",
+      "artReview": "Reviewed gentle shoulder-blade motion; middle trapezius region red, rear shoulder assistants blue; neutral neck and seated base."
     },
     {
       "id": "curl",
@@ -284,7 +343,13 @@
         "nhs",
         "aceBands"
       ],
-      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies."
+      "equipmentSystem": "Individually selected long-line bands; KUZARO stock ceiling applies.",
+      "art": "curl-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / soft elbow extension                    FINISH / controlled curl",
+      "artReview": "Reviewed same working arm in both panels, one handle and continuous low-anchor band; elbow flexion lengthens line; spare arm rests on thigh."
     },
     {
       "id": "hip-extension",
@@ -304,7 +369,13 @@
       "sources": [
         "nhs"
       ],
-      "equipmentSystem": "Unloaded / bodyweight / stable support."
+      "equipmentSystem": "Unloaded / bodyweight / stable support.",
+      "art": "hip-extension-three-roles-v1.png",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2,
+      "artCaption": "START / steady stance                    FINISH / small backward lift",
+      "artReview": "Reviewed small rearward leg motion with quiet pelvis and fixed hand supports; working glute red, posterior thigh blue; stance base green."
     }
   ],
   "days": [
@@ -526,5 +597,6 @@
       "pages": 11,
       "equipmentNote": "Placement describes the chapter. Each exercise retains its own equipment; HPYGN short bands are not automatically substituted for long-line movements."
     }
-  }
+  },
+  "artworkRevision": "all-plates-20261015"
 }

@@ -43,23 +43,34 @@ jobs:
           python -m pip install pypdf Pillow playwright
           python -m playwright install --with-deps chromium
           if ! command -v pdftoppm >/dev/null; then sudo apt-get update && sudo apt-get install -y poppler-utils; fi
-      - name: Prepare the row plate
+      - name: Prepare reviewed exercise plates
         run: |
           python - <<'PY'
+          from pathlib import Path
           from PIL import Image
-          im=Image.open("assets/media/workout-guides/row-three-roles-v1.png").convert("RGB")
-          assert im.size==(1774,887), im.size
-          im.save("/tmp/project100-row.jpg",quality=94)
+          import json
+          db=json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())
+          output=Path("/tmp/project100-art");output.mkdir(exist_ok=True)
+          images={}
+          for e in db["exercises"]:
+              image=Path("assets/media/workout-guides")/e["art"]
+              im=Image.open(image).convert("RGB")
+              assert abs(im.width/im.height-e["artAspect"])<.002, e["id"]
+              dest=output/(e["id"]+".jpg")
+              im.save(dest,quality=90,optimize=True)
+              images[e["id"]]={"width":im.width,"height":im.height,"path":str(dest)}
+          assert len(images)==12
+          Path("/tmp/project100-art.json").write_text(json.dumps(images))
           PY
       - name: Build PDFs and verify every rendered page
         run: |
           node --check assets/js/workout-guides.js
-          node scripts/build-workout-guides.cjs /tmp/project100-row.jpg
+          node scripts/build-workout-guides.cjs /tmp/project100-art.json
           python scripts/validate-workout-guides.py
       - name: Check phone, tablet and desktop browser behavior
         run: python scripts/check-workout-browser.py
       - name: Verify the deployed public workout URLs
-        run: python scripts/check-workout-live.py
+        run: python scripts/check-workout-live.py --baseline
       - name: Save validated downloads to the review branch
         run: |
           git config user.name "github-actions[bot]"
