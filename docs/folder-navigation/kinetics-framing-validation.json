@@ -1,0 +1,137 @@
+[
+  {
+    "engine": "chromium",
+    "width": 390,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "width": 328
+    }
+  },
+  {
+    "engine": "chromium",
+    "width": 768,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 398.234375
+    }
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 414.765625
+    }
+  },
+  {
+    "engine": "firefox",
+    "width": 390,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "width": 328
+    }
+  },
+  {
+    "engine": "firefox",
+    "width": 768,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 398.23333740234375
+    }
+  },
+  {
+    "engine": "firefox",
+    "width": 1440,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 414.76666259765625
+    }
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 16,
+      "right": 16,
+      "top": 16,
+      "bottom": 16,
+      "width": 328
+    }
+  },
+  {
+    "engine": "webkit",
+    "width": 768,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 398.21875
+    }
+  },
+  {
+    "engine": "webkit",
+    "width": 1440,
+    "status": "passed",
+    "frame": {
+      "fit": "contain",
+      "position": "50% 50%",
+      "bg": "rgb(21, 26, 32)",
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18,
+      "width": 414.765625
+    }
+  }
+]
