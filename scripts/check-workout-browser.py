@@ -24,6 +24,10 @@ with sync_playwright() as p:
         assert page.locator("[data-kd-document-title]").inner_text()=="The one-page weekly planner"
         frame=page.frame_locator("[data-kd-frame]")
         frame.locator(".wg-weekly").wait_for()
+        assert frame.locator(".wg-day-card").count()==7
+        assert frame.locator(".wg-choice-cards>section").count()==3
+        frame.locator('a[href="#your-week"]').click()
+        assert frame.locator("#your-week").is_visible()
         assert page.locator(".kin-downloads").count()==2
         assert page.locator("#full-body-downloads").count()==1
         page.wait_for_timeout(350)
@@ -41,6 +45,7 @@ with sync_playwright() as p:
         page.locator('[data-kd-filter="focused"]').click()
         assert page.locator(".kd-doc:not([hidden])").count()==3
         frame.locator('body[data-document="focused"]').wait_for()
+        assert frame.locator(".wg-session-moves>li").count()>0
         assert page.locator("[data-kd-document-title]").inner_text().endswith("Level 1")
         with page.expect_download() as info:
             page.locator("[data-kd-download]").click()
@@ -54,6 +59,8 @@ with sync_playwright() as p:
         page.locator("[data-kd-search]").fill("")
         page.locator('[data-kd-doc="row"]').click()
         frame.locator('body[data-guide="row"]').wait_for()
+        assert frame.locator(".wg-steps>section").count()==4
+        assert frame.locator(".wg-steps li").count()>=4
         frame.locator(".wg-phase img").first.wait_for()
         page.wait_for_function("document.querySelector('[data-kd-frame]').contentDocument.querySelector('.wg-phase img').naturalWidth>0")
         assert frame.locator(".wg-phase img").first.bounding_box()["y"] < height-100
