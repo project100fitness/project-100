@@ -1,0 +1,1 @@
+const vm=require('node:vm'),fs=require('node:fs');vm.runInNewContext(fs.readFileSync('assets/js/kinetics-downloads.js','utf8'),{document:{getElementById:()=>null}});console.log('Document drawer handles pages without its dialog.');
