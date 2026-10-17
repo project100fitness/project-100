@@ -1,13 +1,8 @@
-/* Canonical PDFs: exercises appear once; old download paths remain compatible. */
-const fs=require("node:fs"),vm=require("node:vm"),path=require("node:path");
-vm.runInThisContext(fs.readFileSync("assets/js/workout-guides.js","utf8"));
-const api=globalThis.Project100PDF,db=JSON.parse(fs.readFileSync("downloads/kinetics/training-plan-v0.3.json","utf8")),jpeg={};
-const meta=JSON.parse(fs.readFileSync(process.argv[2],"utf8"));
-for(const [id,image] of Object.entries(meta))jpeg[id]={width:image.width,height:image.height,bytes:fs.readFileSync(image.path).toString("latin1")};
-const out="downloads/kinetics/pdf";fs.mkdirSync(out,{recursive:true});const manifest=[];
-function save(name,kind,id){const pages=api.makePages(db,kind,1,id||null,{},true);if(pages.some(p=>p.lowest<35))throw Error("Page overflow: "+name);fs.writeFileSync(path.join(out,name),api.buildPdf(pages,jpeg));manifest.push({name,pages:pages.length,fields:pages.reduce((s,p)=>s+p.fields.length,0),lowestTextBaseline:Math.min(...pages.map(p=>p.lowest))});}
-save("protocols.pdf","protocol");save("weekly-planner.pdf","weekly");save("focused-days.pdf","focused");save("full-body.pdf","fullbody");save("exercise-guides.pdf","guides");save("complete-guide.pdf","book");
-for(const e of db.exercises)save("guide-"+e.id+".pdf","guide",e.id);
-for(let n=1;n<=3;n++){for(const [old,target] of [["focused-days-level-","focused-days.pdf"],["full-body-level-","full-body.pdf"],["planner-level-","complete-guide.pdf"],["booklet-level-","complete-guide.pdf"]])fs.copyFileSync(path.join(out,target),path.join(out,old+n+".pdf"));}
-fs.writeFileSync(path.join(out,"build-manifest.json"),JSON.stringify({version:db.version,edition:"unified-protocol",files:manifest},null,2)+"\n");
-console.log(JSON.stringify(manifest,null,2));
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..'),folder=path.join(root,'downloads/kinetics');
+vm.runInThisContext(fs.readFileSync(path.join(root,'assets/js/workout-guides.js'),'utf8'));
+const db=JSON.parse(fs.readFileSync(path.join(folder,'training-plan-v0.3.json'),'utf8')),meta=JSON.parse(fs.readFileSync(path.join(folder,'image-metadata.json'),'utf8')),bank={};
+for(const[id,m]of Object.entries(meta))bank[id]={width:m.width,height:m.height,bytes:fs.readFileSync(path.join(root,m.path)).toString('latin1')};
+const jobs=[['focused','focused-days'],['fullbody','full-body'],['weekly','weekly-planner'],['book','complete-guide'],['catalogue','source-catalogue'],['focused-short','focused-short'],['fullbody-short','full-body-short'],['weekly-overview','weekly-overview'],['guides','exercise-guides'],...db.exercises.map(e=>['guide','guide-'+e.id,e.id])],report=[];
+for(const[kind,name,id]of jobs){const pages=Project100PDF.makePages(db,kind,1,id||null,{},true);if(pages.some(p=>p.lowest<35))throw Error('PDF boundary: '+name);if(['focused','fullbody','weekly','book','focused-short','fullbody-short','guides'].includes(kind)&&pages.some(p=>p.cardIds?.length&&p.cardIds.length!==3))throw Error('Three-card layout: '+name);fs.writeFileSync(path.join(folder,'pdf',name+'.pdf'),Project100PDF.buildPdf(pages,bank));report.push({filename:name+'.pdf',pages:pages.length,lowest:Math.min(...pages.map(p=>p.lowest))});}
+fs.writeFileSync(path.join(folder,'pdf-build-report.json'),JSON.stringify(report,null,2));console.log('Built '+report.length+' illustrated PDF downloads.');

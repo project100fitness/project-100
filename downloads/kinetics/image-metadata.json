@@ -1,0 +1,527 @@
+{
+  "brace": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/brace-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "calf-raise": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/calf-raise-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/curl-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "hamstring-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/hamstring-curl-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "hip-abduction": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/hip-abduction-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "hip-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/hip-extension-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "lateral": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/lateral-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/press-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "pressdown": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pressdown-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "row": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/row-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "scapular-control": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/scapular-control-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "sit-stand": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/sit-stand-plyosoft-box-v2-personal-v1.jpg"
+  },
+  "standing-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-alternating-curl-connections-v3-personal-v1.jpg"
+  },
+  "box-kneeling-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/box-kneeling-extension-three-roles-v2-personal-v1.jpg"
+  },
+  "floor-kneeling-overhead-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-overhead-extension-three-roles-v1-personal-v1.jpg"
+  },
+  "supported-high-front-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/supported-high-front-curl-three-roles-v2-personal-v1.jpg"
+  },
+  "standing-shared-low-rear-overhead-extension": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/standing-shared-low-rear-overhead-extension-three-roles-v1-personal-v1.jpg"
+  },
+  "floor-kneeling-high-front-paired-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-high-front-paired-draw-three-roles-v1-personal-v1.jpg"
+  },
+  "standing-mid-side-band-bar-pressdown": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-mid-side-band-bar-pressdown-three-roles-v2-personal-v1.jpg"
+  },
+  "shoulder-band-bar-squat": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/shoulder-band-bar-squat-matched-pairs-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-shoulder-bar-squat-bow": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/shoulder-band-bar-squat-matched-pairs-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-paired-overhead-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-overhead-extension-three-roles-v1-personal-v1.jpg"
+  },
+  "variant-standing-two-hand-single-handle-overhead-extension": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/standing-shared-low-rear-overhead-extension-three-roles-v1-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-paired-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-high-front-paired-draw-three-roles-v1-personal-v1.jpg"
+  },
+  "variant-standing-alternating-low-front-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-alternating-curl-connections-v3-personal-v1.jpg"
+  },
+  "variant-standing-mid-side-band-bar-pressdown": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-mid-side-band-bar-pressdown-three-roles-v2-personal-v1.jpg"
+  },
+  "variant-floor-low-base-unilateral-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-low-base-unilateral-curl-anatomy-v2.jpg"
+  },
+  "variant-deep-squat-unilateral-low-line-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/deep-squat-unilateral-low-line-curl-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-deep-squat-two-hand-single-handle-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/deep-squat-two-hand-single-handle-curl-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-box-seated-two-hand-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/box-seated-two-hand-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-supported-high-front-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/supported-high-front-curl-three-roles-v2-personal-v1.jpg"
+  },
+  "variant-standing-high-front-wide-arm-sweep": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-high-front-wide-arm-sweep-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-inclined-high-rear-wide-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-high-rear-wide-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-bench-kneeling-paired-high-rear-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-kneeling-paired-high-rear-drive-anatomy-v2.jpg"
+  },
+  "variant-low-side-unilateral-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/low-side-unilateral-curl-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-inclined-two-hand-single-handle-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-two-hand-single-handle-curl-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-low-side-forearm-rotation": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-low-side-forearm-rotation-anatomy-v2.jpg"
+  },
+  "variant-high-front-two-hand-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-high-front-two-hand-draw-squat": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-squat-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-high-front-draw-low-base": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-draw-low-base-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-sandbag-kneeling-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/sandbag-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-high-front-draw-lateral-squat": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-draw-lateral-squat-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-box-kneeling-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/box-kneeling-overhead-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-backward-lean-high-front-paired-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-backward-lean-high-front-paired-draw-anatomy-v2.jpg"
+  },
+  "variant-standing-two-hand-high-rear-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-two-hand-high-rear-overhead-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-alternating-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-alternating-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-high-front-draw-leg-lift": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-high-front-draw-leg-lift-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-sandbag-kneeling-unilateral-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/sandbag-kneeling-unilateral-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-sandbag-supported-kneeling-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/sandbag-supported-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "pilates-row": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-row-matched-pair-v1-personal-v1.jpg"
+  },
+  "pilates-press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-press-matched-pair-v1-personal-v1.jpg"
+  },
+  "pilates-hamstring-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-hamstring-curl-matched-pair-v1-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-mid-side-bar-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-mid-side-bar-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-low-front-unilateral-short-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-low-front-unilateral-short-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-kneeling-supported-forward-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/kneeling-supported-forward-extension-anatomy-v2.jpg"
+  },
+  "variant-standing-two-hand-single-band-pressdown-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-two-hand-single-band-pressdown-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-deep-squat-two-hand-single-band-downward-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/deep-squat-two-hand-single-band-downward-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-two-hand-single-handle-low-rear-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-two-hand-single-handle-low-rear-extension-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-box-kneeling-shoulder-braced-torso-fold": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/box-kneeling-shoulder-braced-torso-fold-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-overhead-held-torso-lean": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-overhead-held-torso-lean-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-floor-kneeling-overhead-held-torso-fold": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-overhead-held-torso-fold-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-inclined-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/inclined-overhead-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-high-front-downward-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-downward-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-bench-supported-rearward-arm-movement": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-supported-rearward-arm-movement-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-high-rear-upper-back-braced-arm-opening": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/standing-high-rear-upper-back-braced-arm-opening-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-shoulder-bar-torso-bow": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-shoulder-bar-torso-bow-anatomy-v2-personal-v3.jpg"
+  },
+  "variant-bench-straddled-lateral-sweep": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-straddled-lateral-sweep-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-high-line-sweep": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-high-line-sweep-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-inclined-paired-curl-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-paired-curl-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-shoulder-braced-torso-bow": {
+    "width": 2095,
+    "height": 751,
+    "path": "assets/media/workout-guides/shoulder-braced-torso-bow-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-standing-low-line-rearward-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-low-line-rearward-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-wide-arm-drive": {
+    "width": 2172,
+    "height": 724,
+    "path": "assets/media/workout-guides/floor-kneeling-wide-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-paired-wide-arm-sweep": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-paired-wide-arm-sweep-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-bench-straddled-overhead-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-straddled-overhead-extension-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-overhead-drive-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-standing-inclined-unilateral-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-unilateral-curl-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-unilateral-band-overhead-hold-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-unilateral-band-overhead-hold-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-front-waist-bar-torso-bow": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/front-waist-bar-torso-bow-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-side-line-unilateral-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-side-line-unilateral-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-two-hand-single-handle-side-draw": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/standing-two-hand-single-handle-side-draw-anatomy-v2-personal-v2.jpg"
+  },
+  "variant-standing-unilateral-high-rear-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-unilateral-high-rear-overhead-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-upper-back-braced-torso-bow": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/upper-back-braced-torso-bow-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-box-kneeling-unilateral-overhead-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/box-kneeling-unilateral-overhead-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-bench-supported-high-rear-downward-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-supported-high-rear-downward-drive-anatomy-v2.jpg"
+  },
+  "variant-standing-inclined-low-line-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-low-line-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-inclined-unilateral-band-overhead-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-unilateral-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-high-rear-upper-back-braced-torso-bow": {
+    "width": 1536,
+    "height": 1024,
+    "path": "assets/media/workout-guides/standing-high-rear-upper-back-braced-torso-bow-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-low-back-bar-torso-bow": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/low-back-bar-torso-bow-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-seated-low-rear-arm-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/seated-low-rear-arm-extension-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-unilateral-low-rear-extension": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-unilateral-low-rear-extension-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-bench-straddled-low-rear-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/bench-straddled-low-rear-arm-drive-anatomy-v2.jpg"
+  },
+  "variant-standing-inclined-unilateral-high-front-band-curl-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-inclined-unilateral-high-front-band-curl-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-deep-squat-unilateral-high-side-band-draw-hold": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/deep-squat-unilateral-high-side-band-draw-hold-anatomy-v2.jpg"
+  },
+  "variant-floor-kneeling-two-hand-single-band-overhead-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-two-hand-single-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-floor-kneeling-unilateral-band-overhead-arm-drive": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/floor-kneeling-unilateral-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-unilateral-high-front-draw": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-unilateral-high-front-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-upper-back-braced-arm-opening": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/upper-back-braced-arm-opening-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-kneeling-handle-hold-free-reach": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-head-harness-torso-bow": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-single-handle-band-sweep-reposition": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "variant-standing-low-line-hold": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-front-two-hand-draw-anatomy-v2-personal-v1.jpg"
+  },
+  "pilates-curl": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-curl-matched-pairs-approved-v1.jpg"
+  },
+  "pilates-pressdown": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-pressdown-matched-pairs-approved-v1.jpg"
+  }
+}

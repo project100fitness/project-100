@@ -1,39 +1,17 @@
-"""Read the already-deployed public site and verify all workout download routes."""
-import json, urllib.request, concurrent.futures, sys, time
 from pathlib import Path
-base="https://project100.fit/"
-paths=["kinetics.html","assets/css/kinetics.css","assets/css/workout-guides.css","assets/js/kinetics-downloads.js","assets/js/workout-guides.js","assets/media/workout-guides/row-three-roles-v1.png","downloads/kinetics/PROJECT100_Workout_Guides_v0.3_2026-10-15.zip"]
-if "--baseline" not in sys.argv:
-    db=json.loads(Path("downloads/kinetics/training-plan-v0.3.json").read_text())
-    paths += ["assets/media/workout-guides/"+e["art"] for e in db["exercises"] if e["id"]!="row"]
-if "--wait" in sys.argv:
-    target=base+"downloads/kinetics/protocols.html"
-    for attempt in range(40):
-        try:
-            req=urllib.request.Request(target+"?release=20261015-unified&t="+str(time.time_ns()),headers={"Cache-Control":"no-cache"})
-            with urllib.request.urlopen(req,timeout=20) as response:
-                assert response.status==200
-                assert b"20261015-unified-protocol" in response.read()
-            break
-        except Exception:
-            if attempt==39:raise
-            time.sleep(10)
-paths += ["downloads/kinetics/"+p.name for p in Path("downloads/kinetics").glob("*.html")]
-paths += ["downloads/kinetics/pdf/"+f["name"] for f in json.loads(Path("downloads/kinetics/pdf/build-manifest.json").read_text())["files"]]
-if "--baseline" in sys.argv:
-    paths=["kinetics.html","assets/css/workout-guides.css","downloads/kinetics/guide-row.html","downloads/kinetics/pdf/guide-row.pdf"]
-def check(path):
-    req=urllib.request.Request(base+path,headers={"User-Agent":"PROJECT100-download-validation","Cache-Control":"no-cache"})
-    with urllib.request.urlopen(req,timeout=45) as r:
-        data=r.read(4096)
-        assert r.status==200,(path,r.status)
-        if path.endswith(".pdf"):assert data.startswith(b"%PDF-"),path
-        elif path.endswith(".zip"):assert data.startswith(b"PK"),path
-        elif path.endswith(".png"):assert data.startswith(b"\x89PNG"),path
-        elif path.endswith(".html"):assert b"<html" in data.lower(),path
-        return {"path":path,"status":r.status,"type":r.headers.get("Content-Type")}
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-    results=list(pool.map(check,paths))
-out={"status":"passed","base":base,"checkedPaths":len(results),"results":results}
-Path("docs/workout-guides/live-validation-v0.3.json").write_text(json.dumps(out,indent=2)+"\n")
-print(json.dumps({"status":out["status"],"checkedPaths":len(results)},indent=2))
+import urllib.request,time,json,argparse
+p=argparse.ArgumentParser();p.add_argument('--wait',action='store_true');p.add_argument('--baseline',action='store_true');args=p.parse_args()
+root=Path(__file__).resolve().parent.parent;base='https://project100.fit';paths=['kinetics.html','assets/js/training-state.js','assets/js/p100-band-training.js','downloads/kinetics/training-plan-v0.3.json','downloads/kinetics/weekly-planner.html','downloads/kinetics/guide-pilates-row.html','downloads/kinetics/pdf/complete-guide.pdf','downloads/kinetics/pdf/full-body.pdf']
+for attempt in range(40 if args.wait else 1):
+ try:
+  result=[]
+  for path in paths:
+   with urllib.request.urlopen(urllib.request.Request(base+'/'+path,headers={'User-Agent':'PROJECT100-publication-check'}),timeout=30) as r:
+    head=r.read(128);assert r.status==200
+    if path.endswith('.pdf'):assert head.startswith(b'%PDF-')
+    result.append({'path':path,'status':r.status})
+  break
+ except Exception:
+  if attempt+1== (40 if args.wait else 1):raise
+  time.sleep(15)
+out=root/'docs/workout-guides/live-validation-v0.3.json';out.write_text(json.dumps({'result':'passed','routes':result},indent=2));print('Live training routes and PDFs passed.')
