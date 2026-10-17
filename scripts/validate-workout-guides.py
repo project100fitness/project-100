@@ -19,7 +19,7 @@ class Links(HTMLParser):
 missing=[]
 paths=[root/'kinetics.html']+[p for p in folder.glob('*.html') if 'class="p100-guides"' in p.read_text('utf-8')]
 for p in paths:
- parser=Links();parser.feed(p.read_text('utf-8'))
+ source=p.read_text('utf-8');ids=re.findall(r'\bid="([^"]+)"',source);assert len(ids)==len(set(ids)),('Duplicate document IDs',p);parser=Links();parser.feed(source)
  for ref in parser.refs:
   u=urlsplit(ref)
   if u.scheme or u.netloc or not u.path:continue
