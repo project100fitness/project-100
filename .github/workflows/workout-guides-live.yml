@@ -5,6 +5,9 @@ on:
     paths:
       - 'assets/media/workout-guides/**'
       - 'downloads/kinetics/**'
+      - 'exercises.html'
+      - 'assets/js/p100-band-training.js'
+      - 'assets/css/p100-band-training.css'
       - '.github/workflows/workout-guides-live.yml'
 permissions:
   contents: read

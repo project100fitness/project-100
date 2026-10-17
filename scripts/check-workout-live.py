@@ -1,7 +1,7 @@
 from pathlib import Path
 import urllib.request,time,json,argparse
 p=argparse.ArgumentParser();p.add_argument('--wait',action='store_true');p.add_argument('--baseline',action='store_true');args=p.parse_args()
-root=Path(__file__).resolve().parent.parent;base='https://project100.fit';paths=['kinetics.html','assets/js/training-state.js','assets/js/p100-band-training.js','downloads/kinetics/training-plan-v0.3.json','downloads/kinetics/weekly-planner.html','downloads/kinetics/guide-pilates-row.html','downloads/kinetics/pdf/complete-guide.pdf','downloads/kinetics/pdf/full-body.pdf']
+root=Path(__file__).resolve().parent.parent;base='https://project100.fit';paths=['exercises.html','kinetics.html','assets/js/training-state.js','assets/js/p100-band-training.js','downloads/kinetics/training-plan-v0.3.json','downloads/kinetics/weekly-planner.html','downloads/kinetics/guide-pilates-row.html','downloads/kinetics/pdf/complete-guide.pdf','downloads/kinetics/pdf/full-body.pdf']
 for attempt in range(40 if args.wait else 1):
  try:
   result=[]
