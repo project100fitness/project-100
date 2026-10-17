@@ -29,9 +29,9 @@ assert not missing,missing
 for row in report:
  p=folder/'pdf'/row['filename'];reader=PdfReader(p);assert len(reader.pages)==row['pages'];text='\n'.join(page.extract_text() or '' for page in reader.pages)
  assert not any(t in text for t in ['undefined','NaN','Not established','EQUIPMENT UNCONFIRMED'])
- if row['filename']!='source-catalogue.pdf':assert not re.search(r'SET-C\d|\.mp4',text,re.I)
+ if row['filename']!='source-catalogue.pdf':assert not re.search(r'SET-C\d|\.mp4|\bR[123]\b|resistance levels?',text,re.I)
  if row['filename'] in ['weekly-planner.pdf','weekly-overview.pdf']:assert len(reader.get_fields())==7
 exercise_page=(root/'exercises.html').read_text('utf-8');assert exercise_page.count('data-training-section=')==3;assert 'data-training-panel="library"' in exercise_page;assert 'id="p100-library-grid"' not in (root/'kinetics.html').read_text('utf-8')
 css=(root/'assets/css/p100-band-training.css').read_text();assert '.card-.guide-main' not in css
-result={'result':'passed','pdfs':len(report),'guidePages':len(paths),'brokenLinks':missing,'trainingSetups':76,'sourceWindows':173,'brand':'original PROJECT 100 shared tokens','state':'shared per-exercise levels and weekly notes'}
+result={'result':'passed','pdfs':len(report),'guidePages':len(paths),'brokenLinks':missing,'trainingSetups':76,'sourceWindows':173,'brand':'original PROJECT 100 shared tokens','state':'single guide format; trainer-managed resistance; saved weekly notes'}
 (root/'docs/workout-guides/integrated-validation.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
