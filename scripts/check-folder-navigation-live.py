@@ -22,6 +22,7 @@ for attempt in range(40):
         source=read("index.html")
         assert 'site.css?v=20261015-original-brand' in source and 'data-folder="project"' in source
         assert 'kinetics.css?v=20261015-unified-protocol' in read('kinetics.html')
+        assert 'data-training-panel="library"' in read('exercises.html')
         break
     except Exception:
         if attempt==39:raise
@@ -30,7 +31,7 @@ paths=[]
 for path in Path(".").glob("*.html"):
     p=Navigation();p.feed(path.read_text())
     if p.links:paths.append(path.name)
-assert len(paths)==55
+assert len(paths)==56
 def page(path):
     local=Navigation();local.feed(Path(path).read_text())
     live=Navigation();live.feed(read(path))
@@ -42,7 +43,7 @@ for asset in assets:
     live=read(asset)
     assert live==Path(asset).read_text(),("Stale shared asset",asset)
     results.append({"path":asset,"status":"passed","sha256":hashlib.sha256(live.encode()).hexdigest()})
-out={"status":"passed","base":base,"checkedPaths":len(results),"pages":55,"sharedAssets":5,"results":results}
+out={"status":"passed","base":base,"checkedPaths":len(results),"pages":len(paths),"sharedAssets":5,"results":results}
 dest=Path("docs/folder-navigation");dest.mkdir(parents=True,exist_ok=True)
 (dest/"live-validation.json").write_text(json.dumps(out,indent=2)+"\n")
 print(json.dumps({k:v for k,v in out.items() if k!="results"},indent=2))
