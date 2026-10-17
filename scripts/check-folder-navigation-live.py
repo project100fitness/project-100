@@ -20,7 +20,7 @@ def read(path):
 for attempt in range(40):
     try:
         source=read("index.html")
-        assert 'assets/css/site.css?v=' in source and 'data-folder="project"' in source
+        assert 'assets/css/site.css?v=' in source and 'data-folder="project"' in source and 'data-folder="exercises"' in source
         assert 'kinetics.css?v=20261015-unified-protocol' in read('kinetics.html')
         assert 'data-training-panel="library"' in read('exercises.html')
         break
