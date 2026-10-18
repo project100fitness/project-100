@@ -33,14 +33,16 @@ function dressing(mode,end){
  return [oil*8.84+carbs*4+22,0,carbs,oil,0];
 }
 function totals(recipe,mode){return [0,1].map(end=>sum(recipe.ingredients,end,recipePortions(recipe)).map((x,i)=>x+dressing(mode,end)[i]));}
-const api={food,portions,recipes,sum,dressing,totals,eggCount,recipePortions};
+// Match the books: midpoint values round to the nearest even integer.
+function roundBook(value){const lower=Math.floor(value),fraction=value-lower;return Math.abs(fraction-.5)<1e-9?(lower%2===0?lower:lower+1):Math.round(value);}
+const api={food,portions,recipes,sum,dressing,totals,eggCount,recipePortions,roundBook};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
 if(!root.document)return;
 const doc=root.document,gallery=doc.getElementById('salad-gallery');if(!gallery)return;
 const mobile=root.matchMedia('(max-width:599px)');
 let filter='all',indexOpen=false,current=0,chosen=[];
 const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g','g'];
-function range(lo,hi,unit){return Math.round(lo)+'–'+Math.round(hi)+' '+unit;}
+function range(lo,hi,unit){return roundBook(lo)+'–'+roundBook(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
 const nav=el('div',null,'salad-browser-nav'),previous=el('button','‹','salad-browser-arrow'),next=el('button','›','salad-browser-arrow'),position=el('span',null,'salad-browser-position'),browse=el('button','All salads','salad-browser-all'),overview=el('div',null,'salad-browser-index');
 previous.type=next.type=browse.type='button';previous.setAttribute('aria-label','Previous salad');next.setAttribute('aria-label','Next salad');position.setAttribute('aria-live','polite');browse.setAttribute('aria-expanded','false');overview.id='salad-overview';overview.setAttribute('role','region');overview.setAttribute('aria-label','Choose a salad');overview.hidden=true;previous.setAttribute('aria-controls','salad-gallery');next.setAttribute('aria-controls','salad-gallery');browse.setAttribute('aria-controls',overview.id);nav.append(position,browse);gallery.before(nav,overview);

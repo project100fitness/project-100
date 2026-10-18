@@ -2,12 +2,13 @@
 (function () {
   'use strict';
   var facts = [
-    [/^Juggernaut$/i, 'Chest & pressing', 'The recorded 3 × 85 lb bundle is used for chest presses and horizontal pushing.', null],
-    [/^Titan$/i, 'Rows & lat work', 'The recorded 3 × 65 lb bundle is used for back-focused pulling.', null],
-    [/^Enforcer$/i, 'Triceps work', 'The recorded 3 × 55 lb bundle is used for press-downs and extensions.', null],
-    [/^Viper$/i, 'Drop sets & finishers', 'The recorded 3 × 45 lb bundle is the reserve option for drop sets and finishers.', null],
-    [/^Scalpel$/i, 'Deltoid isolation', 'The recorded 3 × 35 lb bundle is used for precise shoulder isolation and warm-up work.', null],
-    [/^Twin Cobras$/i, 'Unilateral curls', 'Two separate 75 lb bands provide one band per hand for the recorded curl setup.', null],
+    [/^Juggernaut$/i, 'Chest & pressing', 'Three 85-labelled bands: 255 lb nominal in the recorded pressing bundle. Resistance and range are trainer-managed; this is not measured hand force.', null],
+    [/^Titan$/i, 'Current bundle identity', 'Four 75-labelled bands: 300 lb nominal. This label sum is not measured hand force; resistance is trainer-managed.', null],
+    [/^Enforcer$/i, 'Two matched sets', 'Two matched sets of two 65-labelled bands: 130 lb nominal per set. This is a configuration identity, not measured force.', null],
+    [/^Viper$/i, 'Current bundle identity', 'Four 45-labelled bands: 180 lb nominal. The trainer selects working resistance and progression.', null],
+    [/^Scalpel$/i, 'Current bundle identity', 'Four 35-labelled bands: 140 lb nominal. Labels do not establish force at a particular stretch.', null],
+    [/^Tricep Specialist$/i, 'Rope bundle', 'Three 55-labelled bands with THEFITGUY rope: 165 lb nominal, not measured hand force.', null],
+    [/^Twin Cobras$/i, 'Archived bundle identity', 'Historical two-band curl configuration. The current six-bundle directory supersedes this older snapshot.', null],
     [new RegExp("testofx", "i"), "Botanical vitality blend", "TestoFX combines fenugreek, ashwagandha and other botanicals with boron and compounds such as DIM. These are studied for stress and hormone-related pathways, but ingredient mechanisms do not establish a testosterone increase or muscle gain from the complete blend. This is your recorded daily botanical stage; morning timing itself is not a proven mechanism.", "https://ca.allmaxnutrition.com/products/testofx"],
     [new RegExp("boron", "i"), "Trace mineral", "Boron is a trace element studied in calcium, vitamin D and bone-mineral metabolism. The morning capsule supplies the recorded mineral amount; timing here is a routine anchor rather than a required workout window.", "https://www.newrootsherbal.com/index.php/shop/boron"],
     [new RegExp("lactobif", "i"), "Probiotic cultures", "LactoBif supplies live bacterial strains intended to support the intestinal microbiome and digestive function. Strain identity and viable count define the formula; the intermittent wake placement follows the recorded schedule.", "https://www.iherb.com/pr/p/69435"],
