@@ -1,7 +1,13 @@
 {
   "source": {
     "name": "GYM GEAR STRENGHT TRAINING RESISTANCE BANDS - PROJECT 100 MASTER VISUAL RECOGNITION DATABASE (COMPREHENSIVE) (1).pdf",
-    "sha256": "c72d4bb19b3ab7e7efd968f9cd70b6e35817d15e6f9a512fd632d41ed1047403"
+    "sha256": "c72d4bb19b3ab7e7efd968f9cd70b6e35817d15e6f9a512fd632d41ed1047403",
+    "current_correction": {
+      "edition": "Encyclopedia V3.3 / Guidebook V3.4, 18 October 2026",
+      "encyclopedia_page": 18,
+      "guidebook_page": 12,
+      "register": "C11"
+    }
   },
   "kuzaro": {
     "owned_kit_count": 4,
@@ -46,66 +52,68 @@
         "band_lb": 85,
         "color": "Solid black",
         "focus": "Chest",
-        "use": "Chest presses, standing presses and horizontal pushing."
+        "use": "Recorded pressing bundle; exercise selection and load are trainer-managed."
       },
       {
         "name": "Titan",
-        "lb": 195,
-        "band_count": 3,
-        "band_lb": 65,
-        "color": "Dark gray",
+        "lb": 300,
+        "band_count": 4,
+        "band_lb": 75,
+        "color": "Very dark gray / soft black",
         "focus": "Back",
-        "use": "Rows, lat pull-downs and posterior-chain work."
+        "use": "Recorded four-band bundle; labels do not establish force at the hands."
       },
       {
         "name": "Enforcer",
+        "lb": 130,
+        "band_count": 2,
+        "band_lb": 65,
+        "color": "Dark gray",
+        "focus": "Matched sets",
+        "use": "Two matched sets, two 65-labelled bands in each set.",
+        "set_count": 2,
+        "per_set": true
+      },
+      {
+        "name": "Tricep Specialist",
         "lb": 165,
         "band_count": 3,
         "band_lb": 55,
         "color": "Medium gray",
         "focus": "Triceps",
-        "use": "Overhand/underhand extensions, press-downs and lockout work."
+        "use": "Three 55-labelled bands with THEFITGUY rope."
       },
       {
         "name": "Viper",
-        "lb": 135,
-        "band_count": 3,
+        "lb": 180,
+        "band_count": 4,
         "band_lb": 45,
         "color": "Medium-light gray",
         "focus": "Reserve / drop sets",
-        "use": "Shoulder raises, drop sets and finisher work."
+        "use": "Recorded four-band bundle; progression is trainer-managed."
       },
       {
         "name": "Scalpel",
-        "lb": 105,
-        "band_count": 3,
+        "lb": 140,
+        "band_count": 4,
         "band_lb": 35,
         "color": "Light gray",
         "focus": "Delts / isolation",
-        "use": "Deltoid flys, precise isolation and warm-up sets."
-      },
-      {
-        "name": "Twin Cobras",
-        "lb": 75,
-        "band_count": 2,
-        "band_lb": 75,
-        "color": "Very dark gray / soft black",
-        "focus": "Biceps / unilateral",
-        "per_hand": true,
-        "use": "Two separate bands for unilateral curls, one band per hand with individual factory clips."
+        "use": "Recorded four-band bundle; progression is trainer-managed."
       }
     ],
     "bundle_modifiers": {
       "tape": "Black Renfrew cloth tape at the joint loops, replacing rigid plastic ties.",
-      "connection": "Eight JRSGS carabiners in the documented bundle setup. Twin Cobras use individual factory clips."
-    }
+      "connection": "Connections vary by setup. Historical connector counts are not working-load ratings; use the trainer-confirmed configuration."
+    },
+    "rating_basis": "Nominal band-label sums only, not measured hand force, constant load or hardware working-load ratings."
   },
   "records": [
     {
       "id": "kuzaro",
-      "name": "KUZARO \u00b7 Multi-band setup",
+      "name": "KUZARO · Multi-band setup",
       "category": "resistance",
-      "badge": "4 KITS \u00b7 360 LB SET",
+      "badge": "4 KITS · 360 LB SET",
       "description": "Yellow connection webbing with black KUZARO lettering and thick black D-rings. The supplied manifest lists six tubing grades from light gray to solid black.",
       "page": 1
     },
@@ -114,7 +122,7 @@
       "name": "HPYGN Heavy-Duty Compression System",
       "category": "resistance",
       "badge": "330 LB SET",
-      "description": "Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Owner-confirmed short-band configuration: two 65 lb bands per side, paired twice (four bands total), shortened at the low Iron Tower anchor and routed into the Tribe bar\u2019s rotating eyelets. Nominal ratings total 130 lb per side and 260 lb combined; resistance changes with stretch.",
+      "description": "Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Owner-confirmed short-band configuration: two 65 lb bands per side, paired twice (four bands total), shortened at the low Iron Tower anchor and routed into the Tribe bar’s rotating eyelets. Nominal ratings total 130 lb per side and 260 lb combined; resistance changes with stretch.",
       "page": 1
     },
     {
@@ -169,7 +177,7 @@
       "id": "tribe",
       "name": "Tribe Lifting Modular Resistance Bar",
       "category": "structural",
-      "badge": "3 PIECES \u00b7 360\u00b0 SWIVELS",
+      "badge": "3 PIECES · 360° SWIVELS",
       "description": "Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.",
       "page": 2
     },
@@ -193,7 +201,7 @@
       "id": "sled",
       "name": "THEFITGUY Sled Pulling Belt & Straps Kit",
       "category": "structural",
-      "badge": "2 \u00d7 9.8 FT \u00b7 4 HOOKS",
+      "badge": "2 × 9.8 FT · 4 HOOKS",
       "description": "Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.",
       "page": 2
     },
@@ -201,7 +209,7 @@
       "id": "oak",
       "name": "Oak-Sports Heavy-Duty Carabiners",
       "category": "connections",
-      "badge": "25 kN \u00b7 5,600 LB",
+      "badge": "25 kN · 5,600 LB",
       "description": "Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.",
       "page": 2
     },
@@ -209,7 +217,7 @@
       "id": "jrsgs",
       "name": "JRSGS Rock Locking Clips",
       "category": "connections",
-      "badge": "25 kN \u00b7 2 VARIANTS",
+      "badge": "25 kN · 2 VARIANTS",
       "description": "Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.",
       "page": 2
     },
@@ -233,7 +241,7 @@
       "id": "nilight",
       "name": "NILIGHT Soft Loop Anchor Straps",
       "category": "anchors",
-      "badge": "1.7 \u00d7 17 IN",
+      "badge": "1.7 × 17 IN",
       "description": "Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.",
       "page": 3
     },
@@ -250,7 +258,7 @@
       "name": "jooeer 3-in-1 Nested Foam Roller Set",
       "category": "recovery",
       "badge": "3 NESTED TIERS",
-      "description": "Outer: 18 \u00d7 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 \u00d7 3.9 in neon-orange roller with linear ridges. Core: 18 \u00d7 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.",
+      "description": "Outer: 18 × 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 × 3.9 in neon-orange roller with linear ridges. Core: 18 × 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.",
       "page": 3
     }
   ],

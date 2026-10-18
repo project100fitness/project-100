@@ -1,0 +1,950 @@
+{
+  "date": "2026-10-18",
+  "baseline_commit": "1d594db3ad44cdf5b3d8ca5410ab7843993b9fa8",
+  "responsive": {
+    "initial_phone_pages": 56,
+    "desktop_pages": 56,
+    "additional_phone_tablet_views": 30,
+    "widths": [
+      320,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "comparison": "No meaningful style changes on unchanged content; observed residual image/text rounding differences below 0.1 CSS px. Changed text and source links inspected separately.",
+    "final_phone_checks": [
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/biometrics.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/daily-pill-cards.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/exercises.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-meals.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-nutrition-notes.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-nutrition.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-baseline.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-biometrics.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-checklists.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-constraints.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-dose.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-fuel.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-gear.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-history.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-interactions.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-joints.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-labs.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-margins.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-meals.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-mission.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-monitoring.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-nutrition.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-pathways.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-progression.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-supplements.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-training.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-troubleshooting.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-reference.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v1.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v10.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v2.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v3.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v4.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v5.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vector-v6.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol-vectors.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-protocol.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/fit-workout.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-anchors.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-grips.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-gym.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-photos.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-recovery.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-resistance.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-rig.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-safety.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/gear-shop.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/guidebook.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/index.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/kinetics.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/library.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/liquid-intake.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/mega-salads.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/mineral-chemistry.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/project-goals.html",
+        "snap": "none",
+        "width": 390
+      },
+      {
+        "mainVisible": true,
+        "overflow": 0,
+        "page": "/project-story.html",
+        "snap": "none",
+        "width": 390
+      }
+    ],
+    "additional_views": [
+      {
+        "page": "biometrics.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 289
+      },
+      {
+        "page": "daily-pill-cards.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 566
+      },
+      {
+        "page": "exercises.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 563
+      },
+      {
+        "page": "fit-meals.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 287
+      },
+      {
+        "page": "fit-nutrition-notes.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 190
+      },
+      {
+        "page": "fit-nutrition.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 719
+      },
+      {
+        "page": "fit-protocol-baseline.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 254
+      },
+      {
+        "page": "fit-protocol-biometrics.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 478
+      },
+      {
+        "page": "fit-protocol-checklists.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 286
+      },
+      {
+        "page": "fit-protocol-constraints.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 196
+      },
+      {
+        "page": "fit-protocol-dose.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 622
+      },
+      {
+        "page": "fit-protocol-fuel.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 251
+      },
+      {
+        "page": "fit-protocol-gear.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 722
+      },
+      {
+        "page": "fit-protocol-history.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 197
+      },
+      {
+        "page": "fit-protocol-interactions.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 210
+      },
+      {
+        "page": "fit-protocol-joints.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 188
+      },
+      {
+        "page": "fit-protocol-labs.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 264
+      },
+      {
+        "page": "fit-protocol-margins.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 190
+      },
+      {
+        "page": "fit-protocol-meals.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 406
+      },
+      {
+        "page": "fit-protocol-mission.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 658
+      },
+      {
+        "page": "fit-protocol-monitoring.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 197
+      },
+      {
+        "page": "fit-protocol-nutrition.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 406
+      },
+      {
+        "page": "fit-protocol-pathways.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 658
+      },
+      {
+        "page": "fit-protocol-progression.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 190
+      },
+      {
+        "page": "fit-protocol-supplements.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 295
+      },
+      {
+        "page": "fit-protocol-training.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 239
+      },
+      {
+        "page": "fit-protocol-troubleshooting.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 231
+      },
+      {
+        "page": "fit-protocol-vector-reference.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 348
+      },
+      {
+        "page": "fit-protocol-vector-v1.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 301
+      },
+      {
+        "page": "fit-protocol-vector-v10.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 302
+      },
+      {
+        "page": "fit-protocol-vector-v2.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 271
+      },
+      {
+        "page": "fit-protocol-vector-v3.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 284
+      },
+      {
+        "page": "fit-protocol-vector-v4.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 274
+      },
+      {
+        "page": "fit-protocol-vector-v5.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 222
+      },
+      {
+        "page": "fit-protocol-vector-v6.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 300
+      },
+      {
+        "page": "fit-protocol-vectors.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 559
+      },
+      {
+        "page": "fit-protocol.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 362
+      },
+      {
+        "page": "fit-workout.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 231
+      },
+      {
+        "page": "gear-anchors.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 243
+      },
+      {
+        "page": "gear-grips.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 233
+      },
+      {
+        "page": "gear-gym.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 192
+      },
+      {
+        "page": "gear-photos.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 172
+      },
+      {
+        "page": "gear-recovery.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 185
+      },
+      {
+        "page": "gear-resistance.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 215
+      },
+      {
+        "page": "gear-rig.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 181
+      },
+      {
+        "page": "gear-safety.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 233
+      },
+      {
+        "page": "gear-shop.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 176
+      },
+      {
+        "page": "guidebook.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 352
+      },
+      {
+        "page": "index.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 248
+      },
+      {
+        "page": "kinetics.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 481
+      },
+      {
+        "page": "library.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 182
+      },
+      {
+        "page": "liquid-intake.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 497
+      },
+      {
+        "page": "mega-salads.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 422
+      },
+      {
+        "page": "mineral-chemistry.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 280
+      },
+      {
+        "page": "project-goals.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 210
+      },
+      {
+        "page": "project-story.html",
+        "width": 1440,
+        "overflow": 0,
+        "elements": 266
+      },
+      {
+        "page": "index.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 216
+      },
+      {
+        "page": "exercises.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 531
+      },
+      {
+        "page": "kinetics.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 449
+      },
+      {
+        "page": "gear-resistance.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 183
+      },
+      {
+        "page": "fit-nutrition.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 687
+      },
+      {
+        "page": "mega-salads.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 390
+      },
+      {
+        "page": "fit-protocol.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 326
+      },
+      {
+        "page": "fit-protocol-gear.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 686
+      },
+      {
+        "page": "fit-protocol-mission.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 622
+      },
+      {
+        "page": "guidebook.html",
+        "width": 320,
+        "overflow": 0,
+        "elements": 316
+      },
+      {
+        "page": "index.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 216
+      },
+      {
+        "page": "exercises.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 531
+      },
+      {
+        "page": "kinetics.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 449
+      },
+      {
+        "page": "gear-resistance.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 183
+      },
+      {
+        "page": "fit-nutrition.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 687
+      },
+      {
+        "page": "mega-salads.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 390
+      },
+      {
+        "page": "fit-protocol.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 326
+      },
+      {
+        "page": "fit-protocol-gear.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 686
+      },
+      {
+        "page": "fit-protocol-mission.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 622
+      },
+      {
+        "page": "guidebook.html",
+        "width": 430,
+        "overflow": 0,
+        "elements": 316
+      },
+      {
+        "page": "index.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 262
+      },
+      {
+        "page": "exercises.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 577
+      },
+      {
+        "page": "kinetics.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 495
+      },
+      {
+        "page": "gear-resistance.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 229
+      },
+      {
+        "page": "fit-nutrition.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 733
+      },
+      {
+        "page": "mega-salads.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 436
+      },
+      {
+        "page": "fit-protocol.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 376
+      },
+      {
+        "page": "fit-protocol-gear.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 736
+      },
+      {
+        "page": "fit-protocol-mission.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 672
+      },
+      {
+        "page": "guidebook.html",
+        "width": 768,
+        "overflow": 0,
+        "elements": 366
+      }
+    ]
+  },
+  "interactions": {
+    "direct_exercise_12": "passed; counter and route changed to 12/12",
+    "pilates_programme": "passed; Day 5 with 12 direct choices",
+    "muscle_group_carousel": "passed; Back advanced from 1–2 to 3–4 of 21",
+    "full_exercise_detail": "passed; image, setup, move, return, RGB muscle roles; close restored page",
+    "menu": "passed; page routes, downloads and contact links present",
+    "book_links": "passed; current 84-page Encyclopedia and 34-page Guidebook linked",
+    "bundle_popup": "passed; Titan four 75-labelled bands / 300 lb nominal",
+    "vertical_scroll": "free; document scroll-snap-type none",
+    "floating_controls": "visible",
+    "console_errors": []
+  },
+  "local_links": {
+    "references": 5013,
+    "missing": []
+  },
+  "physical_devices": {
+    "Android_Instagram_browser": "not available; not tested",
+    "iPhone_Safari": "not available; not tested"
+  },
+  "scope": "Current correction register C01–C11 and added companion material reconciled. Dated archived editions/illustrations retained. No new medical claims, scan results, measured force data or video review completion inferred."
+}
