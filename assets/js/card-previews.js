@@ -20,7 +20,7 @@
   controls.querySelectorAll('[data-preview-step]').forEach(b=>b.addEventListener('click',()=>step(Number(b.dataset.previewStep),false)));
   ['pointerdown','touchstart','wheel','keydown'].forEach(name=>rail.addEventListener(name,pause,{passive:true}));
   rail.addEventListener('focusin',pause);rail.addEventListener('mouseenter',()=>state.inside=true);rail.addEventListener('mouseleave',()=>{state.inside=false;state.last=performance.now();});
-  rail.addEventListener('scroll',update,{passive:true});new MutationObserver(update).observe(rail,{childList:true});if(window.ResizeObserver)new ResizeObserver(update).observe(rail);
+  rail.addEventListener('scroll',update,{passive:true});new MutationObserver(()=>{if(rail.hasAttribute('data-session-choices')&&rail.clientWidth){const active=rail.querySelector('[aria-current=step]');if(active){const a=active.getBoundingClientRect(),r=rail.getBoundingClientRect();if(a.left<r.left)rail.scrollTo({left:rail.scrollLeft+a.left-r.left,behavior:'auto'});else if(a.right>r.right)rail.scrollTo({left:rail.scrollLeft+a.right-r.right,behavior:'auto'});}}update();}).observe(rail,{childList:true});if(window.ResizeObserver)new ResizeObserver(update).observe(rail);
   state.step=step;toggleLabel();update();
  }
  function scan(){document.querySelectorAll('[data-group-carousel],.exercise-entry-grid,[data-session-choices]').forEach(attach);}
