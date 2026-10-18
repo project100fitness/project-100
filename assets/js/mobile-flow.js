@@ -1,31 +1,54 @@
-/* Fast vertical swipes advance one reading view; deliberate drags stay native. */
-(function(){
- 'use strict';
- var mobile=window.matchMedia('(max-width:719px),(max-width:1023px) and (pointer:coarse)'),gesture=null;
- var skip='a,button,input,select,textarea,summary,dialog,.ingredient-tip,.rail,[data-carousel],[data-recview],.salad-gallery,.scroller__track,.tabs';
- function offset(){var h=document.getElementById('siteHead'),bar=document.querySelector('.rail-toggle'),off=h&&h.getAttribute('data-hidden')!=='true'?h.getBoundingClientRect().height+12:12;if(bar&&bar.getBoundingClientRect().height)off=Math.max(off,bar.getBoundingClientRect().bottom+12);return off;}
- function destination(start,dir){
-  var off=offset(),view=Math.max(180,window.innerHeight-off-24),max=Math.max(0,document.documentElement.scrollHeight-window.innerHeight),stops=[0,max];
-  document.querySelectorAll('.main>.hud-hero,.main>.page-hero,.main>.home-hero,.main>section,.main .hud-folder,.main .goalmeter').forEach(function(el){
-   var r=el.getBoundingClientRect();if(!r.height)return;var top=Math.max(0,Math.min(max,window.scrollY+r.top-off)),end=Math.min(max,top+Math.max(0,r.height-view));
-   stops.push(top);for(var y=top+view;y<end;y+=view)stops.push(y);if(end>top+40)stops.push(end);
-  });
-  stops.sort(function(a,b){return a-b;});
-  var next=dir>0?stops.filter(function(y){return y>start+40;})[0]:stops.filter(function(y){return y<start-40;}).pop();
-  if(next===undefined)next=dir>0?max:0;
-  return Math.max(0,Math.min(max,dir>0?Math.min(next,start+view):Math.max(next,start-view)));
+/* Shared phone layout. Native scrolling; desktop content and routes are retained. */
+(function(){'use strict';
+ const mq=matchMedia('(max-width:767px),(max-width:1023px) and (pointer:coarse)');
+ const root=document.documentElement, main=document.querySelector('main');
+ const head=document.querySelector('.site-head__bar'), links=[...document.querySelectorAll('.site-head .tabs a')];
+ if(head&&links.length){const select=document.createElement('select');select.className='mobile-site-switch';select.setAttribute('aria-label','Website section');links.forEach(a=>{const o=new Option(a.textContent.trim(),a.href);o.selected=a.getAttribute('aria-current')==='page';select.add(o);});head.insertBefore(select,head.querySelector('.site-head__actions'));select.addEventListener('change',()=>location.assign(select.value));}
+ root.classList.add('mobile-ready');
+ document.getElementById('menuBtn')?.setAttribute('aria-label','Open menu');
+ const view=document.querySelector('[data-band-training]');
+ function selector(label,cls){const l=document.createElement('label');l.className=cls||'';l.append(document.createTextNode(label));const s=document.createElement('select');l.append(s);return[l,s];}
+ if(view&&view.querySelector('.session-config')){
+  const box=document.createElement('div');box.className='mobile-training-controls';const[ml,ms]=selector('PROGRAMME'),[dl,ds]=selector('TRAINING DAY');box.append(ml,dl);view.querySelector('.session-config').before(box);
+  const[el,es]=selector('EXERCISE · CHOOSE ANY OF THE 12','mobile-exercise-picker');view.querySelector('.active-exercise').prepend(el);
+  let signature='';function sync(){const modes=[...view.querySelectorAll('[data-mode]')],days=[...view.querySelectorAll('[data-day]')],ex=[...view.querySelectorAll('[data-exercise-index]')];const key=modes.map(b=>b.getAttribute('aria-pressed')).join()+days.map(b=>b.textContent+b.getAttribute('aria-pressed')).join()+ex.map(b=>b.textContent+b.getAttribute('aria-current')).join();if(key===signature)return;signature=key;
+   ms.replaceChildren(...modes.map(b=>new Option(b.dataset.mode==='focused'?'3-day focus':'2-day Pilates',b.dataset.mode,false,b.getAttribute('aria-pressed')==='true')));
+   ds.replaceChildren(...days.map(b=>new Option(b.textContent,b.dataset.day,false,b.getAttribute('aria-pressed')==='true')));
+   es.replaceChildren(...ex.map(b=>new Option((b.querySelector('span')?.textContent+' · '+b.querySelector('div')?.childNodes[0]?.textContent).trim(),b.dataset.exerciseIndex,false,b.getAttribute('aria-current')==='step')));
+  }
+  ms.addEventListener('change',()=>view.querySelector('[data-mode="'+ms.value+'"]').click());ds.addEventListener('change',()=>view.querySelector('[data-day="'+ds.value+'"]').click());es.addEventListener('change',()=>view.querySelector('[data-exercise-index="'+es.value+'"]').click());
+  new MutationObserver(sync).observe(view.querySelector('.workbench'),{subtree:true,childList:true,attributes:true,attributeFilter:['aria-current','aria-pressed']});sync();
+  view.querySelectorAll('[data-training-panel]').forEach(b=>{b.dataset.desktopLabel=b.textContent;});
  }
- document.addEventListener('touchstart',function(e){
-  gesture=null;if(!mobile.matches||e.touches.length!==1||document.querySelector('dialog[open]')||e.target.closest(skip))return;
-  var t=e.touches[0];gesture={x:t.clientX,y:t.clientY,scroll:window.scrollY,time:performance.now()};
- },{passive:true});
- document.addEventListener('touchmove',function(e){if(e.touches.length!==1)gesture=null;},{passive:true});
- document.addEventListener('touchcancel',function(){gesture=null;},{passive:true});
- document.addEventListener('touchend',function(e){
-  var g=gesture;gesture=null;if(!g||!mobile.matches||!e.changedTouches.length)return;
-  var t=e.changedTouches[0],dy=t.clientY-g.y,dx=t.clientX-g.x,elapsed=performance.now()-g.time;
-  if(elapsed>300||Math.abs(dy)<60||Math.abs(dy)<Math.abs(dx)*1.5||Math.abs(dy)/Math.max(1,elapsed)<.45)return;
-  var target=destination(g.scroll,dy<0?1:-1);
-  requestAnimationFrame(function(){window.scrollTo({top:window.scrollY,behavior:'instant'});window.scrollTo({top:target,behavior:'smooth'});});
- },{passive:true});
+
+ const reader=document.querySelector('.guide-main.reader'),readerCards=reader?[...reader.querySelectorAll('.print-page .swipe-card')]:[];
+ if(readerCards.length>1){
+  const controls=document.createElement('nav');controls.className='mobile-reader-controls';controls.setAttribute('aria-label','Browse guide exercises');
+  const[label,picker]=selector('CHOOSE AN EXERCISE');const row=document.createElement('div'),prev=document.createElement('button'),next=document.createElement('button'),count=document.createElement('span');prev.textContent='← Previous';next.textContent='Next →';prev.type=next.type='button';count.setAttribute('aria-live','polite');row.append(prev,count,next);controls.append(label,row);reader.querySelector('.print-top').after(controls);
+  readerCards.forEach((card,i)=>picker.add(new Option((i+1)+' · '+card.querySelector('h4').textContent,i)));let index=0;
+  function show(indexNext){index=Math.max(0,Math.min(readerCards.length-1,indexNext));picker.value=String(index);readerCards.forEach((c,i)=>c.classList.toggle('mobile-reader-card-hidden',i!==index));reader.querySelectorAll('.print-page').forEach(page=>page.classList.toggle('mobile-reader-page-hidden',!page.contains(readerCards[index])));count.textContent=(index+1)+' / '+readerCards.length;prev.disabled=index===0;next.disabled=index===readerCards.length-1;}
+  picker.addEventListener('change',()=>show(Number(picker.value)));prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));show(0);
+ }
+ const folds=[];
+ function foldContent(node,title,open){if(!node||node.closest('.mobile-detail'))return;const d=document.createElement('details');d.className='mobile-detail';d.open=!!open;const s=document.createElement('summary');s.textContent=title;const wrap=document.createElement('div');node.before(d);d.append(s,wrap);wrap.append(node);folds.push({d,node});}
+ function unwrap(){folds.splice(0).reverse().forEach(({d,node})=>{d.before(node);d.remove();});}
+ function enhanceCard(){if(!mq.matches)return;document.querySelectorAll('.swipe-card .cues').forEach(n=>foldContent(n,'Setup, movement & return',true));document.querySelectorAll('.swipe-card .roles').forEach(n=>foldContent(n,'Muscles · red / blue / green',false));}
+ const deck=document.querySelector('#p100-exercise-deck');if(deck)new MutationObserver(enhanceCard).observe(deck,{childList:true});
+ const folders=[...document.querySelectorAll('main .hud-folder')].filter(f=>f.querySelector(':scope > .hud-folder__body')&&!f.closest('[data-band-training]'));
+ folders.forEach((f,i)=>{const body=f.querySelector(':scope > .hud-folder__body'),h=f.querySelector(':scope > .hud-folder__head'),title=h?.querySelector('h2,h3')?.textContent.trim()||h?.textContent.trim();if(!title)return;const b=document.createElement('button');b.className='mobile-folder-toggle';b.textContent=title;body.id=body.id||'mobile-folder-body-'+i;b.setAttribute('aria-controls',body.id);b.setAttribute('aria-expanded','false');f.prepend(b);f.classList.add('mobile-folder');f.dataset.mobileOpen='false';b.addEventListener('click',()=>{const open=f.dataset.mobileOpen!=='true';f.dataset.mobileOpen=String(open);b.setAttribute('aria-expanded',String(open));window.dispatchEvent(new Event('resize'));});});
+ function revealHash(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch(_){return;}if(!id)return;const target=document.getElementById(id);if(!target)return;target.closest('.mobile-folder')?.querySelector('.mobile-folder-toggle[aria-expanded=false]')?.click();let p=target.parentElement;while(p){if(p.tagName==='DETAILS')p.open=true;p=p.parentElement;}}
+ function layout(){unwrap();view?.querySelectorAll('[data-training-panel]').forEach(b=>{if(b.dataset.desktopLabel)b.textContent=mq.matches?({sessions:'Train',library:'Library',downloads:'Guides'}[b.dataset.trainingPanel]):b.dataset.desktopLabel;});if(!mq.matches)return;enhanceCard();
+  document.querySelectorAll('.weekly-notes').forEach(n=>foldContent(n,'Weekly notes & training log'));
+  document.querySelectorAll('.goalmeter').forEach(n=>foldContent(n,'Progress & measurements'));
+  document.querySelectorAll('.kin-connected-gallery').forEach(n=>foldContent(n,'Setup photographs & band directory'));
+  document.querySelectorAll('.kin-vector-grid').forEach(n=>foldContent(n,'Anchor zones · high / middle / low'));
+  document.querySelectorAll('.kin-steps').forEach(n=>foldContent(n,'Session flow · prepare to record'));
+  document.querySelectorAll('.kin-bundles').forEach(n=>foldContent(n,'Band combinations & equipment'));
+  document.querySelectorAll('.kin-mounts').forEach(n=>foldContent(n,'Mounting positions · view setups'));
+  document.querySelectorAll('.kin-pilates-atlas').forEach(n=>foldContent(n,'Pilates movement atlas'));
+  document.querySelectorAll('.site-foot__inner').forEach(n=>foldContent(n,'Explore PROJECT 100 & contact'));
+  revealHash();
+ }
+ window.addEventListener('beforeprint',unwrap);window.addEventListener('afterprint',layout);
+ mq.addEventListener('change',layout);window.addEventListener('hashchange',revealHash);document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a)setTimeout(revealHash,0);});layout();
 })();
