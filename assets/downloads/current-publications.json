@@ -1,0 +1,23 @@
+{
+  "editionDate": "2026-10-18",
+  "publications": [
+    {
+      "kind": "guidebook",
+      "version": "3.4",
+      "date": "2026-10-18",
+      "pages": 34,
+      "bytes": 4239061,
+      "sha256": "8d819f4cf9bb4fdd1aca033ffcbe735cc835f0c04765782789cf8ba06a8966a8",
+      "path": "assets/downloads/project-100-guidebook-v3-4-2026-10-18.pdf"
+    },
+    {
+      "kind": "encyclopedia",
+      "version": "3.3",
+      "date": "2026-10-18",
+      "pages": 84,
+      "bytes": 28798447,
+      "sha256": "8dd95ea3bdae172f94b8482feb9743ad22b23e6b8a861ac1051cbcacc505f4e7",
+      "path": "assets/downloads/project-100-encyclopedia-v3-3-2026-10-18.pdf"
+    }
+  ]
+}
