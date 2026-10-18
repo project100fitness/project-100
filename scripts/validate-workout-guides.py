@@ -25,6 +25,7 @@ for p in paths:
   u=urlsplit(ref)
   if u.scheme or u.netloc or not u.path:continue
   target=root/unquote(u.path).lstrip('/') if u.path.startswith('/') else p.parent/unquote(u.path)
+  if target.is_dir():target=target/'index.html'
   if not target.is_file():missing.append((str(p.relative_to(root)),ref))
 assert not missing,missing
 for row in report:
