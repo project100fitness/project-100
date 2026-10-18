@@ -1,0 +1,23 @@
+[
+  {
+    "filename": "project100-master-analysis-reference.pdf",
+    "pages": 188,
+    "images": 0,
+    "text_characters": 440408,
+    "sha256": "e33fd4a0de844d4242908f260d4d432183f4bfacdb6bb7ac999f65f2cffbfa67"
+  },
+  {
+    "filename": "project100-encyclopedia-update.pdf",
+    "pages": 10,
+    "images": 0,
+    "text_characters": 27007,
+    "sha256": "954aad1b2ba87c3f08d1be2f5f8dc0e700fc8b2e52c585cc309c289a4a4657d4"
+  },
+  {
+    "filename": "project100-guidebook-update.pdf",
+    "pages": 3,
+    "images": 0,
+    "text_characters": 6114,
+    "sha256": "c3a17faff0ace1c226d97aca6983093b8876cef7c7c53948c7e691b07b66bbbf"
+  }
+]

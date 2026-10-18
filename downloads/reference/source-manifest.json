@@ -1,0 +1,142 @@
+[
+  {
+    "id": "S01",
+    "title": "Current training database",
+    "path": "downloads/kinetics/training-plan-v0.3.json",
+    "sha256": "524052b671f8b4665fe3a6eaf7f7a9b72f26b2a72bbcd43e677254c5133c4347",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S02",
+    "title": "Recording source catalogue",
+    "path": "downloads/kinetics/exercise-source-catalogue.csv",
+    "sha256": "e639a61696e5e36383e9373a273eb318fd259d96fff6efff621320b36816ad8a",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S03",
+    "title": "Salad recipe model",
+    "path": "assets/js/salad-cards.js",
+    "sha256": "f888e6cfef1d93c5b7d48e7b21905ecc9424d30b52dddac6eee70e9797893db7",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S04",
+    "title": "Meal story records",
+    "path": "assets/js/meal-stories.js",
+    "sha256": "3c87f79f3114cbc336d55b33966c56ce22a75172ebea103fd002100fac5865e0",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S05",
+    "title": "Earlier salad photo estimates",
+    "path": "assets/js/mega-salads.js",
+    "sha256": "ac2dcf459df14c48e07d243ce5d236459eb7038c7c301871e144897b88a70cdb",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S06",
+    "title": "Nutrition overview",
+    "path": "fit-nutrition.html",
+    "sha256": "5f1a16d03167f198883091eb72b3c956978f98da0fed0dda6e735fddfcd3501e",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S07",
+    "title": "Nutrition source notes",
+    "path": "fit-nutrition-notes.html",
+    "sha256": "52732ba47996673b4a6e7bf88671379c8d5f14baa75c717c2fd82c1e3c8e9930",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S08",
+    "title": "Kinetics equipment and movement reference",
+    "path": "kinetics.html",
+    "sha256": "eb3d1ba184d654fffefaabd30498fcb945122b8a9a07426c96da56e4c90ee927",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S09",
+    "title": "Gear registry",
+    "path": "assets/data/gear-database.json",
+    "sha256": "01c51826c28f16b3366b7b5f4b747eae78257142206f147c5a53f15a65399951",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S10",
+    "title": "Current reported metrics",
+    "path": "assets/data/current-metrics.json",
+    "sha256": "d8f464879ffdf35c796f8aa6e18188cd1c2c0f667c90cac197fa3cffb7a6efc9",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S11",
+    "title": "Liquid intake registry",
+    "path": "assets/data/vector-registry.json",
+    "sha256": "6c3f8becd14ec2e6558d04fdc762c00ca873ee237549f0f4ec9963c68d37f3c4",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S12",
+    "title": "Daily guide website",
+    "path": "guidebook.html",
+    "sha256": "c89df6486f24827987ab72f7ad4aa2fa0a00075b413a2d86f0cf5d699440aa19",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S13",
+    "title": "Protocol website",
+    "path": "fit-protocol.html",
+    "sha256": "c342d6957e2803c3b6c3c6447de556b85fbcfeefc2cfa2a4e589184ba8137f9b",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S14",
+    "title": "Archived Encyclopedia V3 2",
+    "path": "assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf",
+    "sha256": "1e4ac41be813a4523a4835eba3bd7da8d9ac870d57aee5a7b346b177ad5b0bd8",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S15",
+    "title": "Archived Guidebook V3 3",
+    "path": "assets/downloads/project-100-guidebook-v3-3-2026-10-06.pdf",
+    "sha256": "d21aa4f83dbe7982d3b5777be2c440cf18ed5aee5d2caea310b1bcc23ebc2598",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S16",
+    "title": "Current PDF build report",
+    "path": "downloads/kinetics/pdf-build-report.json",
+    "sha256": "ac5bcc0cc222312746a9785dc64982f97c9a6666030eb2c19c41ff60b802ae1d",
+    "source": "website snapshot"
+  },
+  {
+    "id": "S17",
+    "title": "Media inventory",
+    "path": "video_inventory.csv",
+    "sha256": "b93ffccf5087be29f17616eb071b8e99e865f5a5945b76bb3c1277159ba1fc1c",
+    "source": "local analysis archive"
+  },
+  {
+    "id": "S18",
+    "title": "Long recording review register",
+    "path": "full_length_review.csv",
+    "sha256": "5d59e94ccaec76bbaaacaa73902beb88369f5179a3069c9b048913a9a384eb8e",
+    "source": "local analysis archive"
+  },
+  {
+    "id": "S19",
+    "title": "Early sampled observations",
+    "path": "edition_processing/movement_catalogue_with_anatomy.json",
+    "sha256": "6258303a7b6dae3fce33aec02f2c9c6e4fd11b3a11e08f0c439e843eb684de77",
+    "source": "local analysis archive"
+  },
+  {
+    "id": "S20",
+    "title": "First pass limits",
+    "path": "README_REVIEW_STATUS.md",
+    "sha256": "fbe17c0fc41ad9229159f0043c540160863b2f0c9779dc64b4855803f3bf9cd8",
+    "source": "local analysis archive"
+  }
+]
