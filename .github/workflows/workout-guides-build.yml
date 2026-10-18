@@ -35,6 +35,7 @@ jobs:
         run: |
           node --check assets/js/training-state.js
           node --check assets/js/p100-band-training.js
+          node --check assets/js/kinetics-showcase.js
           node --check assets/js/workout-guides.js
           node scripts/check-download-drawer.cjs
       - name: Build the complete illustrated edition

@@ -4,10 +4,11 @@ from urllib.parse import urlsplit,unquote
 import json,re
 from pypdf import PdfReader
 root=Path(__file__).resolve().parent.parent;folder=root/'downloads/kinetics';db=json.loads((folder/'training-plan-v0.3.json').read_text('utf-8'));report=json.loads((folder/'pdf-build-report.json').read_text('utf-8'))
-assert len(db['exercises'])==25 and len(db['recordedVariants'])==80
+assert len(db['exercises'])==31 and len(db['recordedVariants'])==80
 assert sum(len(v['sources']) for v in db['recordedVariants'])==173
-assert all(len(d['slots'])==6 for d in db['days'] if d['slots'])
-by={e['id']:e for e in db['exercises']}
+assert all(len(d['slots'])==12 and len({slot[0] for slot in d['slots']})==12 for d in db['days'] if d['slots'])
+by={e['id']:e for e in db['exercises']};all_by={e['id']:e for e in db['recordedVariants']};all_by.update(by)
+assert all(len({all_by[slot[0]]['art'] for slot in d['slots']})==12 for d in db['days'] if d['slots'])
 assert all(by[s[0]]['resistance'].get('system')=='hpygn-pilates' for d in db['days'] if d['day'] in [5,6] for s in d['slots'])
 for e in db['exercises']+db['recordedVariants']:
  if e.get('art'):assert (root/'assets/media/workout-guides'/e['art']).is_file(),e['art']

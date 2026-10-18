@@ -1,0 +1,3108 @@
+[
+  {
+    "name": "focused-days",
+    "kind": "focused",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "press",
+            "caption": "Chest / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "standing-side-line-unilateral-draw",
+            "caption": "Chest / 1 planned set / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "standing-inclined-two-hand-single-handle-curl",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "floor-kneeling-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-high-front-wide-arm-sweep",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-inclined-high-rear-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "pressdown",
+            "caption": "Triceps / 2 planned sets / 8-12",
+            "number": 7
+          },
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "inclined-overhead-drive",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "seated-low-rear-arm-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "kneeling-supported-forward-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "standing-shoulder-bar-squat-bow",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 controlled repetitions",
+            "number": 1
+          },
+          {
+            "id": "hamstring-curl",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 each side",
+            "number": 2
+          },
+          {
+            "id": "front-waist-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "low-back-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "high-front-draw-lateral-squat",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-backward-lean-high-front-paired-draw",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "shoulder-braced-torso-bow",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "standing-high-front-draw-leg-lift",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-two-hand-single-handle-side-draw",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-held-torso-fold",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "box-kneeling-unilateral-overhead-drive",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "standing-overhead-held-torso-lean",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "high-front-downward-arm-drive",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "high-front-two-hand-draw",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-paired-wide-arm-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "bench-straddled-lateral-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "supported-high-front-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "low-side-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-inclined-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "standing-low-side-forearm-rotation",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "bench-straddled-low-rear-arm-drive",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-low-front-unilateral-short-draw",
+            "caption": "DAY 1 / Low-line elbow extension / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-unilateral-high-side-band-draw-hold",
+            "caption": "DAY 1 / Loaded-line hold / balance sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-kneeling-paired-high-rear-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "box-kneeling-overhead-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-supported-high-rear-downward-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-unilateral-band-overhead-arm-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-alternating-high-front-draw",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-paired-overhead-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-two-hand-single-handle-low-rear-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-unilateral-low-rear-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-straddled-overhead-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-overhead-drive",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-unilateral-high-rear-overhead-drive",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-two-hand-single-band-downward-draw",
+            "caption": "DAY 1 / Shared-handle downward draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-two-hand-single-band-pressdown-draw",
+            "caption": "DAY 1 / Shared-handle downward draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "high-front-draw-low-base",
+            "caption": "DAY 2 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-unilateral-band-overhead-arm-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-two-hand-single-band-overhead-arm-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-unilateral-band-overhead-hold-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-low-line-rearward-drive",
+            "caption": "DAY 2 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "box-kneeling-shoulder-braced-torso-fold",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-shoulder-bar-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-high-rear-upper-back-braced-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "upper-back-braced-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "deep-squat-two-hand-single-handle-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-unilateral-low-line-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-low-base-unilateral-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-inclined-low-line-drive",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-unilateral-high-front-band-curl-draw",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "box-seated-two-hand-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-front-two-hand-draw-squat",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "sandbag-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "sandbag-kneeling-unilateral-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "sandbag-supported-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-unilateral-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "bench-supported-rearward-arm-movement",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-paired-curl-draw",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-mid-side-bar-draw",
+            "caption": "DAY 3 / Side-line bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-two-hand-high-rear-overhead-drive",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "upper-back-braced-arm-opening",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-high-line-sweep",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-high-rear-upper-back-braced-arm-opening",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "curl",
+            "caption": "Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "full-body",
+    "kind": "fullbody",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 2 planned sets / 8-12",
+            "number": 1
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 2 planned sets / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 5
+          },
+          {
+            "id": "pilates-row",
+            "caption": "Back / 2 planned sets / 8-12 each side",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 2 planned sets / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 1 planned set / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 1 planned set / 8-12",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 1 planned set / 8-12 each side",
+            "number": 5
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-row",
+            "caption": "Back / 1 planned set / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "weekly-planner",
+    "kind": "weekly",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Weekly training log",
+        "cards": []
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "press",
+            "caption": "Chest / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "standing-side-line-unilateral-draw",
+            "caption": "Chest / 1 planned set / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "standing-inclined-two-hand-single-handle-curl",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "floor-kneeling-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-high-front-wide-arm-sweep",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-inclined-high-rear-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "pressdown",
+            "caption": "Triceps / 2 planned sets / 8-12",
+            "number": 7
+          },
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "inclined-overhead-drive",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "seated-low-rear-arm-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "kneeling-supported-forward-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "standing-shoulder-bar-squat-bow",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 controlled repetitions",
+            "number": 1
+          },
+          {
+            "id": "hamstring-curl",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 each side",
+            "number": 2
+          },
+          {
+            "id": "front-waist-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "low-back-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "high-front-draw-lateral-squat",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-backward-lean-high-front-paired-draw",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "shoulder-braced-torso-bow",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "standing-high-front-draw-leg-lift",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-two-hand-single-handle-side-draw",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-held-torso-fold",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "box-kneeling-unilateral-overhead-drive",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "standing-overhead-held-torso-lean",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "high-front-downward-arm-drive",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "high-front-two-hand-draw",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-paired-wide-arm-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "bench-straddled-lateral-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "supported-high-front-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "low-side-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-inclined-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "standing-low-side-forearm-rotation",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "bench-straddled-low-rear-arm-drive",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 2 planned sets / 8-12",
+            "number": 1
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 2 planned sets / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 5
+          },
+          {
+            "id": "pilates-row",
+            "caption": "Back / 2 planned sets / 8-12 each side",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 2 planned sets / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 1 planned set / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 1 planned set / 8-12",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 1 planned set / 8-12 each side",
+            "number": 5
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-row",
+            "caption": "Back / 1 planned set / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "complete-guide",
+    "kind": "book",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "press",
+            "caption": "Chest / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "standing-side-line-unilateral-draw",
+            "caption": "Chest / 1 planned set / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "standing-inclined-two-hand-single-handle-curl",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "floor-kneeling-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-high-front-wide-arm-sweep",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-inclined-high-rear-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "pressdown",
+            "caption": "Triceps / 2 planned sets / 8-12",
+            "number": 7
+          },
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "inclined-overhead-drive",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "seated-low-rear-arm-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "kneeling-supported-forward-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "standing-shoulder-bar-squat-bow",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 controlled repetitions",
+            "number": 1
+          },
+          {
+            "id": "hamstring-curl",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 each side",
+            "number": 2
+          },
+          {
+            "id": "front-waist-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "low-back-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "high-front-draw-lateral-squat",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-backward-lean-high-front-paired-draw",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "shoulder-braced-torso-bow",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "standing-high-front-draw-leg-lift",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-two-hand-single-handle-side-draw",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-held-torso-fold",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "box-kneeling-unilateral-overhead-drive",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "standing-overhead-held-torso-lean",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "high-front-downward-arm-drive",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "high-front-two-hand-draw",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-paired-wide-arm-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "bench-straddled-lateral-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "supported-high-front-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "low-side-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-inclined-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "standing-low-side-forearm-rotation",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "bench-straddled-low-rear-arm-drive",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-low-front-unilateral-short-draw",
+            "caption": "DAY 1 / Low-line elbow extension / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-unilateral-high-side-band-draw-hold",
+            "caption": "DAY 1 / Loaded-line hold / balance sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-kneeling-paired-high-rear-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "box-kneeling-overhead-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-supported-high-rear-downward-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-unilateral-band-overhead-arm-drive",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-alternating-high-front-draw",
+            "caption": "DAY 1 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-paired-overhead-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-two-hand-single-handle-low-rear-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-unilateral-low-rear-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "bench-straddled-overhead-extension",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-overhead-drive",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-unilateral-high-rear-overhead-drive",
+            "caption": "DAY 1 / Overhead elbow-extension sequence / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-two-hand-single-band-downward-draw",
+            "caption": "DAY 1 / Shared-handle downward draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-two-hand-single-band-pressdown-draw",
+            "caption": "DAY 1 / Shared-handle downward draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "high-front-draw-low-base",
+            "caption": "DAY 2 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-unilateral-band-overhead-arm-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-kneeling-two-hand-single-band-overhead-arm-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-unilateral-band-overhead-hold-drive",
+            "caption": "DAY 2 / Overhead arm drive with torso movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-low-line-rearward-drive",
+            "caption": "DAY 2 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "box-kneeling-shoulder-braced-torso-fold",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-shoulder-bar-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-high-rear-upper-back-braced-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "upper-back-braced-torso-bow",
+            "caption": "DAY 2 / Braced torso bow / hinge / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "deep-squat-two-hand-single-handle-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "deep-squat-unilateral-low-line-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "floor-low-base-unilateral-curl",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-inclined-low-line-drive",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-unilateral-high-front-band-curl-draw",
+            "caption": "DAY 3 / Curl / elbow-flexion draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "box-seated-two-hand-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-front-two-hand-draw-squat",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "sandbag-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "sandbag-kneeling-unilateral-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "sandbag-supported-kneeling-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-unilateral-high-front-draw",
+            "caption": "DAY 3 / High-front bent-arm draw / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "bench-supported-rearward-arm-movement",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-inclined-paired-curl-draw",
+            "caption": "DAY 3 / Supported rearward arm movement / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-mid-side-bar-draw",
+            "caption": "DAY 3 / Side-line bent-arm draw / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-two-hand-high-rear-overhead-drive",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "upper-back-braced-arm-opening",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-high-line-sweep",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-high-rear-upper-back-braced-arm-opening",
+            "caption": "DAY 3 / Wide-arm sweep / inclined drive / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "curl",
+            "caption": "Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 2 planned sets / 8-12",
+            "number": 1
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 2 planned sets / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 5
+          },
+          {
+            "id": "pilates-row",
+            "caption": "Back / 2 planned sets / 8-12 each side",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 2 planned sets / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 1 planned set / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 1 planned set / 8-12",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 1 planned set / 8-12 each side",
+            "number": 5
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-row",
+            "caption": "Back / 1 planned set / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "source-catalogue",
+    "kind": "catalogue",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Curl / elbow-flexion draw",
+        "cards": []
+      },
+      {
+        "title": "Curl / elbow-flexion draw / variants",
+        "cards": []
+      },
+      {
+        "title": "Curl / elbow-flexion draw / variants",
+        "cards": []
+      },
+      {
+        "title": "Curl / elbow-flexion draw / variants",
+        "cards": []
+      },
+      {
+        "title": "Overhead elbow-extension sequence",
+        "cards": []
+      },
+      {
+        "title": "Overhead elbow-extension sequence / variants",
+        "cards": []
+      },
+      {
+        "title": "Overhead elbow-extension sequence / continued",
+        "cards": []
+      },
+      {
+        "title": "Overhead elbow-extension sequence / variants",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw / variants",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw / variants",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw / variants",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw / variants",
+        "cards": []
+      },
+      {
+        "title": "High-front bent-arm draw / variants",
+        "cards": []
+      },
+      {
+        "title": "Wide-arm sweep / inclined drive",
+        "cards": []
+      },
+      {
+        "title": "Wide-arm sweep / inclined drive / variants",
+        "cards": []
+      },
+      {
+        "title": "Wide-arm sweep / inclined drive / variants",
+        "cards": []
+      },
+      {
+        "title": "Wide-arm sweep / inclined drive / variants",
+        "cards": []
+      },
+      {
+        "title": "Overhead arm drive with torso movement",
+        "cards": []
+      },
+      {
+        "title": "Overhead arm drive with torso movement / variants",
+        "cards": []
+      },
+      {
+        "title": "Overhead arm drive with torso movement / variants",
+        "cards": []
+      },
+      {
+        "title": "Band-bar pressdown",
+        "cards": []
+      },
+      {
+        "title": "Braced torso bow / hinge",
+        "cards": []
+      },
+      {
+        "title": "Braced torso bow / hinge / variants",
+        "cards": []
+      },
+      {
+        "title": "Braced torso bow / hinge / variants",
+        "cards": []
+      },
+      {
+        "title": "Shoulder-bar squat and torso bow",
+        "cards": []
+      },
+      {
+        "title": "Supported rearward arm movement",
+        "cards": []
+      },
+      {
+        "title": "Supported rearward arm movement / variants",
+        "cards": []
+      },
+      {
+        "title": "Loaded-line hold / balance sequence",
+        "cards": []
+      },
+      {
+        "title": "Loaded-line hold / balance sequence / variants",
+        "cards": []
+      },
+      {
+        "title": "Side-line bent-arm draw",
+        "cards": []
+      },
+      {
+        "title": "Shared-handle downward draw",
+        "cards": []
+      },
+      {
+        "title": "Head-harness torso bow",
+        "cards": []
+      },
+      {
+        "title": "Forearm rotation and grip control",
+        "cards": []
+      },
+      {
+        "title": "Low-front arm raise with torso hinge",
+        "cards": []
+      },
+      {
+        "title": "Low-line elbow extension",
+        "cards": []
+      },
+      {
+        "title": "Core and sides / anti-rotation reach",
+        "cards": []
+      }
+    ]
+  },
+  {
+    "name": "focused-short",
+    "kind": "focused-short",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "press",
+            "caption": "Chest / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "standing-side-line-unilateral-draw",
+            "caption": "Chest / 1 planned set / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "standing-inclined-two-hand-single-handle-curl",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "floor-kneeling-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-high-front-wide-arm-sweep",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-inclined-high-rear-wide-arm-drive",
+            "caption": "Shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "pressdown",
+            "caption": "Triceps / 2 planned sets / 8-12",
+            "number": 7
+          },
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 1 / Chest, shoulders + triceps",
+        "cards": [
+          {
+            "id": "inclined-overhead-drive",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "seated-low-rear-arm-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "kneeling-supported-forward-extension",
+            "caption": "Triceps / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "standing-shoulder-bar-squat-bow",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 controlled repetitions",
+            "number": 1
+          },
+          {
+            "id": "hamstring-curl",
+            "caption": "Legs and hip hinge / 2 planned sets / 8-12 each side",
+            "number": 2
+          },
+          {
+            "id": "front-waist-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "low-back-bar-torso-bow",
+            "caption": "Legs and hip hinge / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "high-front-draw-lateral-squat",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "standing-backward-lean-high-front-paired-draw",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "shoulder-braced-torso-bow",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "standing-high-front-draw-leg-lift",
+            "caption": "Stance and balance / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "standing-two-hand-single-handle-side-draw",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 2 / Legs, hips + core",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-held-torso-fold",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "box-kneeling-unilateral-overhead-drive",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "standing-overhead-held-torso-lean",
+            "caption": "Core and sides / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "Back and vertical pulls / 2 planned sets / 8-12 controlled repetitions",
+            "number": 2
+          },
+          {
+            "id": "high-front-downward-arm-drive",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "high-front-two-hand-draw",
+            "caption": "Back and vertical pulls / 1 planned set / 8-12 controlled repetitions",
+            "number": 4
+          },
+          {
+            "id": "standing-paired-wide-arm-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 5
+          },
+          {
+            "id": "bench-straddled-lateral-sweep",
+            "caption": "Rear shoulders / 1 planned set / 8-12 controlled repetitions",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 7
+          },
+          {
+            "id": "supported-high-front-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 8
+          },
+          {
+            "id": "low-side-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 3 / Back, rear delts + arms",
+        "cards": [
+          {
+            "id": "standing-inclined-unilateral-curl",
+            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "number": 10
+          },
+          {
+            "id": "standing-low-side-forearm-rotation",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 11
+          },
+          {
+            "id": "bench-straddled-low-rear-arm-drive",
+            "caption": "Forearms and grip / 1 planned set / 8-12 controlled repetitions",
+            "number": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "full-body-short",
+    "kind": "fullbody-short",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 2 planned sets / 8-12",
+            "number": 1
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 2 planned sets / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 5
+          },
+          {
+            "id": "pilates-row",
+            "caption": "Back / 2 planned sets / 8-12 each side",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 2 planned sets / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 5 / Full body A / moderate",
+        "cards": [
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Legs and hips / 1 planned set / 8-12 each side",
+            "number": 1
+          },
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Legs and hips / 1 planned set / 8-12",
+            "number": 2
+          },
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Legs and hips / 1 planned set / 8-12",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 4
+          },
+          {
+            "id": "pilates-press",
+            "caption": "Chest and shoulders / 1 planned set / 8-12 each side",
+            "number": 5
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Chest and shoulders / 1 planned set / 8-12",
+            "number": 6
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-row",
+            "caption": "Back / 1 planned set / 8-12 each side",
+            "number": 7
+          },
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 8
+          },
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Back / 1 planned set / 8-12",
+            "number": 9
+          }
+        ]
+      },
+      {
+        "title": "Day 6 / Full body B / easy practice",
+        "cards": [
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Arms and core / 1 planned set / 8-12 each side",
+            "number": 10
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Arms and core / 1 planned set / 8-12",
+            "number": 11
+          },
+          {
+            "id": "pilates-curl",
+            "caption": "Arms and core / 1 planned set / 8-12 each side",
+            "number": 12
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "weekly-overview",
+    "kind": "weekly-overview",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Weekly training log",
+        "cards": []
+      }
+    ]
+  },
+  {
+    "name": "exercise-guides",
+    "kind": "guides",
+    "guideId": null,
+    "pages": [
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "press",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "pressdown",
+            "caption": "Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "hamstring-curl",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "curl",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "box-kneeling-extension",
+            "caption": "Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-extension",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "supported-high-front-curl",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-row",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-press",
+            "caption": "Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-curl",
+            "caption": "Pilates kit adaptation",
+            "number": null
+          },
+          {
+            "id": "pilates-pressdown",
+            "caption": "Pilates kit adaptation",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          },
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-row",
+    "kind": "guide",
+    "guideId": "row",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "row",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-press",
+    "kind": "guide",
+    "guideId": "press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "press",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pressdown",
+    "kind": "guide",
+    "guideId": "pressdown",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pressdown",
+            "caption": "8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-lateral",
+    "kind": "guide",
+    "guideId": "lateral",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "lateral",
+            "caption": "6-10 easy repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-brace",
+    "kind": "guide",
+    "guideId": "brace",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "brace",
+            "caption": "3 relaxed breaths per hold; 3 holds",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-sit-stand",
+    "kind": "guide",
+    "guideId": "sit-stand",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "sit-stand",
+            "caption": "6-10",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-hamstring-curl",
+    "kind": "guide",
+    "guideId": "hamstring-curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "hamstring-curl",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-calf-raise",
+    "kind": "guide",
+    "guideId": "calf-raise",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "calf-raise",
+            "caption": "8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-hip-abduction",
+    "kind": "guide",
+    "guideId": "hip-abduction",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "hip-abduction",
+            "caption": "6-10 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-scapular-control",
+    "kind": "guide",
+    "guideId": "scapular-control",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "scapular-control",
+            "caption": "6-10 easy repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-curl",
+    "kind": "guide",
+    "guideId": "curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "curl",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-hip-extension",
+    "kind": "guide",
+    "guideId": "hip-extension",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "hip-extension",
+            "caption": "6-10 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-box-kneeling-extension",
+    "kind": "guide",
+    "guideId": "box-kneeling-extension",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "box-kneeling-extension",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-floor-kneeling-overhead-extension",
+    "kind": "guide",
+    "guideId": "floor-kneeling-overhead-extension",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "floor-kneeling-overhead-extension",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-supported-high-front-curl",
+    "kind": "guide",
+    "guideId": "supported-high-front-curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "supported-high-front-curl",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-standing-shared-low-rear-overhead-extension",
+    "kind": "guide",
+    "guideId": "standing-shared-low-rear-overhead-extension",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "standing-shared-low-rear-overhead-extension",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-floor-kneeling-high-front-paired-draw",
+    "kind": "guide",
+    "guideId": "floor-kneeling-high-front-paired-draw",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "floor-kneeling-high-front-paired-draw",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-standing-mid-side-band-bar-pressdown",
+    "kind": "guide",
+    "guideId": "standing-mid-side-band-bar-pressdown",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "standing-mid-side-band-bar-pressdown",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-shoulder-band-bar-squat",
+    "kind": "guide",
+    "guideId": "shoulder-band-bar-squat",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "shoulder-band-bar-squat",
+            "caption": "8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-standing-curl",
+    "kind": "guide",
+    "guideId": "standing-curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "standing-curl",
+            "caption": "8-12 controlled repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-row",
+    "kind": "guide",
+    "guideId": "pilates-row",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-row",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-press",
+    "kind": "guide",
+    "guideId": "pilates-press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-press",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-hamstring-curl",
+    "kind": "guide",
+    "guideId": "pilates-hamstring-curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-hamstring-curl",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-curl",
+    "kind": "guide",
+    "guideId": "pilates-curl",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-curl",
+            "caption": "8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-pressdown",
+    "kind": "guide",
+    "guideId": "pilates-pressdown",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-pressdown",
+            "caption": "8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-hip-hinge",
+    "kind": "guide",
+    "guideId": "pilates-hip-hinge",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-hip-hinge",
+            "caption": "Pilates-kit variation / 8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-overhead-press",
+    "kind": "guide",
+    "guideId": "pilates-overhead-press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-overhead-press",
+            "caption": "Pilates-kit variation / 8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-bent-row",
+    "kind": "guide",
+    "guideId": "pilates-bent-row",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-bent-row",
+            "caption": "Pilates-kit variation / 8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-seated-row",
+    "kind": "guide",
+    "guideId": "pilates-seated-row",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-seated-row",
+            "caption": "Pilates-kit variation / 8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-lateral-raise",
+    "kind": "guide",
+    "guideId": "pilates-lateral-raise",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-lateral-raise",
+            "caption": "Pilates-kit variation / 8-12",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-pilates-standing-rotation",
+    "kind": "guide",
+    "guideId": "pilates-standing-rotation",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "pilates-standing-rotation",
+            "caption": "Pilates-kit variation / 8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  }
+]

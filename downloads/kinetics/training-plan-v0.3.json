@@ -1,5 +1,5 @@
 {
-  "version": "2.0-integrated-website",
+  "version": "2.2-twelve-exercise-days",
   "updated": "2026-10-17",
   "status": "Compiled expanded anatomy edition / reviewed recording scope",
   "muscleRoleLegend": {
@@ -1393,6 +1393,240 @@
       "personalProfileRevision": "approved-personal-profile-retained-kit-adaptation-2026-10-17",
       "adaptationOf": "pressdown",
       "evidenceType": "Guide kit adaptation; no new source passage claimed"
+    },
+    {
+      "id": "pilates-hip-hinge",
+      "name": "Standing Pilates bar hip hinge",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Legs / hips",
+      "main": "Gluteals and hamstrings extend the hips as the torso returns upright.",
+      "secondary": "Spinal extensors maintain the shape of the back; forearms steady the bar.",
+      "base": "Abdominal muscles brace the trunk while both feet support the stance.",
+      "setup": "Secure both foot loops under the shoe arches; connect two matched tubes to each bar end.",
+      "position": "Secure both foot loops under the shoe arches; connect two matched tubes to each bar end.",
+      "move": "Hinge the hips back with soft knees, keeping the bar close to the legs.",
+      "range": "Drive through the feet and extend the hips; keep the arms long.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-hip-hinge-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / hip hinge                    FINISH / upright",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Secure both foot loops under the shoe arches; connect two matched tubes to each bar end.",
+        "move": "Hinge the hips back with soft knees, keeping the bar close to the legs.",
+        "return": "Drive through the feet and extend the hips; keep the arms long."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+    },
+    {
+      "id": "pilates-overhead-press",
+      "name": "Standing Pilates bar overhead press",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Shoulders / push",
+      "main": "Deltoids raise the upper arms during the overhead press.",
+      "secondary": "Triceps extend the elbows; scapular muscles guide the shoulder blades.",
+      "base": "Abdominal and hip muscles keep the torso stacked over the planted feet.",
+      "setup": "Secure the foot loops; connect matched tube pairs through the adjustable bar straps.",
+      "position": "Secure the foot loops; connect matched tube pairs through the adjustable bar straps.",
+      "move": "Press the bar upward from the front of the shoulders without arching the back.",
+      "range": "Lower slowly to the starting position; use a range set with your trainer.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-overhead-press-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / bar at shoulders                    FINISH / controlled press",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Secure the foot loops; connect matched tube pairs through the adjustable bar straps.",
+        "move": "Press the bar upward from the front of the shoulders without arching the back.",
+        "return": "Lower slowly to the starting position; use a range set with your trainer."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+    },
+    {
+      "id": "pilates-bent-row",
+      "name": "Bent-over Pilates bar row",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Back / row",
+      "main": "Latissimus dorsi draws the upper arms back toward the trunk.",
+      "secondary": "Rhomboids, rear deltoids and elbow flexors assist the row.",
+      "base": "Abdominals and hip muscles hold the hinge while both feet stay planted.",
+      "setup": "Secure one foot loop under each shoe arch, with two matching tubes to each bar end.",
+      "position": "Secure one foot loop under each shoe arch, with two matching tubes to each bar end.",
+      "move": "Hold the hip hinge and draw the bar toward the lower ribs; keep the shoulders down.",
+      "range": "Extend the arms slowly without changing the torso angle.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-bent-row-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / arms extended                    FINISH / bar at low ribs",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Secure one foot loop under each shoe arch, with two matching tubes to each bar end.",
+        "move": "Hold the hip hinge and draw the bar toward the lower ribs; keep the shoulders down.",
+        "return": "Extend the arms slowly without changing the torso angle."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+    },
+    {
+      "id": "pilates-seated-row",
+      "name": "Floor-seated Pilates bar row",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Back / row",
+      "main": "Latissimus dorsi draws the upper arms back during the pull.",
+      "secondary": "Rear deltoids, rhomboids and elbow flexors guide the bar toward the torso.",
+      "base": "Abdominal muscles steady the seated trunk; the pelvis and legs provide support.",
+      "setup": "Sit tall with soft knees; secure foot loops at both arches and match the tube pairs.",
+      "position": "Sit tall with soft knees; secure foot loops at both arches and match the tube pairs.",
+      "move": "Draw the bar toward the low ribs without rounding or leaning back.",
+      "range": "Extend the arms slowly toward the feet, keeping the spine comfortably upright.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-seated-row-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / arms forward                    FINISH / controlled row",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Sit tall with soft knees; secure foot loops at both arches and match the tube pairs.",
+        "move": "Draw the bar toward the low ribs without rounding or leaning back.",
+        "return": "Extend the arms slowly toward the feet, keeping the spine comfortably upright."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+    },
+    {
+      "id": "pilates-lateral-raise",
+      "name": "Standing Pilates-handle lateral raise",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Shoulders / side delts",
+      "main": "Middle deltoids raise the upper arms out to the sides.",
+      "secondary": "Supraspinatus and scapular muscles help guide the shoulder movement.",
+      "base": "Abdominal muscles steady the trunk while both feet support the stance.",
+      "setup": "Use the kit handles and foot loops, with two matching tubes on each independent side.",
+      "position": "Use the kit handles and foot loops, with two matching tubes on each independent side.",
+      "move": "Raise the handles out to the sides to a comfortable height, with elbows softly bent.",
+      "range": "Lower slowly without leaning or shrugging; stay within the agreed range.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-lateral-raise-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / hands beside thighs                    FINISH / arms raised",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Use the kit handles and foot loops, with two matching tubes on each independent side.",
+        "move": "Raise the handles out to the sides to a comfortable height, with elbows softly bent.",
+        "return": "Lower slowly without leaning or shrugging; stay within the agreed range."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+    },
+    {
+      "id": "pilates-standing-rotation",
+      "name": "Standing Pilates bar torso rotation",
+      "origin": "Pilates-kit technique variation; not a newly counted personal recording",
+      "pattern": "Core / sides",
+      "main": "Oblique abdominal muscles guide the small, controlled torso rotation.",
+      "secondary": "Shoulder and arm muscles maintain the held bar position.",
+      "base": "Hip and gluteal muscles steady the pelvis over the planted feet.",
+      "setup": "Secure both foot loops and match the tube pairs; hold the bar just below chest height.",
+      "position": "Secure both foot loops and match the tube pairs; hold the bar just below chest height.",
+      "move": "Turn the upper torso through a small comfortable arc while the pelvis faces forward.",
+      "range": "Return to centre slowly, then change sides; avoid forcing the twist.",
+      "check": "Use the foot loops and connectors as instructed by the manufacturer; your trainer confirms range and starting stretch.",
+      "easier": "Use a shorter comfortable range and a resistance selected with your trainer.",
+      "reps": "8-12 each side",
+      "sources": [
+        "https://lightstuffproducts.com/pilates-bar-workouts/",
+        "user-supplied HPYGN kit reference"
+      ],
+      "art": "pilates-standing-rotation-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / centred                    FINISH / small torso turn",
+      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "isKitAdaptation": true,
+      "resistance": {
+        "mode": "band",
+        "system": "hpygn-pilates",
+        "type": "Pilates kit / matched left and right tube pairs",
+        "note": "Resistance and range are selected with the personal trainer; no levels are assigned."
+      },
+      "cardCues": {
+        "setup": "Secure both foot loops and match the tube pairs; hold the bar just below chest height.",
+        "move": "Turn the upper torso through a small comfortable arc while the pelvis faces forward.",
+        "return": "Return to centre slowly, then change sides; avoid forcing the twist."
+      },
+      "personalProfileRevision": "approved-personal-profile-2026-10-17"
     }
   ],
   "days": [
@@ -1404,27 +1638,63 @@
       "slots": [
         [
           "press",
-          "main"
+          "main",
+          "Chest"
         ],
         [
           "standing-side-line-unilateral-draw",
-          "accessory"
+          "accessory",
+          "Chest"
         ],
         [
           "standing-inclined-two-hand-single-handle-curl",
-          "accessory"
+          "accessory",
+          "Shoulders"
         ],
         [
           "floor-kneeling-wide-arm-drive",
-          "accessory"
+          "accessory",
+          "Shoulders"
+        ],
+        [
+          "standing-high-front-wide-arm-sweep",
+          "accessory",
+          "Shoulders"
+        ],
+        [
+          "standing-inclined-high-rear-wide-arm-drive",
+          "accessory",
+          "Shoulders"
         ],
         [
           "pressdown",
-          "main"
+          "main",
+          "Triceps"
+        ],
+        [
+          "standing-mid-side-band-bar-pressdown",
+          "accessory",
+          "Triceps"
         ],
         [
           "standing-shared-low-rear-overhead-extension",
-          "accessory"
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "inclined-overhead-drive",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "seated-low-rear-arm-extension",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "kneeling-supported-forward-extension",
+          "accessory",
+          "Triceps"
         ]
       ]
     },
@@ -1436,27 +1706,63 @@
       "slots": [
         [
           "standing-shoulder-bar-squat-bow",
-          "main"
+          "main",
+          "Legs and hip hinge"
         ],
         [
           "hamstring-curl",
-          "main"
+          "main",
+          "Legs and hip hinge"
+        ],
+        [
+          "front-waist-bar-torso-bow",
+          "accessory",
+          "Legs and hip hinge"
         ],
         [
           "low-back-bar-torso-bow",
-          "accessory"
+          "accessory",
+          "Legs and hip hinge"
         ],
         [
           "high-front-draw-lateral-squat",
-          "accessory"
+          "accessory",
+          "Stance and balance"
+        ],
+        [
+          "standing-backward-lean-high-front-paired-draw",
+          "accessory",
+          "Stance and balance"
+        ],
+        [
+          "shoulder-braced-torso-bow",
+          "accessory",
+          "Stance and balance"
+        ],
+        [
+          "standing-high-front-draw-leg-lift",
+          "accessory",
+          "Stance and balance"
         ],
         [
           "standing-two-hand-single-handle-side-draw",
-          "accessory"
+          "accessory",
+          "Core and sides"
         ],
         [
           "floor-kneeling-overhead-held-torso-fold",
-          "accessory"
+          "accessory",
+          "Core and sides"
+        ],
+        [
+          "box-kneeling-unilateral-overhead-drive",
+          "accessory",
+          "Core and sides"
+        ],
+        [
+          "standing-overhead-held-torso-lean",
+          "accessory",
+          "Core and sides"
         ]
       ]
     },
@@ -1468,27 +1774,63 @@
       "slots": [
         [
           "row",
-          "main"
+          "main",
+          "Back and vertical pulls"
         ],
         [
           "floor-kneeling-high-front-paired-draw",
-          "main"
+          "main",
+          "Back and vertical pulls"
+        ],
+        [
+          "high-front-downward-arm-drive",
+          "accessory",
+          "Back and vertical pulls"
+        ],
+        [
+          "high-front-two-hand-draw",
+          "accessory",
+          "Back and vertical pulls"
         ],
         [
           "standing-paired-wide-arm-sweep",
-          "accessory"
+          "accessory",
+          "Rear shoulders"
+        ],
+        [
+          "bench-straddled-lateral-sweep",
+          "accessory",
+          "Rear shoulders"
         ],
         [
           "standing-curl",
-          "accessory"
+          "accessory",
+          "Biceps and elbow flexors"
         ],
         [
           "supported-high-front-curl",
-          "accessory"
+          "accessory",
+          "Biceps and elbow flexors"
+        ],
+        [
+          "low-side-unilateral-curl",
+          "accessory",
+          "Biceps and elbow flexors"
+        ],
+        [
+          "standing-inclined-unilateral-curl",
+          "accessory",
+          "Biceps and elbow flexors"
         ],
         [
           "standing-low-side-forearm-rotation",
-          "accessory"
+          "accessory",
+          "Forearms and grip"
+        ],
+        [
+          "bench-straddled-low-rear-arm-drive",
+          "accessory",
+          "Forearms and grip"
         ]
       ]
     },
@@ -1506,27 +1848,63 @@
       "slots": [
         [
           "shoulder-band-bar-squat",
-          "main"
+          "main",
+          "Legs and hips"
+        ],
+        [
+          "pilates-hip-hinge",
+          "main",
+          "Legs and hips"
         ],
         [
           "pilates-hamstring-curl",
-          "accessory"
+          "accessory",
+          "Legs and hips"
         ],
         [
-          "pilates-press",
-          "main"
+          "pilates-bent-row",
+          "accessory",
+          "Back"
+        ],
+        [
+          "pilates-seated-row",
+          "accessory",
+          "Back"
         ],
         [
           "pilates-row",
-          "main"
+          "main",
+          "Back"
+        ],
+        [
+          "pilates-press",
+          "main",
+          "Chest and shoulders"
+        ],
+        [
+          "pilates-overhead-press",
+          "accessory",
+          "Chest and shoulders"
+        ],
+        [
+          "pilates-lateral-raise",
+          "accessory",
+          "Chest and shoulders"
         ],
         [
           "pilates-curl",
-          "accessory"
+          "accessory",
+          "Arms and core"
         ],
         [
           "pilates-pressdown",
-          "accessory"
+          "accessory",
+          "Arms and core"
+        ],
+        [
+          "pilates-standing-rotation",
+          "accessory",
+          "Arms and core"
         ]
       ],
       "pilatesEquipmentProfile": "hpygn-pilates"
@@ -1539,27 +1917,63 @@
       "slots": [
         [
           "pilates-hamstring-curl",
-          "accessory"
+          "accessory",
+          "Legs and hips"
         ],
         [
           "shoulder-band-bar-squat",
-          "main"
+          "main",
+          "Legs and hips"
         ],
         [
-          "pilates-row",
-          "main"
+          "pilates-hip-hinge",
+          "main",
+          "Legs and hips"
+        ],
+        [
+          "pilates-overhead-press",
+          "accessory",
+          "Chest and shoulders"
         ],
         [
           "pilates-press",
-          "main"
+          "main",
+          "Chest and shoulders"
+        ],
+        [
+          "pilates-lateral-raise",
+          "accessory",
+          "Chest and shoulders"
+        ],
+        [
+          "pilates-row",
+          "main",
+          "Back"
+        ],
+        [
+          "pilates-seated-row",
+          "accessory",
+          "Back"
+        ],
+        [
+          "pilates-bent-row",
+          "accessory",
+          "Back"
+        ],
+        [
+          "pilates-standing-rotation",
+          "accessory",
+          "Arms and core"
         ],
         [
           "pilates-pressdown",
-          "accessory"
+          "accessory",
+          "Arms and core"
         ],
         [
           "pilates-curl",
-          "accessory"
+          "accessory",
+          "Arms and core"
         ]
       ],
       "pilatesEquipmentProfile": "hpygn-pilates"

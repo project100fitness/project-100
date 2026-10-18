@@ -523,5 +523,35 @@
     "width": 1774,
     "height": 887,
     "path": "assets/media/workout-guides/pilates-pressdown-matched-pairs-approved-v1.jpg"
+  },
+  "pilates-hip-hinge": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-hip-hinge-personal-v1.jpg"
+  },
+  "pilates-overhead-press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-overhead-press-personal-v1.jpg"
+  },
+  "pilates-bent-row": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-bent-row-personal-v1.jpg"
+  },
+  "pilates-seated-row": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-seated-row-personal-v1.jpg"
+  },
+  "pilates-lateral-raise": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-lateral-raise-personal-v1.jpg"
+  },
+  "pilates-standing-rotation": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/pilates-standing-rotation-personal-v1.jpg"
   }
 }
