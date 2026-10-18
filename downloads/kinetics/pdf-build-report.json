@@ -6,17 +6,17 @@
   },
   {
     "filename": "full-body.pdf",
-    "pages": 4,
+    "pages": 8,
     "lowest": 62.29000000000008
   },
   {
     "filename": "weekly-planner.pdf",
-    "pages": 11,
+    "pages": 21,
     "lowest": 62.29000000000008
   },
   {
     "filename": "complete-guide.pdf",
-    "pages": 31,
+    "pages": 35,
     "lowest": 62.29000000000008
   },
   {
@@ -26,12 +26,12 @@
   },
   {
     "filename": "focused-short.pdf",
-    "pages": 6,
+    "pages": 12,
     "lowest": 62.29000000000008
   },
   {
     "filename": "full-body-short.pdf",
-    "pages": 4,
+    "pages": 8,
     "lowest": 62.29000000000008
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "filename": "exercise-guides.pdf",
-    "pages": 6,
+    "pages": 8,
     "lowest": 65
   },
   {
@@ -166,6 +166,36 @@
   },
   {
     "filename": "guide-pilates-pressdown.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-hip-hinge.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-overhead-press.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-bent-row.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-seated-row.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-lateral-raise.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-pilates-standing-rotation.pdf",
     "pages": 1,
     "lowest": 535
   }
