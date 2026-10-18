@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from concurrent.futures import ThreadPoolExecutor
-import urllib.request,json,time,hashlib
+import urllib.request,json,time,hashlib,re
 base="https://project100.fit/"
 class Navigation(HTMLParser):
     def __init__(self):super().__init__();self.inside=False;self.links=[]
@@ -21,7 +21,8 @@ for attempt in range(40):
     try:
         source=read("index.html")
         assert 'assets/css/site.css?v=' in source and 'data-folder="project"' in source and 'data-folder="exercises"' in source
-        assert 'kinetics.css?v=20261015-unified-protocol' in read('kinetics.html')
+        kinetics_css=re.search(r'assets/css/kinetics\.css\?v=[^"\s]+',Path('kinetics.html').read_text()).group(0)
+        assert kinetics_css in read('kinetics.html')
         assert 'data-training-panel="library"' in read('exercises.html')
         break
     except Exception:

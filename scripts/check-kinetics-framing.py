@@ -26,16 +26,18 @@ with sync_playwright() as p:
             assert state["bg"]=="rgb(21, 26, 32)",state
             assert page.locator("[data-kg-bg]").count()==0
             assert len(page.locator("#kin-gallery-data").evaluate("(el)=>JSON.parse(el.textContent)"))==32
-            assert page.locator("#workout-downloads .kin-downloads-days li").count()==3
-            button=page.locator("#workout-downloads .kin-downloads-primary")
-            assert button.get_attribute("data-kd-open")=="focused-1"
+            assert page.locator('[data-kin-programme="focused"] .kin-session-links a').count()==3
+            assert page.locator('[data-kin-programme="fullbody"] .kin-session-links a').count()==2
+            assert page.locator('.exercise-entry,.kin-downloads').count()==0
+            button=page.locator('[data-kin-programme="focused"] .kin-programme-guide')
+            assert button.get_attribute("data-kd-open")=="focused"
             button.click()
             page.locator("#kinDownloadModal[open]").wait_for()
-            assert page.locator('[data-kd-doc="focused-1"]').get_attribute("aria-pressed")=="true"
+            assert page.locator('[data-kd-doc="focused"]').get_attribute("aria-pressed")=="true"
             page.locator("[data-kd-close]").click()
             if engine.name=="chromium":
                 page.locator(".kin-display").screenshot(path=str(out/f"kinetics-framing-{width}.png"))
-                page.locator("#workout-downloads").screenshot(path=str(out/f"kinetics-guide-entry-{width}.png"))
+                page.locator(".kin-local-nav").screenshot(path=str(out/f"kinetics-guide-entry-{width}.png"))
             results.append({"engine":engine.name,"width":width,"status":"passed","frame":state})
             page.close()
         browser.close()

@@ -23,7 +23,7 @@ class Text(HTMLParser):
 
 pages={p.name:p.read_text(encoding='utf8') for p in ROOT.glob('*.html') if 'archive' not in p.name}
 checked_links=0
-versioned=['assets/css/mobile-site.css','assets/js/item-purpose.js','assets/js/salad-cards.js']
+versioned=['assets/css/site.css','assets/css/mobile-site.css','assets/css/kinetics.css','assets/js/kinetics.js','assets/js/p100-band-training.js','assets/js/item-purpose.js','assets/js/salad-cards.js']
 for name,source in pages.items():
     parser=Text(); parser.feed(source); text=' '.join(parser.parts)
     for pattern in [r'V1\s+xor\s+V6',r'validated corridor',r'BIA adds 2-4',r'252 g ceiling',r'22\.9% on 14 December 2025',r'The same tissue plus 2-4',r'corridor is (?:therefore )?a tissue claim',r'Three matched bands per bundle']:
@@ -91,3 +91,17 @@ assert css.count('screen and (max-width:767px), screen and (max-width:1023px) an
 assert css.count('{')==css.count('}')
 assert not re.search(r'scroll-snap-type\s*:\s*y\s+mandatory',css)
 print(f'PASS: {len(pages)} current pages, {checked_links} local links; book bytes, day rule, benchmark, historical nutrition, bundles, evidence scope, full-body PDFs and technique counts. Archived editions excluded.')
+
+# Kinetics is a programme index; rich setup content must retain its owning programme.
+kinetics=pages['kinetics.html']
+assert kinetics.count('data-kin-programme="focused"')==1
+assert kinetics.count('data-kin-programme="fullbody"')==1
+assert kinetics.count('class="kin-session-links"')==2
+for programme,days in [('focused',[1,2,3]),('fullbody',[5,6])]:
+    for day in days:
+        assert f'panel=sessions&amp;programme={programme}&amp;day={day}' in kinetics,(programme,day)
+assert 'class="exercise-entry' not in kinetics
+assert 'class="kin-downloads ' not in kinetics
+assert kinetics.count('class="kin-anchor-copy"')==3
+assert 'data-analysis-reference-entry' not in kinetics
+print('PASS: two Kinetics programmes, five direct day links and three readable anchor cards; duplicate entry banners removed.')
