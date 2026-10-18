@@ -136,6 +136,17 @@ Sources [S16]
 Sources [S01 S18]
 
 
+### C11 Bundle directory versions
+
+**Archived or stale statement** The historical gear JSON retains older compositions including Titan 3 by 65 and an older Twin Cobras entry.
+
+**Current finding** The current Kinetics page publishes Titan 4 by 75, Enforcer two matched 2 by 65 sets, Tricep Specialist 3 by 55, Viper 4 by 45 and Scalpel 4 by 35.
+
+**Editorial treatment** Keep both dated sources distinct. Use the current published Kinetics directory for its current configuration; do not infer a clip load from either directory.
+
+Sources [S08 S09]
+
+
 ## Media inventory and analysis coverage
 
 | Measure | Value | Interpretation |

@@ -21,19 +21,22 @@ Use the master for depth, the Encyclopedia Update for chapter integration and th
 6. Analysis structure
 7. Equipment and mechanics
 8. Anatomical interpretation
-9. Nutrition methods
-10. Findings and open questions
-11. Common chapter structure
-12. Movement families
-13. Recording setup findings
-14. Technique provenance
-15. Salad models
-16. Meal stories
-17. Liquid recipe context
-18. Long recording review
-19. Source passages
-20. Earlier observations
-21. Sources and reusable data
+9. Equipment recognition
+10. Photograph and reel metadata
+11. Refinement history
+12. Nutrition methods
+13. Findings and open questions
+14. Common chapter structure
+15. Movement families
+16. Recording setup findings
+17. Technique provenance
+18. Salad models
+19. Meal stories
+20. Liquid recipe context
+21. Long recording review
+22. Source passages
+23. Earlier observations
+24. Sources and reusable data
 
 
 ## Purpose and scope
@@ -44,7 +47,7 @@ The principal finding is that the project now has a richer documented meal and m
 
 This is a text-only reference and editorial integration package. It deliberately omits illustrations, prescribed exercise sequences, set counts, repetition targets and assigned resistance. The existing interactive training guides remain the place for session cards. This compilation does not reopen the frozen video screening scope or claim that every recording has been reviewed continuously.
 
-Compiled from the current website sources and saved analysis archive on 18 October 2026. Website baseline commit e29360e66b546935a09fb2aaa1f2ed86e0c691a8. Historical publications are retained as dated sources; an older statement does not override a later correction. Source identifiers in square brackets refer to the source register.
+Compiled from the current website sources and saved analysis archive on 18 October 2026. Website baseline commit 9c941a28b966c49713a47f949d12977132bef4cc. Historical publications are retained as dated sources; an older statement does not override a later correction. Source identifiers in square brackets refer to the source register.
 
 
 ## Evidence classes and editorial rules
@@ -194,6 +197,17 @@ Sources [S16]
 Sources [S01 S18]
 
 
+### C11 Bundle directory versions
+
+**Archived or stale statement** The historical gear JSON retains older compositions including Titan 3 by 65 and an older Twin Cobras entry.
+
+**Current finding** The current Kinetics page publishes Titan 4 by 75, Enforcer two matched 2 by 65 sets, Tricep Specialist 3 by 55, Viper 4 by 45 and Scalpel 4 by 35.
+
+**Editorial treatment** Keep both dated sources distinct. Use the current published Kinetics directory for its current configuration; do not infer a clip load from either directory.
+
+Sources [S08 S09]
+
+
 ## Media inventory and analysis coverage
 
 | Measure | Value | Interpretation |
@@ -274,6 +288,1106 @@ A compound sequence can combine elbow motion, shoulder motion and a torso hinge.
 Green support emphasis is intentionally restrained in the current visual standard. A planted leg, seated pelvis or braced hand supplies support but does not imply maximal activation throughout the whole limb. No percentage activation or exact deep-muscle boundary can be read from a surface illustration. This text reference carries the same limitation even though it contains no artwork. [S01]
 
 The observed library covers chest and pressing, back and pulling, front, side and rear shoulder actions, elbow flexion and extension, forearm and grip control, lower-limb and hip patterns, and trunk support or movement. This is a taxonomy of the reviewed library, not proof that every muscle was directly isolated or trained equally. The family-level records and individual variants below preserve those distinctions.
+
+
+## Complete equipment recognition register
+
+The saved visual-recognition registry contains 19 equipment entries. The descriptions preserve identifying features from that registry. They do not prove that a product was used in every video, independently certify a rating or authorize a combined assembly. Named bundle history is separately reconciled with the current Kinetics directory. [S08 S09]
+
+
+### E01 KUZARO · Multi-band setup
+
+**Stable ID** kuzaro
+
+**Registry category** resistance
+
+**Source description** Yellow connection webbing with black KUZARO lettering and thick black D-rings. The supplied manifest lists six tubing grades from light gray to solid black.
+
+**Recorded badge** 4 KITS · 360 LB SET
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E02 HPYGN Heavy-Duty Compression System
+
+**Stable ID** hpygn-bands
+
+**Registry category** resistance
+
+**Source description** Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Owner-confirmed short-band configuration: two 65 lb bands per side, paired twice (four bands total), shortened at the low Iron Tower anchor and routed into the Tribe bar’s rotating eyelets. Nominal ratings total 130 lb per side and 260 lb combined; resistance changes with stretch.
+
+**Recorded badge** 330 LB SET
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E03 BLUSLM Ergonomic Tricep Rope
+
+**Stable ID** bluslm
+
+**Registry category** grips
+
+**Source description** Extra-long twin black braided nylon arms, a chrome connection collar and large molded black palm-flare stops.
+
+**Recorded badge** Hand Rope-03
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E04 HXD-ERGO Biomechanical Handles
+
+**Stable ID** hxd
+
+**Registry category** grips
+
+**Source description** Asymmetric black ergonomic grip molds, flat nylon straps with a blue-and-white shield logo, and integrated fixed black carabiners.
+
+**Recorded badge** Curved
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E05 INNSTAR High-Traction Stirrup Handles
+
+**Stable ID** innstar
+
+**Registry category** grips
+
+**Source description** Triangular black nylon stirrup handles with black carabiners. The ABS grip cores have anti-slip silicone honeycomb texture; white INNSTAR lettering runs along the straps.
+
+**Recorded badge** Honeycomb
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E06 Angles90 Camo Pull-Up Grips
+
+**Stable ID** angles90
+
+**Registry category** grips
+
+**Source description** Bright orange curved handles on flat black nylon slings, with black A90 GRIPS lettering along the outer curve.
+
+**Recorded badge** A90
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E07 THEFITGUY Single-Arm Tricep Rope
+
+**Stable ID** single-rope
+
+**Registry category** grips
+
+**Source description** Single-arm black braided rope with a zinc-plated top snap hook. The distinctive red bell-shaped palm stop carries debossed thefitguy lettering.
+
+**Recorded badge** 16.5 IN
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E08 MANUEKLEAR Neoprene Multi-Grip Handles
+
+**Stable ID** manueklear
+
+**Registry category** grips
+
+**Source description** Extra-wide matte-gray neoprene/nylon straps with one silver D-ring. Sewn upper, middle and lower grip pockets provide three positions; the side tag has a yellow-and-white logo.
+
+**Recorded badge** 3 GRIP ZONES
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E09 Tribe Lifting Modular Resistance Bar
+
+**Stable ID** tribe
+
+**Registry category** structural
+
+**Source description** Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.
+
+**Recorded badge** 3 PIECES · 360° SWIVELS
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E10 HPYGN Heavy Pilates Structural Bar
+
+**Stable ID** hpygn-bar
+
+**Registry category** structural
+
+**Source description** Black steel bar covered in dense non-slip black foam. Its nylon terminal straps have distinctive red edge stitching.
+
+**Recorded badge** Foam-padded steel
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E11 THEFITGUY Ultimate Extension Straps
+
+**Stable ID** extensions
+
+**Registry category** structural
+
+**Source description** Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.
+
+**Recorded badge** Dual D-ring straps
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E12 THEFITGUY Sled Pulling Belt & Straps Kit
+
+**Stable ID** sled
+
+**Registry category** structural
+
+**Source description** Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.
+
+**Recorded badge** 2 × 9.8 FT · 4 HOOKS
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E13 Oak-Sports Heavy-Duty Carabiners
+
+**Stable ID** oak
+
+**Registry category** connections
+
+**Source description** Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.
+
+**Recorded badge** 25 kN · 5,600 LB
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E14 JRSGS Rock Locking Clips
+
+**Stable ID** jrsgs
+
+**Registry category** connections
+
+**Source description** Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.
+
+**Recorded badge** 25 kN · 2 VARIANTS
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E15 Neoprene Cable / Bundle Management Sleeves
+
+**Stable ID** sleeves
+
+**Registry category** connections
+
+**Source description** Flexible black wraps enclosing multi-band arrays. The reversible split-seam sleeves use a continuous hook-and-loop closure for bundle management and contact shielding.
+
+**Recorded badge** 1.5 IN
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E16 VEHICLEX Axle Tie-Down Straps
+
+**Stable ID** vehiclex
+
+**Registry category** anchors
+
+**Source description** Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.
+
+**Recorded badge** Sleeved webbing
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E17 NILIGHT Soft Loop Anchor Straps
+
+**Stable ID** nilight
+
+**Registry category** anchors
+
+**Source description** Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.
+
+**Recorded badge** 1.7 × 17 IN
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E18 MIAOKE Tactical Hardware Duffel
+
+**Stable ID** miaoke
+
+**Registry category** logistics
+
+**Source description** Black utility duffel/backpack with red zipper tracks and red diamond elastic side cording. The matching clear-panel organizer is labeled WASHBAG.
+
+**Recorded badge** Duffel + organizer
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### E19 jooeer 3-in-1 Nested Foam Roller Set
+
+**Stable ID** jooeer
+
+**Registry category** recovery
+
+**Source description** Outer: 18 × 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 × 3.9 in neon-orange roller with linear ridges. Core: 18 × 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.
+
+**Recorded badge** 3 NESTED TIERS
+
+Identification is a source attribution. Any listed strength or capacity is a manifest claim, not a verified working-load limit for the assembled setup. [S09]
+
+
+### Historical nominal bundle entries
+
+These entries are retained as historical directory data, not current training assignments. They conflict with later published bundle compositions in several cases. Do not merge the two directories or carry an old label sum into a current clip analysis. [S08 S09]
+
+| Historical name | Historical registry wording | Status |
+|---|---|---|
+| Juggernaut | 3 bands labelled 85 lb; listed field 255 lb | Historical source; see C11 |
+| Titan | 3 bands labelled 65 lb; listed field 195 lb | Historical source; see C11 |
+| Enforcer | 3 bands labelled 55 lb; listed field 165 lb | Historical source; see C11 |
+| Viper | 3 bands labelled 45 lb; listed field 135 lb | Historical source; see C11 |
+| Scalpel | 3 bands labelled 35 lb; listed field 105 lb | Historical source; see C11 |
+| Twin Cobras | 2 bands labelled 75 lb; listed field 75 lb | Historical source; see C11 |
+
+
+## Setup photograph and reel metadata findings
+
+These records document the current Kinetics showcase and movement index as text. They are metadata descriptions, not new inspections of every source photograph or video. The photographs are not embedded. A current bundle association is a website navigation relationship and does not establish the actual load in the photographed moment. [S08]
+
+
+### A01 High-anchor lat sweep station
+
+**Source asset ID** M00033
+
+**Published muscle context** Lats · rear delts · trunk stabilizers
+
+**Published vector and support context** High → low pull · paired handles · bench support
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A02 Standing multi-vector rig
+
+**Source asset ID** M00043
+
+**Published muscle context** Back · shoulders · core
+
+**Published vector and support context** High / mid anchors · independent grips
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A03 Box-supported core station
+
+**Source asset ID** M00050
+
+**Published muscle context** Abdominals · trunk stabilizers
+
+**Published vector and support context** Elevated support · overhead line
+
+**Associated bundle IDs** enforcer; scalpel
+
+**Association status** current-setup-association
+
+
+### A04 Bench-supported pull arrangement
+
+**Source asset ID** M00073
+
+**Published muscle context** Lats · upper back
+
+**Published vector and support context** Diagonal pull · supported torso
+
+**Associated bundle IDs** titan; enforcer
+
+**Association status** current-setup-association
+
+
+### A05 Rack-side pull and carry station
+
+**Source asset ID** M00083
+
+**Published muscle context** Back · grip · trunk
+
+**Published vector and support context** Independent pull lines · adjacent carry space
+
+**Associated bundle IDs** titan; enforcer
+
+**Association status** current-setup-association
+
+
+### A06 Bench-centered pull configuration
+
+**Source asset ID** M00090
+
+**Published muscle context** Lats · rear delts
+
+**Published vector and support context** Bench base · paired rack anchors
+
+**Associated bundle IDs** titan; enforcer
+
+**Association status** current-setup-association
+
+
+### A07 Overhead rope and pull lines
+
+**Source asset ID** M00109
+
+**Published muscle context** Triceps · lats
+
+**Published vector and support context** High anchors · rope / handle interfaces
+
+**Associated bundle IDs** triceps
+
+**Association status** current-setup-association
+
+
+### A08 Full rack movement grid
+
+**Source asset ID** M00128
+
+**Published muscle context** Back · shoulders · core
+
+**Published vector and support context** Multiple anchor heights · standing / supported bases
+
+**Associated bundle IDs** juggernaut; titan; enforcer; triceps; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A09 Turf-side standing pull station
+
+**Source asset ID** M00014
+
+**Published muscle context** Lats · rear delts · core
+
+**Published vector and support context** Rack anchors · standing base
+
+**Associated bundle IDs** titan; enforcer
+
+**Association status** current-setup-association
+
+
+### A10 High-line rope attachment
+
+**Source asset ID** M00032
+
+**Published muscle context** Triceps · upper back
+
+**Published vector and support context** Overhead line · rope interface
+
+**Associated bundle IDs** triceps
+
+**Association status** current-setup-association
+
+
+### A11 Independent handle pull lines
+
+**Source asset ID** M00076
+
+**Published muscle context** Lats · upper back
+
+**Published vector and support context** High / mid anchors · separate hand paths
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A12 Bench-facing band arrangement
+
+**Source asset ID** M00094
+
+**Published muscle context** Lats · triceps · trunk
+
+**Published vector and support context** Supported base · elevated lines
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A13 Front-view rack configuration
+
+**Source asset ID** M00106
+
+**Published muscle context** Back · shoulders · core
+
+**Published vector and support context** Paired rack uprights · multiple anchor levels
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A14 Rack and conditioning transition
+
+**Source asset ID** M00130
+
+**Published muscle context** Legs · back · trunk
+
+**Published vector and support context** Standing pull lines · adjacent turf lane
+
+**Associated bundle IDs** enforcer; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A15 Suspension and handle junction
+
+**Source asset ID** M00133
+
+**Published muscle context** Upper back · shoulders · grip
+
+**Published vector and support context** Independent attachment paths
+
+**Associated bundle IDs** enforcer; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A16 Box and corebag environment
+
+**Source asset ID** M00141
+
+**Published muscle context** Abdominals · glutes · trunk
+
+**Published vector and support context** Elevated support · hinge / core-work context
+
+**Associated bundle IDs** triceps
+
+**Association status** current-setup-association
+
+
+### A17 Portable band and grip layout
+
+**Source asset ID** M00027
+
+**Published muscle context** Full-body setup reference
+
+**Published vector and support context** Matched elastic lines · handles · connectors
+
+**Associated bundle IDs** juggernaut; titan; enforcer; triceps; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A18 Rack strap and ring interface
+
+**Source asset ID** M00029
+
+**Published muscle context** Back · shoulders · grip
+
+**Published vector and support context** Suspension support · independent hand paths
+
+**Associated bundle IDs** enforcer; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A19 Matched band and handle layout
+
+**Source asset ID** C919
+
+**Published muscle context** Back · chest · arms
+
+**Published vector and support context** Independent grips · assembled band sets · studio background
+
+**Associated bundle IDs** juggernaut; titan; enforcer; triceps; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A20 Short-band bar kit components
+
+**Source asset ID** C1544
+
+**Published muscle context** Bar press / curl setup reference
+
+**Published vector and support context** Compact bands · chrome bar · paired connection points · studio background
+
+**Associated bundle IDs** hpygn
+
+**Association status** current-setup-association
+
+
+### A21 Suspension rack and open working lane
+
+**Source asset ID** M00012
+
+**Published muscle context** Back · shoulders · trunk
+
+**Published vector and support context** Paired overhead supports · standing movement space
+
+**Associated bundle IDs** enforcer; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A22 Elevated suspension and handle lines
+
+**Source asset ID** M00030
+
+**Published muscle context** Back · shoulders · grip
+
+**Published vector and support context** High supports · independent hand paths
+
+**Associated bundle IDs** enforcer; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A23 Bench-facing independent pull station
+
+**Source asset ID** M00071
+
+**Published muscle context** Lats · rear delts · trunk
+
+**Published vector and support context** Elevated rack anchors · bench-supported pulling
+
+**Associated bundle IDs** titan; enforcer
+
+**Association status** current-setup-association
+
+
+### A24 Rope and handle rack junction
+
+**Source asset ID** M00075
+
+**Published muscle context** Triceps · back · shoulders
+
+**Published vector and support context** High rope line · independent handles · separate interfaces
+
+**Associated bundle IDs** triceps; enforcer
+
+**Association status** current-setup-association
+
+
+### A25 Front-facing bench and overhead lines
+
+**Source asset ID** M00115
+
+**Published muscle context** Lats · triceps · trunk
+
+**Published vector and support context** High anchors · aligned bench support
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A26 Incline bench and suspension layout
+
+**Source asset ID** M00134
+
+**Published muscle context** Chest · shoulders · upper back
+
+**Published vector and support context** Inclined support · adjacent overhead pull lines
+
+**Associated bundle IDs** juggernaut; enforcer
+
+**Association status** current-setup-association
+
+
+### A27 Box-supported overhead movement station
+
+**Source asset ID** M00135
+
+**Published muscle context** Abdominals · trunk · back
+
+**Published vector and support context** Elevated support · overhead attachment paths
+
+**Associated bundle IDs** enforcer; scalpel
+
+**Association status** current-setup-association
+
+
+### A28 Low-mounted short-band bar station
+
+**Source asset ID** M00138
+
+**Published muscle context** Arms · shoulders · trunk
+
+**Published vector and support context** Low rack attachment · upward bar pull / curl line
+
+**Associated bundle IDs** hpygn
+
+**Association status** current-setup-association
+
+
+### A29 Wide rack and turf working arrangement
+
+**Source asset ID** M00143
+
+**Published muscle context** Back · shoulders · trunk
+
+**Published vector and support context** Independent anchors · open standing base
+
+**Associated bundle IDs** juggernaut; titan; enforcer; triceps; viper; scalpel
+
+**Association status** current-setup-association
+
+
+### A30 Bench and tire support variation
+
+**Source asset ID** M00150
+
+**Published muscle context** Back · arms · trunk
+
+**Published vector and support context** Multiple support heights · independent band lines
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A31 Paired rack lines and conditioning space
+
+**Source asset ID** M00152
+
+**Published muscle context** Back · shoulders · legs
+
+**Published vector and support context** High pull lines · adjacent hinge / conditioning space
+
+**Associated bundle IDs** enforcer; triceps
+
+**Association status** current-setup-association
+
+
+### A32 Mid-mounted short-band bar station
+
+**Source asset ID** M00249
+
+**Published muscle context** Arms · shoulders · trunk
+
+**Published vector and support context** Mid rack attachment · horizontal bar line · bench support
+
+**Associated bundle IDs** hpygn
+
+**Association status** current-setup-association
+
+
+### Published reel movement index
+
+
+### R01 Dynamic band activation
+
+**Published group** prep
+
+**Anchor / base** Multi-anchor station; light preparatory configuration.
+
+**Interface** Band grips; configuration varies by session.
+
+**Movement** Controlled shoulder and upper-back sweeps before the working sequence.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/Dcet4xlgZWK/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R02 Prone scapular openers
+
+**Published group** prep
+
+**Anchor / base** Kneeling over the bench with the band line directed toward the upper back.
+
+**Interface** Paired band grips.
+
+**Movement** Supported upper-back opening and return while maintaining line tension.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbndC2jAAB6/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R03 Deep-squat scapular drives
+
+**Published group** prep
+
+**Anchor / base** Squat base facing the rig; upper anchor vector.
+
+**Interface** Paired grips.
+
+**Movement** Hold the squat while moving the arms through scapular pull and sweep patterns.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R04 Band squats and kinetic drives
+
+**Published group** prep
+
+**Anchor / base** Portable station; anchor and stance depend on the recorded drive.
+
+**Interface** Band handles or the session interface.
+
+**Movement** Combine a squat/hip-and-knee drive with elastic resistance.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DcCcx4WAniY/; https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R05 Kneeling dual-band lat sweeps
+
+**Published group** pull
+
+**Anchor / base** Bench-kneeling base; high anchor to hip direction.
+
+**Interface** Two ergonomic grips.
+
+**Movement** Sweep the hands downward toward the hips with the torso supported in a repeatable position.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/; https://www.instagram.com/fudge_fit/reel/DcCcx4WAniY/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R06 Squat-stance lat drives
+
+**Published group** pull
+
+**Anchor / base** Wide squat facing high anchors.
+
+**Interface** Paired handles.
+
+**Movement** Drive the band path downward while keeping the squat position consistent.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R07 Horizontal lat and rear-delt sweeps
+
+**Published group** pull
+
+**Anchor / base** Middle-height or approximately horizontal line relative to the working shoulder.
+
+**Interface** Independent grips.
+
+**Movement** Sweep outward/backward through the recorded upper-back arc.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/; https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R08 Reverse flyes and Y-raises
+
+**Published group** pull
+
+**Anchor / base** High-anchor band grid; standing or supported base as recorded.
+
+**Interface** Independent handles.
+
+**Movement** Use outward reverse-fly and upward Y-shaped arm paths as distinct variations.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R09 High-to-low pulldowns
+
+**Published group** pull
+
+**Anchor / base** High anchor; downward diagonal pull.
+
+**Interface** Paired band grips.
+
+**Movement** Draw the arms down through the recorded high-to-low line.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/; https://www.instagram.com/fudge_fit/reel/DbMHiilgEj_/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R10 Terminal isometric lat sweep
+
+**Published group** pull
+
+**Anchor / base** Bent-over base at the portable station.
+
+**Interface** Band grips.
+
+**Movement** Sweep into the held finishing position before a controlled reset.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/Dc4114iM8jj/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R11 Bench-supported unilateral row
+
+**Published group** pull
+
+**Anchor / base** Bench-supported torso; one working pull line.
+
+**Interface** Single ergonomic handle.
+
+**Movement** Draw one arm back while resisting rotation of the torso.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R12 Squatting face pulls
+
+**Published group** pull
+
+**Anchor / base** Squat base facing the band station.
+
+**Interface** Paired grips or rope as configured.
+
+**Movement** Pull toward the upper face/shoulder line while retaining the squat.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R13 Kneeling overhead triceps extension
+
+**Published group** triceps
+
+**Anchor / base** Kneeling base with elevated band line.
+
+**Interface** Rope or grip shown in the session; current dedicated rig uses THEFITGUY single rope.
+
+**Movement** Bend and extend the elbows while retaining a consistent upper-arm position.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/; https://www.instagram.com/fudge_fit/reel/DbMHiilgEj_/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R14 Bench-supported overhead triceps
+
+**Published group** triceps
+
+**Anchor / base** Elbow supported on the bench pad; elevated line.
+
+**Interface** THEFITGUY single rope for the current Tricep Specialist bundle.
+
+**Movement** Extend the elbow from the supported overhead position.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R15 Seated straight-bar pressdowns
+
+**Published group** triceps
+
+**Anchor / base** Seated bench base; band line above the working hands.
+
+**Interface** Straight bar.
+
+**Movement** Press the bar downward through elbow extension.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R16 Low-anchor kickbacks
+
+**Published group** triceps
+
+**Anchor / base** Low anchor; split stance; upper arm beside the torso.
+
+**Interface** Single grip.
+
+**Movement** Extend the elbow backward against the low line.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R17 Side triceps extensions
+
+**Published group** triceps
+
+**Anchor / base** Lateral line at the rig; stance follows the recorded variation.
+
+**Interface** Single grip or rope variation.
+
+**Movement** Extend across the side-directed band vector.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R18 Corebag suspension triceps and unilateral drive
+
+**Published group** triceps
+
+**Anchor / base** High suspension anchors; knees on the 15 kg / 33 lb Corebag.
+
+**Interface** Suspension handles / straps, rather than an elastic-band bundle.
+
+**Movement** Bilateral elbow extension and a separate one-arm variation.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdMne2YgV6-/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R19 Seated band woodchoppers
+
+**Published group** core
+
+**Anchor / base** Seated base; diagonal line from the rig.
+
+**Interface** Band handle configuration shown in the session.
+
+**Movement** Rotate through the recorded diagonal hand path with a controlled return.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R20 Elevated core compression
+
+**Published group** core
+
+**Anchor / base** Kneeling on the 15 kg Corebag at the band station.
+
+**Interface** Band attachment from the recorded sequence.
+
+**Movement** Bring the ribcage toward the pelvis against the band line.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/Dc4114iM8jj/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R21 Resisted torso drops
+
+**Published group** core
+
+**Anchor / base** Rig-facing base with a resisted torso movement.
+
+**Interface** Recorded band interface.
+
+**Movement** Controlled torso lowering and return through the session range.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+### R22 Single-leg suspension hinge and box hinge
+
+**Published group** core
+
+**Anchor / base** High suspension lines; single-leg floor base or kneeling box base.
+
+**Interface** Suspension straps.
+
+**Movement** Hinge with strap support while maintaining the chosen base.
+
+**Related source posts** https://www.instagram.com/fudge_fit/reel/DdMne2YgV6-/; https://www.instagram.com/fudge_fit/reel/DdKAEe7SKLR/
+
+This is the published movement-family description, not an additional verified set or an independent measurement of force. [S08]
+
+
+## Complete source refinement history
+
+
+### Revision note 01
+
+Separated SET-C086 forearm/grip rotation from SET-C087 thigh-braced curl; no source passage discarded.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 02
+
+Reassigned SET-C093 to the unilateral curl group because one active grip is visible; SET-C234 remains the paired/crossed-lines reference.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 03
+
+SET-C327 reclassified as a shared low-front arm raise / torso-hinge sequence rather than a two-hand biceps curl.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 04
+
+SET-C205 renamed a high-front single-arm draw; a biceps-only interpretation is not supported by the observed extension phases.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 05
+
+Oct17 high-front source comparison: low squat distinguished from kneeling; lateral weight shift not a straight-leg Cossack; foreground box occlusion preserved; shared grip kept distinct from independent handles.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 06
+
+SET-C233 shows walking/repositioning with handles, then bringing hands together. No repeated working movement or timed exercise hold established.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 07
+
+SET-C217 shows turning/walking and moving one handle through changing positions. Retained as a transition observation; no distinct exercise prescription established.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 08
+
+SET-C018 shows a low rope handle retained while the other open hand reaches toward the camera. The reach may be a camera-directed gesture; it is not established as a loaded exercise.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 09
+
+Oct17 overhead source check: C184 has two independent palm-grip circuits, C218 is a rearward arm drive, and C224 contains grip changes rather than a two-hand-only repetition.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 10
+
+Full-body planned cards now use separate matched-pair Pilates illustrations/resistance profiles. These adaptations are distinct from recording evidence and from the long-line muscle-focus cards.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
+
+
+### Revision note 11
+
+Oct17 extension review: C088 is standing, not seated; C222 lower contacts remain partly occluded. C016 has a documented box adaptation, not a false claim that the source bench was a box.
+
+Saved interpretation history [S01]. Later corrections supersede the earlier label for the affected passage; the underlying source evidence remains retained.
 
 
 ## Nutrition evidence and the new meal data
@@ -9711,7 +10825,7 @@ These 53 records preserve the initial narrow observation layer, before the later
 
 **Source path** fit-nutrition.html
 
-**Snapshot SHA256 prefix** 5f1a16d03167f198; complete value in source-manifest.json
+**Snapshot SHA256 prefix** 3f847e2cb28a4105; complete value in source-manifest.json
 
 **Source layer** website snapshot
 
@@ -9729,7 +10843,7 @@ These 53 records preserve the initial narrow observation layer, before the later
 
 **Source path** kinetics.html
 
-**Snapshot SHA256 prefix** eb3d1ba184d654ff; complete value in source-manifest.json
+**Snapshot SHA256 prefix** 080ae91ac9f93ee7; complete value in source-manifest.json
 
 **Source layer** website snapshot
 
@@ -9765,7 +10879,7 @@ These 53 records preserve the initial narrow observation layer, before the later
 
 **Source path** guidebook.html
 
-**Snapshot SHA256 prefix** c89df6486f248279; complete value in source-manifest.json
+**Snapshot SHA256 prefix** c808f4fce565c01e; complete value in source-manifest.json
 
 **Source layer** website snapshot
 
@@ -9774,7 +10888,7 @@ These 53 records preserve the initial narrow observation layer, before the later
 
 **Source path** fit-protocol.html
 
-**Snapshot SHA256 prefix** c342d6957e2803c3; complete value in source-manifest.json
+**Snapshot SHA256 prefix** ff2b65ecf148334c; complete value in source-manifest.json
 
 **Source layer** website snapshot
 

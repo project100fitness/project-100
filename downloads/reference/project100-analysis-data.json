@@ -1,7 +1,7 @@
 {
   "title": "PROJECT 100 Master Analysis Reference",
   "edition": "2026-10-18",
-  "website_baseline_commit": "e29360e66b546935a09fb2aaa1f2ed86e0c691a8",
+  "website_baseline_commit": "9c941a28b966c49713a47f949d12977132bef4cc",
   "scope": "Saved reviewed-recording edition and current nutrition models; no new exhaustive video screening",
   "counts": {
     "inventoried_files": 740,
@@ -54,7 +54,7 @@
       "id": "S06",
       "title": "Nutrition overview",
       "path": "fit-nutrition.html",
-      "sha256": "5f1a16d03167f198883091eb72b3c956978f98da0fed0dda6e735fddfcd3501e",
+      "sha256": "3f847e2cb28a4105e45ea2a4b15f5ec93a6a4987d714a0a2a4e472cae4f006d5",
       "source": "website snapshot"
     },
     {
@@ -68,7 +68,7 @@
       "id": "S08",
       "title": "Kinetics equipment and movement reference",
       "path": "kinetics.html",
-      "sha256": "eb3d1ba184d654fffefaabd30498fcb945122b8a9a07426c96da56e4c90ee927",
+      "sha256": "080ae91ac9f93ee7fe344fe31aea530839c6a11157499a15ead69cce2227f593",
       "source": "website snapshot"
     },
     {
@@ -96,14 +96,14 @@
       "id": "S12",
       "title": "Daily guide website",
       "path": "guidebook.html",
-      "sha256": "c89df6486f24827987ab72f7ad4aa2fa0a00075b413a2d86f0cf5d699440aa19",
+      "sha256": "c808f4fce565c01ebe747a60db7617cd42d8e3b8bc11fb1d2969442aa1d4b2fa",
       "source": "website snapshot"
     },
     {
       "id": "S13",
       "title": "Protocol website",
       "path": "fit-protocol.html",
-      "sha256": "c342d6957e2803c3b6c3c6447de556b85fbcfeefc2cfa2a4e589184ba8137f9b",
+      "sha256": "ff2b65ecf148334c4eca7ba9d07be7080d1c052f94f239a085ced71e36ea2347",
       "source": "website snapshot"
     },
     {
@@ -226,6 +226,13 @@
       "current_finding": "The review CSV and detailed coverage notes provide different levels of documentation.",
       "editorial_action": "Retain both; absence of a detailed object is not proof that a recording was never screened.",
       "sources": "S01 S18"
+    },
+    {
+      "topic": "Bundle directory versions",
+      "archived_statement": "The historical gear JSON retains older compositions including Titan 3 by 65 and an older Twin Cobras entry.",
+      "current_finding": "The current Kinetics page publishes Titan 4 by 75, Enforcer two matched 2 by 65 sets, Tricep Specialist 3 by 55, Viper 4 by 45 and Scalpel 4 by 35.",
+      "editorial_action": "Keep both dated sources distinct. Use the current published Kinetics directory for its current configuration; do not infer a clip load from either directory.",
+      "sources": "S08 S09"
     }
   ],
   "movement_families": [
@@ -5005,6 +5012,962 @@
         "secondary": "Upper-arm and shoulder muscles steady the working arm.",
         "base": "The stance and trunk steady the body."
       }
+    }
+  ],
+  "equipment_recognition": [
+    {
+      "id": "kuzaro",
+      "name": "KUZARO · Multi-band setup",
+      "category": "resistance",
+      "badge": "4 KITS · 360 LB SET",
+      "description": "Yellow connection webbing with black KUZARO lettering and thick black D-rings. The supplied manifest lists six tubing grades from light gray to solid black.",
+      "page": 1
+    },
+    {
+      "id": "hpygn-bands",
+      "name": "HPYGN Heavy-Duty Compression System",
+      "category": "resistance",
+      "badge": "330 LB SET",
+      "description": "Gray-black multi-layered bands with black nylon shrouds and carabiner clips. Owner-confirmed short-band configuration: two 65 lb bands per side, paired twice (four bands total), shortened at the low Iron Tower anchor and routed into the Tribe bar’s rotating eyelets. Nominal ratings total 130 lb per side and 260 lb combined; resistance changes with stretch.",
+      "page": 1
+    },
+    {
+      "id": "bluslm",
+      "name": "BLUSLM Ergonomic Tricep Rope",
+      "category": "grips",
+      "badge": "Hand Rope-03",
+      "description": "Extra-long twin black braided nylon arms, a chrome connection collar and large molded black palm-flare stops.",
+      "page": 1
+    },
+    {
+      "id": "hxd",
+      "name": "HXD-ERGO Biomechanical Handles",
+      "category": "grips",
+      "badge": "Curved",
+      "description": "Asymmetric black ergonomic grip molds, flat nylon straps with a blue-and-white shield logo, and integrated fixed black carabiners.",
+      "page": 1
+    },
+    {
+      "id": "innstar",
+      "name": "INNSTAR High-Traction Stirrup Handles",
+      "category": "grips",
+      "badge": "Honeycomb",
+      "description": "Triangular black nylon stirrup handles with black carabiners. The ABS grip cores have anti-slip silicone honeycomb texture; white INNSTAR lettering runs along the straps.",
+      "page": 1
+    },
+    {
+      "id": "angles90",
+      "name": "Angles90 Camo Pull-Up Grips",
+      "category": "grips",
+      "badge": "A90",
+      "description": "Bright orange curved handles on flat black nylon slings, with black A90 GRIPS lettering along the outer curve.",
+      "page": 1
+    },
+    {
+      "id": "single-rope",
+      "name": "THEFITGUY Single-Arm Tricep Rope",
+      "category": "grips",
+      "badge": "16.5 IN",
+      "description": "Single-arm black braided rope with a zinc-plated top snap hook. The distinctive red bell-shaped palm stop carries debossed thefitguy lettering.",
+      "page": 2
+    },
+    {
+      "id": "manueklear",
+      "name": "MANUEKLEAR Neoprene Multi-Grip Handles",
+      "category": "grips",
+      "badge": "3 GRIP ZONES",
+      "description": "Extra-wide matte-gray neoprene/nylon straps with one silver D-ring. Sewn upper, middle and lower grip pockets provide three positions; the side tag has a yellow-and-white logo.",
+      "page": 2
+    },
+    {
+      "id": "tribe",
+      "name": "Tribe Lifting Modular Resistance Bar",
+      "category": "structural",
+      "badge": "3 PIECES · 360° SWIVELS",
+      "description": "Polished chrome knurled bar with three threaded sections and independent rotating ball-bearing swivel rings at both ends.",
+      "page": 2
+    },
+    {
+      "id": "hpygn-bar",
+      "name": "HPYGN Heavy Pilates Structural Bar",
+      "category": "structural",
+      "badge": "Foam-padded steel",
+      "description": "Black steel bar covered in dense non-slip black foam. Its nylon terminal straps have distinctive red edge stitching.",
+      "page": 2
+    },
+    {
+      "id": "extensions",
+      "name": "THEFITGUY Ultimate Extension Straps",
+      "category": "structural",
+      "badge": "Dual D-ring straps",
+      "description": "Flat black nylon extension straps with silver steel D-rings at both ends. Bright red zigzag and box reinforcement runs along their faces; the black fabric tag reads thefitguy.",
+      "page": 2
+    },
+    {
+      "id": "sled",
+      "name": "THEFITGUY Sled Pulling Belt & Straps Kit",
+      "category": "structural",
+      "badge": "2 × 9.8 FT · 4 HOOKS",
+      "description": "Wide padded black neoprene waist harness with two steel D-rings, two 9.8-foot pulling straps and four silver oval snap hooks. Red diamond and X stitching identifies the belt and straps.",
+      "page": 2
+    },
+    {
+      "id": "oak",
+      "name": "Oak-Sports Heavy-Duty Carabiners",
+      "category": "connections",
+      "badge": "25 kN · 5,600 LB",
+      "description": "Bright silver symmetrical oval steel frames with black textured screw-lock gates. The equipment manifest lists a 25 kN / 5,600 lb rating.",
+      "page": 2
+    },
+    {
+      "id": "jrsgs",
+      "name": "JRSGS Rock Locking Clips",
+      "category": "connections",
+      "badge": "25 kN · 2 VARIANTS",
+      "description": "Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.",
+      "page": 2
+    },
+    {
+      "id": "sleeves",
+      "name": "Neoprene Cable / Bundle Management Sleeves",
+      "category": "connections",
+      "badge": "1.5 IN",
+      "description": "Flexible black wraps enclosing multi-band arrays. The reversible split-seam sleeves use a continuous hook-and-loop closure for bundle management and contact shielding.",
+      "page": 3
+    },
+    {
+      "id": "vehiclex",
+      "name": "VEHICLEX Axle Tie-Down Straps",
+      "category": "anchors",
+      "badge": "Sleeved webbing",
+      "description": "Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.",
+      "page": 3
+    },
+    {
+      "id": "nilight",
+      "name": "NILIGHT Soft Loop Anchor Straps",
+      "category": "anchors",
+      "badge": "1.7 × 17 IN",
+      "description": "Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.",
+      "page": 3
+    },
+    {
+      "id": "miaoke",
+      "name": "MIAOKE Tactical Hardware Duffel",
+      "category": "logistics",
+      "badge": "Duffel + organizer",
+      "description": "Black utility duffel/backpack with red zipper tracks and red diamond elastic side cording. The matching clear-panel organizer is labeled WASHBAG.",
+      "page": 3
+    },
+    {
+      "id": "jooeer",
+      "name": "jooeer 3-in-1 Nested Foam Roller Set",
+      "category": "recovery",
+      "badge": "3 NESTED TIERS",
+      "description": "Outer: 18 × 5.5 in black high-density foam roller with a pyramid/spiked texture. Middle: 18 × 3.9 in neon-orange roller with linear ridges. Core: 18 × 1.57 in orange segmented massage stick with matte-gray grips and a black lanyard.",
+      "page": 3
+    }
+  ],
+  "historical_bundle_registry": {
+    "owned_kit_count": 4,
+    "listed_set_total_lb": 360,
+    "grades": [
+      {
+        "lb": 35,
+        "kg": 15.9,
+        "color": "Light gray"
+      },
+      {
+        "lb": 45,
+        "kg": 20.4,
+        "color": "Medium-light gray"
+      },
+      {
+        "lb": 55,
+        "kg": 24.9,
+        "color": "Medium gray"
+      },
+      {
+        "lb": 65,
+        "kg": 29.5,
+        "color": "Dark gray"
+      },
+      {
+        "lb": 75,
+        "kg": 34.0,
+        "color": "Very dark gray / soft black"
+      },
+      {
+        "lb": 85,
+        "kg": 38.5,
+        "color": "Solid black"
+      }
+    ],
+    "bundles": [
+      {
+        "name": "Juggernaut",
+        "lb": 255,
+        "band_count": 3,
+        "band_lb": 85,
+        "color": "Solid black",
+        "focus": "Chest",
+        "use": "Chest presses, standing presses and horizontal pushing."
+      },
+      {
+        "name": "Titan",
+        "lb": 195,
+        "band_count": 3,
+        "band_lb": 65,
+        "color": "Dark gray",
+        "focus": "Back",
+        "use": "Rows, lat pull-downs and posterior-chain work."
+      },
+      {
+        "name": "Enforcer",
+        "lb": 165,
+        "band_count": 3,
+        "band_lb": 55,
+        "color": "Medium gray",
+        "focus": "Triceps",
+        "use": "Overhand/underhand extensions, press-downs and lockout work."
+      },
+      {
+        "name": "Viper",
+        "lb": 135,
+        "band_count": 3,
+        "band_lb": 45,
+        "color": "Medium-light gray",
+        "focus": "Reserve / drop sets",
+        "use": "Shoulder raises, drop sets and finisher work."
+      },
+      {
+        "name": "Scalpel",
+        "lb": 105,
+        "band_count": 3,
+        "band_lb": 35,
+        "color": "Light gray",
+        "focus": "Delts / isolation",
+        "use": "Deltoid flys, precise isolation and warm-up sets."
+      },
+      {
+        "name": "Twin Cobras",
+        "lb": 75,
+        "band_count": 2,
+        "band_lb": 75,
+        "color": "Very dark gray / soft black",
+        "focus": "Biceps / unilateral",
+        "per_hand": true,
+        "use": "Two separate bands for unilateral curls, one band per hand with individual factory clips."
+      }
+    ],
+    "bundle_modifiers": {
+      "tape": "Black Renfrew cloth tape at the joint loops, replacing rigid plastic ties.",
+      "connection": "Eight JRSGS carabiners in the documented bundle setup. Twin Cobras use individual factory clips."
+    }
+  },
+  "current_published_bundles": [
+    [
+      "Juggernaut",
+      "3 × 85 lb",
+      "255 lb nominal"
+    ],
+    [
+      "Titan",
+      "4 × 75 lb",
+      "300 lb nominal"
+    ],
+    [
+      "Enforcer",
+      "2 × 65 lb per matched set",
+      "130 lb nominal per set"
+    ],
+    [
+      "Tricep Specialist",
+      "3 × 55 lb with THEFITGUY rope",
+      "165 lb nominal"
+    ],
+    [
+      "Viper",
+      "4 × 45 lb",
+      "180 lb nominal"
+    ],
+    [
+      "Scalpel",
+      "4 × 35 lb",
+      "140 lb nominal"
+    ]
+  ],
+  "setup_photo_metadata": [
+    {
+      "id": "M00033",
+      "pool": "setups",
+      "title": "High-anchor lat sweep station",
+      "muscles": "Lats · rear delts · trunk stabilizers",
+      "vector": "High → low pull · paired handles · bench support",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00043",
+      "pool": "setups",
+      "title": "Standing multi-vector rig",
+      "muscles": "Back · shoulders · core",
+      "vector": "High / mid anchors · independent grips",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00050",
+      "pool": "setups",
+      "title": "Box-supported core station",
+      "muscles": "Abdominals · trunk stabilizers",
+      "vector": "Elevated support · overhead line",
+      "bundleRefs": [
+        "enforcer",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00073",
+      "pool": "setups",
+      "title": "Bench-supported pull arrangement",
+      "muscles": "Lats · upper back",
+      "vector": "Diagonal pull · supported torso",
+      "bundleRefs": [
+        "titan",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00083",
+      "pool": "setups",
+      "title": "Rack-side pull and carry station",
+      "muscles": "Back · grip · trunk",
+      "vector": "Independent pull lines · adjacent carry space",
+      "bundleRefs": [
+        "titan",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00090",
+      "pool": "setups",
+      "title": "Bench-centered pull configuration",
+      "muscles": "Lats · rear delts",
+      "vector": "Bench base · paired rack anchors",
+      "bundleRefs": [
+        "titan",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00109",
+      "pool": "setups",
+      "title": "Overhead rope and pull lines",
+      "muscles": "Triceps · lats",
+      "vector": "High anchors · rope / handle interfaces",
+      "bundleRefs": [
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00128",
+      "pool": "setups",
+      "title": "Full rack movement grid",
+      "muscles": "Back · shoulders · core",
+      "vector": "Multiple anchor heights · standing / supported bases",
+      "bundleRefs": [
+        "juggernaut",
+        "titan",
+        "enforcer",
+        "triceps",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00014",
+      "pool": "setups",
+      "title": "Turf-side standing pull station",
+      "muscles": "Lats · rear delts · core",
+      "vector": "Rack anchors · standing base",
+      "bundleRefs": [
+        "titan",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00032",
+      "pool": "setups",
+      "title": "High-line rope attachment",
+      "muscles": "Triceps · upper back",
+      "vector": "Overhead line · rope interface",
+      "bundleRefs": [
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00076",
+      "pool": "setups",
+      "title": "Independent handle pull lines",
+      "muscles": "Lats · upper back",
+      "vector": "High / mid anchors · separate hand paths",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00094",
+      "pool": "setups",
+      "title": "Bench-facing band arrangement",
+      "muscles": "Lats · triceps · trunk",
+      "vector": "Supported base · elevated lines",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00106",
+      "pool": "setups",
+      "title": "Front-view rack configuration",
+      "muscles": "Back · shoulders · core",
+      "vector": "Paired rack uprights · multiple anchor levels",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00130",
+      "pool": "setups",
+      "title": "Rack and conditioning transition",
+      "muscles": "Legs · back · trunk",
+      "vector": "Standing pull lines · adjacent turf lane",
+      "bundleRefs": [
+        "enforcer",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00133",
+      "pool": "setups",
+      "title": "Suspension and handle junction",
+      "muscles": "Upper back · shoulders · grip",
+      "vector": "Independent attachment paths",
+      "bundleRefs": [
+        "enforcer",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00141",
+      "pool": "setups",
+      "title": "Box and corebag environment",
+      "muscles": "Abdominals · glutes · trunk",
+      "vector": "Elevated support · hinge / core-work context",
+      "bundleRefs": [
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00027",
+      "pool": "attachments",
+      "title": "Portable band and grip layout",
+      "muscles": "Full-body setup reference",
+      "vector": "Matched elastic lines · handles · connectors",
+      "bundleRefs": [
+        "juggernaut",
+        "titan",
+        "enforcer",
+        "triceps",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00029",
+      "pool": "attachments",
+      "title": "Rack strap and ring interface",
+      "muscles": "Back · shoulders · grip",
+      "vector": "Suspension support · independent hand paths",
+      "bundleRefs": [
+        "enforcer",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "C919",
+      "pool": "attachments",
+      "title": "Matched band and handle layout",
+      "muscles": "Back · chest · arms",
+      "vector": "Independent grips · assembled band sets · studio background",
+      "bundleRefs": [
+        "juggernaut",
+        "titan",
+        "enforcer",
+        "triceps",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "C1544",
+      "pool": "attachments",
+      "title": "Short-band bar kit components",
+      "muscles": "Bar press / curl setup reference",
+      "vector": "Compact bands · chrome bar · paired connection points · studio background",
+      "bundleRefs": [
+        "hpygn"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00012",
+      "pool": "setups",
+      "title": "Suspension rack and open working lane",
+      "muscles": "Back · shoulders · trunk",
+      "vector": "Paired overhead supports · standing movement space",
+      "bundleRefs": [
+        "enforcer",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00030",
+      "pool": "setups",
+      "title": "Elevated suspension and handle lines",
+      "muscles": "Back · shoulders · grip",
+      "vector": "High supports · independent hand paths",
+      "bundleRefs": [
+        "enforcer",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00071",
+      "pool": "setups",
+      "title": "Bench-facing independent pull station",
+      "muscles": "Lats · rear delts · trunk",
+      "vector": "Elevated rack anchors · bench-supported pulling",
+      "bundleRefs": [
+        "titan",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00075",
+      "pool": "setups",
+      "title": "Rope and handle rack junction",
+      "muscles": "Triceps · back · shoulders",
+      "vector": "High rope line · independent handles · separate interfaces",
+      "bundleRefs": [
+        "triceps",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00115",
+      "pool": "setups",
+      "title": "Front-facing bench and overhead lines",
+      "muscles": "Lats · triceps · trunk",
+      "vector": "High anchors · aligned bench support",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00134",
+      "pool": "setups",
+      "title": "Incline bench and suspension layout",
+      "muscles": "Chest · shoulders · upper back",
+      "vector": "Inclined support · adjacent overhead pull lines",
+      "bundleRefs": [
+        "juggernaut",
+        "enforcer"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00135",
+      "pool": "setups",
+      "title": "Box-supported overhead movement station",
+      "muscles": "Abdominals · trunk · back",
+      "vector": "Elevated support · overhead attachment paths",
+      "bundleRefs": [
+        "enforcer",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00138",
+      "pool": "setups",
+      "title": "Low-mounted short-band bar station",
+      "muscles": "Arms · shoulders · trunk",
+      "vector": "Low rack attachment · upward bar pull / curl line",
+      "bundleRefs": [
+        "hpygn"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00143",
+      "pool": "setups",
+      "title": "Wide rack and turf working arrangement",
+      "muscles": "Back · shoulders · trunk",
+      "vector": "Independent anchors · open standing base",
+      "bundleRefs": [
+        "juggernaut",
+        "titan",
+        "enforcer",
+        "triceps",
+        "viper",
+        "scalpel"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00150",
+      "pool": "setups",
+      "title": "Bench and tire support variation",
+      "muscles": "Back · arms · trunk",
+      "vector": "Multiple support heights · independent band lines",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00152",
+      "pool": "setups",
+      "title": "Paired rack lines and conditioning space",
+      "muscles": "Back · shoulders · legs",
+      "vector": "High pull lines · adjacent hinge / conditioning space",
+      "bundleRefs": [
+        "enforcer",
+        "triceps"
+      ],
+      "bundleRelation": "current-setup-association"
+    },
+    {
+      "id": "M00249",
+      "pool": "setups",
+      "title": "Mid-mounted short-band bar station",
+      "muscles": "Arms · shoulders · trunk",
+      "vector": "Mid rack attachment · horizontal bar line · bench support",
+      "bundleRefs": [
+        "hpygn"
+      ],
+      "bundleRelation": "current-setup-association"
+    }
+  ],
+  "reel_movement_metadata": [
+    {
+      "title": "Dynamic band activation",
+      "group": "prep",
+      "fields": {
+        "Anchor / base": "Multi-anchor station; light preparatory configuration.",
+        "Interface": "Band grips; configuration varies by session.",
+        "Movement": "Controlled shoulder and upper-back sweeps before the working sequence."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/Dcet4xlgZWK/"
+      ]
+    },
+    {
+      "title": "Prone scapular openers",
+      "group": "prep",
+      "fields": {
+        "Anchor / base": "Kneeling over the bench with the band line directed toward the upper back.",
+        "Interface": "Paired band grips.",
+        "Movement": "Supported upper-back opening and return while maintaining line tension."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbndC2jAAB6/"
+      ]
+    },
+    {
+      "title": "Deep-squat scapular drives",
+      "group": "prep",
+      "fields": {
+        "Anchor / base": "Squat base facing the rig; upper anchor vector.",
+        "Interface": "Paired grips.",
+        "Movement": "Hold the squat while moving the arms through scapular pull and sweep patterns."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/"
+      ]
+    },
+    {
+      "title": "Band squats and kinetic drives",
+      "group": "prep",
+      "fields": {
+        "Anchor / base": "Portable station; anchor and stance depend on the recorded drive.",
+        "Interface": "Band handles or the session interface.",
+        "Movement": "Combine a squat/hip-and-knee drive with elastic resistance."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DcCcx4WAniY/",
+        "https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/"
+      ]
+    },
+    {
+      "title": "Kneeling dual-band lat sweeps",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Bench-kneeling base; high anchor to hip direction.",
+        "Interface": "Two ergonomic grips.",
+        "Movement": "Sweep the hands downward toward the hips with the torso supported in a repeatable position."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/",
+        "https://www.instagram.com/fudge_fit/reel/DcCcx4WAniY/"
+      ]
+    },
+    {
+      "title": "Squat-stance lat drives",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Wide squat facing high anchors.",
+        "Interface": "Paired handles.",
+        "Movement": "Drive the band path downward while keeping the squat position consistent."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/"
+      ]
+    },
+    {
+      "title": "Horizontal lat and rear-delt sweeps",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Middle-height or approximately horizontal line relative to the working shoulder.",
+        "Interface": "Independent grips.",
+        "Movement": "Sweep outward/backward through the recorded upper-back arc."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/",
+        "https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/"
+      ]
+    },
+    {
+      "title": "Reverse flyes and Y-raises",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "High-anchor band grid; standing or supported base as recorded.",
+        "Interface": "Independent handles.",
+        "Movement": "Use outward reverse-fly and upward Y-shaped arm paths as distinct variations."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/"
+      ]
+    },
+    {
+      "title": "High-to-low pulldowns",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "High anchor; downward diagonal pull.",
+        "Interface": "Paired band grips.",
+        "Movement": "Draw the arms down through the recorded high-to-low line."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/",
+        "https://www.instagram.com/fudge_fit/reel/DbMHiilgEj_/"
+      ]
+    },
+    {
+      "title": "Terminal isometric lat sweep",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Bent-over base at the portable station.",
+        "Interface": "Band grips.",
+        "Movement": "Sweep into the held finishing position before a controlled reset."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/Dc4114iM8jj/"
+      ]
+    },
+    {
+      "title": "Bench-supported unilateral row",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Bench-supported torso; one working pull line.",
+        "Interface": "Single ergonomic handle.",
+        "Movement": "Draw one arm back while resisting rotation of the torso."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbwlWn9g9vn/"
+      ]
+    },
+    {
+      "title": "Squatting face pulls",
+      "group": "pull",
+      "fields": {
+        "Anchor / base": "Squat base facing the band station.",
+        "Interface": "Paired grips or rope as configured.",
+        "Movement": "Pull toward the upper face/shoulder line while retaining the squat."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/"
+      ]
+    },
+    {
+      "title": "Kneeling overhead triceps extension",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "Kneeling base with elevated band line.",
+        "Interface": "Rope or grip shown in the session; current dedicated rig uses THEFITGUY single rope.",
+        "Movement": "Bend and extend the elbows while retaining a consistent upper-arm position."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DcW-IV9AC7G/",
+        "https://www.instagram.com/fudge_fit/reel/DbMHiilgEj_/"
+      ]
+    },
+    {
+      "title": "Bench-supported overhead triceps",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "Elbow supported on the bench pad; elevated line.",
+        "Interface": "THEFITGUY single rope for the current Tricep Specialist bundle.",
+        "Movement": "Extend the elbow from the supported overhead position."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/"
+      ]
+    },
+    {
+      "title": "Seated straight-bar pressdowns",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "Seated bench base; band line above the working hands.",
+        "Interface": "Straight bar.",
+        "Movement": "Press the bar downward through elbow extension."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/"
+      ]
+    },
+    {
+      "title": "Low-anchor kickbacks",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "Low anchor; split stance; upper arm beside the torso.",
+        "Interface": "Single grip.",
+        "Movement": "Extend the elbow backward against the low line."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdiYq3TAtHe/"
+      ]
+    },
+    {
+      "title": "Side triceps extensions",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "Lateral line at the rig; stance follows the recorded variation.",
+        "Interface": "Single grip or rope variation.",
+        "Movement": "Extend across the side-directed band vector."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/"
+      ]
+    },
+    {
+      "title": "Corebag suspension triceps and unilateral drive",
+      "group": "triceps",
+      "fields": {
+        "Anchor / base": "High suspension anchors; knees on the 15 kg / 33 lb Corebag.",
+        "Interface": "Suspension handles / straps, rather than an elastic-band bundle.",
+        "Movement": "Bilateral elbow extension and a separate one-arm variation."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdMne2YgV6-/"
+      ]
+    },
+    {
+      "title": "Seated band woodchoppers",
+      "group": "core",
+      "fields": {
+        "Anchor / base": "Seated base; diagonal line from the rig.",
+        "Interface": "Band handle configuration shown in the session.",
+        "Movement": "Rotate through the recorded diagonal hand path with a controlled return."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/"
+      ]
+    },
+    {
+      "title": "Elevated core compression",
+      "group": "core",
+      "fields": {
+        "Anchor / base": "Kneeling on the 15 kg Corebag at the band station.",
+        "Interface": "Band attachment from the recorded sequence.",
+        "Movement": "Bring the ribcage toward the pelvis against the band line."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/Dc4114iM8jj/"
+      ]
+    },
+    {
+      "title": "Resisted torso drops",
+      "group": "core",
+      "fields": {
+        "Anchor / base": "Rig-facing base with a resisted torso movement.",
+        "Interface": "Recorded band interface.",
+        "Movement": "Controlled torso lowering and return through the session range."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DbPRxOegWZW/"
+      ]
+    },
+    {
+      "title": "Single-leg suspension hinge and box hinge",
+      "group": "core",
+      "fields": {
+        "Anchor / base": "High suspension lines; single-leg floor base or kneeling box base.",
+        "Interface": "Suspension straps.",
+        "Movement": "Hinge with strap support while maintaining the chosen base."
+      },
+      "source_links": [
+        "https://www.instagram.com/fudge_fit/reel/DdMne2YgV6-/",
+        "https://www.instagram.com/fudge_fit/reel/DdKAEe7SKLR/"
+      ]
     }
   ],
   "canonical_techniques": [

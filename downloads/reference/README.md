@@ -1,6 +1,6 @@
 # PROJECT 100 text reference package
 
-Edition 18 October 2026. Website source baseline e29360e66b546935a09fb2aaa1f2ed86e0c691a8.
+Edition 18 October 2026. Website source baseline 9c941a28b966c49713a47f949d12977132bef4cc.
 
 Read the Master Analysis Reference for the complete evidence and analysis, the Encyclopedia Update for chapter integration, and the Guidebook Update for a concise practical companion. PDFs are searchable and have section bookmarks. The master has a linked table of contents. Markdown files are the editable text sources.
 

@@ -38,7 +38,7 @@
     "id": "S06",
     "title": "Nutrition overview",
     "path": "fit-nutrition.html",
-    "sha256": "5f1a16d03167f198883091eb72b3c956978f98da0fed0dda6e735fddfcd3501e",
+    "sha256": "3f847e2cb28a4105e45ea2a4b15f5ec93a6a4987d714a0a2a4e472cae4f006d5",
     "source": "website snapshot"
   },
   {
@@ -52,7 +52,7 @@
     "id": "S08",
     "title": "Kinetics equipment and movement reference",
     "path": "kinetics.html",
-    "sha256": "eb3d1ba184d654fffefaabd30498fcb945122b8a9a07426c96da56e4c90ee927",
+    "sha256": "080ae91ac9f93ee7fe344fe31aea530839c6a11157499a15ead69cce2227f593",
     "source": "website snapshot"
   },
   {
@@ -80,14 +80,14 @@
     "id": "S12",
     "title": "Daily guide website",
     "path": "guidebook.html",
-    "sha256": "c89df6486f24827987ab72f7ad4aa2fa0a00075b413a2d86f0cf5d699440aa19",
+    "sha256": "c808f4fce565c01ebe747a60db7617cd42d8e3b8bc11fb1d2969442aa1d4b2fa",
     "source": "website snapshot"
   },
   {
     "id": "S13",
     "title": "Protocol website",
     "path": "fit-protocol.html",
-    "sha256": "c342d6957e2803c3b6c3c6447de556b85fbcfeefc2cfa2a4e589184ba8137f9b",
+    "sha256": "ff2b65ecf148334c4eca7ba9d07be7080d1c052f94f239a085ced71e36ea2347",
     "source": "website snapshot"
   },
   {
