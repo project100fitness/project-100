@@ -126,3 +126,25 @@
 @media(max-width:767px){.session-choice-label{scroll-margin-top:52px}.p100-guides .library-toolbar,.p100-guides .library-muscle-section{scroll-margin-top:52px!important}}
 
 @media(max-width:767px){body[data-page=kinetics] main [id]{scroll-margin-top:0!important}}
+
+/* Mobile review, 18 October: all section choices fit the viewport. */
+@media screen and (max-width:767px),screen and (max-width:1023px) and (pointer:coarse){
+ .kin-vector-grid,.kin-steps,.kin-mounts,.kin-pilates-atlas,.kin-bundles{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:visible!important;scroll-snap-type:none!important;gap:12px!important;padding:4px 0 12px}
+ .kin-vector-grid>*,.kin-steps>*,.kin-mounts>*,.kin-pilates-atlas>*,.kin-bundles>article{width:auto!important;max-width:100%;min-width:0;flex:none!important;box-sizing:border-box}
+ .kin-steps{grid-template-columns:minmax(0,1fr)!important}.kin-steps>li{min-height:0!important;padding:12px!important}.kin-steps>li:before{float:left;margin:0 12px 0 0}
+ .kin-pilates-file>summary{display:grid;grid-template-columns:minmax(0,1fr);padding:12px 28px 12px 10px;gap:6px;min-height:160px}
+ .kin-pilates-file>summary>.kin-matchstick{width:48px;height:42px}.kin-pilates-file .kin-folder-title>b{font-size:14px;line-height:1.3;overflow-wrap:normal}.kin-pilates-file .kin-folder-title small{font-size:9px;letter-spacing:.04em}.kin-pilates-file .kin-folder-title>span{font-size:12px}.kin-pilates-file .kin-folder-edge{width:24px}
+ .kin-pilates-file[open]{grid-column:1/-1}.kin-pilates-file[open]>summary{min-height:0;grid-template-columns:48px minmax(0,1fr)}
+ .kin-bundle-panel{overflow:visible;min-width:0}.kin-bundle-panel .kin-bundles--compact{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .kin-bundle-panel .kin-bundles--compact .kin-bundle{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:8px;min-height:0;padding:12px!important}
+ .kin-bundle-panel .kin-bundle-value{justify-self:start;font-size:26px;line-height:1.1;white-space:normal}.kin-bundle-panel .kin-bundle-value small{font-size:10px}.kin-bundle-panel .kin-bundle-related{position:static;min-height:14px;font-size:9px;line-height:1.4}.kin-bundle-panel .kin-band-mark{display:none}
+ .kin-bundle-panel .kin-bundles--compact h4{font-size:15px!important}.kin-bundle-panel .kin-composition{font-size:12px;overflow-wrap:anywhere}
+ .exercise-entry-grid>.exercise-entry-card{flex:0 0 calc((100% - 10px)/2)!important;padding:10px!important;box-sizing:border-box}.exercise-entry-card h3{font-size:17px!important;line-height:1.2}.exercise-entry-card span{font-size:10px}.exercise-entry-card b{font-size:12px;line-height:1.4}.exercise-entry-card img{height:auto;aspect-ratio:2/1;max-height:none;object-fit:contain}
+ body[data-page=kinetics] main [id],.exercise-entry-card,.session-choice-label,.p100-guides .library-toolbar,.p100-guides .library-muscle-section{scroll-margin-top:calc(var(--mobile-head-height,150px) + 64px)!important}
+ .exercise-pagination{scroll-margin-top:calc(var(--mobile-head-height,150px) + 58px)!important}
+ .mobile-dock-background{height:calc(56px + env(safe-area-inset-bottom,0px))}.main{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))!important}
+ .hud-folder__head{isolation:isolate;border:1px solid var(--line-strong);border-left:3px solid var(--accent);background:radial-gradient(ellipse at 0 0,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),var(--surface);box-shadow:inset 0 1px color-mix(in srgb,var(--accent) 40%,transparent),0 5px 20px #0002;overflow:hidden}
+ .hud-folder__head:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 25%,color-mix(in srgb,var(--accent) 14%,transparent) 48%,transparent 70%);transform:translateX(-100%);animation:mobile-info-sheen 9s ease-in-out infinite}
+}
+@keyframes mobile-info-sheen{0%,25%{transform:translateX(-100%)}65%,100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.hud-folder__head:after{animation:none!important}}
