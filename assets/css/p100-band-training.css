@@ -25,3 +25,16 @@
 .p100-guides .session-config .day-tabs{grid-template-columns:repeat(var(--day-count,3),minmax(0,1fr))}
 
 .kin-showcase-progress{display:block;border:0;width:100%;height:3px;accent-color:var(--accent);background:var(--surface-3)}.kin-showcase-progress::-webkit-progress-bar{background:var(--surface-3)}.kin-showcase-progress::-webkit-progress-value{background:var(--accent)}
+/* Exercise directory: visible groups and direct card access, without serial paging. */
+.p100-guides #p100-library-grid{display:block!important;overflow:visible!important;scroll-snap-type:none!important;padding:0!important;grid-auto-flow:row!important}
+.p100-guides .library-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.p100-guides .library-muscle-section{margin:0 0 28px;padding-bottom:22px;border-bottom:1px solid var(--line);min-width:0}
+.p100-guides .library-muscle-section>header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}.p100-guides .library-muscle-section h3{font-size:21px;margin:0}.p100-guides .library-muscle-section>header>span{font-size:12px;color:var(--muted)}
+.p100-guides .library-card-grid .library-tile{width:100%;min-width:0;min-height:0;padding:10px;border:1px solid var(--line-strong);border-left:3px solid var(--brand-orange);border-radius:0 9px 9px;background:var(--surface);text-align:left}
+.p100-guides .library-card-grid .library-tile img{width:100%;height:auto!important;aspect-ratio:2/1;object-fit:contain;background:white}.p100-guides .library-card-grid .library-tile h4{font-size:14px;line-height:1.3;margin:6px 0;overflow-wrap:break-word}.p100-guides .library-card-grid .library-tile .tile-tag{font-size:9px}.p100-guides .library-card-grid .library-tile p{font-size:11px;margin:5px 0 0}
+.p100-guides .library-view-group{display:block;width:100%;min-height:44px;margin-top:10px;padding:9px 12px;border:1px solid var(--line-strong);border-left:3px solid var(--brand-orange);border-radius:5px;background:var(--surface-2);color:var(--text);font-size:13px;text-align:left;font-weight:700}
+.p100-guides .library-browse-head .deck-controls,.p100-guides .download-browse-controls{display:none!important}
+.p100-guides #p100-download-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto!important;grid-auto-flow:row!important;overflow:visible!important;scroll-snap-type:none!important;gap:12px}
+.p100-guides #p100-download-cards .download-card{min-height:150px;padding:16px}.p100-guides #p100-download-cards .download-card h3{font-size:19px}.p100-guides #p100-download-cards .download-card p{font-size:13px}
+@media(max-width:1000px){.p100-guides .library-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.p100-guides .library-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.p100-guides #p100-download-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
