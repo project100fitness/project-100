@@ -12,7 +12,7 @@
   const folderStates = new Map();
 
   function apply() {
-    const query = search.value.trim().toLowerCase();
+    const query = '';
     const isFiltered = group !== 'all' || query !== '';
     if (isFiltered && !wasFiltered) {
       folders.forEach(folder => folderStates.set(folder, folder.open));
@@ -39,7 +39,7 @@
     });
     wasFiltered = isFiltered;
     count.textContent = matches === 0
-      ? 'No movements match. Clear the search or choose All movements.'
+      ? 'No movements available.'
       : matches + ' movement' + (matches === 1 ? '' : 's')
         + (query ? ' matching “' + search.value.trim() + '”' : '');
   }
@@ -48,7 +48,7 @@
     filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
     apply();
   }));
-  search.addEventListener('input', apply);
+
   const strip = document.querySelector('.kin-strip[data-gallery="kin-portable"]');
   if (strip) {
     for (const [selector, direction] of [['.kin-gallery-prev', -1], ['.kin-gallery-next', 1]]) {
