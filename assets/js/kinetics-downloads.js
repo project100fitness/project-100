@@ -14,7 +14,7 @@ function updateBar(){scrollQueued=false;if(!bar||!section)return;var left=docume
 function queueBar(){if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateBar);}}
 function renderSelection(moveFrame,fragment){
 dialog.dataset.category=selected.category;dialog.dataset.results=String(filtered.length);
-dialog.querySelectorAll("[data-kd-doc]").forEach(function(b){var on=b.dataset.kdDoc===selected.id;b.setAttribute("aria-pressed",String(on));if(on)b.scrollIntoView({block:"nearest",inline:"nearest",behavior:"auto"});});
+dialog.querySelectorAll("[data-kd-doc]").forEach(function(b){var on=b.dataset.kdDoc===selected.id;b.setAttribute("aria-pressed",String(on));if(on)b.scrollIntoView({block:"nearest",inline:"start",behavior:"auto"});});
 dialog.querySelector("[data-kd-eyebrow]").textContent=selected.eyebrow;
 dialog.querySelector(".kd-preview-note").textContent=selected.note;
 dialog.querySelector("[data-kd-document-title]").textContent=selected.title;
@@ -58,6 +58,7 @@ doc.documentElement.classList.add("kd-in-frame");
 var saved=Object.assign({},snapshots[selected.id]||{},resistanceRecords);doc.querySelectorAll("input[name],textarea[name],select[name]").forEach(function(el){if(!/^weekly-day-[1-7]-notes$/.test(el.name)&&Object.prototype.hasOwnProperty.call(saved,el.name))el.value=saved[el.name];});if(frame.contentWindow.Project100RefreshResistance)frame.contentWindow.Project100RefreshResistance();
 doc.addEventListener("click",function(e){var a=e.target.closest("a[href]");if(!a)return;var u=new URL(a.href),match=documents.find(function(d){return new URL(d.preview,location.href).pathname===u.pathname&&u.origin===location.origin;});if(match){if(u.pathname===frame.contentWindow.location.pathname&&u.hash)return;e.preventDefault();select(match.id,u.hash);}else if(u.origin!==location.origin){a.target="_blank";a.rel="noopener noreferrer";}});
 }catch(e){/* A full-page link remains available if a browser prevents framed interaction. */}});
+window.addEventListener("resize",function(){if(dialog.open)requestAnimationFrame(function(){var current=dialog.querySelector('[data-kd-doc][aria-pressed="true"]');if(current)current.scrollIntoView({block:"nearest",inline:"start",behavior:"auto"});});});
 window.addEventListener("scroll",queueBar,{passive:true});window.addEventListener("resize",queueBar);updateBar();
 var requested=new URLSearchParams(location.search).get("workout");if(requested&&get(requested)){var openRequested=function(){requestAnimationFrame(function(){open(null,requested);});};if(document.readyState==="complete")openRequested();else window.addEventListener("load",openRequested,{once:true});}
 })();

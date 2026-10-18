@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -40,15 +42,22 @@ jobs:
           node scripts/check-download-drawer.cjs
       - name: Build the complete illustrated edition
         run: node scripts/build-workout-guides.cjs
+      - name: Validate source navigation and package canonical downloads
+        run: |
+          python scripts/check-workout-source.py
+          python scripts/package-workout-guides.py
+          python scripts/audit-publication-evidence.py
       - name: Validate all guides, equipment and links
         run: python scripts/validate-workout-guides.py
       - name: Publish verified PDF downloads to the site branch
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          TARGET_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add downloads/kinetics/pdf downloads/kinetics/pdf-build-report.json docs/workout-guides/integrated-validation.json
+          git add downloads/kinetics/pdf downloads/kinetics/pdf-build-report.json downloads/kinetics/guide-page-layout.json downloads/kinetics/*.zip docs/workout-guides/integrated-validation.json
           if ! git diff --cached --quiet; then
             git commit -m "Build verified expanded Kinetics guide downloads"
-            git push
+            git push origin HEAD:"refs/heads/${TARGET_BRANCH}"
           fi

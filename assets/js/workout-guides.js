@@ -337,7 +337,7 @@ function formValues(){var o={};document.querySelectorAll("input[name],textarea[n
 window.Project100ReadValues=formValues;
 async function plate(db,kind,guideId){
  kind=kind||document.body.dataset.document;
- if(kind==='protocol')return {};
+ if(kind==='protocol'||kind==='weekly-overview')return {};
  var items=db.exercises.map(function(e){return {id:e.id,art:e.art};});
  if(['focused','book','weekly','focused-short'].includes(kind))items=items.concat(db.recordedVariants.filter(function(v){return v.art&&v.trainingPrescriptionEligible!==false;}).map(function(v){return {id:'variant-'+v.id,art:v.art};}));
  if(kind==='guide')items=items.filter(function(e){return e.id===(guideId||document.body.dataset.guide);});

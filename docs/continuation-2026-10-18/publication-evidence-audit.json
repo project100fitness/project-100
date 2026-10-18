@@ -1,0 +1,734 @@
+{
+  "pdfs": [
+    {
+      "name": "focused-days.pdf",
+      "pages": 27,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "b672f74cd2733a7b0e09e67ca4b5b2357abbcb71e1a33e93f2748999ba30d4ff"
+    },
+    {
+      "name": "full-body.pdf",
+      "pages": 8,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "93efec0e28604b66b6d0c888f8c84f656049e27b08419e6dd86314e22a31b44f"
+    },
+    {
+      "name": "weekly-planner.pdf",
+      "pages": 21,
+      "fields": 7,
+      "widgets": [
+        {
+          "name": "weekly-day-1-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            641.09,
+            549.28,
+            685.09
+          ]
+        },
+        {
+          "name": "weekly-day-2-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            558.09,
+            549.28,
+            602.09
+          ]
+        },
+        {
+          "name": "weekly-day-3-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            475.09,
+            549.28,
+            519.09
+          ]
+        },
+        {
+          "name": "weekly-day-4-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            392.09,
+            549.28,
+            436.09
+          ]
+        },
+        {
+          "name": "weekly-day-5-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            309.09,
+            549.28,
+            353.09
+          ]
+        },
+        {
+          "name": "weekly-day-6-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            226.09,
+            549.28,
+            270.09
+          ]
+        },
+        {
+          "name": "weekly-day-7-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            143.09,
+            549.28,
+            187.09
+          ]
+        }
+      ],
+      "sha256": "d075d62ecad4cf5822b23191f4eb5ea0437a1dade9967e904fc56210300608ca"
+    },
+    {
+      "name": "complete-guide.pdf",
+      "pages": 35,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "92e8ccb8b0366d0a601876be94a937615f4e48bc8f1037240b0a621ed6f1a331"
+    },
+    {
+      "name": "source-catalogue.pdf",
+      "pages": 37,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "4d1135507975bb4d3f3c4a78178b6d9fe0316dba73d48ea482baec0b34072f3c"
+    },
+    {
+      "name": "focused-short.pdf",
+      "pages": 12,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "61413288f7c04373fc292fa808dfa53cd89cba006b6c6981e268762479ad3731"
+    },
+    {
+      "name": "full-body-short.pdf",
+      "pages": 8,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "93efec0e28604b66b6d0c888f8c84f656049e27b08419e6dd86314e22a31b44f"
+    },
+    {
+      "name": "weekly-overview.pdf",
+      "pages": 1,
+      "fields": 7,
+      "widgets": [
+        {
+          "name": "weekly-day-1-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            641.09,
+            549.28,
+            685.09
+          ]
+        },
+        {
+          "name": "weekly-day-2-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            558.09,
+            549.28,
+            602.09
+          ]
+        },
+        {
+          "name": "weekly-day-3-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            475.09,
+            549.28,
+            519.09
+          ]
+        },
+        {
+          "name": "weekly-day-4-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            392.09,
+            549.28,
+            436.09
+          ]
+        },
+        {
+          "name": "weekly-day-5-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            309.09,
+            549.28,
+            353.09
+          ]
+        },
+        {
+          "name": "weekly-day-6-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            226.09,
+            549.28,
+            270.09
+          ]
+        },
+        {
+          "name": "weekly-day-7-notes",
+          "page": 1,
+          "rect": [
+            376.0,
+            143.09,
+            549.28,
+            187.09
+          ]
+        }
+      ],
+      "sha256": "11ea040e9e585e9899674361c587200af96103ff43890581945ebe8d71e5681e"
+    },
+    {
+      "name": "exercise-guides.pdf",
+      "pages": 8,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "cfa996545620ccb08c0eafc89b02ff0f46ae999d189eaa4b5a4942acd320d0e8"
+    },
+    {
+      "name": "guide-row.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "862ff4aff560c352ad54f9eae6a4051fc8bf3fb058094ce12b16f8fb4216dd13"
+    },
+    {
+      "name": "guide-press.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "ed6a0d03215fec066a47356cfc1d4c8d6f26215c62c88d4036c4d046be1b1c50"
+    },
+    {
+      "name": "guide-pressdown.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "8012c730e0b43482ac63e52036c283909ab5457e550c8e28cbd7b61c525fb51c"
+    },
+    {
+      "name": "guide-lateral.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "43423f11585d1bc60539dfebf8088a6b3c2441472e02ff0d470dcccf39dcbf7b"
+    },
+    {
+      "name": "guide-brace.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "b21b8157e7011ab1a6dd6fc67706b7556a7d53881d91603fcab0d472cdef7978"
+    },
+    {
+      "name": "guide-sit-stand.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "1e561d74b209d18d782a118409eda8fa03e63ef4a7eb3e55bf3db32475534225"
+    },
+    {
+      "name": "guide-hamstring-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "bccffe1e96c2d63210ab36ac70c98fdf50bae3132caf143c291fa00d8fe1d8ff"
+    },
+    {
+      "name": "guide-calf-raise.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "adededfb9fbd106dd17c8dfe8e7d34febf573e3fdf35f8bab0a1af4d2b2f54ec"
+    },
+    {
+      "name": "guide-hip-abduction.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "ec906d0fd739622a17d7cd72304b3e84e7d1b620d1143dfc04236d3101315c2b"
+    },
+    {
+      "name": "guide-scapular-control.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "de24e9b3396f43a34552c293e5292315f11c2ba106aad123cc0d23ce751bb59b"
+    },
+    {
+      "name": "guide-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "d68bef76b26d68b9a2419b427491e9b30a8c8dbe7dda97e21443ceb5f67d1ca4"
+    },
+    {
+      "name": "guide-hip-extension.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "a9583cc4e73eb260db2ce511a70f1a014325a9983ac9d06d04e45437838223c8"
+    },
+    {
+      "name": "guide-box-kneeling-extension.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "94eeebf1324cce91d5e8bf7ee7bdf45b6b994111c02935da4ddc747804b25832"
+    },
+    {
+      "name": "guide-floor-kneeling-overhead-extension.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "9d0e6865543b3fc95fe6049f78f5d3d367bd51933d6b79dd4b6b9f1716510acc"
+    },
+    {
+      "name": "guide-supported-high-front-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "29222232fed88ae0211ed5c6f1444a3cb4486f28535fc5ba74bd13daa385f383"
+    },
+    {
+      "name": "guide-standing-shared-low-rear-overhead-extension.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "15b7314b57fdb60d8cfb15b9573c0db473d8242e21b96c3e853e6f18d65f342d"
+    },
+    {
+      "name": "guide-floor-kneeling-high-front-paired-draw.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "617d05ebde139ae1e82d4b07a52ce446bf59a54cfbe92303cb973071108182bf"
+    },
+    {
+      "name": "guide-standing-mid-side-band-bar-pressdown.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "b185595aedfc21373fe3a3d390a819dd35a1508088f5d11ad257911aa85b8753"
+    },
+    {
+      "name": "guide-shoulder-band-bar-squat.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "e4d2aad6bd8a296986e5e341a0246c3a9d5167a78d3ad386829a943902b74a7b"
+    },
+    {
+      "name": "guide-standing-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "0cf9cb302981713133e94f31c142cbaf7e9fba9c07304bc0dfc9d922b822672b"
+    },
+    {
+      "name": "guide-pilates-row.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "d68c512b17393d6345af34b78c40a29dccc830f3a93d0946b4d210228cf6eb9d"
+    },
+    {
+      "name": "guide-pilates-press.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "3c0123aebc656c87793b0c0b5b2fd22a961857fe53248487a7eec4bced4047d1"
+    },
+    {
+      "name": "guide-pilates-hamstring-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "f12bcae5dd3900a9ab84764c6c88e72d160bbe25f1041f0f543e2b3f8522ebc9"
+    },
+    {
+      "name": "guide-pilates-curl.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "4359e905ba85db9f4af103454562f2113cee64394649aed37d800c2ad0d8b93a"
+    },
+    {
+      "name": "guide-pilates-pressdown.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "821b59c1913e96d426efb4ef245cabeb731d677a7ea6c7a0125feb22a9e2d0e6"
+    },
+    {
+      "name": "guide-pilates-hip-hinge.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "d22093c226b109f0ed0aa9b409005ed77354e40e71ddd5d1feeead51b5742cd0"
+    },
+    {
+      "name": "guide-pilates-overhead-press.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "0c5b59e38faafccca157c1e48315293a37ab2ddfed67dc45cbca726d488123db"
+    },
+    {
+      "name": "guide-pilates-bent-row.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "8fc514c18ac919caa5e0d315f5e256a0c33315080ac69248fcd2ddeb5d9f7844"
+    },
+    {
+      "name": "guide-pilates-seated-row.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "c6158256e20dd51f9e28da1ec4df1e808969253d2676236a8789f2fa9ff598b0"
+    },
+    {
+      "name": "guide-pilates-lateral-raise.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "7a4b17f22d3341dac436444b73690ea7aa8551f613239b57ee5025232bff5921"
+    },
+    {
+      "name": "guide-pilates-standing-rotation.pdf",
+      "pages": 1,
+      "fields": 0,
+      "widgets": [],
+      "sha256": "12c3066e127676e514b20b024d3b59ba96336a3306321bb54553ad5a027f9a21"
+    }
+  ],
+  "aliases": [
+    {
+      "path": "downloads\\kinetics\\pdf\\booklet-level-1.pdf",
+      "canonical": "complete-guide.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\booklet-level-2.pdf",
+      "canonical": "complete-guide.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\booklet-level-3.pdf",
+      "canonical": "complete-guide.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\focused-days-level-1.pdf",
+      "canonical": "focused-days.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\focused-days-level-2.pdf",
+      "canonical": "focused-days.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\focused-days-level-3.pdf",
+      "canonical": "focused-days.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\full-body-level-1.pdf",
+      "canonical": "full-body.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\full-body-level-2.pdf",
+      "canonical": "full-body.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\full-body-level-3.pdf",
+      "canonical": "full-body.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\planner-level-1.pdf",
+      "canonical": "weekly-planner.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\planner-level-2.pdf",
+      "canonical": "weekly-planner.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\planner-level-3.pdf",
+      "canonical": "weekly-planner.pdf",
+      "identical": true
+    },
+    {
+      "path": "downloads\\kinetics\\pdf\\protocols.pdf",
+      "canonical": "exercise-guides.pdf",
+      "identical": true
+    }
+  ],
+  "archives": [
+    {
+      "path": "downloads\\kinetics\\PROJECT100_Workout_Guides_2026-10-18.zip",
+      "matched": [
+        "pdf/focused-days.pdf",
+        "pdf/full-body.pdf",
+        "pdf/weekly-planner.pdf",
+        "pdf/complete-guide.pdf",
+        "pdf/source-catalogue.pdf",
+        "pdf/focused-short.pdf",
+        "pdf/full-body-short.pdf",
+        "pdf/weekly-overview.pdf",
+        "pdf/exercise-guides.pdf",
+        "pdf/guide-row.pdf",
+        "pdf/guide-press.pdf",
+        "pdf/guide-pressdown.pdf",
+        "pdf/guide-lateral.pdf",
+        "pdf/guide-brace.pdf",
+        "pdf/guide-sit-stand.pdf",
+        "pdf/guide-hamstring-curl.pdf",
+        "pdf/guide-calf-raise.pdf",
+        "pdf/guide-hip-abduction.pdf",
+        "pdf/guide-scapular-control.pdf",
+        "pdf/guide-curl.pdf",
+        "pdf/guide-hip-extension.pdf",
+        "pdf/guide-box-kneeling-extension.pdf",
+        "pdf/guide-floor-kneeling-overhead-extension.pdf",
+        "pdf/guide-supported-high-front-curl.pdf",
+        "pdf/guide-standing-shared-low-rear-overhead-extension.pdf",
+        "pdf/guide-floor-kneeling-high-front-paired-draw.pdf",
+        "pdf/guide-standing-mid-side-band-bar-pressdown.pdf",
+        "pdf/guide-shoulder-band-bar-squat.pdf",
+        "pdf/guide-standing-curl.pdf",
+        "pdf/guide-pilates-row.pdf",
+        "pdf/guide-pilates-press.pdf",
+        "pdf/guide-pilates-hamstring-curl.pdf",
+        "pdf/guide-pilates-curl.pdf",
+        "pdf/guide-pilates-pressdown.pdf",
+        "pdf/guide-pilates-hip-hinge.pdf",
+        "pdf/guide-pilates-overhead-press.pdf",
+        "pdf/guide-pilates-bent-row.pdf",
+        "pdf/guide-pilates-seated-row.pdf",
+        "pdf/guide-pilates-lateral-raise.pdf",
+        "pdf/guide-pilates-standing-rotation.pdf",
+        "training-plan-v0.3.json",
+        "edition-coverage.json",
+        "guide-page-layout.json",
+        "pdf-build-report.json",
+        "exercise-source-catalogue.csv"
+      ],
+      "stale": [],
+      "unmapped": []
+    },
+    {
+      "path": "downloads\\kinetics\\PROJECT100_Workout_Guides_v0.3_2026-10-15.zip",
+      "matched": [
+        "pdf/focused-days.pdf",
+        "pdf/full-body.pdf",
+        "pdf/weekly-planner.pdf",
+        "pdf/complete-guide.pdf",
+        "pdf/source-catalogue.pdf",
+        "pdf/focused-short.pdf",
+        "pdf/full-body-short.pdf",
+        "pdf/weekly-overview.pdf",
+        "pdf/exercise-guides.pdf",
+        "pdf/guide-row.pdf",
+        "pdf/guide-press.pdf",
+        "pdf/guide-pressdown.pdf",
+        "pdf/guide-lateral.pdf",
+        "pdf/guide-brace.pdf",
+        "pdf/guide-sit-stand.pdf",
+        "pdf/guide-hamstring-curl.pdf",
+        "pdf/guide-calf-raise.pdf",
+        "pdf/guide-hip-abduction.pdf",
+        "pdf/guide-scapular-control.pdf",
+        "pdf/guide-curl.pdf",
+        "pdf/guide-hip-extension.pdf",
+        "pdf/guide-box-kneeling-extension.pdf",
+        "pdf/guide-floor-kneeling-overhead-extension.pdf",
+        "pdf/guide-supported-high-front-curl.pdf",
+        "pdf/guide-standing-shared-low-rear-overhead-extension.pdf",
+        "pdf/guide-floor-kneeling-high-front-paired-draw.pdf",
+        "pdf/guide-standing-mid-side-band-bar-pressdown.pdf",
+        "pdf/guide-shoulder-band-bar-squat.pdf",
+        "pdf/guide-standing-curl.pdf",
+        "pdf/guide-pilates-row.pdf",
+        "pdf/guide-pilates-press.pdf",
+        "pdf/guide-pilates-hamstring-curl.pdf",
+        "pdf/guide-pilates-curl.pdf",
+        "pdf/guide-pilates-pressdown.pdf",
+        "pdf/guide-pilates-hip-hinge.pdf",
+        "pdf/guide-pilates-overhead-press.pdf",
+        "pdf/guide-pilates-bent-row.pdf",
+        "pdf/guide-pilates-seated-row.pdf",
+        "pdf/guide-pilates-lateral-raise.pdf",
+        "pdf/guide-pilates-standing-rotation.pdf",
+        "training-plan-v0.3.json",
+        "edition-coverage.json",
+        "guide-page-layout.json",
+        "pdf-build-report.json",
+        "exercise-source-catalogue.csv"
+      ],
+      "stale": [],
+      "unmapped": []
+    },
+    {
+      "path": "downloads\\reference\\project100-reference-source-package.zip",
+      "matched": [
+        "long-recording-review.csv",
+        "media-inventory.csv",
+        "project100-analysis-data.json",
+        "project100-encyclopedia-update.md",
+        "project100-encyclopedia-update.pdf",
+        "project100-guidebook-update.md",
+        "project100-guidebook-update.pdf",
+        "project100-master-analysis-reference.md",
+        "project100-master-analysis-reference.pdf",
+        "README.md",
+        "recording-source-passages.csv",
+        "reference-build-report.json",
+        "salad-model-scenarios.csv",
+        "source-manifest.json"
+      ],
+      "stale": [],
+      "unmapped": []
+    }
+  ],
+  "sessions": [
+    {
+      "day": 1,
+      "count": 12,
+      "ids": [
+        "press",
+        "standing-side-line-unilateral-draw",
+        "standing-inclined-two-hand-single-handle-curl",
+        "floor-kneeling-wide-arm-drive",
+        "standing-high-front-wide-arm-sweep",
+        "standing-inclined-high-rear-wide-arm-drive",
+        "pressdown",
+        "standing-mid-side-band-bar-pressdown",
+        "standing-shared-low-rear-overhead-extension",
+        "inclined-overhead-drive",
+        "seated-low-rear-arm-extension",
+        "kneeling-supported-forward-extension"
+      ],
+      "plannedSets": "prescription, not observed recording counts"
+    },
+    {
+      "day": 2,
+      "count": 12,
+      "ids": [
+        "standing-shoulder-bar-squat-bow",
+        "hamstring-curl",
+        "front-waist-bar-torso-bow",
+        "low-back-bar-torso-bow",
+        "high-front-draw-lateral-squat",
+        "standing-backward-lean-high-front-paired-draw",
+        "shoulder-braced-torso-bow",
+        "standing-high-front-draw-leg-lift",
+        "standing-two-hand-single-handle-side-draw",
+        "floor-kneeling-overhead-held-torso-fold",
+        "box-kneeling-unilateral-overhead-drive",
+        "standing-overhead-held-torso-lean"
+      ],
+      "plannedSets": "prescription, not observed recording counts"
+    },
+    {
+      "day": 3,
+      "count": 12,
+      "ids": [
+        "row",
+        "floor-kneeling-high-front-paired-draw",
+        "high-front-downward-arm-drive",
+        "high-front-two-hand-draw",
+        "standing-paired-wide-arm-sweep",
+        "bench-straddled-lateral-sweep",
+        "standing-curl",
+        "supported-high-front-curl",
+        "low-side-unilateral-curl",
+        "standing-inclined-unilateral-curl",
+        "standing-low-side-forearm-rotation",
+        "bench-straddled-low-rear-arm-drive"
+      ],
+      "plannedSets": "prescription, not observed recording counts"
+    },
+    {
+      "day": 5,
+      "count": 12,
+      "ids": [
+        "shoulder-band-bar-squat",
+        "pilates-hip-hinge",
+        "pilates-hamstring-curl",
+        "pilates-bent-row",
+        "pilates-seated-row",
+        "pilates-row",
+        "pilates-press",
+        "pilates-overhead-press",
+        "pilates-lateral-raise",
+        "pilates-curl",
+        "pilates-pressdown",
+        "pilates-standing-rotation"
+      ],
+      "plannedSets": "prescription, not observed recording counts"
+    },
+    {
+      "day": 6,
+      "count": 12,
+      "ids": [
+        "pilates-hamstring-curl",
+        "shoulder-band-bar-squat",
+        "pilates-hip-hinge",
+        "pilates-overhead-press",
+        "pilates-press",
+        "pilates-lateral-raise",
+        "pilates-row",
+        "pilates-seated-row",
+        "pilates-bent-row",
+        "pilates-standing-rotation",
+        "pilates-pressdown",
+        "pilates-curl"
+      ],
+      "plannedSets": "prescription, not observed recording counts"
+    }
+  ],
+  "evidence": {
+    "databaseEntries": 31,
+    "cataloguedSetups": 80,
+    "illustratedEligibleSetups": 76,
+    "sourcePassages": 173,
+    "recordedSetCountsVerified": false,
+    "unreviewedVideosIncluded": false,
+    "kitAdaptations": [
+      "pilates-hip-hinge",
+      "pilates-overhead-press",
+      "pilates-bent-row",
+      "pilates-seated-row",
+      "pilates-lateral-raise",
+      "pilates-standing-rotation"
+    ],
+    "limits": "IDs, assets, references and planned slots reconciled; recordings were not re-analyzed."
+  }
+}
