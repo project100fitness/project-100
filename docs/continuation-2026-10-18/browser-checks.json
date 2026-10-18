@@ -1,0 +1,550 @@
+{
+  "browser": "Codex in-app browser",
+  "physicalAndroid": false,
+  "physicalIPhoneSafari": false,
+  "exercises": [
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "sessions",
+      "width": 320
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 6,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "library",
+      "width": 320
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "downloads",
+      "width": 320
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "sessions",
+      "width": 390
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 6,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "library",
+      "width": 390
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "downloads",
+      "width": 390
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "sessions",
+      "width": 430
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 6,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "library",
+      "width": 430
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "downloads",
+      "width": 430
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "sessions",
+      "width": 768
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 6,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "library",
+      "width": 768
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "downloads",
+      "width": 768
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "sessions",
+      "width": 1440
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 6,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "library",
+      "width": 1440
+    },
+    {
+      "choices": 12,
+      "duplicateChoiceContainers": 1,
+      "libraryGroups": 0,
+      "mainMenus": 8,
+      "overflow": -15,
+      "panel": "downloads",
+      "width": 1440
+    }
+  ],
+  "kinetics": [
+    {
+      "folders": 3,
+      "grids": [
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-bundles kin-bundles--compact"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-steps"
+        },
+        {
+          "display": "grid",
+          "overflow": 1,
+          "type": "kin-pilates-atlas"
+        }
+      ],
+      "overflow": -15,
+      "width": 320
+    },
+    {
+      "folders": 3,
+      "grids": [
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-bundles kin-bundles--compact"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-steps"
+        },
+        {
+          "display": "grid",
+          "overflow": 1,
+          "type": "kin-pilates-atlas"
+        }
+      ],
+      "overflow": -15,
+      "width": 390
+    },
+    {
+      "folders": 3,
+      "grids": [
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-bundles kin-bundles--compact"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-steps"
+        },
+        {
+          "display": "grid",
+          "overflow": 1,
+          "type": "kin-pilates-atlas"
+        }
+      ],
+      "overflow": -15,
+      "width": 430
+    },
+    {
+      "folders": 3,
+      "grids": [
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-bundles kin-bundles--compact"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-steps"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-pilates-atlas"
+        }
+      ],
+      "overflow": -15,
+      "width": 768
+    },
+    {
+      "folders": 3,
+      "grids": [
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-bundles kin-bundles--compact"
+        },
+        {
+          "display": "grid",
+          "overflow": 0,
+          "type": "kin-steps"
+        },
+        {
+          "display": "grid",
+          "overflow": 1,
+          "type": "kin-pilates-atlas"
+        }
+      ],
+      "overflow": -15,
+      "width": 1440
+    }
+  ],
+  "mainSite": [
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "biometrics.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "exercises.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-meals.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-nutrition-notes.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-nutrition.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-workout.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-anchors.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-grips.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-gym.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-photos.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-recovery.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-resistance.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-rig.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-safety.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "gear-shop.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "index.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "kinetics.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "liquid-intake.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "mega-salads.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "project-goals.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "project-story.html"
+    }
+  ],
+  "otherPages": [
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "daily-pill-cards.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-baseline.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-biometrics.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-checklists.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-constraints.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-dose.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-fuel.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-gear.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-history.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-interactions.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-joints.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-labs.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-margins.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-meals.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-mission.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-monitoring.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-nutrition.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-pathways.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-progression.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-supplements.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-training.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-troubleshooting.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-reference.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v1.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v10.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v2.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v3.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v4.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v5.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vector-v6.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol-vectors.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "fit-protocol.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "guidebook.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "library.html"
+    },
+    {
+      "hiddenFolderBodies": 0,
+      "overflow": -15,
+      "path": "mineral-chemistry.html"
+    }
+  ],
+  "savedPdf": {
+    "drawer": {
+      "pages": 1,
+      "fields": 7,
+      "notesRetained": true
+    },
+    "standalone": {
+      "pages": 1,
+      "fields": 7,
+      "notesRetained": true
+    }
+  }
+}

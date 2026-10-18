@@ -1,0 +1,5 @@
+# Line-ending conversion changes PDF cross-reference offsets and ZIP checksums.
+*.pdf -text
+*.zip -text
+downloads/kinetics/guide-page-layout.json text eol=lf
+downloads/kinetics/pdf-build-report.json text eol=lf
