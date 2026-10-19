@@ -17,6 +17,7 @@ def read(path):
     with urllib.request.urlopen(request,timeout=45) as response:
         assert response.status==200
         return response.read().decode("utf-8").replace("\r\n","\n")
+assets=["assets/css/site.css","assets/css/hud.css","assets/css/mobile-rail.css","assets/css/kinetics.css","assets/css/mobile-site.css","assets/js/site.js","assets/js/mobile-flow.js"]
 for attempt in range(40):
     try:
         source=read("index.html")
@@ -24,6 +25,9 @@ for attempt in range(40):
         kinetics_css=re.search(r'assets/css/kinetics\.css\?v=[^"\s]+',Path('kinetics.html').read_text()).group(0)
         assert kinetics_css in read('kinetics.html')
         assert 'data-training-panel="library"' in read('exercises.html')
+        # A push starts this check before Pages finishes. Wait for all shared assets.
+        for asset in assets:
+            assert read(asset)==Path(asset).read_text(),("Deployment not ready",asset)
         break
     except Exception:
         if attempt==39:raise
@@ -39,12 +43,11 @@ def page(path):
     assert live.links==local.links,("Navigation differs",path)
     return {"path":path,"status":"passed","tabs":len(live.links)}
 with ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(page,sorted(paths)))
-assets=["assets/css/site.css","assets/css/hud.css","assets/css/mobile-rail.css","assets/css/kinetics.css","assets/js/site.js"]
 for asset in assets:
     live=read(asset)
     assert live==Path(asset).read_text(),("Stale shared asset",asset)
     results.append({"path":asset,"status":"passed","sha256":hashlib.sha256(live.encode()).hexdigest()})
-out={"status":"passed","base":base,"checkedPaths":len(results),"pages":len(paths),"sharedAssets":5,"results":results}
+out={"status":"passed","base":base,"checkedPaths":len(results),"pages":len(paths),"sharedAssets":len(assets),"results":results}
 dest=Path("docs/folder-navigation");dest.mkdir(parents=True,exist_ok=True)
 (dest/"live-validation.json").write_text(json.dumps(out,indent=2)+"\n")
 print(json.dumps({k:v for k,v in out.items() if k!="results"},indent=2))
