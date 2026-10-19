@@ -16,7 +16,7 @@ class Source(HTMLParser):
 for filename in ('kinetics.html','exercises.html'):
     t=(root/filename).read_text(encoding='utf8');s=Source();s.feed(t)
     assert len(s.ids)==len(set(s.ids)),filename
-    assert len(s.docs)==39 and len({d['data-kd-doc'] for d in s.docs})==39
+    assert len(s.docs)==47 and len({d['data-kd-doc'] for d in s.docs})==47
     log=next(d for d in s.docs if d['data-kd-doc']=='weekly-log')
     assert log['data-kd-preview'].endswith('/weekly-overview.html')
     assert log['data-kd-pdf'].endswith('/weekly-overview.pdf')
@@ -34,4 +34,4 @@ assert t.index('id="p100-download-cards"')<t.index('data-analysis-reference-entr
 assert 'training-label-short" aria-hidden' not in t
 mobile=(root/'assets/js/mobile-flow.js').read_text(encoding='utf8')
 assert 'foldContent' not in mobile and 'dataset.desktopLabel' not in mobile
-print('Source check passed: 78 document links, one-page log, visible labels and source-owned mobile navigation.')
+print('Source check passed: 94 document links, one-page log, visible labels and source-owned mobile navigation.')

@@ -9,7 +9,7 @@
     "recording_windows": 173,
     "grouped_setups": 80,
     "eligible_setups": 76,
-    "canonical_techniques": 31,
+    "canonical_techniques": 39,
     "movement_families": 17,
     "salad_models": 14,
     "meal_stories": 9
@@ -19,7 +19,7 @@
       "id": "S01",
       "title": "Current training database",
       "path": "downloads/kinetics/training-plan-v0.3.json",
-      "sha256": "524052b671f8b4665fe3a6eaf7f7a9b72f26b2a72bbcd43e677254c5133c4347",
+      "sha256": "b59cb83493ce28840bcbe250973ca49491b7e721449e9cd695bfe4fd08b210ed",
       "source": "website snapshot"
     },
     {
@@ -6099,9 +6099,9 @@
     },
     {
       "id": "supported-high-front-curl",
-      "name": "Supported high-front band curl",
-      "origin": "Personal training recording",
-      "pattern": "Elbow flexion / standing inclined support",
+      "name": "Supported low-front band curl",
+      "origin": "Low-front training adaptation; recorded supported posture retained",
+      "pattern": "Elbow flexion / supported low-anchor curl",
       "main": "Biceps brachii, brachialis and brachioradialis flex the working elbow.",
       "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm. The free arm supports the torso.",
       "base": "Abdominal, spinal and hip stabilizers control the incline. Both feet and the support hand form the base."
@@ -6255,6 +6255,78 @@
       "secondary": "Shoulder and arm muscles maintain the held bar position.",
       "base": "Hip and gluteal muscles steady the pelvis over the planted feet.",
       "isKitAdaptation": true
+    },
+    {
+      "id": "standing-band-chest-press",
+      "name": "Standing two-arm band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "standing-band-chest-fly",
+      "name": "Standing mid-height band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "high-to-low-band-chest-fly",
+      "name": "High-to-low band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "low-to-high-band-chest-fly",
+      "name": "Low-to-high band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "single-arm-cross-body-band-fly",
+      "name": "Single-arm band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "high-anchor-band-decline-press",
+      "name": "High-anchor downward band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "low-anchor-band-incline-press",
+      "name": "Low-anchor upward band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance."
+    },
+    {
+      "id": "seated-band-chest-fly",
+      "name": "Box-seated two-arm band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Trunk stabilizers and planted feet hold a steady seated base."
     }
   ],
   "source_passages": [
@@ -21805,5 +21877,19 @@
     "Oct17 overhead source check: C184 has two independent palm-grip circuits, C218 is a rearward arm drive, and C224 contains grip changes rather than a two-hand-only repetition.",
     "Full-body planned cards now use separate matched-pair Pilates illustrations/resistance profiles. These adaptations are distinct from recording evidence and from the long-line muscle-focus cards.",
     "Oct17 extension review: C088 is standing, not seated; C222 lower contacts remain partly occluded. C016 has a documented box adaptation, not a false claim that the source bench was a box."
-  ]
+  ],
+  "chest_expansion": {
+    "date": "2026-10-19",
+    "addedTechniqueIds": [
+      "high-to-low-band-chest-fly",
+      "standing-band-chest-fly",
+      "low-anchor-band-incline-press",
+      "low-to-high-band-chest-fly",
+      "seated-band-chest-fly",
+      "single-arm-cross-body-band-fly",
+      "standing-band-chest-press",
+      "high-anchor-band-decline-press"
+    ],
+    "provenance": "Added resistance-band library options; recorded sources and five prescribed sessions unchanged."
+  }
 }

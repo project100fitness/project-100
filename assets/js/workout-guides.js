@@ -30,6 +30,8 @@ function compactPages(db,kind,level,guideId,values,hasImage){
  function role(p,label,t,x,y,width,c){p.text(label,x,y,7.9,c,true);var fs=7.9,lines=wrap(t,width,fs);if(lines.length>4)fs=7.5;return text(p,t,x,y-9,width,fs,INK,false)-2;}
  function card(p,e,caption,number){
   if(!e||!e.art||!hasImage)throw Error('Reviewed anatomy plate missing');
+  if(e.isTrainingAdaptation)caption='Training adaptation / '+caption;
+  if(e.isEditorialTechnique)caption='Added band technique / '+caption;
   if(e.isKitAdaptation)caption='Pilates-kit variation / '+caption;
   var top=p.y,h=227,x=M+10,lw=180,rx=M+362,rw=RIGHT-rx-10;
   p.box(M,top,RIGHT-M,h,[.985,.98,.965],ORANGE);p.cardIds=p.cardIds||[];p.cardIds.push(e.id);p.cardData=p.cardData||[];p.cardData.push({id:e.id,caption:caption,number:number||null});
@@ -38,7 +40,7 @@ function compactPages(db,kind,level,guideId,values,hasImage){
   var ah=Math.min(113,lw/(e.artAspect||2)),aw=ah*(e.artAspect||2);
   p.commands.push('q '+num(aw)+' 0 0 '+num(ah)+' '+num(x+(lw-aw)/2)+' '+num(y-ah)+' cm /Im_'+(e.artKey||e.id)+' Do Q\n');
   var cy=y-ah-10;var labels=(e.artCaption||'POSITION A                    POSITION B').split(/\s{3,}/);
-  labels.forEach(function(t,k){text(p,t,x+k*lw/2,cy,lw/2-4,6.1,INK,true);});cy=y;
+  var labelBottom=cy;labels.forEach(function(t,k){labelBottom=Math.min(labelBottom,text(p,t,x+k*lw/2,cy,lw/2-4,6.1,INK,true));});if(e.gripLabel)text(p,'GRIP / '+e.gripLabel,x,labelBottom-5,lw,7.2,ORANGE,true);cy=y;
   ['setup','move','return'].forEach(function(k){var s=k.toUpperCase()+' / '+e.cardCues[k];cy=text(p,s,M+202,cy,150,8,INK,false)-8;});
   var ry=y;ry=role(p,'MAIN / RED',e.main,rx,ry,rw,RED);ry=role(p,'SECONDARY / BLUE',e.secondary,rx,ry,rw,BLUE);ry=role(p,'SUPPORT / GREEN',e.base,rx,ry,rw,GREEN);
   var r=e.resistance||{},footer=top-h+12;
@@ -306,7 +308,7 @@ function put(s){var id=reserve();objects[id]=s;return id;}
 objects[font1]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
 objects[font2]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
 Object.keys(used).forEach(function(key){var data=bank[key];if(!data)throw new Error("Missing anatomical plate: "+key);var img=reserve();imageResources+=" /Im_"+key+" "+img+" 0 R";objects[img]="<< /Type /XObject /Subtype /Image /Width "+data.width+" /Height "+data.height+" /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length "+data.bytes.length+" >>\nstream\n"+data.bytes+"\nendstream";});
-pages.forEach(function(p,i){var id=reserve();pageIds.push(id);var commands=p.commands.join("")+"BT /F1 8 Tf 0.25 0.32 0.36 rg 1 0 0 1 "+num(M)+" 22 Tm (PROJECT 100 / expanded edition / 17 Oct 2026) Tj ET\nBT /F1 8 Tf 1 0 0 1 510 22 Tm ("+(i+1)+" / "+pages.length+") Tj ET\n";
+pages.forEach(function(p,i){var id=reserve();pageIds.push(id);var commands=p.commands.join("")+"BT /F1 8 Tf 0.25 0.32 0.36 rg 1 0 0 1 "+num(M)+" 22 Tm (PROJECT 100 / grip-reviewed edition / 19 Oct 2026) Tj ET\nBT /F1 8 Tf 1 0 0 1 510 22 Tm ("+(i+1)+" / "+pages.length+") Tj ET\n";
 var stream=put("<< /Length "+commands.length+" >>\nstream\n"+commands+"endstream"),annots=[];
 p.fields.forEach(function(f){var rect=f.rect,fw=rect[2]-rect[0],fh=rect[3]-rect[1],appearance="q 1 1 1 rg 0 0 "+num(fw)+" "+num(fh)+" re f 0.55 0.64 0.69 RG 0.6 w 0.3 0.3 "+num(fw-.6)+" "+num(fh-.6)+" re S\n";
 var ls=wrap(f.value,fw-10,9).slice(0,f.multiline?2:1);

@@ -214,7 +214,7 @@
           },
           {
             "id": "supported-high-front-curl",
-            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "caption": "Training adaptation / Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
             "number": 8
           },
           {
@@ -540,6 +540,61 @@
           {
             "id": "curl",
             "caption": "Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-band-chest-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-to-low-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "low-to-high-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "single-arm-cross-body-band-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-anchor-band-decline-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "low-anchor-band-incline-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "seated-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
             "number": null
           }
         ]
@@ -932,7 +987,7 @@
           },
           {
             "id": "supported-high-front-curl",
-            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "caption": "Training adaptation / Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
             "number": 8
           },
           {
@@ -1339,7 +1394,7 @@
           },
           {
             "id": "supported-high-front-curl",
-            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "caption": "Training adaptation / Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
             "number": 8
           },
           {
@@ -1665,6 +1720,61 @@
           {
             "id": "curl",
             "caption": "Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "standing-band-chest-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "standing-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-to-low-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "low-to-high-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "single-arm-cross-body-band-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "high-anchor-band-decline-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Exercise variations / grouped by day and movement",
+        "cards": [
+          {
+            "id": "low-anchor-band-incline-press",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
+            "number": null
+          },
+          {
+            "id": "seated-band-chest-fly",
+            "caption": "Added band technique / Long-line band technique / substitute a matching movement",
             "number": null
           }
         ]
@@ -2201,7 +2311,7 @@
           },
           {
             "id": "supported-high-front-curl",
-            "caption": "Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
+            "caption": "Training adaptation / Biceps and elbow flexors / 1 planned set / 8-12 controlled repetitions",
             "number": 8
           },
           {
@@ -2466,7 +2576,7 @@
           },
           {
             "id": "supported-high-front-curl",
-            "caption": "Band technique",
+            "caption": "Training adaptation / Band technique",
             "number": null
           },
           {
@@ -2572,6 +2682,61 @@
           {
             "id": "pilates-standing-rotation",
             "caption": "Pilates-kit variation / Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "standing-band-chest-press",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          },
+          {
+            "id": "standing-band-chest-fly",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          },
+          {
+            "id": "high-to-low-band-chest-fly",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "low-to-high-band-chest-fly",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          },
+          {
+            "id": "single-arm-cross-body-band-fly",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          },
+          {
+            "id": "high-anchor-band-decline-press",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          }
+        ]
+      },
+      {
+        "title": "Anatomy and movement",
+        "cards": [
+          {
+            "id": "low-anchor-band-incline-press",
+            "caption": "Added band technique / Band technique",
+            "number": null
+          },
+          {
+            "id": "seated-band-chest-fly",
+            "caption": "Added band technique / Band technique",
             "number": null
           }
         ]
@@ -2826,7 +2991,7 @@
         "cards": [
           {
             "id": "supported-high-front-curl",
-            "caption": "8-12 controlled repetitions",
+            "caption": "Training adaptation / 8-12 controlled repetitions",
             "number": null
           }
         ]
@@ -3099,6 +3264,142 @@
           {
             "id": "pilates-standing-rotation",
             "caption": "Pilates-kit variation / 8-12 each side",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-standing-band-chest-press",
+    "kind": "guide",
+    "guideId": "standing-band-chest-press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "standing-band-chest-press",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-standing-band-chest-fly",
+    "kind": "guide",
+    "guideId": "standing-band-chest-fly",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "standing-band-chest-fly",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-high-to-low-band-chest-fly",
+    "kind": "guide",
+    "guideId": "high-to-low-band-chest-fly",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "high-to-low-band-chest-fly",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-low-to-high-band-chest-fly",
+    "kind": "guide",
+    "guideId": "low-to-high-band-chest-fly",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "low-to-high-band-chest-fly",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-single-arm-cross-body-band-fly",
+    "kind": "guide",
+    "guideId": "single-arm-cross-body-band-fly",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "single-arm-cross-body-band-fly",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-high-anchor-band-decline-press",
+    "kind": "guide",
+    "guideId": "high-anchor-band-decline-press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "high-anchor-band-decline-press",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-low-anchor-band-incline-press",
+    "kind": "guide",
+    "guideId": "low-anchor-band-incline-press",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "low-anchor-band-incline-press",
+            "caption": "Added band technique / Trainer-selected repetitions",
+            "number": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "guide-seated-band-chest-fly",
+    "kind": "guide",
+    "guideId": "seated-band-chest-fly",
+    "pages": [
+      {
+        "title": "Exercise technique",
+        "cards": [
+          {
+            "id": "seated-band-chest-fly",
+            "caption": "Added band technique / Trainer-selected repetitions",
             "number": null
           }
         ]

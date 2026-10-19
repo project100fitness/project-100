@@ -77,7 +77,7 @@
   "supported-high-front-curl": {
     "width": 1774,
     "height": 887,
-    "path": "assets/media/workout-guides/supported-high-front-curl-three-roles-v2-personal-v1.jpg"
+    "path": "assets/media/workout-guides/supported-low-front-curl-grip-reviewed-v3.jpg"
   },
   "standing-shared-low-rear-overhead-extension": {
     "width": 1536,
@@ -157,12 +157,12 @@
   "variant-standing-supported-high-front-curl": {
     "width": 1774,
     "height": 887,
-    "path": "assets/media/workout-guides/supported-high-front-curl-three-roles-v2-personal-v1.jpg"
+    "path": "assets/media/workout-guides/supported-low-front-curl-grip-reviewed-v3.jpg"
   },
   "variant-standing-high-front-wide-arm-sweep": {
     "width": 1774,
     "height": 887,
-    "path": "assets/media/workout-guides/standing-high-front-wide-arm-sweep-anatomy-v2-personal-v1.jpg"
+    "path": "assets/media/workout-guides/standing-high-front-wide-arm-sweep-grip-reviewed-v3.jpg"
   },
   "variant-standing-inclined-high-rear-wide-arm-drive": {
     "width": 1774,
@@ -547,11 +547,51 @@
   "pilates-lateral-raise": {
     "width": 1774,
     "height": 887,
-    "path": "assets/media/workout-guides/pilates-lateral-raise-personal-v1.jpg"
+    "path": "assets/media/workout-guides/pilates-lateral-raise-grip-reviewed-v2.jpg"
   },
   "pilates-standing-rotation": {
     "width": 1774,
     "height": 887,
     "path": "assets/media/workout-guides/pilates-standing-rotation-personal-v1.jpg"
+  },
+  "standing-band-chest-press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-band-chest-press-personal-v1.jpg"
+  },
+  "standing-band-chest-fly": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/standing-band-chest-fly-personal-v1.jpg"
+  },
+  "high-to-low-band-chest-fly": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-to-low-band-chest-fly-personal-v1.jpg"
+  },
+  "low-to-high-band-chest-fly": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/low-to-high-band-chest-fly-personal-v1.jpg"
+  },
+  "single-arm-cross-body-band-fly": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/single-arm-cross-body-band-fly-personal-v1.jpg"
+  },
+  "high-anchor-band-decline-press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/high-anchor-band-decline-press-personal-v1.jpg"
+  },
+  "low-anchor-band-incline-press": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/low-anchor-band-incline-press-personal-v1.jpg"
+  },
+  "seated-band-chest-fly": {
+    "width": 1774,
+    "height": 887,
+    "path": "assets/media/workout-guides/seated-band-chest-fly-personal-v1.jpg"
   }
 }

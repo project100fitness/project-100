@@ -1,7 +1,7 @@
 [
   {
     "filename": "focused-days.pdf",
-    "pages": 27,
+    "pages": 30,
     "lowest": 62.29000000000008
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "filename": "complete-guide.pdf",
-    "pages": 35,
+    "pages": 38,
     "lowest": 62.29000000000008
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "filename": "exercise-guides.pdf",
-    "pages": 8,
+    "pages": 11,
     "lowest": 65
   },
   {
@@ -196,6 +196,46 @@
   },
   {
     "filename": "guide-pilates-standing-rotation.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-standing-band-chest-press.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-standing-band-chest-fly.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-high-to-low-band-chest-fly.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-low-to-high-band-chest-fly.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-single-arm-cross-body-band-fly.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-high-anchor-band-decline-press.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-low-anchor-band-incline-press.pdf",
+    "pages": 1,
+    "lowest": 535
+  },
+  {
+    "filename": "guide-seated-band-chest-fly.pdf",
     "pages": 1,
     "lowest": 535
   }

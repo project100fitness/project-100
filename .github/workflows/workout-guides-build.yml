@@ -46,9 +46,12 @@ jobs:
         run: |
           python scripts/check-workout-source.py
           python scripts/package-workout-guides.py
+          python scripts/package-reference-sources.py
           python scripts/audit-publication-evidence.py
       - name: Validate all guides, equipment and links
-        run: python scripts/validate-workout-guides.py
+        run: |
+          python scripts/validate-workout-guides.py
+          python scripts/check-grip-consistency.py
       - name: Publish verified PDF downloads to the site branch
         if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
         env:
@@ -56,7 +59,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add downloads/kinetics/pdf downloads/kinetics/pdf-build-report.json downloads/kinetics/guide-page-layout.json downloads/kinetics/*.zip docs/workout-guides/integrated-validation.json
+          git add downloads/kinetics/pdf downloads/kinetics/pdf-build-report.json downloads/kinetics/guide-page-layout.json downloads/kinetics/*.zip downloads/reference/source-manifest.json downloads/reference/project100-reference-source-package.zip docs/workout-guides/integrated-validation.json
           if ! git diff --cached --quiet; then
             git commit -m "Build verified expanded Kinetics guide downloads"
             git push origin HEAD:"refs/heads/${TARGET_BRANCH}"

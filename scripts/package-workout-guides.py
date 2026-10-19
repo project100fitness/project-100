@@ -13,7 +13,7 @@ manifest={'edition':'2026-10-18','canonicalPdfCount':len(build),'files':[{'path'
 target=folder/'PROJECT100_Workout_Guides_2026-10-18.zip'
 readme='''PROJECT 100 / WORKOUT GUIDES / 18 OCTOBER 2026
 
-40 canonical PDF documents, including the complete illustrated book,
+48 canonical PDF documents, including the complete illustrated book,
 focused and Pilates sessions, quick guides, one-page weekly log,
 individual techniques and the source catalogue.
 
