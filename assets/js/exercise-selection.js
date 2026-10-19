@@ -20,7 +20,7 @@ function refresh(){
 document.addEventListener('change',e=>{const input=e.target.closest('[data-select-exercise]');if(!input||!allowed(input.dataset.selectExercise))return;const id=input.dataset.selectExercise;if(input.checked&&!chosen.includes(id))chosen.push(id);else if(!input.checked)chosen=chosen.filter(x=>x!==id);save();});
 document.addEventListener('click',e=>{
  if(e.target.closest('[data-selection-clear]')){chosen=[];save();}
- if(e.target.closest('[data-select-day]')){document.querySelectorAll('#p100-exercise-sequence [data-select-exercise]').forEach(e=>{if(allowed(e.dataset.selectExercise)&&!chosen.includes(e.dataset.selectExercise))chosen.push(e.dataset.selectExercise);});save();}
+ if(e.target.closest('[data-select-day]')){document.querySelectorAll('.session-folders [data-select-exercise]').forEach(e=>{if(allowed(e.dataset.selectExercise)&&!chosen.includes(e.dataset.selectExercise))chosen.push(e.dataset.selectExercise);});save();}
  if(e.target.closest('[data-selection-review][aria-disabled="true"]')){e.preventDefault();const status=document.querySelector('[data-selection-status]');if(status)status.textContent='Check at least one exercise to build your printable document.';}
 });
 window.addEventListener('storage',e=>{if(e.key!==key)return;try{const value=JSON.parse(e.newValue||'[]');chosen=Array.isArray(value)?[...new Set(value.filter(allowed))]:[];refresh();}catch(_){}});

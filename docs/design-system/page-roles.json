@@ -1,0 +1,1017 @@
+[
+  {
+    "page": "404.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "archive.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "biometrics.html",
+    "role": "data",
+    "components": {
+      "section-tone--data": 10,
+      "hud-folder--data": 6,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "daily-pill-cards.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "section-tone--training": 2,
+      "hud-folder--training": 1,
+      "hud-folder--content": 3,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "encyclopedia-archive.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "encyclopedia-guidebook.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "encyclopedia.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "exercises.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "section-tone--reference": 7,
+      "analysis-reference": 1
+    }
+  },
+  {
+    "page": "fit-food.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "fit-gear.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "fit-meals.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "hud-folder--content": 3,
+      "section-tone--reference": 2
+    }
+  },
+  {
+    "page": "fit-nutrition-notes.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 6,
+      "hud-folder--content": 2,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-nutrition.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 12,
+      "section-tone--reference": 3,
+      "analysis-reference": 1,
+      "hud-folder--content": 6
+    }
+  },
+  {
+    "page": "fit-protocol-archive.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 1
+    }
+  },
+  {
+    "page": "fit-protocol-baseline.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "hud-folder--training": 3,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-biometrics.html",
+    "role": "data",
+    "components": {
+      "section-tone--data": 10,
+      "hud-folder--data": 6,
+      "table-wrap--data": 6,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-checklists.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "hud-folder--training": 2,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1,
+      "table-wrap--data": 1
+    }
+  },
+  {
+    "page": "fit-protocol-constraints.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-dose.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 9,
+      "hud-folder--training": 5,
+      "table-wrap--data": 6,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-fuel.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1,
+      "hud-folder--training": 2
+    }
+  },
+  {
+    "page": "fit-protocol-gear.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 8,
+      "hud-folder--training": 4,
+      "table-wrap--data": 10,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-history.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-interactions.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "hud-folder--training": 1,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-joints.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-labs.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "hud-folder--training": 2,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-margins.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 4,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-meals.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 8,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1,
+      "table-wrap--data": 6,
+      "hud-folder--training": 4
+    }
+  },
+  {
+    "page": "fit-protocol-mission.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 8,
+      "hud-folder--training": 4,
+      "table-wrap--data": 7,
+      "section-tone--data": 2,
+      "hud-folder--data": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-monitoring.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-nutrition.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 8,
+      "section-tone--reference": 2,
+      "analysis-reference": 1,
+      "hud-folder--training": 4,
+      "table-wrap--data": 2
+    }
+  },
+  {
+    "page": "fit-protocol-pathways.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 10,
+      "hud-folder--training": 5,
+      "table-wrap--data": 3,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-progression.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 4,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-supplements.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 9,
+      "hud-folder--training": 4,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-training.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "section-tone--reference": 2,
+      "analysis-reference": 1,
+      "hud-folder--training": 2,
+      "table-wrap--data": 2
+    }
+  },
+  {
+    "page": "fit-protocol-troubleshooting.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 5,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "table-wrap--data": 2,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-pump.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-reference.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 7,
+      "section-tone--training": 1,
+      "hud-folder--training": 1,
+      "hud-folder--reference": 2,
+      "card--reference": 5,
+      "table-wrap--data": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v1.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "hud-folder--training": 1,
+      "hud-card--reference": 3,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v10.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "hud-folder--training": 1,
+      "hud-card--reference": 3,
+      "section-tone--reference": 2,
+      "acc--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v2.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "hud-folder--training": 1,
+      "hud-card--reference": 2,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v3.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 8,
+      "hud-folder--training": 1,
+      "hud-card--reference": 2,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v4.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "hud-folder--training": 1,
+      "hud-card--reference": 2,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v5.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "hud-folder--training": 1,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vector-v6.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 6,
+      "hud-folder--training": 1,
+      "hud-card--reference": 3,
+      "section-tone--data": 1,
+      "acc--reference": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "fit-protocol-vectors.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 11,
+      "hud-folder--training": 4,
+      "hud-card--reference": 7,
+      "section-tone--data": 12,
+      "acc--reference": 7,
+      "section-tone--reference": 3
+    }
+  },
+  {
+    "page": "fit-protocol.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 10,
+      "section-tone--reference": 2,
+      "analysis-reference": 1,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "hud-folder--training": 3,
+      "table-wrap--data": 2
+    }
+  },
+  {
+    "page": "fit-shop.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "fit-workout.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 14,
+      "hud-folder--training": 4,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-anchors.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 10,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-grips.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-gym.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 9,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-photos.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 7,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-recovery.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-resistance.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 7,
+      "hud-folder--content": 2,
+      "acc--reference": 8,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-rig.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 6,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-safety.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 10,
+      "hud-folder--content": 3,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "gear-shop.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 7,
+      "hud-folder--content": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "guidebook.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 5,
+      "section-tone--reference": 2,
+      "analysis-reference": 1,
+      "hud-folder--content": 1,
+      "acc--reference": 3
+    }
+  },
+  {
+    "page": "hud-preview-daily.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "hud-preview-liquid.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 1
+    }
+  },
+  {
+    "page": "index.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 10,
+      "hud-folder--content": 4,
+      "acc--reference": 6,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "kinetics.html",
+    "role": "training",
+    "components": {
+      "section-tone--training": 7,
+      "hud-folder--training": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "library.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 4,
+      "section-tone--reference": 2,
+      "hud-folder--content": 1
+    }
+  },
+  {
+    "page": "liquid-intake.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 6,
+      "hud-folder--content": 2,
+      "hud-card--reference": 7,
+      "section-tone--training": 2,
+      "hud-folder--training": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "mega-salads.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "hud-folder--content": 2,
+      "section-tone--data": 1,
+      "hud-folder--data": 1,
+      "table-wrap--data": 1,
+      "section-tone--training": 1,
+      "hud-folder--training": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "mineral-chemistry.html",
+    "role": "data",
+    "components": {
+      "section-tone--data": 7,
+      "hud-folder--data": 3,
+      "section-tone--reference": 2,
+      "hud-folder--reference": 1
+    }
+  },
+  {
+    "page": "project-goals.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 8,
+      "hud-folder--content": 2,
+      "section-tone--data": 2,
+      "hud-folder--data": 2,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "project-story.html",
+    "role": "content",
+    "components": {
+      "section-tone--content": 9,
+      "hud-folder--content": 3,
+      "table-wrap--data": 1,
+      "section-tone--reference": 1
+    }
+  },
+  {
+    "page": "downloads/kinetics/complete-guide.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 347,
+      "section-tone--training": 32
+    }
+  },
+  {
+    "page": "downloads/kinetics/exercise-guides.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 109
+    }
+  },
+  {
+    "page": "downloads/kinetics/focused-days.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 274
+    }
+  },
+  {
+    "page": "downloads/kinetics/focused-short.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 124
+    }
+  },
+  {
+    "page": "downloads/kinetics/full-body-short.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 55,
+      "section-tone--training": 29
+    }
+  },
+  {
+    "page": "downloads/kinetics/full-body.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 55,
+      "section-tone--training": 29
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-box-kneeling-extension.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-brace.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-calf-raise.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-floor-kneeling-high-front-paired-draw.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-floor-kneeling-overhead-extension.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-hamstring-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-high-anchor-band-decline-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-high-to-low-band-chest-fly.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-hip-abduction.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-hip-extension.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-lateral.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-low-anchor-band-incline-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-low-to-high-band-chest-fly.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-bent-row.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-hamstring-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-hip-hinge.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-lateral-raise.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-overhead-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-pressdown.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-row.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-seated-row.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-standing-rotation.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-pressdown.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-row.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-scapular-control.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-seated-band-chest-fly.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-shoulder-band-bar-squat.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-single-arm-cross-body-band-fly.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-sit-stand.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-band-chest-fly.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-band-chest-press.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-mid-side-band-bar-pressdown.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-shared-low-rear-overhead-extension.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/guide-supported-high-front-curl.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 8
+    }
+  },
+  {
+    "page": "downloads/kinetics/index.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 5,
+      "hud-folder--reference": 1
+    }
+  },
+  {
+    "page": "downloads/kinetics/weekly-overview.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 5
+    }
+  },
+  {
+    "page": "downloads/kinetics/weekly-planner.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 173,
+      "section-tone--training": 32
+    }
+  },
+  {
+    "page": "downloads/reference/index.html",
+    "role": "reference",
+    "components": {
+      "section-tone--reference": 5
+    }
+  }
+]
