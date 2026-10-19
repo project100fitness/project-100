@@ -4,7 +4,7 @@
    Do not add later phone overrides: edit the owning selector below. */
 .mobile-site-switch,.mobile-training-controls,.mobile-exercise-picker,.mobile-folder-toggle{display:none}
 .mobile-reader-controls{display:none}
-.mobile-exercise-strip,.mobile-dock-background{display:none}
+.mobile-exercise-strip{display:none}
 .session-choice-label{display:none}
 .session-choice-back{display:none}
 @media screen and (max-width:767px), screen and (max-width:1023px) and (pointer:coarse){
@@ -236,13 +236,12 @@ body{padding-bottom:76px!important;}
 .mobile-ready .site-head .tabs{display:block!important;}
 .site-head .tabs__list li{flex:0 0 auto;}
 .site-head .tab:before{border-left-width:4px;}
-.mobile-ready .fab-dock{display:flex!important;left:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));}
-.mobile-ready .fab-switch{display:inline-flex!important;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));min-height:44px;max-width:calc(100vw - 90px);font-size:12px;padding:4px 10px 4px 6px;gap:6px;border-radius:12px;}
+.mobile-ready .fab-dock{display:flex!important;left:12px;bottom:calc(10px + var(--dl-p,0) * (var(--dl-h) + var(--dl-gap)) + env(safe-area-inset-bottom,0px));}
+.mobile-ready .fab-switch{display:inline-flex!important;right:12px;bottom:calc(10px + var(--dl-p,0) * (var(--dl-h) + var(--dl-gap)) + env(safe-area-inset-bottom,0px));min-height:44px;max-width:calc(100vw - 90px);font-size:12px;padding:4px 10px 4px 6px;gap:6px;border-radius:12px;}
 .fab-switch span:last-child{font-size:12px!important;}
 .fab-switch__glyph{width:28px;height:28px;}
 .fab-dock .fab{width:44px;height:44px;}
 .fab-panel{max-height:calc(75dvh - 60px);width:min(320px,calc(100vw - 24px));}
-.mobile-dock-background{display:block;position:fixed;z-index:43;inset:auto 0 0;background:var(--bg);border-top:1px solid var(--line);opacity:.97;pointer-events:none;}
 .site-foot{margin-bottom:0!important;}
 .mobile-ready .session-config{display:grid!important;grid-template-columns:1fr;gap:7px!important;margin:8px 0!important;padding:0!important;background:none!important;box-shadow:none!important;border:0!important;}
 .session-config:before,.session-config:after{display:none!important;}
@@ -402,7 +401,6 @@ body[data-page=kinetics] main [id]{scroll-margin-top:0!important;}
 body[data-page=kinetics] main [id],.exercise-entry-card{scroll-margin-top:12px!important;}
 .session-choice-label,.p100-guides .library-toolbar,.p100-guides .library-muscle-section{scroll-margin-top:64px!important;}
 .exercise-pagination{scroll-margin-top:58px!important;}
-.mobile-dock-background{height:calc(56px + env(safe-area-inset-bottom,0px));}
 .main{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))!important;}
 .hud-folder__head{isolation:isolate;border:1px solid var(--line-strong);border-left:3px solid var(--accent);background:radial-gradient(ellipse at 0 0,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),var(--surface);box-shadow:inset 0 1px color-mix(in srgb,var(--accent) 40%,transparent),0 5px 20px #0002;overflow:hidden;}
 .hud-folder__head:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 25%,color-mix(in srgb,var(--accent) 14%,transparent) 48%,transparent 70%);transform:translateX(-100%);animation:mobile-info-sheen 9s ease-in-out infinite;}
@@ -424,7 +422,7 @@ body[data-page=kinetics] main [id],.exercise-entry-card{scroll-margin-top:12px!i
 @media print{
 .mobile-reader-controls,.mobile-folder-toggle,.mobile-training-controls,.mobile-exercise-picker{display:none!important}
 .mobile-reader-card-hidden,.mobile-reader-page-hidden{display:revert!important}
-.mobile-exercise-strip,.mobile-dock-background{display:none!important}
+.mobile-exercise-strip{display:none!important}
 }
 @keyframes mobile-info-sheen{0%,25%{transform:translateX(-100%)}65%,100%{transform:translateX(100%)}}
 @media(prefers-reduced-motion:reduce){

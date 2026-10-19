@@ -2,7 +2,6 @@
 (function(){'use strict';
  const mq=matchMedia('(max-width:767px),(max-width:1023px) and (pointer:coarse)');
  const root=document.documentElement;
- const dock=document.createElement('div');dock.className='mobile-dock-background';dock.setAttribute('aria-hidden','true');document.body.append(dock);
  root.classList.add('mobile-ready');
  const head=document.getElementById('siteHead');if(head){const measure=()=>root.style.setProperty('--mobile-head-height',Math.ceil(head.getBoundingClientRect().height)+'px');if(window.ResizeObserver)new ResizeObserver(measure).observe(head);measure();}
  document.getElementById('menuBtn')?.setAttribute('aria-label','Open menu');
