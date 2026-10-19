@@ -1,8 +1,8 @@
 /* =====================================================================================================
-   PROJECT 100 · HUD design system (preview v1)
+   PROJECT 100 · HUD design system / signal-frame
    Folder containers, file cards that open and close, detail "stage" panels, stage-map timeline.
    Loaded after site.css on pages that use it. Every class here starts with .hud- so nothing old is touched.
-   Style borrowed from a mobile-game HUD: cut corners, gold folder tabs, thin cyan lines, hazard stripes, halftone dots.
+   Authored folder variants: orange training/content tabs, muted teal reference/data tabs, quiet technical grids.
    Body text always sits on a solid dark panel so it stays easy to read (works in light and dark page themes).
    ===================================================================================================== */
 :root {
@@ -116,27 +116,29 @@
 
 /* ---------- FOLDER: a titled container per section ---------- */
 .hud-folder { margin-top: var(--s-7); }
-.hud-folder__head { display: flex; align-items: flex-end; flex-wrap: wrap; gap: .4rem .9rem; margin-bottom: -1px; position: relative; z-index: 1; }
+.hud-folder--reference, .hud-folder--data { --folder-colour:var(--section-signal-line); }
+.hud-folder--training, .hud-folder--content { --folder-colour:var(--brand-orange); }
+.hud-folder__head { display: flex; align-items: flex-end; flex-wrap: wrap; gap: .4rem .9rem; margin-bottom: -1px; position: relative; z-index: 1;  padding: 10px 12px 10px 0; border-bottom: 1px solid var(--section-frame); background: linear-gradient(110deg,transparent 35%,color-mix(in srgb,var(--section-signal) 5%,transparent)); border-radius: 0 14px 0 0;}
 .hud-folder__tab {
   display:inline-flex;align-items:center;gap:.6rem;min-height:2.75rem;padding:.55rem 1.6rem .55rem .9rem;
-  border-inline-start:4px solid var(--folder-colour,var(--brand-orange));background:var(--surface-2);color:var(--text);
+  border-inline-start:4px solid var(--folder-colour,var(--brand-orange));background: var(--section-sheen);color:var(--text);
   font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
   clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);
-}
-.hud-folder__title { margin: 0; font-size: var(--step-2); font-weight: 800; font-style: italic; letter-spacing: -.02em; text-transform: uppercase; color: var(--text); }
-.hud-folder__meta { margin-left: auto; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+ box-shadow: inset 0 1px 0 color-mix(in srgb,var(--text) 12%,transparent);}
+.hud-folder__title { margin: 0; font-size: var(--step-2); font-weight: 800; font-style: italic; letter-spacing: -.02em; text-transform: uppercase; color: var(--text);  line-height: 1.2; text-wrap: balance;}
+.hud-folder__meta { margin-left: auto; font-size: .7rem; font-weight: 700; letter-spacing: .075em; text-transform: uppercase; color: var(--section-signal);  font-family: var(--font-mono);}
 .hud-folder__body {
   position: relative; padding: clamp(.9rem, 2.4vw, 1.6rem);
-  background: linear-gradient(180deg, var(--hud-bg-2), var(--hud-bg));
-  border: 1px solid var(--hud-line); border-inline-start: 3px solid var(--folder-colour,var(--brand-orange)); border-radius: 0 0 8px 0;
+  background: linear-gradient(155deg,var(--surface-2),var(--surface) 70%);
+  border: 1px solid var(--hud-line); border-inline-start: 3px solid var(--folder-colour,var(--brand-orange)); border-radius: 0 0 14px 0;
   color: var(--hud-ink);
-}
+ border-top-color: var(--section-frame); box-shadow: var(--section-shadow),inset 0 1px 0 color-mix(in srgb,var(--text) 5%,transparent);}
 .hud-folder__body::before { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
-  background: radial-gradient(circle, color-mix(in srgb, var(--text) 16%, transparent) 1px, transparent 1.4px) 0 0 / 14px 14px; opacity: .55;
-  -webkit-mask-image: linear-gradient(180deg, #000, transparent 55%); mask-image: linear-gradient(180deg, #000, transparent 55%); }
+  background: linear-gradient(90deg,color-mix(in srgb,var(--section-signal) 14%,transparent) 1px,transparent 1px) 100% 0/32px 32px,linear-gradient(color-mix(in srgb,var(--section-signal) 14%,transparent) 1px,transparent 1px) 100% 0/32px 32px; opacity: .32;
+  -webkit-mask-image: linear-gradient(160deg,#000,transparent 48%); mask-image: linear-gradient(160deg,#000,transparent 48%); }
 .hud-folder__body > * { position: relative; }
 .hud-note { margin: 0 0 var(--s-4); color: var(--hud-ink-2); font-size: var(--step--1); letter-spacing: .02em; }
-.hud-note strong { color: var(--hud-amber); letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; margin-right: .4rem; }
+.hud-note strong { color: var(--section-signal); letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; margin-right: .4rem; }
 
 /* ---------- FILE CARDS (closed state) ---------- */
 /* Card rows: a centred, wrapping row. --cols is the number of cards per row; a short last row sits in the middle instead of leaving a gap on one side. */
@@ -161,6 +163,7 @@
 .hud-card:hover { transform: translateY(-4px); filter: brightness(1.08); text-decoration: none; color: var(--hud-ink); }
 .hud-card:focus-visible { outline: 3px solid var(--hud-amber); outline-offset: 2px; }
 .hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
+ .hud-card--reference .hud-card__tag { background:var(--hud-dark-3); color:var(--hud-ink); box-shadow:inset 3px 0 0 #87b8b0; }
 .hud-card__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--hud-dark-1); }
 .hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: transform .5s var(--hud-ease); }
 .hud-card:hover .hud-card__img img { transform: scale(1.05); }
@@ -177,14 +180,14 @@
 .hud-cards.is-open .hud-card[aria-expanded="false"] { filter: brightness(.72) saturate(.8); }
 .hud-cards.is-open .hud-card[aria-expanded="false"]:hover { filter: brightness(1); }
 
-/* per-vector accent: the exact hues the site already uses (--nut-hue in site.css) */
-.hud-c-v1 { --c: #a6c969; } .hud-c-v2 { --c: #64c9d6; } .hud-c-v3 { --c: #dfbf75; } .hud-c-v4 { --c: #ea637c; }
-.hud-c-v5 { --c: #94a9dd; } .hud-c-v6 { --c: #cd94de; } .hud-c-v10 { --c: #b2a0cf; }
+/* Reference file cards share one auxiliary accent; artwork retains its original palette. */
+.hud-c-v1 { --c: #87b8b0; } .hud-c-v2 { --c: #87b8b0; } .hud-c-v3 { --c: #87b8b0; } .hud-c-v4 { --c: #87b8b0; }
+.hud-c-v5 { --c: #87b8b0; } .hud-c-v6 { --c: #87b8b0; } .hud-c-v10 { --c: #87b8b0; }
 
 /* ---------- DETAIL STAGE (open state): two panels like the game's stage screen ---------- */
 .hud-details { display: grid; gap: var(--s-4); }
 .js .hud-details { display: contents; }
-.js .hud-detail { display: none; }
+.js .hud-detail { display: none;  box-shadow: var(--section-shadow); border-color: var(--section-frame);}
 .hud-cards > li.hud-stage, .hud-cards > .hud-stage { flex: 0 0 100%; }
 .hud-detail { --c: var(--brand-orange); position: relative; border: 1px solid var(--c); background: linear-gradient(180deg, var(--hud-bg-3), var(--hud-bg-2) 40%, var(--hud-bg)); color: var(--hud-ink);
   border-radius: 4px var(--hud-cut) 4px var(--hud-cut); box-shadow: 0 0 28px -10px var(--c); }

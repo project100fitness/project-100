@@ -30,7 +30,7 @@ assert set(s.notes)=={f'weekly-day-{i}-notes' for i in range(1,8)}
 t=(root/'exercises.html').read_text(encoding='utf8')
 assert t.count('id="session-exercise-choices"')==1
 assert 'data-session-layout="folders"' in t
-assert t.count('id="p100-exercise-sequence"')==1 and 'id="p100-exercise-deck"' not in t
+assert t.count('id="p100-session-folders"')==1 and 'id="p100-exercise-deck"' not in t
 assert 'data-selection-review' in t and (root/'downloads/kinetics/my-exercises.html').is_file()
 assert 'EXERCISE 01 OF 06' not in t and '01 / 06' not in t
 assert t.index('id="p100-download-cards"')<t.index('data-analysis-reference-entry')

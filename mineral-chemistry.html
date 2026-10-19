@@ -27,12 +27,12 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-<link href="assets/css/site.css?v=6e367a5d20fd" rel="stylesheet"/>
-<link href="assets/css/hud.css?v=20261015-folder-system" rel="stylesheet"/>
+<link href="assets/css/site.css?v=1a78abe2b961" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=fd18c631a2da" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/mobile-rail.css?v=20261015-folder-system">
 <link rel="stylesheet" href="assets/css/mobile-site.css?v=c6612286eb88">
 </head>
-<body data-group="chemistry" data-page="mineral-chemistry" data-site="protocol" data-folder="minerals">
+<body data-group="chemistry" data-page="mineral-chemistry" data-site="protocol" data-folder="minerals" data-design-profile="signal-frame">
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-head" id="siteHead">
 <div class="site-head__bar">
@@ -73,9 +73,9 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <li><a href="#sources"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Sources</span></a></li>
 </ul>
 </aside>
-<main class="main" id="content" tabindex="-1">
-<section aria-labelledby="hudT" class="hud-hero" id="top" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-february-2026-960.webp')"><span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · OCTOBER 2026</span><h1 class="hud-title" id="hudT">Mineral <em>Chemistry</em></h1><p class="hud-lede">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#accounting"><small>Folder 01</small><strong>Recorded intake scenarios</strong></a><a class="hud-chip hud-chip--link" href="#vector-chemistry"><small>Folder 02</small><strong>Vector contributions</strong></a><a class="hud-chip hud-chip--link" href="#payloads"><small>Folder 03</small><strong>Product payloads</strong></a><a class="hud-chip hud-chip--link" href="#sources"><small>Folder 04</small><strong>Sources and limits</strong></a></div></div></section>
-<section aria-labelledby="accounting-t" class="hud-folder" id="accounting">
+<main class="main section-tone--data" id="content" tabindex="-1">
+<section aria-labelledby="hudT" class="hud-hero section-tone--data" id="top" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-february-2026-960.webp')"><span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · OCTOBER 2026</span><h1 class="hud-title" id="hudT">Mineral <em>Chemistry</em></h1><p class="hud-lede">Conditional mineral, vitamin and stimulant accounting. Read the scope beside each number.</p><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#accounting"><small>Folder 01</small><strong>Recorded intake scenarios</strong></a><a class="hud-chip hud-chip--link" href="#vector-chemistry"><small>Folder 02</small><strong>Vector contributions</strong></a><a class="hud-chip hud-chip--link" href="#payloads"><small>Folder 03</small><strong>Product payloads</strong></a><a class="hud-chip hud-chip--link" href="#sources"><small>Folder 04</small><strong>Sources and limits</strong></a></div></div></section>
+<section aria-labelledby="accounting-t" class="hud-folder section-tone--data hud-folder--data" id="accounting">
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title" id="accounting-t">Recorded intake scenarios</h2></div>
 <div class="hud-folder__body">
 <div class="hud-open hud-prose" id="accounting-c1" data-gallery><span id="accounting-c1-d"></span><aside class="callout callout--warn nut-before">
@@ -139,7 +139,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </article>
 </div></div>
 </div></section>
-<section aria-labelledby="vector-chemistry-t" class="hud-folder" id="vector-chemistry">
+<section aria-labelledby="vector-chemistry-t" class="hud-folder section-tone--data hud-folder--data" id="vector-chemistry">
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title" id="vector-chemistry-t">Vector contributions</h2><span class="hud-folder__meta"></span></div>
 <div class="hud-folder__body">
 <div class="hud-inline hud-prose"><div class="grid grid--3">
@@ -157,7 +157,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </article>
 </div></div>
 </div></section>
-<section aria-labelledby="payloads-t" class="hud-folder" id="payloads">
+<section aria-labelledby="payloads-t" class="hud-folder section-tone--data hud-folder--data" id="payloads">
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 03</span><h2 class="hud-folder__title" id="payloads-t">Product payloads</h2><span class="hud-folder__meta"></span></div>
 <div class="hud-folder__body">
 <div class="hud-inline hud-prose"><div class="grid grid--3">
@@ -175,7 +175,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </article>
 </div></div>
 </div></section>
-<section aria-labelledby="sources-t" class="hud-folder" id="sources">
+<section aria-labelledby="sources-t" class="hud-folder section-tone--reference hud-folder--reference" id="sources">
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 04</span><h2 class="hud-folder__title" id="sources-t">Sources and limits</h2><span class="hud-folder__meta"></span></div>
 <div class="hud-folder__body">
 <div class="hud-inline hud-prose"><p>Product amounts are transcribed from supplied records, not independently verified laboratory results. Totals are conditional sums, not complete dietary intake or a safety guarantee.</p>
@@ -239,7 +239,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <a class="menu__site" href="index.html" data-folder="project"><small>Switch to</small><strong>PROJECT 100</strong></a>
 <a aria-current="true" class="menu__site" href="fit-protocol.html" data-folder="project"><small>You are here</small><strong>FIT PROTOCOL</strong></a>
 </div>
-<section class="menu__section">
+<section class="menu__section section-tone--data">
 <h3>FIT PROTOCOL pages</h3>
 <div class="menu__group">
 <p class="menu__group-title">Baseline</p>
@@ -292,11 +292,11 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </ul>
 </div>
 </section>
-<section class="menu__section">
+<section class="menu__section section-tone--reference">
 <h3>Downloads</h3>
 <div class="menu__links"><a class="menu__link" href="library.html" data-folder="library"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Illustration downloads</span></a></div>
 </section>
-<section class="menu__section">
+<section class="menu__section section-tone--data">
 <h3>Links &amp; contact</h3>
 <div class="menu__links">
 <a class="menu__link" href="mailto:project100@gmail.com" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small>project100@gmail.com</small></span></a>
