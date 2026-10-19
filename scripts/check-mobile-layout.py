@@ -20,7 +20,7 @@ with sync_playwright() as p:
   data=page.evaluate('''()=>({overflow:document.documentElement.scrollWidth-innerWidth,head:document.querySelector('.site-head').getBoundingClientRect().height,grids:[...document.querySelectorAll('.kin-steps,.kin-pilates-atlas,.kin-bundles')].map(e=>({type:e.className,overflow:e.scrollWidth-e.clientWidth,display:getComputedStyle(e).display})),pause:[...document.querySelectorAll('button')].filter(e=>/pause|play slideshow/i.test(e.textContent+' '+e.getAttribute('aria-label'))&&e.getBoundingClientRect().height>0).map(e=>e.outerHTML)})''')
   print(width,json.dumps(data),errors,flush=True)
   assert data['overflow']<=1,(width,data)
-  assert page.locator('[data-background-toggle]').count()==2
+  assert page.locator('[data-background-toggle]').count()==0
   if width<800:assert all(x['overflow']<=1 and x['display']=='grid' for x in data['grids']),data
   if width==390:
    entries=page.locator('.kin-local-nav a')

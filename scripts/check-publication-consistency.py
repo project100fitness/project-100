@@ -112,11 +112,11 @@ assert '<details class="kin-kit-summary">' in kinetics
 assert 'class="kin-bar-diagram"' not in kinetics
 for fact in ['Left pair','Right pair','260 lb nominal','rotating eyelets']:
     assert fact in kinetics,fact
-assert kinetics.count('data-background-toggle')==2
-assert 'data-background-toggle' in pages['index.html']
+assert 'data-background-toggle' not in kinetics
+assert 'data-background-toggle' not in pages['index.html']
 media=(ROOT/'assets/js/site.js').read_text(encoding='utf8')
 assert "video[data-src], video[autoplay]" in media and "visibilitychange', sync" in media
-print('PASS: illustrated programme choices, five session actions, preserved compact kit details and shared background-video controls.')
+print('PASS: illustrated programme choices, five session actions, preserved compact kit details and automatic background-video playback.')
 
 for file in ['assets/media/gym-field/bands-session-004-mobile.mp4','assets/media/gym-field/bands-in-use-mobile.mp4','assets/video/hero-loop-mobile-compatible.mp4']:
     data=(ROOT/file).read_bytes(); at=data.find(b'avcC')
