@@ -546,7 +546,7 @@
     // Size the media itself: Android renderers can blank a vertically cropped object-fit surface.
     if (v.hasAttribute('data-background-video')) {
       function fitBackground() {
-        var box = v.parentElement, ratio = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : 16 / 9;
+        var box = v.parentElement, ratio = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : (v.width && v.height ? v.width / v.height : 16 / 9);
         var width = Math.ceil(Math.max(box.clientWidth, box.clientHeight * ratio) * (v.classList.contains('home-hero__img') ? 1.25 : 1));
         v.style.width = width + 'px'; v.style.height = Math.ceil(width / ratio) + 'px';
       }
