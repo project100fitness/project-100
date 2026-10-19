@@ -371,6 +371,8 @@ input[type="search"], input[type="text"], select {
   transition: border-color .15s, color .15s, background .15s;
 }
 .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+/* Theme switching is an icon action, visually separate from folder buttons. */
+#themeToggle { background: transparent; border-color: transparent; box-shadow: none; }
 .icon-btn svg { width: 1.25rem; height: 1.25rem; }
 .icon-btn .i-moon { display: none; }
 :root[data-theme="dark"] .icon-btn .i-sun { display: none; }
