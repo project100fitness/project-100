@@ -19,7 +19,7 @@
       "id": "S01",
       "title": "Current training database",
       "path": "downloads/kinetics/training-plan-v0.3.json",
-      "sha256": "b59cb83493ce28840bcbe250973ca49491b7e721449e9cd695bfe4fd08b210ed",
+      "sha256": "e6f32d3f0e406c7145b761ff7e999566346608b3577a32af1c662f079d480d93",
       "source": "website snapshot"
     },
     {
@@ -3070,7 +3070,9 @@
         "main": "Biceps brachii and brachialis contribute as the working elbow bends.",
         "secondary": "Forearm muscles maintain the grip; shoulder muscles control the upper arm.",
         "base": "Trunk and hip muscles steady the inclined stance."
-      }
+      },
+      "illustrationCorrection": "The earlier drawing incorrectly placed the anchor above the hand. Both corrected poses show the same low front anchor, one continuous band, a neutral wrist and resisted elbow flexion. Original source windows are unchanged.",
+      "currentIllustration": "standing-inclined-low-front-curl-mechanics-reviewed-v3.jpg"
     },
     {
       "id": "standing-two-hand-single-handle-overhead-extension",
