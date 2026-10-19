@@ -6308,8 +6308,8 @@
       "focus_slot": "Day 3 / pull and biceps",
       "representative_guide": "supported-high-front-curl",
       "cardCues": {
-        "setup": "Stand inclined with one hand on the low-front grip.",
-        "move": "Bend the working elbow to bring the grip toward the front of the torso.",
+        "setup": "Secure a low front anchor below the working hand. Keep a modest hip hinge, soft knees and a neutral handle grip.",
+        "move": "Keep the upper arm still and curl the handle upward away from the low anchor.",
         "return": "Straighten the elbow slowly along the same line."
       },
       "supportCue": "Trunk control and the floor or box contacts shown.",
@@ -6319,7 +6319,7 @@
         "base": "Trunk and hip muscles steady the inclined stance."
       },
       "illustrationSourcePhase": "SET-C274",
-      "art": "standing-inclined-unilateral-curl-anatomy-v2-personal-v1.jpg",
+      "art": "standing-inclined-low-front-curl-mechanics-reviewed-v3.jpg",
       "artAspect": 2.0,
       "resistance": {
         "mode": "unconfirmed"
@@ -6330,7 +6330,8 @@
       "gripCategory": "neutral",
       "gripLabel": "Neutral handle grip",
       "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
-      "gripAuditDate": "2026-10-19"
+      "gripAuditDate": "2026-10-19",
+      "illustrationCorrection": "The earlier drawing incorrectly placed the anchor above the hand. Both corrected poses show the same low front anchor, one continuous band, a neutral wrist and resisted elbow flexion. Original source windows are unchanged."
     },
     {
       "id": "standing-two-hand-single-handle-overhead-extension",
