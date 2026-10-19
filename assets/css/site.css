@@ -1378,7 +1378,7 @@ input[type="search"], input[type="text"], select {
 .home-hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: var(--home-hero-shade, linear-gradient(0deg, rgb(8 9 12 / .92) 0%, rgb(8 9 12 / .55) 50%, rgb(8 9 12 / .25) 100%)); }
 .home-hero__inner { position: relative; z-index: 2; width: 100%; padding-inline: clamp(var(--s-4), 4vw, var(--s-7)); }
 .home-hero__inner > * { max-width: 44rem; }
-.home-hero .eyebrow { color: var(--on-dark-accent); }
+.home-hero .eyebrow { max-width: min(44rem, calc(100% - 3rem)); color: var(--on-dark-accent); }
 .home-hero h1 { margin: 0 0 var(--s-4); color: #fff; font-size: var(--step-5); line-height: 1; letter-spacing: -.045em; }
 .home-hero h1 span { color: var(--on-dark-accent); }
 .home-hero .lead { color: var(--on-dark-2); }
