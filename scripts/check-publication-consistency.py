@@ -105,3 +105,21 @@ assert 'class="kin-downloads ' not in kinetics
 assert kinetics.count('class="kin-anchor-copy"')==3
 assert 'data-analysis-reference-entry' not in kinetics
 print('PASS: two Kinetics programmes, five direct day links and three readable anchor cards; duplicate entry banners removed.')
+
+assert kinetics.count('class="kin-programme-choice"')==2
+assert kinetics.count('<em>Open session</em>')==5
+assert '<details class="kin-kit-summary">' in kinetics
+assert 'class="kin-bar-diagram"' not in kinetics
+for fact in ['Left pair','Right pair','260 lb nominal','rotating eyelets']:
+    assert fact in kinetics,fact
+assert kinetics.count('data-background-toggle')==2
+assert 'data-background-toggle' in pages['index.html']
+media=(ROOT/'assets/js/site.js').read_text(encoding='utf8')
+assert "video[data-src], video[autoplay]" in media and "visibilitychange', sync" in media
+print('PASS: illustrated programme choices, five session actions, preserved compact kit details and shared background-video controls.')
+
+for file in ['assets/media/gym-field/bands-session-004-mobile.mp4','assets/media/gym-field/bands-in-use-mobile.mp4','assets/video/hero-loop-mobile-compatible.mp4']:
+    data=(ROOT/file).read_bytes(); at=data.find(b'avcC')
+    assert at>=0 and data[at+5]==66,('Expected baseline H.264 compatibility copy',file)
+assert 'function fitBackground()' in media
+print('PASS: three baseline H.264 mobile clips and proportional background sizing.')

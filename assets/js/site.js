@@ -538,22 +538,42 @@
   });
 
   var conn = navigator.connection || {};
-  P.$$('video[data-src]').forEach(function (v) {
-    if (conn.saveData && !v.hasAttribute('data-always')) return;       /* poster only */
-    if (!('IntersectionObserver' in window)) {
-      v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
-      var fallbackPlay = v.play(); if (fallbackPlay && fallbackPlay.catch) fallbackPlay.catch(function () {});
-      return;
+  var mediaMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  P.$$('video[data-src], video[autoplay]').forEach(function (v) {
+    var near = false, manual = null, toggle = v.parentElement.querySelector("[data-background-toggle]");
+    function updateToggle() { if (!toggle) return; toggle.hidden = false; toggle.textContent = v.paused ? "▶" : "Ⅱ"; toggle.setAttribute("aria-label", v.paused ? "Play background video" : "Pause background video"); toggle.setAttribute("aria-pressed", String(!v.paused)); }
+    v.muted = true; v.defaultMuted = true; v.playsInline = true;
+    // Size the media itself: Android renderers can blank a vertically cropped object-fit surface.
+    if (v.hasAttribute('data-background-video')) {
+      function fitBackground() {
+        var box = v.parentElement, ratio = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : 16 / 9;
+        var width = Math.ceil(Math.max(box.clientWidth, box.clientHeight * ratio) * (v.classList.contains('home-hero__img') ? 1.25 : 1));
+        v.style.width = width + 'px'; v.style.height = Math.ceil(width / ratio) + 'px';
+      }
+      v.addEventListener('loadedmetadata', fitBackground);
+      if ('ResizeObserver' in window) new ResizeObserver(fitBackground).observe(v.parentElement);
+      else window.addEventListener('resize', fitBackground);
+      fitBackground();
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          if (!v.src) { v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src; v.load(); }   /* phones get the small clip */
-          var p = v.play(); if (p && p.catch) p.catch(function () {});
-        } else { v.pause(); }
-      });
-    }, { threshold: .15 });
-    io.observe(v);
+    function sync() {
+      if (!near || document.hidden || manual === false || (manual !== true && (mediaMotion.matches || (conn.saveData && !v.hasAttribute('data-always'))))) { v.pause(); updateToggle(); return; }
+      if (v.dataset.src && !v.getAttribute('src')) {
+        v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
+        v.load();
+      }
+      var playing = v.play();
+      if (playing && playing.then) playing.then(updateToggle).catch(updateToggle);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { near = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(v);
+    } else { near = true; sync(); }
+    if (toggle) { toggle.hidden = false; toggle.addEventListener('click', function () { manual = v.paused; sync(); }); }
+    v.addEventListener('play', updateToggle); v.addEventListener('pause', updateToggle);
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('pageshow', sync);
+    document.addEventListener('pointerdown', sync, { passive: true });
+    if (mediaMotion.addEventListener) mediaMotion.addEventListener('change', sync);
+    else if (mediaMotion.addListener) mediaMotion.addListener(sync);
   });
 })();
 

@@ -15,7 +15,6 @@ with sync_playwright() as p:
             page=browser.new_page(viewport={"width":width,"height":1000},color_scheme="dark")
             page.route("**/*",lambda r:r.abort() if r.request.resource_type=="media" else r.continue_())
             page.goto("http://127.0.0.1:4181/kinetics.html",wait_until="domcontentloaded")
-            page.locator("[data-kg-play]").click()
             page.wait_for_function("document.querySelector('[data-kg-img]').naturalWidth>0")
             frame=page.locator(".kin-display-open")
             frame.scroll_into_view_if_needed()
