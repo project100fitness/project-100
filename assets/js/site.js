@@ -40,24 +40,30 @@
 })();
 
 /* ===== 20-header.js ===== */
-/* Header: only shown near the very top of the page (or while something inside it has keyboard focus), so it never covers the picture or card being read.
-   Scrolling up in the middle of a page does NOT bring it back; scroll to the top for the menu. Also centres the current tab. */
+/* Header follows deliberate scroll direction, with a quiet zone at the top. */
 (function () {
   'use strict';
   var P = window.P100, head = P.$('#siteHead');
   if (!head) return;
-  var SHOW_BELOW = 140, ticking = false;
+  var lastY = Math.max(0, window.scrollY), travel = 0, direction = 0, ticking = false;
   function update() {
-    var y = window.scrollY;
-    if (head.contains(document.activeElement) && document.activeElement !== document.body) head.dataset.hidden = 'false';
-    else head.dataset.hidden = y < SHOW_BELOW ? 'false' : 'true';
+    var y = Math.max(0, Math.min(window.scrollY, document.documentElement.scrollHeight - innerHeight));
+    var delta = y - lastY, next = delta > 0 ? 1 : delta < 0 ? -1 : direction;
+    if (next !== direction) travel = 0;
+    travel += Math.abs(delta); direction = next; lastY = y;
+    var keyboardFocus = head.querySelector(':focus-visible');
+    if (y <= 24 || keyboardFocus) head.dataset.hidden = 'false';
+    else if (next > 0 && y > head.offsetHeight + 24 && travel >= 40) head.dataset.hidden = 'true';
+    else if (next < 0 && travel >= 24) head.dataset.hidden = 'false';
     ticking = false;
   }
   window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }, { passive: true });
-  head.addEventListener('focusin', function () { head.dataset.hidden = 'false'; });
-  head.addEventListener('focusout', function () { setTimeout(update, 0); });
+  head.addEventListener('focusin', function () {
+    if (head.querySelector(':focus-visible')) head.dataset.hidden = 'false';
+  });
+  window.addEventListener('pageshow', update);
   update();
 
   var list = P.$('.tabs__list');
@@ -540,8 +546,7 @@
   var conn = navigator.connection || {};
   var mediaMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   P.$$('video[data-src], video[autoplay]').forEach(function (v) {
-    var near = false, manual = null, toggle = v.parentElement.querySelector("[data-background-toggle]");
-    function updateToggle() { if (!toggle) return; toggle.hidden = false; toggle.textContent = v.paused ? "▶" : "Ⅱ"; toggle.setAttribute("aria-label", v.paused ? "Play background video" : "Pause background video"); toggle.setAttribute("aria-pressed", String(!v.paused)); }
+    var near = false;
     v.muted = true; v.defaultMuted = true; v.playsInline = true;
     // Size the media itself: Android renderers can blank a vertically cropped object-fit surface.
     if (v.hasAttribute('data-background-video')) {
@@ -556,19 +561,17 @@
       fitBackground();
     }
     function sync() {
-      if (!near || document.hidden || manual === false || (manual !== true && (mediaMotion.matches || (conn.saveData && !v.hasAttribute('data-always'))))) { v.pause(); updateToggle(); return; }
+      if (!near || document.hidden || mediaMotion.matches || (conn.saveData && !v.hasAttribute('data-always'))) { v.pause(); return; }
       if (v.dataset.src && !v.getAttribute('src')) {
         v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
         v.load();
       }
       var playing = v.play();
-      if (playing && playing.then) playing.then(updateToggle).catch(updateToggle);
+      if (playing && playing.catch) playing.catch(function () { /* Retry automatically after a browser-allowed gesture. */ });
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) { near = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(v);
     } else { near = true; sync(); }
-    if (toggle) { toggle.hidden = false; toggle.addEventListener('click', function () { manual = v.paused; sync(); }); }
-    v.addEventListener('play', updateToggle); v.addEventListener('pause', updateToggle);
     document.addEventListener('visibilitychange', sync);
     window.addEventListener('pageshow', sync);
     document.addEventListener('pointerdown', sync, { passive: true });
