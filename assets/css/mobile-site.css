@@ -112,7 +112,26 @@ p{max-width:none;}
 body[data-page=kinetics] .hud-title{font-size:32px!important;}
 body[data-page=kinetics] .hud-hero{padding:20px 12px!important;}
 .kin-local-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:12px 0!important;}
-.kin-local-nav a{min-width:0;min-height:42px;padding:8px!important;font-size:12px!important;}
+.kin-local-nav a{min-width:0;min-height:128px;padding:0!important;font-size:12px!important;grid-template-columns:1fr;}
+.kin-programme-choice{padding:10px 10px 8px;}
+.kin-local-nav strong{font-size:16px;margin:4px 0 7px;}
+.kin-local-nav img{min-height:0;height:72px;grid-row:1;}
+.kin-choice-action{font-size:10px;justify-content:space-between;}
+.kin-choice-action i{width:22px;height:22px;}
+.kin-session-links a{grid-template-columns:1fr;gap:6px;padding:8px;align-content:start;}
+.kin-session-links a>b{display:flex;gap:4px;min-height:28px;font-size:16px;}
+.kin-day-copy strong{font-size:12px;min-height:32px;}
+.kin-day-copy>span,.kin-session-links em{font-size:10px;}
+.kin-day-copy i{font-size:12px;}
+.kin-programme[data-kin-programme="fullbody"] .kin-day-copy strong{min-height:0;}
+.kin-programme .hud-folder__head{padding:12px!important;}
+.kin-programme-guide{grid-column:2;grid-row:1/3;padding:8px;font-size:11px;}
+.kin-kit-summary summary{padding:10px;gap:8px;flex-wrap:wrap;}
+.kin-kit-summary summary strong{font-size:13px;}
+.kin-kit-summary summary small{font-size:11px;}
+.kin-kit-icon{font-size:20px;}
+.kin-kit-toggle{font-size:11px;}
+.kin-kit-details dl{grid-template-columns:1fr 1fr;}
 .kin-section-heading{margin:20px 0 10px!important;}
 .kin-section-heading h3,.kin-short-intro h3,.kin-pilates-intro h3{font-size:23px!important;line-height:1.2;max-width:none!important;}
 .kin-section-heading p,.kin-short-intro p{font-size:14px!important;line-height:1.45;}
@@ -344,7 +363,7 @@ html{scroll-padding-top:calc(var(--mobile-head-height,150px) + 12px)!important;}
 .mobile-exercise-strip [aria-current=step]{background:var(--accent-strong);color:var(--accent-ink);border-color:var(--accent-strong);}
 .mobile-exercise-strip [aria-current=step] .session-choice-number,.mobile-exercise-strip [aria-current=step] small{color:inherit;}
 .exercise-entry-grid>.exercise-entry-card{flex-basis:84%!important;}
-body[data-page=kinetics] .hud-folder__head{display:grid!important;grid-template-columns:1fr!important;gap:6px!important;}
+body[data-page=kinetics] .hud-folder__head{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:4px 8px!important;}
 body[data-page=kinetics] .hud-folder__tab{position:static!important;white-space:normal;}
 body[data-page=kinetics] .hud-folder__title{max-width:100%;overflow-wrap:normal;}
 body[data-page=kinetics] [data-analysis-reference-entry]{padding:14px 12px!important;margin:16px 12px!important;}
