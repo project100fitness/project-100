@@ -26,7 +26,7 @@
   rail.addEventListener('scroll',update,{passive:true});new MutationObserver(()=>{if(rail.hasAttribute('data-session-choices')&&rail.clientWidth){const active=rail.querySelector('[aria-current=step]');if(active){const a=active.getBoundingClientRect(),r=rail.getBoundingClientRect();if(a.left<r.left)rail.scrollTo({left:rail.scrollLeft+a.left-r.left,behavior:'auto'});else if(a.right>r.right)rail.scrollTo({left:rail.scrollLeft+a.right-r.right,behavior:'auto'});}}update();}).observe(rail,{childList:true});if(window.ResizeObserver)new ResizeObserver(update).observe(rail);
   state.step=step;update();
  }
- function scan(){document.querySelectorAll('[data-group-carousel],.exercise-entry-grid,[data-session-choices]').forEach(attach);}
+ function scan(){document.querySelectorAll('[data-group-carousel],.exercise-entry-grid').forEach(attach);}
  scan();const library=document.querySelector('#p100-library-grid');if(library)new MutationObserver(scan).observe(library,{childList:true});
  setInterval(()=>{const now=performance.now();for(const s of states){if(!s.rail.isConnected){states.delete(s);continue;}const r=s.rail.getBoundingClientRect(),head=document.querySelector('.site-head')?.getBoundingClientRect().bottom||0;if(document.hidden||document.querySelector('dialog[open]')||s.inside||s.touching||reduced.matches||!r.width||Math.min(r.bottom,innerHeight-60)-Math.max(r.top,head)<r.height*.5||s.rail.scrollWidth<=s.rail.clientWidth+3){s.last=now;continue;}if(now-s.last>=5500)s.step(1);}},250);
 })();
