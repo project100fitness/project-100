@@ -1,0 +1,8 @@
+/* Check personal document order, filtering, complete artwork coverage and page bounds. */
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');const root=path.resolve(__dirname,'..');vm.runInThisContext(fs.readFileSync(path.join(root,'assets/js/workout-guides.js'),'utf8'));
+const db=JSON.parse(fs.readFileSync(path.join(root,'downloads/kinetics/training-plan-v0.3.json'),'utf8'));const ids=[...new Set([...db.exercises,...db.recordedVariants.filter(e=>e.trainingPrescriptionEligible!==false)].filter(e=>e.art).map(e=>e.id))];
+assert.throws(()=>Project100PDF.makePages(db,'selected',1,null,{'selected-exercises':[]},true),/Select at least one/);
+const two=[ids[5],ids[0]],sample=Project100PDF.makePages(db,'selected',1,null,{'selected-exercises':[two[0],'unknown-id',two[0],two[1]],'selection-title':'My checked exercises'},true);assert.deepEqual(sample.map(p=>p.cardIds[0]),two);
+const pages=Project100PDF.makePages(db,'selected',1,null,{'selected-exercises':ids,'selection-title':'My resistance band exercise selection with personal notes and training references'},true);assert.equal(pages.length,ids.length);assert(pages.every(p=>p.lowest>=35));
+const meta=JSON.parse(fs.readFileSync(path.join(root,'downloads/kinetics/image-metadata.json'),'utf8')),bank={};for(const [id,m]of Object.entries(meta))bank[id]={width:m.width,height:m.height,bytes:fs.readFileSync(path.join(root,m.path)).toString('latin1')};const bytes=Project100PDF.buildPdf(pages,bank);assert(Buffer.from(bytes).subarray(0,5).equals(Buffer.from('%PDF-')));
+console.log('PASS personal selection: empty/unknown/duplicate handling, chosen order, '+ids.length+' illustrated records, page bounds and full PDF assembly.');

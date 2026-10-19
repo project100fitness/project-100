@@ -60,6 +60,23 @@ function compactPages(db,kind,level,guideId,values,hasImage){
  if(kind==='weekly'){log();[1,2,3,5,6].forEach(day);return out;}
  if(kind==='focused-short'){[1,2,3].forEach(day);return out;}
  if(kind==='fullbody'||kind==='fullbody-short'){[5,6].forEach(day);return out;}
+ if(kind==='selected'){
+  var ids=Array.from(new Set((values['selected-exercises']||[]).filter(function(id){return by[id]&&by[id].art&&by[id].trainingPrescriptionEligible!==false;})));
+  if(!ids.length)throw Error('Select at least one exercise.');
+  function selectedPage(e,index,font,width){
+   var p=new Page(e.name);p.p('PROJECT 100 / PERSONAL SELECTION / '+(index+1)+' OF '+ids.length,8,ORANGE,true,6);p.p(values['selection-title']||'My selected exercises',15,INK,true,5);p.p(e.name,16,INK,true,6);
+   p.image(width,e.artKey||e.id,e.artCaption||'POSITION A / POSITION B',e.artAspect||2);
+   if(e.gripLabel)p.p('GRIP / CONTACT: '+e.gripLabel,font,ORANGE,true,3);
+   if(e.grip)p.p(e.grip,font,INK,false,4);
+   ['setup','move','return'].forEach(function(k){p.p(k.toUpperCase()+' / '+e.cardCues[k],font,INK,false,5);});
+   p.p('MAIN / '+e.main,font,RED,false,4);p.p('SECONDARY / '+e.secondary,font,BLUE,false,4);p.p('SUPPORT / '+e.base,font,GREEN,false,4);
+   if(e.isEditorialTechnique)p.p('Added resistance-band technique; not claimed as verified personal footage.',8,INK,false,4);
+   if(e.isTrainingAdaptation)p.p(e.adaptationNote,8,INK,false,4);
+   p.p('Sets: __________  Repetitions: __________  Band / notes: ____________________',8,INK,false,3);
+   p.cardIds=[e.id];return p;
+  }
+  ids.forEach(function(id,index){var p;try{p=selectedPage(by[id],index,9.4,420);if(p.y<50)p=selectedPage(by[id],index,8.5,330);}catch(error){p=selectedPage(by[id],index,8.5,330);}if(p.y<38)throw Error('Selected technique needs a shorter document title: '+id);out.push(p);});return out;
+ }
  if(kind==='guide'){pages([{e:by[guideId],caption:reps(by[guideId])}],'PROJECT 100 / TECHNIQUE SHEET','Exercise technique',null);return out;}
  if(kind==='guides'){pages(db.exercises.filter(function(e){return e.resistance.mode!=='unloaded';}).map(function(e){return {e:by[e.id],caption:e.resistance.mode==='unloaded'?'Optional preparation':e.adaptationOf?'Pilates kit adaptation':'Band technique'};}),'PROJECT 100 / TECHNIQUE LIBRARY','Anatomy and movement',null);return out;}
  if(kind==='focused'){
@@ -73,7 +90,7 @@ function compactPages(db,kind,level,guideId,values,hasImage){
 }
 
 function makePages(db,kind,level,guideId,values,hasImage){
-if(['book','focused','fullbody','weekly','weekly-overview','focused-short','fullbody-short','guide','guides'].indexOf(kind)>=0)return compactPages(db,kind,level,guideId,values,hasImage);
+if(['selected','book','focused','fullbody','weekly','weekly-overview','focused-short','fullbody-short','guide','guides'].indexOf(kind)>=0)return compactPages(db,kind,level,guideId,values,hasImage);
 values=values||{};var pages=[],l=db.levels.filter(function(x){return x.level===level;})[0],eBy={};db.exercises.forEach(function(e){eBy[e.id]=e;});
 function add(p){pages.push(p);return p;}
 function caution(p){p.p("Stop for pain, new numbness or weakness, dizziness, loss of grip, moving supports or damaged bands. Keep the recoil path clear. Follow manufacturer limits and individual clinical restrictions.",8.5,INK,false,4);}
@@ -337,12 +354,13 @@ function message(t){if(status)status.textContent=t;document.querySelectorAll("[d
 function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},60000);}
 function formValues(){var o={};document.querySelectorAll("input[name],textarea[name],select[name]").forEach(function(el){o[el.name]=el.value;});return Object.assign(o,liveValues);}
 window.Project100ReadValues=formValues;
-async function plate(db,kind,guideId){
+async function plate(db,kind,guideId,selectedIds){
  kind=kind||document.body.dataset.document;
  if(kind==='protocol'||kind==='weekly-overview')return {};
  var items=db.exercises.map(function(e){return {id:e.id,art:e.art};});
- if(['focused','book','weekly','focused-short'].includes(kind))items=items.concat(db.recordedVariants.filter(function(v){return v.art&&v.trainingPrescriptionEligible!==false;}).map(function(v){return {id:'variant-'+v.id,art:v.art};}));
+ if(['selected','focused','book','weekly','focused-short'].includes(kind))items=items.concat(db.recordedVariants.filter(function(v){return v.art&&v.trainingPrescriptionEligible!==false;}).map(function(v){return {id:'variant-'+v.id,art:v.art};}));
  if(kind==='guide')items=items.filter(function(e){return e.id===(guideId||document.body.dataset.guide);});
+ if(kind==='selected')items=items.filter(function(e){return (selectedIds||[]).includes(e.id.replace(/^variant-/,''));});
  var bank={};
  for(var i=0;i<items.length;i++){
   var e=items[i];if(!e.art)throw new Error('Matching anatomy image missing: '+e.id);
@@ -353,8 +371,9 @@ async function plate(db,kind,guideId){
  }return bank;
 }
 async function exportEnteredPdf(entries,options){options=options||{};var captured=Object.assign({},formValues(),entries||{},liveValues,window.P100Training?window.P100Training.pdfValues():{});if(pdf)pdf.disabled=true;message("Preparing your PDF on this device...");try{var response=await fetch(document.body.dataset.planSource||"training-plan-v0.3.json",{cache:"no-cache"});if(!response.ok)throw new Error("The plan database could not load. Use Print / save as PDF or retry.");
-var db=await response.json(),kind=options.kind||document.body.dataset.document,level=Number(document.body.dataset.level||1),guideId=options.guideId||document.body.dataset.guide,art=await plate(db,kind,guideId),pages=makePages(db,kind,level,guideId,captured,!!(art&&Object.keys(art).length)),bytes=buildPdf(pages,art);
-var suffix=kind==="weekly"?"Illustrated_Weekly_Planner":kind==="weekly-overview"?"Weekly_Log":kind==="focused-short"?"Focused_Session_Cards":kind==="fullbody-short"?"Full_Body_Session_Cards":kind==="protocol"?"Shared_Protocols":kind==="book"?"Complete_Guide":kind==="focused"?"Focused_Days":kind==="fullbody"?"Full_Body":kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+guideId:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_guide.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Planner notes are included when applicable.");
+if(options.kind==='selected'){captured['selected-exercises']=options.selectedIds||[];captured['selection-title']=String(options.title||'My selected exercises').slice(0,80);}
+var db=await response.json(),kind=options.kind||document.body.dataset.document,level=Number(document.body.dataset.level||1),guideId=options.guideId||document.body.dataset.guide,art=await plate(db,kind,guideId,options.selectedIds),pages=makePages(db,kind,level,guideId,captured,!!(art&&Object.keys(art).length)),bytes=buildPdf(pages,art);
+var suffix=kind==="selected"?"My_Selected_Exercises":kind==="weekly"?"Illustrated_Weekly_Planner":kind==="weekly-overview"?"Weekly_Log":kind==="focused-short"?"Focused_Session_Cards":kind==="fullbody-short"?"Full_Body_Session_Cards":kind==="protocol"?"Shared_Protocols":kind==="book"?"Complete_Guide":kind==="focused"?"Focused_Days":kind==="fullbody"?"Full_Body":kind==="planner"?"Planner_Level_"+level:kind==="guide"?"Guide_"+guideId:"Exercise_Guides";save(new Blob([bytes],{type:"application/pdf"}),"PROJECT100_"+suffix+"_guide.pdf");message("Your "+pages.length+"-page PDF is ready. Check Downloads on your device. Planner notes are included when applicable.");
 }catch(error){message(error.message+" The page remains available to print.");}finally{if(pdf)pdf.disabled=false;}}
 window.Project100ExportPDF=exportEnteredPdf;if(pdf)pdf.addEventListener("click",function(){exportEnteredPdf();});
 document.querySelectorAll("[data-print]").forEach(function(b){b.addEventListener("click",function(){window.print();});});

@@ -40,6 +40,7 @@ jobs:
           node --check assets/js/kinetics-showcase.js
           node --check assets/js/workout-guides.js
           node scripts/check-download-drawer.cjs
+          node scripts/check-selected-exercises.cjs
       - name: Build the complete illustrated edition
         run: node scripts/build-workout-guides.cjs
       - name: Validate source navigation and package canonical downloads
