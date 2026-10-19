@@ -1,8 +1,12 @@
 # Chest library and source review — 19 October 2026
 
-The current catalogue contains four entries with chest in the primary role: supported single-arm chest press, its Pilates-pair adaptation, single-arm side-line chest and shoulder control, and low-base single-arm high-side line control. These are four catalogue entries; the Pilates adaptation is not a newly observed recording.
+Before the additional-technique expansion, the catalogue contained four entries with chest in the primary role: supported single-arm chest press, its Pilates-pair adaptation, single-arm side-line chest and shoulder control, and low-base single-arm high-side line control. These are four catalogue entries; the Pilates adaptation is not a newly observed recording.
 
-Two existing wide-arm records document pectoral contribution and are available as related Chest movements: standing high-front wide-arm sweep and standing inclined high-rear wide-arm drive. Their cards retain the CHEST ASSISTS label. The library displays **4 chest-focused + 2 chest-assisted** rather than presenting six isolated chest exercises. The thigh-braced low-side curl remains in Arms and is not used to enlarge the Chest count.
+Two existing wide-arm records document pectoral contribution and are available as related Chest movements: standing high-front wide-arm sweep and standing inclined high-rear wide-arm drive. Their cards retain the CHEST ASSISTS label. The earlier library displayed **4 chest-focused + 2 chest-assisted** rather than presenting six isolated chest exercises. The thigh-braced low-side curl remains in Arms and is not used to enlarge the Chest count.
+
+## Current Chest library
+
+The shared library now contains **12 chest-focused techniques plus 2 assisting movements**. Eight new entries cover two-arm presses, mid/high/low flys, a single-arm fly, angled presses and a seated fly. They are labelled ADDED TECHNIQUE with individual illustrated guides and PDFs. They are optional resistance-band adaptations, with no claim of newly verified personal footage or assigned personal loads.
 
 ## Source ranges reviewed
 
@@ -18,7 +22,7 @@ Two existing wide-arm records document pectoral contribution and are available a
 | VID_20260724_054350.mp4 | 20:21–20:37 | Upper-back/palm-contact opening | Not added to Chest. |
 | VID_20260725_082538.mp4 | 11:00–11:39 | Upper-back loaded connection with free arms | Not treated as a hand-held chest fly. |
 
-Review uses one frame per second over these ranges, not frame-exact boundaries or verified repetition counts. No new distinct chest-focused band exercise was established by this targeted pass. Nine to twelve such exercises remain unverified. Different stance, the opposite arm, another clip of the same set, and a change of free-arm position do not automatically create separate exercises.
+Review uses one frame per second over these ranges, not frame-exact boundaries or verified repetition counts. No new distinct chest-focused band exercise was established by this targeted pass. This pass did not establish nine to twelve distinct filmed chest exercises. The subsequent library expansion adds eight explicitly labelled band techniques; it does not turn those additions into recording observations. Different stance, the opposite arm, another clip of the same set, and a change of free-arm position do not automatically create separate exercises.
 
 ## Publication alignment
 

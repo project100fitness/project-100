@@ -1,0 +1,1369 @@
+{
+  "date": "2026-10-19",
+  "uniqueIllustrations": 108,
+  "illustratedRecords": 115,
+  "scope": "Visual screening of all used guide illustrations; explicit grip/contact types, corrected mechanical errors, and separate training adaptations. This is not clinical or equipment certification.",
+  "sources": {
+    "primary": [
+      {
+        "title": "ACE chest training / standing bands",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/8972/be-a-chest-day-champion-an-evidence-based-approach-to-training-the-chest/"
+      },
+      {
+        "title": "NASM neutral-grip chest press",
+        "url": "https://www.nasm.org/resource-center/exercise-library/chest-press-machine"
+      },
+      {
+        "title": "ACE biceps anatomy and supinated curls",
+        "url": "https://www.acefitness.org/resources/pros/expert-articles/9033/building-better-biceps-evidence-based-exercises-for-strength-and-function/"
+      },
+      {
+        "title": "NASM lat pulldown grip variations",
+        "url": "https://www.nasm.org/resource-center/blog/training/the-biomechanics-of-the-lat-pulldown-muscles-grip-and-form"
+      },
+      {
+        "title": "NASM exercise progressions / lateral raise range",
+        "url": "https://blog.nasm.org/fitness/exercise-progressions-and-regressions-how-tos-of-scaling-movement"
+      }
+    ],
+    "forumCrossChecks": [
+      {
+        "url": "https://www.reddit.com/r/ResistanceBand/comments/1msuwlb/full_upper_body_exercise_list_with_bands/",
+        "use": "Practical anchor and grip questions; not authority for anatomy or individual safety."
+      },
+      {
+        "url": "https://www.reddit.com/r/formcheck/comments/1sgchuf/cable_lateral_raise_17m/",
+        "use": "Wrist alignment concern cross-checked against exercise guidance."
+      }
+    ],
+    "limits": "Published sources support exercise families and grip principles; they do not validate every personal recording, attachment or generated image."
+  },
+  "illustrations": [
+    {
+      "index": 1,
+      "art": "bench-kneeling-paired-high-rear-drive-anatomy-v2.jpg",
+      "ids": [
+        "bench-kneeling-paired-high-rear-drive"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 2,
+      "art": "inclined-overhead-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "inclined-overhead-drive"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 3,
+      "art": "high-front-downward-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "high-front-downward-arm-drive"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 4,
+      "art": "kneeling-supported-forward-extension-anatomy-v2.jpg",
+      "ids": [
+        "kneeling-supported-forward-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 5,
+      "art": "bench-supported-rearward-arm-movement-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "bench-supported-rearward-arm-movement"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 6,
+      "art": "box-kneeling-overhead-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "box-kneeling-overhead-drive"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 7,
+      "art": "box-kneeling-shoulder-braced-torso-fold-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "box-kneeling-shoulder-braced-torso-fold"
+      ],
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "gripCue": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 8,
+      "art": "floor-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-high-front-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 9,
+      "art": "high-front-two-hand-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "high-front-two-hand-draw"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 10,
+      "art": "standing-high-rear-upper-back-braced-torso-bow-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-high-rear-upper-back-braced-torso-bow"
+      ],
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "gripCue": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 11,
+      "art": "standing-high-rear-upper-back-braced-arm-opening-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-high-rear-upper-back-braced-arm-opening"
+      ],
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "gripCue": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 12,
+      "art": "low-back-bar-torso-bow-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "low-back-bar-torso-bow"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 13,
+      "art": "floor-kneeling-shoulder-bar-torso-bow-anatomy-v2-personal-v3.jpg",
+      "ids": [
+        "floor-kneeling-shoulder-bar-torso-bow"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 14,
+      "art": "shoulder-band-bar-squat-matched-pairs-v2-personal-v1.jpg",
+      "ids": [
+        "standing-shoulder-bar-squat-bow",
+        "shoulder-band-bar-squat"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 15,
+      "art": "bench-straddled-lateral-sweep-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "bench-straddled-lateral-sweep"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 16,
+      "art": "standing-high-line-sweep-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-high-line-sweep"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 17,
+      "art": "box-kneeling-unilateral-overhead-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "box-kneeling-unilateral-overhead-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 18,
+      "art": "low-side-unilateral-curl-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "low-side-unilateral-curl"
+      ],
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "gripCue": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 19,
+      "art": "seated-low-rear-arm-extension-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "seated-low-rear-arm-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 20,
+      "art": "floor-kneeling-unilateral-low-rear-extension-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-unilateral-low-rear-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 21,
+      "art": "floor-kneeling-overhead-extension-three-roles-v1-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-paired-overhead-extension",
+        "floor-kneeling-overhead-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 22,
+      "art": "standing-inclined-paired-curl-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-paired-curl-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 23,
+      "art": "high-front-two-hand-draw-squat-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "high-front-two-hand-draw-squat"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 24,
+      "art": "bench-supported-high-rear-downward-drive-anatomy-v2.jpg",
+      "ids": [
+        "bench-supported-high-rear-downward-drive"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 25,
+      "art": "high-front-draw-low-base-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "high-front-draw-low-base"
+      ],
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "gripCue": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 26,
+      "art": "standing-overhead-held-torso-lean-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "standing-overhead-held-torso-lean"
+      ],
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "gripCue": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 27,
+      "art": "shoulder-braced-torso-bow-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "shoulder-braced-torso-bow"
+      ],
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "gripCue": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 28,
+      "art": "standing-low-line-rearward-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-low-line-rearward-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 29,
+      "art": "floor-kneeling-wide-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-wide-arm-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 30,
+      "art": "standing-inclined-low-line-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-low-line-drive"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 31,
+      "art": "floor-kneeling-overhead-held-torso-fold-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-overhead-held-torso-fold"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 32,
+      "art": "standing-backward-lean-high-front-paired-draw-anatomy-v2.jpg",
+      "ids": [
+        "standing-backward-lean-high-front-paired-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 33,
+      "art": "standing-paired-wide-arm-sweep-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-paired-wide-arm-sweep"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 34,
+      "art": "bench-straddled-low-rear-arm-drive-anatomy-v2.jpg",
+      "ids": [
+        "bench-straddled-low-rear-arm-drive"
+      ],
+      "gripCategory": "palm-contact-change",
+      "gripLabel": "Palm contact / open-to-closed grip",
+      "gripCue": "The panels show an open palm contact and a closed grip, not a demonstrated pronation-supination cycle.",
+      "issues": [
+        "Former forearm-rotation label did not match the open/closed palm-contact plate. Name, muscle roles and movement cues corrected."
+      ],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 35,
+      "art": "bench-straddled-overhead-extension-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "bench-straddled-overhead-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 36,
+      "art": "standing-overhead-drive-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "standing-overhead-drive"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 37,
+      "art": "standing-inclined-unilateral-curl-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-unilateral-curl"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 38,
+      "art": "standing-shared-low-rear-overhead-extension-three-roles-v1-personal-v1.jpg",
+      "ids": [
+        "standing-two-hand-single-handle-overhead-extension",
+        "standing-shared-low-rear-overhead-extension"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 39,
+      "art": "standing-two-hand-high-rear-overhead-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-two-hand-high-rear-overhead-drive"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 40,
+      "art": "standing-high-front-wide-arm-sweep-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-high-front-wide-arm-sweep"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [
+        "Front/rear viewpoint switches between two movement panels; redraw with consistent front camera."
+      ],
+      "replacement": "standing-high-front-wide-arm-sweep-grip-reviewed-v3.jpg",
+      "secondPass": "Replacement inspected at full size: grip, wrists, both poses, continuous attachment paths and intended load direction.",
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 41,
+      "art": "standing-inclined-high-rear-wide-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-high-rear-wide-arm-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 42,
+      "art": "standing-alternating-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-alternating-high-front-draw"
+      ],
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "gripCue": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 43,
+      "art": "floor-kneeling-high-front-paired-draw-three-roles-v1-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-paired-high-front-draw",
+        "floor-kneeling-high-front-paired-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 44,
+      "art": "standing-inclined-unilateral-high-front-band-curl-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-unilateral-high-front-band-curl-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 45,
+      "art": "standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-unilateral-band-overhead-arm-drive-with-lateral-torso-inclination"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 46,
+      "art": "standing-inclined-unilateral-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-unilateral-band-overhead-arm-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 47,
+      "art": "deep-squat-unilateral-high-side-band-draw-hold-anatomy-v2.jpg",
+      "ids": [
+        "deep-squat-unilateral-high-side-band-draw-hold"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 48,
+      "art": "standing-two-hand-single-band-pressdown-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-two-hand-single-band-pressdown-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 49,
+      "art": "deep-squat-two-hand-single-band-downward-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "deep-squat-two-hand-single-band-downward-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 50,
+      "art": "floor-kneeling-two-hand-single-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-two-hand-single-band-overhead-arm-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 51,
+      "art": "standing-unilateral-band-overhead-hold-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-unilateral-band-overhead-hold-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 52,
+      "art": "floor-kneeling-unilateral-band-overhead-arm-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-unilateral-band-overhead-arm-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 53,
+      "art": "front-waist-bar-torso-bow-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "front-waist-bar-torso-bow"
+      ],
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "gripCue": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 54,
+      "art": "standing-alternating-curl-connections-v3-personal-v1.jpg",
+      "ids": [
+        "standing-alternating-low-front-curl",
+        "standing-curl"
+      ],
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "gripCue": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 55,
+      "art": "standing-mid-side-band-bar-pressdown-three-roles-v2-personal-v1.jpg",
+      "ids": [
+        "standing-mid-side-band-bar-pressdown"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 56,
+      "art": "floor-kneeling-mid-side-bar-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-mid-side-bar-draw"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 57,
+      "art": "floor-low-base-unilateral-curl-anatomy-v2.jpg",
+      "ids": [
+        "floor-low-base-unilateral-curl"
+      ],
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "gripCue": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 58,
+      "art": "deep-squat-unilateral-low-line-curl-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "deep-squat-unilateral-low-line-curl"
+      ],
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "gripCue": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 59,
+      "art": "deep-squat-two-hand-single-handle-curl-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "deep-squat-two-hand-single-handle-curl"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 60,
+      "art": "floor-kneeling-two-hand-single-handle-low-rear-extension-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "floor-kneeling-two-hand-single-handle-low-rear-extension"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 61,
+      "art": "standing-side-line-unilateral-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-side-line-unilateral-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 62,
+      "art": "standing-two-hand-single-handle-side-draw-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "standing-two-hand-single-handle-side-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 63,
+      "art": "standing-high-front-draw-leg-lift-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "standing-high-front-draw-leg-lift"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 64,
+      "art": "sandbag-kneeling-unilateral-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "sandbag-kneeling-unilateral-high-front-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 65,
+      "art": "sandbag-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "sandbag-kneeling-high-front-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 66,
+      "art": "high-front-draw-lateral-squat-anatomy-v2-personal-v2.jpg",
+      "ids": [
+        "high-front-draw-lateral-squat"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 67,
+      "art": "standing-unilateral-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-unilateral-high-front-draw"
+      ],
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "gripCue": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 68,
+      "art": "box-seated-two-hand-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "box-seated-two-hand-high-front-draw"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 69,
+      "art": "upper-back-braced-arm-opening-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "upper-back-braced-arm-opening"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 70,
+      "art": "standing-unilateral-high-rear-overhead-drive-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-unilateral-high-rear-overhead-drive"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 71,
+      "art": "standing-low-front-unilateral-short-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-low-front-unilateral-short-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 72,
+      "art": "supported-high-front-curl-three-roles-v2-personal-v1.jpg",
+      "ids": [
+        "standing-supported-high-front-curl",
+        "supported-high-front-curl"
+      ],
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "gripCue": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "issues": [
+        "High anchor assists illustrated upward curl; training adaptation requires a low anchor and an explicit change from the source observation."
+      ],
+      "replacement": "supported-low-front-curl-grip-reviewed-v3.jpg",
+      "secondPass": "Replacement inspected at full size: grip, wrists, both poses, continuous attachment paths and intended load direction.",
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 73,
+      "art": "sandbag-supported-kneeling-high-front-draw-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "sandbag-supported-kneeling-high-front-draw"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 74,
+      "art": "upper-back-braced-torso-bow-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "upper-back-braced-torso-bow"
+      ],
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "gripCue": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 75,
+      "art": "standing-inclined-two-hand-single-handle-curl-anatomy-v2-personal-v1.jpg",
+      "ids": [
+        "standing-inclined-two-hand-single-handle-curl"
+      ],
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "gripCue": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 76,
+      "art": "standing-low-side-forearm-rotation-anatomy-v2.jpg",
+      "ids": [
+        "standing-low-side-forearm-rotation"
+      ],
+      "gripCategory": "rotating",
+      "gripLabel": "Forearm rotation / palm grip",
+      "gripCue": "Rotate through the forearm while keeping the upper arm controlled; avoid substituting a sideways wrist bend.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 77,
+      "art": "row-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "row"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 78,
+      "art": "press-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "press"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 79,
+      "art": "pressdown-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "pressdown"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 80,
+      "art": "lateral-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "lateral"
+      ],
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "gripCue": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 81,
+      "art": "brace-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "brace"
+      ],
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "gripCue": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 82,
+      "art": "sit-stand-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "sit-stand"
+      ],
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "gripCue": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 83,
+      "art": "hamstring-curl-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "hamstring-curl"
+      ],
+      "gripCategory": "ankle-cuff",
+      "gripLabel": "Ankle-cuff resistance",
+      "gripCue": "Resistance attaches to the illustrated ankle cuff; the hands provide support only.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 84,
+      "art": "calf-raise-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "calf-raise"
+      ],
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "gripCue": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 85,
+      "art": "hip-abduction-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "hip-abduction"
+      ],
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "gripCue": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 86,
+      "art": "scapular-control-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "scapular-control"
+      ],
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "gripCue": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 87,
+      "art": "curl-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "curl"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 88,
+      "art": "hip-extension-plyosoft-box-v2-personal-v1.jpg",
+      "ids": [
+        "hip-extension"
+      ],
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "gripCue": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 89,
+      "art": "box-kneeling-extension-three-roles-v2-personal-v1.jpg",
+      "ids": [
+        "box-kneeling-extension"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 90,
+      "art": "pilates-row-matched-pair-v1-personal-v1.jpg",
+      "ids": [
+        "pilates-row"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 91,
+      "art": "pilates-press-matched-pair-v1-personal-v1.jpg",
+      "ids": [
+        "pilates-press"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 92,
+      "art": "pilates-hamstring-curl-matched-pair-v1-personal-v1.jpg",
+      "ids": [
+        "pilates-hamstring-curl"
+      ],
+      "gripCategory": "ankle-cuff",
+      "gripLabel": "Ankle-cuff resistance",
+      "gripCue": "Resistance attaches to the illustrated ankle cuff; the hands provide support only.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 93,
+      "art": "pilates-curl-matched-pairs-approved-v1.jpg",
+      "ids": [
+        "pilates-curl"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 94,
+      "art": "pilates-pressdown-matched-pairs-approved-v1.jpg",
+      "ids": [
+        "pilates-pressdown"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 95,
+      "art": "pilates-hip-hinge-personal-v1.jpg",
+      "ids": [
+        "pilates-hip-hinge"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 96,
+      "art": "pilates-overhead-press-personal-v1.jpg",
+      "ids": [
+        "pilates-overhead-press"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Overhand bar grip; palms face forward at the shoulder rack and through the press. Keep wrists stacked over forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 97,
+      "art": "pilates-bent-row-personal-v1.jpg",
+      "ids": [
+        "pilates-bent-row"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 98,
+      "art": "pilates-seated-row-personal-v1.jpg",
+      "ids": [
+        "pilates-seated-row"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 99,
+      "art": "pilates-lateral-raise-personal-v1.jpg",
+      "ids": [
+        "pilates-lateral-raise"
+      ],
+      "gripCategory": "semi-pronated",
+      "gripLabel": "Angled / semi-pronated grip",
+      "gripCue": "Angled handle grip; palms generally down, thumbs slightly forward. Keep wrists straight without a forced thumb-down twist.",
+      "issues": [
+        "Finish wrists appear flexed under handle tension; redraw straight wrist/forearm alignment."
+      ],
+      "replacement": "pilates-lateral-raise-grip-reviewed-v2.jpg",
+      "secondPass": "Replacement inspected at full size: grip, wrists, both poses, continuous attachment paths and intended load direction.",
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 100,
+      "art": "pilates-standing-rotation-personal-v1.jpg",
+      "ids": [
+        "pilates-standing-rotation"
+      ],
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "gripCue": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 101,
+      "art": "standing-band-chest-press-personal-v1.jpg",
+      "ids": [
+        "standing-band-chest-press"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward through this press; keep wrists aligned with forearms.",
+      "issues": [
+        "Grip variation was unspecified. Neutral grip is valid and retained. Two attempted pronated redraws rejected for incorrect handle hardware."
+      ],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 102,
+      "art": "standing-band-chest-fly-personal-v1.jpg",
+      "ids": [
+        "standing-band-chest-fly"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripCue": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 103,
+      "art": "high-to-low-band-chest-fly-personal-v1.jpg",
+      "ids": [
+        "high-to-low-band-chest-fly"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripCue": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 104,
+      "art": "low-to-high-band-chest-fly-personal-v1.jpg",
+      "ids": [
+        "low-to-high-band-chest-fly"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripCue": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 105,
+      "art": "single-arm-cross-body-band-fly-personal-v1.jpg",
+      "ids": [
+        "single-arm-cross-body-band-fly"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripCue": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 106,
+      "art": "high-anchor-band-decline-press-personal-v1.jpg",
+      "ids": [
+        "high-anchor-band-decline-press"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 107,
+      "art": "low-anchor-band-incline-press-personal-v1.jpg",
+      "ids": [
+        "low-anchor-band-incline-press"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripCue": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    },
+    {
+      "index": 108,
+      "art": "seated-band-chest-fly-personal-v1.jpg",
+      "ids": [
+        "seated-band-chest-fly"
+      ],
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripCue": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "issues": [],
+      "review": "Both poses visually screened; grip/contact description compared with depicted hand and arm configuration."
+    }
+  ],
+  "confirmedCorrections": [
+    "Low-anchor curl training adaptation with original high-front observation preserved",
+    "Consistent sweep camera and connected grips",
+    "Straightened lateral-raise wrists",
+    "Palm-contact change separated from forearm rotation",
+    "Grip and contact labels distinguish neutral, pronated, supinated, angled, shared, rotating and support configurations",
+    "Rejected pronated-press hardware drafts excluded"
+  ]
+}

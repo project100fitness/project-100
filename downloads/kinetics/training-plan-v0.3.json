@@ -59,6 +59,11 @@
     "personalRecording": {
       "title": "Personal training recording; source times on recording-sets.html",
       "url": "recording-sets.html"
+    },
+    "aceChestBands": {
+      "title": "ACE: Be a Chest Day Champion",
+      "url": "https://www.acefitness.org/resources/pros/expert-articles/8972/be-a-chest-day-champion-an-evidence-based-approach-to-training-the-chest/",
+      "note": "Standing band chest press basis. Fly and angled configurations are editorial equipment adaptations, not claims of filmed performance."
     }
   },
   "exercises": [
@@ -100,7 +105,11 @@
         "move": "Draw the elbow toward the lower ribs without twisting.",
         "return": "Lower slowly to a softly extended arm."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "press",
@@ -139,7 +148,11 @@
         "move": "Press forward without leaning or twisting.",
         "return": "Stop before elbow lock; return within a comfortable arc."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pressdown",
@@ -177,7 +190,11 @@
         "move": "Extend the elbows while keeping upper arms nearly still.",
         "return": "Bend the elbows slowly; keep the bar clear of the face."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "lateral",
@@ -216,7 +233,11 @@
         "move": "Raise the arms in a slightly forward plane.",
         "return": "Stay below shoulder height; avoid shrugging or leaning."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "grip": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "brace",
@@ -254,7 +275,11 @@
         "move": "Gently firm the trunk while breathing normally.",
         "return": "Release fully between comfortable holds."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "grip": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "sit-stand",
@@ -292,7 +317,11 @@
         "move": "Lean from the hips and stand smoothly.",
         "return": "Bend hips and knees; lower gently onto the seat."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "grip": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "hamstring-curl",
@@ -331,7 +360,11 @@
         "move": "Draw the heel back by bending the knee.",
         "return": "Return slowly; keep the heel path clear of the box."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "ankle-cuff",
+      "gripLabel": "Ankle-cuff resistance",
+      "grip": "Resistance attaches to the illustrated ankle cuff; the hands provide support only.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "calf-raise",
@@ -369,7 +402,11 @@
         "move": "Rise slowly onto the forefeet with even pressure.",
         "return": "Lower heels gently; avoid bouncing."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "grip": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "hip-abduction",
@@ -407,7 +444,11 @@
         "move": "Move one leg a short distance sideways.",
         "return": "Lower slowly; keep the pelvis level and trunk steady."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "grip": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "scapular-control",
@@ -446,7 +487,11 @@
         "move": "Gently guide the shoulder blades toward one another.",
         "return": "Release without shrugging or arching."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "grip": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "curl",
@@ -485,7 +530,11 @@
         "move": "Bend the elbow without swinging or leaning back.",
         "return": "Lower slowly to a softly extended elbow."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "hip-extension",
@@ -523,7 +572,11 @@
         "move": "Move one leg slightly backward from the hip.",
         "return": "Return gently; avoid arching the lower back."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-palm",
+      "gripLabel": "Support hand contact",
+      "grip": "Plant the support palm securely. Hand placement steadies balance rather than setting the target muscle.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "box-kneeling-extension",
@@ -560,7 +613,11 @@
         "return": "Return hands near the head under control."
       },
       "sourceCheckRecord": "Keep this phase separate from the later shoulder-braced torso folds. Exact onset, end and repetition count remain under review.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-overhead-extension",
@@ -604,23 +661,27 @@
         "return": "Bend elbows and return hands behind the head."
       },
       "sourceCheckRecord": "Floor-kneeling posture is visible in source L008 at 00:34:00, within candidate phase 00:33:55â€“00:34:18. Exact sets, repetitions and load remain unverified.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "supported-high-front-curl",
-      "name": "Supported high-front band curl",
-      "pattern": "Elbow flexion / standing inclined support",
+      "name": "Supported low-front band curl",
+      "pattern": "Elbow flexion / supported low-anchor curl",
       "main": "Biceps brachii, brachialis and brachioradialis flex the working elbow.",
       "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm. The free arm supports the torso.",
       "base": "Abdominal, spinal and hip stabilizers control the incline. Both feet and the support hand form the base.",
-      "setup": "One handle connects to a high front anchored line. The free hand braces on a stable stack of plates. The source also shows a separate free-hand-on-thigh variant.",
-      "position": "Stand with knees softly flexed and torso inclined. Keep the free palm on its support and the working upper arm down/in front of the trunk.",
-      "move": "Bend the elbow to draw the handle toward the upper torso.",
-      "range": "Open the elbow and return forward/down under control.",
+      "setup": "Use one secure low front anchor. Brace the free palm on a stable support; stand with both feet planted.",
+      "position": "Keep the working upper arm beside the torso, palm upward and wrist aligned.",
+      "move": "Bend the working elbow to raise the handle away from the low anchor without moving the upper arm.",
+      "range": "Return slowly toward the low front anchor, stopping short of a forced elbow lock.",
       "check": "Keep the trunk steady, wrists aligned and the movement controlled.",
       "easier": "Use a smaller comfortable range and reduce band tension.",
       "reps": "Use the day's set allocation",
-      "artCaption": "START / elbow open                    FINISH / elbow flexed",
+      "artCaption": "START / elbow softly open                    FINISH / controlled low-anchor curl",
       "resistance": {
         "mode": "band"
       },
@@ -629,27 +690,41 @@
       "exerciseFamilyIds": [
         "standing-supported-high-front-curl"
       ],
-      "anchor": "High / in front",
+      "anchor": "Low / in front",
       "handPath": "Working hand toward upper torso or face",
-      "resistanceDirection": "Up/front toward anchor",
+      "resistanceDirection": "Down/front toward low anchor",
       "focusSlot": "Day 3 / curl; full-body pulling option",
-      "origin": "Personal training recording",
-      "art": "supported-high-front-curl-three-roles-v2-personal-v1.jpg",
+      "origin": "Low-front training adaptation; recorded supported posture retained",
+      "art": "supported-low-front-curl-grip-reviewed-v3.jpg",
       "artWidth": 1774,
       "artHeight": 887,
       "artAspect": 2.0,
       "sources": [
         "personalRecording"
       ],
-      "artReview": "Reconstructed start/finish plate visually checked for hands, joints, base and anchor geometry; not an exact frame tracing.",
+      "artReview": "Revised after grip and anchor audit, 2026-10-19; original image retained separately.",
       "equipmentVerification": "Visible equipment geometry; no manufacturer rating or measured force assigned.",
       "cardCues": {
-        "setup": "One high front handle; free hand braces on stable plates.",
-        "move": "Bend the elbow to draw the handle toward the upper torso.",
-        "return": "Open the elbow and return forward/down under control."
+        "setup": "Low front anchor; free palm on a stable support; palm-up grip.",
+        "move": "Curl upward away from the low anchor; keep the upper arm steady.",
+        "return": "Lower slowly without bending the wrist or locking the elbow."
       },
       "sourceCheckRecord": "Source: 20260829_060124.mp4, 00:24:03â€“00:24:47. A second supported variant occurs at 00:24:57â€“00:25:58. These are source windows, not prescribed set totals.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19",
+      "previousArt": "supported-high-front-curl-three-roles-v2-personal-v1.jpg",
+      "sourceObservedSetup": {
+        "name": "Supported high-front band curl",
+        "setup": "One handle connects to a high front anchored line. The free hand braces on a stable stack of plates. The source also shows a separate free-hand-on-thigh variant.",
+        "position": "Stand with knees softly flexed and torso inclined. Keep the free palm on its support and the working upper arm down/in front of the trunk.",
+        "move": "Bend the elbow to draw the handle toward the upper torso.",
+        "sourceWindow": "00:24:03â€“00:24:47; thigh-supported variation 00:24:57â€“00:25:58"
+      },
+      "isTrainingAdaptation": true,
+      "adaptationNote": "Training illustration uses a low front anchor so the band resists upward elbow flexion. The original high-front recording remains source evidence; this is not a claim that it was filmed with a low anchor."
     },
     {
       "id": "standing-shared-low-rear-overhead-extension",
@@ -694,7 +769,11 @@
         "return": "Bend both elbows; return the handle behind the head."
       },
       "sourceCheckRecord": "Source: 0b8ac0e18878cd60c8054e9018343ac7_720_1280.mp4, 00:42:16â€“00:43:11; knee-lift continuation 00:43:12â€“00:45:00. Exposed pale tubes and shared grip are visible.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-high-front-paired-draw",
@@ -739,7 +818,11 @@
         "return": "Return hands up/front under control."
       },
       "sourceCheckRecord": "Source: VID_20260725_070834.mp4, 00:05:51â€“00:06:31 (SET-C190). Both knees are on the floor; handles are independent.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-mid-side-band-bar-pressdown",
@@ -784,7 +867,11 @@
         "return": "Let the bar rise slowly as the elbows bend."
       },
       "sourceCheckRecord": "Source: 20260829_060124.mp4, 01:11:32â€“01:12:05 (SET-C238). The anchors are on the side posts, not overhead.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "shoulder-band-bar-squat",
@@ -885,7 +972,11 @@
       },
       "equipmentSystem": "HPYGN Pilates / matched pairs",
       "sourceCheckRecord": "Source: ec67c4d94be978ee7313cd50c743b90e_1280_720.mp4, 00:14:47â€“00:14:58 (SET-C067); continuation 00:15:03â€“00:15:39 (SET-C068). Source windows are phase references, not two verified sets.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-curl",
@@ -930,7 +1021,11 @@
         "return": "Lower the working handle before curling the other."
       },
       "sourceCheckRecord": "Source: 20260829_060124.mp4, 01:07:06â€“01:08:20 (SET-C235). Both hands retain independent grips; the low incoming lines cross in front.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-row",
@@ -1023,7 +1118,11 @@
         "return": "Lower slowly to a softly extended arm."
       },
       "illustrationBasis": "Accepted reference technique adapted to the user-specified matched Pilates bundles; not a claim that the reference pose was verified in a personal recording.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-press",
@@ -1115,7 +1214,11 @@
         "return": "Stop before elbow lock; return within a comfortable arc."
       },
       "illustrationBasis": "Accepted reference technique adapted to the user-specified matched Pilates bundles; not a claim that the reference pose was verified in a personal recording.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-hamstring-curl",
@@ -1207,7 +1310,11 @@
         "return": "Return slowly; keep the heel path clear of the box."
       },
       "illustrationBasis": "Accepted reference technique adapted to the user-specified matched Pilates bundles; not a claim that the reference pose was verified in a personal recording.",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "ankle-cuff",
+      "gripLabel": "Ankle-cuff resistance",
+      "grip": "Resistance attaches to the illustrated ankle cuff; the hands provide support only.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-curl",
@@ -1300,7 +1407,11 @@
       },
       "personalProfileRevision": "approved-personal-profile-retained-kit-adaptation-2026-10-17",
       "adaptationOf": "curl",
-      "evidenceType": "Guide kit adaptation; no new source passage claimed"
+      "evidenceType": "Guide kit adaptation; no new source passage claimed",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-pressdown",
@@ -1392,7 +1503,11 @@
       },
       "personalProfileRevision": "approved-personal-profile-retained-kit-adaptation-2026-10-17",
       "adaptationOf": "pressdown",
-      "evidenceType": "Guide kit adaptation; no new source passage claimed"
+      "evidenceType": "Guide kit adaptation; no new source passage claimed",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-hip-hinge",
@@ -1431,7 +1546,11 @@
         "move": "Hinge the hips back with soft knees, keeping the bar close to the legs.",
         "return": "Drive through the feet and extend the hips; keep the arms long."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-overhead-press",
@@ -1470,7 +1589,11 @@
         "move": "Press the bar upward from the front of the shoulders without arching the back.",
         "return": "Lower slowly to the starting position; use a range set with your trainer."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Overhand bar grip; palms face forward at the shoulder rack and through the press. Keep wrists stacked over forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-bent-row",
@@ -1509,7 +1632,11 @@
         "move": "Hold the hip hinge and draw the bar toward the lower ribs; keep the shoulders down.",
         "return": "Extend the arms slowly without changing the torso angle."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-seated-row",
@@ -1548,7 +1675,11 @@
         "move": "Draw the bar toward the low ribs without rounding or leaning back.",
         "return": "Extend the arms slowly toward the feet, keeping the spine comfortably upright."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "pilates-lateral-raise",
@@ -1569,12 +1700,12 @@
         "https://lightstuffproducts.com/pilates-bar-workouts/",
         "user-supplied HPYGN kit reference"
       ],
-      "art": "pilates-lateral-raise-personal-v1.jpg",
+      "art": "pilates-lateral-raise-grip-reviewed-v2.jpg",
       "artWidth": 1774,
       "artHeight": 887,
       "artAspect": 2.0,
       "artCaption": "START / hands beside thighs                    FINISH / arms raised",
-      "artReview": "Visual review: matching personal profile, connected matched tube pairs, full-body poses; 2026-10-17",
+      "artReview": "Revised after grip and anchor audit, 2026-10-19; original image retained separately.",
       "isKitAdaptation": true,
       "resistance": {
         "mode": "band",
@@ -1584,10 +1715,15 @@
       },
       "cardCues": {
         "setup": "Use the kit handles and foot loops, with two matching tubes on each independent side.",
-        "move": "Raise the handles out to the sides to a comfortable height, with elbows softly bent.",
+        "move": "Raise slightly forward of the sides, keeping wrists straight and hands below shoulder height.",
         "return": "Lower slowly without leaning or shrugging; stay within the agreed range."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "semi-pronated",
+      "gripLabel": "Angled / semi-pronated grip",
+      "grip": "Angled handle grip; palms generally down, thumbs slightly forward. Keep wrists straight without a forced thumb-down twist.",
+      "gripAuditDate": "2026-10-19",
+      "previousArt": "pilates-lateral-raise-personal-v1.jpg"
     },
     {
       "id": "pilates-standing-rotation",
@@ -1626,7 +1762,363 @@
         "move": "Turn the upper torso through a small comfortable arc while the pelvis faces forward.",
         "return": "Return to centre slowly, then change sides; avoid forcing the twist."
       },
-      "personalProfileRevision": "approved-personal-profile-2026-10-17"
+      "personalProfileRevision": "approved-personal-profile-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "standing-band-chest-press",
+      "name": "Standing two-arm band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at chest-height level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Neutral-grip press: palms face inward throughout; wrists stay aligned with forearms. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Press forward at chest height; keep hands shoulder-width apart.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "standing-band-chest-press-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / handles beside chest                    FINISH / controlled forward press",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at chest-height level; one continuous band per handle.",
+        "move": "Press forward at chest height; keep hands shoulder-width apart.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face inward through this press; keep wrists aligned with forearms.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "standing-band-chest-fly",
+      "name": "Standing mid-height band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at chest-height level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Fly: palms face forward in the open position and inward as the arms meet; keep wrists aligned without a forced twist. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Sweep both upper arms forward in a hugging arc; keep a soft elbow bend.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "standing-band-chest-fly-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / arms comfortably open                    FINISH / hands meet before chest",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at chest-height level; one continuous band per handle.",
+        "move": "Sweep both upper arms forward in a hugging arc; keep a soft elbow bend.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "high-to-low-band-chest-fly",
+      "name": "High-to-low band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at high level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Fly: palms face forward in the open position and inward as the arms meet; keep wrists aligned without a forced twist. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Sweep forward and down toward the upper abdomen without straightening the elbows.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "high-to-low-band-chest-fly-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / arms open below shoulders                    FINISH / hands forward and down",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at high level; one continuous band per handle.",
+        "move": "Sweep forward and down toward the upper abdomen without straightening the elbows.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "low-to-high-band-chest-fly",
+      "name": "Low-to-high band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at low level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Fly: palms face forward in the open position and inward as the arms meet; keep wrists aligned without a forced twist. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Sweep forward and upward to chest height with softly bent elbows.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "low-to-high-band-chest-fly-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / hands outside hips                    FINISH / hands before upper chest",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at low level; one continuous band per handle.",
+        "move": "Sweep forward and upward to chest height with softly bent elbows.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "single-arm-cross-body-band-fly",
+      "name": "Single-arm band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "One secure rear/side anchor at chest-height level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Fly: palms face forward in the open position and inward as the arms meet; keep wrists aligned without a forced twist. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Draw one upper arm across the front of the chest without turning the trunk.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "single-arm-cross-body-band-fly-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / working arm open                    FINISH / handle near chest midline",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "One secure rear/side anchor at chest-height level; one continuous band per handle.",
+        "move": "Draw one upper arm across the front of the chest without turning the trunk.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "high-anchor-band-decline-press",
+      "name": "High-anchor downward band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at high level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Neutral-grip press: palms face inward throughout; wrists stay aligned with forearms. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Press forward and down; finish with soft elbows and hands apart.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "high-anchor-band-decline-press-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / handles beside chest                    FINISH / controlled downward press",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at high level; one continuous band per handle.",
+        "move": "Press forward and down; finish with soft elbows and hands apart.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "low-anchor-band-incline-press",
+      "name": "Low-anchor upward band chest press",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Triceps extend the elbows; anterior deltoid assists the press.",
+      "base": "Abdominals resist arching and rotation; hips and legs steady the split stance.",
+      "setup": "Two secure rear anchors at low level; one continuous band per handle. Stand in front of the anchor plane, with the recoil path clear.",
+      "position": "Neutral-grip press: palms face inward throughout; wrists stay aligned with forearms. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Press forward and upward to upper-chest height without arching the back.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "low-anchor-band-incline-press-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / handles beside lower chest                    FINISH / controlled upward press",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at low level; one continuous band per handle.",
+        "move": "Press forward and upward to upper-chest height without arching the back.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "gripAuditDate": "2026-10-19"
+    },
+    {
+      "id": "seated-band-chest-fly",
+      "name": "Box-seated two-arm band chest fly",
+      "origin": "Added resistance-band technique / equipment adaptation",
+      "pattern": "Push / chest",
+      "main": "Pectoralis major: draws the upper arm forward and toward the chest midline.",
+      "secondary": "Anterior deltoid assists; shoulder-blade and rotator-cuff muscles guide the motion.",
+      "base": "Trunk stabilizers and planted feet hold a steady seated base.",
+      "setup": "Two secure rear anchors at shoulder-height level; one continuous band per handle. Sit on a stable box in front of the anchors; plant both feet.",
+      "position": "Fly: palms face forward in the open position and inward as the arms meet; keep wrists aligned without a forced twist. Keep ribs over pelvis and elbows below shoulder height.",
+      "move": "Sweep both upper arms forward in a hugging arc; keep elbows softly bent.",
+      "range": "Use a comfortable range. Return slowly; do not force the upper arms behind the torso.",
+      "check": "Keep each band connected to its own handle. Reduce tension if the trunk shifts or shoulders shrug.",
+      "easier": "Rehearse without tension, then select a lighter band and a shorter comfortable arc.",
+      "reps": "Trainer-selected repetitions",
+      "sources": [
+        "aceChestBands"
+      ],
+      "equipmentSystem": "Anchored long-line resistance bands",
+      "art": "seated-band-chest-fly-personal-v1.jpg",
+      "artWidth": 1774,
+      "artHeight": 887,
+      "artAspect": 2.0,
+      "artCaption": "START / arms comfortably open                    FINISH / hands meet before chest",
+      "artReview": "Two-pose visual review: stance/support, continuous band paths and separate handle connections, 2026-10-19. Not a clinical validation.",
+      "resistance": {
+        "mode": "band",
+        "type": "Anchored long-line resistance bands",
+        "nominalLb": null,
+        "note": "Choose resistance and repetitions with the trainer. No personal load is inferred."
+      },
+      "cardCues": {
+        "setup": "Two secure rear anchors at shoulder-height level; one continuous band per handle.",
+        "move": "Sweep both upper arms forward in a hugging arc; keep elbows softly bent.",
+        "return": "Return slowly; wrists stay aligned, with no forced twist."
+      },
+      "isEditorialTechnique": true,
+      "recordingObserved": false,
+      "illustrationBasis": "Added band technique; not claimed as verified personal footage.",
+      "grip": "Palms face forward with arms open and inward as the hands meet. Keep wrists aligned; follow the arm arc without a forced wrist twist.",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handles / fly arc",
+      "gripAuditDate": "2026-10-19"
     }
   ],
   "days": [
@@ -2747,7 +3239,11 @@
       },
       "guide_day": 1,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "inclined-overhead-drive",
@@ -2808,7 +3304,12 @@
         "Seated on bench; torso inclination varies"
       ],
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "START / elbows bent                    FINISH / one arm extends"
     },
     {
       "id": "high-front-downward-arm-drive",
@@ -2912,7 +3413,11 @@
       },
       "guide_day": 3,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "kneeling-supported-forward-extension",
@@ -2995,7 +3500,11 @@
       },
       "guide_day": 1,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "kneeling-handle-hold-free-reach",
@@ -3119,7 +3628,11 @@
       },
       "guide_day": 3,
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "box-kneeling-overhead-drive",
@@ -3246,7 +3759,11 @@
       },
       "guide_day": 1,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "box-kneeling-shoulder-braced-torso-fold",
@@ -3312,7 +3829,11 @@
       },
       "guide_day": 2,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "grip": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-high-front-draw",
@@ -3403,7 +3924,11 @@
       },
       "guide_day": 3,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "high-front-two-hand-draw",
@@ -3528,7 +4053,11 @@
       },
       "guide_day": 3,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-high-rear-upper-back-braced-torso-bow",
@@ -3585,7 +4114,11 @@
         "secondary": "Spinal, shoulder and forearm muscles control the torso and front-retained webbing.",
         "base": "Hip muscles and the shown stance steady the base."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "grip": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-high-rear-upper-back-braced-arm-opening",
@@ -3642,7 +4175,11 @@
         "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "unloaded",
+      "gripLabel": "No loaded hand grip",
+      "grip": "Hands are relaxed or provide light support; no resisted grip is prescribed.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "low-back-bar-torso-bow",
@@ -3745,7 +4282,11 @@
         "secondary": "Abdominal muscles control trunk position; shoulder and arm muscles maintain the attachment or grip.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-shoulder-bar-torso-bow",
@@ -3803,7 +4344,11 @@
       },
       "guide_day": 2,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-shoulder-bar-squat-bow",
@@ -3869,7 +4414,11 @@
         "secondary": "Shoulder and arm muscles stabilize the shoulder-level bar.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "bench-straddled-lateral-sweep",
@@ -3938,7 +4487,11 @@
         "Bench-straddled low base; feet visible on floor; precise seat contact varies"
       ],
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-high-line-sweep",
@@ -3996,7 +4549,11 @@
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "box-kneeling-unilateral-overhead-drive",
@@ -4073,7 +4630,11 @@
       },
       "guide_day": 2,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "low-side-unilateral-curl",
@@ -4134,7 +4695,11 @@
       },
       "guide_day": 3,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "seated-low-rear-arm-extension",
@@ -4195,7 +4760,12 @@
         "Standing with torso inclined; one active rope grip; free hand on low back"
       ],
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "EXTENDED / controlled elbow                    BENT / controlled return"
     },
     {
       "id": "floor-kneeling-unilateral-low-rear-extension",
@@ -4291,7 +4861,11 @@
         "mode": "unconfirmed"
       },
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-paired-overhead-extension",
@@ -4394,7 +4968,11 @@
         "secondary": "Shoulder muscles control the elevated upper arm; forearm muscles maintain grip.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-inclined-paired-curl-draw",
@@ -4458,7 +5036,11 @@
       },
       "guide_day": 3,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "high-front-two-hand-draw-squat",
@@ -4618,7 +5200,11 @@
         "mode": "unconfirmed"
       },
       "guide_day": 3,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "bench-supported-high-rear-downward-drive",
@@ -4688,7 +5274,11 @@
         "Low standing/squat base beside bench; torso inclined; feet stagger in second phase"
       ],
       "guide_position": "SUPPORTED KNEEL",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "high-front-draw-low-base",
@@ -4754,7 +5344,12 @@
       },
       "guide_day": 2,
       "guide_position": "SQUAT",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "grip": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "standing-overhead-held-torso-lean",
@@ -4845,7 +5440,12 @@
       },
       "guide_day": 2,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "grip": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "shoulder-braced-torso-bow",
@@ -4902,7 +5502,11 @@
         "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "grip": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-low-line-rearward-drive",
@@ -4973,7 +5577,11 @@
       },
       "guide_day": 2,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-wide-arm-drive",
@@ -5052,7 +5660,12 @@
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "SIDE A / one arm raised                    SIDE B / opposite arm raised"
     },
     {
       "id": "standing-head-harness-torso-bow",
@@ -5189,7 +5802,11 @@
       },
       "guide_day": 3,
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-overhead-held-torso-fold",
@@ -5259,7 +5876,11 @@
       },
       "guide_day": 2,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-backward-lean-high-front-paired-draw",
@@ -5317,7 +5938,11 @@
       },
       "guide_day": 2,
       "guide_position": "STANDING",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-paired-wide-arm-sweep",
@@ -5375,11 +6000,15 @@
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "bench-straddled-low-rear-arm-drive",
-      "name": "Low-rear palm-grip forearm rotation",
+      "name": "Low-rear palm-grip contact control",
       "phase_ids": [
         "SET-C164"
       ],
@@ -5410,21 +6039,21 @@
       "status": "Source-reviewed movement variant; exact working-set/repetition counts separate",
       "exact_repetitions_verified": false,
       "movement_type_id": "forearm-rotation",
-      "main": "Forearm pronators and supinators control the palm orientation.",
-      "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
+      "main": "Finger flexors and extensors change the hand contact; forearm muscles stabilize the wrist.",
+      "secondary": "Shoulder and elbow muscles hold the arm position as the palm contact changes.",
       "base": "Trunk and hip muscles steady the shown support contacts.",
       "focus_slot": "Push / overhead technique option; compound motion",
       "representative_guide": null,
       "cardCues": {
         "setup": "Retain one palm-loop grip beside the hip on the low-rear line.",
-        "move": "Turn the forearm and palm contact while keeping the upper arm controlled.",
-        "return": "Turn back slowly without adding a wrist cuff."
+        "move": "Control the change from open palm contact to a closed grip; keep the wrist aligned.",
+        "return": "Return to the shown palm contact under control; do not add an improvised cuff."
       },
       "supportCue": "Trunk control and the floor or box contacts shown.",
       "guide_day": 3,
       "roleOverrides": {
-        "main": "Forearm pronators and supinators control the palm orientation.",
-        "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
+        "main": "Finger flexors and extensors change the hand contact; forearm muscles stabilize the wrist.",
+        "secondary": "Shoulder and elbow muscles hold the arm position as the palm contact changes.",
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "art": "bench-straddled-low-rear-arm-drive-anatomy-v2.jpg",
@@ -5435,7 +6064,18 @@
       "priorObservationPositions": [
         "Seated on bench; torso inclination varies"
       ],
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "palm-contact-change",
+      "gripLabel": "Palm contact / open-to-closed grip",
+      "grip": "The panels show an open palm contact and a closed grip, not a demonstrated pronation-supination cycle.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "CONTACT A / open palm                    CONTACT B / closed grip",
+      "priorInterpretation": {
+        "name": "Low-rear palm-grip forearm rotation",
+        "main": "Forearm pronators and supinators control the palm orientation.",
+        "movement_type_id": "forearm-rotation"
+      },
+      "illustrationInterpretation": "Corrected from forearm rotation: this plate shows grip contact change. Source rotation is not established by these two poses."
     },
     {
       "id": "bench-straddled-overhead-extension",
@@ -5512,7 +6152,11 @@
         "Bench-straddled seated; feet on floor"
       ],
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-overhead-drive",
@@ -5570,7 +6214,11 @@
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-inclined-unilateral-curl",
@@ -5678,7 +6326,11 @@
       },
       "guide_day": 3,
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-two-hand-single-handle-overhead-extension",
@@ -5757,7 +6409,11 @@
         "secondary": "Shoulder muscles control the elevated upper arm; forearm muscles maintain grip.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-two-hand-high-rear-overhead-drive",
@@ -5827,7 +6483,12 @@
         "base": "Trunk and supporting-leg muscles steady the changing base."
       },
       "guide_day": 3,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "POSITION A / arms raised                    POSITION B / arms open and knee lift"
     },
     {
       "id": "standing-high-front-wide-arm-sweep",
@@ -5881,7 +6542,7 @@
         "return": "Return along the same handle path under control."
       },
       "supportCue": "Trunk control and the floor or box contacts shown.",
-      "art": "standing-high-front-wide-arm-sweep-anatomy-v2-personal-v1.jpg",
+      "art": "standing-high-front-wide-arm-sweep-grip-reviewed-v3.jpg",
       "artAspect": 2.0,
       "resistance": {
         "mode": "unconfirmed"
@@ -5893,7 +6554,14 @@
         "secondary": "Scapular muscles guide the shoulder blades; forearm and elbow muscles control the handles.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "previousArt": "standing-high-front-wide-arm-sweep-anatomy-v2-personal-v1.jpg",
+      "artReview": "Revised after grip and anchor audit, 2026-10-19; original image retained separately.",
+      "artCaption": "START / arms comfortably open                    FINISH / controlled downward sweep"
     },
     {
       "id": "standing-inclined-high-rear-wide-arm-drive",
@@ -5951,7 +6619,11 @@
         "secondary": "Scapular muscles guide the shoulder blades; forearm and elbow muscles control the handles.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-alternating-high-front-draw",
@@ -6044,7 +6716,11 @@
         "mode": "unconfirmed"
       },
       "guide_day": 1,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "palm-loop",
+      "gripLabel": "Retained palm-loop grip",
+      "grip": "The illustrated palm loops retain contact as the palm angle changes. Do not replace this with an improvised wrist cuff.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-paired-high-front-draw",
@@ -6114,7 +6790,11 @@
         "secondary": "Scapular and shoulder muscles guide the arm path; forearm muscles maintain grip.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-inclined-unilateral-high-front-band-curl-draw",
@@ -6176,7 +6856,11 @@
         "Standing with knees flexed and torso inclined; free hand behind body"
       ],
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-single-handle-band-sweep-reposition",
@@ -6291,7 +6975,11 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-inclined-unilateral-band-overhead-arm-drive",
@@ -6352,7 +7040,11 @@
         "Standing with knees flexed and torso inclined"
       ],
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "deep-squat-unilateral-high-side-band-draw-hold",
@@ -6413,7 +7105,12 @@
         "Deep squat; one hand loaded, opposite hand free"
       ],
       "guide_position": "LOW BASE",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "standing-two-hand-single-band-pressdown-draw",
@@ -6471,7 +7168,11 @@
       },
       "guide_day": 1,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "deep-squat-two-hand-single-band-downward-draw",
@@ -6528,7 +7229,11 @@
         "mode": "unconfirmed"
       },
       "guide_day": 1,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-two-hand-single-band-overhead-arm-drive",
@@ -6589,7 +7294,11 @@
         "Both knees on floor beside bench; torso inclined"
       ],
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-unilateral-band-overhead-hold-drive",
@@ -6648,7 +7357,11 @@
       },
       "illustrationAdaptation": "Source bench support replaced by a red PLYOSOFT box at the same support height; original source observation remains in evidence.",
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-unilateral-band-overhead-arm-drive",
@@ -6709,7 +7422,11 @@
         "Both knees on floor; free hand braces hip/lower back"
       ],
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "front-waist-bar-torso-bow",
@@ -6767,7 +7484,11 @@
       },
       "guide_day": 2,
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "grip": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-low-line-hold",
@@ -6883,7 +7604,11 @@
         "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-mid-side-band-bar-pressdown",
@@ -6949,7 +7674,11 @@
         "secondary": "Shoulder and scapular muscles control upper-arm position; forearm muscles grip the bar.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-mid-side-bar-draw",
@@ -7007,7 +7736,11 @@
       },
       "guide_day": 3,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "pronated",
+      "gripLabel": "Overhand / pronated grip",
+      "grip": "Retain the illustrated overhand grip with thumbs wrapped and wrists aligned. Palm direction follows the arm position.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-low-base-unilateral-curl",
@@ -7065,7 +7798,11 @@
         "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "deep-squat-unilateral-low-line-curl",
@@ -7123,7 +7860,11 @@
         "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "deep-squat-two-hand-single-handle-curl",
@@ -7192,7 +7933,11 @@
         "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "floor-kneeling-two-hand-single-handle-low-rear-extension",
@@ -7250,7 +7995,12 @@
       },
       "guide_day": 1,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "EXTENDED / controlled elbow                    BENT / controlled return"
     },
     {
       "id": "standing-side-line-unilateral-draw",
@@ -7321,7 +8071,11 @@
         "Standing, knees flexed; opposite arm free"
       ],
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-two-hand-single-handle-side-draw",
@@ -7382,7 +8136,11 @@
         "Standing, both hands together near chest"
       ],
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-high-front-draw-leg-lift",
@@ -7439,7 +8197,12 @@
         "mode": "unconfirmed"
       },
       "guide_day": 2,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "sandbag-kneeling-unilateral-high-front-draw",
@@ -7509,7 +8272,11 @@
       },
       "guide_day": 3,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "sandbag-kneeling-high-front-draw",
@@ -7611,7 +8378,11 @@
       },
       "guide_day": 3,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "high-front-draw-lateral-squat",
@@ -7669,7 +8440,11 @@
       },
       "guide_day": 2,
       "guide_position": "SQUAT",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-unilateral-high-front-draw",
@@ -7727,7 +8502,12 @@
         "mode": "unconfirmed"
       },
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "grip-variation",
+      "gripLabel": "Shared-to-single grip variation",
+      "grip": "Panels compare grip/contact variations; they are not the START and FINISH of one repeated movement.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "box-seated-two-hand-high-front-draw",
@@ -7793,7 +8573,11 @@
       },
       "guide_day": 3,
       "guide_position": "SEATED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "upper-back-braced-arm-opening",
@@ -7863,7 +8647,11 @@
         "secondary": "Forearm muscles maintain the palm contacts and wrist position.",
         "base": "Trunk muscles steady the torso."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-unilateral-high-rear-overhead-drive",
@@ -7934,7 +8722,11 @@
         "base": "Trunk and hip muscles steady the shown support contacts."
       },
       "guide_position": "STANDING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-low-front-unilateral-short-draw",
@@ -7992,11 +8784,16 @@
       },
       "guide_day": 1,
       "guide_position": "INCLINED",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "EXTENDED / controlled elbow                    BENT / controlled return"
     },
     {
       "id": "standing-supported-high-front-curl",
-      "name": "Standing supported high front curl",
+      "name": "Supported low-front band curl",
       "phase_ids": [
         "SET-C291",
         "SET-C292"
@@ -8042,12 +8839,12 @@
       "focus_slot": "Day 3 / pull and biceps",
       "representative_guide": "supported-high-front-curl",
       "cardCues": {
-        "setup": "Standing with knees flexed; free hand supported on stacked plates",
-        "move": "Single hand toward upper torso/face with elbow flexion",
-        "return": "Return along the same handle path under control."
+        "setup": "Low front anchor; free palm on a stable support; palm-up grip.",
+        "move": "Curl upward away from the low anchor; keep the upper arm steady.",
+        "return": "Lower slowly without bending the wrist or locking the elbow."
       },
       "supportCue": "Trunk control and the floor or box contacts shown.",
-      "art": "supported-high-front-curl-three-roles-v2-personal-v1.jpg",
+      "art": "supported-low-front-curl-grip-reviewed-v3.jpg",
       "artAspect": 2.0,
       "resistance": {
         "mode": "unconfirmed"
@@ -8059,7 +8856,36 @@
         "secondary": "Forearm muscles maintain grip; shoulder muscles control the upper arm.",
         "base": "Trunk control and the floor or box contacts shown."
       },
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "supinated",
+      "gripLabel": "Underhand / palms-up grip",
+      "grip": "Maintain the illustrated palms-up grip and aligned wrists; bend at the elbow, not the wrist.",
+      "gripAuditDate": "2026-10-19",
+      "previousArt": "supported-high-front-curl-three-roles-v2-personal-v1.jpg",
+      "artReview": "Revised after grip and anchor audit, 2026-10-19; original image retained separately.",
+      "sourceObservedSetup": {
+        "name": "Standing supported high front curl",
+        "anchors": [
+          "High / in front"
+        ],
+        "hand_paths": [
+          "Single hand toward upper torso/face with elbow flexion"
+        ],
+        "resistance_directions": [
+          "Up/front toward rack"
+        ]
+      },
+      "isTrainingAdaptation": true,
+      "adaptationNote": "Training illustration uses a low front anchor so the band resists upward elbow flexion. The original high-front recording remains source evidence; this is not a claim that it was filmed with a low anchor.",
+      "origin": "Low-front training adaptation; recorded supported posture retained",
+      "pattern": "Elbow flexion / supported low-anchor curl",
+      "anchor": "Low / in front",
+      "resistanceDirection": "Down/front toward low anchor",
+      "setup": "Use one secure low front anchor. Brace the free palm on a stable support; stand with both feet planted.",
+      "position": "Keep the working upper arm beside the torso, palm upward and wrist aligned.",
+      "move": "Bend the working elbow to raise the handle away from the low anchor without moving the upper arm.",
+      "range": "Return slowly toward the low front anchor, stopping short of a forced elbow lock.",
+      "artCaption": "START / elbow softly open                    FINISH / controlled low-anchor curl"
     },
     {
       "id": "sandbag-supported-kneeling-high-front-draw",
@@ -8117,7 +8943,11 @@
       },
       "guide_day": 3,
       "guide_position": "KNEELING",
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "neutral",
+      "gripLabel": "Neutral handle grip",
+      "grip": "Palms face inward relative to the working arm; keep wrists in line with forearms.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "upper-back-braced-torso-bow",
@@ -8174,7 +9004,12 @@
         "mode": "unconfirmed"
       },
       "guide_day": 2,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "support-contact",
+      "gripLabel": "Bar / strap support contact",
+      "grip": "Load is applied through the illustrated bar or support contact; hand position is not a chest-press grip cue.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "VARIATION A / shown contact                    VARIATION B / shown contact"
     },
     {
       "id": "standing-inclined-two-hand-single-handle-curl",
@@ -8231,7 +9066,11 @@
         "mode": "unconfirmed"
       },
       "guide_day": 1,
-      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17"
+      "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
+      "gripCategory": "shared",
+      "gripLabel": "Two-hand shared grip",
+      "grip": "Both hands retain the shared attachment. Keep each wrist aligned; this is not two independent handles.",
+      "gripAuditDate": "2026-10-19"
     },
     {
       "id": "standing-low-side-forearm-rotation",
@@ -8291,7 +9130,12 @@
       },
       "guide_day": 3,
       "guide_position": "STANDING",
-      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17"
+      "personalProfileRevision": "existing-plate-reviewed-against-user-approved-baseline-2026-10-17",
+      "gripCategory": "rotating",
+      "gripLabel": "Forearm rotation / palm grip",
+      "grip": "Rotate through the forearm while keeping the upper arm controlled; avoid substituting a sideways wrist bend.",
+      "gripAuditDate": "2026-10-19",
+      "artCaption": "ROTATION A / palm orientation                    ROTATION B / forearm turn"
     }
   ],
   "recordingCoverage": {
@@ -8715,7 +9559,7 @@
   "editionCoverage": {
     "cataloguedSetups": 80,
     "illustratedTrainingSetups": 76,
-    "canonicalTechniqueEntries": 25,
+    "canonicalTechniqueEntries": 39,
     "sourcePassages": 173,
     "evidenceOnlySetups": [
       "kneeling-handle-hold-free-reach",
@@ -8757,5 +9601,25 @@
       "pilates-pressdown"
     ],
     "sourceScope": "Existing 173 source windows unchanged; two kit adaptations are separately identified."
+  },
+  "chestExpansion": {
+    "date": "2026-10-19",
+    "addedTechniqueIds": [
+      "high-to-low-band-chest-fly",
+      "standing-band-chest-fly",
+      "low-anchor-band-incline-press",
+      "low-to-high-band-chest-fly",
+      "seated-band-chest-fly",
+      "single-arm-cross-body-band-fly",
+      "standing-band-chest-press",
+      "high-anchor-band-decline-press"
+    ],
+    "provenance": "Added resistance-band library options; recorded sources and five prescribed sessions unchanged."
+  },
+  "gripAudit": {
+    "date": "2026-10-19",
+    "uniqueIllustrations": 108,
+    "scope": "Every used canonical and eligible recorded illustration visually screened. Grip/contact types are explicit; source observations remain distinct from guide adaptations.",
+    "register": "/downloads/reference/grip-and-illustration-review-2026-10-19.json"
   }
 }

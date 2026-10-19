@@ -48,7 +48,7 @@ for p in sorted((root/'downloads').rglob('*.zip')):
         assert archive.testzip() is None,p
         if 'MANIFEST.json' in archive.namelist():
             manifest=json.loads(archive.read('MANIFEST.json'))
-            assert manifest['canonicalPdfCount']==40
+            assert manifest['canonicalPdfCount']==48
             for entry in manifest['files']:
                 data=archive.read(entry['path'])
                 assert sha256(data).hexdigest()==entry['sha256']

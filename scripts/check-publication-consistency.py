@@ -73,7 +73,7 @@ for name in ['fit-meals.html','fit-nutrition.html']:
 
 training=json.loads((ROOT/'downloads/kinetics/training-plan-v0.3.json').read_text(encoding='utf8'))
 reference=json.loads((ROOT/'downloads/reference/project100-analysis-data.json').read_text(encoding='utf8'))
-assert len(training['exercises'])==reference['counts']['canonical_techniques']==31
+assert len(training['exercises'])==reference['counts']['canonical_techniques']==39
 assert sum(bool(e.get('isKitAdaptation')) for e in training['exercises'])==6
 assert reference['counts']['inventoried_files']==740
 statuses=[item['full_timeline_review'] for item in reference['recording_review']]
