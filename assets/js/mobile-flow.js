@@ -3,7 +3,7 @@
  const mq=matchMedia('(max-width:767px),(max-width:1023px) and (pointer:coarse)');
  const root=document.documentElement;
  root.classList.add('mobile-ready');
- const head=document.getElementById('siteHead');if(head){const measure=()=>root.style.setProperty('--mobile-head-height',Math.ceil(head.getBoundingClientRect().height)+'px');if(window.ResizeObserver)new ResizeObserver(measure).observe(head);measure();}
+ const head=document.getElementById('siteHead');if(head){const measure=()=>{const height=Math.ceil(head.getBoundingClientRect().height);root.style.setProperty('--mobile-head-height',height+'px');root.style.setProperty('--mobile-head-offset',head.dataset.hidden==='true'?'0px':height+'px');};if(window.ResizeObserver)new ResizeObserver(measure).observe(head);new MutationObserver(measure).observe(head,{attributes:true,attributeFilter:['data-hidden']});measure();}
  document.getElementById('menuBtn')?.setAttribute('aria-label','Open menu');
  const view=document.querySelector('[data-band-training]');
  if(view&&view.querySelector('.session-config')&&view.querySelector('[data-session-choices]')){
