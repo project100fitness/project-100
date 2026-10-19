@@ -23,12 +23,12 @@ with sync_playwright() as p:
   assert not data['pause'],data['pause']
   if width<800:assert all(x['overflow']<=1 and x['display']=='grid' for x in data['grids']),data
   if width==390:
-   rail=page.locator('.exercise-entry-grid');rail.scroll_into_view_if_needed();page.wait_for_timeout(200)
-   assert rail.locator('a').nth(1).evaluate('(e)=>{let r=e.getBoundingClientRect();return r.right<=innerWidth}'), 'two cards should fit'
-   rail.evaluate('(e)=>e.scrollLeft=e.scrollWidth');page.locator('[data-preview-step="1"]').first.click();page.wait_for_timeout(700)
-   assert rail.evaluate('(e)=>e.scrollLeft')<2,'right arrow must loop'
-   page.wait_for_timeout(6100);assert rail.evaluate('(e)=>e.scrollLeft')>2,'autoplay must resume'
-   page.locator('#p100-programmes .hud-folder__head').scroll_into_view_if_needed();page.screenshot(path='/tmp/p100-mobile-folders.png')
+   entries=page.locator('.kin-local-nav a')
+   assert entries.count()==2
+   assert entries.nth(1).evaluate('(e)=>{let r=e.getBoundingClientRect();return r.right<=innerWidth}'), 'both programmes should fit'
+   assert page.locator('[data-kin-programme="focused"] .kin-session-links a').count()==3
+   assert page.locator('[data-kin-programme="fullbody"] .kin-session-links a').count()==2
+   page.locator('#p100-programmes').scroll_into_view_if_needed();page.screenshot(path='/tmp/p100-mobile-folders.png')
    page.locator('.kin-pilates-atlas').scroll_into_view_if_needed();page.screenshot(path='/tmp/p100-mobile-pilates.png')
    page.locator('.kin-bundle-panel').scroll_into_view_if_needed();page.screenshot(path='/tmp/p100-mobile-bundles.png')
   page.goto('http://127.0.0.1:4185/exercises.html',wait_until='networkidle')

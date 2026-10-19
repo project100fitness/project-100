@@ -117,10 +117,10 @@ body[data-page=kinetics] .hud-hero{padding:20px 12px!important;}
 .kin-section-heading h3,.kin-short-intro h3,.kin-pilates-intro h3{font-size:23px!important;line-height:1.2;max-width:none!important;}
 .kin-section-heading p,.kin-short-intro p{font-size:14px!important;line-height:1.45;}
 .kin-kicker{font-size:10px!important;letter-spacing:.1em!important;}
-.kin-vector-grid article{display:block!important;padding:12px!important;min-width:0;}
-.kin-vector-art{float:left;width:85px;height:86px;margin:0 12px 4px 0;}
+.kin-vector-grid{display:grid;grid-template-columns:1fr;gap:10px}.kin-vector-grid article{display:grid!important;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:12px!important;min-width:0;}
+.kin-vector-art{float:none;width:64px;height:64px;margin:0;}
 .kin-vector-grid h4{font-size:16px!important;margin:5px 0!important;}
-.kin-vector-grid p{font-size:14px!important;line-height:1.45;clear:both;max-width:none!important;}
+.kin-vector-grid p{font-size:14px!important;line-height:1.45;clear:none;max-width:none!important;}
 .kin-vector-grid b{font-size:11px;letter-spacing:.1em;}
 .kin-steps>*{padding:12px!important;min-height:0!important;}
 .kin-steps p{font-size:14px!important;line-height:1.45;}
@@ -245,8 +245,8 @@ body{padding-bottom:76px!important;}
 .swipe-card .cues{margin-top:8px!important;}
 .swipe-card .role p{font-size:13px!important;}
 .swipe-card .card-head{padding:10px!important;}
-.kin-vector-grid,.kin-steps,.kin-mounts,.kin-pilates-atlas{overflow-x:auto;scrollbar-width:thin;}
-.kin-vector-grid>*,.kin-steps>*,.kin-mounts>*,.kin-pilates-atlas>*{scroll-snap-align:start;}
+.kin-steps,.kin-mounts,.kin-pilates-atlas{overflow-x:auto;scrollbar-width:thin;}
+.kin-steps>*,.kin-mounts>*,.kin-pilates-atlas>*{scroll-snap-align:start;}
 .kin-vector-grid article{box-sizing:border-box;}
 .kin-vector-grid p{max-width:none;}
 .kin-steps{counter-reset:kin-step;}
@@ -353,8 +353,8 @@ body[data-page=kinetics] [data-analysis-reference-entry]{padding:14px 12px!impor
 .session-choice-label{scroll-margin-top:52px;}
 .p100-guides .library-toolbar,.p100-guides .library-muscle-section{scroll-margin-top:52px!important;}
 body[data-page=kinetics] main [id]{scroll-margin-top:0!important;}
-.kin-vector-grid,.kin-steps,.kin-mounts,.kin-pilates-atlas,.kin-bundles{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:visible!important;scroll-snap-type:none!important;gap:12px!important;padding:4px 0 12px;}
-.kin-vector-grid>*,.kin-steps>*,.kin-mounts>*,.kin-pilates-atlas>*,.kin-bundles>article{width:auto!important;max-width:100%;min-width:0;flex:none!important;box-sizing:border-box;}
+.kin-steps,.kin-mounts,.kin-pilates-atlas,.kin-bundles{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:visible!important;scroll-snap-type:none!important;gap:12px!important;padding:4px 0 12px;}
+.kin-steps>*,.kin-mounts>*,.kin-pilates-atlas>*,.kin-bundles>article{width:auto!important;max-width:100%;min-width:0;flex:none!important;box-sizing:border-box;}
 .kin-steps{grid-template-columns:minmax(0,1fr)!important;}
 .kin-steps>li{min-height:0!important;padding:12px!important;}
 .kin-steps>li:before{float:left;margin:0 12px 0 0;}
