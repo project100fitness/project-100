@@ -118,7 +118,7 @@
 .hud-folder { margin-top: var(--s-7); }
 .hud-folder--reference, .hud-folder--data { --folder-colour:var(--section-signal-line); }
 .hud-folder--training, .hud-folder--content { --folder-colour:var(--brand-orange); }
-.hud-folder__head { display: flex; align-items: flex-end; flex-wrap: wrap; gap: .4rem .9rem; margin-bottom: -1px; position: relative; z-index: 1;  padding: 10px 12px 10px 0; border-bottom: 1px solid var(--section-frame); background: linear-gradient(110deg,transparent 35%,color-mix(in srgb,var(--section-signal) 5%,transparent)); border-radius: 0 14px 0 0;}
+.hud-folder__head { display: flex; align-items: flex-end; flex-wrap: wrap; gap: .4rem .9rem; margin-bottom: -1px; position: relative; z-index: 1;  padding: 10px 12px 10px 0; border-bottom: 1px solid var(--section-frame); background:transparent; border-radius: 0 14px 0 0;}
 .hud-folder__tab {
   display:inline-flex;align-items:center;gap:.6rem;min-height:2.75rem;padding:.55rem 1.6rem .55rem .9rem;
   border-inline-start:4px solid var(--folder-colour,var(--brand-orange));background: var(--section-sheen);color:var(--text);
@@ -129,13 +129,13 @@
 .hud-folder__meta { margin-left: auto; font-size: .7rem; font-weight: 700; letter-spacing: .075em; text-transform: uppercase; color: var(--section-signal);  font-family: var(--font-mono);}
 .hud-folder__body {
   position: relative; padding: clamp(.9rem, 2.4vw, 1.6rem);
-  background: linear-gradient(155deg,var(--surface-2),var(--surface) 70%);
+  background:var(--surface-2);
   border: 1px solid var(--hud-line); border-inline-start: 3px solid var(--folder-colour,var(--brand-orange)); border-radius: 0 0 14px 0;
   color: var(--hud-ink);
- border-top-color: var(--section-frame); box-shadow: var(--section-shadow),inset 0 1px 0 color-mix(in srgb,var(--text) 5%,transparent);}
-.hud-folder__body::before { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
-  background: linear-gradient(90deg,color-mix(in srgb,var(--section-signal) 14%,transparent) 1px,transparent 1px) 100% 0/32px 32px,linear-gradient(color-mix(in srgb,var(--section-signal) 14%,transparent) 1px,transparent 1px) 100% 0/32px 32px; opacity: .32;
-  -webkit-mask-image: linear-gradient(160deg,#000,transparent 48%); mask-image: linear-gradient(160deg,#000,transparent 48%); }
+ border-top-color: var(--section-frame); box-shadow:0 3px 0 rgb(0 0 0 / .18);}
+.hud-folder__body::before { content:none; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background:none; opacity:1;
+  -webkit-mask-image:none; mask-image:none;}
 .hud-folder__body > * { position: relative; }
 .hud-note { margin: 0 0 var(--s-4); color: var(--hud-ink-2); font-size: var(--step--1); letter-spacing: .02em; }
 .hud-note strong { color: var(--section-signal); letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; margin-right: .4rem; }
@@ -160,10 +160,10 @@
   transition: transform .25s var(--hud-ease), border-color .2s, filter .2s;
   cursor: pointer; -webkit-tap-highlight-color: transparent;
 }
-.hud-card:hover { transform: translateY(-4px); filter: brightness(1.08); text-decoration: none; color: var(--hud-ink); }
+.hud-card:hover { transform: translateY(-4px); filter:none; text-decoration: none; color: var(--hud-ink);}
 .hud-card:focus-visible { outline: 3px solid var(--hud-amber); outline-offset: 2px; }
 .hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
- .hud-card--reference .hud-card__tag { background:var(--hud-dark-3); color:var(--hud-ink); box-shadow:inset 3px 0 0 #87b8b0; }
+ .hud-card--reference .hud-card__tag { background:var(--hud-dark-3); color:var(--hud-ink); box-shadow:inset 3px 0 0 var(--line-strong); }
 .hud-card__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--hud-dark-1); }
 .hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: transform .5s var(--hud-ease); }
 .hud-card:hover .hud-card__img img { transform: scale(1.05); }
@@ -175,14 +175,14 @@
 .hud-card__name { display: block; font-size: 1.05rem; font-weight: 800; font-style: italic; letter-spacing: -.01em; text-transform: uppercase; line-height: 1.05; }
 .hud-card__hint { display: block; margin-top: .25rem; color: var(--hud-ink-2); font-size: .8rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .hud-card__plus { position: absolute; right: .55rem; bottom: .55rem; width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid var(--c); color: var(--c); font-weight: 800; line-height: 1; background: rgb(10 11 14 / .62); transition: transform .3s var(--hud-ease), background .2s; }
-.hud-card[aria-expanded="true"] { transform: translateY(-6px) scale(1.025); filter: brightness(1.12); border-color: var(--c); z-index: 2; box-shadow: 0 0 0 2px var(--c); }
+.hud-card[aria-expanded="true"] { transform: translateY(-6px) scale(1.025); filter:none; border-color: var(--c); z-index: 2; box-shadow: 0 0 0 2px var(--c);}
 .hud-card[aria-expanded="true"] .hud-card__plus { transform: rotate(45deg); background: var(--c); color: #11151c; }
-.hud-cards.is-open .hud-card[aria-expanded="false"] { filter: brightness(.72) saturate(.8); }
-.hud-cards.is-open .hud-card[aria-expanded="false"]:hover { filter: brightness(1); }
+.hud-cards.is-open .hud-card[aria-expanded="false"] { filter:none;}
+.hud-cards.is-open .hud-card[aria-expanded="false"]:hover { filter:none;}
 
 /* Reference file cards share one auxiliary accent; artwork retains its original palette. */
-.hud-c-v1 { --c: #87b8b0; } .hud-c-v2 { --c: #87b8b0; } .hud-c-v3 { --c: #87b8b0; } .hud-c-v4 { --c: #87b8b0; }
-.hud-c-v5 { --c: #87b8b0; } .hud-c-v6 { --c: #87b8b0; } .hud-c-v10 { --c: #87b8b0; }
+.hud-c-v1 { --c: var(--line-strong); } .hud-c-v2 { --c: var(--line-strong); } .hud-c-v3 { --c: var(--line-strong); } .hud-c-v4 { --c: var(--line-strong); }
+.hud-c-v5 { --c: var(--line-strong); } .hud-c-v6 { --c: var(--line-strong); } .hud-c-v10 { --c: var(--line-strong); }
 
 /* ---------- DETAIL STAGE (open state): two panels like the game's stage screen ---------- */
 .hud-details { display: grid; gap: var(--s-4); }

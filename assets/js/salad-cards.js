@@ -59,7 +59,7 @@ previous.addEventListener('click',()=>goTo(current-1));next.addEventListener('cl
 function draw(){gallery.scrollLeft=0;gallery.replaceChildren();chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();const featured=['20260207_161926','20260708_135631'];chosen.sort((a,b)=>{const rank=p=>featured.includes(p.id)?featured.indexOf(p.id):featured.length;return rank(a)-rank(b);});overview.replaceChildren();browse.textContent='All '+chosen.length+' salads';current=0;indexOpen=false;browse.setAttribute('aria-expanded','false');
 chosen.forEach((p,i)=>{
  const pick=el('button',null,'salad-browser-pick');pick.type='button';pick.setAttribute('aria-label','Open salad '+(i+1)+': '+p.title);const thumb=el('img');thumb.src='assets/web/mega-salads/'+p.id+'-480.webp';thumb.alt='';thumb.loading='lazy';pick.append(thumb,el('span',(i+1)+'. '+p.title));pick.addEventListener('click',()=>{toggleOverview();goTo(i);gallery.scrollIntoView({block:'start',behavior:'auto'});gallery.focus({preventScroll:true});});overview.append(pick);
- const card=el('article',null,'salad-card');card.dataset.saladCategory=p.category;
+ const card=el('article',null,'salad-card salad-card--neutral');card.dataset.saladCategory=p.category;
  const photo=el('button',null,'salad-photo zoom');photo.type='button';photo.dataset.full='assets/web/mega-salads/'+p.id+'-1200.webp';photo.setAttribute('aria-label','Enlarge '+p.title);
  const img=el('img');img.src='assets/web/mega-salads/'+p.id+'-480.webp';
  // This photo's existing 1200px asset is empty; retain the valid preview.

@@ -1,0 +1,470 @@
+[
+  {
+    "page": "404.html",
+    "readingAndSurfaceRoles": 4
+  },
+  {
+    "page": "archive.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "biometrics.html",
+    "readingAndSurfaceRoles": 103
+  },
+  {
+    "page": "daily-pill-cards.html",
+    "readingAndSurfaceRoles": 116
+  },
+  {
+    "page": "encyclopedia-archive.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "encyclopedia-guidebook.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "encyclopedia.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "exercises.html",
+    "readingAndSurfaceRoles": 127
+  },
+  {
+    "page": "fit-food.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "fit-gear.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "fit-meals.html",
+    "readingAndSurfaceRoles": 92
+  },
+  {
+    "page": "fit-nutrition-notes.html",
+    "readingAndSurfaceRoles": 50
+  },
+  {
+    "page": "fit-nutrition.html",
+    "readingAndSurfaceRoles": 230
+  },
+  {
+    "page": "fit-protocol-archive.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "fit-protocol-baseline.html",
+    "readingAndSurfaceRoles": 86
+  },
+  {
+    "page": "fit-protocol-biometrics.html",
+    "readingAndSurfaceRoles": 103
+  },
+  {
+    "page": "fit-protocol-checklists.html",
+    "readingAndSurfaceRoles": 60
+  },
+  {
+    "page": "fit-protocol-constraints.html",
+    "readingAndSurfaceRoles": 52
+  },
+  {
+    "page": "fit-protocol-dose.html",
+    "readingAndSurfaceRoles": 103
+  },
+  {
+    "page": "fit-protocol-fuel.html",
+    "readingAndSurfaceRoles": 78
+  },
+  {
+    "page": "fit-protocol-gear.html",
+    "readingAndSurfaceRoles": 109
+  },
+  {
+    "page": "fit-protocol-history.html",
+    "readingAndSurfaceRoles": 56
+  },
+  {
+    "page": "fit-protocol-interactions.html",
+    "readingAndSurfaceRoles": 46
+  },
+  {
+    "page": "fit-protocol-joints.html",
+    "readingAndSurfaceRoles": 49
+  },
+  {
+    "page": "fit-protocol-labs.html",
+    "readingAndSurfaceRoles": 56
+  },
+  {
+    "page": "fit-protocol-margins.html",
+    "readingAndSurfaceRoles": 47
+  },
+  {
+    "page": "fit-protocol-meals.html",
+    "readingAndSurfaceRoles": 89
+  },
+  {
+    "page": "fit-protocol-mission.html",
+    "readingAndSurfaceRoles": 106
+  },
+  {
+    "page": "fit-protocol-monitoring.html",
+    "readingAndSurfaceRoles": 51
+  },
+  {
+    "page": "fit-protocol-nutrition.html",
+    "readingAndSurfaceRoles": 118
+  },
+  {
+    "page": "fit-protocol-pathways.html",
+    "readingAndSurfaceRoles": 192
+  },
+  {
+    "page": "fit-protocol-progression.html",
+    "readingAndSurfaceRoles": 51
+  },
+  {
+    "page": "fit-protocol-supplements.html",
+    "readingAndSurfaceRoles": 90
+  },
+  {
+    "page": "fit-protocol-training.html",
+    "readingAndSurfaceRoles": 68
+  },
+  {
+    "page": "fit-protocol-troubleshooting.html",
+    "readingAndSurfaceRoles": 54
+  },
+  {
+    "page": "fit-protocol-vector-pump.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "fit-protocol-vector-reference.html",
+    "readingAndSurfaceRoles": 74
+  },
+  {
+    "page": "fit-protocol-vector-v1.html",
+    "readingAndSurfaceRoles": 65
+  },
+  {
+    "page": "fit-protocol-vector-v10.html",
+    "readingAndSurfaceRoles": 66
+  },
+  {
+    "page": "fit-protocol-vector-v2.html",
+    "readingAndSurfaceRoles": 60
+  },
+  {
+    "page": "fit-protocol-vector-v3.html",
+    "readingAndSurfaceRoles": 66
+  },
+  {
+    "page": "fit-protocol-vector-v4.html",
+    "readingAndSurfaceRoles": 61
+  },
+  {
+    "page": "fit-protocol-vector-v5.html",
+    "readingAndSurfaceRoles": 54
+  },
+  {
+    "page": "fit-protocol-vector-v6.html",
+    "readingAndSurfaceRoles": 63
+  },
+  {
+    "page": "fit-protocol-vectors.html",
+    "readingAndSurfaceRoles": 146
+  },
+  {
+    "page": "fit-protocol.html",
+    "readingAndSurfaceRoles": 90
+  },
+  {
+    "page": "fit-shop.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "fit-workout.html",
+    "readingAndSurfaceRoles": 62
+  },
+  {
+    "page": "gear-anchors.html",
+    "readingAndSurfaceRoles": 92
+  },
+  {
+    "page": "gear-grips.html",
+    "readingAndSurfaceRoles": 85
+  },
+  {
+    "page": "gear-gym.html",
+    "readingAndSurfaceRoles": 49
+  },
+  {
+    "page": "gear-photos.html",
+    "readingAndSurfaceRoles": 47
+  },
+  {
+    "page": "gear-recovery.html",
+    "readingAndSurfaceRoles": 58
+  },
+  {
+    "page": "gear-resistance.html",
+    "readingAndSurfaceRoles": 74
+  },
+  {
+    "page": "gear-rig.html",
+    "readingAndSurfaceRoles": 48
+  },
+  {
+    "page": "gear-safety.html",
+    "readingAndSurfaceRoles": 89
+  },
+  {
+    "page": "gear-shop.html",
+    "readingAndSurfaceRoles": 47
+  },
+  {
+    "page": "guidebook.html",
+    "readingAndSurfaceRoles": 96
+  },
+  {
+    "page": "hud-preview-daily.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "hud-preview-liquid.html",
+    "readingAndSurfaceRoles": 1
+  },
+  {
+    "page": "index.html",
+    "readingAndSurfaceRoles": 88
+  },
+  {
+    "page": "kinetics.html",
+    "readingAndSurfaceRoles": 264
+  },
+  {
+    "page": "library.html",
+    "readingAndSurfaceRoles": 47
+  },
+  {
+    "page": "liquid-intake.html",
+    "readingAndSurfaceRoles": 99
+  },
+  {
+    "page": "mega-salads.html",
+    "readingAndSurfaceRoles": 115
+  },
+  {
+    "page": "mineral-chemistry.html",
+    "readingAndSurfaceRoles": 104
+  },
+  {
+    "page": "project-goals.html",
+    "readingAndSurfaceRoles": 81
+  },
+  {
+    "page": "project-story.html",
+    "readingAndSurfaceRoles": 71
+  },
+  {
+    "page": "downloads/kinetics/complete-guide.html",
+    "readingAndSurfaceRoles": 1257
+  },
+  {
+    "page": "downloads/kinetics/exercise-guides.html",
+    "readingAndSurfaceRoles": 358
+  },
+  {
+    "page": "downloads/kinetics/focused-days.html",
+    "readingAndSurfaceRoles": 1009
+  },
+  {
+    "page": "downloads/kinetics/focused-short.html",
+    "readingAndSurfaceRoles": 492
+  },
+  {
+    "page": "downloads/kinetics/full-body-short.html",
+    "readingAndSurfaceRoles": 275
+  },
+  {
+    "page": "downloads/kinetics/full-body.html",
+    "readingAndSurfaceRoles": 275
+  },
+  {
+    "page": "downloads/kinetics/guide-box-kneeling-extension.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-brace.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-calf-raise.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-curl.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-floor-kneeling-high-front-paired-draw.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-floor-kneeling-overhead-extension.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-hamstring-curl.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-high-anchor-band-decline-press.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-high-to-low-band-chest-fly.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-hip-abduction.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-hip-extension.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-lateral.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-low-anchor-band-incline-press.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-low-to-high-band-chest-fly.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-bent-row.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-curl.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-hamstring-curl.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-hip-hinge.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-lateral-raise.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-overhead-press.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-press.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-pressdown.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-row.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-seated-row.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pilates-standing-rotation.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-press.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-pressdown.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-row.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-scapular-control.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-seated-band-chest-fly.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-shoulder-band-bar-squat.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-single-arm-cross-body-band-fly.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-sit-stand.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-band-chest-fly.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-band-chest-press.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-curl.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-mid-side-band-bar-pressdown.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-standing-shared-low-rear-overhead-extension.html",
+    "readingAndSurfaceRoles": 38
+  },
+  {
+    "page": "downloads/kinetics/guide-supported-high-front-curl.html",
+    "readingAndSurfaceRoles": 39
+  },
+  {
+    "page": "downloads/kinetics/index.html",
+    "readingAndSurfaceRoles": 30
+  },
+  {
+    "page": "downloads/kinetics/weekly-overview.html",
+    "readingAndSurfaceRoles": 36
+  },
+  {
+    "page": "downloads/kinetics/weekly-planner.html",
+    "readingAndSurfaceRoles": 749
+  },
+  {
+    "page": "downloads/reference/index.html",
+    "readingAndSurfaceRoles": 5274
+  }
+]
