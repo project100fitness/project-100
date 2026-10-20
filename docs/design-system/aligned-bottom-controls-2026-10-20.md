@@ -1,0 +1,5 @@
+# Aligned bottom controls
+
+All 58 pages with floating shortcuts now author one page-dock grid around their existing Links, mode and (where present) publication controls. The two upper actions align with the two book columns below. All four controls share a 6px corner shape, border/left accent, slate surface, spacing and icon treatment. Upper actions have equal height; paired book cards have equal height and retain their real covers, versions, PDF identity and dialog destinations. Separate circle and capsule treatments and independently computed corner offsets are removed from the existing owners. The download icons share one borderless treatment.
+
+The near-bottom-only gate, upward withdrawal, reduced-motion handling, persistent theme switch, Links and both current PDF books remain. The single wrapper now owns movement, visibility and keyboard exclusion, so its rows cannot drift apart during their entrance. The website-wide copy audit is a separately saved proposal; no broad content rewrite is included in this design repair.
