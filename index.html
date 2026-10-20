@@ -26,20 +26,20 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=dc2fe09c4f7e">
-<link rel="stylesheet" href="assets/css/hud.css?v=00d3eb9a8153">
+<link rel="stylesheet" href="assets/css/site.css?v=d7900ea170f3">
+<link rel="stylesheet" href="assets/css/hud.css?v=44ae6b698ba7">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "author": {"@type": "Person", "name": "Bogdan Dospi", "sameAs": ["https://www.instagram.com/fudge_fit/"]}, "name": "PROJECT 100", "url": "https://project100.fit/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline."}, "name": "What is PROJECT 100?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Neither, run separately \u2014 both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition."}, "name": "Is this a bulk or a cut?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Workout page is the full training log \u2014 every block, filterable by category, with real dates and engagement, updated as sessions happen."}, "name": "Where can I follow the day-to-day training?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FIT PROTOCOL is the system behind the lived record: focused cards for daily execution, vectors, nutrition, training and monitoring."}, "name": "What\u0027s the Fit Protocol?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation \u2014 nothing theoretical, all logged."}, "name": "How is the nutrition handled?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "New training blocks, recovery meals, and protocol updates post to @fudge_fit on Instagram as they happen \u2014 the site catches up from there."}, "name": "Where do new updates post first?"}]}</script>
 <link rel="stylesheet" href="assets/css/inside-protocol.css?v=20261010">
 <link rel="stylesheet" href="assets/css/mobile-rail.css?v=20261015-folder-system">
-<link rel="stylesheet" href="assets/css/mobile-site.css?v=00e0cfd5f640">
+<link rel="stylesheet" href="assets/css/mobile-site.css?v=3316c45fa5e6">
 </head>
-<body data-site="main" data-page="index" data-group="home" class="has-dlbar" data-folder="project" data-design-profile="clear-contrast">
+<body data-navigation-pattern="original" data-site="main" data-page="index" data-group="home" class="has-dlbar" data-home-dock="publications" data-folder="project" data-design-profile="clear-contrast">
 <a class="skip-link" href="#content">Skip to content</a>
 
 <header class="site-head" id="siteHead">
   <div class="site-head__bar">
-    <nav class="mode-folders" aria-label="Website mode and home pages"><a class="mode-folder" href="index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Current mode · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><a class="mode-folder" href="fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Switch mode →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav>
+    <nav class="mode-folders" data-navigation-tier="brand" aria-label="Website mode and home pages"><a class="mode-folder" href="index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><a class="mode-folder" href="fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav>
     <div class="site-head__actions">
       <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -245,20 +245,20 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <nav class="pager reader-route" aria-label="First-time reader path"><a class="pager__next" href="fit-protocol-baseline.html#reader-context"><span class="pager__dir">Continue the introduction →</span><span class="pager__label">Goals and baseline</span></a></nav></main>
 </div>
 
-<footer class="site-foot"><div class="wrap"><a class="btn" href="site-map.html">All sections · page index →</a></div>
+<footer class="site-foot">
   <div class="site-foot__inner">
-    <div>
+    <div class="site-foot__identity">
       <h2 class="reading-heading">PROJECT 100</h2>
       <p class="site-foot__lede reading-copy">The lived record: training, food, gear and measured results.</p>
       <a class="site-foot__switch" href="fit-protocol.html"><span aria-hidden="true">↔</span> Switch to FIT PROTOCOL</a>
-    </div>
-    <div>
+    <a class="site-foot__index" href="site-map.html">All sections →</a></div>
+    <div class="site-foot__explore">
       <h2 class="reading-heading">Explore</h2>
       <ul><li><a href="index.html">PROJECT 100</a></li><li><a href="fit-workout.html">Workout</a></li><li><a class="" href="kinetics.html">Kinetics</a></li><li><a href="exercises.html" data-folder="exercises">Exercises</a></li><li><a href="liquid-intake.html">Liquid Intake</a></li><li><a href="fit-nutrition.html">Nutrition</a></li><li><a href="gear-shop.html">Gear</a></li><li><a href="biometrics.html">Biometrics</a></li>
         <li><a href="library.html">Illustration downloads</a></li>
       </ul>
     </div>
-    <div>
+    <div class="site-foot__elsewhere">
       <h2 class="reading-heading">Elsewhere</h2>
       <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" title="Open the original Instagram post">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/bogdan.dospi" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">Gym playlist</a></li>
       </ul>
@@ -267,8 +267,8 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </footer>
 
-<div class="fab-dock" id="fabDock">
-  <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
+<div class="fab-dock" id="fabDock" data-dock-part="links">
+  <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
   <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
     <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <ul class="fab-panel__list">
@@ -284,7 +284,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </div>
 </div>
-<a class="fab-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
+<a class="fab-switch" data-dock-part="mode" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
 
 <dialog class="menu" id="menu" aria-labelledby="menuTitle">
   <div class="menu__head">
@@ -351,12 +351,12 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 
 
-<script src="assets/js/site.js?v=5e3d8f23472c" defer></script>
+<script src="assets/js/site.js?v=8c53c5e170b1" defer></script>
 <script src="assets/js/item-purpose.js?v=17ace754c9eb" defer></script>
 <script src="assets/js/hud.js?v=20261013-motion-on" defer></script>
 <script src="assets/js/inside-protocol.js?v=20261010" defer></script>
 
-<div class="dl-bar" id="dlBar" role="region" aria-label="PROJECT_100 downloads"><div class="dl-bar__inner"><div class="dl-bar__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg><span><strong>PROJECT_100 manuals</strong><small class="reading-meta">Publications &middot; PDF</small></span></div><button class="dl-bar__half dl-bar__half--enc" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="enc"><img class="dl-bar__cover" src="assets/web/project100-encyclopedia-v34-cover-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">PROJECT_100 PDF<span> manual</span></span><strong>Encyclopedia</strong><small class="reading-meta">V3.4</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button><button class="dl-bar__half dl-bar__half--guide" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="guide"><img class="dl-bar__cover" src="assets/web/project100-guidebook-v35-cover-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">PROJECT_100 PDF<span> manual</span></span><strong>Guidebook</strong><small class="reading-meta">V3.5</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button></div></div>
+<div class="dl-bar" id="dlBar" data-dock-part="books" role="region" aria-label="PROJECT_100 downloads"><div class="dl-bar__inner"><div class="dl-bar__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg><span><strong>PROJECT_100 manuals</strong><small class="reading-meta">Publications &middot; PDF</small></span></div><button class="dl-bar__half dl-bar__half--enc" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="enc"><img class="dl-bar__cover" src="assets/web/project100-encyclopedia-v34-cover-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">PROJECT_100 PDF<span> manual</span></span><strong>Encyclopedia</strong><small class="reading-meta">V3.4</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button><button class="dl-bar__half dl-bar__half--guide" type="button" aria-haspopup="dialog" aria-controls="dlModal" data-dl-open data-dl-doc="guide"><img class="dl-bar__cover" src="assets/web/project100-guidebook-v35-cover-96.webp" alt="" width="96" height="136" loading="lazy" decoding="async"><span class="dl-bar__txt"><span class="dl-bar__kick">PROJECT_100 PDF<span> manual</span></span><strong>Guidebook</strong><small class="reading-meta">V3.5</small></span><span class="dl-bar__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg></span></button></div></div>
 <dialog class="dl-modal" id="dlModal" aria-labelledby="dlTitle">
   <div class="dl-modal__head"><h2 id="dlTitle" class="reading-heading">Free downloads</h2><button class="pop-close" type="button" data-dl-close aria-label="Close downloads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="dl-modal__body">

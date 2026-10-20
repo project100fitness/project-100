@@ -644,17 +644,18 @@
 })();
 
 /* ===== 36-downloads.js ===== */
-/* "Free downloads" pop-out (Encyclopedia + Guidebook PDFs) opens from the "Downloads" row in the @ panel on every page.
-   On the home page and Fit Protocol only, a two-half bar rises into view as the page approaches its end (tied to the scroll
-   position) and is fully up at the very bottom; scrolling back up lowers it again. */
+/* Book previews retain their original dialog and current PDFs. On the two home pages,
+   books and shortcuts enter together after loading. Other pages retain their existing controls. */
 (function () {
   'use strict';
   var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal'), last = null, ticking = false, last_p = -1;
   if (!dlg) return;
+  var homeDock = document.body.hasAttribute('data-home-dock');
   var RANGE = 420;                                                    /* px before the very end of the page where the bar starts rising */
   function check() {
     ticking = false;
     if (!bar) return;
+    if (homeDock) return;
     var left = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
     var range = Math.min(RANGE, window.innerHeight * 0.55);
     var p = left <= 2 ? 1 : Math.max(0, Math.min(1, 1 - left / range));   /* 0 = hidden below the screen, 1 = fully up at the very bottom */
@@ -685,7 +686,18 @@
     if (e.target === dlg) close();                                   /* tap on the dimmed backdrop */
     else if (dlg.open && e.target.closest('a[download]')) setTimeout(close, 400);
   });
-  if (bar) {
+  if (bar && homeDock) {
+    /* Home publications are visible after loading, independent of page length or scroll position.
+       All three dock parts receive the same progress update and CSS transition. */
+    function revealHomeDock() {
+      if (document.body.hasAttribute('data-dock-ready')) return;
+      document.body.setAttribute('data-dock-ready', '');
+      bar.classList.add('is-in');
+      bar.style.setProperty('--dl-p', '1');
+      document.documentElement.style.setProperty('--dl-p', '1');
+    }
+    window.setTimeout(revealHomeDock, P.reduceMotion.matches ? 0 : 180);
+  } else if (bar) {
     window.addEventListener('scroll', queue, { passive: true });
     window.addEventListener('resize', queue);
     window.addEventListener('load', queue);
