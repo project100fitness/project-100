@@ -1,7 +1,7 @@
 {
   "cataloguedSetups": 80,
   "illustratedTrainingSetups": 76,
-  "canonicalTechniqueEntries": 25,
+  "canonicalTechniqueEntries": 39,
   "sourcePassages": 173,
   "evidenceOnlySetups": [
     "kneeling-handle-hold-free-reach",
@@ -12,5 +12,16 @@
   "unillustratedTrainingSetups": [],
   "recordedSetCountsVerified": false,
   "broadScreeningFrozen": true,
-  "scope": "Existing reviewed-recording edition; additional unreviewed videos are outside this compilation."
+  "scope": "Existing reviewed-recording edition; additional unreviewed videos are outside this compilation.",
+  "focusedDayExerciseCounts": {
+    "1": 15,
+    "2": 15,
+    "3": 15
+  },
+  "focusedGroupAllocation": [
+    6,
+    6,
+    3
+  ],
+  "weeklyPlannedExerciseSlots": 69
 }

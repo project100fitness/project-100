@@ -69,8 +69,8 @@ for p in sorted((root/'downloads').rglob('*.zip')):
 by={e['id']:e for e in db['exercises']+db['recordedVariants']}
 for day in db['days']:
     if not day['slots']:continue
-    ids=[s[0] for s in day['slots']];assert len(ids)==len(set(ids))==12
-    assert len({by[id]['art'] for id in ids})==12
+    ids=[s[0] for s in day['slots']];assert len(ids)==len(set(ids))==(15 if day['day']<4 else 12)
+    assert len({by[id]['art'] for id in ids})==len(ids)
     if day['day'] in (5,6):assert all(by[id]['resistance']['system']=='hpygn-pilates' for id in ids)
     report['sessions'].append({'day':day['day'],'count':len(ids),'ids':ids,'plannedSets':'prescription, not observed recording counts'})
 assert len({e['id'] for e in db['exercises']})==len(db['exercises'])

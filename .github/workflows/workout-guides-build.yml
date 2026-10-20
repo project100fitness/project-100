@@ -52,6 +52,7 @@ jobs:
       - name: Validate all guides, equipment and links
         run: |
           python scripts/validate-workout-guides.py
+          node scripts/check-focused-split.cjs
           python scripts/check-grip-consistency.py
       - name: Publish verified PDF downloads to the site branch
         if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository

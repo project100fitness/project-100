@@ -1,6 +1,6 @@
 {
-  "version": "2.2-twelve-exercise-days",
-  "updated": "2026-10-17",
+  "version": "2.3-fifteen-exercise-focused-split",
+  "updated": "2026-10-20",
   "status": "Compiled expanded anatomy edition / reviewed recording scope",
   "muscleRoleLegend": {
     "main": {
@@ -2124,8 +2124,8 @@
   "days": [
     {
       "day": 1,
-      "title": "Chest, shoulders + triceps",
-      "focus": "Chest, front/side delts, triceps, forearm grip and core support",
+      "title": "Chest + triceps + Core",
+      "focus": "6 Chest + 6 Triceps + 3 Core / 15 resistance-band exercises",
       "kind": "focused",
       "slots": [
         [
@@ -2134,13 +2134,117 @@
           "Chest"
         ],
         [
-          "standing-side-line-unilateral-draw",
+          "standing-band-chest-press",
           "accessory",
           "Chest"
         ],
         [
-          "standing-inclined-two-hand-single-handle-curl",
+          "standing-band-chest-fly",
           "accessory",
+          "Chest"
+        ],
+        [
+          "high-to-low-band-chest-fly",
+          "accessory",
+          "Chest"
+        ],
+        [
+          "low-to-high-band-chest-fly",
+          "accessory",
+          "Chest"
+        ],
+        [
+          "single-arm-cross-body-band-fly",
+          "accessory",
+          "Chest"
+        ],
+        [
+          "pressdown",
+          "main",
+          "Triceps"
+        ],
+        [
+          "standing-mid-side-band-bar-pressdown",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "standing-shared-low-rear-overhead-extension",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "floor-kneeling-overhead-extension",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "inclined-overhead-drive",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "seated-low-rear-arm-extension",
+          "accessory",
+          "Triceps"
+        ],
+        [
+          "standing-two-hand-single-handle-side-draw",
+          "main",
+          "Core"
+        ],
+        [
+          "floor-kneeling-overhead-held-torso-fold",
+          "accessory",
+          "Core"
+        ],
+        [
+          "standing-overhead-held-torso-lean",
+          "accessory",
+          "Core"
+        ]
+      ],
+      "shortTitle": "Chest + Triceps"
+    },
+    {
+      "day": 2,
+      "title": "Legs + shoulders + Core",
+      "focus": "6 Legs + 6 Shoulders + 3 Core / 15 resistance-band exercises",
+      "kind": "focused",
+      "slots": [
+        [
+          "shoulder-band-bar-squat",
+          "main",
+          "Legs"
+        ],
+        [
+          "hamstring-curl",
+          "accessory",
+          "Legs"
+        ],
+        [
+          "high-front-draw-lateral-squat",
+          "accessory",
+          "Legs"
+        ],
+        [
+          "low-back-bar-torso-bow",
+          "accessory",
+          "Legs"
+        ],
+        [
+          "front-waist-bar-torso-bow",
+          "accessory",
+          "Legs"
+        ],
+        [
+          "shoulder-braced-torso-bow",
+          "accessory",
+          "Legs"
+        ],
+        [
+          "standing-inclined-two-hand-single-handle-curl",
+          "main",
           "Shoulders"
         ],
         [
@@ -2159,172 +2263,116 @@
           "Shoulders"
         ],
         [
-          "pressdown",
-          "main",
-          "Triceps"
-        ],
-        [
-          "standing-mid-side-band-bar-pressdown",
-          "accessory",
-          "Triceps"
-        ],
-        [
-          "standing-shared-low-rear-overhead-extension",
-          "accessory",
-          "Triceps"
-        ],
-        [
-          "inclined-overhead-drive",
-          "accessory",
-          "Triceps"
-        ],
-        [
-          "seated-low-rear-arm-extension",
-          "accessory",
-          "Triceps"
-        ],
-        [
-          "kneeling-supported-forward-extension",
-          "accessory",
-          "Triceps"
-        ]
-      ]
-    },
-    {
-      "day": 2,
-      "title": "Legs, hips + core",
-      "focus": "Quads, hamstrings, glutes, calves, abdominal and side-trunk support",
-      "kind": "focused",
-      "slots": [
-        [
-          "standing-shoulder-bar-squat-bow",
-          "main",
-          "Legs and hip hinge"
-        ],
-        [
-          "hamstring-curl",
-          "main",
-          "Legs and hip hinge"
-        ],
-        [
-          "front-waist-bar-torso-bow",
-          "accessory",
-          "Legs and hip hinge"
-        ],
-        [
-          "low-back-bar-torso-bow",
-          "accessory",
-          "Legs and hip hinge"
-        ],
-        [
-          "high-front-draw-lateral-squat",
-          "accessory",
-          "Stance and balance"
-        ],
-        [
-          "standing-backward-lean-high-front-paired-draw",
-          "accessory",
-          "Stance and balance"
-        ],
-        [
-          "shoulder-braced-torso-bow",
-          "accessory",
-          "Stance and balance"
-        ],
-        [
-          "standing-high-front-draw-leg-lift",
-          "accessory",
-          "Stance and balance"
-        ],
-        [
-          "standing-two-hand-single-handle-side-draw",
-          "accessory",
-          "Core and sides"
-        ],
-        [
-          "floor-kneeling-overhead-held-torso-fold",
-          "accessory",
-          "Core and sides"
-        ],
-        [
-          "box-kneeling-unilateral-overhead-drive",
-          "accessory",
-          "Core and sides"
-        ],
-        [
-          "standing-overhead-held-torso-lean",
-          "accessory",
-          "Core and sides"
-        ]
-      ]
-    },
-    {
-      "day": 3,
-      "title": "Back, rear delts + arms",
-      "focus": "Back, rear delts, biceps, brachialis, forearms/grip and core support",
-      "kind": "focused",
-      "slots": [
-        [
-          "row",
-          "main",
-          "Back and vertical pulls"
-        ],
-        [
-          "floor-kneeling-high-front-paired-draw",
-          "main",
-          "Back and vertical pulls"
-        ],
-        [
-          "high-front-downward-arm-drive",
-          "accessory",
-          "Back and vertical pulls"
-        ],
-        [
-          "high-front-two-hand-draw",
-          "accessory",
-          "Back and vertical pulls"
-        ],
-        [
           "standing-paired-wide-arm-sweep",
           "accessory",
-          "Rear shoulders"
+          "Shoulders"
         ],
         [
           "bench-straddled-lateral-sweep",
           "accessory",
-          "Rear shoulders"
+          "Shoulders"
+        ],
+        [
+          "standing-two-hand-single-handle-side-draw",
+          "main",
+          "Core"
+        ],
+        [
+          "floor-kneeling-overhead-held-torso-fold",
+          "accessory",
+          "Core"
+        ],
+        [
+          "standing-overhead-held-torso-lean",
+          "accessory",
+          "Core"
+        ]
+      ],
+      "shortTitle": "Legs + Shoulders"
+    },
+    {
+      "day": 3,
+      "title": "Arms + back + Core",
+      "focus": "6 Arms + 6 Back + 3 Core / 15 resistance-band exercises",
+      "kind": "focused",
+      "slots": [
+        [
+          "curl",
+          "main",
+          "Arms"
         ],
         [
           "standing-curl",
           "accessory",
-          "Biceps and elbow flexors"
+          "Arms"
         ],
         [
           "supported-high-front-curl",
           "accessory",
-          "Biceps and elbow flexors"
+          "Arms"
         ],
         [
           "low-side-unilateral-curl",
           "accessory",
-          "Biceps and elbow flexors"
+          "Arms"
         ],
         [
           "standing-inclined-unilateral-curl",
           "accessory",
-          "Biceps and elbow flexors"
+          "Arms"
         ],
         [
           "standing-low-side-forearm-rotation",
           "accessory",
-          "Forearms and grip"
+          "Arms"
         ],
         [
-          "bench-straddled-low-rear-arm-drive",
+          "row",
+          "main",
+          "Back"
+        ],
+        [
+          "floor-kneeling-high-front-paired-draw",
           "accessory",
-          "Forearms and grip"
+          "Back"
+        ],
+        [
+          "high-front-downward-arm-drive",
+          "accessory",
+          "Back"
+        ],
+        [
+          "high-front-two-hand-draw",
+          "accessory",
+          "Back"
+        ],
+        [
+          "floor-kneeling-high-front-draw",
+          "accessory",
+          "Back"
+        ],
+        [
+          "box-seated-two-hand-high-front-draw",
+          "accessory",
+          "Back"
+        ],
+        [
+          "standing-two-hand-single-handle-side-draw",
+          "main",
+          "Core"
+        ],
+        [
+          "floor-kneeling-overhead-held-torso-fold",
+          "accessory",
+          "Core"
+        ],
+        [
+          "standing-overhead-held-torso-lean",
+          "accessory",
+          "Core"
         ]
-      ]
+      ],
+      "shortTitle": "Arms + Back"
     },
     {
       "day": 4,
@@ -2540,7 +2588,7 @@
         2,
         3
       ],
-      "placement": "Three days: chest / shoulders / triceps; legs / hips / core; back / rear delts / biceps / forearms",
+      "placement": "Day 1: chest + triceps; Day 2: legs + shoulders; Day 3: arms + back. Each: 6 + 6 + 3 Core = 15.",
       "pdfPattern": "focused-days-level-{level}.pdf",
       "pages": 52
     },
@@ -4477,7 +4525,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 3,
+      "guide_day": 2,
       "roleOverrides": {
         "main": "Latissimus contributes as the upper arms draw down toward the torso.",
         "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
@@ -5653,7 +5701,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 1,
+      "guide_day": 2,
       "roleOverrides": {
         "main": "Deltoid muscles raise and control the active upper arm.",
         "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
@@ -5993,7 +6041,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 3,
+      "guide_day": 2,
       "roleOverrides": {
         "main": "Latissimus contributes as the upper arms draw down toward the torso.",
         "secondary": "Shoulder, elbow and forearm muscles control the shown arm path and retained grip.",
@@ -6548,7 +6596,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 1,
+      "guide_day": 2,
       "guide_position": "STANDING",
       "roleOverrides": {
         "main": "Shoulder muscles move the upper arms. Pectoral muscles contribute to forward/adducting phases; latissimus dorsi and rear shoulder muscles contribute to backward/downward phases.",
@@ -6613,7 +6661,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 1,
+      "guide_day": 2,
       "guide_position": "INCLINED",
       "roleOverrides": {
         "main": "Shoulder muscles move the upper arms. Pectoral muscles contribute to forward/adducting phases; latissimus dorsi and rear shoulder muscles contribute to backward/downward phases.",
@@ -9066,7 +9114,7 @@
       "resistance": {
         "mode": "unconfirmed"
       },
-      "guide_day": 1,
+      "guide_day": 2,
       "personalProfileRevision": "user-approved-row-press-pressdown-2026-10-17",
       "gripCategory": "shared",
       "gripLabel": "Two-hand shared grip",
@@ -9395,7 +9443,7 @@
   "variantMenus": [
     {
       "day": 1,
-      "title": "Push / chest, shoulders and triceps",
+      "title": "Chest + triceps + Core",
       "guideIds": [
         "standing-shared-low-rear-overhead-extension",
         "floor-kneeling-overhead-extension",
@@ -9405,7 +9453,7 @@
     },
     {
       "day": 2,
-      "title": "Lower body / legs and hips",
+      "title": "Legs + shoulders + Core",
       "guideIds": [
         "shoulder-band-bar-squat"
       ],
@@ -9413,7 +9461,7 @@
     },
     {
       "day": 3,
-      "title": "Pull / back and biceps",
+      "title": "Arms + back + Core",
       "guideIds": [
         "floor-kneeling-high-front-paired-draw",
         "supported-high-front-curl",
@@ -9601,7 +9649,18 @@
       "pilates-curl",
       "pilates-pressdown"
     ],
-    "sourceScope": "Existing 173 source windows unchanged; two kit adaptations are separately identified."
+    "sourceScope": "Existing 173 source windows unchanged; two kit adaptations are separately identified.",
+    "focusedSplit": {
+      "confirmedByOwner": "2026-10-20",
+      "perDay": 15,
+      "pairedGroupCounts": [
+        6,
+        6
+      ],
+      "corePerDay": 3,
+      "weeklyExerciseSlots": 69,
+      "note": "Owner-confirmed session structure. Planned sets remain separate from source recording counts. Original published manuals are preserved as historical editions."
+    }
   },
   "chestExpansion": {
     "date": "2026-10-19",
