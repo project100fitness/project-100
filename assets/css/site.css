@@ -12,25 +12,25 @@
   color-scheme: light;
 
   /* surfaces */
-  --bg: #f5f4f1;
+  --bg: #f5f5f5;
   --surface: #ffffff;
-  --surface-2: #eeede9;
-  --surface-3: #e4e2dd;
+  --surface-2: #eeeeee;
+  --surface-3: #e2e2e2;
   --inverse: #111217;          /* always-dark surface (hero, media overlays) */
   --inverse-text: #f3f4f7;
 
-  --nav-bg: #e4e2dd;
+  --nav-bg: #e2e2e2;
   --nav-tab: #ffffff;
-  --nav-edge: #aaa69d;
+  --nav-edge: #a6a6a6;
 
   /* text */
-  --text: #15161b;
-  --text-2: #464954;
-  --muted: #666a77;
+  --text: #161616;
+  --text-2: #333333;
+  --muted: var(--text-2);
 
   /* lines */
-  --line: #dcdad4;
-  --line-strong: #bdbab2;
+  --line: #d2d2d2;
+  --line-strong: #a3a3a3;
 
   /* brand */
   --accent: #b83a00;           /* orange used for text/links on --surface (5.7:1 on white) */
@@ -39,18 +39,18 @@
   --accent-soft: #fdeadd;
   --brand-orange: #e8500a;     /* the bright card orange: glows, borders, decoration only */
   --amber: #ffb400;            /* the card amber: lines, bars, text on dark */
-  --accent-2: #0b7b82;         /* teal, secondary data colour */
-  --accent-2-soft: #dff2f3;
+  --accent-2: var(--text);         /* teal, secondary data colour */
+  --accent-2-soft: var(--surface-2);
 
 
-  /* Supporting references/data: one restrained signal beside brand orange. */
-  --section-signal: #24635b;
-  --section-signal-soft: #e7efeb;
-  --section-signal-line: #8baaa3;
-  --section-signal-wash: color-mix(in srgb,var(--section-signal) 7%,var(--surface));
-  --section-frame: color-mix(in srgb,var(--section-signal) 25%,var(--line-strong));
-  --section-sheen: linear-gradient(135deg,color-mix(in srgb,var(--surface-3) 78%,var(--section-signal-soft)),var(--surface-2) 62%,var(--surface));
-  --section-shadow: 0 5px 16px rgb(0 0 0 / .08);
+  /* Clear reading hierarchy: neutral text/surfaces; orange identifies actions. */
+  --section-signal: var(--text-2);
+  --section-signal-soft: var(--surface-2);
+  --section-signal-line: var(--line-strong);
+  --section-signal-wash: var(--surface);
+  --section-frame: var(--line-strong);
+  --section-sheen: linear-gradient(180deg,var(--surface-3),var(--surface-2));
+  --section-shadow: 0 3px 0 rgb(0 0 0 / .18);
 
   /* status */
   --ok: #0f7a4b;
@@ -102,30 +102,30 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #0a0b0e;
-    --nav-bg: #030405;
-    --nav-tab: #252a33;
-    --nav-edge: #596170;
-    --surface: #13151a;
-    --surface-2: #1a1d24;
-    --surface-3: #232730;
-    --inverse: #0a0b0e;
+    --bg: #080808;
+    --nav-bg: #030303;
+    --nav-tab: #242424;
+    --nav-edge: #555555;
+    --surface: #111111;
+    --surface-2: #191919;
+    --surface-3: #242424;
+    --inverse: #080808;
     --inverse-text: #f3f4f7;
-    --text: #eceef3;
-    --text-2: #b9bece;
-    --muted: #8f95a5;
-    --line: #262a33;
-    --line-strong: #3a3f4b;
+    --text: #f5f5f5;
+    --text-2: #d9d9d9;
+    --muted: var(--text-2);
+    --line: #303030;
+    --line-strong: #4a4a4a;
     --accent: #ff8a3d;
     --accent-strong: #c2410c;
     --accent-ink: #ffffff;
     --accent-soft: #2b1a0e;
-    --accent-2: #46d6cf;
-    --accent-2-soft: #10282a;
-    --section-signal: #87b8b0;
-    --section-signal-soft: #142320;
-    --section-signal-line: #395b55;
-    --section-shadow: 0 6px 20px rgb(0 0 0 / .24);
+    --accent-2: var(--text);
+    --accent-2-soft: var(--surface-2);
+    --section-signal: var(--text-2);
+    --section-signal-soft: var(--surface-2);
+    --section-signal-line: var(--line-strong);
+    --section-shadow: 0 3px 0 rgb(0 0 0 / .18);
     --ok: #4ad394;
     --ok-soft: #10281d;
     --warn: #f2b84b;
@@ -143,30 +143,30 @@
 /* ... and the explicit dark choice (same values) */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0a0b0e;
-    --nav-bg: #030405;
-    --nav-tab: #252a33;
-    --nav-edge: #596170;
-  --surface: #13151a;
-  --surface-2: #1a1d24;
-  --surface-3: #232730;
-  --inverse: #0a0b0e;
+  --bg: #080808;
+    --nav-bg: #030303;
+    --nav-tab: #242424;
+    --nav-edge: #555555;
+  --surface: #111111;
+  --surface-2: #191919;
+  --surface-3: #242424;
+  --inverse: #080808;
   --inverse-text: #f3f4f7;
-  --text: #eceef3;
-  --text-2: #b9bece;
-  --muted: #8f95a5;
-  --line: #262a33;
-  --line-strong: #3a3f4b;
+  --text: #f5f5f5;
+  --text-2: #d9d9d9;
+  --muted: var(--text-2);
+  --line: #303030;
+  --line-strong: #4a4a4a;
   --accent: #ff8a3d;
   --accent-strong: #c2410c;
   --accent-ink: #ffffff;
   --accent-soft: #2b1a0e;
-  --accent-2: #46d6cf;
-  --accent-2-soft: #10282a;
-    --section-signal: #87b8b0;
-    --section-signal-soft: #142320;
-    --section-signal-line: #395b55;
-    --section-shadow: 0 6px 20px rgb(0 0 0 / .24);
+  --accent-2: var(--text);
+  --accent-2-soft: var(--surface-2);
+    --section-signal: var(--text-2);
+    --section-signal-soft: var(--surface-2);
+    --section-signal-line: var(--line-strong);
+    --section-shadow: 0 3px 0 rgb(0 0 0 / .18);
   --ok: #4ad394;
   --ok-soft: #10281d;
   --warn: #f2b84b;
@@ -970,7 +970,12 @@ input[type="search"], input[type="text"], select {
 
 @media screen {
   .card--reference { border-color: var(--section-frame); border-top: 3px solid var(--section-signal-line); }
-  .analysis-reference { max-width:1180px; margin:28px auto; padding:24px; border-top:2px solid var(--section-signal); background:linear-gradient(125deg,var(--section-signal-wash),transparent 75%); }
+  .analysis-reference { max-width:1180px; margin:28px auto; padding:24px; border-top:2px solid var(--section-signal); background:var(--surface);}
+}
+
+@media screen {
+  .reading-heading { color:var(--text); }
+  .reading-copy, .reading-meta { color:var(--text-2); opacity:1; }
 }
 
 /* ---- callouts -------------------------------------------------------- */
@@ -1024,9 +1029,9 @@ input[type="search"], input[type="text"], select {
 .table-wrap tbody tr:last-child td { border-bottom: 0; }
 @media screen {
   .table-wrap--data { border-color:var(--section-frame); border-radius:3px 14px 3px 3px; box-shadow:inset 0 3px 0 var(--section-signal),var(--section-shadow); }
-  .table-wrap--data thead th { background:linear-gradient(180deg,var(--surface-3),var(--section-signal-wash)); border-bottom:2px solid var(--section-frame); color:var(--text); }
-  .table-wrap--data tbody tr:nth-child(even) { background:color-mix(in srgb,var(--section-signal) 3%,transparent); }
-  .table-wrap--data tbody tr:hover { background:color-mix(in srgb,var(--section-signal) 8%,transparent); }
+  .table-wrap--data thead th { background:var(--surface-3); border-bottom:2px solid var(--section-frame); color:var(--text);}
+  .table-wrap--data tbody tr:nth-child(even) { background:var(--surface-2);}
+  .table-wrap--data tbody tr:hover { background:var(--surface-3);}
 }
 /* card layout on phones: needs data-label on each td (already present in generated tables) */
 @media (max-width: 639px) {

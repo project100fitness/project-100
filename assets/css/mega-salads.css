@@ -1,199 +1,199 @@
 /* Compact photo journal, native ingredient details and editable portions. */
-.salad-page .hud-folder__body{padding:clamp(1rem,3vw,2rem)}
-.salad-page .hud-folder__body>p{max-width:85ch;line-height:1.6}
-.salad-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}
-.salad-card{overflow:hidden;border:1px solid #ffffff25;border-radius:12px;background:#111923}
-.salad-photo{display:block;width:100%;padding:0;border:0;cursor:zoom-in;position:relative;aspect-ratio:4/3;background:#080d12}
-.salad-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.salad-photo:hover img{transform:scale(1.025)}
-.salad-card__body{padding:1rem}.salad-card time{font-size:.8rem;color:#aab9c8}.salad-card h3{font-size:1.05rem;line-height:1.35;margin:.5rem 0}.salad-card details{font-size:.9rem;line-height:1.5}.salad-card summary{cursor:pointer;color:#cfdee9}
-.salad-roles,.salad-goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
-.salad-role,.salad-goals article,.salad-dressing,.salad-estimates article{padding:1rem;border:1px solid #ffffff22;border-radius:10px;background:#101923}
-.salad-role summary{cursor:pointer;font-weight:700}.salad-role small{display:block;font-weight:400;color:#a5c6b4;margin-top:.25rem}.salad-role p,.salad-goals p{line-height:1.6;margin-top:.7rem}
-.salad-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}.salad-controls label{display:flex;flex-direction:column;gap:.4rem;font-weight:600}.salad-controls input,.salad-controls select{width:100%;min-height:44px;border:1px solid #648077;border-radius:6px;background:#0a1119;color:#fff;padding:.65rem;font:inherit}.salad-controls label>span{font-size:.8rem;color:#a8b6c6;font-weight:400}
-.salad-dressing{border-color:#68a383;margin:1rem 0}.salad-estimates{display:grid;gap:.8rem}.salad-estimates h3{font-size:1rem;margin:0 0 .7rem}.salad-macros{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}.salad-macros span{font-size:.8rem;color:#b9c6d3}.salad-macros b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.25rem}.salad-total{border-color:#81b99a!important;background:#13251e!important}
-.salad-page button:focus-visible,.salad-page summary:focus-visible,.salad-page input:focus-visible,.salad-page select:focus-visible{outline:3px solid #afe0c0;outline-offset:3px}
-@media(max-width:850px){.salad-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.salad-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.salad-gallery{gap:.6rem}.salad-card__body{padding:.65rem}.salad-card h3{font-size:1rem}.salad-roles,.salad-goals{grid-template-columns:1fr}.salad-macros{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:.8rem}.salad-macros b{font-size:1.1rem}.salad-page .hud-chips{gap:.5rem}.salad-page p{font-size:1rem}}
+.salad-page .hud-folder__body{padding:clamp(1rem,3vw,2rem);}
+.salad-page .hud-folder__body>p{max-width:85ch;line-height:1.6;}
+.salad-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0;}
+.salad-card--neutral{overflow:hidden;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface-2);}
+.salad-photo{display:block;width:100%;padding:0;border:0;cursor:zoom-in;position:relative;aspect-ratio:4/3;background:#080808;}
+.salad-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.salad-photo:hover img{transform:scale(1.025);}
+.salad-card__body{padding:1rem;}.salad-card time{font-size:.8rem;color:var(--text-2);}.salad-card h3{font-size:1.05rem;line-height:1.35;margin:.5rem 0;}.salad-card details{font-size:.9rem;line-height:1.5;}.salad-card summary{cursor:pointer;color:var(--text);}
+.salad-roles,.salad-goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0;}
+.salad-role,.salad-goals article,.salad-dressing,.salad-estimates article{padding:1rem;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface-2);}
+.salad-role summary{cursor:pointer;font-weight:700;}.salad-role small{display:block;font-weight:400;color:var(--text-2);margin-top:.25rem;}.salad-role p,.salad-goals p{line-height:1.6;margin-top:.7rem;}
+.salad-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0;}.salad-controls label{display:flex;flex-direction:column;gap:.4rem;font-weight:600;}.salad-controls input,.salad-controls select{width:100%;min-height:44px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);color:var(--text);padding:.65rem;font:inherit;}.salad-controls label>span{font-size:.8rem;color:var(--text);font-weight:400;}
+.salad-dressing{border-color:var(--line-strong);margin:1rem 0;}.salad-estimates{display:grid;gap:.8rem;}.salad-estimates h3{font-size:1rem;margin:0 0 .7rem;}.salad-macros{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem;}.salad-macros span{font-size:.8rem;color:var(--text-2);}.salad-macros b{display:block;color:var(--text);font-size:1.2rem;margin-bottom:.25rem;}.salad-total{border-color:var(--line-strong)!important;background:var(--surface-2)!important;}
+.salad-page button:focus-visible,.salad-page summary:focus-visible,.salad-page input:focus-visible,.salad-page select:focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+@media(max-width:850px){.salad-gallery{grid-template-columns:repeat(2,minmax(0,1fr));}.salad-controls{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:520px){.salad-gallery{gap:.6rem;}.salad-card__body{padding:.65rem;}.salad-card h3{font-size:1rem;}.salad-roles,.salad-goals{grid-template-columns:1fr;}.salad-macros{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:.8rem;}.salad-macros b{font-size:1.1rem;}.salad-page .hud-chips{gap:.5rem;}.salad-page p{font-size:1rem;}}
 
 /* Integrated nutrition section: no fixed card height or empty image padding. */
-.nutrition-salads{margin-top:1.5rem;min-width:0}.nutrition-salads .hud-folder{margin:1.1rem 0}.nutrition-salads .salad-card .salad-photo{height:auto}.nutrition-salads .salad-card{height:auto}.nutrition-salads .salad-gallery{align-items:start}.nutrition-salads .hud-folder__title{font-size:clamp(1.1rem,2.2vw,1.65rem)}
+.nutrition-salads{margin-top:1.5rem;min-width:0;}.nutrition-salads .hud-folder{margin:1.1rem 0;}.nutrition-salads .salad-card .salad-photo{height:auto;}.nutrition-salads .salad-card--neutral{height:auto;}.nutrition-salads .salad-gallery{align-items:start;}.nutrition-salads .hud-folder__title{font-size:clamp(1.1rem,2.2vw,1.65rem);}
 
-/* Contemporary food journal: restrained ingredient colors and spacious photo hierarchy. */
-.salad-page{--salad-sage:#a9c9b4;--salad-plum:#c4a8bb;--salad-gold:#d7c18c;--salad-ink:#11181d;--salad-paper:#e6e7df}
-.salad-page .hud-folder{border-radius:14px;overflow:hidden}.salad-page .hud-folder__head{gap:.75rem;flex-wrap:wrap;border-bottom:1px solid #adc7b524;padding-bottom:.7rem}
-.salad-page .hud-folder__tab{background:#abc7b514;color:var(--salad-sage);border:1px solid #abc7b535;clip-path:none;border-radius:5px;letter-spacing:.12em;font-size:.7rem}
-.salad-page .hud-folder__title{color:var(--salad-paper);font-weight:750;letter-spacing:-.025em}.salad-page .hud-folder__body{background:linear-gradient(145deg,#14201b55,transparent 60%)}
-.salad-page .filters{gap:.5rem;flex-wrap:wrap;margin:1.2rem 0}.salad-page .filter{background:#ffffff04;border:1px solid #b0c7b42c;border-radius:100px;clip-path:none;color:#c3cec8;padding:.6rem .9rem;min-height:42px;box-shadow:none}.salad-page .filter::before,.salad-page .filter::after{display:none}.salad-page .filter[aria-pressed="true"]{background:#a9c9b419;color:#e4f1e8;border-color:#a9c9b483}
-.salad-card{--item-accent:var(--salad-sage);border-radius:14px;border-color:#bacabb25;background:linear-gradient(160deg,#1d262c,#11181d);box-shadow:0 7px 22px #00000020;transition:transform .25s,border-color .25s}
-.salad-card[data-salad-category="layered"]{--item-accent:var(--salad-plum)}.salad-card[data-salad-category="eggs"]{--item-accent:var(--salad-gold)}.salad-card[data-salad-category="creamy"]{--item-accent:#b8ca98}
-.salad-card:hover,.salad-card:focus-within{transform:translateY(-3px);border-color:var(--item-accent)}.salad-card .salad-photo{overflow:hidden;border-radius:0}.salad-card .salad-photo::after{content:'View photo ↗';position:absolute;right:.65rem;bottom:.65rem;border-radius:100px;padding:.35rem .6rem;background:#101a18d9;color:#f1f4ed;font-size:.7rem;letter-spacing:.03em;pointer-events:none}
-.salad-card__body{position:relative;border-top:2px solid var(--item-accent);padding:1rem 1.05rem 1.1rem}.salad-card time{color:var(--item-accent);font-size:.7rem;letter-spacing:.09em;font-variant-numeric:tabular-nums}.salad-card h3{font-size:1.1rem;font-weight:650;letter-spacing:-.015em;min-height:2.7em;color:#edf0e9}.salad-card summary{font-size:.8rem;color:#b6c3c4}.salad-card details[open] summary{color:var(--item-accent)}
-.salad-role{border-radius:11px;border-left:2px solid var(--salad-sage);background:#b4c9bb06}.salad-role:nth-child(3n+2){border-left-color:var(--salad-gold)}.salad-role:nth-child(3n){border-left-color:var(--salad-plum)}.salad-role summary{list-style:none;position:relative;padding-right:1.8rem;font-weight:650;letter-spacing:-.01em}.salad-role summary::-webkit-details-marker{display:none}.salad-role summary::after{content:'+';position:absolute;right:0;top:0;color:var(--salad-sage);font-size:1.3rem;font-weight:400}.salad-role[open] summary::after{content:'−'}.salad-role small{font-size:.8rem;color:#aabdb0;font-weight:400}.salad-role p{color:#cbd4cf}
-.salad-dressing{background:linear-gradient(120deg,#27332680,#15202150);border-color:#a9c9b443}.salad-estimates article{background:#ffffff03;border-color:#b4c9bb25}.salad-estimates h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#b7c9bd}.salad-estimates article:nth-child(2) h3{color:var(--salad-gold)}.salad-total{background:linear-gradient(125deg,#203529,#14221b)!important;border-color:#a9c9b465!important}.salad-macros b{font-variant-numeric:tabular-nums;font-weight:650;letter-spacing:-.03em}.salad-controls input,.salad-controls select{border-color:#a9c9b43b;background:#111a1d;border-radius:8px}
-.salad-goals article{border-top:2px solid #a9c9b475;background:#b4c9bb05}.salad-goals article:nth-child(even){border-top-color:#c4a8bb75}.salad-goals h3{font-size:1.05rem;font-weight:650;letter-spacing:-.02em}.salad-page .hud-btn{border-radius:100px;letter-spacing:.01em}.salad-page .item-specs{border-color:#b4c9bb25}
-@media(max-width:520px){.salad-card__body{padding:.75rem}.salad-card h3{font-size:1rem;min-height:0}.salad-card .salad-photo::after{font-size:.6rem;padding:.25rem .4rem}.salad-page .hud-folder__body{padding:.85rem}.salad-page .hud-folder__head{padding:.85rem}.salad-page .filter{font-size:.85rem;padding:.5rem .75rem}}
+/* Neutral food journal: two reading colours, solid surfaces and orange actions. */
+.salad-page{--salad-sage:var(--line-strong);--salad-plum:var(--line-strong);--salad-gold:var(--line-strong);--salad-ink:var(--surface);--salad-paper:var(--text);}
+.salad-page .hud-folder{border-radius:14px;overflow:hidden;}.salad-page .hud-folder__head{gap:.75rem;flex-wrap:wrap;border-bottom:1px solid var(--line-strong);padding-bottom:.7rem;}
+.salad-page .hud-folder__tab{background:var(--surface-2);color:var(--text);border:1px solid var(--line-strong);clip-path:none;border-radius:5px;letter-spacing:.12em;font-size:.7rem;}
+.salad-page .hud-folder__title{color:var(--text);font-weight:750;letter-spacing:-.025em;}.salad-page .hud-folder__body{background:var(--surface-2);}
+.salad-page .filters{gap:.5rem;flex-wrap:wrap;margin:1.2rem 0;}.salad-page .filter{background:var(--surface-2);border:1px solid var(--line-strong);border-radius:100px;clip-path:none;color:var(--text);padding:.6rem .9rem;min-height:42px;box-shadow:none;}.salad-page .filter::before,.salad-page .filter::after{display:none;}.salad-page .filter[aria-pressed="true"]{background:var(--accent-strong);color:var(--accent-ink);border-color:var(--accent-strong);}
+.salad-card--neutral{--item-accent:var(--line-strong);border-radius:14px;border-color:var(--line-strong);background:var(--surface-2);box-shadow:0 7px 22px #00000020;transition:transform .25s,border-color .25s;}
 
-.salad-archive-macro{font-size:.8rem!important;color:var(--item-accent);margin:.4rem 0 .7rem}.salad-card details+details{margin-top:.5rem}.salad-baselines table{font-variant-numeric:tabular-nums}.salad-baselines caption{text-align:left;padding:.75rem 0;color:#b8c9bd}
+.salad-card:hover,.salad-card:focus-within{transform:translateY(-3px);border-color:var(--item-accent);}.salad-card .salad-photo{overflow:hidden;border-radius:0;}.salad-card .salad-photo::after{content:"View photo ↗";position:absolute;right:.65rem;bottom:.65rem;border-radius:100px;padding:.35rem .6rem;background:#080808;color:#ffffff;font-size:.7rem;letter-spacing:.03em;pointer-events:none;}
+.salad-card__body{position:relative;border-top:2px solid var(--item-accent);padding:1rem 1.05rem 1.1rem;}.salad-card time{color:var(--text-2);font-size:.7rem;letter-spacing:.09em;font-variant-numeric:tabular-nums;}.salad-card h3{font-size:1.1rem;font-weight:650;letter-spacing:-.015em;min-height:2.7em;color:var(--text);}.salad-card summary{font-size:.8rem;color:var(--text);}.salad-card details[open] summary{color:var(--text);}
+.salad-role{border-radius:11px;border-left:2px solid var(--salad-sage);background:var(--surface-2);}.salad-role:nth-child(3n/**/+2){border-left-color:var(--salad-gold);}.salad-role:nth-child(3n){border-left-color:var(--salad-plum);}.salad-role summary{list-style:none;position:relative;padding-right:1.8rem;font-weight:650;letter-spacing:-.01em;}.salad-role summary::-webkit-details-marker{display:none;}.salad-role summary::after{content:"+";position:absolute;right:0;top:0;color:var(--text-2);font-size:1.3rem;font-weight:400;}.salad-role[open] summary::after{content:"−";}.salad-role small{font-size:.8rem;color:var(--text-2);font-weight:400;}.salad-role p{color:var(--text);}
+.salad-dressing{background:var(--surface-2);border-color:var(--line-strong);}.salad-estimates article{background:var(--surface-2);border-color:var(--line-strong);}.salad-estimates h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text);}.salad-estimates article:nth-child(2) h3{color:var(--text);}.salad-total{background:var(--surface-2)!important;border-color:var(--line-strong)!important;}.salad-macros b{font-variant-numeric:tabular-nums;font-weight:650;letter-spacing:-.03em;}.salad-controls input,.salad-controls select{border-color:var(--line-strong);background:var(--surface);border-radius:8px;}
+.salad-goals article{border-top:2px solid var(--line-strong);background:var(--surface-2);}.salad-goals article:nth-child(even){border-top-color:var(--line-strong);}.salad-goals h3{font-size:1.05rem;font-weight:650;letter-spacing:-.02em;}.salad-page .hud-btn{border-radius:100px;letter-spacing:.01em;}.salad-page .item-specs{border-color:var(--line-strong);}
+@media(max-width:520px){.salad-card__body{padding:.75rem;}.salad-card h3{font-size:1rem;min-height:0;}.salad-card .salad-photo::after{font-size:.6rem;padding:.25rem .4rem;}.salad-page .hud-folder__body{padding:.85rem;}.salad-page .hud-folder__head{padding:.85rem;}.salad-page .filter{font-size:.85rem;padding:.5rem .75rem;}}
 
-.salad-dressing-choice{display:flex;flex-direction:column;gap:.5rem;font-weight:650;max-width:32rem}.salad-dressing-choice select{padding:.75rem;min-height:44px;background:#111a1d;color:#eef3ed;border:1px solid #a9c9b463;border-radius:8px;font:inherit}.salad-dressing [hidden]{display:none!important}#balsamic-dressing-fields{border-top:1px solid #c4a8bb40;margin-top:1rem;padding-top:1rem}#balsamic-dressing-fields h3{color:var(--salad-plum)}
+.salad-archive-macro{font-size:.8rem!important;color:var(--text);margin:.4rem 0 .7rem;}.salad-card details+details{margin-top:.5rem;}.salad-baselines table{font-variant-numeric:tabular-nums;}.salad-baselines caption{text-align:left;padding:.75rem 0;color:var(--text);}
 
-.salad-dressing-choice input{padding:.75rem;min-height:44px;background:#111a1d;color:#eef3ed;border:1px solid #a9c9b463;border-radius:8px;font:inherit}.salad-dressing-choice span{font-size:.8rem;font-weight:400;color:#b4c3ba}
+.salad-dressing-choice{display:flex;flex-direction:column;gap:.5rem;font-weight:650;max-width:32rem;}.salad-dressing-choice select{padding:.75rem;min-height:44px;background:var(--surface);color:var(--text);border:1px solid var(--line-strong);border-radius:8px;font:inherit;}.salad-dressing [hidden]{display:none!important;}#balsamic-dressing-fields{border-top:1px solid var(--line-strong);margin-top:1rem;padding-top:1rem;}#balsamic-dressing-fields h3{color:var(--text);}
+
+.salad-dressing-choice input{padding:.75rem;min-height:44px;background:var(--surface);color:var(--text);border:1px solid var(--line-strong);border-radius:8px;font:inherit;}.salad-dressing-choice span{font-size:.8rem;font-weight:400;color:var(--text-2);}
 
 /* Nutrition dashboard uses the site's existing count-up animation hooks. */
-.nutrition-dashboard{margin:1.3rem 0;padding:clamp(1rem,2.5vw,1.8rem);border:1px solid #ffffff25;border-radius:14px;background:linear-gradient(130deg,#16212b,#10171c)}.nutrition-dashboard h2{font-size:clamp(1.2rem,2.6vw,1.8rem);margin:.4rem 0 1rem}.nutrition-metrics{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin:1rem 0;padding:0;list-style:none}.nutrition-metric{--metric-accent:#acd0b9;position:relative;text-align:left!important;padding:1rem!important;min-width:0;border:1px solid #ffffff20!important;border-top:2px solid var(--metric-accent)!important;border-radius:10px;background:#ffffff04!important}.nutrition-metric[data-metric="energy"]{--metric-accent:#edb07c}.nutrition-metric[data-metric="protein"],.nutrition-metric[data-metric="smm"]{--metric-accent:#a8d5ba}.nutrition-metric[data-metric="carbs"]{--metric-accent:#d7c38a}.nutrition-metric[data-metric="fat"]{--metric-accent:#d4aac7}.nutrition-metric[data-metric="water"]{--metric-accent:#8ec9e2}.nutrition-metric .stat__value,.nutrition-metric .metric-range{color:var(--metric-accent)!important;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:750;line-height:1.2;font-variant-numeric:tabular-nums}.metric-range{display:flex;align-items:center;gap:.2rem;white-space:nowrap}.metric-range i{font-style:normal;opacity:.5;font-size:.8em}.nutrition-metric__unit{display:block;font-size:.75rem;color:#b9c6cb;letter-spacing:.1em;margin:.3rem 0}.nutrition-metric .stat__label{display:block;font-size:.95rem;color:#edf2ed}.nutrition-metric small{display:block;color:#a7b8be;font-size:.75rem;margin-top:.35rem}.nutrition-dashboard__note{font-size:.85rem!important;color:#b4c2c6;line-height:1.5;margin:.8rem 0}.salad-range-board{margin:1.2rem 0}.salad-plan-share{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.65rem;margin:1rem 0}.salad-plan-share article{padding:.8rem;background:#ffffff04;border-radius:8px;border:1px solid #a9c9b425;min-width:0}.salad-plan-share strong,.salad-plan-share b,.salad-plan-share small{display:block}.salad-plan-share strong{font-size:.8rem;color:#b6c9bf}.salad-plan-share b{font-size:1.15rem;margin:.4rem 0;color:#e8f0e7;font-variant-numeric:tabular-nums}.salad-plan-share small{font-size:.75rem;color:#b3c1be}.salad-plan-share progress{width:100%;height:5px;margin:.5rem 0;accent-color:#a9c9b4}.salad-goal-tracker{margin:1.5rem 0;border-top:1px solid #a9c9b425;padding-top:1rem}.salad-fluid-sodium{padding:.9rem;border-left:2px solid #8ec9e2;background:#8ec9e209;line-height:1.6}
-@media(max-width:850px){.nutrition-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.salad-plan-share{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:520px){.nutrition-metric{padding:.75rem!important}.salad-plan-share{grid-template-columns:repeat(2,minmax(0,1fr))}.nutrition-metric .stat__value,.nutrition-metric .metric-range{font-size:1.65rem}}
+.nutrition-dashboard{margin:1.3rem 0;padding:clamp(1rem,2.5vw,1.8rem);border:1px solid var(--line-strong);border-radius:14px;background:var(--surface-2);}.nutrition-dashboard h2{font-size:clamp(1.2rem,2.6vw,1.8rem);margin:.4rem 0 1rem;}.nutrition-metrics{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin:1rem 0;padding:0;list-style:none;}.nutrition-metric{--metric-accent:var(--text);position:relative;text-align:left!important;padding:1rem!important;min-width:0;border:1px solid var(--line-strong)!important;border-top:2px solid var(--metric-accent)!important;border-radius:10px;background:var(--surface-2)!important;}.nutrition-metric[data-metric="energy"]{--metric-accent:var(--accent);}.nutrition-metric[data-metric="protein"],.nutrition-metric[data-metric="smm"]{--metric-accent:var(--text);}.nutrition-metric[data-metric="carbs"]{--metric-accent:var(--text);}.nutrition-metric[data-metric="fat"]{--metric-accent:var(--text);}.nutrition-metric[data-metric="water"]{--metric-accent:var(--text);}.nutrition-metric .stat__value,.nutrition-metric .metric-range{color:var(--text)!important;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:750;line-height:1.2;font-variant-numeric:tabular-nums;}.metric-range{display:flex;align-items:center;gap:.2rem;white-space:nowrap;}.metric-range i{font-style:normal;opacity:1;font-size:.8em;}.nutrition-metric__unit{display:block;font-size:.75rem;color:var(--text-2);letter-spacing:.1em;margin:.3rem 0;}.nutrition-metric .stat__label{display:block;font-size:.95rem;color:var(--text);}.nutrition-metric small{display:block;color:var(--text-2);font-size:.75rem;margin-top:.35rem;}.nutrition-dashboard__note{font-size:.85rem!important;color:var(--text-2);line-height:1.5;margin:.8rem 0;}.salad-range-board{margin:1.2rem 0;}.salad-plan-share{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.65rem;margin:1rem 0;}.salad-plan-share article{padding:.8rem;background:var(--surface-2);border-radius:8px;border:1px solid var(--line-strong);min-width:0;}.salad-plan-share strong,.salad-plan-share b,.salad-plan-share small{display:block;}.salad-plan-share strong{font-size:.8rem;color:var(--text);}.salad-plan-share b{font-size:1.15rem;margin:.4rem 0;color:var(--text);font-variant-numeric:tabular-nums;}.salad-plan-share small{font-size:.75rem;color:var(--text-2);}.salad-plan-share progress{width:100%;height:5px;margin:.5rem 0;accent-color:var(--accent);}.salad-goal-tracker{margin:1.5rem 0;border-top:1px solid var(--line-strong);padding-top:1rem;}.salad-fluid-sodium{padding:.9rem;border-left:2px solid var(--line-strong);background:var(--surface-2);line-height:1.6;}
+@media(max-width:850px){.nutrition-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.salad-plan-share{grid-template-columns:repeat(3,minmax(0,1fr));}}@media(max-width:520px){.nutrition-metric{padding:.75rem!important;}.salad-plan-share{grid-template-columns:repeat(2,minmax(0,1fr));}.nutrition-metric .stat__value,.nutrition-metric .metric-range{font-size:1.65rem;}}
 
 /* Main Nutrition: recipe cards with one dressing choice and compact combined totals. */
-.nutrition-salads .salad-card-choice{display:grid;gap:.35rem;margin:.75rem 0;font-weight:650;font-size:.95rem}
-.nutrition-salads .salad-card-choice select{min-height:44px;max-width:100%;width:100%;font:inherit;font-size:1rem;border:1px solid #a9c9b463;border-radius:8px;padding:.65rem;background:#111a1d;color:#eef3ed}
-.nutrition-salads .salad-card-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
-.nutrition-salads .salad-card-metrics div{min-width:0;padding:.5rem;background:#ffffff05;border-radius:6px}
-.nutrition-salads .salad-card-metrics div:first-child{grid-column:1/-1}
-.nutrition-salads .salad-card-metrics b,.nutrition-salads .salad-card-metrics span{display:block}
-.nutrition-salads .salad-card-metrics b{font-size:1.05rem;font-variant-numeric:tabular-nums;color:#a8d5ba;overflow-wrap:anywhere}
-.nutrition-salads .salad-card-metrics div:first-child b{color:#edb07c;font-size:1.35rem}
-.nutrition-salads .salad-card-metrics span{font-size:.85rem;color:#c3cec8}
-.nutrition-salads .salad-ingredient-preview{font-size:.9rem;line-height:1.45;margin:.5rem 0}
-.nutrition-salads .salad-recipe-details{margin-top:.85rem;border-top:1px solid #ffffff20;padding-top:.65rem}
-.nutrition-salads summary{min-height:44px;display:flex;align-items:center;font-size:.95rem;cursor:pointer}
-.nutrition-salads .salad-recipe-details li{margin:.3rem 0}
-.nutrition-salads .salad-dressing-guide,.nutrition-salads .salad-source-notes{border:1px solid #a9c9b440;border-radius:10px;padding:.5rem .85rem;margin:.75rem 0}
-.nutrition-salads .salad-dressing-recipes{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.nutrition-salads .salad-estimate-key{font-size:.9rem;line-height:1.5;color:#b4c3ba}
-.nutrition-salads .salad-identification-note{border-left:2px solid #d7c18c;padding-left:.7rem}
-.nutrition-salads .salad-card h3{min-height:0}
-html[data-theme="light"] .nutrition-salads .salad-card{background:#f7f8f3;color:#202c25}
-html[data-theme="light"] .nutrition-salads .salad-card h3,html[data-theme="light"] .nutrition-salads summary{color:#202c25}
-html[data-theme="light"] .nutrition-salads .salad-card-metrics b,html[data-theme="light"] .nutrition-salads .salad-card time{color:#28523d}
-html[data-theme="light"] .nutrition-salads .salad-card-metrics div:first-child b{color:#85501d}
-html[data-theme="light"] .nutrition-salads .salad-card-metrics span,html[data-theme="light"] .nutrition-salads .salad-estimate-key{color:#43574b}
-@media(max-width:599px){.nutrition-salads .salad-gallery{grid-template-columns:1fr}.nutrition-salads .salad-card__body{padding:1rem}.nutrition-salads .salad-photo{aspect-ratio:16/9}.nutrition-salads .salad-dressing-recipes{grid-template-columns:1fr}.nutrition-salads .salad-card h3{font-size:1.15rem}.nutrition-salads .salad-card-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.nutrition-salads .salad-card-choice{display:grid;gap:.35rem;margin:.75rem 0;font-weight:650;font-size:.95rem;}
+.nutrition-salads .salad-card-choice select{min-height:44px;max-width:100%;width:100%;font:inherit;font-size:1rem;border:1px solid var(--line-strong);border-radius:8px;padding:.65rem;background:var(--surface);color:var(--text);}
+.nutrition-salads .salad-card-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;}
+.nutrition-salads .salad-card-metrics div{min-width:0;padding:.5rem;background:var(--surface);border-radius:6px;}
+.nutrition-salads .salad-card-metrics div:first-child{grid-column:1/-1;}
+.nutrition-salads .salad-card-metrics b,.nutrition-salads .salad-card-metrics span{display:block;}
+.nutrition-salads .salad-card-metrics b{font-size:1.05rem;font-variant-numeric:tabular-nums;color:var(--text);overflow-wrap:anywhere;}
+.nutrition-salads .salad-card-metrics div:first-child b{color:var(--accent);font-size:1.35rem;}
+.nutrition-salads .salad-card-metrics span{font-size:.85rem;color:var(--text-2);}
+.nutrition-salads .salad-ingredient-preview{font-size:.9rem;line-height:1.45;margin:.5rem 0;}
+.nutrition-salads .salad-recipe-details{margin-top:.85rem;border-top:1px solid var(--line-strong);padding-top:.65rem;}
+.nutrition-salads summary{min-height:44px;display:flex;align-items:center;font-size:.95rem;cursor:pointer;}
+.nutrition-salads .salad-recipe-details li{margin:.3rem 0;}
+.nutrition-salads .salad-dressing-guide,.nutrition-salads .salad-source-notes{border:1px solid var(--line-strong);border-radius:10px;padding:.5rem .85rem;margin:.75rem 0;}
+.nutrition-salads .salad-dressing-recipes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.nutrition-salads .salad-estimate-key{font-size:.9rem;line-height:1.5;color:var(--text-2);}
+.nutrition-salads .salad-identification-note{border-left:2px solid var(--line-strong);padding-left:.7rem;}
+.nutrition-salads .salad-card h3{min-height:0;}
+
+
+
+
+
+@media(max-width:599px){.nutrition-salads .salad-gallery{grid-template-columns:1fr;}.nutrition-salads .salad-card__body{padding:1rem;}.nutrition-salads .salad-photo{aspect-ratio:16/9;}.nutrition-salads .salad-dressing-recipes{grid-template-columns:1fr;}.nutrition-salads .salad-card h3{font-size:1.15rem;}.nutrition-salads .salad-card-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}}
 
 /* Two horizontal rows: shared fields keep each row of cards aligned. */
-.nutrition-salads .salad-gallery{display:grid;grid-template-columns:none;grid-template-rows:repeat(14,auto);grid-auto-flow:column;grid-auto-columns:clamp(17rem,31vw,21rem);align-items:stretch;gap:.5rem 1rem;overflow-x:scroll;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:auto;scrollbar-color:#d86724 #182321;padding:.25rem 0 1rem;max-width:100%;min-width:0}
-.nutrition-salads .salad-gallery::-webkit-scrollbar{height:14px}
-.nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:#182321;border-radius:8px}
-.nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:#d86724;border:3px solid #182321;border-radius:8px}
-.nutrition-salads .salad-gallery .salad-card{display:grid;grid-template-rows:subgrid;grid-row:auto/span 7;height:auto;scroll-snap-align:start;transform:none;padding-bottom:.8rem;min-width:0}
-.nutrition-salads .salad-gallery .salad-card__body{display:contents}
-.nutrition-salads .salad-gallery .salad-card__body>*{margin-left:.85rem;margin-right:.85rem}
-.nutrition-salads .salad-gallery .salad-photo{aspect-ratio:4/3;align-self:start}
-.nutrition-salads .salad-gallery .salad-card time{padding-top:.5rem}
-.nutrition-salads .salad-gallery .salad-card h3{margin-top:.25rem;margin-bottom:.25rem;font-size:1.1rem}
-.nutrition-salads .salad-gallery .salad-ingredient-preview{margin-top:0;margin-bottom:.25rem}
-.nutrition-salads .salad-gallery .salad-card-choice{margin-top:.25rem;margin-bottom:.25rem;align-self:end}
-.nutrition-salads .salad-gallery .salad-recipe-details{align-self:start;margin-top:.4rem}
-.nutrition-salads #salad-more{display:flex;width:100%;max-width:none;min-height:56px;justify-content:center;align-items:center;margin:1rem 0;font-size:1.05rem;text-align:center;box-sizing:border-box}
-.nutrition-salads .salad-gallery:focus-visible{outline:3px solid #afe0c0;outline-offset:3px}
-@supports not (grid-template-rows:subgrid){.nutrition-salads .salad-gallery{grid-template-rows:repeat(2,auto)}.nutrition-salads .salad-gallery .salad-card{grid-row:auto;display:flex;flex-direction:column}.nutrition-salads .salad-gallery .salad-card__body{display:flex;flex:1;flex-direction:column;padding:.75rem 0}.nutrition-salads .salad-gallery .salad-card h3{min-height:3rem}.nutrition-salads .salad-gallery .salad-ingredient-preview{min-height:9rem}.nutrition-salads .salad-gallery .salad-recipe-details{margin-top:auto}}
-@media(max-width:599px){.nutrition-salads .salad-gallery{grid-auto-columns:min(85vw,20rem);gap:.5rem .75rem}.nutrition-salads #salad-more{min-height:60px;font-size:1rem}}
+.nutrition-salads .salad-gallery{display:grid;grid-template-columns:none;grid-template-rows:repeat(14,auto);grid-auto-flow:column;grid-auto-columns:clamp(17rem,31vw,21rem);align-items:stretch;gap:.5rem 1rem;overflow-x:scroll;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:auto;scrollbar-color:var(--accent-strong) var(--surface);padding:.25rem 0 1rem;max-width:100%;min-width:0;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar{height:14px;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:var(--surface-2);border-radius:8px;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:var(--surface-2);border:3px solid var(--line-strong);border-radius:8px;}
+.nutrition-salads .salad-gallery .salad-card--neutral{display:grid;grid-template-rows:subgrid;grid-row:auto/span 7;height:auto;scroll-snap-align:start;transform:none;padding-bottom:.8rem;min-width:0;}
+.nutrition-salads .salad-gallery .salad-card__body{display:contents;}
+.nutrition-salads .salad-gallery .salad-card__body>*{margin-left:.85rem;margin-right:.85rem;}
+.nutrition-salads .salad-gallery .salad-photo{aspect-ratio:4/3;align-self:start;}
+.nutrition-salads .salad-gallery .salad-card time{padding-top:.5rem;}
+.nutrition-salads .salad-gallery .salad-card h3{margin-top:.25rem;margin-bottom:.25rem;font-size:1.1rem;}
+.nutrition-salads .salad-gallery .salad-ingredient-preview{margin-top:0;margin-bottom:.25rem;}
+.nutrition-salads .salad-gallery .salad-card-choice{margin-top:.25rem;margin-bottom:.25rem;align-self:end;}
+.nutrition-salads .salad-gallery .salad-recipe-details{align-self:start;margin-top:.4rem;}
+.nutrition-salads #salad-more{display:flex;width:100%;max-width:none;min-height:56px;justify-content:center;align-items:center;margin:1rem 0;font-size:1.05rem;text-align:center;box-sizing:border-box;}
+.nutrition-salads .salad-gallery:focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+@supports not (grid-template-rows:subgrid){.nutrition-salads .salad-gallery{grid-template-rows:repeat(2,auto);}.nutrition-salads .salad-gallery .salad-card--neutral{grid-row:auto;display:flex;flex-direction:column;}.nutrition-salads .salad-gallery .salad-card__body{display:flex;flex:1;flex-direction:column;padding:.75rem 0;}.nutrition-salads .salad-gallery .salad-card h3{min-height:3rem;}.nutrition-salads .salad-gallery .salad-ingredient-preview{min-height:9rem;}.nutrition-salads .salad-gallery .salad-recipe-details{margin-top:auto;}}
+@media(max-width:599px){.nutrition-salads .salad-gallery{grid-auto-columns:min(85vw,20rem);gap:.5rem .75rem;}.nutrition-salads #salad-more{min-height:60px;font-size:1rem;}}
 
-.nutrition-salads .salad-gallery .salad-card:nth-child(odd){margin-bottom:1rem}
+.nutrition-salads .salad-gallery .salad-card:nth-child(odd){margin-bottom:1rem;}
 
 /* Mobile: one readable card, a next-card edge and explicit navigation. */
-.nutrition-salads .salad-card[hidden],.salad-browser-nav[hidden],.salad-browser-index[hidden]{display:none!important}
-.salad-browser-nav,.salad-browser-index{display:none}
+.nutrition-salads .salad-card[hidden],.salad-browser-nav[hidden],.salad-browser-index[hidden]{display:none!important;}
+.salad-browser-nav,.salad-browser-index{display:none;}
 @media(max-width:599px){
- .nutrition-salads .salad-gallery{display:flex;gap:.75rem;scroll-snap-type:x mandatory;align-items:flex-start;scroll-padding-left:0;padding-bottom:.5rem;scrollbar-width:thin;scroll-margin-top:6rem}
- .nutrition-salads .salad-gallery .salad-card{display:flex;flex-direction:column;flex:0 0 92%;grid-row:auto;scroll-snap-align:start;margin:0;padding-bottom:.8rem}
- .nutrition-salads .salad-gallery .salad-card__body{display:block;padding:0}
- .nutrition-salads .salad-gallery .salad-card__body>*{margin-left:.85rem;margin-right:.85rem}
- .nutrition-salads .salad-gallery .salad-photo{aspect-ratio:16/9;width:100%}
- .salad-browser-nav{display:flex;align-items:center;gap:.5rem;margin:.75rem 0;position:sticky;top:4rem;z-index:3;padding:.4rem;background:#14201b;border:1px solid #a9c9b440;border-radius:10px}
- .salad-browser-arrow,.salad-browser-all{min-height:44px;border:1px solid #a9c9b470;border-radius:7px;background:#24382b;color:#eef3ed;font:inherit;cursor:pointer}
- .salad-browser-arrow{min-width:44px;font-size:1.5rem}.salad-browser-arrow:disabled{opacity:.35;cursor:default}
- .salad-browser-position{min-width:3.5rem;text-align:center;font-variant-numeric:tabular-nums;color:#eef3ed}
- .salad-browser-all{margin-left:auto;padding:0 .65rem;font-size:.9rem}
- .salad-browser-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;scroll-margin-top:8rem}
- .salad-browser-pick{display:flex;flex-direction:column;padding:0;overflow:hidden;background:#14201b;border:1px solid #a9c9b440;border-radius:8px;color:#eef3ed;text-align:left;font:inherit;cursor:pointer}
- .salad-browser-pick img{width:100%;aspect-ratio:16/9;object-fit:cover}.salad-browser-pick span{padding:.5rem;font-size:.8rem;line-height:1.3}.salad-browser-pick[aria-pressed="true"]{border-color:#edb07c}
- .nutrition-salads #salad-more{margin:.75rem 0}
+ .nutrition-salads .salad-gallery{display:flex;gap:.75rem;scroll-snap-type:x mandatory;align-items:flex-start;scroll-padding-left:0;padding-bottom:.5rem;scrollbar-width:thin;scroll-margin-top:6rem;}
+ .nutrition-salads .salad-gallery .salad-card--neutral{display:flex;flex-direction:column;flex:0 0 92%;grid-row:auto;scroll-snap-align:start;margin:0;padding-bottom:.8rem;}
+ .nutrition-salads .salad-gallery .salad-card__body{display:block;padding:0;}
+ .nutrition-salads .salad-gallery .salad-card__body>*{margin-left:.85rem;margin-right:.85rem;}
+ .nutrition-salads .salad-gallery .salad-photo{aspect-ratio:16/9;width:100%;}
+ .salad-browser-nav{display:flex;align-items:center;gap:.5rem;margin:.75rem 0;position:sticky;top:4rem;z-index:3;padding:.4rem;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:10px;}
+ .salad-browser-arrow,.salad-browser-all{min-height:44px;border:1px solid var(--line-strong);border-radius:7px;background:var(--surface-2);color:var(--text);font:inherit;cursor:pointer;}
+ .salad-browser-arrow{min-width:44px;font-size:1.5rem;}.salad-browser-arrow:disabled{opacity:1;cursor:default;}
+ .salad-browser-position{min-width:3.5rem;text-align:center;font-variant-numeric:tabular-nums;color:var(--text);}
+ .salad-browser-all{margin-left:auto;padding:0 .65rem;font-size:.9rem;}
+ .salad-browser-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;scroll-margin-top:8rem;}
+ .salad-browser-pick{display:flex;flex-direction:column;padding:0;overflow:hidden;background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;color:var(--text);text-align:left;font:inherit;cursor:pointer;}
+ .salad-browser-pick img{width:100%;aspect-ratio:16/9;object-fit:cover;}.salad-browser-pick span{padding:.5rem;font-size:.8rem;line-height:1.3;}.salad-browser-pick[aria-pressed="true"]{border-color:var(--accent-strong);}
+ .nutrition-salads #salad-more{margin:.75rem 0;}
 }
 
 /* Directional browsing surrounds the dressing without covering the photo. */
-.nutrition-salads .salad-dressing-navigation{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:end;gap:.4rem;align-self:end}
-.nutrition-salads .salad-dressing-navigation .salad-card-choice{margin:0;min-width:0}
-.nutrition-salads .salad-dressing-navigation select{padding:.65rem .35rem;font-size:.85rem}
-.nutrition-salads .salad-card-arrow{display:flex;align-items:center;justify-content:center;width:40px;min-height:44px;border:1px solid #edb07c;border-radius:8px;background:#713616;color:#fff;font-size:1.65rem;cursor:pointer}
-.nutrition-salads .salad-card-arrow[hidden]{display:flex!important;visibility:hidden;pointer-events:none}
-.nutrition-salads .salad-card-arrow:hover{background:#a64d1f}.nutrition-salads .salad-card-arrow:focus-visible{outline:3px solid #afe0c0;outline-offset:2px}
-.nutrition-salads .salad-recipe-details{border-top:0;padding-top:.35rem}
-.nutrition-salads .salad-recipe-details summary{display:flex;gap:.5rem;justify-content:space-between;min-height:48px;padding:.65rem;border:1px solid #edb07c99;border-radius:8px;background:#d8672424;color:#f9e6d7;font-weight:700;font-size:.9rem;line-height:1.35}
-.nutrition-salads .salad-recipe-details summary::after{content:'+';flex:none;font-size:1.4rem;color:#ffae72}.nutrition-salads .salad-recipe-details[open] summary::after{content:'−'}
-html[data-theme="light"] .nutrition-salads .salad-recipe-details summary{background:#fff0e2;color:#713616}
-@media(max-width:599px){.nutrition-salads .salad-dressing-navigation{margin-top:.65rem;margin-bottom:.65rem}.nutrition-salads .salad-browser-nav{justify-content:space-between}.nutrition-salads .salad-gallery{scroll-margin-top:8rem}}
+.nutrition-salads .salad-dressing-navigation{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:end;gap:.4rem;align-self:end;}
+.nutrition-salads .salad-dressing-navigation .salad-card-choice{margin:0;min-width:0;}
+.nutrition-salads .salad-dressing-navigation select{padding:.65rem .35rem;font-size:.85rem;}
+.nutrition-salads .salad-card-arrow{display:flex;align-items:center;justify-content:center;width:40px;min-height:44px;border:1px solid var(--line-strong);border-radius:8px;background:var(--accent-strong);color:var(--accent-ink);font-size:1.65rem;cursor:pointer;}
+.nutrition-salads .salad-card-arrow[hidden]{display:flex!important;visibility:hidden;pointer-events:none;}
+.nutrition-salads .salad-card-arrow:hover{background:var(--accent-strong);}.nutrition-salads .salad-card-arrow:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
+.nutrition-salads .salad-recipe-details{border-top:0;padding-top:.35rem;}
+.nutrition-salads .salad-recipe-details summary{display:flex;gap:.5rem;justify-content:space-between;min-height:48px;padding:.65rem;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface-2);color:var(--text);font-weight:700;font-size:.9rem;line-height:1.35;}
+.nutrition-salads .salad-recipe-details summary::after{content:"+";flex:none;font-size:1.4rem;color:var(--text-2);}.nutrition-salads .salad-recipe-details[open] summary::after{content:"−";}
+
+@media(max-width:599px){.nutrition-salads .salad-dressing-navigation{margin-top:.65rem;margin-bottom:.65rem;}.nutrition-salads .salad-browser-nav{justify-content:space-between;}.nutrition-salads .salad-gallery{scroll-margin-top:8rem;}}
 
 /* Contrast remains readable when the operating system chooses light mode. */
-.nutrition-dashboard h2{color:#edf2ed}
-.nutrition-salads .hud-folder__title{color:var(--text)}
-.nutrition-salads .hud-folder__tab{background:#17251f;color:#dce7e1}
-.nutrition-salads .filters .filter{background:#17251f;color:#dce7e1}
-.nutrition-salads .filters .filter[aria-pressed="true"]{background:#294d37;color:#fff;border-color:#527a60}
-.nutrition-salads .salad-estimate-key{color:var(--text-2)}
-.nutrition-salads .salad-card{color:#edf0e9}
+.nutrition-dashboard h2{color:var(--text);}
+.nutrition-salads .hud-folder__title{color:var(--text);}
+.nutrition-salads .hud-folder__tab{background:var(--surface-2);color:var(--text);}
+.nutrition-salads .filters .filter{background:var(--surface-2);color:var(--text);}
+.nutrition-salads .filters .filter[aria-pressed="true"]{background:var(--accent-strong);color:var(--accent-ink);border-color:var(--accent-strong);}
+.nutrition-salads .salad-estimate-key{color:var(--text-2);}
+.nutrition-salads .salad-card--neutral{color:var(--text);}
 
 /* Dressing above the photo; arrows beside the photo, independent of nutrition. */
-.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{margin:.7rem .85rem;text-align:center;align-self:start;min-width:0}
-.nutrition-salads .salad-gallery .salad-card>.salad-card-choice select{max-width:100%;font-size:.95rem}
-.nutrition-salads .salad-photo-area{position:relative;align-self:start;min-width:0}
-.nutrition-salads .salad-photo-area .salad-photo{display:block;width:100%}
-.nutrition-salads .salad-photo-area .salad-dressing-navigation{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:.4rem;margin:0;pointer-events:none}
-.nutrition-salads .salad-photo-area .salad-card-arrow{pointer-events:auto;box-shadow:0 2px 8px #0008;background:#713616ee}
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{margin:.7rem .85rem;text-align:center;align-self:start;min-width:0;}
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice select{max-width:100%;font-size:.95rem;}
+.nutrition-salads .salad-photo-area{position:relative;align-self:start;min-width:0;}
+.nutrition-salads .salad-photo-area .salad-photo{display:block;width:100%;}
+.nutrition-salads .salad-photo-area .salad-dressing-navigation{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:.4rem;margin:0;pointer-events:none;}
+.nutrition-salads .salad-photo-area .salad-card-arrow{pointer-events:auto;box-shadow:0 2px 8px #0008;background:var(--accent-strong);}
 
 /* Ingredient explanations follow the daily plan and inherit the page theme. */
-#salad-ingredient-roles .salad-role{background:var(--hud-bg-3);border-color:var(--hud-line);color:var(--hud-ink)}
-#salad-ingredient-roles .salad-role p{color:var(--hud-ink);font-size:1rem}
-#salad-ingredient-roles .salad-role small{color:var(--hud-ink-2)}
-#salad-ingredient-roles .salad-role summary{min-height:44px;font-size:1rem;line-height:1.45}
-#salad-ingredient-roles .salad-role summary::after{color:var(--hud-ink)}
+#salad-ingredient-roles .salad-role{background:var(--surface-2);border-color:var(--hud-line);color:var(--text);}
+#salad-ingredient-roles .salad-role p{color:var(--text);font-size:1rem;}
+#salad-ingredient-roles .salad-role small{color:var(--text-2);}
+#salad-ingredient-roles .salad-role summary{min-height:44px;font-size:1rem;line-height:1.45;}
+#salad-ingredient-roles .salad-role summary::after{color:var(--text-2);}
 
-#salad-ingredient-roles .meal-ingredient-group{margin:.65rem 0;border:1px solid var(--hud-line);border-radius:10px;padding:.65rem .85rem}
-#salad-ingredient-roles .meal-ingredient-group>summary{min-height:44px;cursor:pointer;font-size:1.05rem;font-weight:700;line-height:1.4;color:var(--hud-ink)}
+#salad-ingredient-roles .meal-ingredient-group{margin:.65rem 0;border:1px solid var(--hud-line);border-radius:10px;padding:.65rem .85rem;}
+#salad-ingredient-roles .meal-ingredient-group>summary{min-height:44px;cursor:pointer;font-size:1.05rem;font-weight:700;line-height:1.4;color:var(--text);}
 
-.nutrition-ingredient-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
-#salad-ingredient-roles .ingredient-category{--category-accent:#72b791;margin:0;border-top:3px solid var(--category-accent);padding:.85rem;background:var(--hud-bg-3);min-width:0}
-#salad-ingredient-roles .ingredient-category[data-nutrient-category="1"]{--category-accent:#d0ab72}
-#salad-ingredient-roles .ingredient-category[data-nutrient-category="2"]{--category-accent:#de9876}
-#salad-ingredient-roles .ingredient-category[data-nutrient-category="3"]{--category-accent:#82b482}
-#salad-ingredient-roles .ingredient-category[data-nutrient-category="4"]{--category-accent:#89b8d5}
-#salad-ingredient-roles .ingredient-category[data-nutrient-category="5"]{--category-accent:#b694cb}
-#salad-ingredient-roles .ingredient-category>summary{display:flex;justify-content:space-between;gap:.75rem;align-items:center;list-style:none}
-#salad-ingredient-roles .ingredient-category>summary::-webkit-details-marker{display:none}
-#salad-ingredient-roles .ingredient-category>summary small{display:block;font-size:.85rem;font-weight:400;color:var(--hud-ink-2);margin-top:.35rem}
-#salad-ingredient-roles .ingredient-category>summary b{font-size:.85rem;border:1px solid var(--category-accent);border-radius:50%;width:2rem;height:2rem;display:grid;place-items:center;flex:none}
-#salad-ingredient-roles .ingredient-category>summary b::after{content:'+';font-size:.85rem}
-#salad-ingredient-roles .ingredient-category[open]>summary b::after{content:'−'}
-#salad-ingredient-roles .ingredient-category .salad-roles{grid-template-columns:1fr}
-#salad-ingredient-roles .ingredient-role-tags{font-size:.85rem!important;font-weight:650;color:var(--hud-ink-2)!important;border-left:2px solid var(--category-accent);padding-left:.65rem}
-@media(max-width:599px){.nutrition-ingredient-categories{grid-template-columns:1fr}}
+.nutrition-ingredient-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0;}
+#salad-ingredient-roles .ingredient-category{--category-accent:var(--line-strong);margin:0;border-top:3px solid var(--category-accent);padding:.85rem;background:var(--surface-2);min-width:0;}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="1"]{--category-accent:var(--line-strong);}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="2"]{--category-accent:var(--line-strong);}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="3"]{--category-accent:var(--line-strong);}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="4"]{--category-accent:var(--line-strong);}
+#salad-ingredient-roles .ingredient-category[data-nutrient-category="5"]{--category-accent:var(--line-strong);}
+#salad-ingredient-roles .ingredient-category>summary{display:flex;justify-content:space-between;gap:.75rem;align-items:center;list-style:none;}
+#salad-ingredient-roles .ingredient-category>summary::-webkit-details-marker{display:none;}
+#salad-ingredient-roles .ingredient-category>summary small{display:block;font-size:.85rem;font-weight:400;color:var(--text-2);margin-top:.35rem;}
+#salad-ingredient-roles .ingredient-category>summary b{font-size:.85rem;border:1px solid var(--category-accent);border-radius:50%;width:2rem;height:2rem;display:grid;place-items:center;flex:none;}
+#salad-ingredient-roles .ingredient-category>summary b::after{content:"+";font-size:.85rem;}
+#salad-ingredient-roles .ingredient-category[open]>summary b::after{content:"−";}
+#salad-ingredient-roles .ingredient-category .salad-roles{grid-template-columns:1fr;}
+#salad-ingredient-roles .ingredient-role-tags{font-size:.85rem!important;font-weight:650;color:var(--text)!important;border-left:2px solid var(--category-accent);padding-left:.65rem;}
+@media(max-width:599px){.nutrition-ingredient-categories{grid-template-columns:1fr;}}
 
 /* Raised folder tabs with a distinct disclosure control. */
-.nutrition-ingredient-categories{align-items:start;gap:1.4rem 1rem;margin-top:1.6rem}
-#salad-ingredient-roles .ingredient-category{position:relative;border:1px solid var(--hud-line);border-top:3px solid var(--category-accent);border-radius:0 12px 12px 12px;background:linear-gradient(135deg,color-mix(in srgb,var(--category-accent) 9%,var(--hud-bg-3)),var(--hud-bg-3));box-shadow:0 4px 0 color-mix(in srgb,var(--hud-line) 65%,var(--hud-bg)),0 9px 18px #00000018,inset 0 1px 0 #ffffff15;transition:box-shadow .18s,border-color .18s}
-#salad-ingredient-roles .ingredient-category::before{content:'';position:absolute;left:-1px;top:-13px;width:44%;max-width:11rem;height:12px;background:var(--category-accent);border-radius:7px 14px 0 0;clip-path:polygon(0 0,90% 0,100% 100%,0 100%)}
-#salad-ingredient-roles .ingredient-category>summary{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;gap:.65rem;min-height:68px}
-#salad-ingredient-roles .ingredient-category>summary>span{min-width:0;overflow-wrap:anywhere}
-#salad-ingredient-roles .ingredient-category>summary b{width:auto;height:auto;min-width:1.5rem;padding:.2rem .4rem;border-radius:5px;background:var(--hud-bg);border-color:var(--hud-line);font-size:.8rem;opacity:.8}
-#salad-ingredient-roles .ingredient-category>summary b::after{display:none}
-#salad-ingredient-roles .ingredient-category>summary::after{content:'⌄';display:grid;place-items:center;width:48px;height:48px;box-sizing:border-box;border:1px solid var(--category-accent);border-radius:10px;background:color-mix(in srgb,var(--category-accent) 17%,var(--hud-bg));color:var(--hud-ink);font-size:2.2rem;font-weight:700;line-height:1;padding-bottom:.5rem;box-shadow:0 3px 0 color-mix(in srgb,var(--category-accent) 35%,var(--hud-bg))}
-#salad-ingredient-roles .ingredient-category[open]>summary::after{content:'⌃';padding-bottom:0;padding-top:.4rem;box-shadow:inset 0 2px 5px #00000018}
-#salad-ingredient-roles .ingredient-category[open]{border-color:var(--category-accent)}
-#salad-ingredient-roles .ingredient-category>summary:hover::after{background:color-mix(in srgb,var(--category-accent) 28%,var(--hud-bg))}
-#salad-ingredient-roles .ingredient-category>summary:focus-visible{outline:3px solid var(--category-accent);outline-offset:5px;border-radius:6px}
-@media(max-width:599px){#salad-ingredient-roles .ingredient-category>summary{grid-template-columns:minmax(0,1fr) auto 44px;gap:.45rem}#salad-ingredient-roles .ingredient-category>summary::after{width:44px;height:48px}}
+.nutrition-ingredient-categories{align-items:start;gap:1.4rem 1rem;margin-top:1.6rem;}
+#salad-ingredient-roles .ingredient-category{position:relative;border:1px solid var(--hud-line);border-top:3px solid var(--category-accent);border-radius:0 12px 12px 12px;background:var(--surface-2);box-shadow:0 4px 0 color-mix(in srgb,var(--hud-line) 65%,var(--hud-bg)),0 9px 18px #00000018,inset 0 1px 0 #ffffff15;transition:box-shadow .18s,border-color .18s;}
+#salad-ingredient-roles .ingredient-category::before{content:"";position:absolute;left:-1px;top:-13px;width:44%;max-width:11rem;height:12px;background:var(--surface-2);border-radius:7px 14px 0 0;clip-path:polygon(0 0,90% 0,100% 100%,0 100%);}
+#salad-ingredient-roles .ingredient-category>summary{display:grid;grid-template-columns:minmax(0,1fr) auto 48px;gap:.65rem;min-height:68px;}
+#salad-ingredient-roles .ingredient-category>summary>span{min-width:0;overflow-wrap:anywhere;}
+#salad-ingredient-roles .ingredient-category>summary b{width:auto;height:auto;min-width:1.5rem;padding:.2rem .4rem;border-radius:5px;background:var(--surface-2);border-color:var(--hud-line);font-size:.8rem;opacity:1;}
+#salad-ingredient-roles .ingredient-category>summary b::after{display:none;}
+#salad-ingredient-roles .ingredient-category>summary::after{content:"⌄";display:grid;place-items:center;width:48px;height:48px;box-sizing:border-box;border:1px solid var(--category-accent);border-radius:10px;background:var(--surface-2);color:var(--text-2);font-size:2.2rem;font-weight:700;line-height:1;padding-bottom:.5rem;box-shadow:0 3px 0 color-mix(in srgb,var(--category-accent) 35%,var(--hud-bg));}
+#salad-ingredient-roles .ingredient-category[open]>summary::after{content:"⌃";padding-bottom:0;padding-top:.4rem;box-shadow:inset 0 2px 5px #00000018;}
+#salad-ingredient-roles .ingredient-category[open]{border-color:var(--category-accent);}
+#salad-ingredient-roles .ingredient-category>summary:hover::after{background:var(--surface-2);}
+#salad-ingredient-roles .ingredient-category>summary:focus-visible{outline:3px solid var(--category-accent);outline-offset:5px;border-radius:6px;}
+@media(max-width:599px){#salad-ingredient-roles .ingredient-category>summary{grid-template-columns:minmax(0,1fr) auto 44px;gap:.45rem;}#salad-ingredient-roles .ingredient-category>summary::after{width:44px;height:48px;}}
 
 
 /* Full-width dressing and arrows at the information panel's upper corners. */
-.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{box-sizing:border-box;width:calc(100% - 1.7rem);max-width:calc(100% - 1.7rem);justify-self:center;align-self:stretch;text-align:center;min-width:0}
-.nutrition-salads .salad-gallery .salad-card>.salad-card-choice select{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;text-align:center;text-align-last:center}
-.nutrition-salads .salad-card__body>.salad-dressing-navigation{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;align-self:start;gap:.4rem;border-top:2px solid var(--item-accent);padding-top:.65rem;margin-top:0;margin-bottom:.25rem}
-.nutrition-salads .salad-card__body>.salad-dressing-navigation time{text-align:center;padding-top:0;font-size:.75rem}
-.nutrition-salads .salad-card__body>.salad-dressing-navigation .salad-card-arrow{min-height:44px}
-@media(max-width:599px){.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{flex:none;margin:.7rem .85rem;align-self:center}.nutrition-salads .salad-card__body{border-top:0}}
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{box-sizing:border-box;width:calc(100% - 1.7rem);max-width:calc(100% - 1.7rem);justify-self:center;align-self:stretch;text-align:center;min-width:0;}
+.nutrition-salads .salad-gallery .salad-card>.salad-card-choice select{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;text-align:center;text-align-last:center;}
+.nutrition-salads .salad-card__body>.salad-dressing-navigation{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;align-self:start;gap:.4rem;border-top:2px solid var(--item-accent);padding-top:.65rem;margin-top:0;margin-bottom:.25rem;}
+.nutrition-salads .salad-card__body>.salad-dressing-navigation time{text-align:center;padding-top:0;font-size:.75rem;}
+.nutrition-salads .salad-card__body>.salad-dressing-navigation .salad-card-arrow{min-height:44px;}
+@media(max-width:599px){.nutrition-salads .salad-gallery .salad-card>.salad-card-choice{flex:none;margin:.7rem .85rem;align-self:center;}.nutrition-salads .salad-card__body{border-top:0;}}
 
 /* All salads are available immediately; prominent scrollbar below both rows. */
-.nutrition-salads .salad-gallery{scrollbar-width:auto;scrollbar-color:#ed8b48 #182321;padding-bottom:1.1rem}
-.nutrition-salads .salad-gallery::-webkit-scrollbar{height:22px}
-.nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:#182321;border:1px solid #ed8b4855;border-radius:10px}
-.nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:#ed8b48;border:4px solid #182321;border-radius:10px;min-width:48px}
+.nutrition-salads .salad-gallery{scrollbar-width:auto;scrollbar-color:var(--accent-strong) var(--surface);padding-bottom:1.1rem;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar{height:22px;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-track{background:var(--surface-2);border:1px solid var(--line-strong);border-radius:10px;}
+.nutrition-salads .salad-gallery::-webkit-scrollbar-thumb{background:var(--surface-2);border:4px solid var(--line-strong);border-radius:10px;min-width:48px;}

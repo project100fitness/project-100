@@ -25,7 +25,7 @@ for filename in ('kinetics.html','exercises.html'):
 
 s=Source();t=(root/'downloads/kinetics/weekly-overview.html').read_text(encoding='utf8');s.feed(t)
 assert s.body['data-document']=='weekly-overview' and 'data-guide' not in s.body
-assert '<h1>Weekly training log</h1>' in t
+assert re.search(r'<h1\b[^>]*>Weekly training log</h1>',t)
 assert set(s.notes)=={f'weekly-day-{i}-notes' for i in range(1,8)}
 t=(root/'exercises.html').read_text(encoding='utf8')
 assert t.count('id="session-exercise-choices"')==1

@@ -1,5 +1,7 @@
 # PROJECT 100 signal-frame profile
 
+Historical profile: the 20 October [clear-contrast profile](clear-contrast.md) supersedes the tinted surfaces, supporting palette and page profile name below. The authored component structure remains in use.
+
 The profile extends the shaded folder interface through authored HTML on all 117 shared-site pages. Each page declares `data-design-profile="signal-frame"`; sections declare their purpose with `section-tone--training`, `--reference`, `--data` or `--content`. Folder, table, callout and accordion variants are written directly into the HTML. Their rules live beside the original component definitions in site.css, hud.css, p100-band-training.css and session-folders.css. There is no extra override stylesheet or runtime styling injection. Print documents and source illustrations retain their established formatting and colours.
 
 ## Visual roles
