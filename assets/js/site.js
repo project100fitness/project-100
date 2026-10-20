@@ -662,7 +662,7 @@
     document.documentElement.style.setProperty('--dl-p', p.toFixed(3));
     if (bar) bar.classList.toggle('is-in', p > 0);
     document.body.toggleAttribute('data-bottom-visible', p > 0);
-    P.$$('.fab-dock,.fab-switch').forEach(function (el) { el.inert = p === 0; });
+    P.$$('.page-dock').forEach(function (el) { el.inert = p === 0; });
     if (!p) { var panel = P.$('#fabPanel'), at = P.$('#fabAt'); if (panel) panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }

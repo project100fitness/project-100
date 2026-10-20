@@ -26,10 +26,10 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=3f8119675bc4">
+<link rel="stylesheet" href="assets/css/site.css?v=fa9663d25f53">
 <link rel="stylesheet" href="assets/css/hud.css?v=44ae6b698ba7">
 <link rel="stylesheet" href="assets/css/mobile-rail.css?v=20261015-folder-system">
-<link rel="stylesheet" href="assets/css/mobile-site.css?v=0c484eed1d62">
+<link rel="stylesheet" href="assets/css/mobile-site.css?v=b115a0b50947">
 </head>
 <body data-bottom-controls data-navigation-pattern="original" data-site="main" data-page="gear-gym" data-group="gear" data-folder="gear" data-design-profile="clear-contrast">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -136,8 +136,9 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
   </div>
 </footer>
 
+<div class="page-dock" data-dock-layout="aligned">
 <div class="fab-dock" id="fabDock">
-  <button class="fab fab--at" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span aria-hidden="true">@</span></button>
+  <button class="fab fab--at page-dock__action" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span class="page-dock__glyph" aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
   <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
     <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <ul class="fab-panel__list">
@@ -153,7 +154,9 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
     </ul>
   </div>
 </div>
-<a class="fab-switch" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
+<a class="fab-switch page-dock__action" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
+</div>
+
 
 <dialog class="menu" id="menu" aria-labelledby="menuTitle">
   <div class="menu__head">
@@ -219,7 +222,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </dialog>
 
 
-<script src="assets/js/site.js?v=25b8da45da91" defer></script>
+<script src="assets/js/site.js?v=979b9ffa72f7" defer></script>
 <script src="assets/js/item-purpose.js?v=17ace754c9eb" defer></script>
 <script src="assets/js/hud.js?v=20261013-motion-on" defer></script>
 <script src="assets/js/mobile-flow.js?v=447e368c0d2a" defer></script>

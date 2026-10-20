@@ -27,10 +27,10 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-<link href="assets/css/site.css?v=3f8119675bc4" rel="stylesheet"/>
+<link href="assets/css/site.css?v=fa9663d25f53" rel="stylesheet"/>
 <link href="assets/css/hud.css?v=44ae6b698ba7" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/mobile-rail.css?v=20261015-folder-system">
-<link rel="stylesheet" href="assets/css/mobile-site.css?v=0c484eed1d62">
+<link rel="stylesheet" href="assets/css/mobile-site.css?v=b115a0b50947">
 </head>
 <body data-bottom-controls data-navigation-pattern="mirrored" data-group="supplements" data-page="fit-protocol-supplements" data-site="protocol" data-folder="supplements" data-design-profile="clear-contrast">
 <a class="skip-link" href="#content">Skip to content</a>
@@ -203,8 +203,9 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="site-foot__legal reading-copy">Personal record · not medical advice. Consult your clinician before changing medication, supplements or training.</p>
 </div>
 </footer>
+<div class="page-dock" data-dock-layout="aligned">
 <div class="fab-dock" id="fabDock">
-<button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at" id="fabAt" type="button"><span aria-hidden="true">@</span></button>
+<button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at page-dock__action" id="fabAt" type="button"><span class="page-dock__glyph" aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
 <div aria-label="Links and contact" class="fab-panel" hidden="" id="fabPanel" role="group">
 <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button aria-label="Close links" class="pop-close" data-pop-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
 <ul class="fab-panel__list">
@@ -220,7 +221,9 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </ul>
 </div>
 </div>
-<a aria-label="Switch to PROJECT 100" class="fab-switch" href="index.html"><span aria-hidden="true" class="fab-switch__glyph">↔</span><span>PROJECT 100</span></a>
+<a aria-label="Switch to PROJECT 100" class="fab-switch page-dock__action" href="index.html"><span aria-hidden="true" class="fab-switch__glyph">↔</span><span>PROJECT 100</span></a>
+</div>
+
 <dialog aria-labelledby="menuTitle" class="menu" id="menu">
 <div class="menu__head">
 <h2 class="menu__title reading-heading" id="menuTitle">Menu</h2>
@@ -304,7 +307,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </div>
 </dialog>
 
-<script defer="" src="assets/js/site.js?v=25b8da45da91"></script>
+<script defer="" src="assets/js/site.js?v=979b9ffa72f7"></script>
 <script src="assets/js/item-purpose.js?v=17ace754c9eb" defer></script>
 <script defer="" src="assets/js/hud.js?v=20261013-motion-on"></script>
 <script src="assets/js/mobile-rail.js?v=persistent-mobile-menu-20261010" defer></script>
