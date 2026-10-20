@@ -1,0 +1,7 @@
+# Food journal loading correction · 20 October 2026
+
+The reported screenshot shows failed image loads and visible alt text. All 26 original JPEGs decode locally and all 26 loaded in a fresh live Chrome check. The historical cause of the failed requests could not be established from the screenshot.
+
+The owner implementation previously moved every ribbon continuously, including offscreen ribbons, while its original and cloned images were lazy loaded. It provided no recovery after a failed image request. This is now corrected: a near-viewport ribbon explicitly requests its images, movement waits for successful loads, hidden pages and offscreen ribbons stop advancing, and a visible Pause/Resume control complements reduced-motion support. Original HTML photo dimensions are explicit on both Nutrition and Meals. Two bounded retries recover transient errors, and reconnecting retries failed photographs. A persistent failure displays a readable original-file link instead of broken-image alt text. Original JPEG files, all 26 links, orientations, swipe navigation and the full-size viewer are retained.
+
+Verification covers both pages, mobile and desktop, light and dark, all original and cloned images, deliberate transient/persistent failures, pause/resume, viewer navigation and reduced motion. Results are saved separately alongside the release evidence. No missing photo has been replaced with unrelated content.
