@@ -5,6 +5,7 @@ The owner requested a complete backup after the new books and before further des
 ## Corrected experience
 
 - The Protocol hub's Monitoring and Fixes numbered placeholders are replaced by self-contained SVG navigation illustrations. The scale/comparison graphic and checklist/review graphic are conceptual; neither contains fictional results or anatomy claims.
+- The final tablet review found that the old multi-row carousel could partially clip cards. The hub now uses the existing responsive grid in authored HTML, keeping all nine destinations in source/reading order without changing CSS.
 - Gear uses a wider photograph of the actual equipment area. Every one of the nine Protocol cards has a short destination description.
 - Twelve primary reading destinations now have authored context explaining what the page is for, a visible onward link and a consistent reading-path footer. Existing detailed chapter pagers and navigation remain available for reference browsing.
 - The introduction runs: personal story → goals/baseline → daily routine → drink recipes → food → workout journal → planned training week → exercise sessions/library/guides → equipment → measurements → troubleshooting → books/evidence.
