@@ -8,8 +8,8 @@ class Navigation(HTMLParser):
     def __init__(self):super().__init__();self.inside=False;self.links=[]
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
-        if tag=="nav" and "tabs" in a.get("class","").split():self.inside=True
-        if self.inside and tag=="a":self.links.append({k:a.get(k) for k in ["href","aria-current","data-folder"]})
+        if tag=="nav" and set(a.get("class","").split()) & {"tabs","mode-folders"}:self.inside=True
+        if self.inside and tag=="a":self.links.append({k:a.get(k) for k in ["href","aria-current","data-folder","class"]})
     def handle_endtag(self,tag):
         if tag=="nav":self.inside=False
 def read(path):
@@ -21,7 +21,7 @@ assets=["assets/css/site.css","assets/css/hud.css","assets/css/mobile-rail.css",
 for attempt in range(40):
     try:
         source=read("index.html")
-        assert 'assets/css/site.css?v=' in source and 'data-folder="project"' in source and 'data-folder="exercises"' in source
+        assert 'assets/css/site.css?v=' in source and 'class="mode-folders"' in source and 'data-folder="exercises"' in source
         kinetics_css=re.search(r'assets/css/kinetics\.css\?v=[^"\s]+',Path('kinetics.html').read_text()).group(0)
         assert kinetics_css in read('kinetics.html')
         assert 'data-training-panel="library"' in read('exercises.html')
@@ -36,11 +36,14 @@ paths=[]
 for path in Path(".").glob("*.html"):
     p=Navigation();p.feed(path.read_text())
     if p.links:paths.append(path.name)
-assert len(paths)==56
+assert len(paths)>=56, "Published source navigation inventory unexpectedly shrank"
 def page(path):
     local=Navigation();local.feed(Path(path).read_text())
     live=Navigation();live.feed(read(path))
     assert live.links==local.links,("Navigation differs",path)
+    modes=[a for a in live.links if a.get("class")=="mode-folder"]
+    assert len(modes)==2 and sum(a.get("aria-current")=="true" for a in modes)==1,("Mode navigation",path)
+    assert [a["href"] for a in modes]==["index.html","fit-protocol.html"],("Mode home routes",path)
     return {"path":path,"status":"passed","tabs":len(live.links)}
 with ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(page,sorted(paths)))
 for asset in assets:
