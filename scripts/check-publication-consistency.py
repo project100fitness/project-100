@@ -39,14 +39,17 @@ for name,source in pages.items():
             digest=hashlib.sha256(target.read_text(encoding='utf8').encode('utf8')).hexdigest()[:12]
             assert url.query=='v='+digest,(name,ref,digest)
 
-books={
- 'project-100-guidebook-v3-4-2026-10-18.pdf':'8d819f4cf9bb4fdd1aca033ffcbe735cc835f0c04765782789cf8ba06a8966a8',
- 'project-100-encyclopedia-v3-3-2026-10-18.pdf':'8dd95ea3bdae172f94b8482feb9743ad22b23e6b8a861ac1051cbcacc505f4e7',
-}
-for file,expected in books.items():
-    assert hashlib.sha256((ROOT/'assets/downloads'/file).read_bytes()).hexdigest()==expected,file
+manifest=json.loads((ROOT/'assets/downloads/current-publications.json').read_text(encoding='utf8'))
+assert {b['kind']:b['version'] for b in manifest['publications']}=={'guidebook':'3.5','encyclopedia':'3.4'}
+for book in manifest['publications']:
+    target=ROOT/book['path'];data=target.read_bytes();file=target.name
+    assert len(data)==book['bytes'] and hashlib.sha256(data).hexdigest()==book['sha256'],file
+    assert len(PdfReader(target,strict=True).pages)==book['pages'],file
     for name in ['index.html','fit-protocol.html','exercises.html','guidebook.html']:
         assert file in pages[name],(name,file)
+    for name,source in pages.items():
+        for number in re.findall(re.escape(file)+r'#page=(\d+)',source):
+            assert 1<=int(number)<=book['pages'],(name,file,number)
 
 metrics=json.loads((ROOT/'assets/data/current-metrics.json').read_text(encoding='utf8'))
 assert metrics['profile']['baseline_smm_scan_date_reported']=='2025-12-02'
