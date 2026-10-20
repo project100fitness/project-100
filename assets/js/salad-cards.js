@@ -81,7 +81,7 @@ chosen.forEach((p,i)=>{
  details.append(el('p','Recipe quantities are modeling assumptions, not measured photo portions. The full prepared dressing is included; leftover dressing means actual intake is lower by an unmeasured amount.'));
  body.append(details);card.append(choice,photoArea,body);gallery.append(card);
  function update(){const mode=select.value,t=totals(p,mode);results.replaceChildren();labels.forEach((label,i)=>{const cell=el('div');cell.append(el('b',range(t[0][i],t[1][i],units[i])),el('span',label));results.append(cell);});
- const b=[sum(p.ingredients,0,amounts),sum(p.ingredients,1,amounts)],d=[dressing(mode,0),dressing(mode,1)];breakdown.textContent='Base: '+range(b[0][0],b[1][0],'kcal')+' · '+range(b[0][1],b[1][1],'g protein')+'. Prepared dressing: '+range(d[0][0],d[1][0],'kcal')+'. Combined estimates shown above.';}
+ const b=[sum(p.ingredients,0,amounts),sum(p.ingredients,1,amounts)],d=[dressing(mode,0),dressing(mode,1)];const measured=mode==='heavy'?' Heavy dressing: 2–3 tbsp [30–45 mL; 28–42 g model] avocado oil + 130–200 g edible avocado.':mode==='light'?' Light dressing: 4–5 tbsp [60–75 mL] each olive oil and balsamic glaze + about 120 mL white wine vinegar.':'';breakdown.textContent='Base: '+range(b[0][0],b[1][0],'kcal')+' · '+range(b[0][1],b[1][1],'g protein')+'. Prepared dressing: '+range(d[0][0],d[1][0],'kcal')+'. Combined estimates shown above.'+measured;}
  select.addEventListener('change',update);update();
 });
 doc.getElementById('salad-count').textContent=chosen.length+' salads';layout();}

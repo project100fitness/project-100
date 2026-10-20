@@ -54,13 +54,13 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 <link rel="preload" href="/assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="/assets/css/site.css?v=d7900ea170f3">
+<link rel="stylesheet" href="/assets/css/site.css?v=78980cdf6b69">
 
 <link rel="stylesheet" href="/assets/css/hud.css?v=44ae6b698ba7">
 
 <link rel="stylesheet" href="/assets/css/mobile-rail.css?v=20261015-folder-system">
 
-<link rel="stylesheet" href="/assets/css/kinetics.css?v=7ee214952998"><style>.kin-reel-link{color:var(--kin-accent,#d34b05);font-weight:700;text-decoration:underline;text-underline-offset:3px}.kin-reel-link:hover{text-decoration-thickness:2px}.kin-reel-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}</style><link rel="stylesheet" href="/assets/css/p100-band-training.css?v=1f3895ce42c0"><link rel="stylesheet" href="/assets/css/analysis-reference.css?v=e4cc32e4b25d"><script src="/assets/js/analysis-reference.js?v=05921e6e4e14" defer></script><link rel="stylesheet" href="/assets/css/mobile-site.css?v=3316c45fa5e6">
+<link rel="stylesheet" href="/assets/css/kinetics.css?v=7ee214952998"><style>.kin-reel-link{color:var(--kin-accent,#d34b05);font-weight:700;text-decoration:underline;text-underline-offset:3px}.kin-reel-link:hover{text-decoration-thickness:2px}.kin-reel-link:focus-visible{outline:2px solid currentColor;outline-offset:4px}</style><link rel="stylesheet" href="/assets/css/p100-band-training.css?v=1f3895ce42c0"><link rel="stylesheet" href="/assets/css/analysis-reference.css?v=e4cc32e4b25d"><script src="/assets/js/analysis-reference.js?v=05921e6e4e14" defer></script><link rel="stylesheet" href="/assets/css/mobile-site.css?v=0d8455f4c0f5">
 </head>
 
 <body data-navigation-pattern="original" data-site="main" data-page="analysis-reference" data-group="workout" data-plan-source="/downloads/kinetics/training-plan-v0.3.json" data-folder="exercises" data-design-profile="clear-contrast">
@@ -71,31 +71,19 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 <header class="site-head" id="siteHead">
 
-  <div class="site-head__bar">
-
-    <nav class="mode-folders" data-navigation-tier="brand" aria-label="Website mode and home pages"><a class="mode-folder" href="../../index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><a class="mode-folder" href="../../fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav>
-
-    <div class="site-head__actions">
-
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
-
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-
-        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-      </button>
-
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="menu">
+  <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="../../index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Menu and colour theme"><button class="icon-btn menu-btn" id="menuBtn" type="button" aria-haspopup="dialog" aria-controls="menu">
 
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
 
         <span class="menu-btn__label">Menu</span>
 
-      </button>
+      </button><button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
 
-    </div>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
 
-  </div>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+      </button></div><a class="mode-folder" data-space="protocol" href="../../fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
 
   <nav class="tabs" aria-label="PROJECT 100 sections">
 
@@ -123,7 +111,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 <div class="layout">
 
-  <main class="main reference-main section-tone--reference" id="content"><nav aria-label="Breadcrumb"><a href="/fit-protocol.html">FIT PROTOCOL</a> / Analysis reference</nav><p class="eyebrow reading-copy">PROJECT 100 · COMPILED EVIDENCE · 18 OCTOBER 2026</p><h1 class="reading-heading">Nutrition and Kinetics reference.</h1><p class="reference-intro reading-copy">Supporting analysis for the current Encyclopedia and Guidebook editions. Methods, findings, sources and unresolved checks, with no illustrations or prescribed exercise sets.</p><aside class="callout callout--accent reader-context" id="reader-context" aria-label="Reading this page"><span class="callout__title">Books and supporting evidence</span><p class="reading-copy">The complete books present the routine and wider explanation. The analysis below them contains supporting methods and dated source records; older companion text is retained as historical context.</p></aside><div class="reference-downloads" aria-label="Current complete books"><article class="reference-download"><p class="eyebrow reading-copy">19 OCTOBER 2026 · 93 PAGES</p><h2 class="reading-heading">Encyclopedia V3.4</h2><p class="reading-copy">Complete reference · 32.4 MB</p><a class="button" href="/assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf">Open complete book PDF ↗</a></article><article class="reference-download"><p class="eyebrow reading-copy">19 OCTOBER 2026 · 42 PAGES</p><h2 class="reading-heading">Guidebook V3.5</h2><p class="reading-copy">Updated daily manual · 7.8 MB</p><a class="button" href="/assets/downloads/project-100-guidebook-v3-5-2026-10-19.pdf">Open complete book PDF ↗</a></article></div><h2 class="reading-heading">Supporting analysis &amp; companion text</h2><div class="reference-downloads"><article class="reference-download"><p class="eyebrow reading-copy">209 PAGES · TEXT ONLY</p><h2 class="reading-heading">Master analysis</h2><p class="reading-copy">Complete methods, findings, nutrition models and source registers.</p><div><a class="button" href="project100-master-analysis-reference.pdf">Open PDF ↗</a><a href="project100-master-analysis-reference.md" download>Editable text ↓</a></div></article><article class="reference-download"><p class="eyebrow reading-copy">10 PAGES · TEXT ONLY</p><h2 class="reading-heading">Encyclopedia update</h2><p class="reading-copy">Detailed replacement material and a chapter integration map.</p><div><a class="button" href="project100-encyclopedia-update.pdf">Open PDF ↗</a><a href="project100-encyclopedia-update.md" download>Editable text ↓</a></div></article><article class="reference-download"><p class="eyebrow reading-copy">3 PAGES · TEXT ONLY</p><h2 class="reading-heading">Guidebook update</h2><p class="reading-copy">A short practical companion to the daily book.</p><div><a class="button" href="project100-guidebook-update.pdf">Open PDF ↗</a><a href="project100-guidebook-update.md" download>Editable text ↓</a></div></article></div><p class="reference-package reading-copy"><a class="button" href="project100-reference-source-package.zip" download>Download the complete source package ↓</a> <a href="project100-analysis-data.json" download>Reusable analysis data ↓</a> <a href="source-manifest.json">Source register ↗</a></p><p class="reference-status reading-copy">The complete books above are the current editions. The text-only companions below preserve the detailed supporting analysis; older full editions remain dated archives. Video findings cover the existing reviewed-recording edition; nutrition ranges retain their stated assumptions.</p><section aria-labelledby="reference-reader-title" class="section-tone--reference"><h2 id="reference-reader-title" class="reading-heading">Read the analysis by chapter.</h2><form class="reference-controls" onsubmit="return false"><label>Document<select id="reference-document"><option value="0">Master analysis</option><option value="1">Encyclopedia update</option><option value="2">Guidebook update</option></select></label><label>Chapter<select id="reference-chapter"></select></label></form><p role="status" id="reference-status" class="reading-copy"></p><article class="reference-chapter" data-reference-doc="0" data-reference-key="0-0" data-reference-title="Introduction" hidden><h2 class="reading-heading">PROJECT 100 Master Analysis Reference</h2>
+  <main class="main reference-main section-tone--reference" id="content"><nav aria-label="Breadcrumb"><a href="/fit-protocol.html">FIT PROTOCOL</a> / Analysis reference</nav><p class="eyebrow reading-copy">PROJECT 100 · COMPILED EVIDENCE · 18 OCTOBER 2026</p><h1 class="reading-heading">Nutrition and Kinetics reference.</h1><p class="reading-copy"><a href="../../fit-nutrition.html#measurement-key">Measurement key · cups, spoons &amp; metric brackets →</a></p><p class="reference-intro reading-copy">Supporting analysis for the current Encyclopedia and Guidebook editions. Methods, findings, sources and unresolved checks, with no illustrations or prescribed exercise sets.</p><aside class="callout callout--accent reader-context" id="reader-context" aria-label="Reading this page"><span class="callout__title">Books and supporting evidence</span><p class="reading-copy">The complete books present the routine and wider explanation. The analysis below them contains supporting methods and dated source records; older companion text is retained as historical context.</p></aside><div class="reference-downloads" aria-label="Current complete books"><article class="reference-download"><p class="eyebrow reading-copy">19 OCTOBER 2026 · 93 PAGES</p><h2 class="reading-heading">Encyclopedia V3.4</h2><p class="reading-copy">Complete reference · 32.4 MB</p><a class="button" href="/assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf">Open complete book PDF ↗</a></article><article class="reference-download"><p class="eyebrow reading-copy">19 OCTOBER 2026 · 42 PAGES</p><h2 class="reading-heading">Guidebook V3.5</h2><p class="reading-copy">Updated daily manual · 7.8 MB</p><a class="button" href="/assets/downloads/project-100-guidebook-v3-5-2026-10-19.pdf">Open complete book PDF ↗</a></article></div><h2 class="reading-heading">Supporting analysis &amp; companion text</h2><div class="reference-downloads"><article class="reference-download"><p class="eyebrow reading-copy">209 PAGES · TEXT ONLY</p><h2 class="reading-heading">Master analysis</h2><p class="reading-copy">Complete methods, findings, nutrition models and source registers.</p><div><a class="button" href="project100-master-analysis-reference.pdf">Open PDF ↗</a><a href="project100-master-analysis-reference.md" download>Editable text ↓</a></div></article><article class="reference-download"><p class="eyebrow reading-copy">10 PAGES · TEXT ONLY</p><h2 class="reading-heading">Encyclopedia update</h2><p class="reading-copy">Detailed replacement material and a chapter integration map.</p><div><a class="button" href="project100-encyclopedia-update.pdf">Open PDF ↗</a><a href="project100-encyclopedia-update.md" download>Editable text ↓</a></div></article><article class="reference-download"><p class="eyebrow reading-copy">3 PAGES · TEXT ONLY</p><h2 class="reading-heading">Guidebook update</h2><p class="reading-copy">A short practical companion to the daily book.</p><div><a class="button" href="project100-guidebook-update.pdf">Open PDF ↗</a><a href="project100-guidebook-update.md" download>Editable text ↓</a></div></article></div><p class="reference-package reading-copy"><a class="button" href="project100-reference-source-package.zip" download>Download the complete source package ↓</a> <a href="project100-analysis-data.json" download>Reusable analysis data ↓</a> <a href="source-manifest.json">Source register ↗</a></p><p class="reference-status reading-copy">The complete books above are the current editions. The text-only companions below preserve the detailed supporting analysis; older full editions remain dated archives. Video findings cover the existing reviewed-recording edition; nutrition ranges retain their stated assumptions.</p><section aria-labelledby="reference-reader-title" class="section-tone--reference"><h2 id="reference-reader-title" class="reading-heading">Read the analysis by chapter.</h2><form class="reference-controls" onsubmit="return false"><label>Document<select id="reference-document"><option value="0">Master analysis</option><option value="1">Encyclopedia update</option><option value="2">Guidebook update</option></select></label><label>Chapter<select id="reference-chapter"></select></label></form><p role="status" id="reference-status" class="reading-copy"></p><article class="reference-chapter" data-reference-doc="0" data-reference-key="0-0" data-reference-title="Introduction" hidden><h2 class="reading-heading">PROJECT 100 Master Analysis Reference</h2>
 <p class="reading-copy">Nutrition Kinetics and Media Findings</p>
 <p class="reading-copy">18 October 2026</p>
 <p class="reading-copy">A reusable evidence reference for the next Encyclopedia and Guidebook editions. The main analysis explains nutrition assumptions, resistance systems, movement interpretation and publication corrections. Detailed registers retain the observations and their uncertainty.</p>
@@ -730,11 +718,11 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="reading-copy">Sodium, sugars, saturated fat and numeric micronutrient totals are not established for these bowls without labels and verified portions. Missing values are not zeros. Product variation matters particularly for feta, olives, pickled ingredients, canned foods, protein powders, milk and glaze. The historical plan of 2780 kcal, 252 g protein and 69 g fat remains a planning reference rather than verified daily consumption. [S03 S04 S06 S07 S10]</p>
 <h3 class="reading-heading">Dressing assumptions and calculated ranges</h3>
 <h3 class="reading-heading">Heavy avocado dressing</h3>
-<p class="reading-copy">130 to 200 g edible avocado plus two to three tablespoons avocado oil, modeled at 14 g oil per tablespoon. White vinegar to taste is excluded from this range.</p>
+<p class="reading-copy">130 to 200 g edible avocado plus two to three tablespoons [30–45 mL] avocado oil, modeled at 14 g oil per tablespoon. White vinegar to taste is excluded from this range.</p>
 <p class="reading-copy"><strong>Prepared batch model</strong> 456 to 691 kcal; 47.1 to 71.4 g fat; 11.1 to 17.0 g carbohydrate.</p>
 <p class="reading-copy">The model includes the full prepared batch. Actual dressing consumed is not measured. [S03 S06]</p>
 <h3 class="reading-heading">Light olive oil and glaze dressing</h3>
-<p class="reading-copy">Four to five tablespoons each olive oil and glaze, with oil modeled at 15 mL per tablespoon and 0.91 g per mL. Glaze uses seven to twelve grams carbohydrate per tablespoon. Approximately 120 mL white wine vinegar is included as 22 kcal in the saved model.</p>
+<p class="reading-copy">Four to five tablespoons [60–75 mL] each olive oil and glaze, with oil modeled at 15 mL per tablespoon and 0.91 g per mL. Glaze uses seven to twelve grams carbohydrate per tablespoon. Approximately 120 mL white wine vinegar is included as 22 kcal in the saved model.</p>
 <p class="reading-copy"><strong>Prepared batch model</strong> 617 to 865 kcal; 54.6 to 68.2 g fat; 28.0 to 60.0 g carbohydrate.</p>
 <p class="reading-copy">The model includes the full prepared batch. Actual dressing consumed is not measured. [S03 S06]</p></article><article class="reference-chapter" data-reference-doc="0" data-reference-key="0-14" data-reference-title="Consolidated findings and unresolved questions" hidden><h2 class="reading-heading">Consolidated findings and unresolved questions</h2>
 <h3 class="reading-heading">Coverage is broad but not exhaustive</h3>
@@ -2934,7 +2922,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F02 Post-Workout Protein Wraps</h3>
 <p class="reading-copy"><strong>Category</strong> Wraps &amp; Handhelds</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> 3 wraps Â· caption stated</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> 3 POM Protein Tortillas; 3 hard-boiled eggs; 3 thick-cut turkey bacon slices; 3 tbsp Fontaine SantÃ© tofu spread; 6 old cheddar strips; Cedar pickled turnips, romaine and Huy Fong sriracha</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> 3 POM Protein Tortillas; 3 hard-boiled eggs; 3 thick-cut turkey bacon slices; 3 tbsp [45 mL] Fontaine SantÃ© tofu spread; 6 old cheddar strips; Cedar pickled turnips, romaine and Huy Fong sriracha</p>
 <div class="reference-table"><table><thead><tr><th scope="col">Caption field</th><th scope="col">Reported value</th></tr></thead><tbody><tr><td>Energy kcal</td><td>1195</td></tr><tr><td>Protein g</td><td>94</td></tr><tr><td>Total carbohydrate g</td><td>64</td></tr><tr><td>Fat g</td><td>62</td></tr><tr><td>Fibre g</td><td>34</td></tr></tbody></table></div>
 <p class="reading-copy"><strong>Macro energy cross check</strong> 1190.0 kcal from caption macro grams; reported energy remains 1195 kcal. This is an arithmetic comparison, not verification.</p>
 <p class="reading-copy">Caption gives approximately 398 kcal, 31 g protein, 20.5 g fat and 10 g net carbs per wrap.</p>
@@ -2945,7 +2933,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F03 Carnivore Omelette</h3>
 <p class="reading-copy"><strong>Category</strong> Meat &amp; Carnivore</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> Whole plate Â· caption stated</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> 12 crispy pork belly strips; rendered lard drained; 3 whole eggs + 1 cup liquid egg whites; 1 sautÃ©ed yellow onion; 2 Bon Matin keto high-fiber tortillas, quartered; Zero-sugar savory drizzle</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> 12 crispy pork belly strips; rendered lard drained; 3 whole eggs + 1 cup [250 mL] liquid egg whites; 1 sautÃ©ed yellow onion; 2 Bon Matin keto high-fiber tortillas, quartered; Zero-sugar savory drizzle</p>
 <div class="reference-table"><table><thead><tr><th scope="col">Caption field</th><th scope="col">Reported value</th></tr></thead><tbody><tr><td>Energy kcal</td><td>1240</td></tr><tr><td>Protein g</td><td>106</td></tr><tr><td>Total carbohydrate g</td><td>Not stated</td></tr><tr><td>Fat g</td><td>68</td></tr><tr><td>Fibre g</td><td>34</td></tr></tbody></table></div>
 <p class="reading-copy">Caption reports 24 g net carbs; total carbs are not explicitly stated.</p>
 <p class="reading-copy">Pork belly cooked weight, rendered fat and sauce label are needed for verification.</p>
@@ -2956,11 +2944,11 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F04 Chocolate PB Fudge Jars</h3>
 <p class="reading-copy"><strong>Category</strong> Protein Fudge &amp; Treats</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> Per jar Â· 2 jars Â· caption stated</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> 2 scoops ALLMAX Hexapro Chocolate; 1 scoop hydrolyzed marine collagen; Â½ cup PB&amp;Me Chocolate powdered peanut butter; 1 cup Neilson 3.25% ultrafiltered protein milk; Pinch xanthan gum and pink salt; Toppings: Â½ cup frozen berries + â…“ cup All-Bran Buds</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> 2 scoops [≈88 g label equivalent] ALLMAX Hexapro Chocolate; 1 scoop hydrolyzed marine collagen; ½ cup [125 mL] PB&amp;Me Chocolate powdered peanut butter; 1 cup [250 mL] Neilson 3.25% ultrafiltered protein milk; Pinch xanthan gum and pink salt; Toppings: ½ cup [125 mL] frozen berries + ⅓ cup [≈83.3 mL] All-Bran Buds</p>
 <div class="reference-table"><table><thead><tr><th scope="col">Caption field</th><th scope="col">Reported value</th></tr></thead><tbody><tr><td>Energy kcal</td><td>441</td></tr><tr><td>Protein g</td><td>50.4</td></tr><tr><td>Total carbohydrate g</td><td>Not stated</td></tr><tr><td>Fat g</td><td>10</td></tr><tr><td>Fibre g</td><td>10.7</td></tr></tbody></table></div>
 <p class="reading-copy">Caption reports 31.4 g net carbs per jar.</p>
 <p class="reading-copy">Scoops vary by product; weigh powders and toppings to confirm nutrition.</p>
-<p class="reading-copy"><strong>Preparation evidence</strong> Divide between two 16 oz jars and add toppings. Method inferred from reel.</p>
+<p class="reading-copy"><strong>Preparation evidence</strong> Divide between two 16 oz jars [≈473 mL US capacity each] and add toppings. Method inferred from reel.</p>
 <p class="reading-copy"><strong>Related source post</strong> https://www.instagram.com/p/Db13qBAAji5/</p>
 <p class="reading-copy"><strong>Related video</strong> https://www.youtube.com/shorts/rVAwsBvIniY</p>
 <p class="reading-copy">This register documents the saved meal story, not a new independent verification of the linked caption. Reconstructed preparation is not elevated to a measured recipe. Source [S04].</p>
@@ -2979,7 +2967,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F06 Dark Choco Blueberry Recovery</h3>
 <p class="reading-copy"><strong>Category</strong> Protein Smoothies</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> Full blend Â· reel caption stated</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> 2 cups frozen wild blueberries; 3 cups unsweetened almond milk; 1/2 cup soaked chia seeds; 1/4 cup egg white powder; 1/8 cup raw organic cacao powder; 2 scoops ISO GOLD Chocolate protein; 1 scoop bovine collagen peptides; Pinch pink Himalayan salt</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> 2 cups [500 mL] frozen wild blueberries; 3 cups [750 mL] unsweetened almond milk; 1/2 cup [125 mL] soaked chia seeds; 1/4 cup [62.5 mL] egg white powder; 1/8 cup [31.25 mL] raw organic cacao powder; 2 scoops ISO GOLD Chocolate protein; 1 scoop bovine collagen peptides; Pinch pink Himalayan salt</p>
 <div class="reference-table"><table><thead><tr><th scope="col">Caption field</th><th scope="col">Reported value</th></tr></thead><tbody><tr><td>Energy kcal</td><td>805</td></tr><tr><td>Protein g</td><td>97</td></tr><tr><td>Total carbohydrate g</td><td>65</td></tr><tr><td>Fat g</td><td>19.5</td></tr><tr><td>Fibre g</td><td>22</td></tr></tbody></table></div>
 <p class="reading-copy"><strong>Macro energy cross check</strong> 823.5 kcal from caption macro grams; reported energy remains 805 kcal. This is an arithmetic comparison, not verification.</p>
 <p class="reading-copy">Caption reports 805 kcal, 97 g protein, 65 g total carbs, 19.5 g fat and 22 g fiber (43 g net carbs).</p>
@@ -2990,7 +2978,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F07 Chocolate &amp; Cacao Fudge Bowl</h3>
 <p class="reading-copy"><strong>Category</strong> Protein Fudge &amp; Treats</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> Whole bowl usually eaten Â· owner estimates 80â€“110 g protein</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> Chocolate protein and cacao â€” flavor confirmed by the owner; cacao quantity to taste; Protein powder â€” working baseline: 2 scoops, extrapolated from the fudge-jar reel; Peanut powder â€” working baseline: 1/2 cup, extrapolated from the fudge-jar reel; Almond milk or protein milk, added gradually to reach a thick spoonable texture â€” recurring options confirmed by the owner; Marine collagen â€” optional 1 scoop from the related jar baseline; presence in each bowl is inferred; Optional small pinch of xanthan gum and pink salt from the jar baseline</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> Chocolate protein and cacao â€” flavor confirmed by the owner; cacao quantity to taste; Protein powder â€” working baseline: 2 scoops, extrapolated from the fudge-jar reel; Peanut powder â€” working baseline: 1/2 cup [125 mL], extrapolated from the fudge-jar reel; Almond milk or protein milk, added gradually to reach a thick spoonable texture â€” recurring options confirmed by the owner; Marine collagen â€” optional 1 scoop from the related jar baseline; presence in each bowl is inferred; Optional small pinch of xanthan gum and pink salt from the jar baseline</p>
 <p class="reading-copy">No independently recalculated macro panel is supplied for this story. Owner estimates and related-recipe comparisons remain qualified as recorded below.</p>
 <p class="reading-copy">Shared recipe family: Chocolate PB Fudge Jars, chocolate/cacao bowl, vanilla/peanut bowl and rice-cake sandwich spread. Baseline amounts above are a practical reconstruction, not measured quantities for this footage.</p>
 <p class="reading-copy">Large ceramic bowl, roughly twice the size of a cereal bowl. Owner usually eats the whole bowl and estimates 80â€“110 g protein; it is about 2â€“3 ordinary servings (roughly 27â€“55 g protein each).</p>
@@ -3003,7 +2991,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <h3 class="reading-heading">F08 Vanilla &amp; Peanut Powder Fudge Bowl</h3>
 <p class="reading-copy"><strong>Category</strong> Protein Fudge &amp; Treats</p>
 <p class="reading-copy"><strong>Serving and evidence basis</strong> Whole bowl usually eaten Â· owner estimates 80â€“110 g protein</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> Vanilla protein and peanut powder â€” flavor confirmed by the owner; Protein powder â€” working baseline: 2 scoops, extrapolated from the fudge-jar reel; Peanut powder â€” working baseline: 1/2 cup, extrapolated from the fudge-jar reel; Almond milk or protein milk, added gradually to reach a thick spoonable texture â€” recurring options confirmed by the owner; Marine collagen â€” optional 1 scoop from the related jar baseline; presence in each bowl is inferred; Optional small pinch of xanthan gum and pink salt from the jar baseline</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> Vanilla protein and peanut powder â€” flavor confirmed by the owner; Protein powder â€” working baseline: 2 scoops, extrapolated from the fudge-jar reel; Peanut powder â€” working baseline: 1/2 cup [125 mL], extrapolated from the fudge-jar reel; Almond milk or protein milk, added gradually to reach a thick spoonable texture â€” recurring options confirmed by the owner; Marine collagen â€” optional 1 scoop from the related jar baseline; presence in each bowl is inferred; Optional small pinch of xanthan gum and pink salt from the jar baseline</p>
 <p class="reading-copy">No independently recalculated macro panel is supplied for this story. Owner estimates and related-recipe comparisons remain qualified as recorded below.</p>
 <p class="reading-copy">Shared recipe family: Chocolate PB Fudge Jars, chocolate/cacao bowl, vanilla/peanut bowl and rice-cake sandwich spread. Baseline amounts above are a practical reconstruction, not measured quantities for this footage.</p>
 <p class="reading-copy">Large ceramic bowl, roughly twice the size of a cereal bowl. Owner usually eats the whole bowl and estimates 80â€“110 g protein; it is about 2â€“3 ordinary servings (roughly 27â€“55 g protein each).</p>
@@ -3038,7 +3026,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="reading-copy"><strong>Recipe ID</strong> v2</p>
 <p class="reading-copy"><strong>Recorded timing</strong> During the training session (09:30 morning reference); moves with the evening workout in State C.</p>
 <p class="reading-copy"><strong>Recorded base</strong> 600-750 mL cold filtered water</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1); RapiDrem Electrolyte Powder (1 scoop, about 6.5 g); Kirkland Himalayan Pink Salt 1/16 tsp; 2-3 Medjool dates chewed solid, separately</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> Perfect Sports BCAA HyperClear (1 scoop / 7.5 g BCAAs 2:1:1); RapiDrem Electrolyte Powder (1 scoop, about 6.5 g); Kirkland Himalayan Pink Salt 1/16 tsp [0.3125 mL]; 2-3 Medjool dates chewed solid, separately</p>
 <p class="reading-copy"><strong>Recorded branch</strong> During the training session (States A and C)</p>
 <p class="reading-copy">Keep product serving and formulation identity attached to any future nutrition calculation. The registry list is not proof that the mixture was consumed on a particular day. [S11]</p>
 <h3 class="reading-heading">V3 RECOVERY</h3>
@@ -3052,14 +3040,14 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="reading-copy"><strong>Recipe ID</strong> v4</p>
 <p class="reading-copy"><strong>Recorded timing</strong> After the workout (11:00 morning reference); moves after the evening session in State C. Preceded by whole R-ALA 300 mg with water, separate from the shaker.</p>
 <p class="reading-copy"><strong>Recorded base</strong> 350-450 mL room-temperature water</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving); Rootalive Beetroot Powder 7 g raw; Proline Pure Creatine HCl 750 mg active; Kirkland Himalayan Salt 1/16 tsp</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> BioSteel Recovery Protein Plus (1 scoop / 36 g half-serving); Rootalive Beetroot Powder 7 g raw; Proline Pure Creatine HCl 750 mg active; Kirkland Himalayan Salt 1/16 tsp [0.3125 mL]</p>
 <p class="reading-copy"><strong>Recorded branch</strong> After the workout (States A and C); R-ALA remains separate</p>
 <p class="reading-copy">Keep product serving and formulation identity attached to any future nutrition calculation. The registry list is not proof that the mixture was consumed on a particular day. [S11]</p>
 <h3 class="reading-heading">V5 TRANSPORT</h3>
 <p class="reading-copy"><strong>Recipe ID</strong> v5</p>
 <p class="reading-copy"><strong>Recorded timing</strong> 16:00-16:30; rest branch only</p>
 <p class="reading-copy"><strong>Recorded base</strong> 500 mL cold filtered water</p>
-<p class="reading-copy"><strong>Recorded ingredients</strong> Proline Pure Creatine HCl 750 mg; PROMISE Pure Marine Collagen 10 g; ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg); RapiDrem Electrolyte Powder (1 scoop); Kirkland Himalayan Salt 1/16 tsp</p>
+<p class="reading-copy"><strong>Recorded ingredients</strong> Proline Pure Creatine HCl 750 mg; PROMISE Pure Marine Collagen 10 g; ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg); RapiDrem Electrolyte Powder (1 scoop); Kirkland Himalayan Salt 1/16 tsp [0.3125 mL]</p>
 <p class="reading-copy"><strong>Recorded branch</strong> Rest days only (State B)</p>
 <p class="reading-copy">Keep product serving and formulation identity attached to any future nutrition calculation. The registry list is not proof that the mixture was consumed on a particular day. [S11]</p>
 <h3 class="reading-heading">V6 PUMP</h3>
@@ -5083,7 +5071,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="reading-copy"><strong>Snapshot SHA256 prefix</strong> f888e6cfef1d93c5; complete value in source-manifest.json</p>
 <p class="reading-copy"><strong>Source layer</strong> website snapshot</p>
 <h3 class="reading-heading">S04 Meal story records</h3>
-<p class="reading-copy"><strong>Source path</strong> assets/js/meal-stories.js?v=e7efd9f0090f>
+<p class="reading-copy"><strong>Source path</strong> assets/js/meal-stories.js?v=835d555315f0>
 <p class="reading-copy"><strong>Snapshot SHA256 prefix</strong> 3c87f79f3114cbc3; complete value in source-manifest.json</p>
 <p class="reading-copy"><strong>Source layer</strong> website snapshot</p>
 <h3 class="reading-heading">S05 Earlier salad photo estimates</h3>
@@ -5260,11 +5248,11 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <p class="reading-copy">Sodium, sugars, saturated fat and numeric micronutrient totals are not established for these bowls without labels and verified portions. Missing values are not zeros. Product variation matters particularly for feta, olives, pickled ingredients, canned foods, protein powders, milk and glaze. The historical plan of 2780 kcal, 252 g protein and 69 g fat remains a planning reference rather than verified daily consumption. [S03 S04 S06 S07 S10]</p>
 <h3 class="reading-heading">Dressing assumptions and calculated ranges</h3>
 <h3 class="reading-heading">Heavy avocado dressing</h3>
-<p class="reading-copy">130 to 200 g edible avocado plus two to three tablespoons avocado oil, modeled at 14 g oil per tablespoon. White vinegar to taste is excluded from this range.</p>
+<p class="reading-copy">130 to 200 g edible avocado plus two to three tablespoons [30–45 mL] avocado oil, modeled at 14 g oil per tablespoon. White vinegar to taste is excluded from this range.</p>
 <p class="reading-copy"><strong>Prepared batch model</strong> 456 to 691 kcal; 47.1 to 71.4 g fat; 11.1 to 17.0 g carbohydrate.</p>
 <p class="reading-copy">The model includes the full prepared batch. Actual dressing consumed is not measured. [S03 S06]</p>
 <h3 class="reading-heading">Light olive oil and glaze dressing</h3>
-<p class="reading-copy">Four to five tablespoons each olive oil and glaze, with oil modeled at 15 mL per tablespoon and 0.91 g per mL. Glaze uses seven to twelve grams carbohydrate per tablespoon. Approximately 120 mL white wine vinegar is included as 22 kcal in the saved model.</p>
+<p class="reading-copy">Four to five tablespoons [60–75 mL] each olive oil and glaze, with oil modeled at 15 mL per tablespoon and 0.91 g per mL. Glaze uses seven to twelve grams carbohydrate per tablespoon. Approximately 120 mL white wine vinegar is included as 22 kcal in the saved model.</p>
 <p class="reading-copy"><strong>Prepared batch model</strong> 617 to 865 kcal; 54.6 to 68.2 g fat; 28.0 to 60.0 g carbohydrate.</p>
 <p class="reading-copy">The model includes the full prepared batch. Actual dressing consumed is not measured. [S03 S06]</p></article><article class="reference-chapter" data-reference-doc="1" data-reference-key="1-8" data-reference-title="Consolidated findings and unresolved questions" hidden><h2 class="reading-heading">Consolidated findings and unresolved questions</h2>
 <h3 class="reading-heading">Coverage is broad but not exhaustive</h3>

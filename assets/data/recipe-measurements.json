@@ -1,0 +1,736 @@
+{
+  "edition": "2026-10-20",
+  "policy": "Editorial display equivalents; original source arrays, calorie/macronutrient models, measured quantities and published PDFs are preserved. No universal cup-to-gram or scoop conversion is inferred.",
+  "standards": {
+    "Canadian_metric_cup_mL": 250,
+    "published_Mega_Salad_model_cup_mL": 240,
+    "tablespoon_mL": 15,
+    "teaspoon_mL": 5,
+    "US_customary_cup_mL": 236.5882365
+  },
+  "sources": [
+    {
+      "title": "Health Canada: Canadian metric and US household measures",
+      "url": "https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/nutrient-data/canadian-nutrient-file-compilation-canadian-food-composition-data-users-guide.html"
+    },
+    {
+      "title": "Neilson: one cup / 250 mL",
+      "url": "https://www.neilsondairy.com/en/tips-and-articles/the-benefits-of-protein-and-ultrafiltered-milk"
+    },
+    {
+      "title": "ALLMAX Canadian Hexapro: one scoop / 44 g",
+      "url": "https://ca.allmaxnutrition.com/fr/products/hexapro"
+    }
+  ],
+  "annotations": [
+    {
+      "context": "fit-meals.html",
+      "original": "3 tbsp",
+      "display": "3 tbsp [45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1 tbsp",
+      "display": "1 tbsp [15 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "⅓ cup",
+      "display": "⅓ cup [≈83.3 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "2 cups",
+      "display": "2 cups [500 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "3 cups",
+      "display": "3 cups [750 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/4 cup",
+      "display": "1/4 cup [62.5 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/8 cup",
+      "display": "1/8 cup [31.25 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-meals.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "2–3 tbsp",
+      "display": "2–3 tbsp [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "4–5 tbsp",
+      "display": "4–5 tbsp [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "2–3 tbsp",
+      "display": "2–3 tbsp [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "4–5 tbsp",
+      "display": "4–5 tbsp [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "4–5 tbsp",
+      "display": "4–5 tbsp [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "3 tbsp",
+      "display": "3 tbsp [45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1 tbsp",
+      "display": "1 tbsp [15 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "⅓ cup",
+      "display": "⅓ cup [≈83.3 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "2 cups",
+      "display": "2 cups [500 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "3 cups",
+      "display": "3 cups [750 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/4 cup",
+      "display": "1/4 cup [62.5 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/8 cup",
+      "display": "1/8 cup [31.25 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "Half a cup",
+      "display": "Half a cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "half a cup",
+      "display": "half a cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "half-cup",
+      "display": "half-cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "half-cup",
+      "display": "half-cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-nutrition.html",
+      "original": "3 cups",
+      "display": "3 cups [750 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-protocol-dose.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-dose.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-dose.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-meals.html",
+      "original": "1 tbsp",
+      "display": "1 tbsp [15 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-meals.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "fit-protocol-nutrition.html",
+      "original": "2–3 tbsp",
+      "display": "2–3 tbsp [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-reference.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-reference.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-reference.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v2.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v2.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v4.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v4.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v5.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vector-v5.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vectors.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vectors.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "fit-protocol-vectors.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "guidebook.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "guidebook.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "guidebook.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "guidebook.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "guidebook.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "liquid-intake.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "liquid-intake.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "liquid-intake.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half-cup",
+      "display": "half-cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half-cup",
+      "display": "half-cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "2–3 tablespoons",
+      "display": "2–3 tablespoons [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "2½ tablespoons",
+      "display": "2½ tablespoons [37.5 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "2–3 tablespoon",
+      "display": "2–3 tablespoon [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "half a cup",
+      "display": "half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "four to five tablespoons",
+      "display": "four to five tablespoons [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "2–3 tablespoons",
+      "display": "2–3 tablespoons [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "one tablespoon",
+      "display": "one tablespoon [15 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "mega-salads.html",
+      "original": "Half a cup",
+      "display": "Half a cup [120 mL]",
+      "cup_mL": 240
+    },
+    {
+      "context": "mineral-chemistry.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "two to three tablespoons",
+      "display": "two to three tablespoons [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "Four to five tablespoons",
+      "display": "Four to five tablespoons [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "3 tbsp",
+      "display": "3 tbsp [45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "⅓ cup",
+      "display": "⅓ cup [≈83.3 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "2 cups",
+      "display": "2 cups [500 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "3 cups",
+      "display": "3 cups [750 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/4 cup",
+      "display": "1/4 cup [62.5 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/8 cup",
+      "display": "1/8 cup [31.25 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "1/16 tsp",
+      "display": "1/16 tsp [0.3125 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "two to three tablespoons",
+      "display": "two to three tablespoons [30–45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "downloads/reference/index.html",
+      "original": "Four to five tablespoons",
+      "display": "Four to five tablespoons [60–75 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "meal:1/ingredients",
+      "original": "3 tbsp",
+      "display": "3 tbsp [45 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "meal:1/steps",
+      "original": "1 tbsp",
+      "display": "1 tbsp [15 mL]",
+      "cup_mL": null
+    },
+    {
+      "context": "meal:2/ingredients",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:3/ingredients",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:3/ingredients",
+      "original": "1 cup",
+      "display": "1 cup [250 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:3/ingredients",
+      "original": "½ cup",
+      "display": "½ cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:3/ingredients",
+      "original": "⅓ cup",
+      "display": "⅓ cup [≈83.3 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:5/ingredients",
+      "original": "2 cups",
+      "display": "2 cups [500 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:5/ingredients",
+      "original": "3 cups",
+      "display": "3 cups [750 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:5/ingredients",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:5/ingredients",
+      "original": "1/4 cup",
+      "display": "1/4 cup [62.5 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:5/ingredients",
+      "original": "1/8 cup",
+      "display": "1/8 cup [31.25 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:6/ingredients",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:7/ingredients",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    },
+    {
+      "context": "meal:8/steps",
+      "original": "1/2 cup",
+      "display": "1/2 cup [125 mL]",
+      "cup_mL": 250
+    }
+  ],
+  "unmeasured": [
+    "Unbranded collagen scoop weights",
+    "ISO GOLD flavor/formula scoop weight in historical footage",
+    "PB&Me scoops without a supplied scoop mass",
+    "Dry seed mass represented by soaked chia volume",
+    "Unquantified pinches, drizzles and toppings"
+  ]
+}
