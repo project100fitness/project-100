@@ -6,9 +6,13 @@ from pypdf import PdfReader
 root=Path(__file__).resolve().parent.parent;folder=root/'downloads/kinetics';db=json.loads((folder/'training-plan-v0.3.json').read_text('utf-8'));report=json.loads((folder/'pdf-build-report.json').read_text('utf-8'))
 assert len(db['exercises'])==39 and len(db['recordedVariants'])==80
 assert sum(len(v['sources']) for v in db['recordedVariants'])==173
-assert all(len(d['slots'])==12 and len({slot[0] for slot in d['slots']})==12 for d in db['days'] if d['slots'])
+assert all(len(d['slots'])==(15 if d['day']<4 else 12) and len({slot[0] for slot in d['slots']})==len(d['slots']) for d in db['days'] if d['slots'])
+for d in db['days'][:3]:
+ counts={}
+ for slot in d['slots']:counts[slot[2]]=counts.get(slot[2],0)+1
+ assert list(counts.values())==[6,6,3],counts
 by={e['id']:e for e in db['exercises']};all_by={e['id']:e for e in db['recordedVariants']};all_by.update(by)
-assert all(len({all_by[slot[0]]['art'] for slot in d['slots']})==12 for d in db['days'] if d['slots'])
+assert all(len({all_by[slot[0]]['art'] for slot in d['slots']})==len(d['slots']) for d in db['days'] if d['slots'])
 assert all(by[s[0]]['resistance'].get('system')=='hpygn-pilates' for d in db['days'] if d['day'] in [5,6] for s in d['slots'])
 for e in db['exercises']+db['recordedVariants']:
  if e.get('art'):assert (root/'assets/media/workout-guides'/e['art']).is_file(),e['art']

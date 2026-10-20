@@ -9,7 +9,7 @@ folder=root/'downloads/kinetics'
 build=json.loads((folder/'pdf-build-report.json').read_text(encoding='utf8'))
 paths=[folder/'pdf'/row['filename'] for row in build]
 paths += [folder/name for name in ['training-plan-v0.3.json','edition-coverage.json','guide-page-layout.json','pdf-build-report.json','exercise-source-catalogue.csv']]
-manifest={'edition':'2026-10-18','canonicalPdfCount':len(build),'files':[{'path':p.relative_to(folder).as_posix(),'sha256':sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in paths]}
+manifest={'edition':'2026-10-20','canonicalPdfCount':len(build),'files':[{'path':p.relative_to(folder).as_posix(),'sha256':sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in paths]}
 target=folder/'PROJECT100_Workout_Guides_2026-10-18.zip'
 readme='''PROJECT 100 / WORKOUT GUIDES / 18 OCTOBER 2026
 
@@ -20,7 +20,8 @@ individual techniques and the source catalogue.
 PDFs in this ZIP are the blank published versions. To include your saved
 weekly notes, use Download PDF in the website's workout document drawer.
 
-Five training days each contain 12 distinct illustrated exercises.
+Focused days each contain 15 exercises: 6 + 6 + 3 Core.
+The two Pilates full-body days each retain 12 distinct exercises.
 Days 5 and 6 use the Pilates kit only. Your trainer manages resistance.
 Planned sets are prescriptions; recorded set totals remain unverified.
 Unreviewed videos are outside this edition. The source catalogue and
