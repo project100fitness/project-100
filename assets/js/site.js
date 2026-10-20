@@ -26,8 +26,8 @@
   function effective() { return root.dataset.theme || (mq.matches ? 'dark' : 'light'); }
   function sync() {
     var dark = effective() === 'dark';
-    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-    btn.title = btn.getAttribute('aria-label');
+    btn.setAttribute('aria-checked', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
   }
   btn.addEventListener('click', function () {
     var next = effective() === 'dark' ? 'light' : 'dark';
@@ -644,26 +644,26 @@
 })();
 
 /* ===== 36-downloads.js ===== */
-/* Book previews retain their original dialog and current PDFs. On the two home pages,
-   books and shortcuts enter together after loading. Other pages retain their existing controls. */
+/* Books, Links and space shortcuts appear together only near the end of a page. */
 (function () {
   'use strict';
   var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal'), last = null, ticking = false, last_p = -1;
-  if (!dlg) return;
-  var homeDock = document.body.hasAttribute('data-home-dock');
+  if (!dlg && !document.body.hasAttribute('data-bottom-controls')) return;
   var RANGE = 420;                                                    /* px before the very end of the page where the bar starts rising */
   function check() {
     ticking = false;
-    if (!bar) return;
-    if (homeDock) return;
+
     var left = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
     var range = Math.min(RANGE, window.innerHeight * 0.55);
     var p = left <= 2 ? 1 : Math.max(0, Math.min(1, 1 - left / range));   /* 0 = hidden below the screen, 1 = fully up at the very bottom */
     if (p === last_p) return;
     last_p = p;
-    bar.style.setProperty('--dl-p', p.toFixed(3));
+    if (bar) bar.style.setProperty('--dl-p', p.toFixed(3));
     document.documentElement.style.setProperty('--dl-p', p.toFixed(3));
-    bar.classList.toggle('is-in', p > 0);
+    if (bar) bar.classList.toggle('is-in', p > 0);
+    document.body.toggleAttribute('data-bottom-visible', p > 0);
+    P.$$('.fab-dock,.fab-switch').forEach(function (el) { el.inert = p === 0; });
+    if (!p) { var panel = P.$('#fabPanel'), at = P.$('#fabAt'); if (panel) panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }
   function open(from) {
@@ -680,29 +680,18 @@
     if (last && document.contains(last) && last.offsetParent !== null) { try { last.focus(); } catch (e) { /* ignore */ } }
   }
   document.addEventListener('click', function (e) {
+    if (!dlg) return;
     var o = e.target.closest('[data-dl-open]');
     if (o) { e.preventDefault(); open(o); return; }
     if (e.target.closest('[data-dl-close]')) { e.preventDefault(); close(); return; }
     if (e.target === dlg) close();                                   /* tap on the dimmed backdrop */
     else if (dlg.open && e.target.closest('a[download]')) setTimeout(close, 400);
   });
-  if (bar && homeDock) {
-    /* Home publications are visible after loading, independent of page length or scroll position.
-       All three dock parts receive the same progress update and CSS transition. */
-    function revealHomeDock() {
-      if (document.body.hasAttribute('data-dock-ready')) return;
-      document.body.setAttribute('data-dock-ready', '');
-      bar.classList.add('is-in');
-      bar.style.setProperty('--dl-p', '1');
-      document.documentElement.style.setProperty('--dl-p', '1');
-    }
-    window.setTimeout(revealHomeDock, P.reduceMotion.matches ? 0 : 180);
-  } else if (bar) {
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    window.addEventListener('load', queue);
-    queue();
-  }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  window.addEventListener('load', queue);
+  if ('ResizeObserver' in window) new ResizeObserver(queue).observe(document.body);
+  queue();
 })();
 
 /* Footer destinations remain stationary and wrap; no cloned links or automatic scrolling. */

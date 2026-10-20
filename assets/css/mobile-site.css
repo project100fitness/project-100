@@ -314,7 +314,7 @@ body[data-site=protocol]{--head-h:100px;--tabs-h:144px;--header-h:244px;}
 .mode-folder__state{font-size:.625rem;letter-spacing:0;line-height:1.2;gap:3px;}
 .mode-folder__state i{width:4px;height:4px;}
 .mode-folder__description{display:none;}
-.site-head__actions{flex:none;gap:4px;padding:2px;width:48px;min-height:88px;}
+.site-head__actions{flex:none;gap:0;padding:0;width:48px;min-height:82px;}
 .site-head .icon-btn{width:40px;min-height:40px;}
 .site-head .menu-btn__label{display:none;}
 .site-head .tabs__list{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));flex-wrap:wrap!important;width:calc(100% - 16px);gap:4px;padding:3px 0 6px;overflow:visible!important;scroll-snap-type:none!important;}

@@ -97,11 +97,11 @@ with sync_playwright() as p:
                         link.scroll_into_view_if_needed()
                         link.click();page.wait_for_url("**/biometrics.html")
                         assert page.locator('.tabs .tab[aria-current="page"]').get_attribute("href")=="biometrics.html"
-                        page.locator("#menuBtn").click()
-                        page.locator("#menu[open]").wait_for()
-                        assert page.locator('#menu a[href="kinetics.html"]').count()==1
-                        page.locator("#menu [data-menu-close]").click()
-                        page.locator("#menu").wait_for(state="hidden")
+                        switch=page.locator('#themeToggle[role="switch"]')
+                        before=switch.get_attribute('aria-checked')
+                        switch.click()
+                        assert switch.get_attribute('aria-checked')!=before
+                        assert page.locator('#menuBtn').count()==0
                     if path=="library.html":
                         # Native keyboard traversal remains available through every folder.
                         first=page.locator(".tabs .tab").first;first.focus()
