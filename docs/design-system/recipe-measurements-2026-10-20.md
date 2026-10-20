@@ -1,0 +1,11 @@
+# Recipe measurement display correction — 20 October 2026
+
+Scanned the 118-page viewer inventory, all JavaScript recipe owners and the active vector/source records. Added bracketed metric equivalents to convertible cup/tablespoon/teaspoon amounts in native HTML ingredient/preparation text, detailed recipe dialogs and live salad summaries. Original household quantities remain visible. Fractions, mixed fractions, decimals and ranges are supported, including 1.16 tbsp [17.4 mL], 2½ tbsp [37.5 mL] and 1/16 tsp [0.3125 mL].
+
+General recipe display adopts Canadian metric measures (250 mL cup / 15 mL tablespoon / 5 mL teaspoon), with its convention visibly stated. Neilson's protein-milk cup is confirmed as 250 mL by the manufacturer. The existing Mega Salad page's explicitly stated 240 mL cup and its original ingredient-weight model are retained; its half-cup conversions therefore use 120 mL. Existing metric pairs remain intact. Approximate/rounded values are marked. Spoon volume does not establish grams of salt, powder, oil or any other ingredient.
+
+ALLMAX Hexapro two-scoop quantities receive an approximate 88 g label equivalent from the manufacturer's Canadian 44 g scoop serving. This is not a new weighing of historical footage. Unbranded collagen, unspecified protein-product scoops, PB&Me scoops and dry seed mass of soaked chia are not assigned invented weights. Their remaining uncertainties are listed in assets/data/recipe-measurements.json. Product-specific gram pairs already in vector records remain in their existing rows.
+
+The recipe module now has authored ingredients_display, steps_display and notes_display arrays alongside unchanged original source arrays. The renderer uses those display fields. This preserves the exact caption/source data and its agreement with the current book/reference edition. The source JSON, original PDF books, source-package archives, meal macros, salad coefficients, sodium counts and workout data remain unchanged. No generic DOM rewrite or quick-fix stylesheet was added.
+
+Measurement key: fit-nutrition.html#measurement-key. All affected recipe/reference pages link to it. Full annotation register and primary-source URLs are in assets/data/recipe-measurements.json. Existing broken fractional glyphs in exported reference text were repaired only where needed to display the measured fraction correctly.
