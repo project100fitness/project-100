@@ -7,7 +7,7 @@
   var P = window.P100 = window.P100 || {};
   P.$ = function (s, r) { return (r || document).querySelector(s); };
   P.$$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  P.reduceMotion = { matches: false }; // Project owner requests motion on all devices.
+  P.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   P.store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
@@ -693,88 +693,7 @@
   }
 })();
 
-/* ===== 58-marquee.js ===== */
-/* Footer "Explore" and "Elsewhere" link rows drift sideways by themselves, forever (the row is cloned so it has no end).
-   A finger, the mouse or keyboard focus pauses it; ~2 s after you let go it carries on. */
-(function () {
-  'use strict';
-  var P = window.P100, SPEED = 30, RESUME = 2000;
-  function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
-  function init(ul) {
-    if (ul.dataset.marquee) return;
-    var items = P.$$(':scope > li', ul);
-    if (items.length < 2) return;
-    var active = false, setW = 0, base = 0, pos = null, last = 0, hold = 0, lastAuto = -1, lastW = -1;
-    var inView = true, mouseOver = false, touching = false, keyFocus = false, usingKeys = false, idle = 0;
-
-    function gapPx() { var g = getComputedStyle(ul); return parseFloat(g.columnGap) || parseFloat(g.gap) || 0; }
-    function teardown() { P.$$(':scope > [data-clone]', ul).forEach(function (n) { n.remove(); }); ul.removeAttribute('data-marquee'); active = false; pos = null; }
-    function tame(c) {
-      c.setAttribute('data-clone', ''); c.setAttribute('aria-hidden', 'true');
-      P.$$('a,button', c).forEach(function (n) { n.setAttribute('tabindex', '-1'); });
-    }
-    function build() {
-      var w = ul.clientWidth; lastW = w; teardown();
-      if (w < 40) return;                                            /* runs even with "reduce motion": it is a slow, small, pausable drift the site owner wants always on */
-      var first = items[0], lastIt = items[items.length - 1];
-      var natural = lastIt.offsetLeft + lastIt.offsetWidth - first.offsetLeft + gapPx();
-      if (natural <= w + 4) return;                                  /* everything fits: nothing to scroll */
-      var n = Math.min(4, Math.max(1, Math.ceil(w * 1.5 / natural)));
-      var before = document.createDocumentFragment(), after = document.createDocumentFragment(), i, k, c;
-      for (k = 0; k < n; k++) {
-        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); after.appendChild(c); }
-        for (i = 0; i < items.length; i++) { c = items[i].cloneNode(true); tame(c); before.appendChild(c); }
-      }
-      ul.insertBefore(before, items[0]); ul.appendChild(after);
-      ul.setAttribute('data-marquee', '1'); active = true;
-      var firstClone = lastIt.nextElementSibling;
-      setW = firstClone ? firstClone.offsetLeft - items[0].offsetLeft : natural;
-      base = items[0].offsetLeft; ul.scrollLeft = base; lastAuto = base; pos = null;
-    }
-    function wrap() {
-      if (!active || !setW) return;
-      var x = ul.scrollLeft;
-      if (x < base - setW * 0.5 || x >= base + setW * 1.5) ul.scrollLeft = base + (((x - base) % setW) + setW) % setW;
-      else if (x < base) ul.scrollLeft = x + setW;
-      else if (x >= base + setW) ul.scrollLeft = x - setW;
-      lastAuto = ul.scrollLeft; pos = null;
-    }
-    function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
-    function playing() { return active && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
-    function tick(ts) {
-      requestAnimationFrame(tick);
-      var dt = Math.min(64, ts - last); last = ts;
-      if (!playing()) { pos = null; return; }
-      if (pos === null) pos = ul.scrollLeft;
-      pos += SPEED * dt / 1000;
-      if (pos >= base + setW) pos -= setW;
-      ul.scrollLeft = pos; lastAuto = ul.scrollLeft;
-    }
-    ul.addEventListener('scroll', function () {
-      if (Math.abs(ul.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = ul.scrollLeft; }
-      clearTimeout(idle); idle = setTimeout(wrap, 140);
-    }, { passive: true });
-    ul.addEventListener('wheel', function () { holdFor(RESUME + 800); }, { passive: true });
-    ul.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouseOver = true; });
-    ul.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouseOver = false; holdFor(500); } });
-    ul.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
-    function endTouch() { touching = false; holdFor(RESUME + 600); }
-    ul.addEventListener('touchend', endTouch, { passive: true });
-    ul.addEventListener('touchcancel', endTouch, { passive: true });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || /^Arrow/.test(e.key)) usingKeys = true; }, true);
-    ['pointerdown', 'touchstart', 'mousedown'].forEach(function (t) { document.addEventListener(t, function () { usingKeys = false; }, true); });
-    ul.addEventListener('focusin', function () { keyFocus = usingKeys; });
-    ul.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
-    document.addEventListener('visibilitychange', function () { pos = null; holdFor(400); });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .1 }).observe(ul);
-    function remeasure() { if (ul.clientWidth !== lastW) build(); }
-    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(ul.parentNode); else window.addEventListener('resize', remeasure);
-    window.addEventListener('load', build);
-    build();
-    requestAnimationFrame(function (t) { last = t; tick(t); });
-  }
-  P.$$('.site-foot ul').forEach(init);
-})();
+/* Footer destinations remain stationary and wrap; no cloned links or automatic scrolling. */
 
 /* ===== 62-carousel.js ===== */
 /* Carousels ([data-carousel]). Structure: .carousel > .carousel__head + .carousel__stage > .carousel__track > .carousel__item.
@@ -981,56 +900,18 @@
 })();
 
 /* ===== 65-countup.js ===== */
-/* Count-up numbers + status-versus-goal meters. Numbers start at 0 and run to their real value when scrolled into view.
-   Every .stat__value that is a single plain number (e.g. "2,780", "252g", "88.2 lbs", "<15%") counts up; [data-countup] forces it.
-   .meter bars fill to their value; [data-tone="now"|"goal"] colours current-status figures versus goal figures.
-   Reduced-motion visitors, and browsers without IntersectionObserver, just see the final figures. */
+/* Measurements and targets retain their authored values at every frame. Only decorative meter fills animate. */
 (function () {
   'use strict';
   var P = window.P100;
-  var re = /^([<>~≈+]?\s?)(\d[\d,]*(?:\.\d+)?)([^\d]*)$/;
-  var DUR = 1500;
-  function ease(t) { return 1 - Math.pow(1 - t, 3); }
-  function fmt(v, dec, comma) {
-    var s = v.toFixed(dec);
-    if (comma) { var p = s.split('.'); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ','); s = p.join('.'); }
-    return s;
-  }
-  function parse(el) {
-    if (el.children.length) return null;
-    var txt = el.textContent.trim(), m = re.exec(txt);
-    if (!m) return null;
-    var num = m[2], target = parseFloat(num.replace(/,/g, ''));
-    if (!isFinite(target) || target <= 0) return null;
-    return { el: el, text: el.textContent, pre: m[1], suf: m[3], target: target, dec: (num.split('.')[1] || '').length, comma: num.indexOf(',') > -1 };
-  }
-  function run(c) {
-    var t0 = null;
-    c.el.classList.add('is-counting');
-    function frame(ts) {
-      if (t0 === null) t0 = ts;
-      var p = Math.min(1, (ts - t0) / DUR);
-      c.el.textContent = c.pre + fmt(c.target * ease(p), c.dec, c.comma) + c.suf;
-      if (p < 1) requestAnimationFrame(frame);
-      else { c.el.textContent = c.text; c.el.classList.remove('is-counting'); c.el.classList.add('is-counted'); }
-    }
-    requestAnimationFrame(frame);
-  }
-  var canAnimate = 'IntersectionObserver' in window && !P.reduceMotion.matches;
-  var counters = P.$$('.stat__value,[data-countup]').map(parse).filter(Boolean);
-  var meters = P.$$('.meter');
-  if (!canAnimate) return;
+  if (!('IntersectionObserver' in window) || P.reduceMotion.matches) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
-      io.unobserve(en.target);
-      var c = en.target._cu;
-      if (c) run(c);
-      if (en.target.classList.contains('meter')) en.target.classList.remove('is-armed');
+      en.target.classList.remove('is-armed'); io.unobserve(en.target);
     });
-  }, { threshold: .35 });
-  counters.forEach(function (c) { c.el._cu = c; c.el.textContent = c.pre + fmt(0, c.dec, c.comma) + c.suf; io.observe(c.el); });
-  meters.forEach(function (m) { m.classList.add('is-armed'); io.observe(m); });
+  }, { threshold: .1 });
+  P.$$('.meter').forEach(function (m) { m.classList.add('is-armed'); io.observe(m); });
 })();
 
 /* ===== 72-recview.js ===== */
@@ -1038,7 +919,7 @@
    the native recipe text beside it never changes with the style. Without JavaScript the edition links simply open the pictures. */
 (function () {
   'use strict';
-  var reduce = false; // Project owner requests animated presentation.
+  var reduce = window.P100.reduceMotion.matches;
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function arrowNav(list, cur, e, go) {
     var k = e.key, n = list.length, i = list.indexOf(cur), t = -1;
@@ -1117,7 +998,7 @@
   'use strict';
   var root = document.querySelector('[data-journal]');
   if (!root) return;
-  var reduce = false; // Project owner requests animated presentation.
+  var reduce = window.P100.reduceMotion.matches;
   var q = function (s, r) { return (r || root).querySelector(s); }, qa = function (s, r) { return [].slice.call((r || root).querySelectorAll(s)); };
   var stage = q('[data-jr-stage]'), img = q('[data-jr-img]'), bg = q('[data-jr-bg]'), frame = q('[data-jr-frame]'), prog = q('[data-jr-prog]');
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
@@ -1214,7 +1095,7 @@
    turns on tap of the Flip button, pauses while hovered or just used. Reduced motion: no automatic turning. Both sides open in the shared lightbox. */
 (function () {
   'use strict';
-  var reduce = false; // Project owner requests animated presentation.
+  var reduce = window.P100.reduceMotion.matches;
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function init(root) {
     var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'),
