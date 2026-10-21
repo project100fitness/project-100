@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=fa9663d25f53">
+<link rel="stylesheet" href="assets/css/site.css?v=72bce6d4696d">
 <link rel="stylesheet" href="assets/css/hud.css?v=44ae6b698ba7">
 <link rel="stylesheet" href="assets/css/mobile-rail.css?v=20261015-folder-system">
 <link rel="stylesheet" href="assets/css/mobile-site.css?v=b115a0b50947">
@@ -35,7 +35,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <a class="skip-link" href="#content">Skip to content</a>
 
 <header class="site-head" id="siteHead">
-  <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Colour theme"><button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Dark colour mode"><span class="theme-switch__indicator" aria-hidden="true"></span><svg class="theme-switch__sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="5.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"/></svg><svg class="theme-switch__moon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"/><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"/></svg></button></div><a class="mode-folder" data-space="protocol" href="fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
+  <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Colour theme"><button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Dark colour mode"><svg class="theme-switch__indicator" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1 11 6 2 11Z"/></svg><svg class="theme-switch__sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="5.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"/></svg><svg class="theme-switch__moon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"/><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"/></svg></button></div><a class="mode-folder" data-space="protocol" href="fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
   <nav class="tabs" aria-label="PROJECT 100 sections">
     <ul class="tabs__list">
       
@@ -97,7 +97,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <span class="home-era__num">01</span>
 <span class="home-era__range">2010–2013</span>
 <h4 class="reading-heading">The Beginning</h4>
-<p class="reading-copy">Age 30. No logs, no photos — pure acquisition. Learning to lift, eat, and recover from a standing start.</p>
+<div class="reading-copy copy-group"><ul class="copy-points"><li>Age 30. No logs, no photos — pure acquisition.</li><li>Learning to lift, eat, and recover from a standing start.</li></ul></div>
 </li>
 <li class="carousel__item home-era">
 <span class="home-era__num">02</span>
@@ -131,7 +131,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <li><span class="timeline__date">2018–25</span><span class="home-glance__label">The Interruption — the interruption, structure dissolves</span></li>
 <li><span class="timeline__date">2025–26+</span><span class="home-glance__label">The Comeback — reset, rebuild, more precision than any era before it</span></li>
 </ol></div></div></article></div>
-<div class="hud-inline hud-prose"><div class="after-note"><span class="eyebrow">Origins</span><p class="lead reading-copy">The journey began in 2010. A difficult personal period later interrupted regular routines. A fresh start brought renewed attention to health, training and recovery in 2026. Earlier dated baselines remain part of the documented journey.</p></div></div>
+<div class="hud-inline hud-prose"><div class="after-note"><span class="eyebrow">Origins</span><div class="lead reading-copy copy-group"><ul class="copy-points"><li>The journey began in 2010. A difficult personal period later interrupted regular routines.</li><li>A fresh start brought renewed attention to health, training and recovery in 2026. Earlier dated baselines remain part of the documented journey.</li></ul></div></div></div>
 <div class="hud-inline hud-prose"><blockquote class="home-quote">
 <p class="reading-copy">"The Pivot occurred at 45. 197.1 lb total body weight, 88.2 lb skeletal muscle mass, 22.9% body fat. These numbers didn't indicate dysfunction — they indicated equilibrium."</p>
 </blockquote>
