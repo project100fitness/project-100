@@ -1,0 +1,7 @@
+# Main-view wording and active-theme arrow
+
+The owner approved publishing the writing plan, then clarified that main views should be quick to scan while opened Exercise/Nutrition/Kinetics/vector cards remain detailed. This release reorganizes long main-view passages into semantic points, field/value groups and ordered actions. Selected introductions are authored as concise purpose, route, browsing and ingredient fields. The remaining groups preserve their original full information, quantities, conditions and source links; long indivisible technical conditions remain intact. Existing disclosures, detailed meal/exercise cards, table records, generated full guides, published books and dynamic record owners are protected.
+
+The theme indicator is a right-pointing arrow. Its vertical position tracks the current sun or moon, retaining the existing switch semantics, saved preference and reduced-motion handling. Both symbols remain visible with no containing border. The aligned near-bottom-only controls from PR136 are retained.
+
+All site HTML is reviewed by the earlier 118-page audit; 46 main-view pages receive presentation changes in this pass. No generic runtime DOM text rewrite or quick-fix stylesheet is introduced. The local change ledger records every modified block and verifies numeric tokens and destinations before/after. Concise authored examples receive explicit review; all other point groups retain the normalized original text. This is presentation work, not medical or exercise-prescription validation.
