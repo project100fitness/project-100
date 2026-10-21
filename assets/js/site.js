@@ -82,6 +82,17 @@
   window.addEventListener('pageshow', update);
   update();
 
+
+  // The shared header owns its measured geometry; responsive components consume these variables.
+  function measureHeader() {
+    var root=document.documentElement,height=Math.ceil(head.getBoundingClientRect().height),offset=head.dataset.hidden==='true'?0:height;
+    root.style.setProperty('--site-header-height',height+'px');
+    root.style.setProperty('--site-header-offset',offset+'px');
+  }
+  if(window.ResizeObserver)new ResizeObserver(measureHeader).observe(head);
+  if(window.MutationObserver)new MutationObserver(measureHeader).observe(head,{attributes:true,attributeFilter:['data-hidden']});
+  window.addEventListener('resize',measureHeader);measureHeader();
+
   var list = P.$('.tabs__list');
   function revealCurrent() {
     var cur = list && P.$('[aria-current="page"]', list);
@@ -100,15 +111,13 @@
    Every native <dialog> that opens adds one history entry; Back (or closing it any other way) removes it again. */
 (function () {
   'use strict';
-  var P = window.P100, proto = window.HTMLDialogElement && HTMLDialogElement.prototype, pending = [], timer = 0;
-  if (!proto || !history.pushState) { P.afterLayer = function (fn) { fn(); }; return; }
+  var P = window.P100, pending = [], timer = 0;
   function flush() { clearTimeout(timer); timer = 0; var q = pending; pending = []; q.forEach(function (f) { f(); }); }
   /* run fn once a dialog's history entry has been removed (so a link click inside a dialog cannot race the Back step) */
   P.afterLayer = function (fn) { if (!timer && !pending.length) { fn(); return; } pending.push(fn); };
-  var showModal = proto.showModal;
-  proto.showModal = function () {
-    var d = this, was = d.open;
-    showModal.apply(d, arguments);
+  P.openDialog = function (d) {
+    var was = d.open;
+    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
     if (was || !d.open) return;
     var st = {}; try { st = Object.assign({}, history.state); } catch (e) { /* ignore */ }
     st.p100dlg = 1;
@@ -142,6 +151,23 @@
   });
 })();
 
+/* ===== native section navigation ===== */
+/* Markup belongs to each page. JavaScript only opens/closes its authored dialog. */
+(function(){
+ 'use strict';var P=window.P100,button=document.querySelector('.rail-toggle'),dialog=document.getElementById('mobile-sections');
+ if(!button||!dialog||typeof dialog.showModal!=='function')return;
+ var layout=button.closest('.layout'),links=dialog.querySelector('.rail__list'),close=dialog.querySelector('.rail-drawer__close'),restore=false;
+ var mobile=matchMedia('(max-width:719px),(max-width:1023px) and (pointer:coarse)');
+ button.hidden=false;layout.classList.add('has-mobile-rail');
+ function shut(focus){restore=focus;if(dialog.open)dialog.close();}
+ button.addEventListener('click',function(){if(!mobile.matches)return;if(dialog.open){shut(true);return;}P.openDialog(dialog);button.setAttribute('aria-expanded','true');var selected=links.querySelector('[aria-current="page"]')||links.querySelector('a');if(selected)selected.focus({preventScroll:true});});
+ close.addEventListener('click',function(){shut(true);});
+ dialog.addEventListener('click',function(e){if(e.target===dialog){var box=dialog.getBoundingClientRect();if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)shut(true);}if(e.target.closest('a'))shut(false);});
+ dialog.addEventListener('cancel',function(){restore=true;});
+ dialog.addEventListener('close',function(){button.setAttribute('aria-expanded','false');if(restore&&mobile.matches)button.focus({preventScroll:true});restore=false;});
+ mobile.addEventListener('change',function(){if(!mobile.matches)shut(false);});
+})();
+
 /* ===== external links: always a new tab ===== */
 (function () {
   'use strict';
@@ -157,37 +183,6 @@
   }
   fix(document);
   document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href^="http"]'); if (a) fix(a.parentNode || document); }, true);
-})();
-
-/* ===== 30-menu.js ===== */
-/* Site menu: one native <dialog> replaces the old links panel, page drawer and floating switch. */
-(function () {
-  'use strict';
-  var P = window.P100, dlg = P.$('#menu'), openBtn = P.$('#menuBtn');
-  if (!dlg || !openBtn) return;
-  /* The home page is already available from the brand and primary navigation.
-     Remove its redundant address card from the hamburger menu only. */
-  Array.prototype.slice.call(dlg.querySelectorAll('.menu__links a.menu__link')).forEach(function (link) {
-    if (link.textContent.toLowerCase().indexOf('project 100 blueprint') !== -1) link.remove();
-  });
-  function open() {
-    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
-    openBtn.setAttribute('aria-expanded', 'true');
-    document.documentElement.classList.add('no-scroll');
-  }
-  function close() {
-    if (typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open');
-  }
-  openBtn.setAttribute('aria-expanded', 'false');
-  openBtn.addEventListener('click', open);
-  dlg.addEventListener('close', function () {
-    openBtn.setAttribute('aria-expanded', 'false');
-    document.documentElement.classList.remove('no-scroll');
-    openBtn.focus();
-  });
-  dlg.addEventListener('click', function (e) {
-    if (e.target === dlg || e.target.closest('[data-menu-close]')) close();
-  });
 })();
 
 /* ===== 40-hash.js ===== */
@@ -214,6 +209,8 @@
     requestAnimationFrame(function () { t.el.scrollIntoView({ block: 'start' }); });
   }
   window.addEventListener('hashchange', follow);
+  window.addEventListener('load', follow);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(a&&a.hash===location.hash)requestAnimationFrame(follow);});
   follow();
 })();
 
@@ -419,7 +416,7 @@
     var at = set.indexOf(t);
     if (at < 0) { var want = srcOf(t); set.forEach(function (x, n) { if (at < 0 && srcOf(x) === want) at = n; }); }
     show(Math.max(0, at));
-    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    if (dlg.showModal) window.P100.openDialog(dlg); else dlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 })();
@@ -490,7 +487,7 @@
     if (at < 0) vset.forEach(function (x, n) { if (at < 0 && x.dataset.yt === t.dataset.yt) at = n; });   /* a cloned card in the looping row */
     vopener = t.closest('[data-clone]') ? null : t;
     vshow(Math.max(0, at));
-    if (vdlg.showModal) vdlg.showModal(); else vdlg.setAttribute('open', '');
+    if (vdlg.showModal) window.P100.openDialog(vdlg); else vdlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 
@@ -555,7 +552,7 @@
     pset = P.$$('.carousel__item', row);
     popener = it.querySelector('a[href]') || null;
     pshow(Math.max(0, pset.indexOf(it)));
-    if (pdlg.showModal) pdlg.showModal(); else pdlg.setAttribute('open', '');
+    if (pdlg.showModal) window.P100.openDialog(pdlg); else pdlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 
@@ -690,7 +687,6 @@
     if (e.target.closest('a')) setTimeout(function () { close(); }, 60);
   });
   /* opening the site menu or scrolling a long way closes the panel so it never sits over content */
-  var menu = P.$('#menuBtn'); if (menu) menu.addEventListener('click', function () { close(); });
 })();
 
 /* ===== 36-downloads.js ===== */
@@ -720,7 +716,7 @@
     last = from || null;
     var panel = P.$('#fabPanel'), at = P.$('#fabAt');
     if (panel && !panel.hidden) { panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
-    if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+    if (typeof dlg.showModal === 'function') { if (!dlg.open) window.P100.openDialog(dlg); } else dlg.setAttribute('open', '');
     var want = from && from.getAttribute ? from.getAttribute('data-dl-doc') : null;   /* the bar's two halves pick their own file */
     P.$$('.dl-file', dlg).forEach(function (f) { var on = !!want && f.getAttribute('data-doc') === want; f.classList.toggle('is-picked', on); if (on && f.scrollIntoView) f.scrollIntoView({ block: 'nearest' }); });
     var close = P.$('[data-dl-close]', dlg); if (close) close.focus();
