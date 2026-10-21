@@ -33,7 +33,10 @@ html[data-theme="dark"] body[data-page="kinetics"]{--kin-paper:#151a20;--kin-ink
 .kin-showcase [data-showcase-dots] { display:flex; gap:5px; align-items:center; }
 .kin-showcase [data-showcase-dots] button { min-width:14px; width:14px; min-height:14px; height:14px; padding:0; border-radius:50%; }
 .kin-showcase [aria-pressed="true"] { background:var(--kin-accent); }
-.kin-showcase progress { width:100%; height:3px; accent-color:var(--kin-accent); }
+.kin-showcase progress { display:block; appearance:none; -webkit-appearance:none; width:100%; height:clamp(10px,1.1vw,14px); margin:.7rem 0; border:0; border-radius:2px; overflow:hidden; background:var(--kin-line); accent-color:var(--kin-accent); }
+.kin-showcase progress::-webkit-progress-bar { background:var(--kin-line); }
+.kin-showcase progress::-webkit-progress-value { background:repeating-linear-gradient(120deg,transparent 0 8px,#fff6 8px 11px),linear-gradient(90deg,#ba3900,#ffae38); }
+.kin-showcase progress::-moz-progress-bar { background:repeating-linear-gradient(120deg,transparent 0 8px,#fff6 8px 11px),linear-gradient(90deg,#ba3900,#ffae38); }
 .kin-showcase .kin-showcase-pause { display:block; min-height:40px; padding:.5rem .8rem; margin-top:.6rem; font:inherit; font-size:.75rem; }
 @media(max-width:700px) { .kin-session-links .kin-day-preview { height:120px; } .kin-programme-film { grid-template-columns:110px minmax(0,1fr); gap:.75rem; } .kin-programme-film__media { height:160px; } .kin-showcase-section { grid-template-columns:minmax(0,1fr); padding:1rem; } .kin-showcase img { height:190px; } }
 
