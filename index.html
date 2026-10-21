@@ -26,7 +26,7 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=6cc460e626c6">
+<link rel="stylesheet" href="assets/css/site.css?v=a82838165447">
 <link rel="stylesheet" href="assets/css/hud.css?v=44ae6b698ba7">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "author": {"@type": "Person", "name": "Bogdan Dospi", "sameAs": ["https://www.instagram.com/fudge_fit/"]}, "name": "PROJECT 100", "url": "https://project100.fit/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "A documented personal comeback at 46: the goal is 100 lb of bioimpedance-estimated skeletal muscle below 15% body fat, with no guaranteed timeline."}, "name": "What is PROJECT 100?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Neither, run separately \u2014 both, run at once. The goal is stripping stored body fat to reveal the structure underneath while forcing skeletal muscle mass upward at the same time: the narrow path where mass meets definition."}, "name": "Is this a bulk or a cut?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Workout page is the full training log \u2014 every block, filterable by category, with real dates and engagement, updated as sessions happen."}, "name": "Where can I follow the day-to-day training?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "FIT PROTOCOL is the system behind the lived record: focused cards for daily execution, vectors, nutrition, training and monitoring."}, "name": "What\u0027s the Fit Protocol?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "The Fit Nutrition page has the real recipes, meals, and the macro protocol that fuels the excavation \u2014 nothing theoretical, all logged."}, "name": "How is the nutrition handled?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "New training blocks, recovery meals, and protocol updates post to @fudge_fit on Instagram as they happen \u2014 the site catches up from there."}, "name": "Where do new updates post first?"}]}</script>
@@ -54,7 +54,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="layout layout--flush">
   <main class="main section-tone--content" id="content" tabindex="-1">
 <header class="home-hero" id="top">
-<video data-background-video aria-hidden="true" autoplay="" class="home-hero__img" data-always="" data-src="assets/video/hero-loop.mp4" data-src-mobile="assets/video/hero-loop-mobile-compatible.mp4" height="540" loop="" muted="" playsinline="" poster="assets/img/hero-loop-poster.jpg" preload="metadata" tabindex="-1" width="960"></video>
+<video data-background-video data-always aria-hidden="true" autoplay="" class="home-hero__img" data-always="" data-src="assets/video/hero-loop.mp4" data-src-mobile="assets/video/hero-loop-mobile-compatible.mp4" height="540" loop="" muted="" playsinline="" poster="assets/img/hero-loop-poster.jpg" preload="metadata" tabindex="-1" width="960"></video><canvas class="home-hero__surface" data-video-surface width="960" height="540" aria-hidden="true" hidden></canvas>
 <div class="wrap home-hero__inner">
 <span class="eyebrow">PROJECT 100 · Bogdan’s Muscle Mass Excavation</span>
 <h1 class="reading-heading">88.2 → <span>100</span> LBS<br/>OF MUSCLE.</h1>
@@ -65,13 +65,13 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <a class="btn home-btn-light" href="project-story.html">Read the story</a>
 </div>
 </div>
-</header>
-<div class="wrap hud-wrap"><div class="hud-intro hud-prose"><aside class="callout callout--accent reader-context" id="reader-context" aria-label="Reading this page"><span class="callout__title">The personal story</span><div class="copy-group copy-overview"><dl class="copy-facts"><div><dt>Start</dt><dd>The person and the goal.</dd></div><div><dt>SMM</dt><dd>Skeletal muscle mass.</dd></div><div><dt>Keep distinct</dt><dd>A recorded estimate · A current measurement · A future target.</dd></div></dl></div><p class="reading-copy"><a href="fit-protocol-baseline.html#reader-context">Continue: Goals and baseline →</a></p><p class="reading-copy"><a href="site-map.html">All sections · page index →</a></p></aside><ul class="stats home-stats">
-<li class="stat stat--accent" data-tone="now"><span class="stat__value">88.2 lbs</span><span class="stat__label">recorded SMM baseline</span></li>
-<li class="stat" data-tone="goal"><span class="stat__value">100 lbs</span><span class="stat__label">SMM target</span></li>
-<li class="stat" data-tone="goal"><span class="stat__value">&lt;15%</span><span class="stat__label">body fat target</span></li>
-<li class="stat"><span class="stat__value">46</span><span class="stat__label">years old · 5'7"</span></li>
-</ul>
+<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label="Pause background motion"><span class="visually-hidden" data-motion-label>Pause motion</span><span aria-hidden="true" data-motion-symbol>Ⅱ</span></button></header>
+<div class="wrap hud-wrap"><div class="hud-intro hud-prose home-status-intro"><ul class="stats home-stats">
+<li data-stat-reveal class="stat stat--accent" data-tone="now"><span class="stat__value">88.2 lbs</span><span class="stat__label">recorded SMM baseline</span></li>
+<li data-stat-reveal class="stat" data-tone="goal"><span class="stat__value">100 lbs</span><span class="stat__label">SMM target</span></li>
+<li data-stat-reveal class="stat" data-tone="goal"><span class="stat__value">&lt;15%</span><span class="stat__label">body fat target</span></li>
+<li data-stat-reveal class="stat"><span class="stat__value">46</span><span class="stat__label">years old · 5'7"</span></li>
+</ul><aside class="callout callout--accent reader-context reader-context--visual" id="reader-context" aria-label="Reading this page"><a class="reader-context__preview" href="fit-protocol-baseline.html#reader-context" aria-label="Open the next topic"><img src="assets/web/media-october-2026-bogdan-july-2026-960.webp" alt="" width="240" height="160" loading="lazy" decoding="async"></a><div class="reader-context__copy"><span class="callout__title">The personal story</span><div class="copy-group copy-overview"><dl class="copy-facts"><div><dt>Start</dt><dd>The person and the goal.</dd></div><div><dt>SMM</dt><dd>Skeletal muscle mass.</dd></div><div><dt>Keep distinct</dt><dd>A recorded estimate · A current measurement · A future target.</dd></div></dl></div><div class="reader-context__links"><p class="reading-copy"><a href="fit-protocol-baseline.html#reader-context">Continue: Goals and baseline →</a></p><p class="reading-copy"><a href="site-map.html">All sections · page index →</a></p></div></div></aside>
 <section aria-labelledby="goalmeter-t" class="goalmeter section-tone--content">
 <div class="goalmeter__head">
 <h2 class="goalmeter__title reading-heading" id="goalmeter-t">Status vs goal</h2>
@@ -118,7 +118,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </li>
 <li class="carousel__item">
 <a class="card card--link home-folder" href="fit-workout.html">
-<div class="card__media"><img alt="Bogdan during a gym training session" decoding="async" height="1600" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-bogdan-gym-session-960.webp" srcset="assets/web/media-october-2026-bogdan-gym-session-480.webp 480w, assets/web/media-october-2026-bogdan-gym-session-960.webp 960w, assets/web/media-october-2026-bogdan-gym-session-1200.webp 1200w, assets/web/media-october-2026-bogdan-gym-session-1600.webp 1600w" width="1600"/></div>
+<div class="card__media"><video data-background-video data-always class="card-preview-video" width="960" height="540" data-src="assets/video/featured-plyo-protocol.mp4" autoplay muted loop playsinline preload="none" poster="assets/web/media-october-2026-bogdan-gym-session-960.webp" aria-hidden="true" tabindex="-1"></video><img alt="Bogdan during a gym training session" decoding="async" height="1600" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-bogdan-gym-session-960.webp" srcset="assets/web/media-october-2026-bogdan-gym-session-480.webp 480w, assets/web/media-october-2026-bogdan-gym-session-960.webp 960w, assets/web/media-october-2026-bogdan-gym-session-1200.webp 1200w, assets/web/media-october-2026-bogdan-gym-session-1600.webp 1600w" width="1600"/></div>
 <div class="card__body">
 <h3 class="card__title reading-heading">Training log</h3>
 </div>
@@ -126,7 +126,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </li>
 <li class="carousel__item">
 <a class="card card--link home-folder" href="fit-nutrition.html">
-<div class="card__media"><img alt="Mega salad with mango and chickpeas" decoding="async" height="900" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-mega-salad-mango-chickpea-960.webp" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" width="1200"/></div>
+<div class="card__media"><video data-background-video data-always class="card-preview-video" width="960" height="540" data-src="assets/media/meal-stories/reel-7.mp4" autoplay muted loop playsinline preload="none" poster="assets/web/img-mega-salad-mango-chickpea-960.webp" aria-hidden="true" tabindex="-1"></video><img alt="Mega salad with mango and chickpeas" decoding="async" height="900" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-mega-salad-mango-chickpea-960.webp" srcset="assets/web/img-mega-salad-mango-chickpea-480.webp 480w, assets/web/img-mega-salad-mango-chickpea-960.webp 960w, assets/web/img-mega-salad-mango-chickpea-1200.webp 1200w" width="1200"/></div>
 <div class="card__body">
 <h3 class="card__title reading-heading">Nutrition folders</h3>
 </div>
@@ -134,7 +134,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </li>
 <li class="carousel__item">
 <a class="card card--link home-folder" href="gear-shop.html">
-<div class="card__media"><img alt="The home gym turf and resistance rig" decoding="async" height="1205" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-gym-turf-rig-960.webp" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1200.webp 1200w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" width="1600"/></div>
+<div class="card__media"><video data-background-video data-always class="card-preview-video" width="960" height="540" data-src="assets/video/featured-gear-setup.mp4" autoplay muted loop playsinline preload="none" poster="assets/web/media-october-2026-gym-turf-rig-960.webp" aria-hidden="true" tabindex="-1"></video><img alt="The home gym turf and resistance rig" decoding="async" height="1205" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/media-october-2026-gym-turf-rig-960.webp" srcset="assets/web/media-october-2026-gym-turf-rig-480.webp 480w, assets/web/media-october-2026-gym-turf-rig-960.webp 960w, assets/web/media-october-2026-gym-turf-rig-1200.webp 1200w, assets/web/media-october-2026-gym-turf-rig-1600.webp 1600w" width="1600"/></div>
 <div class="card__body">
 <h3 class="card__title reading-heading">Gear folders</h3>
 </div>
@@ -177,10 +177,10 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </div></section>
 <!--/art:preview-->
 
-<div class="hud-inline hud-prose"><section aria-labelledby="cta-title" class="cta home-cta section-tone--content">
+<div class="hud-inline hud-prose"><section aria-labelledby="cta-title" class="cta home-cta section-tone--content"><video data-background-video data-always class="home-cta__video" width="960" height="540" data-src="assets/video/featured-focus-check.mp4" autoplay muted loop playsinline preload="none" poster="assets/img/hero-loop-poster.jpg" aria-hidden="true" tabindex="-1"></video>
 <span class="eyebrow">Follow the Excavation</span>
 <h2 id="cta-title" class="reading-heading">88.2 lb muscle baseline.<br/>100 lb goal.</h2>
-<div class="reading-copy copy-group"><ul class="copy-points"><li>New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">@fudge_fit</a> as they happen.</li><li>Eat.</li><li>Sleep.</li><li>Train.</li><li>Repeat.</li></ul></div>
+<p class="closing-update reading-copy">New training blocks, recovery meals, and protocol updates post to <a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">@fudge_fit</a> as they happen.</p><p class="home-motto home-motto--closing reading-copy">Eat <span>·</span> Sleep <span>·</span> Train <span>·</span> Repeat</p>
 <div class="btn-row">
 <a class="btn btn--primary" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">Follow @fudge_fit ↗</a>
 <a class="btn home-btn-light" href="fit-protocol.html">Open Fit Protocol ↗</a>
@@ -229,7 +229,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <section class="hud-folder hud-folder--deep section-tone--content hud-folder--content" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title reading-heading" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body surface-solid"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-mission.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Mission &amp; record</strong><span>Why 100, and where I stand</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol.html"><small class="reading-meta">FIT PROTOCOL</small><strong>FIT PROTOCOL overview</strong><span>The system behind the record</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="guidebook.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Daily guide</strong><span>What to do today</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol-baseline.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Goals &amp; baseline</strong><span>Where the numbers start</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section></div>
 <nav aria-label="Related pages" class="pager"><a class="pager__prev" href="gear-safety.html"><span class="pager__dir">Related page</span><span class="pager__label">Hardware safety</span></a><a class="pager__next" href="project-story.html"><span class="pager__dir">Related page</span><span class="pager__label">The story</span></a>
 </nav>
-<p class="hud-note publication-source reading-copy">Current edition: <a href="assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf#page=4">Encyclopedia V3.4 · p. 4</a> · <a href="assets/downloads/project-100-guidebook-v3-5-2026-10-19.pdf#page=4">Guidebook V3.5 · p. 4</a></p>
+<p class="hud-note publication-source reading-copy"><span class="publication-source__label">Current edition</span> <a href="assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf#page=4">Encyclopedia V3.4 · p. 4</a> · <a href="assets/downloads/project-100-guidebook-v3-5-2026-10-19.pdf#page=4">Guidebook V3.5 · p. 4</a></p>
 <nav class="pager reader-route" aria-label="First-time reader path"><a class="pager__next" href="fit-protocol-baseline.html#reader-context"><span class="pager__dir">Continue the introduction →</span><span class="pager__label">Goals and baseline</span></a></nav></main>
 </div>
 
@@ -343,7 +343,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 
 
 
-<script src="assets/js/site.js?v=979b9ffa72f7" defer></script>
+<script src="assets/js/site.js?v=93849aa02632" defer></script>
 <script src="assets/js/item-purpose.js?v=17ace754c9eb" defer></script>
 <script src="assets/js/hud.js?v=20261013-motion-on" defer></script>
 <script src="assets/js/inside-protocol.js?v=20261010" defer></script>

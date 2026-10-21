@@ -12,6 +12,22 @@
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   };
+  /* Authored visible-motion preference; background clips explicitly opt into continuous playback. */
+  P.motionPaused = P.store.get('p100-motion-paused') === 'true';
+  function motionLabels() {
+    document.documentElement.dataset.motion = P.motionPaused ? 'paused' : 'running';
+    P.$$('[data-motion-toggle]').forEach(function (b) {
+      var blocked = !!document.querySelector('video[data-playback="blocked"]');
+      b.setAttribute('aria-pressed', String(P.motionPaused));
+      b.setAttribute('aria-label', P.motionPaused || blocked ? 'Play background motion' : 'Pause background motion');
+      b.querySelector('[data-motion-label]').textContent = P.motionPaused || blocked ? 'Play motion' : 'Pause motion';
+      b.querySelector('[data-motion-symbol]').textContent = P.motionPaused || blocked ? '▶' : 'Ⅱ';
+    });
+  }
+  P.setMotionPaused = function (paused) { P.motionPaused = paused; P.store.set('p100-motion-paused', String(paused)); motionLabels(); document.dispatchEvent(new CustomEvent('p100:motion')); };
+  P.refreshMotionLabels = motionLabels;
+  P.$$('[data-motion-toggle]').forEach(function (b) { b.addEventListener('click', function () { P.setMotionPaused(document.querySelector('video[data-playback="blocked"]') ? false : !P.motionPaused); }); });
+  motionLabels();
   /* Pages routes that older bookmarks and PDFs still use (#ch6 → fit-protocol-training.html#ch6) */
   P.legacyRoutes = {"introduction": "fit-protocol-baseline.html#introduction", "ch1": "fit-protocol-baseline.html#ch1", "ch2": "fit-protocol-history.html#ch2", "ch3": "fit-protocol-constraints.html#ch3", "ch4": "fit-protocol-fuel.html#ch4", "annex2": "fit-protocol-checklists.html#annex2", "part3-vectors": "fit-protocol-vector-reference.html#part3-vectors", "ch5": "fit-protocol-nutrition.html#ch5", "ch8": "fit-protocol-supplements.html#ch8", "part4-cascades": "fit-protocol-interactions.html#part4-cascades", "part5-margins": "fit-protocol-margins.html#part5-margins", "ch6": "fit-protocol-training.html#ch6", "ch9": "fit-protocol-progression.html#ch9", "ch10": "fit-protocol-joints.html#ch10", "ch11": "fit-protocol-monitoring.html#ch11", "part6-lab-integrity": "fit-protocol-labs.html#part6-lab-integrity", "ch7": "fit-protocol-troubleshooting.html#ch7", "guide-page-2": "fit-protocol.html#guide-page-2", "guide-page-4": "fit-protocol.html#guide-page-4", "guide-page-3": "fit-protocol-baseline.html#guide-page-3", "guide-page-11": "fit-protocol-checklists.html#guide-page-11", "guide-page-13": "fit-protocol-checklists.html#guide-page-13", "guide-page-9": "fit-protocol-vector-reference.html#guide-page-9", "guide-page-6": "fit-protocol-nutrition.html#guide-page-6", "guide-page-7": "fit-protocol-supplements.html#guide-page-7", "guide-page-8": "fit-protocol-margins.html#guide-page-8", "guide-page-5": "fit-protocol-training.html#guide-page-5", "guide-page-10": "fit-protocol-labs.html#guide-page-10", "guide-page-12": "fit-protocol-troubleshooting.html#guide-page-12", "vector-v3": "fit-protocol-vector-v3.html#vector-v3", "vector-v1": "fit-protocol-vector-v1.html#vector-v1", "vector-v2": "fit-protocol-vector-v2.html#vector-v2", "vector-v4": "fit-protocol-vector-v4.html#vector-v4", "vector-v5": "fit-protocol-vector-v5.html#vector-v5", "vector-v10": "fit-protocol-vector-v10.html#vector-v10", "vector-pump": "fit-protocol-vector-pump.html#vector-pump", "vectors": "fit-protocol-vectors.html", "today": "guidebook.html#today", "red-flags": "fit-protocol-checklists.html#annex2", "s-clock": "fit-protocol-fuel.html#ch4", "s-vectors": "fit-protocol-vectors.html", "s-fuel": "fit-protocol-nutrition.html#ch5", "s-arsenal": "fit-protocol-supplements.html#ch8", "s-origin": "fit-protocol-baseline.html#introduction", "s-metric": "fit-protocol-baseline.html#ch1", "s-patches": "fit-protocol-constraints.html#ch3", "s-training": "fit-protocol-training.html#ch6", "s-roadmap": "fit-protocol-progression.html#ch9", "s-fail": "fit-protocol-troubleshooting.html#ch7", "s-qr": "fit-protocol-checklists.html#annex2", "quickref": "fit-protocol-checklists.html#annex2", "annex1": "fit-protocol-supplements.html#ch8", "ch12": "fit-protocol-labs.html#part6-lab-integrity"};
 })();
@@ -552,7 +568,7 @@
     if (v.hasAttribute('data-background-video')) {
       function fitBackground() {
         var box = v.parentElement, ratio = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : (v.width && v.height ? v.width / v.height : 16 / 9);
-        var width = Math.ceil(Math.max(box.clientWidth, box.clientHeight * ratio) * (v.classList.contains('home-hero__img') ? 1.25 : 1));
+        var width = Math.ceil((v.dataset.fit === 'contain' ? Math.min(box.clientWidth, box.clientHeight * ratio) : Math.max(box.clientWidth, box.clientHeight * ratio)) * (v.classList.contains('home-hero__img') ? 1.25 : 1));
         v.style.width = width + 'px'; v.style.height = Math.ceil(width / ratio) + 'px';
       }
       v.addEventListener('loadedmetadata', fitBackground);
@@ -560,19 +576,53 @@
       else window.addEventListener('resize', fitBackground);
       fitBackground();
     }
+    // Android can decode a cropped hero without compositing its video layer.
+    // An authored canvas presents those same decoded frames, without a second clip.
+    var surface = v.parentElement.querySelector('[data-video-surface]');
+    if (surface && /Android/i.test(navigator.userAgent)) {
+      var ctx = surface.getContext('2d', { alpha:false }), poster = new Image(), pending = false;
+      function drawSurface() {
+        var image = v.readyState >= 2 ? v : (poster.complete && poster.naturalWidth ? poster : null);
+        if (!image || document.hidden || !near) return;
+        var box = v.parentElement, dpr = Math.min(window.devicePixelRatio || 1, 1.5), w = Math.max(1,Math.round(box.clientWidth*dpr)), h = Math.max(1,Math.round(box.clientHeight*dpr));
+        if(surface.width!==w || surface.height!==h){surface.width=w;surface.height=h;}
+        var iw=image.videoWidth||image.naturalWidth,ih=image.videoHeight||image.naturalHeight,scale=Math.max(w/iw,h/ih),sw=w/scale,sh=h/scale;
+        ctx.drawImage(image,(iw-sw)/2,(ih-sh)/2,sw,sh,0,0,w,h);
+        surface.hidden=false;box.classList.add('has-video-surface');
+      }
+      function surfaceFrame() {
+        pending=false;drawSurface();
+        if (!v.paused && near && !document.hidden && !pending) {
+          pending=true;
+          if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(surfaceFrame);
+          else requestAnimationFrame(surfaceFrame);
+        }
+      }
+      poster.onload=drawSurface;poster.src=v.poster;
+      v.addEventListener('playing',function(){if(!pending)surfaceFrame();});
+      v.addEventListener('loadeddata',drawSurface);
+      window.addEventListener('resize',drawSurface);
+      document.addEventListener('p100:motion',drawSurface);
+    }
     function sync() {
-      if (!near || document.hidden || mediaMotion.matches || (conn.saveData && !v.hasAttribute('data-always'))) { v.pause(); return; }
+      if (!near || document.hidden || P.motionPaused || (mediaMotion.matches && !v.hasAttribute('data-always')) || (conn.saveData && !v.hasAttribute('data-always'))) { v.pause(); if (!near) { delete v.dataset.playback; P.refreshMotionLabels(); } return; }
       if (v.dataset.src && !v.getAttribute('src')) {
         v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
         v.load();
       }
       var playing = v.play();
-      if (playing && playing.catch) playing.catch(function () { /* Retry automatically after a browser-allowed gesture. */ });
+      if (playing && playing.then) playing.then(function () { v.dataset.playback = 'playing'; P.refreshMotionLabels(); }).catch(function (error) { if (error.name === 'NotAllowedError' && near && !P.motionPaused) v.dataset.playback = 'blocked'; else delete v.dataset.playback; P.refreshMotionLabels(); });
     }
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) { near = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(v);
+      new IntersectionObserver(function (entries) { near = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(v.parentElement);
     } else { near = true; sync(); }
     document.addEventListener('visibilitychange', sync);
+    document.addEventListener('p100:motion', sync);
+    v.addEventListener('canplay', sync);
+    window.addEventListener('online', sync);
+    var fallbackTried = false;
+    v.addEventListener('error', function () { if (!fallbackTried && v.dataset.srcMobile && v.currentSrc.indexOf(v.dataset.srcMobile) < 0) { fallbackTried = true; v.src = v.dataset.srcMobile; v.load(); } });
+    setInterval(function () { if (near && v.paused && !document.hidden && !P.motionPaused) sync(); }, 2000);
     window.addEventListener('pageshow', sync);
     document.addEventListener('pointerdown', sync, { passive: true });
     if (mediaMotion.addEventListener) mediaMotion.addEventListener('change', sync);
@@ -741,7 +791,7 @@
       var m = maxScroll() || 1, w = Math.max(.12, Math.min(1, track.clientWidth / track.scrollWidth)), f = Math.max(0, Math.min(1, track.scrollLeft / m));
       thumb.style.width = (w * 100) + '%'; thumb.style.left = (f * (1 - w) * 100) + '%';
     }
-    function playing() { return active && !userPaused && !document.documentElement.classList.contains('no-scroll') && inView && !mouseOver && !touching && !keyFocus && !document.hidden && now() > hold; }
+    function playing() { return active && !P.motionPaused && !userPaused && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
       pp.innerHTML = userPaused ? PLAY : PAUSE;
       pp.setAttribute('aria-label', userPaused ? 'Start auto-scroll' : 'Pause auto-scroll');
@@ -868,7 +918,7 @@
       row.classList.toggle('is-drift', active); bar.hidden = !active; pos = null; lastAuto = row.scrollLeft; paint();
     }
     function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
-    function playing() { return active && !still && inView && !touching && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
+    function playing() { return active && !P.motionPaused && !still && inView && !touching && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
     function tick(ts) {
       requestAnimationFrame(tick);
       var dt = Math.min(64, ts - last); last = ts;
@@ -901,18 +951,16 @@
 })();
 
 /* ===== 65-countup.js ===== */
-/* Measurements and targets retain their authored values at every frame. Only decorative meter fills animate. */
+/* Mechanical entrance and meter fills: exact recorded numbers remain authored at every frame. */
 (function () {
-  'use strict';
-  var P = window.P100;
-  if (!('IntersectionObserver' in window) || P.reduceMotion.matches) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      en.target.classList.remove('is-armed'); io.unobserve(en.target);
-    });
-  }, { threshold: .1 });
-  P.$$('.meter').forEach(function (m) { m.classList.add('is-armed'); io.observe(m); });
+  'use strict'; var P=window.P100;
+  if (!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){
+    var on=en.isIntersecting&&!P.motionPaused;
+    en.target.classList.toggle('is-revealed',on);
+    if(en.target.classList.contains('meter')) en.target.classList.toggle('is-armed',!on&&!P.reduceMotion.matches);
+  });},{threshold:.2});
+  P.$$('[data-stat-reveal],.meter').forEach(function(el){io.observe(el);});
 })();
 
 /* ===== 72-recview.js ===== */
@@ -1034,13 +1082,13 @@
   /* One clock controls both the fill and the image change. Pauses freeze both. */
   function schedule() {
     rootWindowCancel(); last = null;
-    if (!playing || !inView || document.hidden || hovering || loading) return;
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || hovering || loading) return;
     timer = requestAnimationFrame(tick);
   }
   function rootWindowCancel() { if (timer) cancelAnimationFrame(timer); timer = 0; }
   function tick(now) {
     timer = 0;
-    if (!playing || !inView || document.hidden || hovering || loading) { last = null; return; }
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || hovering || loading) { last = null; return; }
     if (last !== null) elapsed += now - last;
     last = now;
     prog.style.transform = 'scaleX(' + Math.min(1, elapsed / DUR) + ')';
@@ -1055,6 +1103,7 @@
   q('[data-jr-next]').addEventListener('click', function () { show(i + 1, true); });
   thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
   document.addEventListener('visibilitychange', schedule);
+  document.addEventListener('p100:motion', schedule);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }, { threshold: 0.2 }).observe(stage);
   } else { inView = true; }
@@ -1126,6 +1175,7 @@
     root.addEventListener('mouseleave', function () { hover = false; schedule(); });
     root.addEventListener('touchstart', function () { hold = Date.now() + 16000; }, { passive: true });
     document.addEventListener('visibilitychange', schedule);
+  document.addEventListener('p100:motion', schedule);
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting && es[0].intersectionRatio > .35; first = first && seen; schedule(); }, { threshold: [0, .35, .6] }).observe(root);
     show();
   }
