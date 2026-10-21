@@ -150,8 +150,7 @@
 @media (min-width: 40rem) { .hud-cards { --cols: 3; } }
 @media (min-width: 64rem) { .hud-cards { --cols: 4; } }
 .hud-cards > li { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--g)) / var(--cols)); min-width: 0; }
-/* text cards need width to be readable at a glance: one per row on phones */
-@media (max-width: 39.99rem) { .hud-cards:has(> li > .hud-card--text) { --cols: 1; } }
+/* Preview cards retain two columns; expanded detail keeps its full reading width. */
 /* counts that would leave one card alone on the last row use a different number of columns */
 @media (min-width: 40rem) and (max-width: 63.99rem) { .hud-cards:has(> li:nth-child(4):last-child) { --cols: 2; } }
 @media (min-width: 64rem) { .hud-cards:has(> li:nth-child(3):last-child), .hud-cards:has(> li:nth-child(5):last-child), .hud-cards:has(> li:nth-child(9):last-child) { --cols: 3; } }
@@ -168,7 +167,7 @@
 .hud-card:focus-visible { outline: 3px solid var(--hud-amber); outline-offset: 2px; }
 .hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
  .hud-card--reference .hud-card__tag { background:var(--hud-dark-3); color:var(--hud-ink); box-shadow:inset 3px 0 0 var(--line-strong); }
-.hud-card__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--hud-dark-1); }
+.hud-card__img { position: relative; aspect-ratio: 4 / 5; max-height:clamp(110px,22svh,240px); overflow: hidden; background: var(--hud-dark-1); }
 .hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: transform .5s var(--hud-ease); }
 .hud-card:hover .hud-card__img img { transform: scale(1.05); }
 .hud-card__img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(10 11 14 / .85)); }
