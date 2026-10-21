@@ -44,18 +44,42 @@ let filter='all',indexOpen=false,current=0,chosen=[];
 const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g','g'];
 function range(lo,hi,unit){return roundBook(lo)+'–'+roundBook(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
-const nav=el('div',null,'salad-browser-nav'),previous=el('button','‹','salad-browser-arrow'),next=el('button','›','salad-browser-arrow'),position=el('span',null,'salad-browser-position'),browse=el('button','All salads','salad-browser-all'),overview=el('div',null,'salad-browser-index');
-previous.type=next.type=browse.type='button';previous.setAttribute('aria-label','Previous salad');next.setAttribute('aria-label','Next salad');position.setAttribute('aria-live','polite');browse.setAttribute('aria-expanded','false');overview.id='salad-overview';overview.setAttribute('role','region');overview.setAttribute('aria-label','Choose a salad');overview.hidden=true;previous.setAttribute('aria-controls','salad-gallery');next.setAttribute('aria-controls','salad-gallery');browse.setAttribute('aria-controls',overview.id);nav.append(position,browse);gallery.before(nav,overview);
-function visibleCards(){return Array.from(gallery.children).filter(c=>!c.hidden);}
-function scrollTarget(card){const max=Math.max(0,gallery.scrollWidth-gallery.clientWidth);return Math.max(0,Math.min(max,gallery.scrollLeft+card.getBoundingClientRect().left-gallery.getBoundingClientRect().left));}
-function updatePosition(){const cards=visibleCards();if(!cards.length)return;const left=gallery.getBoundingClientRect().left;current=cards.reduce((best,c,i)=>Math.abs(c.getBoundingClientRect().left-left)<Math.abs(cards[best].getBoundingClientRect().left-left)?i:best,0);const label=(current+1)+' / '+cards.length;if(position.textContent!==label)position.textContent=label;
-const step=mobile.matches?1:2,x=gallery.scrollLeft;
-cards.forEach((c,i)=>{const buttons=c.querySelectorAll('.salad-card-arrow'),back=cards[i-step],forward=cards[i+step];buttons[0].hidden=!back||scrollTarget(back)>=x-2;buttons[1].hidden=!forward||scrollTarget(forward)<=x+2;});
-previous.disabled=previous.hidden=x<=2;next.disabled=next.hidden=x>=gallery.scrollWidth-gallery.clientWidth-2;overview.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));}
-function goTo(i){const cards=visibleCards(),card=cards[Math.max(0,Math.min(i,cards.length-1))];if(!card)return;gallery.scrollTo({left:scrollTarget(card),behavior:'smooth'});}
-function toggleOverview(){indexOpen=!indexOpen;overview.hidden=!indexOpen;browse.setAttribute('aria-expanded',String(indexOpen));if(indexOpen)overview.scrollIntoView({block:'nearest',behavior:'auto'});}
-function layout(){gallery.querySelectorAll('.salad-card').forEach(c=>c.hidden=false);nav.hidden=!mobile.matches;overview.hidden=!mobile.matches||!indexOpen;gallery.setAttribute('aria-label',mobile.matches?'Salads — swipe or use Previous and Next':'Two rows of salad cards — scroll horizontally to browse');updatePosition();}
-previous.addEventListener('click',()=>goTo(current-1));next.addEventListener('click',()=>goTo(current+1));browse.addEventListener('click',toggleOverview);gallery.addEventListener('scroll',updatePosition,{passive:true});gallery.addEventListener('keydown',e=>{if(e.target!==gallery)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();goTo(current+(e.key==='ArrowRight'?1:-1));}});mobile.addEventListener('change',layout);
+const nav=doc.querySelector('[data-salad-navigation]'),previous=nav.querySelector('[data-salad-previous]'),next=nav.querySelector('[data-salad-next]'),position=nav.querySelector('[data-salad-position]'),browse=nav.querySelector('[data-salad-browse]'),pause=nav.querySelector('[data-salad-pause]'),overview=doc.getElementById('salad-overview');
+let paused=false,visible=false,lastChange=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
+function pageSize(){return 4;}
+function updatePosition(){
+ const size=pageSize(),page=Math.floor(current/size),pages=Math.ceil(chosen.length/size);
+ position.textContent='Set '+(page+1)+' / '+pages;
+ previous.disabled=next.disabled=chosen.length<=size;
+ overview.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i>=current&&i<current+size)));
+}
+function revealSet(){
+ const size=pageSize();current=Math.floor(current/size)*size;
+ const start=Math.min(current,Math.max(0,chosen.length-size));gallery.querySelectorAll('.salad-card').forEach((c,i)=>c.hidden=i<start||i>=start+size);
+ gallery.dataset.set=String(Math.floor(current/size)+1);updatePosition();lastChange=Date.now();
+}
+function goTo(i,manual=true){
+ if(transitioning||!chosen.length)return;
+ const size=pageSize(),pages=Math.ceil(chosen.length/size),page=((Math.floor(i/size)%pages)+pages)%pages;
+ if(manual)holdUntil=Date.now()+12000;
+ transitioning=true;const oldHeight=gallery.getBoundingClientRect().height;
+ gallery.style.minHeight=oldHeight+'px';gallery.classList.add('is-fading');
+ setTimeout(()=>{current=page*size;revealSet();gallery.classList.remove('is-fading');transitioning=false;gallery.style.minHeight='';},220);
+}
+function toggleOverview(){indexOpen=!indexOpen;overview.hidden=!indexOpen;browse.setAttribute('aria-expanded',String(indexOpen));holdUntil=Date.now()+12000;}
+function layout(){nav.hidden=false;overview.hidden=!indexOpen;gallery.setAttribute('aria-label','Four salad recipes in a fixed two-by-two grid');revealSet();}
+previous.addEventListener('click',()=>goTo(current-pageSize()));next.addEventListener('click',()=>goTo(current+pageSize()));browse.addEventListener('click',toggleOverview);
+pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-pressed',String(paused));lastChange=Date.now();});
+gallery.addEventListener('keydown',e=>{if(e.target!==gallery)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();goTo(current+(e.key==='ArrowRight'?pageSize():-pageSize()));}});
+doc.addEventListener('keydown',e=>{if(e.key==='Tab')keyboard=true;},true);doc.addEventListener('pointerdown',()=>keyboard=false,true);
+gallery.addEventListener('pointerdown',()=>holdUntil=Date.now()+12000,{passive:true});
+mobile.addEventListener('change',layout);
+if(root.IntersectionObserver)new root.IntersectionObserver(es=>{visible=es[0].isIntersecting;lastChange=Date.now();},{threshold:.01}).observe(gallery);else visible=true;
+setInterval(()=>{
+ const reading=gallery.querySelector('details[open]')||doc.querySelector('dialog[open]')||indexOpen||(keyboard&&gallery.contains(doc.activeElement))||gallery.querySelector('select:focus');
+ if(paused||!visible||doc.hidden||root.P100?.motionPaused||reading||transitioning||Date.now()<holdUntil){lastChange=Date.now();return;}
+ if(Date.now()-lastChange>=4800)goTo(current+pageSize(),false);
+},200);
 function draw(){gallery.scrollLeft=0;gallery.replaceChildren();chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();const featured=['20260207_161926','20260708_135631'];chosen.sort((a,b)=>{const rank=p=>featured.includes(p.id)?featured.indexOf(p.id):featured.length;return rank(a)-rank(b);});overview.replaceChildren();browse.textContent='All '+chosen.length+' salads';current=0;indexOpen=false;browse.setAttribute('aria-expanded','false');
 chosen.forEach((p,i)=>{
  const pick=el('button',null,'salad-browser-pick');pick.type='button';pick.setAttribute('aria-label','Open salad '+(i+1)+': '+p.title);const thumb=el('img');thumb.src='assets/web/mega-salads/'+p.id+'-480.webp';thumb.alt='';thumb.loading='lazy';pick.append(thumb,el('span',(i+1)+'. '+p.title));pick.addEventListener('click',()=>{toggleOverview();goTo(i);gallery.scrollIntoView({block:'start',behavior:'auto'});gallery.focus({preventScroll:true});});overview.append(pick);
@@ -70,22 +94,22 @@ chosen.forEach((p,i)=>{
  const amounts=recipePortions(p),count=eggCount(p),wholeCan=amounts.beans!==portions.beans;
  body.append(el('h3',p.title),el('p',p.ingredients.map(k=>k==='egg'?count+' boiled eggs':k==='beans'&&wholeCan?'1 whole can mixed beans':names[k].replace('Drained ','')).join(' · '),'salad-ingredient-preview'));
  const choice=el('label','Dressing','salad-card-choice'),select=el('select');select.setAttribute('aria-label','Dressing for '+p.title);
- [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);const dressingRow=el('div',null,'salad-dressing-navigation'),back=el('button','‹','salad-card-arrow'),forward=el('button','›','salad-card-arrow');back.type=forward.type='button';back.setAttribute('aria-label','Previous salad');forward.setAttribute('aria-label','Next salad');back.title='Previous salad';forward.title='Next salad';back.setAttribute('aria-controls','salad-gallery');forward.setAttribute('aria-controls','salad-gallery');back.addEventListener('click',()=>goTo(i-(mobile.matches?1:2)));forward.addEventListener('click',()=>goTo(i+(mobile.matches?1:2)));dressingRow.append(back,forward);const photoArea=el('div',null,'salad-photo-area');photoArea.append(photo);dressingRow.append(back,time,forward);body.insertBefore(dressingRow,body.firstChild);
+ [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);const photoArea=el('div',null,'salad-photo-area');photoArea.append(photo);body.insertBefore(time,body.firstChild);
  const results=el('div',null,'salad-card-metrics');results.setAttribute('aria-live','polite');body.append(results);
- const details=el('details',null,'salad-recipe-details');const summary=el('summary','Full ingredients & nutrition');details.append(summary);details.addEventListener('toggle',()=>summary.textContent=details.open?'Hide ingredients & nutrition':'Full ingredients & nutrition');
+ const details=el('details',null,'salad-recipe-details');const summary=el('summary','Full recipe');details.append(summary,choice);details.addEventListener('toggle',()=>{summary.textContent=details.open?'Close recipe':'Full recipe';card.classList.toggle('is-reading',details.open);});
  const list=el('ul');p.ingredients.forEach(k=>list.append(el('li',(k==='egg'?'Boiled eggs, chopped':names[k])+': '+(k==='egg'?count+' eggs (about '+count*50+' g edible)':k==='beans'&&wholeCan?'1 whole can; provisional '+amounts[k][0]+'–'+amounts[k][1]+' g drained':amounts[k][0]+'–'+amounts[k][1]+' g'))));details.append(list);
  if(wholeCan)details.append(el('p','Whole-can drained weight is provisionally estimated at 240–360 g. Can size and the package drained weight are needed to refine the totals.'));
  if(p.note)details.append(el('p',p.note,'salad-identification-note'));
- const breakdown=el('p'),purpose=el('p','Protein foods support the daily protein total; beans and vegetables add carbohydrate and fiber. Dressing changes energy and fat.');details.append(breakdown,purpose);
+ const detailedMetrics=el('p',null,'salad-full-metrics');details.append(detailedMetrics);const breakdown=el('p'),purpose=el('p','Protein foods support the daily protein total; beans and vegetables add carbohydrate and fiber. Dressing changes energy and fat.');details.append(breakdown,purpose);
  details.append(el('p','Sodium, sugars, saturated fat and numeric micronutrient totals need product labels and verified portions; they are not assumed to be zero. Greens contribute folate and vitamin K; peppers vitamin C; feta calcium; eggs choline and B12.'));
  details.append(el('p','Recipe quantities are modeling assumptions, not measured photo portions. The full prepared dressing is included; leftover dressing means actual intake is lower by an unmeasured amount.'));
- body.append(details);card.append(choice,photoArea,body);gallery.append(card);
- function update(){const mode=select.value,t=totals(p,mode);results.replaceChildren();labels.forEach((label,i)=>{const cell=el('div');cell.append(el('b',range(t[0][i],t[1][i],units[i])),el('span',label));results.append(cell);});
+ body.append(details);card.append(photoArea,body);gallery.append(card);
+ function update(){const mode=select.value,t=totals(p,mode);detailedMetrics.textContent=labels.map((label,i)=>label+': '+range(t[0][i],t[1][i],units[i])).join(' · ');results.replaceChildren();labels.forEach((label,i)=>{const cell=el('div');cell.append(el('b',range(t[0][i],t[1][i],units[i])),el('span',label));results.append(cell);});
  const b=[sum(p.ingredients,0,amounts),sum(p.ingredients,1,amounts)],d=[dressing(mode,0),dressing(mode,1)];const measured=mode==='heavy'?' Heavy dressing: 2–3 tbsp [30–45 mL; 28–42 g model] avocado oil + 130–200 g edible avocado.':mode==='light'?' Light dressing: 4–5 tbsp [60–75 mL] each olive oil and balsamic glaze + about 120 mL white wine vinegar.':'';breakdown.textContent='Base: '+range(b[0][0],b[1][0],'kcal')+' · '+range(b[0][1],b[1][1],'g protein')+'. Prepared dressing: '+range(d[0][0],d[1][0],'kcal')+'. Combined estimates shown above.'+measured;}
  select.addEventListener('change',update);update();
 });
 doc.getElementById('salad-count').textContent=chosen.length+' salads';layout();}
 doc.querySelectorAll('[data-salad-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.saladFilter;doc.querySelectorAll('[data-salad-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw();}));
-root.addEventListener('resize',updatePosition);if(root.ResizeObserver)new root.ResizeObserver(updatePosition).observe(gallery);
+root.addEventListener('resize',updatePosition);
 draw();
 })(typeof window==='undefined'?globalThis:window);
