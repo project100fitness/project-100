@@ -12,7 +12,10 @@ for page in pages:
   drawers+=1
   assert re.search(r'<button[^>]*class="rail-toggle"',source),page
   assert 'class="rail-drawer"' in source and 'mobile-sections-title' in source,page
-assert drawers==35,drawers
+# The detailed study reference is the 36th authored viewer with a section drawer.
+study=ROOT/'downloads/reference/evidence-notes-2026-10-21.html'
+assert 'id="mobile-sections"' in study.read_text(encoding='utf8')
+assert drawers==36,drawers
 core=(ROOT/'assets/js/site.js').read_text(encoding='utf8')
 assert 'P.openDialog = function (d)' in core
 assert 'proto.showModal =' not in core and 'HTMLDialogElement.prototype' not in core
