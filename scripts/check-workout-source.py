@@ -35,6 +35,6 @@ assert 'data-selection-review' in t and (root/'downloads/kinetics/my-exercises.h
 assert 'EXERCISE 01 OF 06' not in t and '01 / 06' not in t
 assert t.index('id="p100-download-cards"')<t.index('data-analysis-reference-entry')
 assert 'training-label-short" aria-hidden' not in t
-mobile=(root/'assets/js/mobile-flow.js').read_text(encoding='utf8')
+mobile=(root/'assets/js/site.js').read_text(encoding='utf8')
 assert 'foldContent' not in mobile and 'dataset.desktopLabel' not in mobile
 print('Source check passed: 94 document links, one-page log, visible labels and source-owned mobile navigation.')

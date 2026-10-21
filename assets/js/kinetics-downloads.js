@@ -40,7 +40,7 @@ if(!filtered.length){dialog.querySelector("[data-kd-count]").textContent="0 / 0"
 }
 function open(opener,id){
 lastOpener=opener||document.activeElement;applyFilter();
-if(!dialog.open){var root=document.documentElement,x=window.scrollX,y=window.scrollY;oldOverflow=root.style.overflow;oldScrollBehavior=root.style.scrollBehavior;root.style.scrollBehavior="auto";window.scrollTo(x,y);dialog.showModal();root.style.overflow="hidden";window.scrollTo(x,y);}
+if(!dialog.open){var root=document.documentElement,x=window.scrollX,y=window.scrollY;oldOverflow=root.style.overflow;oldScrollBehavior=root.style.scrollBehavior;root.style.scrollBehavior="auto";window.scrollTo(x,y);window.P100.openDialog(dialog);root.style.overflow="hidden";window.scrollTo(x,y);}
 select(get(id)?id:selected.id);dialog.querySelector("[data-kd-close]").focus();updateBar();
 }
 document.addEventListener("click",function(event){var opener=event.target.closest("[data-kd-open]");if(opener){if(event.button||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();open(opener,opener.dataset.kdOpen);}});

@@ -17,7 +17,7 @@ def read(path):
     with urllib.request.urlopen(request,timeout=45) as response:
         assert response.status==200
         return response.read().decode("utf-8").replace("\r\n","\n")
-assets=["assets/css/site.css","assets/css/hud.css","assets/css/mobile-rail.css","assets/css/kinetics.css","assets/css/mobile-site.css","assets/js/site.js","assets/js/mobile-flow.js"]
+assets=["assets/css/site.css","assets/css/hud.css","assets/css/kinetics.css","assets/js/site.js"]
 for attempt in range(40):
     try:
         source=read("index.html")

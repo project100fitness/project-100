@@ -2,9 +2,9 @@ name: Check current website against publication corrections
 on:
   push:
     branches: [main]
-    paths: ['*.html', 'assets/css/mobile-site.css', 'assets/data/**', 'assets/js/salad-cards.js', 'assets/js/meal-stories.js', 'assets/js/item-purpose.js', 'assets/downloads/project-100-*.pdf', 'downloads/reference/project100-analysis-data.json', 'scripts/check-*book*', 'scripts/check-publication-consistency.py', '.github/workflows/publication-consistency.yml']
+    paths: ['*.html', 'assets/css/**', 'assets/js/site.js', 'assets/data/**', 'assets/js/salad-cards.js', 'assets/js/meal-stories.js', 'assets/js/item-purpose.js', 'assets/downloads/project-100-*.pdf', 'downloads/reference/project100-analysis-data.json', 'scripts/check-*book*', 'scripts/check-publication-consistency.py', 'scripts/check-source-architecture.py', '.github/workflows/publication-consistency.yml']
   pull_request:
-    paths: ['*.html', 'assets/css/mobile-site.css', 'assets/data/**', 'assets/js/salad-cards.js', 'assets/js/meal-stories.js', 'assets/js/item-purpose.js', 'assets/downloads/project-100-*.pdf', 'downloads/reference/project100-analysis-data.json', 'scripts/check-*book*', 'scripts/check-publication-consistency.py', '.github/workflows/publication-consistency.yml']
+    paths: ['*.html', 'assets/css/**', 'assets/js/site.js', 'assets/data/**', 'assets/js/salad-cards.js', 'assets/js/meal-stories.js', 'assets/js/item-purpose.js', 'assets/downloads/project-100-*.pdf', 'downloads/reference/project100-analysis-data.json', 'scripts/check-*book*', 'scripts/check-publication-consistency.py', 'scripts/check-source-architecture.py', '.github/workflows/publication-consistency.yml']
 permissions:
   contents: read
 jobs:
