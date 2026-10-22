@@ -466,7 +466,7 @@
     var b = vset[vidx], id = b.dataset.yt;
     vbox.innerHTML = '';
     var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&playsinline=1&rel=0&modestbranding=1' + (/^https?:$/.test(location.protocol) ? '&origin=' + encodeURIComponent(location.origin) : '');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1' + (/^https?:$/.test(location.protocol) ? '&origin=' + encodeURIComponent(location.origin) : '');
     f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');            /* YouTube refuses to play when it is told nothing about the page (in-app browsers) */
     f.title = vlabel(b);
     f.allow = 'autoplay; encrypted-media; picture-in-picture; web-share; fullscreen';
@@ -560,7 +560,7 @@
   var mediaMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   P.$$('video[data-src], video[autoplay]').forEach(function (v) {
     var near = false;
-    v.muted = true; v.defaultMuted = true; v.playsInline = true;
+    v.muted = true; v.defaultMuted = true; v.volume = 0; v.playsInline = true;
     // Size the media itself: Android renderers can blank a vertically cropped object-fit surface.
     if (v.hasAttribute('data-background-video')) {
       function fitBackground() {
@@ -602,6 +602,7 @@
       document.addEventListener('p100:motion',drawSurface);
     }
     function sync() {
+      v.muted = true; v.defaultMuted = true; v.volume = 0;
       if (!near || document.hidden || P.motionPaused || (mediaMotion.matches && !v.hasAttribute('data-always')) || (conn.saveData && !v.hasAttribute('data-always'))) { v.pause(); if (!near) { delete v.dataset.playback; P.refreshMotionLabels(); } return; }
       if (v.dataset.src && !v.getAttribute('src')) {
         v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
