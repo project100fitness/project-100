@@ -762,20 +762,23 @@
     if(root.dataset.ready)return;root.dataset.ready='1';
     var track=P.$('.carousel__track',root),items=P.$$('.carousel__item',track),position=P.$('[data-collection-position]',root),pause=P.$('[data-collection-pause]',root);
     if(!track||!position||!pause)return;
-    var index=0,seen=false,paused=false,last=Date.now(),hold=0,keys=false,changing=false;
+    var previous=P.$('[data-collection-prev]',root),next=P.$('[data-collection-next]',root),controls=P.$('.collection-controls',root);
+    var cues=P100Rotation.create({host:controls,previous:previous,next:next,pause:pause,position:position,unit:'cards',previousLabel:'Previous cards',nextLabel:'Next cards'});
+    var index=0,seen=false,paused=P.reduceMotion.matches,last=Date.now(),hold=0,keys=false,changing=false;
+    function start(page){var pages=Math.ceil(items.length/4);return Math.min(((page+pages)%pages)*4,Math.max(0,items.length-4));}
+    function peek(page){var target=start(page),current=start(index);return items.slice(target,target+4).find(function(x,i){return target+i<current||target+i>=current+4;})||items[target];}
+    function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/4800,remaining:4800-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
     function show(page,manual){
       if(changing)return;changing=true;if(manual)hold=Date.now()+12000;
-      var pages=Math.ceil(items.length/4);index=(page+pages)%pages;root.classList.add('is-changing');
-      setTimeout(function(){var start=Math.min(index*4,Math.max(0,items.length-4));items.forEach(function(item,i){item.hidden=i<start||i>=start+4;});position.textContent=(start+1)+'–'+Math.min(items.length,start+4)+' / '+items.length;root.classList.remove('is-changing');last=Date.now();changing=false;},180);
+      var pages=Math.ceil(items.length/4);index=(page+pages)%pages;root.classList.add('is-changing');feedback();
+      setTimeout(function(){var from=start(index);items.forEach(function(item,i){item.hidden=i<from||i>=from+4;});root.classList.remove('is-changing');last=Date.now();changing=false;feedback();},P.reduceMotion.matches?0:180);
     }
-    P.$('[data-collection-prev]',root).addEventListener('click',function(){show(index-1,true);});
-    P.$('[data-collection-next]',root).addEventListener('click',function(){show(index+1,true);});
-    pause.addEventListener('click',function(){paused=!paused;pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-pressed',String(paused));last=Date.now();});
+    previous.addEventListener('click',function(){show(index-1,true);});next.addEventListener('click',function(){show(index+1,true);});
+    pause.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);paused=false;}else paused=!paused;last=Date.now();feedback();});
     root.addEventListener('keydown',function(e){keys=true;if(e.target===track&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(index+(e.key==='ArrowRight'?1:-1),true);}});
     root.addEventListener('pointerdown',function(){keys=false;hold=Date.now()+12000;},{passive:true});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;last=Date.now();},{threshold:.01}).observe(root);else seen=true;
-    setInterval(function(){if(!seen||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last=Date.now();return;}if(Date.now()-last>=4800)show(index+1,false);},200);
-    if(items.length<=4){P.$('.collection-controls',root).hidden=true;paused=true;}
+    setInterval(function(){if(!seen||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last=Date.now();feedback();return;}feedback();if(Date.now()-last>=4800)show(index+1,false);},100);
     track.tabIndex=0;show(0,false);
   }
 
@@ -791,17 +794,17 @@
     var thumb = bar.firstChild;
     var pp = document.createElement('button'); pp.type = 'button'; pp.className = 'carousel__pp';
     stage.appendChild(bar);
-    /* Motion stays active; no permanent pause control. */
+    var controls=document.createElement('div');controls.className='carousel-controls';var prev=document.createElement('button'),next=document.createElement('button'),position=document.createElement('span');root.insertBefore(controls,stage);var cues=P100Rotation.create({host:controls,previous:prev,next:next,pause:pp,position:position,unit:'items'});prev.addEventListener('click',function(){go(-1);});next.addEventListener('click',function(){go(1);});pp.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);userPaused=false;}else userPaused=!userPaused;label();});
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
     var active = false, lastW = -1, pos = null, last = 0, hold = 0, dir = 1, inView = true, lastAuto = 0;
-    var mouseOver = false, touching = false, keyFocus = false, userPaused = false, idle = 0, raf = 0;
+    var mouseOver = false, touching = false, keyFocus = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
 
     function maxScroll() { return Math.max(0, track.scrollWidth - track.clientWidth); }
     function measure() {
       lastW = track.clientWidth;
       var over = lastW >= 40 && maxScroll() > 4;                        /* hidden (filtered out) or everything already fits: nothing to drift */
-      active = over; pp.hidden = !over; bar.hidden = !over;
+      active = over; controls.hidden=!over; pp.hidden = !over; bar.hidden = !over;
       root.classList.toggle('is-drift', over);
       pos = null; lastAuto = track.scrollLeft; sync();
     }
@@ -809,17 +812,19 @@
       if (!active) return;
       var m = maxScroll() || 1, w = Math.max(.12, Math.min(1, track.clientWidth / track.scrollWidth)), f = Math.max(0, Math.min(1, track.scrollLeft / m));
       thumb.style.width = (w * 100) + '%'; thumb.style.left = (f * (1 - w) * 100) + '%';
+      var size=step()||1,start=Math.min(items.length-1,Math.floor(track.scrollLeft/size)),end=Math.min(items.length,Math.ceil((track.scrollLeft+track.clientWidth)/size)),distance=dir>0?size-(track.scrollLeft%size):track.scrollLeft%size||size;
+      cues.update({enabled:active,total:items.length,range:'Items '+(start+1)+'–'+end+' of '+items.length,progress:1-distance/size,remaining:distance/SPEED*1000,resume:Math.max(0,hold-now()),paused:userPaused||P.motionPaused,waiting:mouseOver||keyFocus||touching?'Paused while you explore':!inView?'Auto-browse when in view':null,previous:items[Math.max(0,start-1)],next:items[end%items.length]});
     }
-    function playing() { return active && !P.motionPaused && !userPaused && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !keyFocus && !document.hidden && now() > hold; }
+    function playing() { return active && !P.motionPaused && !userPaused && !mouseOver && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
-      pp.innerHTML = userPaused ? PLAY : PAUSE;
+      pp.textContent = userPaused ? 'Resume auto-change' : 'Pause auto-change';
       pp.setAttribute('aria-label', userPaused ? 'Start auto-scroll' : 'Pause auto-scroll');
       pp.setAttribute('aria-pressed', String(userPaused)); pp.title = pp.getAttribute('aria-label');
     }
     function tick(ts) {
       raf = requestAnimationFrame(tick);
       var dt = Math.min(64, ts - last); last = ts;
-      if (!playing()) { pos = null; return; }
+      if (!playing()) { pos = null; sync(); return; }
       var m = maxScroll();
       if (pos === null) {
         pos = track.scrollLeft;
@@ -920,7 +925,7 @@
   function init(row) {
     if (row.dataset.hint) return; row.dataset.hint = '1';
     var bar = document.createElement('div'); bar.className = 'rowbar'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span></span>';
-    var thumb = bar.firstChild; row.parentNode.insertBefore(bar, row.nextSibling);
+    var thumb = bar.firstChild; row.parentNode.insertBefore(bar, row.nextSibling);var hint=document.createElement('div');hint.className='rowhint-status';hint.textContent='More choices · swipe sideways';bar.after(hint);
     var active = false, pos = null, dir = 1, hold = now() + 1800, last = 0, lastAuto = 0, inView = true, touching = false, mouse = false, keyFocus = false, usingKeys = false, lastW = -1;
     var still = P.reduceMotion.matches;
     function max() { return Math.max(0, row.scrollWidth - row.clientWidth); }
@@ -934,7 +939,7 @@
     }
     function measure() {
       lastW = row.clientWidth; active = lastW >= 40 && max() > 4;
-      row.classList.toggle('is-drift', active); bar.hidden = !active; pos = null; lastAuto = row.scrollLeft; paint();
+      row.classList.toggle('is-drift', active); bar.hidden = !active;hint.hidden=!active; pos = null; lastAuto = row.scrollLeft; paint();
     }
     function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
     function playing() { return active && !P.motionPaused && !still && inView && !touching && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
@@ -1072,7 +1077,7 @@
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
 
-  var DUR = 3500, i = 0, timer = 0, playing = true, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
+  var DUR = 3500, i = 0, timer = 0, playing = !reduce, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
 
@@ -1101,13 +1106,13 @@
   /* One clock controls both the fill and the image change. Pauses freeze both. */
   function schedule() {
     rootWindowCancel(); last = null;
-    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading) return;
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || document.querySelector('dialog[open]')) return;
     timer = requestAnimationFrame(tick);
   }
   function rootWindowCancel() { if (timer) cancelAnimationFrame(timer); timer = 0; }
   function tick(now) {
     timer = 0;
-    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading) { last = null; return; }
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || document.querySelector('dialog[open]')) { last = null; return; }
     if (last !== null) elapsed += now - last;
     last = now;
     prog.style.transform = 'scaleX(' + Math.min(1, elapsed / DUR) + ')';
@@ -1118,11 +1123,13 @@
     playing = on; schedule();
   }
   var pause = q('[data-jr-pause]');
-  if(pause) pause.addEventListener('click', function(){setPlay(!playing);pause.textContent=playing?'Pause':'Play';pause.setAttribute('aria-pressed',String(!playing));});
+  var journalCues=P100Rotation.create({host:q('.jr__ctl'),previous:q('[data-jr-prev]'),next:q('[data-jr-next]'),pause:pause,unit:'photos',previousLabel:'Previous photo',nextLabel:'Next photo'});
+  setInterval(function(){if(!timer&&playing&&inView&&!loading&&!document.hidden&&!window.P100.motionPaused&&!document.querySelector('dialog[open]'))schedule();journalCues.update({total:thumbs.length,range:'Photo '+(i+1)+' of '+thumbs.length,progress:elapsed/DUR,remaining:DUR-elapsed,paused:!playing||window.P100.motionPaused,loading:loading,action:'Next photo',previous:{src:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.bg,title:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.date},next:{src:thumbs[(i+1)%thumbs.length].dataset.bg,title:thumbs[(i+1)%thumbs.length].dataset.date}});},100);
+  if(pause) pause.addEventListener('click', function(){if(window.P100.motionPaused){window.P100.setMotionPaused(false);setPlay(true);}else setPlay(!playing);pause.textContent=playing?'Pause auto-change':'Resume auto-change';pause.setAttribute('aria-pressed',String(!playing));});
   q('[data-jr-prev]').addEventListener('click', function () { show(i - 1, true); });
   q('[data-jr-next]').addEventListener('click', function () { show(i + 1, true); });
   thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
-  stage.addEventListener('focusin', function(e){if(e.target.matches(':focus-visible')){playing=false;schedule();if(pause){pause.textContent='Play';pause.setAttribute('aria-pressed','true');}}});
+  stage.addEventListener('focusin', function(e){if(e.target.matches(':focus-visible')){playing=false;schedule();if(pause){pause.textContent='Resume auto-change';pause.setAttribute('aria-pressed','true');}}});
   document.addEventListener('visibilitychange', schedule);
   document.addEventListener('p100:motion', schedule);
   if ('IntersectionObserver' in window) {

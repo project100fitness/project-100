@@ -2,11 +2,11 @@
 (function(){'use strict';
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),known=new WeakSet(),states=new Set();
  function attach(rail){
-  if(known.has(rail))return;known.add(rail);
+  if(rail.hasAttribute('data-group-carousel')||known.has(rail))return;known.add(rail);
   const section=rail.closest('.library-muscle-section'),entry=rail.classList.contains('exercise-entry-grid');
   let controls=section?.querySelector('.library-group-controls'),count=section?.querySelector('[data-group-position]');
   if(!controls){controls=document.createElement('div');controls.className='card-preview-bar';controls.innerHTML='<span class="card-preview-hint">'+(entry?'Swipe folders':'Swipe exercises')+'</span><button type="button" data-preview-step="-1" aria-label="Previous cards">←</button><span data-preview-position></span><button type="button" data-preview-step="1" aria-label="Next cards">→</button>';rail.before(controls);count=controls.querySelector('[data-preview-position]');}
-  const state={rail,controls,last:performance.now(),inside:false,touching:false};states.add(state);
+  const pauseButton=document.createElement('button');controls.append(pauseButton);const cues=P100Rotation.create({host:controls,previous:controls.querySelector('[data-preview-step="-1"]'),next:controls.querySelector('[data-preview-step="1"]'),pause:pauseButton,position:count,unit:'folders',previousLabel:'Previous folders',nextLabel:'Next folders'});const state={rail,controls,cues,paused:reduced.matches,last:performance.now(),inside:false,touching:false};pauseButton.onclick=()=>{if(window.P100?.motionPaused){window.P100.setMotionPaused(false);state.paused=false;}else state.paused=!state.paused;state.last=performance.now()};states.add(state);
   // Interactions defer the next preview; none permanently stop its loop.
   function pause(){state.last=performance.now();}
   function step(direction){const first=rail.firstElementChild;if(!first)return;const gap=parseFloat(getComputedStyle(rail).columnGap)||0,size=first.getBoundingClientRect().width+gap,max=rail.scrollWidth-rail.clientWidth;
@@ -28,5 +28,5 @@
  }
  function scan(){document.querySelectorAll('[data-group-carousel],.exercise-entry-grid').forEach(attach);}
  scan();const library=document.querySelector('#p100-library-grid');if(library)new MutationObserver(scan).observe(library,{childList:true});
- setInterval(()=>{const now=performance.now();for(const s of states){if(!s.rail.isConnected){states.delete(s);continue;}const r=s.rail.getBoundingClientRect(),head=document.querySelector('.site-head')?.getBoundingClientRect().bottom||0;if(window.P100?.motionPaused||document.hidden||document.querySelector('dialog[open]')||s.touching||reduced.matches||!r.width||Math.min(r.bottom,innerHeight-60)-Math.max(r.top,head)<r.height*.5||s.rail.scrollWidth<=s.rail.clientWidth+3){s.last=now;continue;}if(now-s.last>=5500)s.step(1);}},250);
+ setInterval(()=>{const now=performance.now();for(const s of states){if(!s.rail.isConnected){states.delete(s);continue;}const first=s.rail.firstElementChild,gap=parseFloat(getComputedStyle(s.rail).columnGap)||0,size=(first?.getBoundingClientRect().width||1)+gap,start=Math.floor(s.rail.scrollLeft/size),visible=Math.max(1,Math.round(s.rail.clientWidth/size)),items=[...s.rail.children];s.cues.update({enabled:s.rail.scrollWidth>s.rail.clientWidth+3,total:items.length,progress:s.paused||window.P100?.motionPaused?0:(now-s.last)/5500,remaining:s.paused||window.P100?.motionPaused?5500:5500-(now-s.last),paused:s.paused||window.P100?.motionPaused,waiting:s.inside?'Paused while you explore':null,previous:items[Math.max(0,start-1)],next:items[(start+visible)%items.length]});const r=s.rail.getBoundingClientRect(),head=document.querySelector('.site-head')?.getBoundingClientRect().bottom||0;if(window.P100?.motionPaused||document.hidden||document.querySelector('dialog[open]')||s.touching||s.inside||s.paused||!r.width||Math.min(r.bottom,innerHeight-60)-Math.max(r.top,head)<r.height*.5||s.rail.scrollWidth<=s.rail.clientWidth+3){s.last=now;continue;}if(now-s.last>=5500)s.step(1);}},250);
 })();
