@@ -1,0 +1,65 @@
+import data from './ninja-creami-data.js?v=4832426e62fc';
+(()=>{'use strict';
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const grid=$('#recipe-grid'),detail=$('#recipe-detail'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
+let filtered=data.recipes.slice(),set=0,all=false,paused=reduced.matches,elapsed=0,last=0,fading=false,visible=false,active=true,currentMode='guide',currentPage=1,lastRecipeButton=null,guideY=0,textPromise=null;
+let hostPort=null;const hostQueue=[];
+const notify=(type,extra={})=>{const request={type,...extra};if(type==='creami-ready')parent.postMessage(request,location.origin);else if(hostPort)hostPort.postMessage(request);else hostQueue.push(request)};
+function jump(id){document.getElementById(id)?.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'})}
+document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>jump(b.dataset.jump)));
+document.querySelectorAll('[data-book]').forEach(b=>b.addEventListener('click',()=>notify('creami-book',{page:Number(b.dataset.book)})));
+function baseRows(n=1){return [
+ ['Hot water',n===1?'150–200 mL [5.1–6.8 US fl oz]':'450–600 mL [15.2–20.3 US fl oz]'],
+ ['Bone broth powder',`${n} scoop${n>1?'s':''} [≈${10*n} g / ${(10*n/28.3495).toFixed(2)} oz]`],
+ ['Marine collagen',`${n} scoop${n>1?'s':''} [≈${10*n} g / ${(10*n/28.3495).toFixed(2)} oz]`],
+ ['Kirkland ultrafiltered 2% milk',`${250*n} mL [${(250*n/29.5735).toFixed(1)} US fl oz; ≈${n} US cup${n>1?'s':''} + ${n} tbsp]`],
+ ['Pasteurized liquid egg whites',`${100*n} g [${(100*n/28.3495).toFixed(1)} oz; ≈${100*n} mL]`],
+ ['Recipe’s protein powder',`${1.5*n} scoops [≈${n===1?'38–45':'114–135'} g / ${n===1?'1.3–1.6':'4.0–4.8'} oz; check product scoop]`],
+ ['Sweetener',`${3*n}–${4*n} tbsp [≈${25*n}–${35*n} g / ${n===1?'0.9–1.2':'2.6–3.7'} oz]`],
+ ['Salt',`${n} pinch${n>1?'es':''} [≈${.5*n} g / ${500*n} mg]`]
+ ]}
+function rowsHTML(rows){return rows.map(([a,b])=>`<li><strong>${esc(a)}</strong>${esc(b)}</li>`).join('')}
+function gumText(g,n=1){const tsp=g===1?(n===1?'¼':'¾'):(n===1?'⅛':'⅜');return `${tsp} tsp [${g*n} g / ${g*n*1000} mg]`}
+function renderBase(){const n=Number($('#batch-count').value),g=$('#base-protein').value==='isolate'&&!$('#base-pudding').checked?1:.5;$('#base-list').innerHTML=rowsHTML(baseRows(n));$('#gum-dose').innerHTML=`<strong>Gum for this batch: ${gumText(g,n)}</strong><br>Dry-mix into the powders. Add the chosen recipe’s flavour amounts ${n===3?'× 3':''}.`}
+['#batch-count','#base-protein','#base-pudding'].forEach(id=>$(id).addEventListener('change',renderBase));renderBase();
+function render(){const start=Math.min(set*4,Math.max(0,filtered.length-4)),items=all?filtered:filtered.slice(start,start+4);grid.innerHTML=items.length?items.map(r=>`<button type="button" class="recipe-card" data-recipe="${r.id}" aria-controls="recipe-detail" aria-expanded="false" style="--accent:${r.protein==='PVL'?'var(--purple)':'var(--berry)'}"><span class="recipe-number">${String(r.id).padStart(2,'0')} / ${esc(r.protein)}</span><h3>${esc(r.name)}</h3><p>${r.macros[0]} kcal · ${r.macros[1]} g protein<br>Gum ${r.gum} g per pint</p><span class="recipe-open">Ingredients + method ↗</span></button>`).join(''):'<p>No matching flavours. Try a different ingredient.</p>';
+ $('#recipe-range').textContent=all?`${filtered.length} matching flavours`:`${filtered.length?start+1:0}–${Math.min(start+4,filtered.length)} of ${filtered.length} flavours`;
+ $('#recipes-all').setAttribute('aria-pressed',String(all));$('#recipes-all').textContent=all?'Four at a time':'All 18';
+ $('#recipes-pause').setAttribute('aria-pressed',String(paused));$('#recipes-pause').textContent=paused?'Play':'Pause';
+ $('#recipes-prev').disabled=$('#recipes-next').disabled=all||filtered.length<=4;$('#recipes-pause').disabled=all||filtered.length<=4;
+ elapsed=0;
+}
+function closeRecipe(focus=true){detail.hidden=true;grid.querySelectorAll('[data-recipe]').forEach(b=>b.setAttribute('aria-expanded','false'));if(focus&&lastRecipeButton?.isConnected)lastRecipeButton.focus({preventScroll:true});elapsed=0}
+function openRecipe(id,button){const r=data.recipes.find(r=>r.id===id);if(!r)return;lastRecipeButton=button;grid.querySelectorAll('[data-recipe]').forEach(b=>b.setAttribute('aria-expanded',String(b===button)));
+ const protein=r.protein==='PVL'?(r.id===8||r.id===11?'PVL Isogold Iced Mocha':'PVL Isogold Triple Chocolate'):r.protein==='Syntha-6'?'Syntha-6 Vanilla':'Hexapro Vanilla';
+ detail.innerHTML=`<div class="detail-head"><div><p class="eyebrow">Recipe ${String(r.id).padStart(2,'0')} / full XL pint</p><h3>${esc(r.name)}</h3></div><button type="button" data-recipe-close aria-label="Close recipe details">Close ×</button></div><div class="macro-grid">${r.macros.map((n,i)=>`<span><b>${n}${i?' g':' kcal'}</b>${['Energy','Protein','Fat','Net carbs'][i]}</span>`).join('')}</div><p class="fine">Recorded Kirkland-ledger total · book page ${r.page}. Product labels and unspecified inclusions can change this estimate.</p><div class="detail-grid"><div><h3>Full base · 1 pint</h3><ul class="base-list">${rowsHTML(baseRows().map(([a,b])=>a==='Recipe’s protein powder'?[protein,b]:[a,b]))}<li><strong>Gum</strong>${gumText(r.gum)}${r.id===18?' · pudding override':''}</li></ul></div><div><h3>Flavour additions</h3><ul>${r.additions.map(a=>`<li>${esc(a)}</li>`).join('')}</ul><h3>Make + finish</h3><p>Dry-mix gum with powder. Hydrate broth and collagen separately, blend with cold liquids and the dry matrix, then rest about 15 minutes. Check MAX FILL; freeze level with the lid on for at least 24 hours.</p><p>Process on LITE ICE CREAM. Follow the inclusion tiers for the listed additions; keep swirls and fragile bits for hand folding. See the full workflow for the MIX-IN / RE-SPIN order.</p><div class="controls"><button data-detail-workflow>Seven-step workflow ↓</button><button data-detail-book>Book page ${r.page} ↗</button></div></div></div>`;
+ detail.hidden=false;detail.querySelector('[data-recipe-close]').addEventListener('click',()=>closeRecipe());detail.querySelector('[data-detail-workflow]').addEventListener('click',()=>jump('workflow'));detail.querySelector('[data-detail-book]').addEventListener('click',()=>notify('creami-book',{page:r.page}));detail.focus({preventScroll:true});detail.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});elapsed=0;
+}
+grid.addEventListener('click',e=>{const b=e.target.closest('[data-recipe]');if(b)openRecipe(Number(b.dataset.recipe),b)});
+function next(delta,auto=false){if(fading)return;closeRecipe(false);const count=Math.ceil(filtered.length/4);if(count<2)return;fading=true;grid.classList.add('is-fading');setTimeout(()=>{set=(set+delta+count)%count;render();grid.classList.remove('is-fading');fading=false;if(!auto)elapsed=0},reduced.matches?0:220)}
+$('#recipes-prev').addEventListener('click',()=>next(-1));$('#recipes-next').addEventListener('click',()=>next(1));$('#recipes-pause').addEventListener('click',()=>{paused=!paused;$('#recipes-pause').setAttribute('aria-pressed',String(paused));$('#recipes-pause').textContent=paused?'Play':'Pause'});
+$('#recipes-all').addEventListener('click',()=>{closeRecipe(false);all=!all;set=0;render()});
+function filter(){closeRecipe(false);const q=$('#recipe-search').value.trim().toLowerCase(),p=$('#protein-filter').value;filtered=data.recipes.filter(r=>(p==='all'||r.protein===p)&&(r.name+' '+r.additions.join(' ')).toLowerCase().includes(q));set=0;render()}
+$('#protein-filter').addEventListener('change',filter);$('#recipe-search').addEventListener('input',filter);render();
+new IntersectionObserver(entries=>{visible=entries[0].isIntersecting},{threshold:.15}).observe(grid);
+const progress=$('.recipe-progress'),fill=progress.firstElementChild;
+function tick(now){const delta=Math.min(now-last,100);last=now;if(active&&currentMode==='guide'&&visible&&!document.hidden&&!paused&&!all&&detail.hidden&&filtered.length>4&&!grid.contains(document.activeElement)&&!(matchMedia('(hover:hover)').matches&&grid.matches(':hover'))){elapsed+=delta;if(elapsed>=5000){elapsed=0;next(1,true)}}fill.style.transform=`scaleX(${Math.min(elapsed/5000,1)})`;progress.setAttribute('aria-valuenow',String(Math.round(elapsed/50)));requestAnimationFrame(tick)}requestAnimationFrame(tick);
+
+const imageDialog=$('#image-dialog');let imageTrigger=null;
+const archive=[['strawberry-legacy.png','Strawberry poster · archived Silk ledger'],['banana-legacy.png','Banana poster · archived Silk ledger'],['blueprint.png','Kitchen blueprint · historical plate'],['hardware-legacy.png','Hardware poster · superseded practices'],['operations-legacy.png','Operations diagram · historical plate'],['tutorial-legacy.png','Six-step illustration · historical plate'],['cutaway-legacy.png','Generated cutaway · labels not specifications'],['workflow-legacy.png','Engineering workflow · historical plate']];
+$('#archive-grid').innerHTML=archive.map(([src,title])=>`<button class="image-button" data-image="assets/creami/${src}" data-caption="${esc(title)}"><img src="assets/creami/${src}" alt="${esc(title)}" loading="lazy"><span>${esc(title)} ↗</span></button>`).join('');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-image]');if(b){imageTrigger=b;$('#image-full').src=b.dataset.image;$('#image-full').alt=b.dataset.caption;$('#image-title').textContent=b.dataset.caption;$('#image-caption').textContent=b.closest('#archive-grid')?'Historical illustration: current web workflow and the model’s manual govern operation.':'Owner-supplied photograph.';imageDialog.showModal()}});
+$('#image-close').addEventListener('click',()=>imageDialog.close());imageDialog.addEventListener('close',()=>imageTrigger?.focus({preventScroll:true}));
+for(let p=1;p<=37;p++)$('#book-page').add(new Option(String(p),String(p)));
+function showPage(p){currentPage=Math.max(1,Math.min(37,Number(p)||1));const page=data.pages[currentPage-1];$('#book-page').value=String(currentPage);$('#book-prev').disabled=currentPage===1;$('#book-next').disabled=currentPage===37;$('#book-status').textContent=`Loading page ${currentPage} of 37…`;const im=$('#book-image');im.onload=()=>{$('#book-status').textContent=`Page ${currentPage} of 37 · original Final Edition`};im.onerror=()=>{$('#book-status').textContent='This page could not load. Try another page or download the original PDF.'};im.src=page.src;im.width=page.width;im.height=page.height;im.alt=`PROJECT 100 Ninja CREAMi guidebook, page ${currentPage} of 37`;
+ const text=$('#book-text');text.textContent='Loading page text…';if(!textPromise)textPromise=fetch('assets/creami/book/text.json').then(r=>{if(!r.ok)throw Error('text');return r.json()});const requested=currentPage;textPromise.then(pages=>{if(currentPage===requested)text.textContent=pages[requested-1]}).catch(()=>{text.textContent='Page text unavailable. The original PDF remains available above.'});$('#book-stage').scrollTop=0;$('#book-stage').scrollLeft=0;
+}
+function view(mode,page){active=true;if(mode==='book'){if(currentMode!=='book')guideY=scrollY;$('#guide-view').hidden=true;$('#book-view').hidden=false;showPage(page);scrollTo(0,0)}else{const wasBook=currentMode==='book';$('#guide-view').hidden=false;$('#book-view').hidden=true;if(wasBook)scrollTo(0,guideY)}currentMode=mode}
+$('#book-page').addEventListener('change',e=>showPage(e.target.value));$('#book-prev').addEventListener('click',()=>showPage(currentPage-1));$('#book-next').addEventListener('click',()=>showPage(currentPage+1));$('#book-back').addEventListener('click',()=>notify('creami-book',{mode:'guide'}));
+$('#book-zoom').addEventListener('click',()=>{const z=$('#book-stage').classList.toggle('zoom');$('#book-zoom').setAttribute('aria-pressed',String(z));$('#book-zoom').textContent=z?'Fit page':'Zoom +'});
+function receive(request){if(request?.type==='creami-view'||request?.type==='creami-theme'){if(request.theme)document.documentElement.dataset.theme=request.theme;if(request.type==='creami-view')view(request.mode,request.page)}if(request?.type==='creami-suspend'){active=false;if(imageDialog.open)imageDialog.close()}}
+window.addEventListener('message',e=>{if(e.origin!==location.origin||e.source!==parent||e.data?.type!=='creami-connect'||!e.ports[0])return;hostPort?.close();hostPort=e.ports[0];hostPort.onmessage=event=>receive(event.data);hostQueue.splice(0).forEach(request=>hostPort.postMessage(request))});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(imageDialog.open)return;if(currentMode==='guide'&&!detail.hidden){e.preventDefault();closeRecipe();return}notify('creami-close')}
+ if(currentMode==='book'&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();showPage(currentPage+(e.key==='ArrowRight'?1:-1))}});
+notify('creami-ready');
+})();
