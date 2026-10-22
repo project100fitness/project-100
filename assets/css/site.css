@@ -468,7 +468,7 @@ body[data-navigation-pattern="mirrored"] { --nav-folder-shape:polygon(100% 0,62%
   font-weight: 750;
   text-align: center;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
   transition: color .18s;
 }
 .tab::before {
@@ -1978,14 +1978,16 @@ html[data-motion="paused"] .stat,html[data-motion="paused"] .stat::after,html[da
 .chap-flow li span { color: var(--accent); font-weight: 800; }
 
 /* ---- overview hub ----------------------------------------------------- */
-.chap-hub-wrap { margin: 0 0 var(--s-6); }
+.chap-hub-wrap { margin: 0 0 var(--s-6); container: chapter-hub / inline-size; }
+.chap-hub-wrap .grid--3 { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 1fr; }
+@container chapter-hub (min-width: 52rem) { .chap-hub-wrap .grid--3 { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 .chap-hub { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
 .chap-hub > li { margin: 0; min-width: 0; }
 .chap-hub__card { height: 100%; border-top: 3px solid var(--accent-strong); }
 .chap-hub__card .card__media { aspect-ratio: 16 / 10; }
-.chap-hub__card .card__body { gap: var(--s-1); padding: var(--s-3) var(--s-4) var(--s-4); }
+.chap-hub__card .card__body { gap: var(--s-1); padding: clamp(.6rem,1.5vw,var(--s-4)); }
 .chap-hub__num { font-size: var(--step--2); font-weight: 750; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.chap-hub__card .card__title { font-size: var(--step-1); line-height: 1.2; }
+.chap-hub__card .card__title { font-size: clamp(.9rem,2vw,var(--step-1)); line-height: 1.2; }
 .chap-hub__cta { margin-top: auto; padding-top: var(--s-2); font-size: var(--step--1); font-weight: 650; color: var(--accent); }
 .chap-hub__plain { display: grid; place-items: center; background: var(--inverse); }
 .chap-hub__plain::after { content: attr(data-n); font-size: var(--step-5); font-weight: 800; letter-spacing: -.04em; color: rgb(243 244 247 / .2); }
