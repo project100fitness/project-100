@@ -182,6 +182,13 @@
       if (!host) return;
       surface = host;
     }
+    // An accordion summary is already a control. Keep its information action in the expanded body.
+    if (row.closest('summary')) {
+      var details = row.closest('details'), body = details && details.querySelector('.acc__body');
+      if (!body) return;
+      host = document.createElement('p'); host.textContent = text.trim();
+      body.insertBefore(host, body.firstChild);
+    }
     host.appendChild(button); host.classList.add('ingredient-row');
   });
   // Delegation keeps copied carousel cards interactive after a resize or loop rebuild.
