@@ -28,6 +28,7 @@
   P.refreshMotionLabels = motionLabels;
   P.$$('[data-motion-toggle]').forEach(function (b) { b.addEventListener('click', function () { P.setMotionPaused(document.querySelector('video[data-playback="blocked"]') ? false : !P.motionPaused); }); });
   motionLabels();
+  P.reduceMotion.addEventListener('change', function (event) { if (event.matches) P.setMotionPaused(true); });
   /* Pages routes that older bookmarks and PDFs still use (#ch6 → fit-protocol-training.html#ch6) */
   P.legacyRoutes = {"introduction": "fit-protocol-baseline.html#introduction", "ch1": "fit-protocol-baseline.html#ch1", "ch2": "fit-protocol-history.html#ch2", "ch3": "fit-protocol-constraints.html#ch3", "ch4": "fit-protocol-fuel.html#ch4", "annex2": "fit-protocol-checklists.html#annex2", "part3-vectors": "fit-protocol-vector-reference.html#part3-vectors", "ch5": "fit-protocol-nutrition.html#ch5", "ch8": "fit-protocol-supplements.html#ch8", "part4-cascades": "fit-protocol-interactions.html#part4-cascades", "part5-margins": "fit-protocol-margins.html#part5-margins", "ch6": "fit-protocol-training.html#ch6", "ch9": "fit-protocol-progression.html#ch9", "ch10": "fit-protocol-joints.html#ch10", "ch11": "fit-protocol-monitoring.html#ch11", "part6-lab-integrity": "fit-protocol-labs.html#part6-lab-integrity", "ch7": "fit-protocol-troubleshooting.html#ch7", "guide-page-2": "fit-protocol.html#guide-page-2", "guide-page-4": "fit-protocol.html#guide-page-4", "guide-page-3": "fit-protocol-baseline.html#guide-page-3", "guide-page-11": "fit-protocol-checklists.html#guide-page-11", "guide-page-13": "fit-protocol-checklists.html#guide-page-13", "guide-page-9": "fit-protocol-vector-reference.html#guide-page-9", "guide-page-6": "fit-protocol-nutrition.html#guide-page-6", "guide-page-7": "fit-protocol-supplements.html#guide-page-7", "guide-page-8": "fit-protocol-margins.html#guide-page-8", "guide-page-5": "fit-protocol-training.html#guide-page-5", "guide-page-10": "fit-protocol-labs.html#guide-page-10", "guide-page-12": "fit-protocol-troubleshooting.html#guide-page-12", "vector-v3": "fit-protocol-vector-v3.html#vector-v3", "vector-v1": "fit-protocol-vector-v1.html#vector-v1", "vector-v2": "fit-protocol-vector-v2.html#vector-v2", "vector-v4": "fit-protocol-vector-v4.html#vector-v4", "vector-v5": "fit-protocol-vector-v5.html#vector-v5", "vector-v10": "fit-protocol-vector-v10.html#vector-v10", "vector-pump": "fit-protocol-vector-pump.html#vector-pump", "vectors": "fit-protocol-vectors.html", "today": "guidebook.html#today", "red-flags": "fit-protocol-checklists.html#annex2", "s-clock": "fit-protocol-fuel.html#ch4", "s-vectors": "fit-protocol-vectors.html", "s-fuel": "fit-protocol-nutrition.html#ch5", "s-arsenal": "fit-protocol-supplements.html#ch8", "s-origin": "fit-protocol-baseline.html#introduction", "s-metric": "fit-protocol-baseline.html#ch1", "s-patches": "fit-protocol-constraints.html#ch3", "s-training": "fit-protocol-training.html#ch6", "s-roadmap": "fit-protocol-progression.html#ch9", "s-fail": "fit-protocol-troubleshooting.html#ch7", "s-qr": "fit-protocol-checklists.html#annex2", "quickref": "fit-protocol-checklists.html#annex2", "annex1": "fit-protocol-supplements.html#ch8", "ch12": "fit-protocol-labs.html#part6-lab-integrity"};
 })();
@@ -1164,7 +1165,7 @@
   thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
   stage.addEventListener('focusin', function(e){if(e.target.matches(':focus-visible')){playing=false;schedule();if(pause){pause.textContent='Resume auto-change';pause.setAttribute('aria-pressed','true');}}});
   document.addEventListener('visibilitychange', schedule);
-  document.addEventListener('p100:motion', schedule);
+  document.addEventListener('p100:motion', function(){if(window.P100.motionPaused||window.P100.reduceMotion.matches){frame.style.setProperty('--rx','0deg');frame.style.setProperty('--ry','0deg');stage.classList.remove('is-tilt')}schedule()});
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }, { threshold: 0.01 }).observe(stage);
   } else { inView = true; }
@@ -1188,7 +1189,7 @@
   stage.addEventListener('pointercancel', function () { down = false; });
   if (!reduce) {
     stage.addEventListener('pointermove', function (e) {
-      if (e.pointerType !== 'mouse') return;
+      if (e.pointerType !== 'mouse' || window.P100.motionPaused || window.P100.reduceMotion.matches) return;
       var r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
       frame.style.setProperty('--ry', ((x - .5) * 9).toFixed(2) + 'deg'); frame.style.setProperty('--rx', ((.5 - y) * 7).toFixed(2) + 'deg');
       frame.style.setProperty('--gx', (x * 100).toFixed(1) + '%'); frame.style.setProperty('--gy', (y * 100).toFixed(1) + '%'); stage.classList.add('is-tilt');
@@ -1204,7 +1205,7 @@
    turns on tap of the Flip button, pauses while hovered or just used. Reduced motion: no automatic turning. Both sides open in the shared lightbox. */
 (function () {
   'use strict';
-  var reduce = window.P100.reduceMotion.matches;
+  var motion = window.P100.reduceMotion;
   function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function init(root) {
     var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'),
@@ -1221,19 +1222,21 @@
       var dir = Math.random() < .5 ? -1 : 1, spin = !manual && Math.random() < .25 ? 3 : 1;
       side = 1 - side; turns += dir * spin;
       card.style.setProperty('--dur', (spin > 1 ? 1.6 : .95) + 's'); card.style.setProperty('--turn', (turns * 180) + 'deg');
-      if (!reduce) { root.classList.remove('is-turning'); void root.offsetWidth; root.classList.add('is-turning'); }
+      if (!motion.matches && !window.P100.motionPaused) { root.classList.remove('is-turning'); void root.offsetWidth; root.classList.add('is-turning'); }
       show();
     }
     function schedule() {
-      clearTimeout(timer); if (reduce || !seen || hover || document.hidden) return;
+      clearTimeout(timer); if (motion.matches || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || root.matches(':focus-within')) return;
       var wait = Date.now() < hold ? hold - Date.now() : 3500; first = false;
-      timer = setTimeout(function () { if (seen && !hover && !document.hidden && Date.now() >= hold) flip(false); schedule(); }, wait);
+      timer = setTimeout(function () { if (seen && !hover && !document.hidden && !motion.matches && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !root.matches(':focus-within') && Date.now() >= hold) flip(false); schedule(); }, wait);
     }
     btn.addEventListener('click', function () { hold = Date.now() + 16000; flip(true); schedule(); });
     root.addEventListener('mouseenter', function () { hover = true; clearTimeout(timer); });
     root.addEventListener('mouseleave', function () { hover = false; schedule(); });
     root.addEventListener('touchstart', function () { hold = Date.now() + 16000; }, { passive: true });
+    root.addEventListener('focusin', schedule);root.addEventListener('focusout', function(){setTimeout(schedule,0)});motion.addEventListener('change', schedule);
     document.addEventListener('visibilitychange', schedule);
+    document.addEventListener('close', schedule, true);
   document.addEventListener('p100:motion', schedule);
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting && es[0].intersectionRatio > .35; first = first && seen; schedule(); }, { threshold: [0, .35, .6] }).observe(root);
     show();
