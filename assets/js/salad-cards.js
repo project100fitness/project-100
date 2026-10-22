@@ -45,7 +45,8 @@ const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g
 function range(lo,hi,unit){return roundBook(lo)+'–'+roundBook(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
 const nav=doc.querySelector('[data-salad-navigation]'),previous=nav.querySelector('[data-salad-previous]'),next=nav.querySelector('[data-salad-next]'),position=nav.querySelector('[data-salad-position]'),browse=nav.querySelector('[data-salad-browse]'),pause=nav.querySelector('[data-salad-pause]'),overview=doc.getElementById('salad-overview');
-let paused=false,visible=false,lastChange=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
+const saladCues=root.P100Rotation.create({host:nav,previous,next,pause,position,unit:'salads',previousLabel:'Previous salads',nextLabel:'Next salads'});
+let paused=root.matchMedia('(prefers-reduced-motion:reduce)').matches,visible=false,lastChange=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
 function pageSize(){return 4;}
 function updatePosition(){
  const size=pageSize(),page=Math.floor(current/size),pages=Math.ceil(chosen.length/size);
@@ -69,13 +70,15 @@ function goTo(i,manual=true){
 function toggleOverview(){indexOpen=!indexOpen;overview.hidden=!indexOpen;browse.setAttribute('aria-expanded',String(indexOpen));holdUntil=Date.now()+12000;}
 function layout(){nav.hidden=false;overview.hidden=!indexOpen;gallery.setAttribute('aria-label','Four salad recipes in a fixed two-by-two grid');revealSet();}
 previous.addEventListener('click',()=>goTo(current-pageSize()));next.addEventListener('click',()=>goTo(current+pageSize()));browse.addEventListener('click',toggleOverview);
-pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-pressed',String(paused));lastChange=Date.now();});
+pause.addEventListener('click',()=>{if(root.P100?.motionPaused){root.P100.setMotionPaused(false);paused=false;}else paused=!paused;pause.textContent=paused?'Resume auto-change':'Pause auto-change';pause.setAttribute('aria-pressed',String(paused));lastChange=Date.now();});
 gallery.addEventListener('keydown',e=>{if(e.target!==gallery)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();goTo(current+(e.key==='ArrowRight'?pageSize():-pageSize()));}});
 doc.addEventListener('keydown',e=>{if(e.key==='Tab')keyboard=true;},true);doc.addEventListener('pointerdown',()=>keyboard=false,true);
 gallery.addEventListener('pointerdown',()=>holdUntil=Date.now()+12000,{passive:true});
 mobile.addEventListener('change',layout);
 if(root.IntersectionObserver)new root.IntersectionObserver(es=>{visible=es[0].isIntersecting;lastChange=Date.now();},{threshold:.01}).observe(gallery);else visible=true;
 setInterval(()=>{
+ const size=pageSize(),from=Math.min(current,Math.max(0,chosen.length-size)),pages=Math.ceil(chosen.length/size),page=Math.floor(current/size),peek=direction=>{const target=Math.min(((page+direction+pages)%pages)*size,Math.max(0,chosen.length-size));const pick=chosen.slice(target,target+size).find((x,n)=>target+n<from||target+n>=from+size)||chosen[target];return pick?{title:pick.title,src:'assets/web/mega-salads/'+pick.id+'-480.webp'}:null};
+ saladCues.update({enabled:chosen.length>size,total:chosen.length,range:'Salads '+(from+1)+'–'+Math.min(chosen.length,from+size)+' of '+chosen.length,progress:paused||root.P100?.motionPaused?0:(Date.now()-lastChange)/4800,remaining:paused||root.P100?.motionPaused?4800:4800-(Date.now()-lastChange),resume:Math.max(0,holdUntil-Date.now()),paused:paused||root.P100?.motionPaused,changing:transitioning,waiting:indexOpen||gallery.querySelector('details[open]')?'Paused while you explore':null,previous:peek(-1),next:peek(1)});
  const reading=gallery.querySelector('details[open]')||doc.querySelector('dialog[open]')||indexOpen||(keyboard&&gallery.contains(doc.activeElement))||gallery.querySelector('select:focus');
  if(paused||!visible||doc.hidden||root.P100?.motionPaused||reading||transitioning||Date.now()<holdUntil){lastChange=Date.now();return;}
  if(Date.now()-lastChange>=4800)goTo(current+pageSize(),false);
