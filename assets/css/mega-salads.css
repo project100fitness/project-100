@@ -106,7 +106,7 @@
 @media(max-width:599px){.nutrition-salads .salad-browser-nav{justify-content:space-between;}.nutrition-salads .salad-gallery{scroll-margin-top:8rem;}}
 
 /* Contrast remains readable when the operating system chooses light mode. */
-.nutrition-dashboard h2{color:var(--text);}
+.nutrition-dashboard h2{color:var(--text);}.nutrition-dashboard .hud-eyebrow{color:var(--text-2);}
 .nutrition-salads .hud-folder__title{color:var(--text);}
 .nutrition-salads .hud-folder__tab{background:var(--surface-2);color:var(--text);}
 .nutrition-salads .filters .filter{background:var(--surface-2);color:var(--text);}

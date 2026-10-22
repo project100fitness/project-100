@@ -86,11 +86,16 @@
   // The shared header owns its measured geometry; responsive components consume these variables.
   function measureHeader() {
     var root=document.documentElement,height=Math.ceil(head.getBoundingClientRect().height),offset=head.dataset.hidden==='true'?0:height;
-    root.style.setProperty('--site-header-height',height+'px');
-    root.style.setProperty('--site-header-offset',offset+'px');
+    if (root.style.getPropertyValue('--site-header-height') !== height+'px') root.style.setProperty('--site-header-height',height+'px');
+    if (root.style.getPropertyValue('--site-header-offset') !== offset+'px') root.style.setProperty('--site-header-offset',offset+'px');
   }
-  if(window.ResizeObserver)new ResizeObserver(measureHeader).observe(head);
-  if(window.MutationObserver)new MutationObserver(measureHeader).observe(head,{attributes:true,attributeFilter:['data-hidden']});
+  var headerMeasureFrame = 0;
+  function queueHeaderMeasure() {
+    if (headerMeasureFrame) return;
+    headerMeasureFrame = requestAnimationFrame(function () { headerMeasureFrame = 0; measureHeader(); });
+  }
+  if(window.ResizeObserver)new ResizeObserver(queueHeaderMeasure).observe(head);
+  if(window.MutationObserver)new MutationObserver(queueHeaderMeasure).observe(head,{attributes:true,attributeFilter:['data-hidden']});
   window.addEventListener('resize',measureHeader);measureHeader();
 
   var list = P.$('.tabs__list');
@@ -696,6 +701,23 @@
   'use strict';
   var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal'), last = null, ticking = false, last_p = -1;
   if (!dlg && !document.body.hasAttribute('data-bottom-controls')) return;
+  var dock = P.$('.page-dock'), dockHeight = 0, dockMeasureFrame = 0;
+  function measureDock() {
+    if (!dock) return;
+    var height = Math.ceil(dock.getBoundingClientRect().height);
+    if (height > 0 && height !== dockHeight) {
+      dockHeight = height;
+      document.body.style.setProperty('--page-dock-height', height + 'px');
+    }
+  }
+  measureDock();
+  function queueDockMeasure() {
+    if (dockMeasureFrame) return;
+    dockMeasureFrame = requestAnimationFrame(function () { dockMeasureFrame = 0; measureDock(); });
+  }
+  if (dock && 'ResizeObserver' in window) new ResizeObserver(queueDockMeasure).observe(dock);
+  window.addEventListener('resize', measureDock);
+  window.addEventListener('load', measureDock);
   var RANGE = 420;                                                    /* px before the very end of the page where the bar starts rising */
   function check() {
     ticking = false;
@@ -905,7 +927,12 @@
       new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .12 }).observe(root);
     }
     function remeasure() { if (track.clientWidth !== lastW) measure(); }
-    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(stage); else window.addEventListener('resize', remeasure);
+    var resizeFrame = 0;
+    function scheduleRemeasure() {
+      if (resizeFrame) return;
+      resizeFrame = requestAnimationFrame(function () { resizeFrame = 0; remeasure(); });
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleRemeasure).observe(stage); else window.addEventListener('resize', remeasure);
     window.addEventListener('load', measure);                           /* images / fonts settled */
     label(); measure();
     hold = now() + 1600;                                               /* open on the first card for a moment, then start drifting */
@@ -967,7 +994,12 @@
     row.addEventListener('focusin', function () { keyFocus = usingKeys; }); row.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
     if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .2 }).observe(row);
     function remeasure() { if (row.clientWidth !== lastW) measure(); }
-    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(row); else window.addEventListener('resize', remeasure);
+    var resizeFrame = 0;
+    function scheduleRemeasure() {
+      if (resizeFrame) return;
+      resizeFrame = requestAnimationFrame(function () { resizeFrame = 0; remeasure(); });
+    }
+    if ('ResizeObserver' in window) new ResizeObserver(scheduleRemeasure).observe(row); else window.addEventListener('resize', remeasure);
     window.addEventListener('load', measure);
     measure(); requestAnimationFrame(function (t) { last = t; tick(t); });
   }

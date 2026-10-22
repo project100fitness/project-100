@@ -90,7 +90,7 @@
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 7px; z-index: 1;
   background: repeating-linear-gradient(135deg, var(--hud-amber) 0 11px, #101216 11px 22px);
 }
-.hud-eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--hud-amber); }
+.hud-eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
 .hud-eyebrow::before { content: ""; width: 1.6rem; height: 3px; background: currentColor; }
 .hud-title {
   margin: .35rem 0 .5rem; font-size: clamp(2.3rem, 1.2rem + 5.2vw, 4.4rem); line-height: .95; font-weight: 800; font-style: italic;
@@ -165,9 +165,9 @@
 }
 .hud-card:hover { transform: translateY(-4px); filter:none; text-decoration: none; color: var(--hud-ink);}
 .hud-card:focus-visible { outline: 3px solid var(--hud-amber); outline-offset: 2px; }
-.hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #11151c; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
+.hud-card__tag { padding: .32rem .7rem; background: var(--c); background: color-mix(in srgb, var(--c) 90%, transparent); color: #000000; font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; display: flex; justify-content: space-between; gap: .5rem; }
  .hud-card--reference .hud-card__tag { background:var(--hud-dark-3); color:var(--hud-ink); box-shadow:inset 3px 0 0 var(--line-strong); }
-.hud-card__img { position: relative; aspect-ratio: 4 / 5; max-height:clamp(110px,22svh,240px); overflow: hidden; background: var(--hud-dark-1); }
+.hud-card__img { display:block; position: relative; aspect-ratio: 4 / 5; max-height:clamp(110px,22svh,240px); overflow: hidden; background: color-mix(in srgb, var(--hud-orange) 14%, #e4e7eb); }
 .hud-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: transform .5s var(--hud-ease); }
 .hud-card:hover .hud-card__img img { transform: scale(1.05); }
 .hud-card__img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(10 11 14 / .85)); }
@@ -289,7 +289,7 @@
 .hud-node[data-hud-open] { cursor: pointer; }
 .hud-node[data-hud-open]:hover .hud-node__hex, .hud-node[data-hud-open]:focus-visible .hud-node__hex { filter: drop-shadow(0 0 12px var(--glow)); }
 .hud-node[data-hud-open] { background: none; border: 0; text-align: left; font: inherit; color: inherit; }
-.hud-node__count { color: var(--hud-amber) !important; font-weight: 750; font-size: .8rem !important; letter-spacing: .08em; text-transform: uppercase; }
+.hud-node__count { color: var(--accent) !important; font-weight: 750; font-size: .8rem !important; letter-spacing: .08em; text-transform: uppercase; }
 .hud-folder + .hud-folder { margin-top: var(--s-6); }
 @media (max-width: 599px) { .hud-map--6 .hud-node { grid-template-columns: minmax(0, 1fr); } .hud-card__num { font-size: 2.6rem; } }
 
@@ -380,7 +380,7 @@
 .hud-deeplink { position: relative; display: grid; gap: .15rem; padding: .95rem 3rem .95rem 1.1rem; border: 1px solid var(--hud-line); border-left: 4px solid var(--brand-orange);
   background: var(--hud-bg); color: var(--hud-ink); text-decoration: none; transition: transform .2s var(--hud-ease), border-color .2s; }
 .hud-deeplink:hover, .hud-deeplink:focus-visible { transform: translateY(-3px); border-color: var(--brand-orange); text-decoration: none; color: var(--hud-ink); }
-.hud-deeplink small { font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--hud-amber); }
+.hud-deeplink small { font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
 .hud-deeplink strong { font-size: 1.1rem; font-weight: 800; font-style: italic; text-transform: uppercase; letter-spacing: -.01em; }
 .hud-deeplink span { color: var(--hud-ink-2); font-size: var(--step--1); }
 .hud-deeplink i { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-style: normal; font-size: 1.5rem; color: var(--brand-orange); }
@@ -406,9 +406,9 @@
 .hud-prose .hud-pull { margin: var(--s-4) 0; padding: .6rem 0 .6rem 1rem; border-left: 4px solid var(--brand-orange); font-size: var(--step-1); font-weight: 750; line-height: 1.35; max-width: 60ch; }
 .hud-prose .hud-note { font-size: var(--step--1); color: var(--hud-mute); max-width: 78ch; }
 .hud-prose .hud-source { margin-top: var(--s-5); padding-top: var(--s-3); border-top: 1px solid var(--hud-line-soft); font-size: var(--step--2); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--hud-mute); max-width: none; }
-.hud-prose .hud-source a { color: var(--brand-orange); text-decoration: none; }
+.hud-prose .hud-source a { color: var(--accent); text-decoration: underline; text-underline-offset:.2em; }
 .hud-prose .hud-source a:hover, .hud-prose .hud-source a:focus-visible { text-decoration: underline; }
-.hud-prose h4 { font-size: var(--step-0); letter-spacing: .02em; text-transform: uppercase; color: var(--hud-amber); }
+.hud-prose h4 { font-size: var(--step-0); letter-spacing: .02em; text-transform: uppercase; color: var(--accent); }
 .hud-points, .hud-steps { margin: 0; padding-left: 1.25rem; display: grid; gap: .55rem; }
 .hud-points > li, .hud-steps > li { padding-left: .15rem; }
 .hud-points > li::marker { color: var(--brand-orange); }
@@ -423,7 +423,7 @@
 .hud-stat span { font-size: var(--step--1); color: var(--hud-ink-2); }
 .hud-boxes { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); margin: var(--s-4) 0; }
 .hud-box { padding: .85rem 1rem; border: 1px solid var(--hud-line-soft); border-left: 3px solid var(--hud-cyan); background: var(--hud-bg-2); }
-.hud-box b { display: block; margin-bottom: .25rem; font-size: var(--step--2); letter-spacing: .12em; text-transform: uppercase; color: var(--hud-amber); }
+.hud-box b { display: block; margin-bottom: .25rem; font-size: var(--step--2); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
 .hud-box p { margin: 0; font-size: var(--step--1); }
 .hud-prose .table-wrap { margin: var(--s-3) 0; }
 @media (max-width: 639px) { .hud-prose .table-wrap td:first-child strong { font-size: var(--step-0); } 
