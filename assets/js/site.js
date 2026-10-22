@@ -696,6 +696,23 @@
   'use strict';
   var P = window.P100, bar = P.$('#dlBar'), dlg = P.$('#dlModal'), last = null, ticking = false, last_p = -1;
   if (!dlg && !document.body.hasAttribute('data-bottom-controls')) return;
+  var dock = P.$('.page-dock'), dockHeight = 0, dockMeasureFrame = 0;
+  function measureDock() {
+    if (!dock) return;
+    var height = Math.ceil(dock.getBoundingClientRect().height);
+    if (height > 0 && height !== dockHeight) {
+      dockHeight = height;
+      document.body.style.setProperty('--page-dock-height', height + 'px');
+    }
+  }
+  measureDock();
+  function queueDockMeasure() {
+    if (dockMeasureFrame) return;
+    dockMeasureFrame = requestAnimationFrame(function () { dockMeasureFrame = 0; measureDock(); });
+  }
+  if (dock && 'ResizeObserver' in window) new ResizeObserver(queueDockMeasure).observe(dock);
+  window.addEventListener('resize', measureDock);
+  window.addEventListener('load', measureDock);
   var RANGE = 420;                                                    /* px before the very end of the page where the bar starts rising */
   function check() {
     ticking = false;

@@ -6,7 +6,7 @@
 .protocol-panel__head { display: flex; align-items: center; gap: .85rem; padding: .75rem 1rem; cursor: pointer; list-style: none; }
 .protocol-panel__head::-webkit-details-marker { display: none; }
 .protocol-panel__head:focus-visible { outline: 3px solid var(--edge); outline-offset: -4px; }
-.protocol-panel__number { font-weight: 800; color: var(--edge); font-size: 1.15rem; }
+.protocol-panel__number { font-weight: 800; color: var(--text-2); font-size: 1.15rem; }
 .protocol-panel__preview { width: 100px; height: 58px; object-fit: contain; border-radius: .3rem; background: #070c10; flex: none; }
 .protocol-panel__label { display: grid; gap: .2rem; min-width: 0; flex: 1; }
 .protocol-panel__label strong { font-size: clamp(1rem, 2vw, 1.3rem); }
