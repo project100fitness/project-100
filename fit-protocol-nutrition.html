@@ -28,8 +28,8 @@ document.documentElement.classList.add('js');
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
 <link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-<link href="assets/css/site.css?v=4d39c8d25a06" rel="stylesheet"/>
-<link href="assets/css/hud.css?v=f20f57259d02" rel="stylesheet"/>
+<link href="assets/css/site.css?v=b1612fc3b362" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=6cd69aac2f95" rel="stylesheet"/>
 <style>
 .meal-journal-gallery{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:minmax(180px,32%);gap:.8rem;overflow-x:auto;padding:.3rem .2rem 1rem;scroll-snap-type:x proximity}
 .meal-journal-item{margin:0;min-width:0;border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;background:var(--surface);scroll-snap-align:start}
@@ -39,7 +39,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 .meal-journal-item summary,.meal-journal-notes summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:700}.meal-journal-item p{font-size:.9rem}.meal-journal-notes{margin:1rem 0}
 @media(max-width:600px){.meal-journal-gallery{grid-auto-columns:minmax(0,48%);gap:.6rem}.meal-journal-photo img{height:170px}.meal-journal-item figcaption{padding:.6rem}}
 </style>
-<link rel="stylesheet" href="assets/css/creami-shell.css?v=4558d0dd61f4">
+<link rel="stylesheet" href="assets/css/creami-shell.css?v=58bae9c093e9">
 <link rel="stylesheet" href="assets/css/rotation-cues.css?v=5ba388a1c5fc">
 </head>
 <body data-bottom-controls data-navigation-pattern="mirrored" data-group="nutrition" data-page="fit-protocol-nutrition" data-site="protocol" data-folder="nutrition" data-design-profile="clear-contrast">
@@ -70,7 +70,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <a class="creami-download" href="assets/downloads/project-100-ninja-creami-guidebook-v2-14-2026-10-22.pdf" download><span>↓</span><span><b>Take the cookbook with you</b><small>Illustrated V2.14 · 61 pages · PDF</small></span></a>
 </div>
 <dialog class="creami-window" id="creami-window" aria-labelledby="creami-window-title">
-<div class="creami-window__bar"><strong id="creami-window-title">Ninja CREAMi XL</strong><div class="creami-window__actions"><button type="button" data-creami-mode="guide" aria-pressed="true">Web guide</button><button type="button" data-creami-mode="book" aria-pressed="false">61-page book</button><a href="assets/downloads/project-100-ninja-creami-guidebook-v2-14-2026-10-22.pdf" download>Download PDF ↓</a><button type="button" data-creami-close aria-label="Close CREAMi guide">Close ×</button></div></div>
+<div class="creami-window__bar"><div class="creami-window__identity"><strong id="creami-window-title">Ninja CREAMi XL</strong><details class="creami-palette" data-creami-palette-menu><summary aria-label="Choose CREAMi colour palette"><span class="creami-palette__dots" aria-hidden="true"><i></i><i></i><i></i></span>Colour</summary><fieldset><legend>Choose your accents</legend><label><input type="radio" name="creami-colour" value="berry"><span class="creami-palette__swatch" data-swatch="berry" aria-hidden="true"></span><span>Berry &amp; Vanilla<small>Rose · plum · cream</small></span></label><label><input type="radio" name="creami-colour" value="blueberry"><span class="creami-palette__swatch" data-swatch="blueberry" aria-hidden="true"></span><span>Blueberry Cream<small>Blueberry · lilac · ivory</small></span></label><label><input type="radio" name="creami-colour" value="caramel"><span class="creami-palette__swatch" data-swatch="caramel" aria-hidden="true"></span><span>Caramel Cocoa<small>Caramel · cocoa · vanilla</small></span></label></fieldset></details></div><div class="creami-window__actions"><button type="button" data-creami-mode="guide" aria-pressed="true">Web guide</button><button type="button" data-creami-mode="book" aria-pressed="false">61-page book</button><a href="assets/downloads/project-100-ninja-creami-guidebook-v2-14-2026-10-22.pdf" download>Download PDF ↓</a><button type="button" data-creami-close aria-label="Close CREAMi guide">Close ×</button></div></div>
 <iframe title="Ninja CREAMi XL protein ice cream guide" data-creami-frame></iframe>
 </dialog>
 <section aria-labelledby="nutrition-source-folders-t" class="hud-folder section-tone--training hud-folder--training" id="nutrition-source-folders">
@@ -301,10 +301,10 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </div>
 </dialog>
 
-<script defer="" src="assets/js/site.js?v=fd89c27fda54"></script>
+<script defer="" src="assets/js/site.js?v=bfb97ce87361"></script>
 <script src="assets/js/item-purpose.js?v=5190f0a22632" defer></script>
 <script defer="" src="assets/js/hud.js?v=e212ebfaddb5"></script>
 <dialog id="mobile-sections" class="rail-drawer" aria-labelledby="mobile-sections-title"><div class="rail-drawer__head"><h2 id="mobile-sections-title">Nutrition &amp; Meals</h2><button type="button" class="rail-drawer__close" aria-label="Close sections">×</button></div><div class="rail-drawer__body"><ul class="rail__list"><li><a href="#nutrition-source-folders"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Open a nutrition card</span></a></li><li><a href="#nutrition-overview"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">The record at a glance</span></a></li><li><a href="#ch5"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Solid Fuel and Nutrition Records</span></a></li><li><a href="#notes-4"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Nutrition — Analysis</span></a></li><li><a href="fit-protocol-meals.html"><span aria-hidden="true" class="rail__num">05</span><span class="rail__label">Meals &amp; fuel →</span></a></li></ul></div></dialog>
-<script defer src="assets/js/creami-shell.js?v=cca9c552100e"></script>
+<script defer src="assets/js/creami-shell.js?v=a30ce73a084b"></script>
 </body>
 </html>
