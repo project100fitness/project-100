@@ -1,7 +1,7 @@
 {
   "pages": {
     "index.html": {
-      "description": "PROJECT 100: Bogdan\u2019s documented training, nutrition and equipment journey toward the 100 lb skeletal muscle mass goal.",
+      "description": "PROJECT 100: Bogdan’s documented training, nutrition and equipment journey toward the 100 lb skeletal muscle mass goal.",
       "image": "assets/media/october-2026/bogdan-gym-session.jpg"
     },
     "project-story.html": {
@@ -105,7 +105,7 @@
       "image": "assets/img/mega-salad-kale-tuna.jpg"
     },
     "fit-protocol-supplements.html": {
-      "description": "FIT PROTOCOL pills and accounting: the documented supplement records and source analysis.",
+      "description": "Minerals & Micros: recorded minerals, vitamins and micronutrient products, with timing, quantities and source context.",
       "image": "assets/media/october-2026/pill-organizer-february-2026.jpg"
     },
     "fit-protocol-interactions.html": {
@@ -133,7 +133,7 @@
       "image": "assets/img/v2/checklist-cover.png"
     },
     "fit-protocol-labs.html": {
-      "description": "FIT PROTOCOL lab monitoring: laboratory interpretation context, supplement disclosure and source notes.",
+      "description": "FIT PROTOCOL lab monitoring: laboratory interpretation context, nutrient product disclosure and source notes.",
       "image": "assets/img/v2/checklist-cover.png"
     },
     "fit-protocol-troubleshooting.html": {
