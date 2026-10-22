@@ -1,527 +1,264 @@
 <!DOCTYPE html>
 
-
-
 <html lang="en">
-
 <head>
-
 <script defer src="assets/js/rotation-cues.js?v=98dafdc8c51c"></script>
-
 <meta charset="utf-8"/>
-
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-
 <meta content="light dark" name="color-scheme"/>
-
 <meta content="#f5f4f1" media="(prefers-color-scheme: light)" name="theme-color"/>
-
 <meta content="#0a0b0e" media="(prefers-color-scheme: dark)" name="theme-color"/>
-
 <title>PROJECT 100 — FIT PROTOCOL | Daily clock</title>
-
 <meta content="FIT PROTOCOL daily clock: the recorded timing anchors and meal structure for the PROJECT 100 system." name="description"/>
-
 <link href="https://project100.fit/fit-protocol-fuel.html" rel="canonical"/>
-
 <meta content="website" property="og:type"/>
-
 <meta content="PROJECT 100" property="og:site_name"/>
-
 <meta content="PROJECT 100 — FIT PROTOCOL | Daily clock" property="og:title"/>
-
 <meta content="FIT PROTOCOL daily clock: the recorded timing anchors and meal structure for the PROJECT 100 system." property="og:description"/>
-
 <meta content="https://project100.fit/fit-protocol-fuel.html" property="og:url"/>
-
 <meta content="https://project100.fit/assets/img/protocol-24hr-clock.jpg" property="og:image"/>
-
 <meta content="PROJECT 100 — FIT PROTOCOL | Daily clock" property="og:image:alt"/>
-
 <meta content="summary_large_image" name="twitter:card"/>
-
 <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
-
 <script>
-
 /* theme first, so there is no flash: saved choice wins, else the OS decides */
-
 try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
-
 document.documentElement.classList.add('js');
-
 /* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
-
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
-
 </script>
-
 <link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-
-<link href="assets/css/site.css?v=3b94f005ad43" rel="stylesheet"/>
-
-<link href="assets/css/hud.css?v=41f80f8ccbaa" rel="stylesheet"/>
-
-<link rel="stylesheet" href="assets/css/rotation-cues.css?v=3e86c2826e48">
-
+<link href="assets/css/site.css?v=4d39c8d25a06" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=f20f57259d02" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/rotation-cues.css?v=5ba388a1c5fc">
 </head>
-
 <body data-bottom-controls data-navigation-pattern="mirrored" data-group="daily" data-page="fit-protocol-fuel" data-site="protocol" data-folder="daily" data-design-profile="clear-contrast">
-
 <a class="skip-link" href="#content">Skip to content</a>
-
 <header class="site-head" id="siteHead">
-
 <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="index.html" aria-label="PROJECT 100: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space ←</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Colour theme"><button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Dark colour mode"><span class="theme-switch__track" aria-hidden="true"></span><svg class="theme-switch__indicator" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1 11 6 2 11Z"/></svg><svg class="theme-switch__indicator theme-switch__indicator--opposite" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M10 1 1 6 10 11Z"/></svg><svg class="theme-switch__sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="5.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"/></svg><svg class="theme-switch__moon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"/><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"/></svg></button></div><a class="mode-folder" data-space="protocol" href="fit-protocol.html" aria-current="true" aria-label="FIT PROTOCOL: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
-
 <nav aria-label="FIT PROTOCOL sections" class="tabs">
-
 <ul class="tabs__list">
 
-
-
 <li><a class="tab" href="fit-protocol-baseline.html" data-folder="baseline"><span class="tab__label">Baseline &amp; Goals</span></a></li>
-
 <li><a aria-current="page" class="tab" href="guidebook.html" data-folder="daily"><span class="tab__label">Daily Schedule</span></a></li>
-
 <li><a class="tab" href="fit-protocol-vectors.html" data-folder="liquid"><span class="tab__label">Liquid Intake</span></a></li>
-
 <li><a class="tab" href="fit-protocol-nutrition.html" data-folder="nutrition"><span class="tab__label">Nutrition &amp; Meals</span></a></li>
-
 <li><a class="tab" href="fit-protocol-supplements.html" data-folder="supplements"><span class="tab__label">Minerals &amp; Micros</span></a></li>
-
 <li><a class="tab" href="fit-protocol-training.html" data-folder="training"><span class="tab__label">Training Programme</span></a></li><li><a class="tab" href="fit-protocol-gear.html" data-folder="gear"><span class="tab__label">Gym Equipment</span></a></li>
-
 <li><a class="tab" href="fit-protocol-monitoring.html" data-folder="metrics"><span class="tab__label">Progress Monitoring</span></a></li>
-
 <li><a class="tab" href="fit-protocol-troubleshooting.html" data-folder="fixes"><span class="tab__label">Checks &amp; Fixes</span></a></li>
-
 <li><a class="tab" href="mineral-chemistry.html" data-folder="minerals"><span class="tab__label">Minerals</span></a></li>
-
 <li><a class="tab" href="library.html" data-folder="library"><span class="tab__label">Visual library</span></a></li></ul>
-
 </nav>
-
 </header>
-
 <div class="layout layout--rail">
-
 <button hidden type="button" class="rail-toggle" aria-haspopup="dialog" aria-controls="mobile-sections" aria-expanded="false"><span class="rail-toggle__category">☰ Daily</span><span class="rail-toggle__current">Daily clock</span><span class="rail-toggle__chevron" aria-hidden="true">▾</span></button><aside aria-label="Daily Schedule" class="rail">
-
 <h2 class="rail__title reading-heading"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Daily Schedule</span></h2>
-
 <ul class="rail__list">
-
 <li><a href="guidebook.html"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Today</span></a></li>
-
 <li><a href="daily-pill-cards.html"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">Pill cards</span></a></li>
-
 <li><a aria-current="page" href="fit-protocol-fuel.html"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Daily clock</span></a></li>
-
 <li><a href="fit-protocol-checklists.html"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Checklists</span></a></li>
-
 </ul>
-
 </aside>
-
 <main class="main section-tone--training" id="content" tabindex="-1">
-
 <section aria-labelledby="hudT" class="hud-hero section-tone--training" id="top" style="--hud-bg-img:url('/assets/web/img-protocol-24hr-clock-1000.webp')"><span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span><div class="hud-hero__text"><span class="hud-eyebrow">FIT PROTOCOL · V3.2</span><h1 class="hud-title reading-heading" id="hudT">Daily Schedule <em>clock</em></h1><div class="hud-chips"><a class="hud-chip hud-chip--link" href="#folder-1"><small class="reading-meta">Folder 01</small><strong>Vector registry</strong></a><a class="hud-chip hud-chip--link" href="#ch4"><small class="reading-meta">Folder 02</small><strong>Workout-relative sequence</strong></a></div></div></section>
-
 <!--art:gym-->
-
 <section aria-labelledby="art-gym-t" class="hud-folder art-folder section-tone--reference hud-folder--reference" id="art-gym">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Illustrated</span><h2 class="hud-folder__title reading-heading" id="art-gym-t">Order &amp; gym sequence</h2><a class="hud-folder__link" href="fit-protocol-vectors.html#folder-1">Vector cards <span aria-hidden="true">&rarr;</span></a></div>
-
 <div class="hud-folder__body surface-solid">
-
 <div class="hud-inline hud-prose"><p class="art-note reading-copy">Pick a&nbsp;step to see its picture, timing and sources. The&nbsp;exact order and branch rules are written out below.</p><div class="rv rv--rail" data-recview="" id="rv-gym"><div aria-label="Gym sequence step" class="rv-subj" data-rv-subj="" role="tablist"><button aria-controls="rv-gym-g1a" aria-selected="true" class="rv-tab is-on" data-rv-tab="" id="rv-gym-g1a-tab" role="tab" tabindex="0" type="button"><span class=rv-step>1</span><span class="rv-tt">V1 Ignition<small class="reading-meta">State A, before training</small></span></button><button aria-controls="rv-gym-g1b" aria-selected="false" class="rv-tab rv-tab--or" data-rv-tab="" id="rv-gym-g1b-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>1</span><span class="rv-tt">V6 Pump<small class="reading-meta">State C, evening alternative</small></span></button><button aria-controls="rv-gym-g2" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-gym-g2-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>2</span><span class="rv-tt">V2 Refuel<small class="reading-meta">during</small></span></button><button aria-controls="rv-gym-g3" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-gym-g3-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>3</span><span class="rv-tt">R-ALA capsule<small class="reading-meta">separate, before V4</small></span></button><button aria-controls="rv-gym-g4" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-gym-g4-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>4</span><span class="rv-tt">V4 Reload<small class="reading-meta">after</small></span></button></div><div class="rv-panel" data-rv-panel="" id="rv-gym-g1a" role=tabpanel aria-labelledby=rv-gym-g1a-tab><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: V1 Ignition recipe card, White gym sequence blueprint style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/V1_IGNITION_J19_WHITE_BLUEPRINT.png" data-orig="assets/media/vector-artwork/mega/originals/V1_IGNITION_J19_WHITE_BLUEPRINT.png" href="assets/media/vector-artwork/mega/originals/V1_IGNITION_J19_WHITE_BLUEPRINT.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:940 / 1673"><img alt="V1 Ignition recipe card, White gym sequence blueprint style" decoding="async" height="1673" loading="lazy" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" src="assets/web/mega/V1_IGNITION_J19_WHITE_BLUEPRINT--w480.webp" srcset="assets/web/mega/V1_IGNITION_J19_WHITE_BLUEPRINT--w480.webp 480w, assets/web/mega/V1_IGNITION_J19_WHITE_BLUEPRINT--w800.webp 800w, assets/media/vector-artwork/mega/V1_IGNITION_J19_WHITE_BLUEPRINT.webp 940w" width="940"></span></a><figcaption class="pcap"><b class="pcap__t">Gym Sequence</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/V1_IGNITION_J19_WHITE_BLUEPRINT.png" aria-label="Download the original image (PNG, 1.6 MB)" title="Download original · PNG 1.6 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">V1 <em>IGNITION</em></h3><p class="rv-when reading-copy"><b>When</b> State A&nbsp;only, 06:00. Separate citicoline at 05:30.</p><p class="rv-note reading-copy">No added creatine HCl in V1.</p></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-gym-g1b" role=tabpanel aria-labelledby=rv-gym-g1b-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: V6 Pump recipe card, White gym sequence blueprint style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/V6_PUMP_J19_GYM_PANEL.png" data-orig="assets/media/vector-artwork/mega/originals/V6_PUMP_J19_GYM_PANEL.png" href="assets/media/vector-artwork/mega/originals/V6_PUMP_J19_GYM_PANEL.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="V6 Pump recipe card, White gym sequence blueprint style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/V6_PUMP_J19_GYM_PANEL--w480.webp" data-srcset="assets/web/mega/V6_PUMP_J19_GYM_PANEL--w480.webp 480w, assets/web/mega/V6_PUMP_J19_GYM_PANEL--w800.webp 800w, assets/media/vector-artwork/mega/V6_PUMP_J19_GYM_PANEL.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Gym Sequence</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/V6_PUMP_J19_GYM_PANEL.png" aria-label="Download the original image (PNG, 1.5 MB)" title="Download original · PNG 1.5 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">V6 <em>PUMP</em></h3><p class="rv-when reading-copy"><b>When</b> State C only, before evening training. Citicoline at T minus 30 before V6.</p></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-gym-g2" role=tabpanel aria-labelledby=rv-gym-g2-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: V2 Refuel recipe card, White gym sequence blueprint style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/V2_REFUEL_J19_WHITE_BLUEPRINT.png" data-orig="assets/media/vector-artwork/mega/originals/V2_REFUEL_J19_WHITE_BLUEPRINT.png" href="assets/media/vector-artwork/mega/originals/V2_REFUEL_J19_WHITE_BLUEPRINT.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="V2 Refuel recipe card, White gym sequence blueprint style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/V2_REFUEL_J19_WHITE_BLUEPRINT--w480.webp" data-srcset="assets/web/mega/V2_REFUEL_J19_WHITE_BLUEPRINT--w480.webp 480w, assets/web/mega/V2_REFUEL_J19_WHITE_BLUEPRINT--w800.webp 800w, assets/media/vector-artwork/mega/V2_REFUEL_J19_WHITE_BLUEPRINT.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Gym Sequence</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/V2_REFUEL_J19_WHITE_BLUEPRINT.png" aria-label="Download the original image (PNG, 1.7 MB)" title="Download original · PNG 1.7 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">V2 <em>REFUEL</em></h3><p class="rv-when reading-copy"><b>When</b> States A&nbsp;and C, during training. State A&nbsp;reference 09:30.</p></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-gym-g3" role=tabpanel aria-labelledby=rv-gym-g3-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: R-ALA capsule step card, White gym sequence blueprint style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/R-ALA_PILLS_J19_GYM_PANEL.png" data-orig="assets/media/vector-artwork/mega/originals/R-ALA_PILLS_J19_GYM_PANEL.png" href="assets/media/vector-artwork/mega/originals/R-ALA_PILLS_J19_GYM_PANEL.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="R-ALA capsule step card, White gym sequence blueprint style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/R-ALA_PILLS_J19_GYM_PANEL--w480.webp" data-srcset="assets/web/mega/R-ALA_PILLS_J19_GYM_PANEL--w480.webp 480w, assets/web/mega/R-ALA_PILLS_J19_GYM_PANEL--w800.webp 800w, assets/media/vector-artwork/mega/R-ALA_PILLS_J19_GYM_PANEL.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Gym Sequence</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/R-ALA_PILLS_J19_GYM_PANEL.png" aria-label="Download the original image (PNG, 1.4 MB)" title="Download original · PNG 1.4 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Before V4 (R-ALA) <em>before V4</em></h3><p class="rv-when reading-copy"><b>When</b> States A&nbsp;and C, before the V4 shake. Off on State B.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>Before V4</span></li><li class="rv-st rv-st--off"><b>State B</b><span>Off</span></li><li class="rv-st rv-st--on"><b>State C</b><span>Before V4</span></li></ul><div class="rv-note reading-copy copy-group"><ul class="copy-points"><li>Rest day: the Wake stage remains and Digestive Enzymes Ultra goes with solid meals.</li><li>Breakfast, lunch, afternoon and night nutrient product grids, the primer, R-ALA and V1, V2, V4, V6 are off.</li></ul></div></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-gym-g4" role=tabpanel aria-labelledby=rv-gym-g4-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: V4 Reload recipe card, White gym sequence blueprint style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/V4_RELOAD_J19_WHITE_BLUEPRINT.png" data-orig="assets/media/vector-artwork/mega/originals/V4_RELOAD_J19_WHITE_BLUEPRINT.png" href="assets/media/vector-artwork/mega/originals/V4_RELOAD_J19_WHITE_BLUEPRINT.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:940 / 1672"><img alt="V4 Reload recipe card, White gym sequence blueprint style" decoding="async" height="1672" width="940" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/V4_RELOAD_J19_WHITE_BLUEPRINT--w480.webp" data-srcset="assets/web/mega/V4_RELOAD_J19_WHITE_BLUEPRINT--w480.webp 480w, assets/web/mega/V4_RELOAD_J19_WHITE_BLUEPRINT--w800.webp 800w, assets/media/vector-artwork/mega/V4_RELOAD_J19_WHITE_BLUEPRINT.webp 940w"></span></a><figcaption class="pcap"><b class="pcap__t">Gym Sequence</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/V4_RELOAD_J19_WHITE_BLUEPRINT.png" aria-label="Download the original image (PNG, 1.6 MB)" title="Download original · PNG 1.6 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">V4 <em>RELOAD</em></h3><p class="rv-when reading-copy"><b>When</b> States A&nbsp;and C, after training. State A&nbsp;reference 11:00.</p></div></div></div><noscript><style>.rv-panel[hidden]{display:block!important}</style></noscript></div><section aria-labelledby="art-gymb-w-t" class="carousel carousel--media carousel--art art-solo section-tone--training" data-carousel="" data-gallery="" id="art-gymb-w">
-
 <header class="carousel__head"><h3 class="carousel__title reading-heading" id="art-gymb-w-t">Gym sequence boards</h3></header>
-
 <div class="carousel__stage"><ul class="carousel__track">
-
 <li class="carousel__item art-item art-item--w"><a aria-label="J06 · Gym sequence blueprint: Gym sequence blueprint overview board — gym sequence: V1 or V6, V2, R-ALA, V4" class="card card--link" data-full="assets/media/vector-artwork/mega/originals/J06_GYM_SEQUENCE_MASTER.png" data-orig="assets/media/vector-artwork/mega/originals/J06_GYM_SEQUENCE_MASTER.png" href="assets/media/vector-artwork/mega/originals/J06_GYM_SEQUENCE_MASTER.png" title="Enlarge the original image"><div class="card__media" style="aspect-ratio:1672 / 941"><img alt="Gym sequence blueprint overview board — gym sequence: V1 or V6, V2, R-ALA, V4" decoding="async" height="941" loading="lazy" sizes="(min-width: 1000px) 26rem, min(82vw, 21rem)" src="assets/web/mega/J06_GYM_SEQUENCE_MASTER--w480.webp" srcset="assets/web/mega/J06_GYM_SEQUENCE_MASTER--w480.webp 480w, assets/web/mega/J06_GYM_SEQUENCE_MASTER--w800.webp 800w, assets/web/mega/J06_GYM_SEQUENCE_MASTER--w1200.webp 1200w, assets/media/vector-artwork/mega/J06_GYM_SEQUENCE_MASTER.webp 1672w" width="1672"/></div><span class="art-cap">J06 · Gym sequence blueprint</span></a></li>
-
 <li class="carousel__item art-item art-item--w desk-only"><a aria-label="J19 · White gym sequence blueprint: White gym sequence blueprint overview board — gym sequence: V1 or V6, V2, R-ALA, V4" class="card card--link" data-full="assets/media/vector-artwork/mega/originals/J19_GYM_SEQUENCE_MASTER.png" data-orig="assets/media/vector-artwork/mega/originals/J19_GYM_SEQUENCE_MASTER.png" href="assets/media/vector-artwork/mega/originals/J19_GYM_SEQUENCE_MASTER.png" title="Enlarge the original image"><div class="card__media" style="aspect-ratio:1672 / 941"><img alt="White gym sequence blueprint overview board — gym sequence: V1 or V6, V2, R-ALA, V4" data-desk-src="assets/web/mega/J19_GYM_SEQUENCE_MASTER--w480.webp" data-desk-srcset="assets/web/mega/J19_GYM_SEQUENCE_MASTER--w480.webp 480w, assets/web/mega/J19_GYM_SEQUENCE_MASTER--w800.webp 800w, assets/web/mega/J19_GYM_SEQUENCE_MASTER--w1200.webp 1200w, assets/media/vector-artwork/mega/J19_GYM_SEQUENCE_MASTER.webp 1672w" decoding="async" height="941" loading="lazy" sizes="(min-width: 1000px) 26rem, min(82vw, 21rem)" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1672"/></div><span class="art-cap">J19 · White gym sequence blueprint</span></a></li>
-
 </ul></div>
-
 </section>
-
 </div></div></section>
-
 <!--/art:gym-->
-
 <section aria-labelledby="folder-1-t" class="hud-folder section-tone--training hud-folder--training" id="folder-1">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title reading-heading" id="folder-1-t">Vector registry · 5 October 2026</h2><span class="hud-folder__meta"></span></div>
-
 <div class="hud-folder__body surface-solid">
-
 <div class="hud-inline hud-prose"><div class="rd"><p class="rd-p reading-copy"><strong class="rd-lead">Morning:</strong> V3, V1, V2, V4, V10. Rest: V3 when consumed, V5, V10.</p><div class="rd-p reading-copy copy-group"><ul class="copy-points"><li>Evening override: V3, V6, V2 during the session, V4 afterward, V10 at night.</li><li>V1 and V6 are never combined on the same calendar day; both are inactive on rest days.</li></ul></div><p class="rd-p reading-copy">V7–V9 have no supplied records.</p></div>
-
 <div class="reading-copy copy-group"><ul class="copy-points"><li>V6 is the evening-training option.</li><li>It replaces the older unnumbered PUMP label; artwork may still say PUMP.</li><li>V1 and V6 remain alternatives for different training branches.</li></ul></div></div>
-
 </div></section>
-
 <section aria-labelledby="ch4-t" class="hud-folder section-tone--training hud-folder--training" id="ch4">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title reading-heading" id="ch4-t">Workout-relative sequence</h2><span class="hud-folder__meta"></span></div>
-
 <div class="hud-folder__body surface-solid">
-
 <div class="hud-inline hud-prose"><div class="lead reading-copy copy-group"><ul class="copy-points"><li>Morning: V1.</li><li>Evening: V6.</li><li>Rest: neither.</li><li>Both training branches use V2 during training and V4 afterwards.</li></ul></div>
-
 <div class="grid grid--3 chap-branches">
-
 <article class="card card--pad card--accent">
-
 <h3 class="card__title reading-heading">Morning training</h3>
-
 <ol class="chap-flow">
-
 <li>Wake <span aria-hidden="true">→</span></li>
-
 <li>V3 <span aria-hidden="true">→</span></li>
-
 <li>meal 1 <span aria-hidden="true">→</span></li>
-
 <li>V1 + separate citicoline <span aria-hidden="true">→</span></li>
-
 <li>V2 <span aria-hidden="true">→</span></li>
-
 <li>V4 <span aria-hidden="true">→</span></li>
-
 <li>lunch <span aria-hidden="true">→</span></li>
-
 <li>afternoon cofactors <span aria-hidden="true">→</span></li>
-
 <li>night capsules <span aria-hidden="true">→</span></li>
-
 <li>V10.</li>
-
 </ol>
-
 </article>
-
 <article class="card card--pad card--accent">
-
 <h3 class="card__title reading-heading">Evening training</h3>
-
 <ol class="chap-flow">
-
 <li>Wake <span aria-hidden="true">→</span></li>
-
 <li>V3 <span aria-hidden="true">→</span></li>
-
 <li>meal 1 <span aria-hidden="true">→</span></li>
-
 <li>lunch <span aria-hidden="true">→</span></li>
-
 <li>afternoon cofactors <span aria-hidden="true">→</span></li>
-
 <li>V6 + separate citicoline <span aria-hidden="true">→</span></li>
-
 <li>V2 <span aria-hidden="true">→</span></li>
-
 <li>V4 <span aria-hidden="true">→</span></li>
-
 <li>night capsules <span aria-hidden="true">→</span></li>
-
 <li>V10.</li>
-
 </ol>
-
 </article>
-
 <article class="card card--pad card--accent">
-
 <h3 class="card__title reading-heading">Rest</h3>
-
 <div class="reading-copy copy-group"><ul class="copy-points"><li>Wake items; meal enzymes with meals.</li><li>V3, V5 and V10 when consumed.</li><li>Training pill grids are skipped.</li></ul></div>
-
 </article>
-
 </div>
-
 <p class="chap__next reading-copy"><a class="btn btn--primary" href="guidebook.html#today">Choose your complete day branch ↗</a></p></div>
-
 </div></section>
-
 <nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="daily-pill-cards.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Pill cards</span></a><a class="pager__next" href="fit-protocol-checklists.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Checklists</span></a>
-
 </nav>
-
 </main>
-
 </div>
-
 <footer class="site-foot">
-
 <div class="site-foot__inner">
-
 <div class="site-foot__identity">
-
 <h2 class="reading-heading">FIT PROTOCOL</h2>
-
 <p class="site-foot__lede reading-copy">The&nbsp;documented system behind the record: daily execution, vectors, nutrition, training and monitoring.</p>
-
 <a class="site-foot__switch" href="index.html"><span aria-hidden="true">↔</span> Switch to PROJECT 100</a>
-
 <a class="site-foot__index" href="site-map.html">All sections →</a></div>
-
 <details class="site-foot__group site-foot__explore"><summary>Explore sections <span>11</span></summary><nav aria-label="Explore sections">
-
 <ul><li><a href="fit-protocol.html">Overview</a></li><li><a href="fit-protocol-baseline.html">Baseline &amp; Goals</a></li><li><a href="guidebook.html">Daily Schedule</a></li><li><a href="fit-protocol-vectors.html">Liquid Intake</a></li><li><a href="fit-protocol-nutrition.html">Nutrition &amp; Meals</a></li><li><a href="fit-protocol-supplements.html">Minerals &amp; Micros</a></li><li><a href="fit-protocol-training.html">Training Programme</a></li><li><a href="fit-protocol-monitoring.html">Progress Monitoring</a></li><li><a href="fit-protocol-troubleshooting.html">Checks &amp; Fixes</a></li><li><a href="mineral-chemistry.html">Minerals</a></li>
-
 <li><a href="library.html">Visual references</a></li>
-
 </ul>
-
 </nav></details>
-
 <details class="site-foot__group site-foot__elsewhere"><summary>Follow & contact <span>7</span></summary><nav aria-label="Follow & contact">
-
 <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">Gym playlist</a></li>
-
 </ul>
-
 </nav></details>
-
 <p class="site-foot__legal reading-copy">Personal record · not medical advice. Consult your clinician before changing medication, nutrient products or training.</p>
-
 </div>
-
 </footer>
-
 <div class="page-dock" data-dock-layout="aligned">
-
 <div class="fab-dock" id="fabDock">
-
 <button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at page-dock__action" id="fabAt" type="button"><span class="page-dock__glyph" aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
-
 <div aria-label="Links and contact" class="fab-panel" hidden="" id="fabPanel" role="group">
-
 <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button aria-label="Close links" class="pop-close" data-pop-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
-
 <ul class="fab-panel__list">
 
-
-
 <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span class="fab-row__txt"><strong>Email</strong><small class="reading-meta">project100@gmail.com</small></span></a></li>
-
 <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small class="reading-meta">project100.fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small class="reading-meta">instagram.com/fudge_fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small class="reading-meta">facebook.com/bogdan.dospi</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a></li>
-
 <li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small class="reading-meta">Spotify playlist</small></span></a></li>
-
 </ul>
-
 </div>
-
 </div>
-
 <a aria-label="Switch to PROJECT 100" class="fab-switch page-dock__action" href="index.html"><span aria-hidden="true" class="fab-switch__glyph">↔</span><span>PROJECT 100</span></a>
-
 </div>
-
-
 
 <dialog aria-labelledby="menuTitle" class="menu" id="menu">
-
 <div class="menu__head">
-
 <h2 class="menu__title reading-heading" id="menuTitle">Menu</h2>
-
 <button aria-label="Close menu" class="icon-btn" data-menu-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
-
 </div>
-
 <div class="menu__body">
-
 <div class="menu__sites">
-
 <a class="menu__site" href="index.html" data-folder="project"><small class="reading-meta">Switch to</small><strong>PROJECT 100</strong></a>
-
 <a aria-current="true" class="menu__site" href="fit-protocol.html" data-folder="project"><small class="reading-meta">You are here</small><strong>FIT PROTOCOL</strong></a>
-
 </div>
-
 <section class="menu__section section-tone--training">
-
 <h3 class="reading-heading">FIT PROTOCOL pages</h3>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Baseline &amp; Goals</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-baseline.html" data-folder="baseline">Goals &amp; baseline</a></li><li><a href="fit-protocol-history.html" data-folder="baseline">Return to training</a></li><li><a href="fit-protocol-constraints.html" data-folder="baseline">Constraints</a></li>
-
 <li><a href="fit-protocol-mission.html" data-folder="baseline">Mission &amp; record</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Daily Schedule</p>
-
 <ul class="menu__list"><li><a href="guidebook.html" data-folder="daily">Today</a></li><li><a href="daily-pill-cards.html" data-folder="daily">Pill cards</a></li><li><a aria-current="page" href="fit-protocol-fuel.html" data-folder="daily">Daily clock</a></li><li><a href="fit-protocol-checklists.html" data-folder="daily">Checklists</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Liquid Intake</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-vectors.html" data-folder="liquid">Vector folders</a></li><li><a href="fit-protocol-vector-v3.html" data-folder="liquid">V3 RECOVERY</a></li><li><a href="fit-protocol-vector-v1.html" data-folder="liquid">V1 IGNITION</a></li><li><a href="fit-protocol-vector-v2.html" data-folder="liquid">V2 REFUEL</a></li><li><a href="fit-protocol-vector-v4.html" data-folder="liquid">V4 RELOAD</a></li><li><a href="fit-protocol-vector-v5.html" data-folder="liquid">V5 TRANSPORT</a></li><li><a href="fit-protocol-vector-v10.html" data-folder="liquid">V10 SHUTDOWN</a></li><li><a href="fit-protocol-vector-v6.html" data-folder="liquid">V6 PUMP</a></li><li><a href="fit-protocol-vector-reference.html" data-folder="liquid">Vector notes</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Nutrition &amp; Meals</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-nutrition.html" data-folder="nutrition">Food &amp; nutrition</a></li>
-
 <li><a href="fit-protocol-meals.html" data-folder="nutrition">Meals &amp; fuel</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Minerals &amp; Micros</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-supplements.html" data-folder="supplements">Pills &amp; accounting</a></li><li><a href="fit-protocol-interactions.html" data-folder="supplements">Interactions</a></li><li><a href="fit-protocol-margins.html" data-folder="supplements">Safety margins</a></li>
-
 <li><a href="fit-protocol-dose.html" data-folder="supplements">Dose accounting</a></li><li><a href="fit-protocol-pathways.html" data-folder="supplements">Pathways</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Training Programme</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-training.html" data-folder="training">Training mechanics</a></li><li><a href="fit-protocol-progression.html" data-folder="project">Progression</a></li><li><a href="fit-protocol-joints.html" data-folder="project">Joints &amp; recovery</a></li>
-
 </ul>
-
 </div><div class="menu__group"><p class="menu__group-title reading-copy">Gym Equipment</p><ul class="menu__list"><li><a href="fit-protocol-gear.html" data-folder="gear">Gear &amp; bands</a></li></ul></div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Progress Monitoring</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-monitoring.html" data-folder="metrics">Metabolic context</a></li><li><a href="fit-protocol-labs.html" data-folder="metrics">Lab monitoring</a></li>
-
 <li><a href="fit-protocol-biometrics.html" data-folder="metrics">Biometrics</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Checks &amp; Fixes</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-troubleshooting.html" data-folder="fixes">Troubleshooting</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Minerals</p>
-
 <ul class="menu__list"><li><a href="mineral-chemistry.html" data-folder="minerals">Mineral Chemistry</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">More</p>
-
 <ul class="menu__list"><li><a href="library.html" data-folder="library">Downloads</a></li>
-
 </ul>
-
 </div>
-
 </section>
-
 <section class="menu__section section-tone--reference">
-
 <h3 class="reading-heading">Downloads</h3>
-
 <div class="menu__links"><a class="menu__link" href="library.html" data-folder="library"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Illustration downloads</span></a></div>
-
 </section>
-
 <section class="menu__section section-tone--training">
-
 <h3 class="reading-heading">Links &amp; contact</h3>
-
 <div class="menu__links">
-
 <a class="menu__link" href="mailto:project100@gmail.com" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small class="reading-meta">project100@gmail.com</small></span></a>
-
 <a class="menu__link" href="index.html" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg><span>Project 100 Blueprint<small class="reading-meta">project100.fit</small></span></a>
-
 <a class="menu__link" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg><span>Instagram<small class="reading-meta">instagram.com/fudge_fit</small></span></a>
-
 <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg><span>YouTube<small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a>
-
 <a class="menu__link" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg><span>Facebook<small class="reading-meta">facebook.com/bogdan.dospi</small></span></a>
-
 <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg><span>TikTok<small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a>
-
 <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg><span>Twitch<small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a>
-
 <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg><span>Gym playlist<small class="reading-meta">Spotify playlist</small></span></a>
-
 </div>
-
 </section>
-
 </div>
-
 </dialog>
 
-
-
-<script defer="" src="assets/js/site.js?v=7daec686c93c"></script>
-
-<script src="assets/js/item-purpose.js?v=9eecb155e1cb" defer></script>
-
+<script defer="" src="assets/js/site.js?v=fd89c27fda54"></script>
+<script src="assets/js/item-purpose.js?v=5190f0a22632" defer></script>
 <script defer="" src="assets/js/hud.js?v=e212ebfaddb5"></script>
-
 <dialog id="mobile-sections" class="rail-drawer" aria-labelledby="mobile-sections-title"><div class="rail-drawer__head"><h2 id="mobile-sections-title">Daily Schedule</h2><button type="button" class="rail-drawer__close" aria-label="Close sections">×</button></div><div class="rail-drawer__body"><ul class="rail__list">
-
 <li><a href="guidebook.html"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Today</span></a></li>
-
 <li><a href="daily-pill-cards.html"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">Pill cards</span></a></li>
-
 <li><a aria-current="page" href="fit-protocol-fuel.html"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Daily clock</span></a></li>
-
 <li><a href="fit-protocol-checklists.html"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Checklists</span></a></li>
-
 </ul></div></dialog>
-
 </body>
-
 </html>

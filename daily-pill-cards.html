@@ -1,845 +1,423 @@
 <!DOCTYPE html>
 
-
-
 <html lang="en">
-
 <head>
-
 <script defer src="assets/js/rotation-cues.js?v=98dafdc8c51c"></script>
-
 <meta charset="utf-8"/>
-
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-
 <meta content="light dark" name="color-scheme"/>
-
 <meta content="#f5f4f1" media="(prefers-color-scheme: light)" name="theme-color"/>
-
 <meta content="#0a0b0e" media="(prefers-color-scheme: dark)" name="theme-color"/>
-
 <title>PROJECT 100 — Daily Pill Cards</title>
-
 <meta content="Every pill stage of the PROJECT 100 day on its own card — wake, pre-training capsule, first meal, afternoon DMZ, night, and meal co-factors — from the 5 October 2026 record." name="description"/>
-
 <link href="https://project100.fit/daily-pill-cards.html" rel="canonical"/>
-
 <meta content="website" property="og:type"/>
-
 <meta content="PROJECT 100" property="og:site_name"/>
-
 <meta content="PROJECT 100 — Daily Pill Cards" property="og:title"/>
-
 <meta content="Every pill stage of the PROJECT 100 day on its own card — wake, pre-training capsule, first meal, afternoon DMZ, night, and meal co-factors — from the 5 October 2026 record." property="og:description"/>
-
 <meta content="https://project100.fit/daily-pill-cards.html" property="og:url"/>
-
 <meta content="https://project100.fit/assets/media/october-2026/bogdan-gym-session.jpg" property="og:image"/>
-
 <meta content="PROJECT 100 — Daily Pill Cards" property="og:image:alt"/>
-
 <meta content="summary_large_image" name="twitter:card"/>
-
 <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
-
 <script>
-
 /* theme first, so there is no flash: saved choice wins, else the OS decides */
-
 try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
-
 document.documentElement.classList.add('js');
-
 /* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
-
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
-
 </script>
-
 <link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
-
-<link href="assets/css/site.css?v=3b94f005ad43" rel="stylesheet"/>
-
-<link href="assets/css/hud.css?v=41f80f8ccbaa" rel="stylesheet"/>
-
-<link rel="stylesheet" href="assets/css/rotation-cues.css?v=3e86c2826e48">
-
+<link href="assets/css/site.css?v=4d39c8d25a06" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=f20f57259d02" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/rotation-cues.css?v=5ba388a1c5fc">
 </head>
-
 <body data-bottom-controls data-navigation-pattern="mirrored" data-group="daily" data-page="daily-pill-cards" data-site="protocol" data-folder="daily" data-design-profile="clear-contrast">
-
 <a class="skip-link" href="#content">Skip to content</a>
-
 <header class="site-head" id="siteHead">
-
 <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="index.html" aria-label="PROJECT 100: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space ←</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Colour theme"><button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Dark colour mode"><span class="theme-switch__track" aria-hidden="true"></span><svg class="theme-switch__indicator" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1 11 6 2 11Z"/></svg><svg class="theme-switch__indicator theme-switch__indicator--opposite" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M10 1 1 6 10 11Z"/></svg><svg class="theme-switch__sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="5.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"/></svg><svg class="theme-switch__moon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"/><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"/></svg></button></div><a class="mode-folder" data-space="protocol" href="fit-protocol.html" aria-current="true" aria-label="FIT PROTOCOL: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
-
 <nav aria-label="FIT PROTOCOL sections" class="tabs">
-
 <ul class="tabs__list">
 
-
-
 <li><a class="tab" href="fit-protocol-baseline.html" data-folder="baseline"><span class="tab__label">Baseline &amp; Goals</span></a></li>
-
 <li><a aria-current="page" class="tab" href="guidebook.html" data-folder="daily"><span class="tab__label">Daily Schedule</span></a></li>
-
 <li><a class="tab" href="fit-protocol-vectors.html" data-folder="liquid"><span class="tab__label">Liquid Intake</span></a></li>
-
 <li><a class="tab" href="fit-protocol-nutrition.html" data-folder="nutrition"><span class="tab__label">Nutrition &amp; Meals</span></a></li>
-
 <li><a class="tab" href="fit-protocol-supplements.html" data-folder="supplements"><span class="tab__label">Minerals &amp; Micros</span></a></li>
-
 <li><a class="tab" href="fit-protocol-training.html" data-folder="training"><span class="tab__label">Training Programme</span></a></li><li><a class="tab" href="fit-protocol-gear.html" data-folder="gear"><span class="tab__label">Gym Equipment</span></a></li>
-
 <li><a class="tab" href="fit-protocol-monitoring.html" data-folder="metrics"><span class="tab__label">Progress Monitoring</span></a></li>
-
 <li><a class="tab" href="fit-protocol-troubleshooting.html" data-folder="fixes"><span class="tab__label">Checks &amp; Fixes</span></a></li>
-
 <li><a class="tab" href="mineral-chemistry.html" data-folder="minerals"><span class="tab__label">Minerals</span></a></li>
-
 <li><a class="tab" href="library.html" data-folder="library"><span class="tab__label">Visual library</span></a></li></ul>
-
 </nav>
-
 </header>
-
 <div class="layout layout--rail">
-
 <button hidden type="button" class="rail-toggle" aria-haspopup="dialog" aria-controls="mobile-sections" aria-expanded="false"><span class="rail-toggle__category">☰ Daily</span><span class="rail-toggle__current">Pill cards</span><span class="rail-toggle__chevron" aria-hidden="true">▾</span></button><aside aria-label="Daily Schedule" class="rail">
-
 <h2 class="rail__title reading-heading"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span>Daily Schedule</span></h2>
-
 <ul class="rail__list">
-
 <li><a href="guidebook.html"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Today</span></a></li>
-
 <li><a aria-current="page" href="daily-pill-cards.html"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">Pill cards</span></a></li>
-
 <li><a href="fit-protocol-fuel.html"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Daily clock</span></a></li>
-
 <li><a href="fit-protocol-checklists.html"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Checklists</span></a></li>
-
 </ul>
-
 </aside>
-
 <main class="main section-tone--content" id="content" tabindex="-1">
-
 <section aria-labelledby="hudT" class="hud-hero section-tone--content" id="top" style="--hud-bg-img:url('/assets/web/media-october-2026-pill-organizer-may-2026-960.webp')">
-
 <span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span>
-
 <div class="hud-hero__text">
-
 <span class="hud-eyebrow">Daily · Pill timeline · V3.3</span>
-
 <h1 class="hud-title reading-heading" id="hudT">Daily Schedule <em>pills</em></h1>
-
 <p class="hud-lede reading-copy">Six product groups explain the pills and doses. The&nbsp;illustrated timeline shows seven moments in the day; the two views organize the same record differently.</p>
-
 <div class="hud-chips">
-
 <span class="hud-chip"><small class="reading-meta">Product groups</small><strong>6 groups</strong></span>
-
 <span class="hud-chip"><small class="reading-meta">Starts</small><strong>Wake pack</strong></span>
-
 <span class="hud-chip"><small class="reading-meta">Ends</small><strong>Night stage</strong></span>
-
 </div>
-
 </div>
-
 </section>
-
-
-
 
 
 <!--art:art-day-->
-
 <section aria-labelledby="art-day-t" class="hud-folder art-folder section-tone--training hud-folder--training" id="art-day">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Day</span><h2 class="hud-folder__title reading-heading" id="art-day-t">Which day are you on?</h2></div>
-
 <div class="hud-folder__body surface-solid"><div class="hud-inline hud-prose"><p class="reading-copy">V1 runs on morning-training days, V6 on evening-training days, and neither on rest days. Follow the daily schedule for each branch.</p><p class="reading-copy"><a class="btn btn--primary" href="guidebook.html#today">Open the day branches <span aria-hidden="true">&rarr;</span></a></p></div></div>
-
 </section>
-
 <!--/art:art-day-->
-
 <!--art:stages-->
-
 <section aria-labelledby="art-stages-t" class="hud-folder art-folder section-tone--content hud-folder--content" id="art-stages">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Illustrated</span><h2 class="hud-folder__title reading-heading" id="art-stages-t">Pill stages</h2><a class="hud-folder__link" href="fit-protocol-supplements.html#art-pills">Pill charts <span aria-hidden="true">&rarr;</span></a></div>
-
 <div class="hud-folder__body surface-solid"><p class="art-note reading-copy">Seven illustrated moments show timing and day eligibility. The&nbsp;six product-group cards below organize products and counts; group numbers are not timeline positions.</p>
-
 <div class="hud-inline hud-prose"><div class="rv rv--rail" data-recview="" id="rv-stages"><div aria-label="Pill stage" class="rv-subj" data-rv-subj="" role="tablist"><button aria-controls="rv-stages-wake" aria-selected="true" class="rv-tab is-on" data-rv-tab="" id="rv-stages-wake-tab" role="tab" tabindex="0" type="button"><span class=rv-step>1</span><span class="rv-tt">Wake<small class="reading-meta">03:30–03:45</small></span></button><button aria-controls="rv-stages-breakfast" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-breakfast-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>2</span><span class="rv-tt">Breakfast<small class="reading-meta">05:00</small></span></button><button aria-controls="rv-stages-primer" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-primer-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>3</span><span class="rv-tt">Citicoline primer<small class="reading-meta">05:30</small></span></button><button aria-controls="rv-stages-prev4" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-prev4-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>4</span><span class="rv-tt">Before V4<small class="reading-meta">before V4</small></span></button><button aria-controls="rv-stages-lunch" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-lunch-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>5</span><span class="rv-tt">Lunch<small class="reading-meta">12:00</small></span></button><button aria-controls="rv-stages-afternoon" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-afternoon-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>6</span><span class="rv-tt">Afternoon<small class="reading-meta">15:30</small></span></button><button aria-controls="rv-stages-night" aria-selected="false" class="rv-tab" data-rv-tab="" id="rv-stages-night-tab" role="tab" tabindex="-1" type="button"><span class=rv-step>7</span><span class="rv-tt">Night pills<small class="reading-meta">18:15 / after session</small></span></button></div><div class="rv-panel" data-rv-panel="" id="rv-stages-wake" role=tabpanel aria-labelledby=rv-stages-wake-tab><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Wake pack card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-WAKE_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-WAKE_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-WAKE_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Wake pack card, Vertical illustrated pill clock style" decoding="async" height="1672" loading="lazy" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" src="assets/web/mega/J15-WAKE_PILLS--w480.webp" srcset="assets/web/mega/J15-WAKE_PILLS--w480.webp 480w, assets/web/mega/J15-WAKE_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-WAKE_PILLS.webp 941w" width="941"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-WAKE_PILLS.png" aria-label="Download the original image (PNG, 1.7 MB)" title="Download original · PNG 1.7 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Wake pack <em>03:30–03:45</em></h3><p class="rv-when reading-copy"><b>When</b> All states, 03:30–03:45.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>03:30–03:45</span></li><li class="rv-st rv-st--on"><b>State B</b><span>03:30–03:45</span></li><li class="rv-st rv-st--on"><b>State C</b><span>03:30–03:45</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-breakfast" role=tabpanel aria-labelledby=rv-stages-breakfast-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Breakfast grid card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-BREAKFAST_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-BREAKFAST_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-BREAKFAST_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Breakfast grid card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-BREAKFAST_PILLS--w480.webp" data-srcset="assets/web/mega/J15-BREAKFAST_PILLS--w480.webp 480w, assets/web/mega/J15-BREAKFAST_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-BREAKFAST_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-BREAKFAST_PILLS.png" aria-label="Download the original image (PNG, 1.7 MB)" title="Download original · PNG 1.7 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Breakfast grid <em>05:00</em></h3><p class="rv-when reading-copy"><b>When</b> Training days A&nbsp;and C, 05:00. Rest day: meal enzyme only.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>05:00</span></li><li class="rv-st rv-st--part"><b>State B</b><span>Meal enzyme only</span></li><li class="rv-st rv-st--on"><b>State C</b><span>05:00</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-primer" role=tabpanel aria-labelledby=rv-stages-primer-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Citicoline primer card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-PRIMER_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-PRIMER_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-PRIMER_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Citicoline primer card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-PRIMER_PILLS--w480.webp" data-srcset="assets/web/mega/J15-PRIMER_PILLS--w480.webp 480w, assets/web/mega/J15-PRIMER_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-PRIMER_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-PRIMER_PILLS.png" aria-label="Download the original image (PNG, 1.9 MB)" title="Download original · PNG 1.9 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Citicoline primer <em>05:30</em></h3><div class="rv-when reading-copy copy-group"><p class="copy-group__title"><b>When</b></p><ul class="copy-points"><li>State A at 05:30. State C at T minus 30 before V6.</li><li>Off on State B.</li></ul></div><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>05:30</span></li><li class="rv-st rv-st--off"><b>State B</b><span>Off</span></li><li class="rv-st rv-st--on"><b>State C</b><span>T–30 before V6</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-prev4" role=tabpanel aria-labelledby=rv-stages-prev4-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Before V4 (R-ALA) card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-PRE-V4_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-PRE-V4_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-PRE-V4_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Before V4 (R-ALA) card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-PRE-V4_PILLS--w480.webp" data-srcset="assets/web/mega/J15-PRE-V4_PILLS--w480.webp 480w, assets/web/mega/J15-PRE-V4_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-PRE-V4_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-PRE-V4_PILLS.png" aria-label="Download the original image (PNG, 1.8 MB)" title="Download original · PNG 1.8 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Before V4 (R-ALA) <em>before V4</em></h3><p class="rv-when reading-copy"><b>When</b> States A&nbsp;and C, before the V4 shake. Off on State B.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>Before V4</span></li><li class="rv-st rv-st--off"><b>State B</b><span>Off</span></li><li class="rv-st rv-st--on"><b>State C</b><span>Before V4</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-lunch" role=tabpanel aria-labelledby=rv-stages-lunch-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Lunch grid card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-LUNCH_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-LUNCH_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-LUNCH_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Lunch grid card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-LUNCH_PILLS--w480.webp" data-srcset="assets/web/mega/J15-LUNCH_PILLS--w480.webp 480w, assets/web/mega/J15-LUNCH_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-LUNCH_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-LUNCH_PILLS.png" aria-label="Download the original image (PNG, 1.8 MB)" title="Download original · PNG 1.8 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Lunch grid <em>12:00</em></h3><p class="rv-when reading-copy"><b>When</b> Training days A&nbsp;and C, 12:00. Rest day: meal enzyme only.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>12:00</span></li><li class="rv-st rv-st--part"><b>State B</b><span>Meal enzyme only</span></li><li class="rv-st rv-st--on"><b>State C</b><span>12:00</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-afternoon" role=tabpanel aria-labelledby=rv-stages-afternoon-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Afternoon grid card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-AFTERNOON_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-AFTERNOON_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-AFTERNOON_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Afternoon grid card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-AFTERNOON_PILLS--w480.webp" data-srcset="assets/web/mega/J15-AFTERNOON_PILLS--w480.webp 480w, assets/web/mega/J15-AFTERNOON_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-AFTERNOON_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-AFTERNOON_PILLS.png" aria-label="Download the original image (PNG, 1.9 MB)" title="Download original · PNG 1.9 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Afternoon grid <em>15:30</em></h3><p class="rv-when reading-copy"><b>When</b> Training days A&nbsp;and C, 15:30. Rest day: meal enzyme only.</p><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>15:30</span></li><li class="rv-st rv-st--part"><b>State B</b><span>Meal enzyme only</span></li><li class="rv-st rv-st--on"><b>State C</b><span>15:30</span></li></ul></div></div></div><div class="rv-panel" data-rv-panel="" id="rv-stages-night" role=tabpanel aria-labelledby=rv-stages-night-tab hidden><div class="rv-grid"><div class="rv-media"><figure class="rv-fig"><a aria-label="Enlarge: Night pills card, Vertical illustrated pill clock style" class="rv-link" data-full="assets/media/vector-artwork/mega/originals/J15-NIGHT_PILLS.png" data-orig="assets/media/vector-artwork/mega/originals/J15-NIGHT_PILLS.png" href="assets/media/vector-artwork/mega/originals/J15-NIGHT_PILLS.png" title="Enlarge the original image"><span class="rv-frame" style="aspect-ratio:941 / 1672"><img alt="Night pills card, Vertical illustrated pill clock style" decoding="async" height="1672" width="941" sizes="(min-width: 56rem) 26rem, min(100vw, 24rem)" data-src="assets/web/mega/J15-NIGHT_PILLS--w480.webp" data-srcset="assets/web/mega/J15-NIGHT_PILLS--w480.webp 480w, assets/web/mega/J15-NIGHT_PILLS--w800.webp 800w, assets/media/vector-artwork/mega/J15-NIGHT_PILLS.webp 941w"></span></a><figcaption class="pcap"><b class="pcap__t">Pill Clock</b><a class="pcap__dl" download href="assets/media/vector-artwork/mega/originals/J15-NIGHT_PILLS.png" aria-label="Download the original image (PNG, 1.9 MB)" title="Download original · PNG 1.9 MB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 12 5 5 5-5"/><path d="M5 20h14"/></svg></a></figcaption></figure></div><div class="rv-rec"><h3 class="rv-h reading-heading">Night pills <em>18:15 / after session</em></h3><div class="rv-when reading-copy copy-group"><p class="copy-group__title"><b>When</b></p><ul class="copy-points"><li>State A at 18:15. State C after the evening training.</li><li>Off on State B.</li></ul></div><ul class="rv-states" aria-label="State eligibility"><li class="rv-st rv-st--on"><b>State A</b><span>18:15</span></li><li class="rv-st rv-st--off"><b>State B</b><span>Off</span></li><li class="rv-st rv-st--on"><b>State C</b><span>After the session</span></li></ul></div></div></div><noscript><style>.rv-panel[hidden]{display:block!important}</style></noscript></div><section aria-labelledby="art-stageb-p-t" class="carousel carousel--media carousel--art art-solo section-tone--content" data-carousel="" data-gallery="" id="art-stageb-p">
-
 <header class="carousel__head"><h3 class="carousel__title reading-heading" id="art-stageb-p-t">Overview boards</h3></header>
-
 <div class="carousel__stage"><ul class="carousel__track">
-
 <li class="carousel__item art-item art-item--p"><a aria-label="J13 · Pill grid illustration: Pill grid illustration overview board — the seven pill stages" class="card card--link" data-full="assets/media/vector-artwork/mega/originals/J13_PILL_GRID_MASTER.png" data-orig="assets/media/vector-artwork/mega/originals/J13_PILL_GRID_MASTER.png" href="assets/media/vector-artwork/mega/originals/J13_PILL_GRID_MASTER.png" title="Enlarge the original image"><div class="card__media" style="aspect-ratio:937 / 1678"><img alt="Pill grid illustration overview board — the seven pill stages" decoding="async" height="1678" loading="lazy" sizes="(min-width: 720px) 13rem, 9.8rem" src="assets/web/mega/J13_PILL_GRID_MASTER--w480.webp" srcset="assets/web/mega/J13_PILL_GRID_MASTER--w480.webp 480w, assets/web/mega/J13_PILL_GRID_MASTER--w800.webp 800w, assets/media/vector-artwork/mega/J13_PILL_GRID_MASTER.webp 937w" width="937"/></div><span class="art-cap">J13 · Pill grid illustration</span></a></li>
-
 <li class="carousel__item art-item art-item--p desk-only"><a aria-label="J15 · Vertical illustrated pill clock: Vertical illustrated pill clock overview board — the seven pill stages as a clock" class="card card--link" data-full="assets/media/vector-artwork/mega/originals/J15_FULL_PILL_CHRONOMETER.png" data-orig="assets/media/vector-artwork/mega/originals/J15_FULL_PILL_CHRONOMETER.png" href="assets/media/vector-artwork/mega/originals/J15_FULL_PILL_CHRONOMETER.png" title="Enlarge the original image"><div class="card__media" style="aspect-ratio:941 / 1672"><img alt="Vertical illustrated pill clock overview board — the seven pill stages as a clock" data-desk-src="assets/web/mega/J15_FULL_PILL_CHRONOMETER--w480.webp" data-desk-srcset="assets/web/mega/J15_FULL_PILL_CHRONOMETER--w480.webp 480w, assets/web/mega/J15_FULL_PILL_CHRONOMETER--w800.webp 800w, assets/media/vector-artwork/mega/J15_FULL_PILL_CHRONOMETER.webp 941w" decoding="async" height="1672" loading="lazy" sizes="(min-width: 720px) 13rem, 9.8rem" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="941"/></div><span class="art-cap">J15 · Vertical illustrated pill clock</span></a></li>
-
 <li class="carousel__item art-item art-item--p desk-only"><a aria-label="J18 · Pill architecture plate: Pill architecture plate overview board — the seven pill stages" class="card card--link" data-full="assets/media/vector-artwork/mega/originals/J18_PILL_ARCHITECTURE_MASTER.png" data-orig="assets/media/vector-artwork/mega/originals/J18_PILL_ARCHITECTURE_MASTER.png" href="assets/media/vector-artwork/mega/originals/J18_PILL_ARCHITECTURE_MASTER.png" title="Enlarge the original image"><div class="card__media" style="aspect-ratio:937 / 1678"><img alt="Pill architecture plate overview board — the seven pill stages" data-desk-src="assets/web/mega/J18_PILL_ARCHITECTURE_MASTER--w480.webp" data-desk-srcset="assets/web/mega/J18_PILL_ARCHITECTURE_MASTER--w480.webp 480w, assets/web/mega/J18_PILL_ARCHITECTURE_MASTER--w800.webp 800w, assets/media/vector-artwork/mega/J18_PILL_ARCHITECTURE_MASTER.webp 937w" decoding="async" height="1678" loading="lazy" sizes="(min-width: 720px) 13rem, 9.8rem" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="937"/></div><span class="art-cap">J18 · Pill architecture plate</span></a></li>
-
 </ul></div>
-
 </section>
-
 </div></div></section>
-
 <!--/art:stages-->
-
 <section aria-labelledby="hudF1" class="hud-folder section-tone--content hud-folder--content" id="daily-path">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title reading-heading" id="hudF1">Product groups</h2><span class="hud-folder__meta">Tap a group</span></div>
-
 <div class="hud-folder__body surface-solid">
-
 <ol class="hud-map hud-map--6">
-
 <li><button class="hud-node" data-hud-open="pill-wake-d" type="button"><span class="hud-node__hex">01</span><span class="hud-node__txt"><b>Wake pack</b><span class="hud-node__count">4 pills + 1 optional</span></span></button></li>
-
 <li><button class="hud-node" data-hud-open="pill-primer-d" type="button"><span class="hud-node__hex">02</span><span class="hud-node__txt"><b>Pre-training capsule</b><span class="hud-node__count">1 pill</span></span></button></li>
-
 <li><button class="hud-node" data-hud-open="pill-meal1-d" type="button"><span class="hud-node__hex">03</span><span class="hud-node__txt"><b>First meal</b><span class="hud-node__count">5 pills</span></span></button></li>
-
 <li><button class="hud-node" data-hud-open="pill-dmz-d" type="button"><span class="hud-node__hex">04</span><span class="hud-node__txt"><b>Afternoon · DMZ</b><span class="hud-node__count">8 pills + 2 optional</span></span></button></li>
-
 <li><button class="hud-node" data-hud-open="pill-night-d" type="button"><span class="hud-node__hex">05</span><span class="hud-node__txt"><b>Night pill stage</b><span class="hud-node__count">3 pills + 1 optional</span></span></button></li>
-
 <li><button class="hud-node" data-hud-open="pill-cofactors-d" type="button"><span class="hud-node__hex">06</span><span class="hud-node__txt"><b>Other recorded meal co-factors</b><span class="hud-node__count">5 pills</span></span></button></li>
-
 </ol>
-
 </div>
-
 </section>
-
 <section aria-labelledby="hudF2" class="hud-folder section-tone--content hud-folder--content" id="daily-stages">
-
 <div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title reading-heading" id="hudF2">Stage cards</h2><span class="hud-folder__meta">Filled capsule = one pill · dashed = optional</span></div>
-
 <div class="hud-folder__body surface-solid">
-
 <ul class="hud-cards hud-cards--3 hud-cards--vector-flow" data-hud-cards="">
-
 <li id="pill-wake"><a aria-controls="pill-wake-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-wake">
-
 <span class="hud-card__tag"><span>STAGE 01</span><span class="hud-card__when">WAKE</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">01</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" class="is-opt" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">Wake pack</span><span class="hud-card__hint">4 pills + 1 optional</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 <li id="pill-primer"><a aria-controls="pill-primer-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-primer">
-
 <span class="hud-card__tag"><span>STAGE 02</span><span class="hud-card__when">BEFORE TRAINING</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">02</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">Pre-training capsule</span><span class="hud-card__hint">1 pill</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 <li id="pill-meal1"><a aria-controls="pill-meal1-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-meal1">
-
 <span class="hud-card__tag"><span>STAGE 03</span><span class="hud-card__when">FIRST MEAL</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">03</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">First meal</span><span class="hud-card__hint">5 pills</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 <li id="pill-dmz"><a aria-controls="pill-dmz-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-dmz">
-
 <span class="hud-card__tag"><span>STAGE 04</span><span class="hud-card__when">AFTERNOON</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">04</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" class="is-opt" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" class="is-opt" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">Afternoon · DMZ</span><span class="hud-card__hint">8 pills + 2 optional</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 <li id="pill-night"><a aria-controls="pill-night-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-night">
-
 <span class="hud-card__tag"><span>STAGE 05</span><span class="hud-card__when">NIGHT</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">05</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" class="is-opt" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">Night pill stage</span><span class="hud-card__hint">3 pills + 1 optional</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 <li id="pill-cofactors"><a aria-controls="pill-cofactors-d" aria-expanded="false" class="hud-card hud-card--tile" data-hud-card="" href="#pill-cofactors">
-
 <span class="hud-card__tag"><span>STAGE 06</span><span class="hud-card__when">WITH MEALS</span></span>
-
 <span class="hud-card__img"><span class="hud-card__num">06</span><span aria-hidden="true" class="hud-card__pills"><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg><svg aria-hidden="true" viewbox="0 0 28 14"><rect height="12" rx="6" width="26" x="1" y="1"></rect><path d="M14 1v12"></path></svg></span></span>
-
 <span class="hud-card__foot"><span class="hud-card__name">Other recorded meal co-factors</span><span class="hud-card__hint">5 pills</span></span>
-
 <span aria-hidden="true" class="hud-card__plus">+</span></a></li>
-
 </ul>
-
 <div class="hud-details" data-gallery="" data-hud-details="">
-
 <article aria-label="Wake pack details" class="hud-detail" data-hud-detail="" id="pill-wake-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 01</b><h3 class="reading-heading">Wake pack</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close Wake pack" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">4 PILLS + 1 OPTIONAL</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Botanical vitality support, a&nbsp;trace-mineral contribution and intermittent microbiome support; these have different roles from pre-workout stimulants.</p><p class="reading-copy"><strong>Usage:</strong> TestoFX, boron and the intermittent probiotic remain in their listed morning positions.</p></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Morning pack retained on training and rest days</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">ALLMAX TestoFX Xtreme</b><span class="hud-dose">3 capsules</span></span></li><li><span><b style="font-weight:800">New Roots Herbal Boron</b><span class="hud-dose">1 capsule / 3 mg</span></span></li><li class="is-opt"><span><b style="font-weight:800">California Gold LactoBif 100</b><span class="hud-dose">1 capsule when used; intermittent</span></span></li></ol></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the Wake pack stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_wake.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-01-wake.webp" href="assets/media/illustration-design/IMAGES/J15_wake.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 <article aria-label="Pre-training capsule details" class="hud-detail" data-hud-detail="" id="pill-primer-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 02</b><h3 class="reading-heading">Pre-training capsule</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close Pre-training capsule" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">1 PILL</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Separate cognitive support before the selected training session.</p><p class="reading-copy"><strong>Usage:</strong> Keep the whole citicoline capsule separate from V1 or V6; use the selected training branch.</p></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Once on selected training branch; outside beverage</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">Citicoline</b><span class="hud-dose">250 mg, whole capsule separately</span></span></li></ol></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the Pre-training capsule stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_primer.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-02-primer.webp" href="assets/media/illustration-design/IMAGES/J15_primer.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 <article aria-label="First meal details" class="hud-detail" data-hud-detail="" id="pill-meal1-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 03</b><h3 class="reading-heading">First meal</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close First meal" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">5 PILLS</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Meal-time nutritional, antioxidant and digestive support.</p><p class="reading-copy"><strong>Usage:</strong> Take the listed first-meal items with their recorded meal; keep the listed enzyme amount.</p></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Training grid; rest days retain meal enzyme</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">Wakunaga Kyolic 104</b><span class="hud-dose">2 capsules</span></span></li><li><span><b style="font-weight:800">Pure Encapsulations NAC</b><span class="hud-dose">1 capsule / 900 mg</span></span></li><li><span><b style="font-weight:800">California Gold Nutrition NMN</b><span class="hud-dose">1 capsule / 175 mg</span></span></li><li><span><b style="font-weight:800">Pure Encapsulations Digestive Enzymes Ultra</b><span class="hud-dose">1 capsule with the meal</span></span></li></ol></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the First meal stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_meal1.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-03-meal1.webp" href="assets/media/illustration-design/IMAGES/J15_meal1.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 <article aria-label="Afternoon · DMZ details" class="hud-detail" data-hud-detail="" id="pill-dmz-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 04</b><h3 class="reading-heading">Afternoon · DMZ</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close Afternoon · DMZ" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">8 PILLS + 2 OPTIONAL</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> A&nbsp;single meal-time anchor for micronutrients, omega-3s and the recorded botanical items.</p><div class="reading-copy copy-group"><p class="copy-group__title"><strong>Usage:</strong></p><ul class="copy-points"><li>Meal-time placement groups broad micronutrients, omega-3 oil and botanicals.</li><li>Conditional calcium remains in this grid, separate from the night mineral serving; Liver-GI remains conditional.</li></ul></div></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Training-only meal grid; skipped on rest days</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">Pure Encapsulations PureGenomics</b><span class="hud-dose">1 capsule</span></span></li><li class="is-opt"><span><b style="font-weight:800">CanPrev Calcium Malate</b><span class="hud-dose">1 capsule / 200 mg elemental; conditional</span></span></li><li><span><b style="font-weight:800">California Gold Nutrition Omega 800</b><span class="hud-dose">1 softgel</span></span></li><li class="is-opt"><span><b style="font-weight:800">Pure Encapsulations Liver-GI Detox</b><span class="hud-dose">1 capsule; conditional</span></span></li><li><span><b style="font-weight:800">Himalaya UriCare</b><span class="hud-dose">2 capsules</span></span></li><li><span><b style="font-weight:800">KITABIO Pumpkin Seed Oil with Saw Palmetto</b><span class="hud-dose">3 softgels</span></span></li><li><span><b style="font-weight:800">Pure Encapsulations Curcumin 500 + BioPerine</b><span class="hud-dose">1 capsule / 500 mg product; 475 mg curcuminoids + 5 mg piperine reported</span></span></li></ol><p class="hud-note reading-copy" style="margin:var(--s-3) 0 0">Afternoon placement confirmed 5 October 2026 (the source document listed lunch).</p></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the Afternoon · DMZ stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_dmz.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-04-dmz.webp" href="assets/media/illustration-design/IMAGES/J15_dmz.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 <article aria-label="Night pill stage details" class="hud-detail" data-hud-detail="" id="pill-night-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 05</b><h3 class="reading-heading">Night pill stage</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close Night pill stage" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">3 PILLS + 1 OPTIONAL</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Magnesium for normal nerve, muscle and enzyme function, plus tart-cherry compounds for the manufacturer’s evening recovery purpose.</p><p class="reading-copy"><strong>Usage:</strong> Keep the listed night-stage amounts; optional milk thistle remains optional.</p></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Training days only; skipped on rest days</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">Pure Encapsulations Magnesium Glycinate</b><span class="hud-dose">2 capsules / 240 mg elemental</span></span></li><li><span><b style="font-weight:800">Organika Tart Cherry 10X</b><span class="hud-dose">1 capsule / 500 mg extract</span></span></li><li class="is-opt"><span><b style="font-weight:800">Naturopathic Labs Milk Thistle</b><span class="hud-dose">1 capsule; conditional, mass unspecified</span></span></li></ol></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the Night pill stage stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_night.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-05-night.webp" href="assets/media/illustration-design/IMAGES/J15_night.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 <article aria-label="Other recorded meal co-factors details" class="hud-detail" data-hud-detail="" id="pill-cofactors-d">
-
 <div class="hud-detail__bar">
-
 <div class="hud-detail__ribbon"><b>STAGE 06</b><h3 class="reading-heading">Other recorded meal co-factors</h3></div>
-
 <div class="hud-detail__nav">
-
 <button aria-label="Previous stage" class="hud-nav" data-hud-prev="" type="button">‹</button>
-
 <button aria-label="Next stage" class="hud-nav" data-hud-next="" type="button">›</button>
-
 <button aria-label="Close Other recorded meal co-factors" class="hud-nav" data-hud-close="" type="button">×</button>
-
 </div>
-
 </div>
-
 <p class="hud-detail__hint reading-copy"><strong style="color:var(--hud-amber)">5 PILLS</strong></p>
-
 <div class="hud-detail__grid hud-detail__grid--solo">
-
 <div class="hud-detail__body"><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Food-based micronutrients and connective-tissue support within the meal routine.</p><p class="reading-copy"><strong>Usage:</strong> Keep beef liver and Ligament Restore at their recorded meal positions.</p></div>
-
 <div class="hud-panel"><span class="hud-label hud-label--amber">When</span><p class="hud-proto reading-copy">Training-only. Meal placement unresolved; enzyme accompanies each actual main meal.</p></div>
-
 <div class="hud-panel"><span class="hud-label">Pills · in order</span><ol class="hud-list hud-list--dose"><li><span><b style="font-weight:800">Higher Healths Beef Liver</b><span class="hud-dose">3 capsules / 1.5 g powder</span></span></li><li><span><b style="font-weight:800">Pure Encapsulations Ligament Restore</b><span class="hud-dose">2 capsules</span></span></li></ol></div>
-
 <div class="hud-actions">
-
 <button aria-label="View the Other recorded meal co-factors stage card full size" class="hud-btn hud-btn--ghost" data-full="assets/media/illustration-design/IMAGES/J15_cofactors.png" type="button">View stage card</button>
-
 <a class="hud-btn hud-btn--ghost" download="project100-stage-06-cofactors.webp" href="assets/media/illustration-design/IMAGES/J15_cofactors.png">Save stage card</a>
-
 </div>
-
 </div>
-
 </div>
-
 <p class="detail-study-reference" data-detail-study-reference><strong>Further study:</strong> <a href="/downloads/reference/evidence-notes-2026-10-21.html#training-evidence">Training evidence & interpreting the recorded plan →</a></p></article>
-
 </div>
-
 <div class="hud-alert" role="note"><p class="reading-copy"><strong>Counts describe the recorded personal routine, not a recommendation.</strong> Check nutrient products with your clinician before changing anything.</p></div>
-
 </div>
-
 </section>
-
-
-
-
-
 
 
 
 
 <section class="section section-tone--training"><div class="container"><details class="item-specs"><summary>Why these pill windows differ</summary><p class="reading-copy"><strong>Meal-linked:</strong> digestive enzymes are placed with the meal they help break down. Fish-oil and botanical softgels stay in the food grid; broad micronutrients serve daily metabolism rather than an acute workout effect.</p><p class="reading-copy"><strong>Training-linked:</strong> the separate citicoline primer precedes the selected session. V1 and V6 remain alternative formulas; their native focus ingredients must be counted together with the primer.</p><p class="reading-copy"><strong>Mineral servings:</strong> conditional calcium is in the afternoon grid and magnesium glycinate in the night grid. This separates the recorded servings and supports routine and tolerability; calcium does not universally prevent magnesium absorption. Calcium absorption depends on form and elemental dose, with smaller servings generally absorbed more efficiently.</p><p class="reading-copy"><strong>Night-linked:</strong> magnesium supports normal nerve, muscle and enzyme function; tart cherry serves the manufacturer’s evening recovery purpose. Night placement is the recorded schedule, not proof that these nutrients only work at night. Optional Medi-C and Hey Relax contribute additional magnesium to the daily total.</p><p class="reading-copy"><a href="https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/" target="_blank" rel="noopener noreferrer">Calcium: dose and absorption</a> · <a href="https://www.pureencapsulationspro.com/magnesium-glycinate.html" target="_blank" rel="noopener noreferrer">Magnesium glycinate: manufacturer use</a></p></details></div></section>
-
 <!-- Supporting context follows the primary modules. -->
-
 <p class="visitor-route visitor-route--terms reading-copy"><a href="fit-protocol.html#protocol-terms">Terms explained: vectors, day states and DMZ</a></p>
-
 <nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="guidebook.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Today</span></a><a class="pager__next" href="fit-protocol-fuel.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Daily clock</span></a>
-
 </nav>
-
 </main>
-
 </div>
-
 <footer class="site-foot">
-
 <div class="site-foot__inner">
-
 <div class="site-foot__identity">
-
 <h2 class="reading-heading">FIT PROTOCOL</h2>
-
 <p class="site-foot__lede reading-copy">The&nbsp;documented system behind the record: daily execution, vectors, nutrition, training and monitoring.</p>
-
 <a class="site-foot__switch" href="index.html"><span aria-hidden="true">↔</span> Switch to PROJECT 100</a>
-
 <a class="site-foot__index" href="site-map.html">All sections →</a></div>
-
 <details class="site-foot__group site-foot__explore"><summary>Explore sections <span>11</span></summary><nav aria-label="Explore sections">
-
 <ul><li><a href="fit-protocol.html">Overview</a></li><li><a href="fit-protocol-baseline.html">Baseline &amp; Goals</a></li><li><a href="guidebook.html">Daily Schedule</a></li><li><a href="fit-protocol-vectors.html">Liquid Intake</a></li><li><a href="fit-protocol-nutrition.html">Nutrition &amp; Meals</a></li><li><a href="fit-protocol-supplements.html">Minerals &amp; Micros</a></li><li><a href="fit-protocol-training.html">Training Programme</a></li><li><a href="fit-protocol-monitoring.html">Progress Monitoring</a></li><li><a href="fit-protocol-troubleshooting.html">Checks &amp; Fixes</a></li><li><a href="mineral-chemistry.html">Minerals</a></li>
-
 <li><a href="library.html">Visual references</a></li>
-
 </ul>
-
 </nav></details>
-
 <details class="site-foot__group site-foot__elsewhere"><summary>Follow & contact <span>7</span></summary><nav aria-label="Follow & contact">
-
 <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">Gym playlist</a></li>
-
 </ul>
-
 </nav></details>
-
 <p class="site-foot__legal reading-copy">Personal record · not medical advice. Consult your clinician before changing medication, nutrient products or training.</p>
-
 </div>
-
 </footer>
-
 <div class="page-dock" data-dock-layout="aligned">
-
 <div class="fab-dock" id="fabDock">
-
 <button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at page-dock__action" id="fabAt" type="button"><span class="page-dock__glyph" aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
-
 <div aria-label="Links and contact" class="fab-panel" hidden="" id="fabPanel" role="group">
-
 <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button aria-label="Close links" class="pop-close" data-pop-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
-
 <ul class="fab-panel__list">
 
-
-
 <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span class="fab-row__txt"><strong>Email</strong><small class="reading-meta">project100@gmail.com</small></span></a></li>
-
 <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small class="reading-meta">project100.fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small class="reading-meta">instagram.com/fudge_fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small class="reading-meta">facebook.com/bogdan.dospi</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a></li>
-
 <li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a></li>
-
 <li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small class="reading-meta">Spotify playlist</small></span></a></li>
-
 </ul>
-
 </div>
-
 </div>
-
 <a aria-label="Switch to PROJECT 100" class="fab-switch page-dock__action" href="index.html"><span aria-hidden="true" class="fab-switch__glyph">↔</span><span>PROJECT 100</span></a>
-
 </div>
-
-
 
 <dialog aria-labelledby="menuTitle" class="menu" id="menu">
-
 <div class="menu__head">
-
 <h2 class="menu__title reading-heading" id="menuTitle">Menu</h2>
-
 <button aria-label="Close menu" class="icon-btn" data-menu-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
-
 </div>
-
 <div class="menu__body">
-
 <div class="menu__sites">
-
 <a class="menu__site" href="index.html" data-folder="project"><small class="reading-meta">Switch to</small><strong>PROJECT 100</strong></a>
-
 <a aria-current="true" class="menu__site" href="fit-protocol.html" data-folder="project"><small class="reading-meta">You are here</small><strong>FIT PROTOCOL</strong></a>
-
 </div>
-
 <section class="menu__section section-tone--content">
-
 <h3 class="reading-heading">FIT PROTOCOL pages</h3>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Baseline &amp; Goals</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-baseline.html" data-folder="baseline">Goals &amp; baseline</a></li><li><a href="fit-protocol-history.html" data-folder="baseline">Return to training</a></li><li><a href="fit-protocol-constraints.html" data-folder="baseline">Constraints</a></li>
-
 <li><a href="fit-protocol-mission.html" data-folder="baseline">Mission &amp; record</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Daily Schedule</p>
-
 <ul class="menu__list"><li><a href="guidebook.html" data-folder="daily">Today</a></li><li><a aria-current="page" href="daily-pill-cards.html" data-folder="daily">Pill cards</a></li><li><a href="fit-protocol-fuel.html" data-folder="daily">Daily clock</a></li><li><a href="fit-protocol-checklists.html" data-folder="daily">Checklists</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Liquid Intake</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-vectors.html" data-folder="liquid">Vector folders</a></li><li><a href="fit-protocol-vector-v3.html" data-folder="liquid">V3 RECOVERY</a></li><li><a href="fit-protocol-vector-v1.html" data-folder="liquid">V1 IGNITION</a></li><li><a href="fit-protocol-vector-v2.html" data-folder="liquid">V2 REFUEL</a></li><li><a href="fit-protocol-vector-v4.html" data-folder="liquid">V4 RELOAD</a></li><li><a href="fit-protocol-vector-v5.html" data-folder="liquid">V5 TRANSPORT</a></li><li><a href="fit-protocol-vector-v10.html" data-folder="liquid">V10 SHUTDOWN</a></li><li><a href="fit-protocol-vector-v6.html" data-folder="liquid">V6 PUMP</a></li><li><a href="fit-protocol-vector-reference.html" data-folder="liquid">Vector notes</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Nutrition &amp; Meals</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-nutrition.html" data-folder="nutrition">Food &amp; nutrition</a></li>
-
 <li><a href="fit-protocol-meals.html" data-folder="nutrition">Meals &amp; fuel</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Minerals &amp; Micros</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-supplements.html" data-folder="supplements">Pills &amp; accounting</a></li><li><a href="fit-protocol-interactions.html" data-folder="supplements">Interactions</a></li><li><a href="fit-protocol-margins.html" data-folder="supplements">Safety margins</a></li>
-
 <li><a href="fit-protocol-dose.html" data-folder="supplements">Dose accounting</a></li><li><a href="fit-protocol-pathways.html" data-folder="supplements">Pathways</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Training Programme</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-training.html" data-folder="training">Training mechanics</a></li><li><a href="fit-protocol-progression.html" data-folder="project">Progression</a></li><li><a href="fit-protocol-joints.html" data-folder="project">Joints &amp; recovery</a></li>
-
 </ul>
-
 </div><div class="menu__group"><p class="menu__group-title reading-copy">Gym Equipment</p><ul class="menu__list"><li><a href="fit-protocol-gear.html" data-folder="gear">Gear &amp; bands</a></li></ul></div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Progress Monitoring</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-monitoring.html" data-folder="metrics">Metabolic context</a></li><li><a href="fit-protocol-labs.html" data-folder="metrics">Lab monitoring</a></li>
-
 <li><a href="fit-protocol-biometrics.html" data-folder="metrics">Biometrics</a></li></ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Checks &amp; Fixes</p>
-
 <ul class="menu__list"><li><a href="fit-protocol-troubleshooting.html" data-folder="fixes">Troubleshooting</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">Minerals</p>
-
 <ul class="menu__list"><li><a href="mineral-chemistry.html" data-folder="minerals">Mineral Chemistry</a></li>
-
 </ul>
-
 </div>
-
 <div class="menu__group">
-
 <p class="menu__group-title reading-copy">More</p>
-
 <ul class="menu__list"><li><a href="library.html" data-folder="library">Downloads</a></li>
-
 </ul>
-
 </div>
-
 </section>
-
 <section class="menu__section section-tone--reference">
-
 <h3 class="reading-heading">Downloads</h3>
-
 <div class="menu__links"><a class="menu__link" href="library.html" data-folder="library"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Illustration downloads</span></a></div>
-
 </section>
-
 <section class="menu__section section-tone--content">
-
 <h3 class="reading-heading">Links &amp; contact</h3>
-
 <div class="menu__links">
-
 <a class="menu__link" href="mailto:project100@gmail.com" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small class="reading-meta">project100@gmail.com</small></span></a>
-
 <a class="menu__link" href="index.html" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg><span>Project 100 Blueprint<small class="reading-meta">project100.fit</small></span></a>
-
 <a class="menu__link" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg><span>Instagram<small class="reading-meta">instagram.com/fudge_fit</small></span></a>
-
 <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg><span>YouTube<small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a>
-
 <a class="menu__link" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg><span>Facebook<small class="reading-meta">facebook.com/bogdan.dospi</small></span></a>
-
 <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg><span>TikTok<small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a>
-
 <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg><span>Twitch<small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a>
-
 <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank" data-folder="project"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg><span>Gym playlist<small class="reading-meta">Spotify playlist</small></span></a>
-
 </div>
-
 </section>
-
 </div>
-
 </dialog>
 
-
-
-<script defer="" src="assets/js/site.js?v=7daec686c93c"></script>
-
-<script src="assets/js/item-purpose.js?v=9eecb155e1cb" defer></script>
-
+<script defer="" src="assets/js/site.js?v=fd89c27fda54"></script>
+<script src="assets/js/item-purpose.js?v=5190f0a22632" defer></script>
 <script defer="" src="assets/js/hud.js?v=e212ebfaddb5"></script>
-
 <dialog id="mobile-sections" class="rail-drawer" aria-labelledby="mobile-sections-title"><div class="rail-drawer__head"><h2 id="mobile-sections-title">Daily Schedule</h2><button type="button" class="rail-drawer__close" aria-label="Close sections">×</button></div><div class="rail-drawer__body"><ul class="rail__list">
-
 <li><a href="guidebook.html"><span aria-hidden="true" class="rail__num">01</span><span class="rail__label">Today</span></a></li>
-
 <li><a aria-current="page" href="daily-pill-cards.html"><span aria-hidden="true" class="rail__num">02</span><span class="rail__label">Pill cards</span></a></li>
-
 <li><a href="fit-protocol-fuel.html"><span aria-hidden="true" class="rail__num">03</span><span class="rail__label">Daily clock</span></a></li>
-
 <li><a href="fit-protocol-checklists.html"><span aria-hidden="true" class="rail__num">04</span><span class="rail__label">Checklists</span></a></li>
-
 </ul></div></dialog>
-
 </body>
-
 </html>
