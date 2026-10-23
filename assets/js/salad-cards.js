@@ -46,7 +46,8 @@ function range(lo,hi,unit){return roundBook(lo)+'–'+roundBook(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
 const nav=doc.querySelector('[data-salad-navigation]'),previous=nav.querySelector('[data-salad-previous]'),next=nav.querySelector('[data-salad-next]'),position=nav.querySelector('[data-salad-position]'),browse=nav.querySelector('[data-salad-browse]'),pause=nav.querySelector('[data-salad-pause]'),overview=doc.getElementById('salad-overview');
 const saladCues=root.P100Rotation.create({host:nav,previous,next,pause,position,unit:'salads',previousLabel:'Previous salads',nextLabel:'Next salads'});
-let paused=root.matchMedia('(prefers-reduced-motion:reduce)').matches,visible=false,lastChange=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
+let paused=!root.P100Rotation.autoplay(),visible=false,lastChange=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
+doc.addEventListener('p100:motion',()=>{if(!root.P100?.motionPaused){paused=false;lastChange=Date.now();}});
 function pageSize(){return 4;}
 function updatePosition(){
  const size=pageSize(),page=Math.floor(current/size),pages=Math.ceil(chosen.length/size);

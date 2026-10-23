@@ -35,5 +35,6 @@ function create(options){
   if(state.previous!==undefined)peek(prev,state.previous);if(state.next!==undefined)peek(after,state.next);
  },element:host};host._rotationCues=api;return api;
 }
-window.P100Rotation={create,item};
+function autoplay(){try{return !matchMedia('(prefers-reduced-motion: reduce)').matches||localStorage.getItem('p100-motion-paused')==='false';}catch(_){return !matchMedia('(prefers-reduced-motion: reduce)').matches;}}
+window.P100Rotation={create,item,autoplay};
 })();
