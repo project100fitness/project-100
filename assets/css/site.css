@@ -1691,7 +1691,6 @@ html[data-motion="paused"] .stat,html[data-motion="paused"] .stat::after,html[da
 @media (max-width:639px) { .carousel--video.collection-grid { --collection-columns:minmax(0,1fr); } }
 .log-card .card__title { font-size: var(--step-0); line-height: 1.25; }
 .log-card .card__meta { font-size: var(--step--2); }
-.log-card .card__media { position: relative; aspect-ratio: 3 / 4; }
 .log-card .yt { height: 100%; aspect-ratio: auto; }
 .log-card__tag { position: absolute; top: var(--s-2); left: var(--s-2); z-index: 1; pointer-events: none; border-color: transparent; background: var(--inverse); color: var(--inverse-text); }
 
