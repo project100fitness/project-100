@@ -13,7 +13,7 @@
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   };
   /* Authored visible-motion preference; background clips explicitly opt into continuous playback. */
-  P.motionPaused = P.store.get('p100-motion-paused') === 'true';
+  P.motionPaused = P.store.get('p100-motion-paused') === 'true' || (P.reduceMotion.matches && P.store.get('p100-motion-paused') !== 'false');
   function motionLabels() {
     document.documentElement.dataset.motion = P.motionPaused ? 'paused' : 'running';
     P.$$('[data-motion-toggle]').forEach(function (b) {
@@ -122,6 +122,7 @@
   /* run fn once a dialog's history entry has been removed (so a link click inside a dialog cannot race the Back step) */
   P.afterLayer = function (fn) { if (!timer && !pending.length) { fn(); return; } pending.push(fn); };
   P.openDialog = function (d) {
+    if (timer) { P.afterLayer(function () { P.openDialog(d); }); return; }
     var was = d.open;
     if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
     if (was || !d.open) return;
@@ -788,7 +789,7 @@
     if(!track||!position||!pause)return;
     var previous=P.$('[data-collection-prev]',root),next=P.$('[data-collection-next]',root),controls=P.$('.collection-controls',root);
     var cues=P100Rotation.create({host:controls,previous:previous,next:next,pause:pause,position:position,unit:'cards',previousLabel:'Previous cards',nextLabel:'Next cards'});
-    var index=0,seen=false,paused=P.reduceMotion.matches,last=Date.now(),hold=0,keys=false,changing=false;
+    var index=0,seen=false,paused=!P100Rotation.autoplay(),last=Date.now(),hold=0,keys=false,changing=false;
     function start(page){var pages=Math.ceil(items.length/4);return Math.min(((page+pages)%pages)*4,Math.max(0,items.length-4));}
     function peek(page){var target=start(page),current=start(index);return items.slice(target,target+4).find(function(x,i){return target+i<current||target+i>=current+4;})||items[target];}
     function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/4800,remaining:4800-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
@@ -797,6 +798,7 @@
       var pages=Math.ceil(items.length/4);index=(page+pages)%pages;root.classList.add('is-changing');feedback();
       setTimeout(function(){var from=start(index);items.forEach(function(item,i){item.hidden=i<from||i>=from+4;});root.classList.remove('is-changing');last=Date.now();changing=false;feedback();},P.reduceMotion.matches?0:180);
     }
+    document.addEventListener('p100:motion',function(){if(!P.motionPaused){paused=false;last=Date.now();}feedback();});
     previous.addEventListener('click',function(){show(index-1,true);});next.addEventListener('click',function(){show(index+1,true);});
     pause.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);paused=false;}else paused=!paused;last=Date.now();feedback();});
     root.addEventListener('keydown',function(e){keys=true;if(e.target===track&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(index+(e.key==='ArrowRight'?1:-1),true);}});
@@ -822,8 +824,9 @@
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
     var active = false, lastW = -1, pos = null, last = 0, hold = 0, dir = 1, inView = true, lastAuto = 0;
-    var mouseOver = false, touching = false, keyFocus = false, userPaused = P.reduceMotion.matches, idle = 0, raf = 0;
+    var mouseOver = false, touching = false, keyFocus = false, userPaused = !P100Rotation.autoplay(), idle = 0, raf = 0;
 
+    document.addEventListener('p100:motion',function(){if(!P.motionPaused)userPaused=false;});
     function maxScroll() { return Math.max(0, track.scrollWidth - track.clientWidth); }
     function measure() {
       lastW = track.clientWidth;
@@ -956,7 +959,7 @@
     var bar = document.createElement('div'); bar.className = 'rowbar'; bar.setAttribute('aria-hidden', 'true'); bar.innerHTML = '<span></span>';
     var thumb = bar.firstChild; row.parentNode.insertBefore(bar, row.nextSibling);var hint=document.createElement('div');hint.className='rowhint-status';hint.textContent='More choices · swipe sideways';bar.after(hint);
     var active = false, pos = null, dir = 1, hold = now() + 1800, last = 0, lastAuto = 0, inView = true, touching = false, mouse = false, keyFocus = false, usingKeys = false, lastW = -1;
-    var still = P.reduceMotion.matches;
+    var still = !P100Rotation.autoplay();document.addEventListener('p100:motion',function(){if(!P.motionPaused)still=false;});
     function max() { return Math.max(0, row.scrollWidth - row.clientWidth); }
     function paint() {
       var m = max(), x = row.scrollLeft;
@@ -1111,7 +1114,7 @@
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
 
-  var DUR = 3500, i = 0, timer = 0, playing = !reduce, inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
+  var DUR = 3500, i = 0, timer = 0, playing = P100Rotation.autoplay(), inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
 
@@ -1165,7 +1168,7 @@
   thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k, true); }); });
   stage.addEventListener('focusin', function(e){if(e.target.matches(':focus-visible')){playing=false;schedule();if(pause){pause.textContent='Resume auto-change';pause.setAttribute('aria-pressed','true');}}});
   document.addEventListener('visibilitychange', schedule);
-  document.addEventListener('p100:motion', function(){if(window.P100.motionPaused||window.P100.reduceMotion.matches){frame.style.setProperty('--rx','0deg');frame.style.setProperty('--ry','0deg');stage.classList.remove('is-tilt')}schedule()});
+  document.addEventListener('p100:motion', function(){if(!window.P100.motionPaused)playing=true;if(window.P100.motionPaused||window.P100.reduceMotion.matches){frame.style.setProperty('--rx','0deg');frame.style.setProperty('--ry','0deg');stage.classList.remove('is-tilt')}schedule()});
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }, { threshold: 0.01 }).observe(stage);
   } else { inView = true; }
