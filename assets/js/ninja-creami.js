@@ -45,17 +45,17 @@ grid.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].i
 new ResizeObserver(()=>{range();$('#recipes-prev').disabled=$('#recipes-next').disabled=all||filtered.length<=pageSize()}).observe(grid);
 $('#recipes-prev').addEventListener('click',()=>next(-1));$('#recipes-next').addEventListener('click',()=>next(1));
 $('#recipes-all').addEventListener('click',()=>{closeRecipe(false);all=!all;set=0;render()});
-/* A single compact clock; touch defers it, keyboard exploration and open recipes pause it. */
-const autoButton=$('#recipes-auto');let galleryVisible=false,hovered=false,touching=false,usingKeyboard=false,lastAdvance=performance.now(),holdUntil=0,suspended=false;
-function deferFlavours(){lastAdvance=performance.now();holdUntil=lastAdvance+8000;}
-function autoLabel(now){const paused=autoPaused||externalPaused,waiting=hovered||touching||usingKeyboard&&grid.contains(document.activeElement)||!detail.hidden;const seconds=Math.max(1,Math.ceil((Math.max(holdUntil,lastAdvance+6000)-now)/1000));autoButton.hidden=all||filtered.length<=pageSize();autoButton.setAttribute('aria-pressed',String(paused));const label=paused?'Resume automatic flavour changes':'Pause automatic flavour changes';autoButton.setAttribute('aria-label',label);autoButton.title=label;autoButton.firstElementChild.textContent=paused?'▶':waiting?'Ⅱ':seconds+'s Ⅱ';}
+/* Preserve remaining viewing time through touch, scrolling and open recipes. */
+const autoButton=$('#recipes-auto');let galleryVisible=false,hovered=false,touching=false,usingKeyboard=false,lastAdvance=performance.now(),lastTick=performance.now(),holdUntil=0,suspended=false;
+
+function autoLabel(now){const paused=autoPaused||externalPaused;autoButton.hidden=all||filtered.length<=pageSize();autoButton.setAttribute('aria-pressed',String(paused));const label=paused?'Resume automatic flavour changes':'Pause automatic flavour changes';autoButton.setAttribute('aria-label',label);autoButton.title=label;autoButton.firstElementChild.textContent=paused?'▶':'Ⅱ';}
 autoButton.addEventListener('click',()=>{if(externalPaused){externalPaused=false;autoPaused=false;notify('creami-motion-request',{paused:false})}else autoPaused=!autoPaused;lastAdvance=performance.now();holdUntil=0;autoLabel(lastAdvance)});
-grid.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hovered=true});grid.addEventListener('pointerleave',()=>{hovered=false;lastAdvance=performance.now()});
+grid.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hovered=true});grid.addEventListener('pointerleave',()=>{hovered=false});
 document.addEventListener('keydown',e=>{if(e.key==='Tab'||e.key.startsWith('Arrow'))usingKeyboard=true},true);document.addEventListener('pointerdown',()=>usingKeyboard=false,true);
-grid.addEventListener('pointerdown',deferFlavours,{passive:true});grid.addEventListener('wheel',deferFlavours,{passive:true});grid.addEventListener('touchstart',()=>{usingKeyboard=false;touching=true;deferFlavours()},{passive:true});for(const event of ['touchend','touchcancel'])grid.addEventListener(event,()=>{touching=false;deferFlavours()},{passive:true});
-for(const id of ['#recipes-prev','#recipes-next','#recipes-all','#milk-pathway','#protein-filter','#recipe-search'])$(id).addEventListener('click',deferFlavours);
-new IntersectionObserver(entries=>{galleryVisible=entries[0].isIntersecting;lastAdvance=performance.now()},{threshold:.12}).observe(grid);
-setInterval(()=>{const now=performance.now();if(suspended||autoPaused||externalPaused||all||currentMode!=='guide'||!galleryVisible||document.hidden||hovered||touching||usingKeyboard&&grid.contains(document.activeElement)||!detail.hidden||document.querySelector('dialog[open]'))lastAdvance=now;else if(now>=holdUntil&&now-lastAdvance>=6000){next(1);lastAdvance=now;}autoLabel(now)},250);
+grid.addEventListener('touchstart',()=>{usingKeyboard=false;touching=true},{passive:true});for(const event of ['touchend','touchcancel'])grid.addEventListener(event,()=>{touching=false},{passive:true});
+for(const id of ['#recipes-prev','#recipes-next','#recipes-all'])$(id).addEventListener('click',()=>{lastAdvance=performance.now()});
+new IntersectionObserver(entries=>{galleryVisible=entries[0].isIntersecting;lastTick=performance.now()},{threshold:.12}).observe(grid);
+setInterval(()=>{const now=performance.now(),delta=now-lastTick;lastTick=now;if(suspended||autoPaused||externalPaused||all||currentMode!=='guide'||!galleryVisible||document.hidden||hovered||touching||usingKeyboard&&grid.contains(document.activeElement)||!detail.hidden||document.querySelector('dialog[open]'))lastAdvance+=delta;else if(now>=holdUntil&&now-lastAdvance>=4000){next(1);lastAdvance=now;}autoLabel(now)},250);
 function filter(){closeRecipe(false);const q=$('#recipe-search').value.trim().toLowerCase(),p=$('#protein-filter').value;filtered=data.recipes.filter(r=>(p==='all'||r.protein===p)&&(r.name+' '+r.additions.join(' ')).toLowerCase().includes(q));set=0;render()}
 $('#milk-pathway').addEventListener('change',()=>{closeRecipe(false);renderBase();render()});$('#protein-filter').addEventListener('change',filter);$('#recipe-search').addEventListener('input',filter);render();autoLabel(performance.now());
 let technicalPromise=null;

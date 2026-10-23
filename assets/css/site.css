@@ -1681,14 +1681,13 @@ html[data-motion="paused"] .stat,html[data-motion="paused"] .stat::after,html[da
 /* ===== 41-workout.css ===== */
 /* Workout page – the training log is a set of category carousels (src/css/31-carousel.css);
    these rules only shape the reel cards inside them. */
-/* Workout journal: one consistent preview surface for portrait and landscape clips. */
-.card.log-card { display:grid; grid-template-columns:clamp(72px,38%,144px) minmax(0,1fr); align-items:start; align-self:start; height:auto; }
-.card.log-card .card__body { grid-column:2; grid-row:1; min-width:0; align-self:stretch; justify-content:center; padding:var(--s-3); gap:var(--s-1); border-left:1px solid var(--line); }
-.card.log-card .card__media { position:relative; grid-column:1; grid-row:1; width:100%; min-height:0; aspect-ratio:1; align-self:start; }
+/* Workout journal: compact two-column cards with equally sized preview images. */
+.card.log-card { display:flex; flex-direction:column; align-self:stretch; height:100%; }
+.card.log-card .card__body { min-width:0; flex:1; justify-content:space-between; padding:.6rem; gap:.35rem; }
+.card.log-card .card__media { position:relative; width:100%; min-height:0; aspect-ratio:16/10; flex:none; }
 .card.log-card .card__media img { object-fit:cover; object-position:center; }
-.card.log-card .vid-cap__title { min-height:0; }
-.card.log-card .vid-cap__go { margin-top:.5rem; }
-@media (max-width:639px) { .carousel--video.collection-grid { --collection-columns:minmax(0,1fr); } }
+.card.log-card .vid-cap__title { min-height:2.5em; font-size:clamp(.8rem,1.6vw,1rem); }
+.card.log-card .vid-cap__go { margin-top:.25rem; }
 .log-card .card__title { font-size: var(--step-0); line-height: 1.25; }
 .log-card .card__meta { font-size: var(--step--2); }
 .log-card .yt { height: 100%; aspect-ratio: auto; }

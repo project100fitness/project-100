@@ -175,3 +175,6 @@
 
 /* Native responsive component state. */
 @media screen and (max-width:767px), screen and (max-width:1023px) and (pointer:coarse){.nutrition-metrics{gap:.5rem;}}
+
+/* Recipe navigation above and below the current set. */
+.salad-filters,.salad-bottom-nav{display:flex;align-items:center;justify-content:center;gap:.4rem;flex-wrap:wrap;margin:.4rem 0 .65rem}.salad-filters button,.salad-bottom-nav button{min-height:44px;padding:.4rem .7rem;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface-2);color:var(--text);font:inherit;font-size:.8rem;font-weight:650;cursor:pointer}.salad-filters button[aria-pressed="true"]{background:var(--accent-strong);color:var(--on-accent,#fff)}.salad-bottom-nav span{font-size:.8rem;min-width:4rem;text-align:center}.salad-bottom-nav button:disabled{opacity:.4}.salad-gallery{touch-action:pan-y}

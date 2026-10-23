@@ -803,7 +803,7 @@
    - "reduce motion": no automatic movement unless the visitor presses Play. Without JS it is a normal scroll-snap strip. */
 (function () {
   'use strict';
-  var P = window.P100, SPEED = 34, RESUME = 2200, REST = 1400;   /* px per second; ms of calm after a touch; ms of rest at either end */
+  var P = window.P100, SPEED = 34, RESUME = 500, REST = 800;   /* px per second; ms of calm after a touch; ms of rest at either end */
   var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
   function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
@@ -815,12 +815,12 @@
     if(!track||!position||!pause)return;
     var previous=P.$('[data-collection-prev]',root),next=P.$('[data-collection-next]',root),controls=P.$('.collection-controls',root);
     var cues=P100Rotation.create({host:controls,previous:previous,next:next,pause:pause,position:position,unit:'cards',previousLabel:'Previous cards',nextLabel:'Next cards'});
-    var index=0,seen=false,paused=!P100Rotation.autoplay(),last=Date.now(),hold=0,keys=false,changing=false;
+    var index=0,seen=false,paused=!P100Rotation.autoplay(),last=Date.now(),tick=last,hold=0,keys=false,changing=false,touching=false;
     function start(page){var pages=Math.ceil(items.length/4);return Math.min(((page+pages)%pages)*4,Math.max(0,items.length-4));}
     function peek(page){var target=start(page),current=start(index);return items.slice(target,target+4).find(function(x,i){return target+i<current||target+i>=current+4;})||items[target];}
-    function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/4800,remaining:4800-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
+    function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/4000,remaining:4000-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
     function show(page,manual){
-      if(changing)return;changing=true;if(manual)hold=Date.now()+12000;
+      if(changing)return;changing=true;if(manual)hold=0;
       var pages=Math.ceil(items.length/4);index=(page+pages)%pages;root.classList.add('is-changing');feedback();
       setTimeout(function(){var from=start(index);items.forEach(function(item,i){item.hidden=i<from||i>=from+4;});root.classList.remove('is-changing');last=Date.now();changing=false;feedback();},P.reduceMotion.matches?0:180);
     }
@@ -828,9 +828,9 @@
     previous.addEventListener('click',function(){show(index-1,true);});next.addEventListener('click',function(){show(index+1,true);});
     pause.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);paused=false;}else paused=!paused;last=Date.now();feedback();});
     root.addEventListener('keydown',function(e){keys=true;if(e.target===track&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(index+(e.key==='ArrowRight'?1:-1),true);}});
-    root.addEventListener('pointerdown',function(){keys=false;hold=Date.now()+12000;},{passive:true});
-    if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;last=Date.now();},{threshold:.01}).observe(root);else seen=true;
-    setInterval(function(){if(!seen||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last=Date.now();feedback();return;}feedback();if(Date.now()-last>=4800)show(index+1,false);},100);
+    root.addEventListener('pointerdown',function(){keys=false;},{passive:true});root.addEventListener('touchstart',function(){touching=true;},{passive:true});['touchend','touchcancel'].forEach(function(name){root.addEventListener(name,function(){touching=false;},{passive:true});});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;tick=Date.now();},{threshold:.01}).observe(root);else seen=true;
+    setInterval(function(){var at=Date.now(),delta=at-tick;tick=at;if(!seen||touching||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last+=delta;feedback();return;}feedback();if(Date.now()-last>=4000)show(index+1,false);},100);
     track.tabIndex=0;show(0,false);
   }
 
@@ -890,7 +890,7 @@
     }
     function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
     function step() { var c = items[0]; var g = getComputedStyle(track); return c ? c.getBoundingClientRect().width + (parseFloat(g.columnGap) || parseFloat(g.gap) || 0) : track.clientWidth * .8; }
-    function go(d) { holdFor(RESUME + 2500); track.scrollBy({ left: d * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
+    function go(d) { holdFor(800); track.scrollBy({ left: d * step(), behavior: P.reduceMotion.matches ? 'auto' : 'smooth' }); }
 
 
     track.addEventListener('keydown', function (e) {
@@ -903,12 +903,12 @@
       if (Math.abs(track.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = track.scrollLeft; }
       sync();
     }, { passive: true });
-    track.addEventListener('wheel', function () { holdFor(RESUME + 800); }, { passive: true });
+    track.addEventListener('wheel', function () { holdFor(RESUME); }, { passive: true });
     /* mouse only: a finger never "hovers", so touch screens cannot get stuck paused */
     root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouseOver = true; });
     root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouseOver = false; holdFor(500); } });
     track.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
-    function endTouch() { touching = false; holdFor(RESUME + 800); }
+    function endTouch() { touching = false; holdFor(RESUME); }
     track.addEventListener('touchend', endTouch, { passive: true });
     track.addEventListener('touchcancel', endTouch, { passive: true });
     window.addEventListener('blur', function () { touching = false; mouseOver = false; });
@@ -917,7 +917,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || e.key.indexOf('Arrow') === 0) usingKeys = true; }, true);
     ['pointerdown', 'touchstart', 'mousedown'].forEach(function (ev) { document.addEventListener(ev, function () { usingKeys = false; keyFocus = false; }, true); });
     root.addEventListener('focusin', function () { keyFocus = usingKeys; });
-    root.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
+    root.addEventListener('focusout', function () { keyFocus = false; holdFor(300); });
     document.addEventListener('visibilitychange', function () { pos = null; holdFor(400); });
 
     /* mouse drag on the row */
@@ -945,7 +945,7 @@
       var drag = false;
       function jump(e) {
         var r = bar.getBoundingClientRect(), f = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
-        track.scrollLeft = f * maxScroll(); holdFor(RESUME + 1500);
+        track.scrollLeft = f * maxScroll(); holdFor(800);
       }
       bar.addEventListener('pointerdown', function (e) { drag = true; try { bar.setPointerCapture(e.pointerId); } catch (x) {} jump(e); });
       bar.addEventListener('pointermove', function (e) { if (drag) jump(e); });
@@ -978,7 +978,7 @@
    A touch / tap / hover pauses it; it never runs under "reduce motion" or while a pop-up is open. */
 (function () {
   'use strict';
-  var P = window.P100, SPEED = 30, REST = 1200, RESUME = 3200;
+  var P = window.P100, SPEED = 30, REST = 800, RESUME = 500;
   function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
   function init(row) {
     if (row.dataset.hint) return; row.dataset.hint = '1';
@@ -1016,12 +1016,12 @@
     function endTouch() { touching = false; holdFor(RESUME); }
     row.addEventListener('touchend', endTouch, { passive: true }); row.addEventListener('touchcancel', endTouch, { passive: true });
     row.addEventListener('wheel', function () { holdFor(RESUME); }, { passive: true });
-    row.addEventListener('click', function () { holdFor(RESUME + 2500); });
+    row.addEventListener('click', function () { holdFor(800); });
     row.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouse = true; });
     row.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouse = false; holdFor(500); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Tab' || e.key.indexOf('Arrow') === 0) usingKeys = true; }, true);
     ['pointerdown', 'touchstart', 'mousedown'].forEach(function (ev) { document.addEventListener(ev, function () { usingKeys = false; keyFocus = false; }, true); });
-    row.addEventListener('focusin', function () { keyFocus = usingKeys; }); row.addEventListener('focusout', function () { keyFocus = false; holdFor(1200); });
+    row.addEventListener('focusin', function () { keyFocus = usingKeys; }); row.addEventListener('focusout', function () { keyFocus = false; holdFor(300); });
     if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (!inView) pos = null; }, { threshold: .2 }).observe(row);
     function remeasure() { if (row.clientWidth !== lastW) measure(); }
     var resizeFrame = 0;
@@ -1271,11 +1271,11 @@
       var wait = Date.now() < hold ? hold - Date.now() : 3500;
       timer = setTimeout(function () { if (seen && !hover && !document.hidden && P100Rotation.autoplay() && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !reading() && Date.now() >= hold) flip(false); schedule(); }, wait);
     }
-    btn.addEventListener('click', function () { hold = Date.now() + 16000; flip(true); schedule(); });
+    btn.addEventListener('click', function () { hold = Date.now() + 3500; flip(true); schedule(); });
     root.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') { hover = true; clearTimeout(timer); } });
     root.addEventListener('pointerleave', function (event) { if (event.pointerType === 'mouse') { hover = false; schedule(); } });
     document.addEventListener('keydown', function (event) { if (event.key === 'Tab' || event.key.indexOf('Arrow') === 0) { keyboard = true; schedule(); } });
-    document.addEventListener('pointerdown', function (event) { keyboard = false; if (root.contains(event.target)) hold = Date.now() + 16000; schedule(); }, { passive: true });
+    document.addEventListener('pointerdown', function (event) { var wasKeyboard = keyboard; keyboard = false; if (root.contains(event.target)) { hold = Date.now() + 3500; schedule(); } else if (wasKeyboard) schedule(); }, { passive: true });
     root.addEventListener('focusin', schedule);root.addEventListener('focusout', function(){setTimeout(schedule,0)});motion.addEventListener('change', schedule);
     document.addEventListener('visibilitychange', schedule);
     document.addEventListener('close', schedule, true);
