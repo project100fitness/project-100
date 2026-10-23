@@ -1243,6 +1243,16 @@
     if (!card || !btn || faces.length < 2) return;
     var turns = 0, side = 0, timer = 0, hold = 0, seen = false, hover = false, keyboard = false;
     function reading() { return keyboard && root.contains(document.activeElement); }
+    function visiblePart() {
+      var box = root.getBoundingClientRect(), left = 0, top = 0, right = window.innerWidth, bottom = window.innerHeight;
+      if (!root.getClientRects().length || !box.width || !box.height) return false;
+      for (var parent = root.parentElement; parent && parent !== document.documentElement; parent = parent.parentElement) {
+        var style = getComputedStyle(parent), clip = parent.getBoundingClientRect();
+        if (/auto|scroll|hidden|clip/.test(style.overflowX)) { left = Math.max(left, clip.left + parent.clientLeft); right = Math.min(right, clip.left + parent.clientLeft + parent.clientWidth); }
+        if (/auto|scroll|hidden|clip/.test(style.overflowY)) { top = Math.max(top, clip.top + parent.clientTop); bottom = Math.min(bottom, clip.top + parent.clientTop + parent.clientHeight); }
+      }
+      return Math.min(box.right, right) - Math.max(box.left, left) > Math.min(box.width, window.innerWidth) * .35 && Math.min(box.bottom, bottom) - Math.max(box.top, top) > Math.min(box.height, window.innerHeight) * .35;
+    }
     function show() {
       root.dataset.side = side; btn.setAttribute('aria-label', 'Flip to ' + (caps[1 - side] || 'the other side')); if (dl) { dl.href = origs[side] || dl.href; var lab = 'Download the original image (PNG, ' + (sizes[side] || '') + ')'; dl.setAttribute('aria-label', lab); dl.title = 'Download original · PNG ' + (sizes[side] || ''); }
       dots.forEach(function (d, i) { d.classList.toggle('is-on', i === side); });
@@ -1256,6 +1266,7 @@
       show();
     }
     function schedule() {
+      seen = visiblePart();
       clearTimeout(timer); if (!P100Rotation.autoplay() || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || reading()) return;
       var wait = Date.now() < hold ? hold - Date.now() : 3500;
       timer = setTimeout(function () { if (seen && !hover && !document.hidden && P100Rotation.autoplay() && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !reading() && Date.now() >= hold) flip(false); schedule(); }, wait);
@@ -1269,7 +1280,15 @@
     document.addEventListener('visibilitychange', schedule);
     document.addEventListener('close', schedule, true);
   document.addEventListener('p100:motion', schedule);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting && es[0].intersectionRatio > .35; schedule(); }, { threshold: [0, .35, .6] }).observe(root);
+    var viewFrame = 0;
+    function scheduleView() { if (!viewFrame) viewFrame = requestAnimationFrame(function () { viewFrame = 0; schedule(); }); }
+    document.addEventListener('click', scheduleView);
+    document.addEventListener('scroll', scheduleView, { capture: true, passive: true });
+    window.addEventListener('resize', scheduleView, { passive: true });
+    window.addEventListener('pageshow', scheduleView);
+    window.addEventListener('popstate', scheduleView);
+    window.addEventListener('hashchange', scheduleView);
+    if ('IntersectionObserver' in window) new IntersectionObserver(scheduleView, { threshold: [0, .35, .6] }).observe(root);
     show();
   }
   all('[data-flip]').forEach(init);
