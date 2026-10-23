@@ -2642,7 +2642,7 @@ h2.vec-record__title { font-size: var(--step--1); }
 .carousel.collection-grid .carousel__item { min-width:0; width:100%; max-width:100%; flex:none; }
 .carousel.collection-grid .carousel__item[hidden] { display:none!important; }
 .carousel.collection-grid .card:not(.card--portrait):not(.log-card) .card__media,.carousel.collection-grid .file-card:not(.file-card--portrait) .file-card__thumb { width:100%; height:auto; aspect-ratio:16/10; max-height:clamp(100px,18svh,200px); min-height:0; }
-.carousel.collection-grid .card__media img { object-fit:contain; }
+.carousel.collection-grid .card:not(.log-card) .card__media img { object-fit:contain; }
 .carousel.collection-grid .card__body { padding:clamp(.45rem,1.5vw,.9rem); }
 .carousel.collection-grid .card__title { font-size:clamp(.85rem,1.6vw,1.1rem); line-height:1.3; }
 .carousel.collection-grid .carousel__stage { overflow:visible; mask-image:none; -webkit-mask-image:none; }
