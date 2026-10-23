@@ -1241,7 +1241,8 @@
         dl = root.querySelector('[data-flip-dl]'), dots = all('.pcap__dots i', root),
         faces = all('.flipc__face', root), caps = (root.dataset.caps || '').split('|'), origs = (root.dataset.origs || '').split('|'), sizes = (root.dataset.sizes || '').split('|');
     if (!card || !btn || faces.length < 2) return;
-    var turns = 0, side = 0, timer = 0, hold = 0, seen = false, hover = false, first = true;
+    var turns = 0, side = 0, timer = 0, hold = 0, seen = false, hover = false, keyboard = false;
+    function reading() { return keyboard && root.contains(document.activeElement); }
     function show() {
       root.dataset.side = side; btn.setAttribute('aria-label', 'Flip to ' + (caps[1 - side] || 'the other side')); if (dl) { dl.href = origs[side] || dl.href; var lab = 'Download the original image (PNG, ' + (sizes[side] || '') + ')'; dl.setAttribute('aria-label', lab); dl.title = 'Download original · PNG ' + (sizes[side] || ''); }
       dots.forEach(function (d, i) { d.classList.toggle('is-on', i === side); });
@@ -1255,19 +1256,20 @@
       show();
     }
     function schedule() {
-      clearTimeout(timer); if (motion.matches || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || root.matches(':focus-within')) return;
-      var wait = Date.now() < hold ? hold - Date.now() : 3500; first = false;
-      timer = setTimeout(function () { if (seen && !hover && !document.hidden && !motion.matches && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !root.matches(':focus-within') && Date.now() >= hold) flip(false); schedule(); }, wait);
+      clearTimeout(timer); if (!P100Rotation.autoplay() || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || reading()) return;
+      var wait = Date.now() < hold ? hold - Date.now() : 3500;
+      timer = setTimeout(function () { if (seen && !hover && !document.hidden && P100Rotation.autoplay() && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !reading() && Date.now() >= hold) flip(false); schedule(); }, wait);
     }
     btn.addEventListener('click', function () { hold = Date.now() + 16000; flip(true); schedule(); });
-    root.addEventListener('mouseenter', function () { hover = true; clearTimeout(timer); });
-    root.addEventListener('mouseleave', function () { hover = false; schedule(); });
-    root.addEventListener('touchstart', function () { hold = Date.now() + 16000; }, { passive: true });
+    root.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') { hover = true; clearTimeout(timer); } });
+    root.addEventListener('pointerleave', function (event) { if (event.pointerType === 'mouse') { hover = false; schedule(); } });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Tab' || event.key.indexOf('Arrow') === 0) { keyboard = true; schedule(); } });
+    document.addEventListener('pointerdown', function (event) { keyboard = false; if (root.contains(event.target)) hold = Date.now() + 16000; schedule(); }, { passive: true });
     root.addEventListener('focusin', schedule);root.addEventListener('focusout', function(){setTimeout(schedule,0)});motion.addEventListener('change', schedule);
     document.addEventListener('visibilitychange', schedule);
     document.addEventListener('close', schedule, true);
   document.addEventListener('p100:motion', schedule);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting && es[0].intersectionRatio > .35; first = first && seen; schedule(); }, { threshold: [0, .35, .6] }).observe(root);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting && es[0].intersectionRatio > .35; schedule(); }, { threshold: [0, .35, .6] }).observe(root);
     show();
   }
   all('[data-flip]').forEach(init);
