@@ -608,27 +608,53 @@
       window.addEventListener('resize',drawSurface);
       document.addEventListener('p100:motion',drawSurface);
     }
+    function isVisible() {
+      var box = v.parentElement.getBoundingClientRect();
+      return box.width > 0 && box.height > 0 && box.bottom > 0 && box.top < window.innerHeight && box.right > 0 && box.left < window.innerWidth && v.getClientRects().length > 0;
+    }
     function sync() {
+      // Reconcile actual layout on every lifecycle event. Embedded browsers can
+      // retain an obsolete intersection result after their panel becomes visible.
+      near = isVisible();
       v.muted = true; v.defaultMuted = true; v.volume = 0;
       if (!near || document.hidden || P.motionPaused || (mediaMotion.matches && !v.hasAttribute('data-always')) || (conn.saveData && !v.hasAttribute('data-always'))) { v.pause(); if (!near) { delete v.dataset.playback; P.refreshMotionLabels(); } return; }
       if (v.dataset.src && !v.getAttribute('src')) {
         v.src = (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches) ? v.dataset.srcMobile : v.dataset.src;
         v.load();
       }
+      if (!v.paused && !v.ended) return;
       var playing = v.play();
-      if (playing && playing.then) playing.then(function () { v.dataset.playback = 'playing'; P.refreshMotionLabels(); }).catch(function (error) { if (error.name === 'NotAllowedError' && near && !P.motionPaused) v.dataset.playback = 'blocked'; else delete v.dataset.playback; P.refreshMotionLabels(); });
+      if (playing && playing.then) playing.then(function () { if (!v.paused) v.dataset.playback = 'playing'; P.refreshMotionLabels(); }).catch(function (error) { if (error.name === 'NotAllowedError' && near && !P.motionPaused) v.dataset.playback = 'blocked'; else delete v.dataset.playback; P.refreshMotionLabels(); });
     }
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) { near = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(v.parentElement);
-    } else { near = true; sync(); }
+      new IntersectionObserver(sync, { threshold: [0, .05] }).observe(v.parentElement);
+    }
+    if (v.dataset.srcMobile && window.matchMedia('(max-width: 760px)').matches && v.getAttribute('src') !== v.dataset.srcMobile) {
+      v.src = v.dataset.srcMobile;
+    }
+    sync();
+    var visibilityFrame = 0;
+    function scheduleVisibility() {
+      if (!visibilityFrame) visibilityFrame = requestAnimationFrame(function () { visibilityFrame = 0; sync(); });
+    }
+    window.addEventListener('scroll', scheduleVisibility, { passive: true });
+    window.addEventListener('resize', scheduleVisibility, { passive: true });
     document.addEventListener('visibilitychange', sync);
     document.addEventListener('p100:motion', sync);
     v.addEventListener('canplay', sync);
+    v.addEventListener('play', sync);
+    v.addEventListener('playing', function () { v.dataset.playback = 'playing'; P.refreshMotionLabels(); });
+    v.addEventListener('pause', function () {
+      delete v.dataset.playback;
+      if (!document.hidden && !P.motionPaused && isVisible()) scheduleVisibility();
+      P.refreshMotionLabels();
+    });
     window.addEventListener('online', sync);
     var fallbackTried = false;
     v.addEventListener('error', function () { if (!fallbackTried && v.dataset.srcMobile && v.currentSrc.indexOf(v.dataset.srcMobile) < 0) { fallbackTried = true; v.src = v.dataset.srcMobile; v.load(); } });
-    setInterval(function () { if (near && v.paused && !document.hidden && !P.motionPaused) sync(); }, 2000);
+    setInterval(function () { if (v.paused && !document.hidden && !P.motionPaused) sync(); }, 2000);
     window.addEventListener('pageshow', sync);
+    window.addEventListener('focus', sync);
     document.addEventListener('pointerdown', sync, { passive: true });
     if (mediaMotion.addEventListener) mediaMotion.addEventListener('change', sync);
     else if (mediaMotion.addListener) mediaMotion.addListener(sync);
