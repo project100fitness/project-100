@@ -473,7 +473,7 @@
     var b = vset[vidx], id = b.dataset.yt;
     vbox.innerHTML = '';
     var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1' + (/^https?:$/.test(location.protocol) ? '&origin=' + encodeURIComponent(location.origin) : '');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&mute=0&playsinline=1&rel=0' + (/^https?:$/.test(location.protocol) ? '&origin=' + encodeURIComponent(location.origin) : '');
     f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');            /* YouTube refuses to play when it is told nothing about the page (in-app browsers) */
     f.title = vlabel(b);
     f.allow = 'autoplay; encrypted-media; picture-in-picture; web-share; fullscreen';
