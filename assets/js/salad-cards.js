@@ -45,7 +45,7 @@ const labels=['Energy','Protein','Carbs','Fat','Fiber'],units=['kcal','g','g','g
 function range(lo,hi,unit){return roundBook(lo)+'–'+roundBook(hi)+' '+unit;}
 function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
 const nav=doc.querySelector('[data-salad-navigation]'),previous=nav.querySelector('[data-salad-previous]'),next=nav.querySelector('[data-salad-next]'),position=nav.querySelector('[data-salad-position]'),browse=nav.querySelector('[data-salad-browse]'),pause=nav.querySelector('[data-salad-pause]'),overview=doc.getElementById('salad-overview');
-const saladCues=root.P100Rotation.create({host:nav,previous,next,pause,position,unit:'salads',previousLabel:'Previous salads',nextLabel:'Next salads'});
+const saladCues=root.P100Rotation.create({host:nav,viewport:gallery,previous,next,pause,position,unit:'salads',previousLabel:'Previous salads',nextLabel:'Next salads'});
 let paused=!root.P100Rotation.autoplay(),visible=false,lastChange=Date.now(),lastTick=Date.now(),holdUntil=0,transitioning=false,keyboard=false;
 doc.addEventListener('p100:motion',()=>{if(!root.P100?.motionPaused){paused=false;lastChange=Date.now();}});
 function pageSize(){return 4;}
@@ -85,7 +85,7 @@ setInterval(()=>{
  const size=pageSize(),from=Math.min(current,Math.max(0,chosen.length-size)),pages=Math.ceil(chosen.length/size),page=Math.floor(current/size),peek=direction=>{const target=Math.min(((page+direction+pages)%pages)*size,Math.max(0,chosen.length-size));const pick=chosen.slice(target,target+size).find((x,n)=>target+n<from||target+n>=from+size)||chosen[target];return pick?{title:pick.title,src:'assets/web/mega-salads/'+pick.id+'-480.webp'}:null};
  saladCues.update({enabled:chosen.length>size,total:chosen.length,range:'Salads '+(from+1)+'–'+Math.min(chosen.length,from+size)+' of '+chosen.length,progress:paused||root.P100?.motionPaused?0:(Date.now()-lastChange)/4000,remaining:paused||root.P100?.motionPaused?4000:4000-(Date.now()-lastChange),resume:Math.max(0,holdUntil-Date.now()),paused:paused||root.P100?.motionPaused,changing:transitioning,waiting:indexOpen||gallery.querySelector('.salad-card:not([hidden]) details[open]')?'Paused while you explore':null,previous:peek(-1),next:peek(1)});
  const reading=gallery.querySelector('.salad-card:not([hidden]) details[open]')||doc.querySelector('dialog[open]')||indexOpen||(keyboard&&gallery.contains(doc.activeElement))||gallery.querySelector('select:focus');
- if(paused||!visible||doc.hidden||root.P100?.motionPaused||reading||touch||transitioning||Date.now()<holdUntil){lastChange+=delta;return;}
+ if(paused||!visible||doc.hidden||root.P100?.motionPaused||reading||touch||saladCues.touching||transitioning||Date.now()<holdUntil){lastChange+=delta;return;}
  if(Date.now()-lastChange>=4000)goTo(current+pageSize(),false);
 },200);
 function draw(){gallery.scrollLeft=0;gallery.replaceChildren();chosen=recipes.filter(p=>filter==='all'||p.category===filter).slice().reverse();const featured=['20260207_161926','20260708_135631'];chosen.sort((a,b)=>{const rank=p=>featured.includes(p.id)?featured.indexOf(p.id):featured.length;return rank(a)-rank(b);});overview.replaceChildren();browse.textContent='All '+chosen.length+' salads';current=0;indexOpen=false;browse.setAttribute('aria-expanded','false');
