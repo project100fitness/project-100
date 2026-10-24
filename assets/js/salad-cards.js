@@ -101,19 +101,17 @@ chosen.forEach((p,i)=>{
  const body=el('div',null,'salad-card__body'),time=el('time',p.id.slice(0,4)+'-'+p.id.slice(4,6)+'-'+p.id.slice(6,8));time.dateTime=time.textContent;
  const amounts=recipePortions(p),count=eggCount(p),wholeCan=amounts.beans!==portions.beans;
  body.append(el('h3',p.title),el('p',p.ingredients.map(k=>k==='egg'?count+' boiled eggs':k==='beans'&&wholeCan?'1 whole can mixed beans':names[k].replace('Drained ','')).join(' · '),'salad-ingredient-preview'));
- const choice=el('label','Dressing','salad-card-choice'),select=el('select');select.setAttribute('aria-label','Dressing for '+p.title);
- [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);const photoArea=el('div',null,'salad-photo-area');photoArea.append(photo);body.insertBefore(time,body.firstChild);
- const results=el('div',null,'salad-card-metrics');results.setAttribute('aria-live','polite');body.append(results);
+ const photoArea=el('div',null,'salad-photo-area');photoArea.append(photo);body.insertBefore(time,body.firstChild);
  const details=el('details',null,'salad-recipe-details');const summary=el('summary','Photo record');details.append(summary);details.addEventListener('toggle',()=>{summary.textContent=details.open?'Close photo record':'Photo record';card.classList.toggle('is-reading',details.open);});
  const list=el('ul');p.ingredients.forEach(k=>list.append(el('li',names[k] || k)));details.append(list);
  
  if(p.note)details.append(el('p',p.note,'salad-identification-note'));
- const detailedMetrics=el('p',null,'salad-full-metrics');details.append(detailedMetrics);const breakdown=el('p'),purpose=el('p','Protein foods support the daily protein total; beans and vegetables add carbohydrate and fiber. Dressing changes energy and fat.');details.append(breakdown,purpose);
+ const purpose=el('p','Protein foods support the daily protein total; beans and vegetables add carbohydrate and fiber. Dressing changes energy and fat.');details.append(purpose);
  details.append(el('p','Sodium, sugars, saturated fat and numeric micronutrient totals need product labels and verified portions; they are not assumed to be zero. Greens contribute folate and vitamin K; peppers vitamin C; feta calcium; eggs choline and B12.'));
  details.append(el('p','The 24 October books retire the modelled recipe quantities and macros. This dated photograph does not establish a weighed portion. Current caption-reported meals are in the harvested register.'));
  const study=el('a','Study portions, labels & nutrition-estimate uncertainty →');study.href='/downloads/reference/evidence-notes-2026-10-21.html#nutrition-measurements';details.append(study);
  body.append(details);card.append(photoArea,body);gallery.append(card);
- results.append(el('span','Photo journal · no macros inferred'));detailedMetrics.textContent='';breakdown.textContent='';
+
 
 });
 doc.getElementById('salad-count').textContent=chosen.length+' salads';layout();}

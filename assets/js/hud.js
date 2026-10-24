@@ -166,7 +166,7 @@
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-hud-open]'); if (!t) return;
       var card = cards.filter(function (c) { return c.getAttribute('aria-controls') === t.getAttribute('data-hud-open'); })[0];
-      if (card) { e.preventDefault(); if (current && byId[card.getAttribute('aria-controls')] === current) { return; } open(card); }
+      if (card) { e.preventDefault(); if (current && byId[card.getAttribute('aria-controls')] === current) { return; } open(card, { reveal: true }); }
     });
     lastCols = cols();
     if (location.hash) setTimeout(function () { fromHash({ initial: true }); }, 60);

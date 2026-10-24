@@ -1136,13 +1136,14 @@
       t.addEventListener('keydown', function (e) { arrowNav(tabs, t, e, pick); });
     });
     root._rvPick = pick; root._rvPanels = panels;
+    if(root.hasAttribute('data-rv-compact'))P100Rotation.scrollEdges(root.querySelector('[data-rv-subj]'));
   }
   all('[data-recview]').forEach(init);
   /* deep links: #rv-day-c opens State C, #rv-cards-v4 opens V4, and so on */
   function fromHash() {
-    var id = (location.hash || '').slice(1); if (!/^rv-/.test(id)) return;
+    var id = (location.hash || '').slice(1); if (!id) return;
     all('[data-recview]').some(function (r) {
-      var ps = r._rvPanels || []; for (var i = 0; i < ps.length; i++) if (ps[i].id === id) { r._rvPick(i, false); r.scrollIntoView({ block: 'start' }); return true; }
+      var ps = r._rvPanels || []; for (var i = 0; i < ps.length; i++) if (ps[i].id === id || (ps[i].getAttribute('data-rv-aliases')||'').split(' ').includes(id)) { r._rvPick(i, false); r.scrollIntoView({ block: 'start' }); return true; }
     });
   }
   fromHash(); window.addEventListener('hashchange', fromHash);
