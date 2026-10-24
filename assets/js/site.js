@@ -13,6 +13,8 @@
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
   };
   /* Authored visible-motion preference; background clips explicitly opt into continuous playback. */
+  // Authored embedded-reader mode keeps the host's persistent controls in charge.
+  if(window.parent!==window&&new URLSearchParams(location.search).get('reader')==='1')document.documentElement.dataset.resourceReader='true';
   P.motionPaused = P.store.get('p100-motion-paused') === 'true' || (P.reduceMotion.matches && P.store.get('p100-motion-paused') !== 'false');
   function motionLabels() {
     document.documentElement.dataset.motion = P.motionPaused ? 'paused' : 'running';
@@ -572,7 +574,7 @@
     if (v.hasAttribute('data-background-video')) {
       function fitBackground() {
         var box = v.parentElement, ratio = v.videoWidth && v.videoHeight ? v.videoWidth / v.videoHeight : (v.width && v.height ? v.width / v.height : 16 / 9);
-        var width = Math.ceil((v.dataset.fit === 'contain' ? Math.min(box.clientWidth, box.clientHeight * ratio) : Math.max(box.clientWidth, box.clientHeight * ratio)) * (v.classList.contains('home-hero__img') ? 1.25 : 1));
+        var width = Math.ceil((v.dataset.fit === 'contain' ? Math.min(box.clientWidth, box.clientHeight * ratio) : Math.max(box.clientWidth, box.clientHeight * ratio)));
         v.style.width = width + 'px'; v.style.height = Math.ceil(width / ratio) + 'px';
       }
       v.addEventListener('loadedmetadata', fitBackground);
@@ -590,8 +592,9 @@
         if (!image || document.hidden || !near) return;
         var box = v.parentElement, dpr = Math.min(window.devicePixelRatio || 1, 1.5), w = Math.max(1,Math.round(box.clientWidth*dpr)), h = Math.max(1,Math.round(box.clientHeight*dpr));
         if(surface.width!==w || surface.height!==h){surface.width=w;surface.height=h;}
-        var iw=image.videoWidth||image.naturalWidth,ih=image.videoHeight||image.naturalHeight,scale=Math.max(w/iw,h/ih),sw=w/scale,sh=h/scale;
-        ctx.drawImage(image,(iw-sw)/2,(ih-sh)/2,sw,sh,0,0,w,h);
+        var iw=image.videoWidth||image.naturalWidth,ih=image.videoHeight||image.naturalHeight,contain=v.dataset.fit==='contain',scale=contain?Math.min(w/iw,h/ih):Math.max(w/iw,h/ih),dw=iw*scale,dh=ih*scale;
+        ctx.fillStyle="#08090c";ctx.fillRect(0,0,w,h);
+        ctx.drawImage(image,0,0,iw,ih,(w-dw)/2,(h-dh)/2,dw,dh);
         surface.hidden=false;box.classList.add('has-video-surface');
       }
       function surfaceFrame() {
