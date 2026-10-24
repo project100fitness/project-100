@@ -14,7 +14,7 @@ document.addEventListener('pointerdown',e=>{if(!menu.contains(e.target))menu.ope
 setPalette(palette);
 function mode(value,page){pending={mode:value,page:page||1};d.querySelectorAll('[data-creami-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.creamiMode===value)));send()}
 function open(button){trigger=button||document.querySelector('[data-creami-open]');if(!d.open){port?.close();port=null;mode('guide');if(window.P100&&P100.openDialog)P100.openDialog(d);else d.showModal();/* A fresh replacement avoids an iframe history step and a restored blank
- document when the parent dialog's Back entry is removed. */frame.contentWindow.location.replace('ninja-creami.html?embedded=1&v=9e0184fcb5f6')}else mode('guide')}
+ document when the parent dialog's Back entry is removed. */frame.contentWindow.location.replace('ninja-creami.html?embedded=1&v=9eb03bf590d6')}else mode('guide')}
 const entry=document.querySelector('.creami-entry');if(entry&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){entry.classList.add('creami-entry--animated');new IntersectionObserver(es=>entry.classList.toggle('is-in-view',es[0].isIntersecting),{threshold:.12}).observe(entry)}
 document.querySelectorAll('[data-creami-open]').forEach(b=>b.addEventListener('click',()=>open(b)));
 d.querySelector('[data-creami-close]').addEventListener('click',()=>d.close());

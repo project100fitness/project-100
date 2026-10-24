@@ -8,6 +8,14 @@ function sides({viewport,previous,next,touchTarget}){
  if(!viewport)return null;
  const frame=document.createElement('div');frame.className='rotation-viewport';viewport.before(frame);frame.append(viewport);
  const state={frame,touching:false};
+ let revealTimer=0,measureFrame=0;
+ function reveal(){clearTimeout(revealTimer);frame.dataset.edgeTouch='true'}
+ function settle(){clearTimeout(revealTimer);revealTimer=setTimeout(()=>delete frame.dataset.edgeTouch,1400)}
+ frame.addEventListener('touchstart',reveal,{passive:true});for(const name of ['touchend','touchcancel'])frame.addEventListener(name,settle,{passive:true});
+ frame.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const b=frame.getBoundingClientRect(),zone=54;frame.dataset.edgeHover=e.clientX-b.left<zone?'previous':b.right-e.clientX<zone?'next':''},{passive:true});frame.addEventListener('pointerleave',()=>delete frame.dataset.edgeHover,{passive:true});
+ function measure(){measureFrame=0;const b=frame.getBoundingClientRect(),media=[...viewport.querySelectorAll('img,video')].map(e=>e.getBoundingClientRect()).find(r=>r.width>0&&r.height>0&&r.right>b.left&&r.left<b.right);const y=media?media.top-b.top+media.height/2:b.height/2,top=Math.max(22,Math.min(b.height-22,y));const value=Math.round(top)+'px';if(frame.style.getPropertyValue('--rotation-arrow-top')!==value)frame.style.setProperty('--rotation-arrow-top',value)}
+ function queue(){if(!measureFrame)measureFrame=requestAnimationFrame(measure)}
+ new ResizeObserver(queue).observe(viewport);new MutationObserver(queue).observe(viewport,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','src']});viewport.addEventListener('load',queue,true);viewport.addEventListener('scroll',queue,{passive:true});queue();
  for(const [button,direction] of [[previous,'previous'],[next,'next']])if(button){button.classList.add('rotation-edge','rotation-edge--'+direction);frame.append(button)}
  let touch=false,pointer=false;
  function sync(){const on=touch||pointer;if(state.touching===on)return;state.touching=on;frame.dataset.touching=String(on);viewport.dispatchEvent(new Event('rotation:touch'))}
@@ -22,7 +30,7 @@ function scrollEdges(viewport){
  const previous=document.createElement('button'),next=document.createElement('button');
  for(const [button,label,symbol] of [[previous,'Scroll left','←'],[next,'Scroll right','→']]){button.type='button';button.className='rotation-step';button.setAttribute('aria-label',label);button.title=label;button.textContent=symbol}
  const state=sides({viewport,previous,next});viewport._scrollEdges=state;
- const paint=()=>{const max=viewport.scrollWidth-viewport.clientWidth,active=viewport.scrollWidth>state.frame.clientWidth+3;state.frame.classList.toggle('rotation-viewport--bounded',active);previous.hidden=next.hidden=!active;previous.disabled=viewport.scrollLeft<=2;next.disabled=viewport.scrollLeft>=max-2};
+ const paint=()=>{const max=viewport.scrollWidth-viewport.clientWidth,active=viewport.scrollWidth>state.frame.clientWidth+3;state.frame.classList.toggle('rotation-viewport--bounded',active);previous.hidden=!active||viewport.scrollLeft<=2;next.hidden=!active||viewport.scrollLeft>=max-2;previous.disabled=false;next.disabled=false};
  for(const [button,direction] of [[previous,-1],[next,1]])button.addEventListener('click',()=>viewport.scrollBy({left:direction*viewport.clientWidth*.75,behavior:'auto'}));
  viewport.addEventListener('scroll',paint,{passive:true});new ResizeObserver(paint).observe(viewport);new MutationObserver(paint).observe(viewport,{childList:true});paint();return state;
 }
