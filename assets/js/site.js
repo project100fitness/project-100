@@ -343,10 +343,10 @@
       '<button type="button" class="lightbox__btn" data-lb="prev" aria-label="Previous image">‹</button>' +
       '<button type="button" class="lightbox__btn" data-lb="next" aria-label="Next image">›</button>' +
       '<button type="button" class="lightbox__btn" data-lb="zoom" aria-label="Zoom image" aria-pressed="false">+</button>' +
-      '<a class="lightbox__btn" data-lb="download" download aria-label="Download image">↓</a>' +
       '<a class="lightbox__btn" data-lb="full" target="_blank" rel="noopener" aria-label="Open full size">↗</a>' +
       '<a class="lightbox__btn" data-lb="post" target="_blank" rel="noopener" aria-label="Open the Instagram post" hidden>Instagram ↗</a>' +
-      '<button type="button" class="lightbox__btn" data-lb="close" aria-label="Close">×</button></div>';
+      '<button type="button" class="lightbox__btn" data-lb="close" aria-label="Close">Close ×</button></div>' +
+      '<footer class="viewer-download-bar"><a data-lb="download" download>Download full image ↓</a></footer>';
     document.body.appendChild(dlg);
     img = P.$('img', dlg); cap = P.$('figcaption', dlg); dl = P.$('[data-lb="download"]', dlg); full = P.$('[data-lb="full"]', dlg); post = P.$('[data-lb="post"]', dlg);
     dlg.addEventListener('click', function (e) {
@@ -464,10 +464,10 @@
       '<div class="lightbox__bar"><span class="lightbox__title"></span>' +
       '<button type="button" class="lightbox__btn" data-vp="prev" aria-label="Previous video">‹</button>' +
       '<button type="button" class="lightbox__btn" data-vp="next" aria-label="Next video">›</button>' +
-      '<a class="lightbox__btn" data-vp="yt" target="_blank" rel="noopener" aria-label="Open on YouTube">YouTube ↗</a>' +
-      '<button type="button" class="lightbox__btn" data-vp="close" aria-label="Close video">×</button></div>' +
+      '<button type="button" class="lightbox__btn" data-vp="close" aria-label="Close video">Close ×</button></div>' +
       '<div class="vplayer"><div class="vplayer__frame"></div>' +
-      '<a class="vplayer__alt" data-vp="alt" target="_blank" rel="noopener">Not playing? Watch it on YouTube \u2197</a></div>';
+      '<a class="vplayer__alt" data-vp="alt" target="_blank" rel="noopener">Not playing? Watch it on YouTube \u2197</a></div>' +
+      '<footer class="viewer-download-bar"><a data-vp="yt" target="_blank" rel="noopener">Open original video on YouTube ↗</a></footer>';
     document.body.appendChild(vdlg);
     vbox = vdlg.querySelector('.vplayer__frame'); vtitle = vdlg.querySelector('.lightbox__title'); vlink = vdlg.querySelector('[data-vp="yt"]'); valt = vdlg.querySelector('[data-vp="alt"]');
     vdlg.addEventListener('click', function (e) {
@@ -529,7 +529,8 @@
       '<button type="button" class="lightbox__btn" data-pv="next" aria-label="Next">›</button>' +
       '<button type="button" class="lightbox__btn" data-pv="close" aria-label="Close">×</button></div>' +
       '<div class="pv"><img class="pv__img" alt=""><div class="pv__body"><p class="pv__kick"></p><h3 class="pv__title"></h3><p class="pv__text"></p>' +
-      '<a class="lightbox__btn pv__go" data-pv="go">Open page →</a></div></div>';
+      '<a class="lightbox__btn pv__go" data-pv="go">Open page →</a></div></div>' +
+      '<footer class="viewer-download-bar" data-pv-footer hidden><a data-pv-download download>Download full image ↓</a></footer>';
     document.body.appendChild(pdlg);
     pimg = pdlg.querySelector('.pv__img'); pkick = pdlg.querySelector('.pv__kick'); ptitle = pdlg.querySelector('.pv__title'); ptext = pdlg.querySelector('.pv__text'); pgo = pdlg.querySelector('.pv__go');
     pdlg.addEventListener('click', function (e) {
@@ -563,6 +564,9 @@
     pdlg.querySelector('.lightbox__title').textContent = title;
     ptitle.textContent = title; pkick.textContent = kick; pkick.hidden = !kick; ptext.textContent = para; ptext.hidden = !para;
     if (im) { pimg.src = pbiggest(im); pimg.alt = im.alt || title; pimg.hidden = false; } else { pimg.removeAttribute('src'); pimg.hidden = true; }
+    var save = pdlg.querySelector('[data-pv-download]');
+    pdlg.querySelector('[data-pv-footer]').hidden = !im;
+    if (im) save.href = im.getAttribute('data-orig') || pbiggest(im); else save.removeAttribute('href');
     if (a) { pgo.href = a.getAttribute('href'); pgo.hidden = false; } else { pgo.removeAttribute('href'); pgo.hidden = true; }
     P.$$('[data-pv="prev"],[data-pv="next"]', pdlg).forEach(function (n) { n.hidden = pset.length < 2; });
   }
@@ -745,6 +749,29 @@
 })();
 
 /* ===== 36-downloads.js ===== */
+/* Each publication owns a full-screen PDF reader and an independent history layer. */
+(function () {
+  'use strict';
+  var P=window.P100,dialog,frame,current='guide',page=1,opener;
+  function load(){frame.contentWindow.location.replace('book-reader.html?book='+current+'&page='+page+'&embedded=1');}
+  function build(){
+    if(dialog)return;
+    dialog=document.createElement('dialog');dialog.className='publication-window';dialog.setAttribute('aria-label','Full-screen book reader');
+    dialog.innerHTML='<iframe title="PROJECT 100 PDF reader" src="about:blank"></iframe>';document.body.appendChild(dialog);frame=dialog.querySelector('iframe');
+    dialog.addEventListener('close',function(){if(opener&&opener.isConnected)opener.focus({preventScroll:true});});
+    window.addEventListener('message',function(e){if(e.origin!==location.origin||e.source!==frame.contentWindow||e.data?.source!=='p100-publication')return;if(e.data.type==='close'&&dialog.open)P.closeTopLayer();if(e.data.type==='page')page=Math.max(1,Number(e.data.page)||1);});
+  }
+  P.openPublication=function(kind,from){
+    if(kind!=='enc'&&kind!=='guide')return;
+    build();current=kind;page=1;opener=from||document.activeElement;load();P.openDialog(dialog,load);
+  };
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('a[href]');if(!link||link.hasAttribute('download')||e.button||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+    var path=new URL(link.href,location.href).pathname,kind=/project-100-encyclopedia-v[^/]+\.pdf$/i.test(path)?'enc':/project-100-guidebook-v[^/]+\.pdf$/i.test(path)?'guide':null;
+    if(kind){e.preventDefault();e.stopImmediatePropagation();P.openPublication(kind,link);}
+  },true);
+})();
+
 /* Books, Links and space shortcuts appear together only near the end of a page. */
 (function () {
   'use strict';
@@ -786,6 +813,8 @@
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }
   function open(from) {
     last = from || null;
+    var book = from && from.getAttribute('data-dl-doc');
+    if ((book === 'enc' || book === 'guide') && P.openPublication) { P.openPublication(book,from); return; }
     var panel = P.$('#fabPanel'), at = P.$('#fabAt');
     if (panel && !panel.hidden) { panel.hidden = true; if (at) at.setAttribute('aria-expanded', 'false'); }
     if (typeof dlg.showModal === 'function') { if (!dlg.open) window.P100.openDialog(dlg); } else dlg.setAttribute('open', '');
