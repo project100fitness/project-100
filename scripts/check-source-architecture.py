@@ -17,7 +17,7 @@ study=ROOT/'downloads/reference/evidence-notes-2026-10-21.html'
 assert 'id="mobile-sections"' in study.read_text(encoding='utf8')
 assert drawers==36,drawers
 core=(ROOT/'assets/js/site.js').read_text(encoding='utf8')
-assert 'P.openDialog = function (d)' in core
+assert 'P.openDialog = function (d,onRestore)' in core
 assert 'proto.showModal =' not in core and 'HTMLDialogElement.prototype' not in core
 assert 'function measureHeader()' in core
 for name in ['site.css','hud.css','kinetics.css','p100-band-training.css']:

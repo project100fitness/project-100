@@ -119,32 +119,48 @@
    Every native <dialog> that opens adds one history entry; Back (or closing it any other way) removes it again. */
 (function () {
   'use strict';
-  var P = window.P100, pending = [], timer = 0;
+  var P = window.P100, pending = [], timer = 0, layers = [], known = new Map(), navigating = false, serial = 0;
   function flush() { clearTimeout(timer); timer = 0; var q = pending; pending = []; q.forEach(function (f) { f(); }); }
-  /* run fn once a dialog's history entry has been removed (so a link click inside a dialog cannot race the Back step) */
   P.afterLayer = function (fn) { if (!timer && !pending.length) { fn(); return; } pending.push(fn); };
-  P.openDialog = function (d) {
-    if (timer) { P.afterLayer(function () { P.openDialog(d); }); return; }
-    var was = d.open;
-    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
-    if (was || !d.open) return;
-    var st = {}; try { st = Object.assign({}, history.state); } catch (e) { /* ignore */ }
-    st.p100dlg = 1;
-    history.pushState(st, '', location.href);
-    d.addEventListener('close', function () {
-      if (history.state && history.state.p100dlg) {
-        history.back();
-        timer = setTimeout(flush, 300);            /* safety net if no popstate arrives */
-      }
-    }, { once: true });
+  function removeLayer(layer) {
+    var index=layers.indexOf(layer); if(index<0||navigating)return;
+    var removed=layers.splice(index);navigating=true;
+    try { removed.slice().reverse().forEach(function(l){l.close();}); } finally { navigating=false; }
+    history.go(-removed.length);timer=setTimeout(flush,400);
+  }
+  // Each enclosed view owns one Back/Forward entry, including views within a dialog.
+  P.openLayer = function (close,restore) {
+    var layer={id:'view-'+Date.now()+'-'+(++serial),close:close,restore:restore};
+    known.set(layer.id,layer);layers.push(layer);
+    var st=Object.assign({},history.state);st.p100dlg=layers.length;st.p100layers=layers.map(function(l){return l.id;});
+    history.pushState(st,'',location.href);return layer;
   };
-  window.addEventListener('popstate', function (e) {
-    if (!(e.state && e.state.p100dlg)) P.$$('dialog[open]').forEach(function (d) { d.close(); });
+  P.closeLayer = removeLayer;
+  P.closeTopLayer = function(){if(layers.length)removeLayer(layers[layers.length-1]);};
+  P.openDialog = function (d,onRestore) {
+    if(timer){P.afterLayer(function(){P.openDialog(d,onRestore);});return;}
+    if(d.open)return;
+    var layer;
+    function show(restoring){if(restoring&&onRestore)onRestore();if(!d.open){if(typeof d.showModal==='function')d.showModal();else d.setAttribute('open','');}d.addEventListener('close',function(){P.closeLayer(layer);},{once:true});}
+    show(false);layer=P.openLayer(function(){if(d.open)d.close();},function(){show(true);});
+  };
+  var host=null;
+  try{if(window.parent!==window&&document.documentElement.dataset.resourceReader==='true')host=window.parent.P100;}catch(_){}
+  if(host){P.openLayer=function(close,restore){return host.openLayer(close,restore);};P.closeLayer=function(layer){host.closeLayer(layer);};P.afterLayer=function(fn){host.afterLayer(fn);};P.closeTopLayer=function(){host.closeTopLayer();};}
+  else {
+  window.addEventListener('popstate',function(e){
+    var ids=e.state&&e.state.p100layers||[],common=0;
+    while(common<layers.length&&common<ids.length&&layers[common].id===ids[common])common++;
+    var removed=layers.splice(common);navigating=true;
+    try{
+      removed.reverse().forEach(function(l){l.close();});
+      ids.slice(common).forEach(function(id){var l=known.get(id);if(l){layers.push(l);l.restore();}});
+    }finally{navigating=false;}
     flush();
   });
-  /* coming back to a page whose saved entry says "dialog open" while none is: neutralise it */
-  function heal() { if (history.state && history.state.p100dlg && !document.querySelector('dialog[open]')) { var st = Object.assign({}, history.state); delete st.p100dlg; history.replaceState(st, '', location.href); } }
-  window.addEventListener('pageshow', heal); heal();
+  function heal(){if(history.state&&history.state.p100dlg&&!layers.length&&!document.querySelector('dialog[open]')){var st=Object.assign({},history.state);delete st.p100dlg;delete st.p100layers;history.replaceState(st,'',location.href);}}
+  window.addEventListener('pageshow',heal);heal();
+  }
   /* links clicked inside an open dialog: close it first, then follow the link, so the history stays tidy */
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('dialog[open] a[href]');
@@ -425,7 +441,7 @@
     var at = set.indexOf(t);
     if (at < 0) { var want = srcOf(t); set.forEach(function (x, n) { if (at < 0 && srcOf(x) === want) at = n; }); }
     show(Math.max(0, at));
-    if (dlg.showModal) window.P100.openDialog(dlg); else dlg.setAttribute('open', '');
+    if (dlg.showModal) window.P100.openDialog(dlg,function(){show(idx);document.documentElement.classList.add('no-scroll');}); else dlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 })();
@@ -496,7 +512,7 @@
     if (at < 0) vset.forEach(function (x, n) { if (at < 0 && x.dataset.yt === t.dataset.yt) at = n; });   /* a cloned card in the looping row */
     vopener = t.closest('[data-clone]') ? null : t;
     vshow(Math.max(0, at));
-    if (vdlg.showModal) window.P100.openDialog(vdlg); else vdlg.setAttribute('open', '');
+    if (vdlg.showModal) window.P100.openDialog(vdlg,function(){vshow(vidx);document.documentElement.classList.add('no-scroll');}); else vdlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 
@@ -561,7 +577,7 @@
     pset = P.$$('.carousel__item', row);
     popener = it.querySelector('a[href]') || null;
     pshow(Math.max(0, pset.indexOf(it)));
-    if (pdlg.showModal) window.P100.openDialog(pdlg); else pdlg.setAttribute('open', '');
+    if (pdlg.showModal) window.P100.openDialog(pdlg,function(){pshow(pidx);document.documentElement.classList.add('no-scroll');}); else pdlg.setAttribute('open', '');
     document.documentElement.classList.add('no-scroll');
   });
 
@@ -594,7 +610,8 @@
         if(surface.width!==w || surface.height!==h){surface.width=w;surface.height=h;}
         var iw=image.videoWidth||image.naturalWidth,ih=image.videoHeight||image.naturalHeight,contain=v.dataset.fit==='contain',scale=contain?Math.min(w/iw,h/ih):Math.max(w/iw,h/ih),dw=iw*scale,dh=ih*scale;
         ctx.fillStyle="#08090c";ctx.fillRect(0,0,w,h);
-        ctx.drawImage(image,0,0,iw,ih,(w-dw)/2,(h-dh)/2,dw,dh);
+        var topAligned=v.classList.contains('home-hero__img')&&matchMedia('(max-width:1099px)').matches;
+        ctx.drawImage(image,0,0,iw,ih,(w-dw)/2,topAligned?0:(h-dh)/2,dw,dh);
         surface.hidden=false;box.classList.add('has-video-surface');
       }
       function surfaceFrame() {
