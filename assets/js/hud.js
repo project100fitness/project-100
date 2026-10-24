@@ -130,7 +130,7 @@
     }
 
     cards.forEach(function (card) {
-      card.addEventListener('click', function (e) { e.preventDefault(); open(card); });
+      card.addEventListener('click', function (e) { e.preventDefault(); open(card, { reveal: card.hasAttribute('data-hud-reveal') }); });
     });
     function onBtn(e) {
       var b = e.target.closest('[data-hud-close],[data-hud-prev],[data-hud-next]');
