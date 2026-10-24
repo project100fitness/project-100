@@ -814,7 +814,7 @@
     var track=P.$('.carousel__track',root),items=P.$$('.carousel__item',track),position=P.$('[data-collection-position]',root),pause=P.$('[data-collection-pause]',root);
     if(!track||!position||!pause)return;
     var previous=P.$('[data-collection-prev]',root),next=P.$('[data-collection-next]',root),controls=P.$('.collection-controls',root);
-    var cues=P100Rotation.create({host:controls,previous:previous,next:next,pause:pause,position:position,unit:'cards',previousLabel:'Previous cards',nextLabel:'Next cards'});
+    var cues=P100Rotation.create({host:controls,viewport:root.querySelector('.carousel__stage'),touchTarget:root,previous:previous,next:next,pause:pause,position:position,unit:'cards',previousLabel:'Previous cards',nextLabel:'Next cards'});
     var index=0,seen=false,paused=!P100Rotation.autoplay(),last=Date.now(),tick=last,hold=0,keys=false,changing=false,touching=false;
     function start(page){var pages=Math.ceil(items.length/4);return Math.min(((page+pages)%pages)*4,Math.max(0,items.length-4));}
     function peek(page){var target=start(page),current=start(index);return items.slice(target,target+4).find(function(x,i){return target+i<current||target+i>=current+4;})||items[target];}
@@ -830,7 +830,7 @@
     root.addEventListener('keydown',function(e){keys=true;if(e.target===track&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(index+(e.key==='ArrowRight'?1:-1),true);}});
     root.addEventListener('pointerdown',function(){keys=false;},{passive:true});root.addEventListener('touchstart',function(){touching=true;},{passive:true});['touchend','touchcancel'].forEach(function(name){root.addEventListener(name,function(){touching=false;},{passive:true});});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;tick=Date.now();},{threshold:.01}).observe(root);else seen=true;
-    setInterval(function(){var at=Date.now(),delta=at-tick;tick=at;if(!seen||touching||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last+=delta;feedback();return;}feedback();if(Date.now()-last>=4000)show(index+1,false);},100);
+    setInterval(function(){var at=Date.now(),delta=at-tick;tick=at;if(!seen||touching||cues.touching||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last+=delta;feedback();return;}feedback();if(Date.now()-last>=4000)show(index+1,false);},100);
     track.tabIndex=0;show(0,false);
   }
 
@@ -846,7 +846,7 @@
     var thumb = bar.firstChild;
     var pp = document.createElement('button'); pp.type = 'button'; pp.className = 'carousel__pp';
     stage.appendChild(bar);
-    var controls=document.createElement('div');controls.className='carousel-controls';var prev=document.createElement('button'),next=document.createElement('button'),position=document.createElement('span');root.insertBefore(controls,stage);var cues=P100Rotation.create({host:controls,previous:prev,next:next,pause:pp,position:position,unit:'items'});prev.addEventListener('click',function(){go(-1);});next.addEventListener('click',function(){go(1);});pp.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);userPaused=false;}else userPaused=!userPaused;label();});
+    var controls=document.createElement('div');controls.className='carousel-controls';var prev=document.createElement('button'),next=document.createElement('button'),position=document.createElement('span');root.insertBefore(controls,stage);var cues=P100Rotation.create({host:controls,viewport:stage,touchTarget:root,previous:prev,next:next,pause:pp,position:position,unit:'items'});prev.addEventListener('click',function(){go(-1);});next.addEventListener('click',function(){go(1);});pp.addEventListener('click',function(){if(P.motionPaused){P.setMotionPaused(false);userPaused=false;}else userPaused=!userPaused;label();});
     if (!track.hasAttribute('tabindex')) track.tabIndex = 0;
 
     var active = false, lastW = -1, pos = null, last = 0, hold = 0, dir = 1, inView = true, lastAuto = 0;
@@ -868,7 +868,7 @@
       var size=step()||1,start=Math.min(items.length-1,Math.floor(track.scrollLeft/size)),end=Math.min(items.length,Math.ceil((track.scrollLeft+track.clientWidth)/size)),distance=dir>0?size-(track.scrollLeft%size):track.scrollLeft%size||size;
       cues.update({enabled:active,total:items.length,range:'Items '+(start+1)+'–'+end+' of '+items.length,progress:1-distance/size,remaining:distance/SPEED*1000,resume:Math.max(0,hold-now()),paused:userPaused||P.motionPaused,waiting:mouseOver||keyFocus||touching?'Paused while you explore':!inView?'Auto-browse when in view':null,previous:items[Math.max(0,start-1)],next:items[end%items.length]});
     }
-    function playing() { return active && !P.motionPaused && !userPaused && !mouseOver && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !keyFocus && !document.hidden && now() > hold; }
+    function playing() { return active && !P.motionPaused && !userPaused && !mouseOver && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !cues.touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
       pp.textContent = userPaused ? 'Resume auto-change' : 'Pause auto-change';
       pp.setAttribute('aria-label', userPaused ? 'Start auto-scroll' : 'Pause auto-scroll');
@@ -908,7 +908,7 @@
     root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') mouseOver = true; });
     root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { mouseOver = false; holdFor(500); } });
     track.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
-    function endTouch() { touching = false; holdFor(RESUME); }
+    function endTouch() { touching = false; hold = now(); }
     track.addEventListener('touchend', endTouch, { passive: true });
     track.addEventListener('touchcancel', endTouch, { passive: true });
     window.addEventListener('blur', function () { touching = false; mouseOver = false; });
@@ -1000,7 +1000,7 @@
       row.classList.toggle('is-drift', active); bar.hidden = !active;hint.hidden=!active; pos = null; lastAuto = row.scrollLeft; paint();
     }
     function holdFor(ms) { hold = Math.max(hold, now() + ms); pos = null; }
-    function playing() { return active && !P.motionPaused && !still && inView && !touching && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
+    function playing() { return active && !P.motionPaused && !still && inView && !touching && !(row._scrollEdges&&row._scrollEdges.touching) && !mouse && !keyFocus && !document.hidden && !document.documentElement.classList.contains('no-scroll') && now() > hold; }
     function tick(ts) {
       requestAnimationFrame(tick);
       var dt = Math.min(64, ts - last); last = ts;
@@ -1013,7 +1013,7 @@
     }
     row.addEventListener('scroll', function () { if (Math.abs(row.scrollLeft - lastAuto) > 2) { holdFor(RESUME); lastAuto = row.scrollLeft; } paint(); }, { passive: true });
     row.addEventListener('touchstart', function () { touching = true; pos = null; }, { passive: true });
-    function endTouch() { touching = false; holdFor(RESUME); }
+    function endTouch() { touching = false; hold = now(); }
     row.addEventListener('touchend', endTouch, { passive: true }); row.addEventListener('touchcancel', endTouch, { passive: true });
     row.addEventListener('wheel', function () { holdFor(RESUME); }, { passive: true });
     row.addEventListener('click', function () { holdFor(800); });
@@ -1033,7 +1033,7 @@
     window.addEventListener('load', measure);
     measure(); requestAnimationFrame(function (t) { last = t; tick(t); });
   }
-  P.initRowHints = function (scope) { P.$$('.filters, .subnav', scope).forEach(init); };
+  P.initRowHints = function (scope) { P.$$('.filters, .subnav', scope).forEach(function(row){init(row);P100Rotation.scrollEdges(row);}); };
   P.initRowHints(document);
 })();
 
@@ -1169,13 +1169,13 @@
   /* One clock controls both the fill and the image change. Pauses freeze both. */
   function schedule() {
     rootWindowCancel(); last = null;
-    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || document.querySelector('dialog[open]')) return;
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || (journalCues&&journalCues.touching) || document.querySelector('dialog[open]')) return;
     timer = requestAnimationFrame(tick);
   }
   function rootWindowCancel() { if (timer) cancelAnimationFrame(timer); timer = 0; }
   function tick(now) {
     timer = 0;
-    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || document.querySelector('dialog[open]')) { last = null; return; }
+    if (window.P100.motionPaused || !playing || !inView || document.hidden || loading || (journalCues&&journalCues.touching) || document.querySelector('dialog[open]')) { last = null; return; }
     if (last !== null) elapsed += now - last;
     last = now;
     prog.style.transform = 'scaleX(' + Math.min(1, elapsed / DUR) + ')';
@@ -1186,8 +1186,9 @@
     playing = on; schedule();
   }
   var pause = q('[data-jr-pause]');
-  var journalCues=P100Rotation.create({host:q('.jr__ctl'),previous:q('[data-jr-prev]'),next:q('[data-jr-next]'),pause:pause,unit:'photos',previousLabel:'Previous photo',nextLabel:'Next photo'});
-  setInterval(function(){if(!timer&&playing&&inView&&!loading&&!document.hidden&&!window.P100.motionPaused&&!document.querySelector('dialog[open]'))schedule();journalCues.update({total:thumbs.length,range:'Photo '+(i+1)+' of '+thumbs.length,progress:elapsed/DUR,remaining:DUR-elapsed,paused:!playing||window.P100.motionPaused,loading:loading,action:'Next photo',previous:{src:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.bg,title:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.date},next:{src:thumbs[(i+1)%thumbs.length].dataset.bg,title:thumbs[(i+1)%thumbs.length].dataset.date}});},100);
+  var journalCues=P100Rotation.create({host:q('.jr__ctl'),viewport:stage,touchTarget:root,previous:q('[data-jr-prev]'),next:q('[data-jr-next]'),pause:pause,unit:'photos',previousLabel:'Previous photo',nextLabel:'Next photo'});
+  setInterval(function(){if(!timer&&playing&&inView&&!loading&&!document.hidden&&!journalCues.touching&&!window.P100.motionPaused&&!document.querySelector('dialog[open]'))schedule();journalCues.update({total:thumbs.length,range:'Photo '+(i+1)+' of '+thumbs.length,progress:elapsed/DUR,remaining:DUR-elapsed,paused:!playing||window.P100.motionPaused,loading:loading,action:'Next photo',previous:{src:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.bg,title:thumbs[(i-1+thumbs.length)%thumbs.length].dataset.date},next:{src:thumbs[(i+1)%thumbs.length].dataset.bg,title:thumbs[(i+1)%thumbs.length].dataset.date}});},100);
+  stage.addEventListener('rotation:touch',schedule);P100Rotation.scrollEdges(strip);
   if(pause) pause.addEventListener('click', function(){if(window.P100.motionPaused){window.P100.setMotionPaused(false);setPlay(true);}else setPlay(!playing);pause.textContent=playing?'Pause auto-change':'Resume auto-change';pause.setAttribute('aria-pressed',String(!playing));});
   q('[data-jr-prev]').addEventListener('click', function () { show(i - 1, true); });
   q('[data-jr-next]').addEventListener('click', function () { show(i + 1, true); });
