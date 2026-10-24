@@ -10,7 +10,8 @@
     ],
     "authority": "Physical tub labels read from his Drive photos = ground truth. Overrides retail listings and prior assumptions.",
     "purpose": "Self-contained export Bogdan can paste/upload into other AI chats for separate research. No dependency on the book rebuilds.",
-    "disclaimer": "Label-and-protocol record, not medical advice. Supplement decisions involving heart, hormones, liver, kidneys, sleep, or prescription meds should be confirmed with his clinician."
+    "disclaimer": "Label-and-protocol record, not medical advice. Supplement decisions involving heart, hormones, liver, kidneys, sleep, or prescription meds should be confirmed with his clinician.",
+    "carryover_scope": "Other formula and audit notes are carried dated records, not a new independent label or medical-safety validation."
   },
   "ground_truth_rules": [
     "His physical product panels override retail listings and AI/document assumptions.",
@@ -601,17 +602,17 @@
     "state_A_morning_gym": "caffeine ~413-443mg (373 Igniter + 40-70 tea) | citicoline 250mg | DMAE 500mg | Hup-A 200mcg | citrulline ~10.7-12g | beta-alanine 3.2g | betaine ~4.1g | taurine 3-4g | creatine 1.5g | tyrosine 2000mg | theanine 400mg | NAC 900mg | NMN 175mg | R-ALA 300mg",
     "state_C_evening_gym": "caffeine ~40-70mg (tea only) | citicoline 250mg | choline 300mg | Alpha-GPC 300mg | Hup-A 50mcg (evening) | citrulline ~10.7-12g | beta-alanine 3.2g | betaine 5.0g | taurine 4-5g | creatine HCl 1.5g; formula-native creatine monohydrate 1.0g recorded separately | arginine 500mg | piperine 15mg (5 lunch + 10 Pump)",
     "state_B_rest": "creatine 1.5g | caffeine ~40-70mg | collagen | electrolytes | zero cholinergic load — genuine de-escalation",
-    "dose_ceiling_flags": "caffeine-with-tea OVER 400mg EFSA guidance (State A); citrulline 10.7-12g above typical 6-8g studied dose (not toxic; GI possible); everything else within or below studied ranges; NO acute overdose risk anywhere"
+    "dose_ceiling_flags": "caffeine-with-tea OVER 400mg EFSA guidance (State A); citrulline 10.7-12g above typical 6-8g studied dose (not toxic; GI possible); remaining legacy audit ranges are not a current individual safety clearance"
   },
   "interaction_watchlist": [
     "Piperine 15mg on State C days (5mg lunch + 10mg Pump): CYP3A4/P-gp — flag to any prescribing doctor",
     "R-ALA 300mg before 19g-carb V4: shakiness/sweating/confusion post-training = glucose question first",
-    "Magnesium ~400mg/day supplemental (night glycinate + Medi-C 105mg + multi): above 350mg supplemental UL (diarrhea endpoint); watch stool, not dangerous",
+    "Magnesium ~400mg/day supplemental (night glycinate + Medi-C 105mg + multi): above 350mg supplemental UL (diarrhea endpoint); tolerability and total intake require individual review",
     "Calcium pill removed from the current protocol; do not carry a 200mg capsule into current totals",
     "Huperzine-A cautions: slow heart rate/arrhythmia, asthma/COPD, epilepsy, kidney disease, pregnancy, anticholinergic/memory meds",
     "Post-cholecystectomy: 60-90g fat sittings are the highest-probability GI event; enzymes must match the meal",
     "TestoFX (tongkat/fenugreek, standard doses): higher-scrutiny category — watch BP, mood, sleep; labs tell the truth",
-    "No serotonin-syndrome vector (no 5-HTP, St. John's Wort, MAOIs). No frankly contraindicated combos found."
+    "No serotonin-syndrome vector (no 5-HTP, St. John's Wort, MAOIs). Legacy interaction review, not an individual medication-safety clearance."
   ],
   "open_undecided": [
     "Himalaya LiverCare: active or shelf stock? (drives liver-trio consolidation: keep max 2 if active)",
@@ -627,21 +628,21 @@
     "age": 46,
     "height_cm": 170,
     "stretch_goal": "100 lb SMM (disclosed stretch readout)",
-    "validated_corridor": "90-93 lb true contractile SMM; 92-97 lb on standardized BIA printout",
     "bodyfat_target": "below 15%; 13.6% reported Aug 2026 is UNVERIFIED, not a confirmed milestone",
     "telemetry": {
       "2024_baseline": "72.3 lb SMM / 226.2 lb / 37.0% BF",
       "28_Jun_2025": "82.0 lb SMM",
-      "14_Dec_2025_benchmark_Gym_Fit_Forme": "197.1 lb / 88.2 lb SMM / 22.9% BF",
       "Apr_2026": "191.5 lb / 93.7 lb / 30.2% — operator-reported, excluded from corridor judgment",
       "Aug_2026": "13.6% BF reported, UNVERIFIED; not a milestone",
-      "Sep_Oct_2026": "200.1 lb / 88.2 lb carried baseline / ~22.5% est."
+      "Sep_Oct_2026": "200.1 lb / 88.2 lb carried baseline / ~22.5% est.",
+      "02_Dec_2025_benchmark_Gym_Fit_Forme": "197.1 lb / 88.2 lb SMM / 22.9% BF"
     },
     "FFMI_reconciliation": 25.71,
-    "next_review": "14-21 Dec 2026, Gym Fit Forme, same InBody unit — waking/fasted/post-void/pre-workout, >=24h after heavy resistance training"
+    "next_review": "14-21 Dec 2026, Gym Fit Forme, same InBody unit — waking/fasted/post-void/pre-workout, >=24h after heavy resistance training",
+    "dated_corridor_reference": "90-93 lb and 92-97 lb were dated projection corridors, not validated physiological limits; 100 lb remains a stretch target."
   },
   "unsourced_or_approximate": [
-    "Afternoon grid: 5 capsules = beef liver + Ligament Restore — exact per-item capsule split not found in extracted text; recorded as grid total only.",
+    "Afternoon grid: Higher Healths Beef Liver 3 capsules / 1.5 g plus Ligament Restore 2 capsules, total 5; training days only, skipped on rest days.",
     "ALLMAX MuscleEAA Xtreme full panel: cards give 10g EAA / 5.3g BCAA (+ 2g glutamine, 1g carnitine, 200mg Alpha-GPC on the Cherry Limeade V6 card); full supplement-facts panel was not photo-read.",
     "Medi-C Plus half-scoop in V10/night: recorded 'where used' — night-stage context, not a locked daily dose.",
     "Calcium capsule removed in the 24 October editions; older product records are historical only.",
