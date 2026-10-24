@@ -26,6 +26,6 @@ Review uses one frame per second over these ranges, not frame-exact boundaries o
 
 ## Publication alignment
 
-Kinetics links directly to the same Chest library used by Exercises. The muscle filter persists in the URL, and each nonempty muscle group has a View all bar. Counts and full-details cards are derived from the shared exercise source. Existing five twelve-slot sessions and original Guidebook v3.4 / Encyclopedia v3.3 files are preserved; this review does not insert new prescriptions or silently revise those editions.
+Kinetics links directly to the same Chest library used by Exercises. The muscle filter persists in the URL, and each nonempty muscle group has a View all bar. Counts and full-details cards are derived from the shared exercise source. Existing five twelve-slot sessions and original Guidebook v3.6 / Encyclopedia v3.5 files are preserved; this review does not insert new prescriptions or silently revise those editions.
 
 The separate chest/triceps recording from 18 August and its fourteen edited clips include bar, dumbbell and bodyweight candidates. They remain in the private scan results with source times and review status; they are not substituted for missing band exercises.

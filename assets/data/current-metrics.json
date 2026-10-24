@@ -1,5 +1,5 @@
 {
-  "version": "2.0-reconciled-2026-10-05",
+  "version": "2026-10-24-publication-reconciled",
   "source": {
     "name": "PROJECT100_CURRENT_DATABASE_V2_0.json",
     "sha256": "93c7adef8a952db0218500a1ecdc059e8e3c8c83f5f9dd5e9b28f863817b115d",
@@ -73,5 +73,20 @@
     "Preserved four owned KUZARO kits and six named bundles in existing gear registry.",
     "Excluded unsupported personal biological ceiling and fixed BIA water-offset claims.",
     "Owner confirmed the benchmark scan date as 2 December 2025 on 10 October 2026; measurement values and planned review window are unchanged."
-  ]
+  ],
+  "publication_review": {
+    "date": "2026-10-24",
+    "guidebook": "3.6",
+    "encyclopedia": "3.5",
+    "august_body_fat_reading": {
+      "percent": 13.6,
+      "status": "Unverified; not a confirmed milestone"
+    },
+    "goal_gap_lb": 11.8,
+    "goal_gap_kg": 5.35,
+    "goal_gap_percent": 13.4,
+    "calcium_capsule": "removed",
+    "tart_cherry": "Inno Nutrition 10000; label dose, not retired Organika dose",
+    "creatine_forms": "Standalone HCl 1,500 mg/day; formula-native monohydrate 1,000 mg on State C counted separately"
+  }
 }

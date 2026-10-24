@@ -104,18 +104,17 @@ chosen.forEach((p,i)=>{
  const choice=el('label','Dressing','salad-card-choice'),select=el('select');select.setAttribute('aria-label','Dressing for '+p.title);
  [['heavy','Heavy · avocado'],['light','Light · olive oil & glaze'],['none','Without dressing']].forEach(([value,text])=>{const o=el('option',text);o.value=value;select.append(o);});choice.append(select);const photoArea=el('div',null,'salad-photo-area');photoArea.append(photo);body.insertBefore(time,body.firstChild);
  const results=el('div',null,'salad-card-metrics');results.setAttribute('aria-live','polite');body.append(results);
- const details=el('details',null,'salad-recipe-details');const summary=el('summary','Full recipe');details.append(summary,choice);details.addEventListener('toggle',()=>{summary.textContent=details.open?'Close recipe':'Full recipe';card.classList.toggle('is-reading',details.open);});
- const list=el('ul');p.ingredients.forEach(k=>list.append(el('li',(k==='egg'?'Boiled eggs, chopped':names[k])+': '+(k==='egg'?count+' eggs (about '+count*50+' g edible)':k==='beans'&&wholeCan?'1 whole can; provisional '+amounts[k][0]+'–'+amounts[k][1]+' g drained':amounts[k][0]+'–'+amounts[k][1]+' g'))));details.append(list);
- if(wholeCan)details.append(el('p','Whole-can drained weight is provisionally estimated at 240–360 g. Can size and the package drained weight are needed to refine the totals.'));
+ const details=el('details',null,'salad-recipe-details');const summary=el('summary','Photo record');details.append(summary);details.addEventListener('toggle',()=>{summary.textContent=details.open?'Close photo record':'Photo record';card.classList.toggle('is-reading',details.open);});
+ const list=el('ul');p.ingredients.forEach(k=>list.append(el('li',names[k] || k)));details.append(list);
+ 
  if(p.note)details.append(el('p',p.note,'salad-identification-note'));
  const detailedMetrics=el('p',null,'salad-full-metrics');details.append(detailedMetrics);const breakdown=el('p'),purpose=el('p','Protein foods support the daily protein total; beans and vegetables add carbohydrate and fiber. Dressing changes energy and fat.');details.append(breakdown,purpose);
  details.append(el('p','Sodium, sugars, saturated fat and numeric micronutrient totals need product labels and verified portions; they are not assumed to be zero. Greens contribute folate and vitamin K; peppers vitamin C; feta calcium; eggs choline and B12.'));
- details.append(el('p','Recipe quantities are modeling assumptions, not measured photo portions. The full prepared dressing is included; leftover dressing means actual intake is lower by an unmeasured amount.'));
+ details.append(el('p','The 24 October books retire the modelled recipe quantities and macros. This dated photograph does not establish a weighed portion. Current caption-reported meals are in the harvested register.'));
  const study=el('a','Study portions, labels & nutrition-estimate uncertainty →');study.href='/downloads/reference/evidence-notes-2026-10-21.html#nutrition-measurements';details.append(study);
  body.append(details);card.append(photoArea,body);gallery.append(card);
- function update(){const mode=select.value,t=totals(p,mode);detailedMetrics.textContent=labels.map((label,i)=>label+': '+range(t[0][i],t[1][i],units[i])).join(' · ');results.replaceChildren();labels.forEach((label,i)=>{const cell=el('div');cell.append(el('b',range(t[0][i],t[1][i],units[i])),el('span',label));results.append(cell);});
- const b=[sum(p.ingredients,0,amounts),sum(p.ingredients,1,amounts)],d=[dressing(mode,0),dressing(mode,1)];const measured=mode==='heavy'?' Heavy dressing: 2–3 tbsp [30–45 mL; 28–42 g model] avocado oil + 130–200 g edible avocado.':mode==='light'?' Light dressing: 4–5 tbsp [60–75 mL] each olive oil and balsamic glaze + about 120 mL white wine vinegar.':'';breakdown.textContent='Base: '+range(b[0][0],b[1][0],'kcal')+' · '+range(b[0][1],b[1][1],'g protein')+'. Prepared dressing: '+range(d[0][0],d[1][0],'kcal')+'. Combined estimates shown above.'+measured;}
- select.addEventListener('change',update);update();
+ results.append(el('span','Photo journal · no macros inferred'));detailedMetrics.textContent='';breakdown.textContent='';
+
 });
 doc.getElementById('salad-count').textContent=chosen.length+' salads';layout();}
 doc.querySelectorAll('[data-salad-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.saladFilter;doc.querySelectorAll('[data-salad-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw();}));

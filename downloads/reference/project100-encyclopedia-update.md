@@ -18,7 +18,7 @@ This companion supplies current text for the nutrition and training chapters of 
 | Measurement and uncertainty | Chapters 2, 14 and 19 with reported versus verified data | Chapters 1 and 13 with dated values and pending measurements |
 | Archive corrections | Dated correction register before retaining older claims | Short current-rules statement with archive link |
 
-The supplied Encyclopedia V3.2 has 75 PDF pages and the Guidebook V3.3 has 31. Their contents use the chapter names mapped above. The web routes encyclopedia.html and encyclopedia-guidebook.html currently redirect to fit-protocol.html; guidebook.html is the active daily schedule. The companion updates in this package therefore add current material to the publication paths without representing the archived PDFs as fully revised new editions. [S12 S13 S14 S15]
+The supplied Encyclopedia V3.5 has 75 PDF pages and the Guidebook V3.6 has 31. Their contents use the chapter names mapped above. The web routes encyclopedia.html and encyclopedia-guidebook.html currently redirect to fit-protocol.html; guidebook.html is the active daily schedule. The companion updates in this package therefore add current material to the publication paths without representing the archived PDFs as fully revised new editions. [S12 S13 S14 S15]
 
 Use the same source IDs and stable movement or meal IDs in each publication. A revised title is presentation metadata; it must not create a new source passage. Rebuild derivative guides from the same accepted record after review. Keep an edition date and a change note visible to prevent an old download from appearing current.
 
