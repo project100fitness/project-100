@@ -1,24 +1,24 @@
 {
-  "editionDate": "2026-10-19",
-  "integratedDate": "2026-10-20",
+  "editionDate": "2026-10-24",
+  "integratedDate": "2026-10-24",
   "publications": [
     {
       "kind": "guidebook",
-      "version": "3.5",
-      "pages": 42,
-      "bytes": 7793573,
-      "sha256": "9614f66ac76454d9abe4c2b90a849531f93a17adfb278561f023493b6eb5149f",
-      "date": "2026-10-19",
-      "path": "assets/downloads/project-100-guidebook-v3-5-2026-10-19.pdf"
+      "version": "3.6",
+      "pages": 45,
+      "bytes": 9153141,
+      "sha256": "7fa3b47ac02bda1c049e4a09d2f0aa79faec6ba721576989d1ea8083e8ee693d",
+      "date": "2026-10-24",
+      "path": "assets/downloads/project-100-guidebook-v3-6-2026-10-24.pdf"
     },
     {
       "kind": "encyclopedia",
-      "version": "3.4",
-      "pages": 93,
-      "bytes": 32366806,
-      "sha256": "eb6ea31bc221571d11f20a0f028176208d368c5d13f4322e0340863fa212c9eb",
-      "date": "2026-10-19",
-      "path": "assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf"
+      "version": "3.5",
+      "pages": 121,
+      "bytes": 41406800,
+      "sha256": "fe6534ce49792748a8b82e0c7d12edf3f39121dffe2f57e4571be3f43b60e611",
+      "date": "2026-10-24",
+      "path": "assets/downloads/project-100-encyclopedia-v3-5-2026-10-24.pdf"
     }
   ]
 }

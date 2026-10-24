@@ -33,4 +33,4 @@ assert.equal(meals.length,9);
 meals.forEach((meal,i)=>{
  for(const key of ['name','basis','macros','ingredients','notes'])assert.deepEqual(meal[key],reference.meal_stories[i][key],`${i}/${key}`);
 });
-console.log('PASS: 14 salad ranges, both whole-batch dressings, egg rules and all nine meal story bases agree with the current book/reference edition.');
+console.log('PASS: 14 salad ranges, both whole-batch dressings, egg rules and nine caption story bases remain preserved in the dated reference dataset. These legacy salad models are retired from current book content.');

@@ -40,7 +40,7 @@ for name,source in pages.items():
             assert url.query=='v='+digest,(name,ref,digest)
 
 manifest=json.loads((ROOT/'assets/downloads/current-publications.json').read_text(encoding='utf8'))
-assert {b['kind']:b['version'] for b in manifest['publications']}=={'guidebook':'3.5','encyclopedia':'3.4'}
+assert {b['kind']:b['version'] for b in manifest['publications']}=={'guidebook':'3.6','encyclopedia':'3.5'}
 for book in manifest['publications']:
     target=ROOT/book['path'];data=target.read_bytes();file=target.name
     assert len(data)==book['bytes'] and hashlib.sha256(data).hexdigest()==book['sha256'],file
