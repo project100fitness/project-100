@@ -119,7 +119,7 @@
    Every native <dialog> that opens adds one history entry; Back (or closing it any other way) removes it again. */
 (function () {
   'use strict';
-  var P = window.P100, pending = [], timer = 0, layers = [], known = new Map(), navigating = false, serial = 0;
+  var P = window.P100, pending = [], timer = 0, layers = [], known = new Map(), navigating = false, serial = 0, guarded = new WeakSet();
   function flush() { clearTimeout(timer); timer = 0; var q = pending; pending = []; q.forEach(function (f) { f(); }); }
   P.afterLayer = function (fn) { if (!timer && !pending.length) { fn(); return; } pending.push(fn); };
   function removeLayer(layer) {
@@ -140,6 +140,7 @@
   P.openDialog = function (d,onRestore) {
     if(timer){P.afterLayer(function(){P.openDialog(d,onRestore);});return;}
     if(d.open)return;
+    if(!guarded.has(d)){d.addEventListener('close',function(e){if(d.open)e.stopImmediatePropagation();},true);guarded.add(d);}
     var layer;
     function show(restoring){if(restoring&&onRestore)onRestore();if(!d.open){if(typeof d.showModal==='function')d.showModal();else d.setAttribute('open','');}d.addEventListener('close',function(){P.closeLayer(layer);},{once:true});}
     show(false);layer=P.openLayer(function(){if(d.open)d.close();},function(){show(true);});
