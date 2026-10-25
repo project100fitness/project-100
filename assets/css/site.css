@@ -2973,14 +2973,14 @@ ol.copy-points { list-style:decimal; }
 /* ---- update 18: Biometrics selfie journal (stage, strip, session flip-through) ---- */
 .jr { --jr-ink: #ffffff; --jr-ink-2: #ffffff; --jr-mute: #9aa1b2; --jr-amber: #ffb400; --jr-cyan: #3fd0d8; }
 .jr__wrap, .jr__seq {
-  position: relative; display: grid; gap: var(--s-4); padding: clamp(.7rem, 2vw, 1.2rem);
+  position: relative; display: grid; grid-template-columns:minmax(0,1fr); min-width:0; gap: var(--s-4); padding: clamp(.7rem, 2vw, 1.2rem);
   background: linear-gradient(var(--nav-sheen-angle,115deg), #0a0b0e 0%, #13151a 55%, #1c1f27 100%);
   color: var(--jr-ink); border: 1px solid var(--hud-line, #3a3d46); border-radius: 0 var(--hud-cut, 14px) 4px var(--hud-cut, 14px);
 }
 .jr__wrap { margin-top: var(--s-4); }
 .jr__seq { margin-top: var(--s-5); }
 .jr__stage {
-  position: relative; overflow: hidden; isolation: isolate; width: 100%; aspect-ratio: 4 / 5; max-height: 78svh; margin: 0 auto;
+  position: relative; overflow: hidden; isolation: isolate; width: 100%; min-width:0; box-sizing:border-box; aspect-ratio: 4 / 5; max-height: 78svh; margin: 0 auto;
   background: #07080a; border: 1px solid #2c303a; border-radius: 4px; touch-action: pan-y; outline-offset: 3px; cursor: zoom-in;
 }
 .jr__bg { position: absolute; inset: -12%; z-index: -1; background-size: cover; background-position: center; filter: blur(26px) saturate(1.25) brightness(.5); transition: background-image .4s; }
