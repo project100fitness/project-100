@@ -1,0 +1,96 @@
+/* PROJECT 100 section journeys. Native content components; no runtime layout repairs.
+   Solid brand signals: orange actions, yellow reference marks, white/black reading text. */
+.journey-code{display:block;font:800 .85rem var(--font-mono);color:var(--signal-ink);margin-bottom:.6rem;}
+.journey-anchor{display:block;scroll-margin-top:var(--header-h);}
+.journey-next .hud-folder__body{padding:1rem;}
+.journey-next .hud-deeplink{min-height:100%;padding:.8rem 2.4rem .8rem .9rem;border-left-width:2px;border-top:2px solid var(--signal-ink);}
+.journey-next .hud-deeplink strong{font-style:normal;font-size:1rem;letter-spacing:.015em;}
+.journey-next .hud-deeplink span{font-size:.9rem;line-height:1.45;}
+.journey-context{display:block!important;padding:1rem!important;border-top:2px solid var(--signal-ink);}
+.journey-context>div{max-width:none;}
+.journey-context .copy-facts{margin:.5rem 0;gap:.75rem;}
+.journey-context p:last-child{margin-bottom:0;}
+/* A ledger keeps dates, figures and verification status in view together. */
+.journey-record .timeline{gap:.5rem;margin:0;padding-left:1rem;}
+.journey-record .nut-entry{padding:0;max-width:none;border:1px solid var(--line-strong);border-radius:4px;background:var(--surface);}
+.journey-record .record-row summary{display:grid;grid-template-columns:minmax(9rem,1fr) minmax(0,2.4fr) auto;align-items:center;gap:.75rem;min-height:80px;padding:1rem 2.2rem 1rem 1rem;position:relative;cursor:pointer;list-style:none;}
+.record-row summary::-webkit-details-marker{display:none;}
+.record-row summary:after{content:'+';position:absolute;right:.75rem;top:50%;transform:translateY(-50%);font-size:1.3rem;font-weight:800;color:var(--signal-ink);}
+.record-row[open] summary:after{content:'−';}
+.journey-record .nut-entry__date{font-size:.85rem;line-height:1.4;margin:0;color:var(--accent);font-style:normal;}
+.journey-record .nut-entry__value{font-size:1.1rem;line-height:1.4;margin:0;color:var(--text);font-weight:750;}
+.record-status{font:750 .7rem var(--font-mono);text-transform:uppercase;letter-spacing:.035em;color:var(--text);border:1px solid var(--signal-ink);padding:.35rem .5rem;border-radius:3px;white-space:nowrap;}
+.record-row__notes{border-top:1px solid var(--line-strong);padding:.75rem 1rem;}
+.record-row__notes p{margin:.25rem 0;max-width:68ch;}
+.record-row__notes ul{margin:.25rem 0;}
+.journey-record .timeline>li:before{left:calc(-1rem - 7px);background:var(--signal-ink);}
+.journey-bands .grid{gap:.7rem;}
+.journey-bands .nut-fact{padding:1rem;border-radius:4px;border-top:3px solid var(--signal-ink);}
+.journey-bands .nut-fact__value{font-size:clamp(1.2rem,2vw,1.6rem);color:var(--accent);margin:0 0 .6rem;}
+.journey-bands .nut-fact p{font-size:1rem;line-height:1.5;margin:0;}
+.journey-bands .nut-after{margin-top:.8rem;padding:.8rem 1rem;}
+.journey-checks .grid{grid-template-columns:1fr;gap:0;counter-reset:none;}
+.journey-checks .grid>article{display:grid;grid-template-columns:2.4rem minmax(10rem,1fr) minmax(0,2.4fr);gap:.75rem;align-items:start;padding:1rem 0;border:0;border-top:1px solid var(--line-strong);border-radius:0;background:none;box-shadow:none;}
+.journey-checks .card__title{font-size:1rem;margin:0;line-height:1.45;}
+.journey-checks .journey-code{margin:.15rem 0;}
+.journey-checks .reading-copy{margin:0;max-width:65ch;}
+/* The sequence has one heading and two complete, uncropped reference boards. */
+.journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;list-style:none;counter-reset:step;padding:0;margin:0 0 1rem;background:var(--line-strong);border:1px solid var(--line-strong);}
+.journey-steps li{counter-increment:step;padding:.9rem;background:var(--surface);margin:0;min-width:0;}
+.journey-steps li:before{content:'0' counter(step);display:block;font:800 .8rem var(--font-mono);color:var(--signal-ink);margin-bottom:.6rem;}
+.journey-steps span{display:block;font-size:.8rem;line-height:1.4;}
+.journey-steps strong{display:block;color:var(--accent);font-size:1.1rem;margin-top:.15rem;}
+.journey-training .art-note{margin:0 0 1rem;padding:0;border:0;}
+.journey-training .copy-condition{font-size:.9rem;line-height:1.5;margin:.35rem 0;}
+.journey-blueprints .carousel__track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;overflow:visible;transform:none;list-style:none;margin:0;padding:0;}
+.journey-blueprints .carousel__item{width:auto;min-width:0;max-width:none;margin:0;}
+.journey-blueprints .card__media{height:auto;aspect-ratio:1672/941;background:#000;}
+.journey-blueprints img{width:100%;height:100%;object-fit:contain;}
+.journey-blueprints .art-cap{font-size:.85rem;padding:.6rem;}
+/* Day branches link directly to the existing schedule. */
+.journey-branches .hud-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
+.journey-branches .hud-node{display:block;padding:0;border:0;min-width:0;}
+.journey-branch-link{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.6rem;padding:1rem;height:100%;border:1px solid var(--line-strong);border-top:3px solid var(--signal-ink);background:var(--surface);color:var(--text);text-decoration:none;}
+.journey-branch-link .hud-node__hex{font:800 .85rem var(--font-mono);color:var(--signal-ink);}
+.journey-branch-link .hud-node__txt{display:grid;gap:.4rem;}
+.journey-branch-link__action{grid-column:2;font-size:.85rem;color:var(--accent);font-weight:750;}
+.journey-branch-link:hover{border-color:var(--accent);text-decoration:none;}
+/* Historical figures are grouped, with their basis retained in one disclosure. */
+.journey-fuel .nutrition-dashboard__head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;}
+.journey-fuel .hud-eyebrow{width:100%;font-size:.7rem;}
+.journey-fuel h2{margin:0;font-size:1.5rem;}
+.journey-status{font:750 .75rem var(--font-mono);line-height:1.5;border-left:3px solid var(--signal-ink);padding:.4rem .6rem;margin:0;color:var(--text);}
+.journey-fuel .nutrition-metrics{gap:.6rem;}
+.journey-fuel .nutrition-metric{padding:.8rem!important;border-radius:4px;display:grid;grid-template-columns:auto 1fr;gap:.25rem;align-content:start;background:var(--surface)!important;}
+.journey-fuel .nutrition-metric .stat__value,.journey-fuel .nutrition-metric .metric-range{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--text)!important;}
+.journey-fuel .nutrition-metric__unit{display:inline;align-self:center;margin:0 .3rem;font-size:.8rem;}
+.journey-fuel .nutrition-metric .stat__label{grid-column:1/-1;font-size:.8rem;line-height:1.35;text-transform:uppercase;letter-spacing:.035em;color:var(--accent);margin-top:.25rem;}
+.journey-fuel .nutrition-metric:nth-child(n+5){border-top-color:var(--signal-ink)!important;}
+.journey-basis{border-top:1px solid var(--line-strong);padding-top:.4rem;}
+.journey-basis summary{font-weight:750;cursor:pointer;padding:.65rem 0;color:var(--accent);min-height:44px;}
+.journey-basis dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:.5rem 0;}
+.journey-basis dl>div{border-left:2px solid var(--signal-ink);padding-left:.7rem;}
+.journey-basis dt{font-weight:750;font-size:.85rem;}
+.journey-basis dd{margin:.25rem 0;font-size:.9rem;}
+.journey-food-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
+.journey-food-links a{display:grid;gap:.4rem;border:1px solid var(--line-strong);border-top:2px solid var(--signal-ink);padding:1rem;background:var(--surface);color:var(--text);text-decoration:none;}
+.journey-food-links span{font-size:.9rem;color:var(--accent);}
+.journey-reference .hud-takeaway{font-size:1.05rem;line-height:1.5;max-width:70ch;}
+.record-row summary:focus-visible,.journey-branch-link:focus-visible,.journey-food-links a:focus-visible,.journey-basis summary:focus-visible{outline:3px solid var(--signal-ink);outline-offset:3px;}
+@media(max-width:700px){
+ .journey-record .record-row summary{grid-template-columns:minmax(0,1fr) auto;gap:.4rem;padding:.8rem 2rem .8rem .8rem;}
+ .journey-record .nut-entry__date{grid-column:1;}
+ .journey-record .nut-entry__value{grid-column:1/-1;grid-row:2;font-size:1rem;}
+ .record-status{grid-column:2;grid-row:1;font-size:.7rem;padding:.3rem;white-space:normal;max-width:8rem;}
+ .journey-checks .grid>article{grid-template-columns:1.7rem minmax(0,1fr);gap:.3rem .6rem;padding:.8rem 0;}
+ .journey-checks .grid>article p{grid-column:2;}
+ .journey-steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+ .journey-steps li{padding:.7rem;}
+ .journey-blueprints .carousel__track{grid-template-columns:1fr;}
+ .journey-branches .hud-map,.journey-food-links{grid-template-columns:1fr;}
+ .journey-branch-link{padding:.8rem;grid-template-columns:1.3rem minmax(0,1fr) auto;align-items:center;}
+ .journey-branch-link__action{grid-column:3;font-size:.75rem;}
+ .journey-basis dl{grid-template-columns:1fr;}
+ .journey-next .hud-deep{gap:.5rem;}
+ .journey-next .hud-deeplink{min-height:0;}
+}
