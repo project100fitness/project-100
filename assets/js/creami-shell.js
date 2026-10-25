@@ -15,7 +15,19 @@ setPalette(palette);
 function mode(value,page){pending={mode:value,page:page||1};d.querySelectorAll('[data-creami-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.creamiMode===value)));send()}
 function open(button){trigger=button||document.querySelector('[data-creami-open]');if(!d.open){port?.close();port=null;mode('guide');if(window.P100&&P100.openDialog)P100.openDialog(d);else d.showModal();/* A fresh replacement avoids an iframe history step and a restored blank
  document when the parent dialog's Back entry is removed. */frame.contentWindow.location.replace('ninja-creami.html?embedded=1&v=6481db0be984')}else mode('guide')}
-const entry=document.querySelector('.creami-entry');if(entry&&'IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){entry.classList.add('creami-entry--animated');new IntersectionObserver(es=>entry.classList.toggle('is-in-view',es[0].isIntersecting),{threshold:.12}).observe(entry)}
+// Reveal once, then keep the card readable. Its decorative edge runs only while visible.
+const entry=document.querySelector('.creami-entry');
+if(entry){
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)');let visible=false;
+ const syncEntry=()=>{entry.classList.toggle('is-motion-active',visible&&!document.hidden&&!reduced.matches&&!window.P100?.motionPaused);if(reduced.matches)entry.classList.add('is-in-view')};
+ if('IntersectionObserver' in window){
+  if(!reduced.matches)entry.classList.add('creami-entry--animated');
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)entry.classList.add('is-in-view');syncEntry()},{threshold:.15}).observe(entry);
+ }else{visible=true;entry.classList.add('is-in-view');syncEntry()}
+ document.addEventListener('visibilitychange',syncEntry);document.addEventListener('p100:motion',syncEntry);
+ if(reduced.addEventListener)reduced.addEventListener('change',syncEntry);else reduced.addListener(syncEntry);
+}
+
 document.querySelectorAll('[data-creami-open]').forEach(b=>b.addEventListener('click',()=>open(b)));
 d.querySelector('[data-creami-close]').addEventListener('click',()=>window.P100?.closeTopLayer?P100.closeTopLayer():d.close());
 d.querySelectorAll('[data-creami-mode]').forEach(b=>b.addEventListener('click',()=>mode(b.dataset.creamiMode)));
