@@ -24,3 +24,8 @@ Current four-book documents, download catalogues, nested readers, the unresolved
 
 ## Design basis
 Hierarchy and readable grouping follow [Material layout guidance](https://m2.material.io/design/layout/understanding-layout.html). Motion is selective and purposeful, following [Carbon motion guidance](https://www.carbondesignsystem.com/building-blocks/foundations/motion/overview). Nonessential movement respects [W3C reduced-motion technique C39](https://www.w3.org/WAI/WCAG22/Techniques/css/C39).
+
+## Mobile follow-up
+The shared full-image viewer uses a compact top position counter instead of repeating its image description below the picture. Image alt text remains available to assistive technology. Previous/next, zoom, full-size, Close and persistent download controls remain; the optional original Instagram link moves beside the download. The authored dialog explicitly overrides the browser default maximum width so controls use the available phone width.
+
+Screen typography uses the shared Inter/system sans role and system monospace role. Remaining Georgia display text and separate dock font stacks are removed; original PDFs and the independent kitchen palettes remain unchanged. Inter is selected for its interface design and small-text legibility: https://rsms.me/inter/.

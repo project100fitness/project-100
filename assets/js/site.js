@@ -338,17 +338,16 @@
     dlg = document.createElement('dialog');
     dlg.className = 'lightbox'; dlg.setAttribute('aria-label', 'Image viewer');
     dlg.innerHTML =
-      '<figure class="lightbox__fig"><img alt=""><figcaption></figcaption></figure>' +
-      '<div class="lightbox__bar">' +
+      '<figure class="lightbox__fig"><img alt=""></figure>' +
+      '<div class="lightbox__bar"><span class="lightbox__position" data-lb="position" aria-live="polite"></span>' +
       '<button type="button" class="lightbox__btn" data-lb="prev" aria-label="Previous image">‹</button>' +
       '<button type="button" class="lightbox__btn" data-lb="next" aria-label="Next image">›</button>' +
       '<button type="button" class="lightbox__btn" data-lb="zoom" aria-label="Zoom image" aria-pressed="false">+</button>' +
       '<a class="lightbox__btn" data-lb="full" target="_blank" rel="noopener" aria-label="Open full size">↗</a>' +
-      '<a class="lightbox__btn" data-lb="post" target="_blank" rel="noopener" aria-label="Open the Instagram post" hidden>Instagram ↗</a>' +
       '<button type="button" class="lightbox__btn" data-lb="close" aria-label="Close">Close ×</button></div>' +
-      '<footer class="viewer-download-bar"><a data-lb="download" download>Download full image ↓</a></footer>';
+      '<footer class="viewer-download-bar"><a data-lb="download" download>Download full image ↓</a><a class="lightbox__btn" data-lb="post" target="_blank" rel="noopener" aria-label="Open the Instagram post" hidden>Instagram ↗</a></footer>';
     document.body.appendChild(dlg);
-    img = P.$('img', dlg); cap = P.$('figcaption', dlg); dl = P.$('[data-lb="download"]', dlg); full = P.$('[data-lb="full"]', dlg); post = P.$('[data-lb="post"]', dlg);
+    img = P.$('img', dlg); cap = P.$('[data-lb="position"]', dlg); dl = P.$('[data-lb="download"]', dlg); full = P.$('[data-lb="full"]', dlg); post = P.$('[data-lb="post"]', dlg);
     dlg.addEventListener('click', function (e) {
       var b = e.target.closest('[data-lb]'), k = b && b.dataset.lb;
       if (k === 'close' || e.target === dlg) dlg.close();
@@ -397,7 +396,7 @@
   function show(i) {
     idx = (i + set.length) % set.length;
     var el = set[idx], src = srcOf(el);
-    dlg.classList.remove('is-wide'); var zoom = P.$('[data-lb="zoom"]', dlg); zoom.setAttribute('aria-pressed', 'false'); zoom.textContent = '+'; var fig = img.parentNode; fig.scrollTop = fig.scrollLeft = 0; img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = labelOf(el) + (set.length > 1 ? ' · ' + (idx + 1) + ' / ' + set.length : '');
+    dlg.classList.remove('is-wide'); var zoom = P.$('[data-lb="zoom"]', dlg); zoom.setAttribute('aria-pressed', 'false'); zoom.textContent = '+'; var fig = img.parentNode; fig.scrollTop = fig.scrollLeft = 0; img.src = viewOf(el); img.alt = labelOf(el); cap.textContent = (idx + 1) + ' / ' + set.length; cap.hidden = set.length < 2; cap.setAttribute('aria-label', 'Image ' + (idx + 1) + ' of ' + set.length);
     var org = src; dl.href = org; dl.setAttribute('download', org.split('/').pop().split('?')[0]); full.href = org;   /* data-orig = hi-res original (download); data-full = web version */
     post.hidden = !el.getAttribute('data-post'); if (!post.hidden) post.href = el.getAttribute('data-post');   /* picture cards that come from an Instagram post */
     P.$$('[data-lb="prev"],[data-lb="next"]', dlg).forEach(function (b) { b.hidden = set.length < 2; });

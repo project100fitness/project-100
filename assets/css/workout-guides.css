@@ -1,5 +1,5 @@
 /* PROJECT 100 downloadable training sheets. Scoped independently from the site. */
-.wg-page{margin:0;background:#151a20;color:#17212a;font-family:Arial,Helvetica,sans-serif;line-height:1.5;}
+.wg-page{margin:0;background:#151a20;color:#17212a;font-family:var(--font-sans,system-ui,sans-serif);line-height:1.5;}
 .wg-page *{box-sizing:border-box;}.wg-page a{color:#195c8a;text-underline-offset:3px;}.wg-page a:hover{text-decoration-thickness:2px;}.wg-page :focus-visible{outline:3px solid #f3ad12;outline-offset:4px;}
 .wg-toolbar{max-width:1000px;margin:auto;padding:20px;color:#ffffff;}.wg-toolbar a{color:inherit;}.wg-brand{font-weight:800;text-decoration:none;letter-spacing:.06em;}.wg-brand b{color:#ff7a24;}.wg-toolbar nav{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0;}
 .wg-actions{display:flex;gap:10px;flex-wrap:wrap;}.wg-actions button{font:700 14px Arial,sans-serif;padding:13px 17px;border:1px solid #84959d;border-radius:7px;color:white;background:#26323b;cursor:pointer;min-height:46px;}.wg-actions button:first-child{background:#f26b11;color:#171b20;border-color:#f26b11;}.wg-actions button:disabled{opacity:.6;cursor:wait;}.wg-status{font-size:13px;max-width:70ch;}
