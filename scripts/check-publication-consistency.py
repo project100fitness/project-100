@@ -140,3 +140,10 @@ for name in ['guidebook.html','liquid-intake.html','fit-protocol-vectors.html','
 assert '341 mg is below' in pages['fit-protocol-dose.html']
 assert '300 mcg PureGenomics + 125 mcg MuscleEAA = 425 mcg' in pages['fit-protocol-dose.html']
 print('PASS: four-book versions, removed calcium/cherry rows, biotin attribution, magnesium arithmetic and unresolved V5 source difference.')
+
+assert "V5 type unresolved; bovine 10 g in V10" in pages["fit-protocol-pathways.html"]
+assert "V5, marine" not in pages["fit-protocol-pathways.html"]
+assert "V10 (marine)" not in pages["fit-protocol-pathways.html"]
+
+vector_registry=json.loads((ROOT/"assets/data/vector-registry.json").read_text(encoding="utf8"))
+assert any("Bovine collagen 1 scoop, about 10 g" in v["ingredients"] for v in vector_registry["vectors"] if v["id"]=="v10")
