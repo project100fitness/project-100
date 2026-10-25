@@ -22,6 +22,10 @@ jobs:
           ref: ${{ github.head_ref }}
           sparse-checkout: |
             assets/css
+            assets/data
+            assets/downloads
+            assets/web/manuals
+            assets/vendor/pdfjs
             assets/js
             assets/media/kinetics-library
             assets/media/workout-guides

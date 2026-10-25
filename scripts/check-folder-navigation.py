@@ -132,20 +132,20 @@ with sync_playwright() as p:
                 assert page.locator('[data-kin-group="triceps"]:visible').count()>0
                 page.locator('[data-kin-filter="all"]').click()
                 page.locator('[data-kd-open="focused"]').first.click()
-                page.locator("#kinDownloadModal[open]").wait_for()
-                page.frame_locator("[data-kd-frame]").locator('body[data-document="focused"]').wait_for()
-                page.locator('[data-kd-filter="guides"]').click()
-                assert page.locator(".kd-doc:not([hidden])").count()==13
-                page.locator("[data-kd-close]").click()
-                page.locator("#kinDownloadModal").wait_for(state="hidden")
+                page.locator("#manualLibrary[open]").wait_for()
+                page.locator('[data-manual-filter="techniques"]').click()
+                assert page.locator('.manual-card').count()==40
+                page.locator("[data-manual-close]").click()
+                page.locator("#manualLibrary").wait_for(state="hidden")
             if path=="index.html":
                 page.evaluate("""()=>{document.documentElement.style.scrollBehavior="auto";scrollTo({top:document.documentElement.scrollHeight,behavior:"instant"});dispatchEvent(new Event("scroll"));}""")
                 page.wait_for_timeout(500)
-                page.locator('[data-dl-open][data-dl-doc="enc"]').first.click()
-                page.locator("#dlModal[open]").wait_for()
-                assert page.locator('#dlModal a[download]').count()>=3
-                page.locator("[data-dl-close]").click()
-                page.locator("#dlModal").wait_for(state="hidden")
+                page.locator('.page-dock [data-manual-group="books"]').click()
+                page.locator("#manualLibrary[open]").wait_for()
+                assert page.locator('.manual-card').count()==4
+                assert page.locator('.manual-card strong').first.inner_text()=="Guidebook"
+                page.locator("[data-manual-close]").click()
+                page.locator("#manualLibrary").wait_for(state="hidden")
             results.append({"engine":name,"path":path,"width":390,"status":"passed","test":"folder-and-download-interaction"})
         context.close()
         # Source navigation remains complete without JavaScript.

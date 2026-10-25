@@ -1,6 +1,6 @@
 # Project 100 book release — 24 October 2026
 
-Guidebook V3.6 (45 physical PDF pages) and Encyclopedia V3.5 (121 physical PDF pages) are owner-supplied editions. PDFs are published byte-for-byte, with their own new cover thumbnails. Superseded book URLs remain compatibility aliases to the new editions; all active download cards and links identify the new versions.
+Guidebook V3.7 (45 physical PDF pages) and Encyclopedia V3.6 (121 physical PDF pages) are owner-supplied editions. PDFs are published byte-for-byte, with their own new cover thumbnails. Superseded book URLs remain compatibility aliases to the new editions; all active download cards and links identify the new versions.
 
 Content reconciliation: removed calcium capsule and its 200 mg from the carried training totals; Inno Nutrition Tart Cherry 10000 without transferring the old product dose; separate standalone HCl and Pump monohydrate accounting; boron 3 mg standalone / 4 mg training total, TestoFX 9.5 mg identified as piperine; August 13.6% body-fat reading explicitly unverified and not a milestone; retained 100 lb stretch goal and dated corridor framing; corrected lunch versus 15:30 product-grid labels; V10 bovine collagen; 11 harvested meal records, five highlight meals and the saved 6 oz protein reference. Historic modelled meal totals are retired from current displays; dated photos and audit datasets remain.
 

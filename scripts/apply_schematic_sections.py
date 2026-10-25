@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def load(f):return BeautifulSoup((ROOT/f).read_text(),'html.parser')
 def save(f,s):(ROOT/f).write_text(str(s))
 def fragment(s):return BeautifulSoup(s,'html.parser')
-BOOKS={'project-100-encyclopedia-v3-2-2026-10-06.pdf','project-100-guidebook-v3-3-2026-10-06.pdf'}
+BOOKS={'project-100-encyclopedia-v3-6-2026-10-24.pdf','project-100-guidebook-v3-7-2026-10-24.pdf'}
 for p in ROOT.glob('*.html'):
  s=load(p.name);changed=False
  for ul in s.select('.home-downloads'):

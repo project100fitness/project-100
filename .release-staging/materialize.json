@@ -1,0 +1,60 @@
+{
+  "sha256": "c93f99cb32ae99e5a3a0a074a05b5b920ea5fd6dc8f21cd6bcbd844fcddc97c6",
+  "gitBlob": "8832b14655f3592a2ce58ef171ca34454e97c5a7",
+  "bytes": 42141711,
+  "targets": [
+    "assets/downloads/project-100-encyclopedia-v2-0-2026-10-03.pdf",
+    "assets/downloads/project-100-encyclopedia-v3-2-2026-10-06.pdf",
+    "assets/downloads/project-100-encyclopedia-v3-3-2026-10-18.pdf",
+    "assets/downloads/project-100-encyclopedia-v3-4-2026-10-19.pdf",
+    "assets/downloads/project-100-encyclopedia-v3-5-2026-10-24.pdf",
+    "assets/downloads/project-100-encyclopedia-v3-6-2026-10-24.pdf"
+  ],
+  "parts": [
+    {
+      "path": ".release-staging/encyclopedia-v36.part-00",
+      "sha256": "e5f1126ca0dcfc5d1edbf6d2abd21b70c97ea9bd6dfec8d4e0a6ae279112e8b4",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-01",
+      "sha256": "77b27742f313ae85c23b88167f174b65da7fb3dbb8d0fc8ac7ce934c7f6586f5",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-02",
+      "sha256": "1868928726c71323a2bee6ba103a0687c72ddd97c86d7480fc2abd44d8dbbae9",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-03",
+      "sha256": "34daf6ad9c4b20f9949d80e83cfc23181c7690a8f736d87c7e14ad1eae2db576",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-04",
+      "sha256": "b419b75d3702a08473500d3aabfdf4701ed5f6c5e548a500e235d7041ce9ce58",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-05",
+      "sha256": "5c973d10e1c18d6c6bb9a11ca0c0751e2dea3991d162d63cce1968d6d15af4be",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-06",
+      "sha256": "b238c058bf5fa443998c826d8c79538c54d3cc14166d60d20ea3c321fc3bdedb",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-07",
+      "sha256": "219ec0b8df7215d577f918e4db5b2373b73b823b4d520fa94c63517e3e425011",
+      "bytes": 5242880
+    },
+    {
+      "path": ".release-staging/encyclopedia-v36.part-08",
+      "sha256": "a00b555bcd5ef8b35a8d863c52fb505465934866c94c00d9332c573916210db2",
+      "bytes": 198671
+    }
+  ]
+}

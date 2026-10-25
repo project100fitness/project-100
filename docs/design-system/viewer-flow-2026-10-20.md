@@ -20,6 +20,6 @@ These are direct changes to authored page components and two SVG assets. No new 
 - All117 shared-site pages rendered in351 viewport/theme combinations without detected page overflow, tested clipped headings, broken loaded local images or JavaScript errors.
 - All6,595 local links and fragment destinations on those117 pages resolve; zero missing files and zero unresolved source anchors.
 - The12-step introduction was followed by actual browser clicks on mobile dark, mobile light and desktop:36 successful steps, with route labels, target headings, nine preview images and destination descriptions verified.
-- Publication consistency, workout source and the exact6+6+3 focused split checks pass. Guidebook V3.5 and Encyclopedia V3.4 remain the supplied, checksum-verified PDFs.
+- Publication consistency, workout source and the exact6+6+3 focused split checks pass. Guidebook V3.7 and Encyclopedia V3.6 remain the supplied, checksum-verified PDFs.
 
 This is an editorial viewer simulation and browser/device review, not a study with recruited users or medical/anatomical certification. Live results and the completed publication/backup report are retained in the owner's task evidence and current checkpoint.

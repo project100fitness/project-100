@@ -1,6 +1,6 @@
 # Schematic integration, 7 October 2026
 
-Downloads now offers exactly Encyclopedia V3.2 and Guidebook V3.3. Repository PDF bytes match the final uploaded files. Removes Canon JSON/AI brief offers, Kindle placeholder and unrelated download-page promotions. Vector diagram saves remain available within their own folders.
+Downloads now offers exactly Encyclopedia V3.6 and Guidebook V3.7. Repository PDF bytes match the final uploaded files. Removes Canon JSON/AI brief offers, Kindle placeholder and unrelated download-page promotions. Vector diagram saves remain available within their own folders.
 
 Uses supplied J03 anatomy, J14 accounting and J11 science illustration layers in three finished website sections: Biometrics, Mineral Chemistry, Liquid Intake. Original illustrations are not regenerated or misrepresented as scans or evidence of biological effects. Primary labels are live HTML; no new supplements, amounts or biometric values introduced. J15 is empty and is not used.
 

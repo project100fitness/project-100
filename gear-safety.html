@@ -1,24 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<script defer src="assets/js/rotation-cues.js?v=71839bc6ed9c"></script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f4f1">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0b0e">
+<script defer="" src="assets/js/rotation-cues.js?v=71839bc6ed9c"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="#f5f4f1" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#0a0b0e" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <title>PROJECT 100 | Hardware safety</title>
-<meta name="description" content="PROJECT 100 hardware safety: setup checks, inspection notes and the source context for the training rig.">
-<link rel="canonical" href="https://project100.fit/gear-safety.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="PROJECT 100">
-<meta property="og:title" content="PROJECT 100 | Hardware safety">
-<meta property="og:description" content="PROJECT 100 hardware safety: setup checks, inspection notes and the source context for the training rig.">
-<meta property="og:url" content="https://project100.fit/gear-safety.html">
-<meta property="og:image" content="https://project100.fit/assets/img/v2/checklist-cover.png">
-<meta property="og:image:alt" content="PROJECT 100 | Hardware safety">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta content="PROJECT 100 hardware safety: setup checks, inspection notes and the source context for the training rig." name="description"/>
+<link href="https://project100.fit/gear-safety.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="PROJECT 100" property="og:site_name"/>
+<meta content="PROJECT 100 | Hardware safety" property="og:title"/>
+<meta content="PROJECT 100 hardware safety: setup checks, inspection notes and the source context for the training rig." property="og:description"/>
+<meta content="https://project100.fit/gear-safety.html" property="og:url"/>
+<meta content="https://project100.fit/assets/img/v2/checklist-cover.png" property="og:image"/>
+<meta content="PROJECT 100 | Hardware safety" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
 <script>
 /* theme first, so there is no flash: saved choice wins, else the OS decides */
 try{var t=localStorage.getItem('p100-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}
@@ -26,47 +27,44 @@ document.documentElement.classList.add('js');
 /* always the secure address (a plain http:// visit triggers browser/antivirus warnings) */
 if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname))location.replace('https://'+location.host+location.pathname+location.search+location.hash);
 </script>
-<link rel="preload" href="assets/fonts/inter-400-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=9f564d1a41b1">
-<link rel="stylesheet" href="assets/css/hud.css?v=4f2287c0238b">
-<link rel="stylesheet" href="assets/css/rotation-cues.css?v=7bf55791ce54">
-</head>
-<body data-bottom-controls data-navigation-pattern="original" data-site="main" data-page="gear-safety" data-group="gear" data-folder="gear" data-design-profile="clear-contrast">
+<link as="font" crossorigin="" href="assets/fonts/inter-400-800.woff2" rel="preload" type="font/woff2"/>
+<link href="assets/css/site.css?v=61a8f0ec3d13" rel="stylesheet"/>
+<link href="assets/css/hud.css?v=4f2287c0238b" rel="stylesheet"/>
+<link href="assets/css/rotation-cues.css?v=7bf55791ce54" rel="stylesheet"/>
+<link href="assets/css/manual-library.css?v=7d0e4cacb4ed" rel="stylesheet"/></head>
+<body data-bottom-controls="" data-design-profile="clear-contrast" data-folder="gear" data-group="gear" data-navigation-pattern="original" data-page="gear-safety" data-site="main">
 <a class="skip-link" href="#content">Skip to content</a>
-
 <header class="site-head" id="siteHead">
-  <div class="site-head__bar"><nav class="mode-folders" data-navigation-tier="brand" aria-label="Website spaces and navigation controls"><a class="mode-folder" data-space="main" href="index.html" aria-current="true" aria-label="PROJECT 100: current mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div class="site-head__actions" role="group" aria-label="Colour theme"><button class="theme-switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Dark colour mode"><span class="theme-switch__track" aria-hidden="true"></span><svg class="theme-switch__indicator" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1 11 6 2 11Z"/></svg><svg class="theme-switch__indicator theme-switch__indicator--opposite" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M10 1 1 6 10 11Z"/></svg><svg class="theme-switch__sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="5.5"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"/></svg><svg class="theme-switch__moon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"/><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"/></svg></button></div><a class="mode-folder" data-space="protocol" href="fit-protocol.html" aria-label="FIT PROTOCOL: switch mode, open home"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
-  <nav class="tabs" aria-label="PROJECT 100 sections">
-    <ul class="tabs__list">
-      
-      <li><a class="tab" href="fit-workout.html" data-folder="training"><span class="tab__label">Workout</span></a></li><li><a class="tab" href="kinetics.html" data-folder="kinetics"><span class="tab__label">Kinetics</span></a></li><li><a class="tab" href="exercises.html" data-folder="exercises"><span class="tab__label">Exercises</span></a></li>
-      <li><a class="tab" href="liquid-intake.html" data-folder="liquid"><span class="tab__label">Liquid Intake</span></a></li>
-      <li><a class="tab" href="fit-nutrition.html" data-folder="nutrition"><span class="tab__label">Nutrition &amp; Meals</span></a></li>
-      <li><a class="tab" href="gear-shop.html" aria-current="page" data-folder="gear"><span class="tab__label">Gym Equipment</span></a></li>
-      <li><a class="tab" href="biometrics.html" data-folder="metrics"><span class="tab__label">Biometrics</span></a></li>
-    </ul>
-  </nav>
+<div class="site-head__bar"><nav aria-label="Website spaces and navigation controls" class="mode-folders" data-navigation-tier="brand"><a aria-current="true" aria-label="PROJECT 100: current mode, open home" class="mode-folder" data-space="main" href="index.html"><span class="mode-folder__state"><i aria-hidden="true"></i>Viewing · Home</span><strong class="mode-folder__brand">PROJECT <b>100</b></strong><span class="mode-folder__description">Journal &amp; progress</span></a><div aria-label="Colour theme" class="site-head__actions" role="group"><button aria-checked="false" aria-label="Dark colour mode" class="theme-switch" id="themeToggle" role="switch" type="button"><span aria-hidden="true" class="theme-switch__track"></span><svg aria-hidden="true" class="theme-switch__indicator" fill="currentColor" viewbox="0 0 12 12"><path d="M2 1 11 6 2 11Z"></path></svg><svg aria-hidden="true" class="theme-switch__indicator theme-switch__indicator--opposite" fill="currentColor" viewbox="0 0 12 12"><path d="M10 1 1 6 10 11Z"></path></svg><svg aria-hidden="true" class="theme-switch__sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" viewbox="0 0 32 32"><circle cx="16" cy="16" r="5.5"></circle><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6.1 6.1l2.8 2.8M23.1 23.1l2.8 2.8M6.1 25.9l2.8-2.8M23.1 8.9l2.8-2.8"></path></svg><svg aria-hidden="true" class="theme-switch__moon" fill="currentColor" viewbox="0 0 32 32"><path d="M25.8 20.2A11.4 11.4 0 0 1 11.8 6.3 11.5 11.5 0 1 0 25.8 20.2Z"></path><path d="m25 4 .9 2.6L28.5 7l-2.6.9L25 10.5l-.9-2.6L21.5 7l2.6-.4Z"></path></svg></button></div><a aria-label="FIT PROTOCOL: switch mode, open home" class="mode-folder" data-space="protocol" href="fit-protocol.html"><span class="mode-folder__state"><i aria-hidden="true"></i>Other space →</span><strong class="mode-folder__brand">FIT <b>PROTOCOL</b></strong><span class="mode-folder__description">System &amp; reference</span></a></nav></div>
+<nav aria-label="PROJECT 100 sections" class="tabs">
+<ul class="tabs__list">
+<li><a class="tab" data-folder="training" href="fit-workout.html"><span class="tab__label">Workout</span></a></li><li><a class="tab" data-folder="kinetics" href="kinetics.html"><span class="tab__label">Kinetics</span></a></li><li><a class="tab" data-folder="exercises" href="exercises.html"><span class="tab__label">Exercises</span></a></li>
+<li><a class="tab" data-folder="liquid" href="liquid-intake.html"><span class="tab__label">Liquid Intake</span></a></li>
+<li><a class="tab" data-folder="nutrition" href="fit-nutrition.html"><span class="tab__label">Nutrition &amp; Meals</span></a></li>
+<li><a aria-current="page" class="tab" data-folder="gear" href="gear-shop.html"><span class="tab__label">Gym Equipment</span></a></li>
+<li><a class="tab" data-folder="metrics" href="biometrics.html"><span class="tab__label">Biometrics</span></a></li>
+</ul>
+</nav>
 </header>
-
 <div class="layout">
-  <main class="main section-tone--content" id="content" tabindex="-1">
-<section class="hud-hero section-tone--content" id="top" aria-labelledby="hudT" style="--hud-bg-img:url('/assets/web/img-gear-item-carabiner-1000.webp')"><span class="hud-hero__bg" aria-hidden="true"></span><span class="hud-scan" aria-hidden="true"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title reading-heading" id="hudT">Hardware <em>safety</em></h1><p class="hud-lede reading-copy">Climbing- and vehicle-rated hardware in a&nbsp;five-link load path. Check every link before you load it.</p><div class="hud-chips"><span class="hud-chip"><small class="reading-meta">Load path</small><strong>5 links</strong></span><span class="hud-chip"><small class="reading-meta">Carabiner</small><strong>25 kN</strong></span></div></div></section>
-<ul class="subnav hud-subnav" aria-label="Gym Equipment"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a href="gear-safety.html" aria-current="page">Hardware safety</a></li></ul>
+<main class="main section-tone--content" id="content" tabindex="-1">
+<section aria-labelledby="hudT" class="hud-hero section-tone--content" id="top" style="--hud-bg-img:url('/assets/web/img-gear-item-carabiner-1000.webp')"><span aria-hidden="true" class="hud-hero__bg"></span><span aria-hidden="true" class="hud-scan"></span><div class="hud-hero__text"><span class="hud-eyebrow">PROJECT_100 · GEAR</span><h1 class="hud-title reading-heading" id="hudT">Hardware <em>safety</em></h1><p class="hud-lede reading-copy">Climbing- and vehicle-rated hardware in a five-link load path. Check every link before you load it.</p><div class="hud-chips"><span class="hud-chip"><small class="reading-meta">Load path</small><strong>5 links</strong></span><span class="hud-chip"><small class="reading-meta">Carabiner</small><strong>25 kN</strong></span></div></div></section>
+<ul aria-label="Gym Equipment" class="subnav hud-subnav"><li><a href="gear-shop.html">Gear folders</a></li><li><a href="gear-gym.html">Gym walkthroughs</a></li><li><a href="gear-photos.html">Gym photo journal</a></li><li><a href="gear-rig.html">The rig</a></li><li><a href="gear-resistance.html">Resistance bands</a></li><li><a href="gear-grips.html">Grips &amp; handles</a></li><li><a href="gear-anchors.html">Straps &amp; anchors</a></li><li><a href="gear-recovery.html">Recovery tools</a></li><li><a aria-current="page" href="gear-safety.html">Hardware safety</a></li></ul>
 <div class="hud-intro hud-prose"><aside class="callout callout--note">
 <span class="callout__title">Check the whole load path</span>
-<p class="reading-copy">Inspect the anchor, strap, locking connector, band and attachment together. A&nbsp;component rating alone does not establish the capacity of the assembled setup.</p>
+<p class="reading-copy">Inspect the anchor, strap, locking connector, band and attachment together. A component rating alone does not establish the capacity of the assembled setup.</p>
 </aside></div>
-<section class="hud-folder section-tone--content hud-folder--content" id="safety" aria-labelledby="safety-t">
-<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title reading-heading" id="safety-t">Safety Protocols</h2><a class="hud-folder__link" href="fit-protocol-gear.html#loadpath">Load path &amp; safety <span aria-hidden="true">&rarr;</span></a></div>
+<section aria-labelledby="safety-t" class="hud-folder section-tone--content hud-folder--content" id="safety">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 01</span><h2 class="hud-folder__title reading-heading" id="safety-t">Safety Protocols</h2><a class="hud-folder__link" href="fit-protocol-gear.html#loadpath">Load path &amp; safety <span aria-hidden="true">→</span></a></div>
 <div class="hud-folder__body surface-solid">
 <p class="hud-takeaway reading-copy">Anchor, tie-down strap, locking carabiner, band or handle, then you: only as strong as the weakest link.</p>
-<div class="hud-open hud-prose" id="safety-c1" data-gallery><span id="safety-c1-d"></span><h3 class="hud-open__t reading-heading">The&nbsp;load path &amp; rated hardware</h3><div class="rd"><div class="rd-p reading-copy copy-group"><ul class="copy-points"><li>A handful of items in this rig aren't just gym accessories — they're the same class of hardware used in mountain-climbing protection and heavy-vehicle tie-down: forged, gate-locking carabiners and high-tensile webbing straps built to industrial breaking-strength standards.</li></ul></div><p class="rd-p reading-copy">Here's how they're actually rigged into the setup, and the checks that keep that load path safe.</p></div>
+<div class="hud-open hud-prose" data-gallery="" id="safety-c1"><span id="safety-c1-d"></span><h3 class="hud-open__t reading-heading">The load path &amp; rated hardware</h3><div class="rd"><div class="rd-p reading-copy copy-group"><ul class="copy-points"><li>A handful of items in this rig aren't just gym accessories — they're the same class of hardware used in mountain-climbing protection and heavy-vehicle tie-down: forged, gate-locking carabiners and high-tensile webbing straps built to industrial breaking-strength standards.</li></ul></div><p class="rd-p reading-copy">Here's how they're actually rigged into the setup, and the checks that keep that load path safe.</p></div>
 <ol class="gear-chain">
-<li class="gear-chain__step"><span class="gear-chain__n">1</span><div><h3 class="gear-chain__title reading-heading">Structural Anchor</h3><p class="reading-copy">The&nbsp;rig's welded steel crossbar, or a&nbsp;non-marking soft-loop strap choked directly around it.</p></div></li>
-<li class="gear-chain__step"><span class="gear-chain__n">2</span><div><h3 class="gear-chain__title reading-heading">Tie-Down Strap</h3><p class="reading-copy">VEHICLEX / THEFITGUY webbing extends the anchor point out to a&nbsp;forged steel D-ring terminal.</p></div></li>
-<li class="gear-chain__step"><span class="gear-chain__n">3</span><div><h3 class="gear-chain__title reading-heading">Locking Carabiner</h3><p class="reading-copy">A&nbsp;JRSGS 25kN gate-lock clip closes the chain — gate faced away from the pull, locked shut.</p></div></li>
-<li class="gear-chain__step"><span class="gear-chain__n">4</span><div><h3 class="gear-chain__title reading-heading">Band / Handle</h3><p class="reading-copy">The&nbsp;working resistance — tubing, a&nbsp;grip handle, a&nbsp;rope attachment — clips in last, closest to the load.</p></div></li>
-<li class="gear-chain__step"><span class="gear-chain__n">5</span><div><h3 class="gear-chain__title reading-heading">You</h3><p class="reading-copy">The&nbsp;working end of the chain — only ever as strong as the weakest link rigged in behind it.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">1</span><div><h3 class="gear-chain__title reading-heading">Structural Anchor</h3><p class="reading-copy">The rig's welded steel crossbar, or a non-marking soft-loop strap choked directly around it.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">2</span><div><h3 class="gear-chain__title reading-heading">Tie-Down Strap</h3><p class="reading-copy">VEHICLEX / THEFITGUY webbing extends the anchor point out to a forged steel D-ring terminal.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">3</span><div><h3 class="gear-chain__title reading-heading">Locking Carabiner</h3><p class="reading-copy">A JRSGS 25kN gate-lock clip closes the chain — gate faced away from the pull, locked shut.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">4</span><div><h3 class="gear-chain__title reading-heading">Band / Handle</h3><p class="reading-copy">The working resistance — tubing, a grip handle, a rope attachment — clips in last, closest to the load.</p></div></li>
+<li class="gear-chain__step"><span class="gear-chain__n">5</span><div><h3 class="gear-chain__title reading-heading">You</h3><p class="reading-copy">The working end of the chain — only ever as strong as the weakest link rigged in behind it.</p></div></li>
 </ol>
 <section aria-labelledby="safety-rated-title" class="gear-group section-tone--content">
 <h3 class="gear-group__title reading-heading" id="safety-rated-title">Climbing &amp; Vehicle-Rated Hardware</h3>
@@ -76,7 +74,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="card__body">
 <h4 class="card__title reading-heading">JRSGS Rock Locking Clips</h4>
 <span class="tag tag--teal gear-item__spec">25 kN · 2 VARIANTS</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Gate-lock clips close the connection between strap, band and handle.</p><p class="reading-copy"><strong>Usage:</strong> Check the gate and load orientation before every set.</p></div>
-<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A&nbsp;has a&nbsp;metallic-red barrel; Variant B has a&nbsp;matte-black barrel. The&nbsp;manifest lists 25 kN.</p></details>
+<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Asymmetric matte-black D-shaped frames with screw-lock barrels. Variant A has a metallic-red barrel; Variant B has a matte-black barrel. The manifest lists 25 kN.</p></details>
 <span class="tag tag--accent gear-item__badge">Climbing-Grade Rating</span>
 </div>
 </article></li>
@@ -84,8 +82,8 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="card__media"><button aria-label="Photo: the VEHICLEX axle tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-vehiclex.jpg" type="button"><img alt="Photo: the VEHICLEX axle tie-down straps" decoding="async" height="692" loading="lazy" sizes="(min-width: 640px) 20rem, 50vw" src="assets/web/img-gear-item-vehiclex-700.webp" srcset="assets/web/img-gear-item-vehiclex-480.webp 480w, assets/web/img-gear-item-vehiclex-700.webp 700w" width="700"/></button></div>
 <div class="card__body">
 <h4 class="card__title reading-heading">VEHICLEX Axle Tie-Down Straps</h4>
-<span class="tag tag--teal gear-item__spec">Sleeved webbing</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Sleeved webbing brings an anchor point to a&nbsp;D-ring terminal.</p><p class="reading-copy"><strong>Usage:</strong> Use the documented anchor arrangement and inspect the webbing.</p></div>
-<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A&nbsp;red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p></details>
+<span class="tag tag--teal gear-item__spec">Sleeved webbing</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Sleeved webbing brings an anchor point to a D-ring terminal.</p><p class="reading-copy"><strong>Usage:</strong> Use the documented anchor arrangement and inspect the webbing.</p></div>
+<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Thick black webbing with gold/silver triangular steel D-rings and sliding protective sleeves. A red rectangular patch with white VEHICLEX lettering identifies the sleeve.</p></details>
 <span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
 </div>
 </article></li>
@@ -102,8 +100,8 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="card__media"><button aria-label="Photo: the NILIGHT soft loop anchor straps" class="gear-item__zoom" data-full="assets/img/gear-item-nilight.jpg" type="button"><img alt="Photo: the NILIGHT soft loop anchor straps" decoding="async" height="543" loading="lazy" src="assets/web/img-gear-item-nilight-500.webp" width="500"/></button></div>
 <div class="card__body">
 <h4 class="card__title reading-heading">NILIGHT Soft Loop Anchor Straps</h4>
-<span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Webbing loops create a&nbsp;non-marking connection around the structural anchor.</p><p class="reading-copy"><strong>Usage:</strong> Use at the recorded anchor point and inspect the loop before loading.</p></div>
-<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The&nbsp;small white/black/red warning tag carries the Nilight emblem.</p></details>
+<span class="tag tag--teal gear-item__spec">1.7 × 17 IN</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> Webbing loops create a non-marking connection around the structural anchor.</p><p class="reading-copy"><strong>Usage:</strong> Use at the recorded anchor point and inspect the loop before loading.</p></div>
+<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Short black polyester choke-loop straps with repeating white X/diamond reinforcement. The small white/black/red warning tag carries the Nilight emblem.</p></details>
 <span class="tag tag--accent gear-item__badge">Non-Marking Anchor</span>
 </div>
 </article></li>
@@ -111,8 +109,8 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 <div class="card__media"><button aria-label="Photo: XSTRAP motorcycle soft loop tie-down straps" class="gear-item__zoom" data-full="assets/img/gear-item-xstrap.jpg" type="button"><img alt="XSTRAP motorcycle soft loop tie-down straps" decoding="async" height="505" loading="lazy" src="assets/web/img-gear-item-xstrap-500.webp" width="500"/></button></div>
 <div class="card__body">
 <h4 class="card__title reading-heading">XSTRAP Motorcycle Soft Loop Tie-Downs</h4>
-<span class="tag tag--teal gear-item__spec">Soft Loop</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> A&nbsp;second webbing-loop option provides non-marking anchor contact.</p><p class="reading-copy"><strong>Usage:</strong> Use only in the documented setup; inspect the webbing and connections.</p></div>
-<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Woven soft-loop straps built for securing a&nbsp;motorcycle in transit — a&nbsp;second non-marking anchor option alongside the Nilight set.</p></details>
+<span class="tag tag--teal gear-item__spec">Soft Loop</span><div class="item-purpose"><p class="reading-copy"><strong>Purpose:</strong> A second webbing-loop option provides non-marking anchor contact.</p><p class="reading-copy"><strong>Usage:</strong> Use only in the documented setup; inspect the webbing and connections.</p></div>
+<details class="item-specs"><summary>Design &amp; specifications</summary><p class="reading-copy">Woven soft-loop straps built for securing a motorcycle in transit — a second non-marking anchor option alongside the Nilight set.</p></details>
 <span class="tag tag--accent gear-item__badge">Vehicle-Rated Webbing</span>
 </div>
 </article></li>
@@ -120,7 +118,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </section>
 <div class="gear-checks">
 <section aria-labelledby="gear-checks-ok" class="card card--pad gear-checks__col gear-checks__col--ok section-tone--content">
-<h3 id="gear-checks-ok" class="reading-heading">Advantages</h3>
+<h3 class="reading-heading" id="gear-checks-ok">Advantages</h3>
 <ul class="gear-checks__list">
 <li>Every anchor point breaks down and reconfigures in seconds — nothing bolted or permanently mounted.</li>
 <li>Soft-loop and tie-down straps don't mark or wear the structural steel the way a bare hook or band would.</li>
@@ -129,7 +127,7 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </ul>
 </section>
 <section aria-labelledby="gear-checks-warn" class="card card--pad gear-checks__col gear-checks__col--warn section-tone--content">
-<h3 id="gear-checks-warn" class="reading-heading">Safety Measures</h3>
+<h3 class="reading-heading" id="gear-checks-warn">Safety Measures</h3>
 <ul class="gear-checks__list">
 <li>Match hardware rating to the heaviest band in the line with real margin — never eyeball it as "strong enough."</li>
 <li>Carabiner gate faces away from the direction of pull, fully closed and locked, checked before every set.</li>
@@ -141,17 +139,17 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </section>
 </div>
 <aside class="callout callout--warn">
-<p class="reading-copy">Ratings above reflect the manufacturer specs printed on the hardware itself. This is a&nbsp;home-gym rig, not a&nbsp;certified climbing or industrial rigging system — so those numbers are treated as a&nbsp;floor to stay well under, not a&nbsp;target to push toward.</p>
+<p class="reading-copy">Ratings above reflect the manufacturer specs printed on the hardware itself. This is a home-gym rig, not a certified climbing or industrial rigging system — so those numbers are treated as a floor to stay well under, not a target to push toward.</p>
 </aside></div>
 </div></section>
-<section class="hud-folder section-tone--content hud-folder--content" id="gear-source" aria-labelledby="gear-source-t">
-<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title reading-heading" id="gear-source-t">The&nbsp;system behind the hardware</h2><a class="hud-folder__link" href="fit-protocol-training.html">Training mechanics <span aria-hidden="true">&rarr;</span></a></div>
+<section aria-labelledby="gear-source-t" class="hud-folder section-tone--content hud-folder--content" id="gear-source">
+<div class="hud-folder__head"><span class="hud-folder__tab">Folder 02</span><h2 class="hud-folder__title reading-heading" id="gear-source-t">The system behind the hardware</h2><a class="hud-folder__link" href="fit-protocol-training.html">Training mechanics <span aria-hidden="true">→</span></a></div>
 <div class="hud-folder__body surface-solid">
 <p class="hud-takeaway reading-copy">Band resistance changes with extension. Supported setups and symptom response matter.</p>
 <div class="hud-inline hud-prose"><aside class="callout callout--note">
 <p class="reading-copy">Band resistance changes with extension. Supported setups and symptom response matter; no piece of hardware guarantees zero spinal load. <a href="fit-protocol-training.html#ch6">Read the current loading logic</a>.</p>
 </aside></div>
-<div class="hud-open hud-prose" id="gear-source-c1" data-gallery><span id="gear-source-c1-d"></span><h3 class="hud-open__t reading-heading">Clinical notes</h3><dl class="kv">
+<div class="hud-open hud-prose" data-gallery="" id="gear-source-c1"><span id="gear-source-c1-d"></span><h3 class="hud-open__t reading-heading">Clinical notes</h3><dl class="kv">
 <dt>Mechanism</dt><dd>Repeatable supported loading and controlled ranges.</dd>
 <dt>Stack interaction</dt><dd>Spine, nerve, shoulder and elbow constraints govern exercise selection before ambition.</dd>
 <dt>Margin</dt><dd>Manufacturer ratings are not a guarantee for a home rig; inspect the entire anchor-to-user chain.</dd>
@@ -160,120 +158,112 @@ if(location.protocol==='http:'&&/(^|\.)project100\.fit$/.test(location.hostname)
 </dl>
 </div>
 </div></section>
-<section class="hud-folder hud-folder--deep section-tone--content hud-folder--content" aria-labelledby="deep-t"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title reading-heading" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body surface-solid"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-gear.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Gear &amp; bands</strong><span>Load path and safety measures</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol-joints.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Joints &amp; recovery</strong><span>The protocol side of joint safety</span><i aria-hidden="true">&rarr;</i></a></li><li><a class="hud-deeplink" href="fit-protocol-training.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Training mechanics</strong><span>Supported loading</span><i aria-hidden="true">&rarr;</i></a></li></ul></div></section>
+<section aria-labelledby="deep-t" class="hud-folder hud-folder--deep section-tone--content hud-folder--content"><div class="hud-folder__head"><span class="hud-folder__tab">Go deeper</span><h2 class="hud-folder__title reading-heading" id="deep-t">Full detail in FIT PROTOCOL</h2></div><div class="hud-folder__body surface-solid"><ul class="hud-deep"><li><a class="hud-deeplink" href="fit-protocol-gear.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Gear &amp; bands</strong><span>Load path and safety measures</span><i aria-hidden="true">→</i></a></li><li><a class="hud-deeplink" href="fit-protocol-joints.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Joints &amp; recovery</strong><span>The protocol side of joint safety</span><i aria-hidden="true">→</i></a></li><li><a class="hud-deeplink" href="fit-protocol-training.html"><small class="reading-meta">FIT PROTOCOL</small><strong>Training mechanics</strong><span>Supported loading</span><i aria-hidden="true">→</i></a></li></ul></div></section>
 <nav aria-label="Previous and next page" class="pager"><a class="pager__prev" href="gear-recovery.html" rel="prev"><span class="pager__dir">← Previous</span><span class="pager__label">Recovery tools</span></a><a class="pager__next" href="index.html" rel="next"><span class="pager__dir">Next →</span><span class="pager__label">Home</span></a>
 </nav>
 </main>
 </div>
-
 <footer class="site-foot">
-  <div class="site-foot__inner">
-    <div class="site-foot__identity">
-      <h2 class="reading-heading">PROJECT 100</h2>
-      <p class="site-foot__lede reading-copy">The&nbsp;lived record: training, food, gear and measured results.</p>
-      <a class="site-foot__switch" href="fit-protocol.html"><span aria-hidden="true">↔</span> Switch to FIT PROTOCOL</a>
-    <a class="site-foot__index" href="site-map.html">All sections →</a></div>
-    <details class="site-foot__group site-foot__explore"><summary>Explore sections <span>9</span></summary><nav aria-label="Explore sections">
-      <ul><li><a href="index.html">PROJECT 100</a></li><li><a href="fit-workout.html">Workout</a></li><li><a class="" href="kinetics.html">Kinetics</a></li><li><a href="exercises.html" data-folder="exercises">Exercises</a></li><li><a href="liquid-intake.html">Liquid Intake</a></li><li><a href="fit-nutrition.html">Nutrition &amp; Meals</a></li><li><a href="gear-shop.html">Gym Equipment</a></li><li><a href="biometrics.html">Biometrics</a></li>
-        <li><a href="library.html">Visual references</a></li>
-      </ul>
-    </nav></details>
-    <details class="site-foot__group site-foot__elsewhere"><summary>Follow & contact <span>7</span></summary><nav aria-label="Follow & contact">
-      <ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" title="Open the original Instagram post">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/bogdan.dospi" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener">Gym playlist</a></li>
-      </ul>
-    </nav></details>
-    <p class="site-foot__legal reading-copy">Personal record · not medical advice. Consult your clinician before changing medication, nutrient products or training.</p>
-  </div>
+<div class="site-foot__inner">
+<div class="site-foot__identity">
+<h2 class="reading-heading">PROJECT 100</h2>
+<p class="site-foot__lede reading-copy">The lived record: training, food, gear and measured results.</p>
+<a class="site-foot__switch" href="fit-protocol.html"><span aria-hidden="true">↔</span> Switch to FIT PROTOCOL</a>
+<a class="site-foot__index" href="site-map.html">All sections →</a></div>
+<details class="site-foot__group site-foot__explore"><summary>Explore sections <span>9</span></summary><nav aria-label="Explore sections">
+<ul><li><a href="index.html">PROJECT 100</a></li><li><a href="fit-workout.html">Workout</a></li><li><a class="" href="kinetics.html">Kinetics</a></li><li><a data-folder="exercises" href="exercises.html">Exercises</a></li><li><a href="liquid-intake.html">Liquid Intake</a></li><li><a href="fit-nutrition.html">Nutrition &amp; Meals</a></li><li><a href="gear-shop.html">Gym Equipment</a></li><li><a href="biometrics.html">Biometrics</a></li>
+<li><a href="library.html">Visual references</a></li>
+</ul>
+</nav></details>
+<details class="site-foot__group site-foot__elsewhere"><summary>Follow &amp; contact <span>7</span></summary><nav aria-label="Follow &amp; contact">
+<ul><li><a href="mailto:project100@gmail.com">Email</a></li><li><a href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post">Instagram</a></li><li><a href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank">YouTube</a></li><li><a href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank">Facebook</a></li><li><a href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank">TikTok</a></li><li><a href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank">Twitch</a></li><li><a href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank">Gym playlist</a></li>
+</ul>
+</nav></details>
+<p class="site-foot__legal reading-copy">Personal record · not medical advice. Consult your clinician before changing medication, nutrient products or training.</p>
+</div>
 </footer>
-
 <div class="page-dock" data-dock-layout="aligned">
-<div class="fab-dock" id="fabDock">
-  <button class="fab fab--at page-dock__action" id="fabAt" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="fabPanel" aria-label="Links and contact"><span class="page-dock__glyph" aria-hidden="true">@</span><strong class="home-links-label">Links</strong></button>
-  <div class="fab-panel" id="fabPanel" role="group" aria-label="Links and contact" hidden>
-    <div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button class="pop-close" type="button" data-pop-close aria-label="Close links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-    <ul class="fab-panel__list">
-
-      <li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg></span><span class="fab-row__txt"><strong>Email</strong><small class="reading-meta">project100@gmail.com</small></span></a></li>
-      <li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v5H19M9 12h7M9 16h7"/></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small class="reading-meta">project100.fit</small></span></a></li>
-      <li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" title="Open the original Instagram post"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small class="reading-meta">instagram.com/fudge_fit</small></span></a></li>
-      <li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a></li>
-      <li><a class="fab-row" href="https://www.facebook.com/bogdan.dospi" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small class="reading-meta">facebook.com/bogdan.dospi</small></span></a></li>
-      <li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a></li>
-      <li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a></li>
-      <li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener"><span class="fab-row__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small class="reading-meta">Spotify playlist</small></span></a></li>
-    </ul>
-  </div>
+<div class="fab-dock" data-dock-part="links" id="fabDock">
+<button aria-controls="fabPanel" aria-expanded="false" aria-haspopup="true" aria-label="Links and contact" class="fab fab--at page-dock__action" id="fabAt" type="button"><span aria-hidden="true" class="page-dock__glyph">@</span><strong class="home-links-label">Links</strong></button>
+<div aria-label="Links and contact" class="fab-panel" hidden="" id="fabPanel" role="group">
+<div class="fab-panel__head"><p class="fab-panel__title reading-copy">Links</p><button aria-label="Close links" class="pop-close" data-pop-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
+<ul class="fab-panel__list">
+<li><a class="fab-row fab-row--primary" href="mailto:project100@gmail.com"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span class="fab-row__txt"><strong>Email</strong><small class="reading-meta">project100@gmail.com</small></span></a></li>
+<li><a class="fab-row" href="index.html"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg></span><span class="fab-row__txt"><strong>Project 100 Blueprint</strong><small class="reading-meta">project100.fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg></span><span class="fab-row__txt"><strong>Instagram</strong><small class="reading-meta">instagram.com/fudge_fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>YouTube</strong><small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a></li>
+<li><a class="fab-row" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg></span><span class="fab-row__txt"><strong>Facebook</strong><small class="reading-meta">facebook.com/bogdan.dospi</small></span></a></li>
+<li><a class="fab-row" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg></span><span class="fab-row__txt"><strong>TikTok</strong><small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a></li>
+<li><a class="fab-row" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg></span><span class="fab-row__txt"><strong>Twitch</strong><small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a></li>
+<li><a class="fab-row" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><span class="fab-row__ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg></span><span class="fab-row__txt"><strong>Gym playlist</strong><small class="reading-meta">Spotify playlist</small></span></a></li>
+</ul>
 </div>
-<a class="fab-switch page-dock__action" href="fit-protocol.html" aria-label="Switch to FIT PROTOCOL"><span class="fab-switch__glyph" aria-hidden="true">↔</span><span>FIT PROTOCOL</span></a>
 </div>
-
-
-<dialog class="menu" id="menu" aria-labelledby="menuTitle">
-  <div class="menu__head">
-    <h2 class="menu__title reading-heading" id="menuTitle">Menu</h2>
-    <button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
-  </div>
-  <div class="menu__body">
-    <div class="menu__sites">
-      <a class="menu__site" href="index.html" aria-current="true" data-folder="project"><small class="reading-meta">You are here</small><strong>PROJECT 100</strong></a>
-      <a class="menu__site" href="fit-protocol.html" data-folder="project"><small class="reading-meta">Switch to</small><strong>FIT PROTOCOL</strong></a>
-    </div>
-    <section class="menu__section section-tone--content">
-      <h3 class="reading-heading">PROJECT 100 pages</h3>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">PROJECT 100</p>
-        <ul class="menu__list"><li><a href="project-story.html" data-folder="project">The story</a></li><li><a href="project-goals.html" data-folder="project">Goals &amp; roadmap</a></li>
-        </ul>
-      </div>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">Workout</p>
-        <ul class="menu__list"><li><a href="fit-workout.html" data-folder="training">Training log</a></li><li><a class="" href="kinetics.html" data-folder="kinetics">Kinetics</a></li><li><a href="exercises.html" data-folder="exercises">Exercises</a></li>
-        </ul>
-      </div>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">Liquid Intake</p>
-        <ul class="menu__list"><li><a href="liquid-intake.html" data-folder="liquid">Liquid Intake</a></li>
-        </ul>
-      </div>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">Nutrition &amp; Meals</p>
-        <ul class="menu__list"><li><a href="fit-nutrition.html" data-folder="nutrition">Nutrition overview</a></li><li><a href="fit-meals.html" data-folder="nutrition">Meals &amp; recipes</a></li><li><a href="fit-nutrition-notes.html" data-folder="nutrition">Nutrition notes</a></li>
-        </ul>
-      </div>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">Gym Equipment</p>
-        <ul class="menu__list"><li><a href="gear-shop.html" data-folder="gear">Gear folders</a></li><li><a href="gear-gym.html" data-folder="gear">Gym walkthroughs</a></li><li><a href="gear-photos.html" data-folder="gear">Gym photo journal</a></li><li><a href="gear-rig.html" data-folder="gear">The rig</a></li><li><a href="gear-resistance.html" data-folder="gear">Resistance bands</a></li><li><a href="gear-grips.html" data-folder="gear">Grips &amp; handles</a></li><li><a href="gear-anchors.html" data-folder="gear">Straps &amp; anchors</a></li><li><a href="gear-recovery.html" data-folder="gear">Recovery tools</a></li><li><a href="gear-safety.html" aria-current="page" data-folder="gear">Hardware safety</a></li>
-        </ul>
-      </div>
-      <div class="menu__group">
-        <p class="menu__group-title reading-copy">Biometrics</p>
-        <ul class="menu__list"><li><a href="biometrics.html" data-folder="metrics">Biometrics</a></li>
-        </ul>
-      </div>
-    </section>
-    <section class="menu__section section-tone--reference">
-      <h3 class="reading-heading">Downloads</h3>
-      <div class="menu__links"><a class="menu__link" href="library.html" data-folder="library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg><span>Illustration downloads</span></a></div>
-    </section>
-    <section class="menu__section section-tone--content">
-      <h3 class="reading-heading">Links &amp; contact</h3>
-      <div class="menu__links">
-        <a class="menu__link" href="mailto:project100@gmail.com" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="14" rx="3" width="18" x="3" y="5"/><path d="m4 7 8 6 8-6"/></svg><span>Email<small class="reading-meta">project100@gmail.com</small></span></a>
-        <a class="menu__link" href="index.html" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14.5 3v5H19M9 12h7M9 16h7"/></svg><span>Project 100 Blueprint<small class="reading-meta">project100.fit</small></span></a>
-        <a class="menu__link" href="https://www.instagram.com/fudge_fit/" target="_blank" rel="noopener" title="Open the original Instagram post" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="18" rx="5" width="18" x="3" y="3"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg><span>Instagram<small class="reading-meta">instagram.com/fudge_fit</small></span></a>
-        <a class="menu__link" href="https://www.youtube.com/@FUDGE_fit" target="_blank" rel="noopener" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect height="13" rx="4" width="19" x="2.5" y="5.5"/><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"/></svg><span>YouTube<small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a>
-        <a class="menu__link" href="https://www.facebook.com/bogdan.dospi" target="_blank" rel="noopener" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"/></svg><span>Facebook<small class="reading-meta">facebook.com/bogdan.dospi</small></span></a>
-        <a class="menu__link" href="https://www.tiktok.com/@bogdan_dospi" target="_blank" rel="noopener" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"/><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"/></svg><span>TikTok<small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a>
-        <a class="menu__link" href="https://www.twitch.tv/cyberk1llaTTV" target="_blank" rel="noopener" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"/><path d="M13.5 7.5v5M9 7.5v5"/></svg><span>Twitch<small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a>
-        <a class="menu__link" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" target="_blank" rel="noopener" data-folder="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"/><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"/><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"/></svg><span>Gym playlist<small class="reading-meta">Spotify playlist</small></span></a>
-      </div>
-    </section>
-  </div>
+<div aria-label="Document libraries" class="dl-bar" data-dock-part="books" id="dlBar"><div class="dl-bar__inner"><button aria-controls="manualLibrary" aria-haspopup="dialog" class="page-dock__action manual-dock__button" data-manual-group="books" type="button"><span class="manual-dock__icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 5v15M12 5C9 2 4 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-2-1-7-2-10 1Z"></path></svg></span><span class="manual-dock__text"><strong>Books &amp; manuals</strong><small>Guidebook first · 4 editions</small></span><span aria-hidden="true" class="manual-dock__chevron">⌃</span></button><button aria-controls="manualLibrary" aria-haspopup="dialog" class="page-dock__action manual-dock__button" data-manual-group="training" type="button"><span class="manual-dock__icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M2 9v6m3-9v12m14-12v12m3-9v6M5 12h14"></path></svg></span><span class="manual-dock__text"><strong>Training &amp; tools</strong><small>Programmes · exercises · kitchen</small></span><span aria-hidden="true" class="manual-dock__chevron">⌃</span></button></div></div></div>
+<dialog aria-labelledby="menuTitle" class="menu" id="menu">
+<div class="menu__head">
+<h2 class="menu__title reading-heading" id="menuTitle">Menu</h2>
+<button aria-label="Close menu" class="icon-btn" data-menu-close="" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
+</div>
+<div class="menu__body">
+<div class="menu__sites">
+<a aria-current="true" class="menu__site" data-folder="project" href="index.html"><small class="reading-meta">You are here</small><strong>PROJECT 100</strong></a>
+<a class="menu__site" data-folder="project" href="fit-protocol.html"><small class="reading-meta">Switch to</small><strong>FIT PROTOCOL</strong></a>
+</div>
+<section class="menu__section section-tone--content">
+<h3 class="reading-heading">PROJECT 100 pages</h3>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">PROJECT 100</p>
+<ul class="menu__list"><li><a data-folder="project" href="project-story.html">The story</a></li><li><a data-folder="project" href="project-goals.html">Goals &amp; roadmap</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">Workout</p>
+<ul class="menu__list"><li><a data-folder="training" href="fit-workout.html">Training log</a></li><li><a class="" data-folder="kinetics" href="kinetics.html">Kinetics</a></li><li><a data-folder="exercises" href="exercises.html">Exercises</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">Liquid Intake</p>
+<ul class="menu__list"><li><a data-folder="liquid" href="liquid-intake.html">Liquid Intake</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">Nutrition &amp; Meals</p>
+<ul class="menu__list"><li><a data-folder="nutrition" href="fit-nutrition.html">Nutrition overview</a></li><li><a data-folder="nutrition" href="fit-meals.html">Meals &amp; recipes</a></li><li><a data-folder="nutrition" href="fit-nutrition-notes.html">Nutrition notes</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">Gym Equipment</p>
+<ul class="menu__list"><li><a data-folder="gear" href="gear-shop.html">Gear folders</a></li><li><a data-folder="gear" href="gear-gym.html">Gym walkthroughs</a></li><li><a data-folder="gear" href="gear-photos.html">Gym photo journal</a></li><li><a data-folder="gear" href="gear-rig.html">The rig</a></li><li><a data-folder="gear" href="gear-resistance.html">Resistance bands</a></li><li><a data-folder="gear" href="gear-grips.html">Grips &amp; handles</a></li><li><a data-folder="gear" href="gear-anchors.html">Straps &amp; anchors</a></li><li><a data-folder="gear" href="gear-recovery.html">Recovery tools</a></li><li><a aria-current="page" data-folder="gear" href="gear-safety.html">Hardware safety</a></li>
+</ul>
+</div>
+<div class="menu__group">
+<p class="menu__group-title reading-copy">Biometrics</p>
+<ul class="menu__list"><li><a data-folder="metrics" href="biometrics.html">Biometrics</a></li>
+</ul>
+</div>
+</section>
+<section class="menu__section section-tone--reference">
+<h3 class="reading-heading">Downloads</h3>
+<div class="menu__links"><a class="menu__link" data-folder="library" href="library.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg><span>Illustration downloads</span></a></div>
+</section>
+<section class="menu__section section-tone--content">
+<h3 class="reading-heading">Links &amp; contact</h3>
+<div class="menu__links">
+<a class="menu__link" data-folder="project" href="mailto:project100@gmail.com"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg><span>Email<small class="reading-meta">project100@gmail.com</small></span></a>
+<a class="menu__link" data-folder="project" href="index.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M14.5 3v5H19M9 12h7M9 16h7"></path></svg><span>Project 100 Blueprint<small class="reading-meta">project100.fit</small></span></a>
+<a class="menu__link" data-folder="project" href="https://www.instagram.com/fudge_fit/" rel="noopener" target="_blank" title="Open the original Instagram post"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg><span>Instagram<small class="reading-meta">instagram.com/fudge_fit</small></span></a>
+<a class="menu__link" data-folder="project" href="https://www.youtube.com/@FUDGE_fit" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="13" rx="4" width="19" x="2.5" y="5.5"></rect><path d="M10.5 9.2v5.6l5-2.8z" fill="currentColor" stroke="none"></path></svg><span>YouTube<small class="reading-meta">youtube.com/@FUDGE_fit</small></span></a>
+<a class="menu__link" data-folder="project" href="https://www.facebook.com/bogdan.dospi" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M14 8.5h-1.5A2 2 0 0 0 10.5 10.5V12H9v2.2h1.5V19h2.3v-4.8H15L15.3 12h-2.3v-1.2c0-.5.3-.8.9-.8H15V8.5z" fill="currentColor" stroke="none"></path></svg><span>Facebook<small class="reading-meta">facebook.com/bogdan.dospi</small></span></a>
+<a class="menu__link" data-folder="project" href="https://www.tiktok.com/@bogdan_dospi" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M13 3v11.3a3.4 3.4 0 1 1-3-3.37"></path><path d="M13 3c.4 2.6 2.3 4.5 5 4.8"></path></svg><span>TikTok<small class="reading-meta">tiktok.com/@bogdan_dospi</small></span></a>
+<a class="menu__link" data-folder="project" href="https://www.twitch.tv/cyberk1llaTTV" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 3 3.5 6.5v13H8V22l3-2.5h4L19.5 15V3H5z"></path><path d="M13.5 7.5v5M9 7.5v5"></path></svg><span>Twitch<small class="reading-meta">twitch.tv/cyberk1llaTTV</small></span></a>
+<a class="menu__link" data-folder="project" href="https://open.spotify.com/playlist/3wCd3zZraBuQn2HrvjZtF5" rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9.5"></circle><path d="M7 9.8c3.2-1 7-.7 9.8 1" stroke-linecap="round"></path><path d="M7.6 13c2.6-.8 5.6-.5 7.9.8" stroke-linecap="round"></path><path d="M8.2 16c2-.6 4.3-.4 6 .6" stroke-linecap="round"></path></svg><span>Gym playlist<small class="reading-meta">Spotify playlist</small></span></a>
+</div>
+</section>
+</div>
 </dialog>
-
-
-<script src="assets/js/site.js?v=0f5dbdf83ca0" defer></script>
-<script src="assets/js/item-purpose.js?v=a53a1173501e" defer></script>
-<script src="assets/js/hud.js?v=0361254bea34" defer></script>
-</body>
+<script defer="" src="assets/js/site.js?v=e1921cccf21f"></script>
+<script defer="" src="assets/js/item-purpose.js?v=a53a1173501e"></script>
+<script defer="" src="assets/js/hud.js?v=0361254bea34"></script>
+<dialog aria-labelledby="manual-library-title" class="manual-library" id="manualLibrary"><header class="manual-library__head"><div><span>PROJECT 100 / DOCUMENT LIBRARY</span><h2 data-manual-title="" id="manual-library-title">Books &amp; manuals</h2></div><button data-manual-close="" type="button">Close ×</button></header><div class="manual-library__tools"><nav aria-label="Document sections" class="manual-library__tabs" role="tablist"><button aria-selected="true" data-manual-tab="books" role="tab" type="button">Books &amp; manuals</button><button aria-selected="false" data-manual-tab="training" role="tab" type="button">Training &amp; tools</button></nav><label class="manual-library__search"><span>Find a document</span><input aria-label="Find a document" data-manual-search="" placeholder="Title or topic" type="search"/></label><nav aria-label="Document types" class="manual-library__filters" data-manual-filters="" hidden=""></nav><p aria-live="polite" data-manual-count="" role="status"></p></div><div class="manual-library__list" data-manual-list=""></div></dialog><dialog aria-label="Full-screen document reader" class="publication-window" id="publicationReader"><iframe src="about:blank" title="PROJECT 100 document reader"></iframe></dialog><script defer="" src="assets/js/manual-library.js?v=61e813e89bf3"></script><noscript class="manual-fallback"><nav aria-label="Current manual downloads"><a download="" href="/assets/downloads/project-100-guidebook-v3-7-2026-10-24.pdf">Guidebook V3.7</a> · <a download="" href="/assets/downloads/project-100-encyclopedia-v3-6-2026-10-24.pdf">Encyclopedia V3.6</a> · <a download="" href="/assets/downloads/project-100-technical-guidebook-t1-0-2026-10-24.pdf">Technical guidebook T1.0</a> · <a download="" href="/assets/downloads/project-100-technical-encyclopedia-t1-0-2026-10-24.pdf">Technical encyclopedia T1.0</a></nav></noscript></body>
 </html>

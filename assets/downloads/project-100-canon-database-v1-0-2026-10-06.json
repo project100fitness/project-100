@@ -1,23 +1,29 @@
 {
   "meta": {
     "name": "PROJECT 100 — Portable Canon Database",
-    "version": "2026-10-24",
-    "date": "2026-10-24",
+    "version": "2026-10-25",
+    "date": "2026-10-25",
     "owner": "Bogdan",
     "matches_book_versions": [
-      "Encyclopedia V3.5",
-      "Guidebook V3.6"
+      "Encyclopedia V3.6",
+      "Guidebook V3.7"
     ],
     "authority": "Physical tub labels read from his Drive photos = ground truth. Overrides retail listings and prior assumptions.",
     "purpose": "Self-contained export Bogdan can paste/upload into other AI chats for separate research. No dependency on the book rebuilds.",
     "disclaimer": "Label-and-protocol record, not medical advice. Supplement decisions involving heart, hormones, liver, kidneys, sleep, or prescription meds should be confirmed with his clinician.",
-    "carryover_scope": "Other formula and audit notes are carried dated records, not a new independent label or medical-safety validation."
+    "carryover_scope": "Other formula and audit notes are carried dated records, not a new independent label or medical-safety validation.",
+    "current_publication_alignment": {
+      "guidebook": "V3.7",
+      "encyclopedia": "V3.6",
+      "technical_line": "T1.0",
+      "integrated": "2026-10-25"
+    }
   },
   "ground_truth_rules": [
     "His physical product panels override retail listings and AI/document assumptions.",
     "DMAE + huperzine-A are FORMULA-NATIVE ONLY, never standalone pills. Igniter (V1): 500mg DMAE bitartrate + 200mcg Huperzine-A. Pump (V6): 50mcg Huperzine-A. The old 'absolute zero / not in my protocol on any day' claim is dead.",
-    "V1⊕V6 = 1: the two pre-workout vectors never run on the same calendar day.",
-    "Biotin: disclose 425mcg/day; assay-specific guidance; NO universal 72-hour washout.",
+    "At most one of V1 and V6 on a training day; both inactive on rest days.",
+    "Biotin: disclose 300mcg/day; assay-specific guidance; NO universal 72-hour washout.",
     "S016 is excluded entirely — not his protocol, never was.",
     "Reconciliation-doc-only items are unverified until he confirms them.",
     "Every vector/recipe/pill grid lists item counts + doses + usage benefits.",
@@ -234,7 +240,7 @@
           "use": "Keeps 1.5g daily rhythm without training"
         },
         {
-          "item": "Promise Marine Collagen",
+          "item": "Promise Bovine Collagen",
           "dose": "10g",
           "use": "Connective-tissue supply on recovery day"
         },
@@ -417,11 +423,16 @@
       ]
     },
     "lunch_grid_dmz_1200": {
-      "rule": "Training days only (10 capsules)",
+      "rule": "Training days: 9 regular units + 1 conditional Liver-GI capsule, including 1 meal enzyme (10 when the conditional item is used); rest days: meal enzyme only",
       "items": [
         {
+          "item": "Digestive Enzymes Ultra",
+          "dose": "1 capsule with lunch",
+          "use": "Included in the lunch-grid total"
+        },
+        {
           "item": "PureGenomics multivitamin",
-          "dose": "Per label; biotin 425mcg disclosed",
+          "dose": "Per label; biotin 300mcg disclosed",
           "use": "Methylation-cycle micronutrients; biotin disclose-and-assay-specific rule"
         },
         {
@@ -447,12 +458,22 @@
       ]
     },
     "afternoon_grid_1530": {
-      "rule": "Training days only (5 capsules); copper paused",
+      "rule": "Training days: 6 capsules including the meal enzyme; on rest days the enzyme alone stays with the meal; copper paused",
       "items": [
         {
-          "item": "Beef liver capsules + Ligament Restore (Pure Encapsulations)",
-          "dose": "5 capsules total",
-          "use": "Nutrient matrix (B12, vitamin A, heme iron in food form) + connective-tissue building blocks"
+          "item": "Digestive Enzymes Ultra",
+          "dose": "1 capsule with Meal 3",
+          "use": "Meal enzyme; included in the six-capsule training-day total"
+        },
+        {
+          "item": "Higher Healths Beef Liver",
+          "dose": "3 capsules / 1.5 g powder",
+          "use": "Recorded liver nutrient matrix"
+        },
+        {
+          "item": "Pure Encapsulations Ligament Restore",
+          "dose": "2 capsules",
+          "use": "Recorded connective-tissue support formula"
         }
       ]
     },
@@ -531,8 +552,8 @@
     "V6_day": "5000mg (2.5g native in Pump + 2.5g standalone NOW Sports)"
   },
   "collagen_convention": {
-    "marine_AM": "Promise Pure Marine Collagen, 10g, in V3 (and V5)",
-    "bovine_PM": "Preferred Nutrition bovine collagen, 10g, in V10 night slot",
+    "marine_AM": "Promise Pure Marine Collagen, 1 scoop about 10 g, in V3",
+    "bovine_PM": "Bovine collagen, 1 scoop about 10 g, in V5 on rest afternoons and V10 at night",
     "bone_broth": "beef bone broth sometimes in the fudge (nutritional-guide territory)"
   },
   "enzyme_convention": {
@@ -541,7 +562,7 @@
     "reason": "post-cholecystectomy (no gallbladder) — bile trickles continuously; lipase coverage must match the MEAL (60-90g fat sittings), not just the day",
     "top_improvement": "assign the 2 addon enzymes deliberately to the biggest fat meals"
   },
-  "biotin_rule": "Disclose 425mcg/day (PureGenomics multi). Assay-specific interpretation guidance. NO universal 72-hour washout.",
+  "biotin_rule": "Disclose 300mcg/day (PureGenomics multi). Assay-specific interpretation guidance. NO universal 72-hour washout.",
   "exclusions": [
     "S016 Endurance Pill — excluded entirely; not his protocol (came only from a reconciliation doc)",
     "Standalone DMAE / standalone huperzine-A — never bought or added; formula-native only",
@@ -642,7 +663,7 @@
     "dated_corridor_reference": "90-93 lb and 92-97 lb were dated projection corridors, not validated physiological limits; 100 lb remains a stretch target."
   },
   "unsourced_or_approximate": [
-    "Afternoon grid: Higher Healths Beef Liver 3 capsules / 1.5 g plus Ligament Restore 2 capsules, total 5; training days only, skipped on rest days.",
+    "Afternoon grid: Higher Healths Beef Liver 3 capsules / 1.5 g plus Ligament Restore 2 capsules, plus 1 meal enzyme = 6; training-day liver/ligament items are skipped on rest days, while the enzyme remains with the meal.",
     "ALLMAX MuscleEAA Xtreme full panel: cards give 10g EAA / 5.3g BCAA (+ 2g glutamine, 1g carnitine, 200mg Alpha-GPC on the Cherry Limeade V6 card); full supplement-facts panel was not photo-read.",
     "Medi-C Plus half-scoop in V10/night: recorded 'where used' — night-stage context, not a locked daily dose.",
     "Calcium capsule removed in the 24 October editions; older product records are historical only.",

@@ -31,9 +31,9 @@ with sync_playwright() as p:
             button=page.locator('[data-kin-programme="focused"] .kin-programme-guide')
             assert button.get_attribute("data-kd-open")=="focused"
             button.click()
-            page.locator("#kinDownloadModal[open]").wait_for()
-            assert page.locator('[data-kd-doc="focused"]').get_attribute("aria-pressed")=="true"
-            page.locator("[data-kd-close]").click()
+            page.locator("#manualLibrary[open]").wait_for()
+            assert page.locator('[data-manual-document="training-focused"]').count()==1
+            page.locator("[data-manual-close]").click()
             if engine.name=="chromium":
                 page.locator(".kin-display").screenshot(path=str(out/f"kinetics-framing-{width}.png"))
                 page.locator(".kin-local-nav").screenshot(path=str(out/f"kinetics-guide-entry-{width}.png"))

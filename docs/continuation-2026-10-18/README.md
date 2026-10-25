@@ -69,7 +69,7 @@ uncommitted changes were not reset, staged or overwritten.
 No physical Android Chrome or iPhone Safari was available. No Firefox/WebKit
 rerun, new video analysis, image generation, verified recorded-set count, full PC
 backup or comprehensive online-book table rewrite is claimed. Existing supplied
-Guidebook V3.4 and Encyclopedia V3.3 integration remains intact. Static ZIP PDFs
+Guidebook V3.7 and Encyclopedia V3.6 integration remains intact. Static ZIP PDFs
 are blank; website PDF export includes the browser's saved notes. Long note
 values remain editable PDF fields; printed field appearances have limited space.
 
