@@ -24,7 +24,7 @@ At most one of V1 and V6 runs on a training day. These are recorded branches, no
 The calcium capsule is removed, Zinc Supreme is removed and separate copper is paused.
 
 ## Separate ledgers and measures
-Standalone creatine HCl is 750 mg twice daily, 1,500 mg total. Formula-native monohydrate in V6 is recorded separately as 1,000 mg; the forms are not summed into one gram total. Marine collagen belongs to V3; bovine collagen is recorded in V5 and V10. Weighed powder amounts remain weighed amounts.
+Standalone creatine HCl is 750 mg twice daily, 1,500 mg total. Formula-native monohydrate in V6 is recorded separately as 1,000 mg; the forms are not summed into one gram total. Marine collagen belongs to V3; bovine collagen is recorded in V10. V5 collagen is 1 scoop, about 10 g, with the type unresolved across the current sources. Weighed powder amounts remain weighed amounts.
 Biotin disclosure from the multi is 300 mcg on applicable days. Laboratory guidance is assay-specific; there is no universal washout instruction here. Harvested meal cups are 240 mL / 8 fl oz; CREAMi uses a separate 250 mL metric cup. Tablespoons are 15 mL and teaspoons 5 mL.
 
 ## Measurement status
