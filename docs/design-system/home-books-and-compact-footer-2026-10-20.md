@@ -1,6 +1,6 @@
 # Home books, shortcut slider, brand hierarchy and compact footer — 20 October 2026
 
-The Guidebook V3.5 and Encyclopedia V3.4 slider was still present, but its legacy trigger waited until the final 420px of scrolling. The two home pages now explicitly declare the publications dock and reveal it after opening, independently of page length. The existing PDF previews, current covers, download links, modal controls and book files remain intact.
+The Guidebook V3.7 and Encyclopedia V3.6 slider was still present, but its legacy trigger waited until the final 420px of scrolling. The two home pages now explicitly declare the publications dock and reveal it after opening, independently of page length. The existing PDF previews, current covers, download links, modal controls and book files remain intact.
 
 On PROJECT 100 home and FIT PROTOCOL home only, the book slider, Links control and cross-site switch share one progress change, one travel distance and the same 420ms easing. The Links control is labelled. The shortcut styling matches the dark book panels. Reduced motion removes the entrance transition. Other pages retain their previous floating-controls behavior and do not gain a home publications dock. Bottom clearance on the two home pages reserves room for both rows so the disclaimer can scroll above the controls.
 

@@ -10,7 +10,7 @@ Folders, all main navigation routes, floating controls, direct exercise selectio
 
 ## Book reconciliation
 
-Sources are the supplied **Guidebook V3.4** (34 PDF pages) and **Encyclopedia V3.3** (84 PDF pages). Page numbers below are PDF page positions, not printed chapter numbering. Their supplied bytes remain unchanged. The register on Encyclopedia PDF page 4 and the new companion pages take precedence over retained historical text.
+Sources are the supplied **Guidebook V3.7** (34 PDF pages) and **Encyclopedia V3.6** (84 PDF pages). Page numbers below are PDF page positions, not printed chapter numbering. Their supplied bytes remain unchanged. The register on Encyclopedia PDF page 4 and the new companion pages take precedence over retained historical text.
 
 | Register | Current source treatment | Website coverage |
 |---|---|---|

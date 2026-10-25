@@ -16,7 +16,7 @@ class Source(HTMLParser):
 for filename in ('kinetics.html','exercises.html'):
     t=(root/filename).read_text(encoding='utf8');s=Source();s.feed(t)
     assert len(s.ids)==len(set(s.ids)),filename
-    assert len(s.docs)==47 and len({d['data-kd-doc'] for d in s.docs})==47
+    assert len(s.docs)==46 and len({d['data-kd-doc'] for d in s.docs})==46
     log=next(d for d in s.docs if d['data-kd-doc']=='weekly-log')
     assert log['data-kd-preview'].endswith('/weekly-overview.html')
     assert log['data-kd-pdf'].endswith('/weekly-overview.pdf')

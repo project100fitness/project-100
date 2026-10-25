@@ -40,13 +40,15 @@ for name,source in pages.items():
             assert url.query=='v='+digest,(name,ref,digest)
 
 manifest=json.loads((ROOT/'assets/downloads/current-publications.json').read_text(encoding='utf8'))
-assert {b['kind']:b['version'] for b in manifest['publications']}=={'guidebook':'3.6','encyclopedia':'3.5'}
+assert {b['kind']:b['version'] for b in manifest['publications']}=={'guidebook':'3.7','encyclopedia':'3.6','technical-guidebook':'T1.0','technical-encyclopedia':'T1.0'}
 for book in manifest['publications']:
     target=ROOT/book['path'];data=target.read_bytes();file=target.name
     assert len(data)==book['bytes'] and hashlib.sha256(data).hexdigest()==book['sha256'],file
     assert len(PdfReader(target,strict=True).pages)==book['pages'],file
+    library=json.loads((ROOT/'assets/data/manual-library.json').read_text(encoding='utf8'))
+    assert any(d.get('file')==book['path'] and d.get('pages')==book['pages'] for d in library['documents']),file
     for name in ['index.html','fit-protocol.html','exercises.html','guidebook.html']:
-        assert file in pages[name],(name,file)
+        assert 'id="manualLibrary"' in pages[name] and 'manual-library.js' in pages[name],name
     for name,source in pages.items():
         for number in re.findall(re.escape(file)+r'#page=(\d+)',source):
             assert 1<=int(number)<=book['pages'],(name,file,number)

@@ -1,24 +1,46 @@
 {
   "editionDate": "2026-10-24",
-  "integratedDate": "2026-10-24",
+  "integratedDate": "2026-10-25",
   "publications": [
     {
       "kind": "guidebook",
-      "version": "3.6",
-      "pages": 45,
-      "bytes": 9153141,
-      "sha256": "7fa3b47ac02bda1c049e4a09d2f0aa79faec6ba721576989d1ea8083e8ee693d",
+      "version": "3.7",
+      "pages": 43,
+      "bytes": 9844113,
+      "sha256": "54e902ec66eb049c4788cd09b0d6d745ebc238d8378f6bcceb6d280eb700d8e6",
       "date": "2026-10-24",
-      "path": "assets/downloads/project-100-guidebook-v3-6-2026-10-24.pdf"
+      "path": "assets/downloads/project-100-guidebook-v3-7-2026-10-24.pdf",
+      "cover": "assets/web/manuals/guide.webp"
     },
     {
       "kind": "encyclopedia",
-      "version": "3.5",
-      "pages": 121,
-      "bytes": 41406800,
-      "sha256": "fe6534ce49792748a8b82e0c7d12edf3f39121dffe2f57e4571be3f43b60e611",
+      "version": "3.6",
+      "pages": 120,
+      "bytes": 42141711,
+      "sha256": "c93f99cb32ae99e5a3a0a074a05b5b920ea5fd6dc8f21cd6bcbd844fcddc97c6",
       "date": "2026-10-24",
-      "path": "assets/downloads/project-100-encyclopedia-v3-5-2026-10-24.pdf"
+      "path": "assets/downloads/project-100-encyclopedia-v3-6-2026-10-24.pdf",
+      "cover": "assets/web/manuals/enc.webp"
+    },
+    {
+      "kind": "technical-guidebook",
+      "version": "T1.0",
+      "pages": 16,
+      "bytes": 1745141,
+      "sha256": "f3cff9c73f439b4a9fc7287cf5013401cfe4afc068f6baa2023f3c5eb91d5294",
+      "date": "2026-10-24",
+      "path": "assets/downloads/project-100-technical-guidebook-t1-0-2026-10-24.pdf",
+      "cover": "assets/web/manuals/technical-guide.webp"
+    },
+    {
+      "kind": "technical-encyclopedia",
+      "version": "T1.0",
+      "pages": 20,
+      "bytes": 2890812,
+      "sha256": "d2b6d1bb43e05601f61245b2eb7b122965048bbc8006c2bd6592401110906878",
+      "date": "2026-10-24",
+      "path": "assets/downloads/project-100-technical-encyclopedia-t1-0-2026-10-24.pdf",
+      "cover": "assets/web/manuals/technical-enc.webp"
     }
   ]
 }

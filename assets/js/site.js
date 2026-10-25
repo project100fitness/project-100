@@ -749,29 +749,6 @@
 })();
 
 /* ===== 36-downloads.js ===== */
-/* Each publication owns a full-screen PDF reader and an independent history layer. */
-(function () {
-  'use strict';
-  var P=window.P100,dialog,frame,current='guide',page=1,opener;
-  function load(){frame.contentWindow.location.replace('book-reader.html?book='+current+'&page='+page+'&embedded=1');}
-  function build(){
-    if(dialog)return;
-    dialog=document.createElement('dialog');dialog.className='publication-window';dialog.setAttribute('aria-label','Full-screen book reader');
-    dialog.innerHTML='<iframe title="PROJECT 100 PDF reader" src="about:blank"></iframe>';document.body.appendChild(dialog);frame=dialog.querySelector('iframe');
-    dialog.addEventListener('close',function(){if(opener&&opener.isConnected)opener.focus({preventScroll:true});});
-    window.addEventListener('message',function(e){if(e.origin!==location.origin||e.source!==frame.contentWindow||e.data?.source!=='p100-publication')return;if(e.data.type==='close'&&dialog.open)P.closeTopLayer();if(e.data.type==='page')page=Math.max(1,Number(e.data.page)||1);});
-  }
-  P.openPublication=function(kind,from){
-    if(kind!=='enc'&&kind!=='guide')return;
-    build();current=kind;page=1;opener=from||document.activeElement;load();P.openDialog(dialog,load);
-  };
-  document.addEventListener('click',function(e){
-    var link=e.target.closest('a[href]');if(!link||link.hasAttribute('download')||e.button||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-    var path=new URL(link.href,location.href).pathname,kind=/project-100-encyclopedia-v[^/]+\.pdf$/i.test(path)?'enc':/project-100-guidebook-v[^/]+\.pdf$/i.test(path)?'guide':null;
-    if(kind){e.preventDefault();e.stopImmediatePropagation();P.openPublication(kind,link);}
-  },true);
-})();
-
 /* Books, Links and space shortcuts appear together only near the end of a page. */
 (function () {
   'use strict';
@@ -813,6 +790,7 @@
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(check); } }
   function open(from) {
     last = from || null;
+    if (P.openManualLibrary) { P.openManualLibrary('books',from); return; }
     var book = from && from.getAttribute('data-dl-doc');
     if ((book === 'enc' || book === 'guide') && P.openPublication) { P.openPublication(book,from); return; }
     var panel = P.$('#fabPanel'), at = P.$('#fabAt');
@@ -827,9 +805,9 @@
     if (last && document.contains(last) && last.offsetParent !== null) { try { last.focus(); } catch (e) { /* ignore */ } }
   }
   document.addEventListener('click', function (e) {
-    if (!dlg) return;
     var o = e.target.closest('[data-dl-open]');
     if (o) { e.preventDefault(); open(o); return; }
+    if (!dlg) return;
     if (e.target.closest('[data-dl-close]')) { e.preventDefault(); close(); return; }
     if (e.target === dlg) close();                                   /* tap on the dimmed backdrop */
     else if (dlg.open && e.target.closest('a[download]')) setTimeout(close, 400);

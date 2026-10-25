@@ -30,7 +30,7 @@ The print-selection owner wraps library tiles after their first four-item visibi
 
 The existing dock owner now caps width at 720px, uses smaller action/cover dimensions, reserves clearance for both rows once, and allows titles/descriptions to wrap rather than truncate. The original publications and viewer behavior remain unchanged:
 
-- Encyclopedia V3.4: training, nutrition and evidence.
-- Daily guidebook V3.5: routines, recipes and timing.
+- Encyclopedia V3.6: training, nutrition and evidence.
+- Daily guidebook V3.7: routines, recipes and timing.
 
 Each shows its version and an Open PDF action with an outward arrow. The PDFs remain unchanged. Kinetics' guide/planner and detailed-analysis links are accented two-column action tiles. Full technique and further-study links use matching compact borders and accents at their existing CSS owners; ordinary prose citations remain prose links.

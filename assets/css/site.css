@@ -2737,7 +2737,7 @@ h2.vec-record__title { font-size: var(--step--1); }
 /* One aligned end-of-page component: matching columns, shapes and entrance. */
 .has-dlbar { padding-bottom:var(--page-dock-clearance); }
 [data-bottom-controls] { --page-dock-clearance:calc(var(--page-dock-height,108px) + 16px + env(safe-area-inset-bottom,0px)); padding-bottom:var(--page-dock-clearance); --home-dock-duration:.42s; --home-dock-ease:cubic-bezier(.22,.8,.25,1); }
-.page-dock { position:fixed;z-index:45;bottom:calc(.6rem + env(safe-area-inset-bottom,0px));left:50%;width:min(calc(100% - 24px),960px);display:grid;grid-template-columns:52px minmax(0,1fr) 68px;align-items:stretch;gap:6px;transform:translate(-50%,calc((1 - var(--dl-p,0)) * (100% + 1.5rem)));opacity:var(--dl-p,0);visibility:hidden;transition:transform var(--home-dock-duration) var(--home-dock-ease),opacity var(--home-dock-duration) var(--home-dock-ease);}
+.page-dock { position:fixed;z-index:45;bottom:calc(.6rem + env(safe-area-inset-bottom,0px));left:50%;width:min(calc(100% - 24px),960px);display:grid;grid-template-columns:52px minmax(0,1fr);align-items:stretch;gap:6px;transform:translate(-50%,calc((1 - var(--dl-p,0)) * (100% + 1.5rem)));opacity:var(--dl-p,0);visibility:hidden;transition:transform var(--home-dock-duration) var(--home-dock-ease),opacity var(--home-dock-duration) var(--home-dock-ease);}
 [data-bottom-visible] .page-dock {visibility:visible}
 .page-dock .fab-dock{grid-column:1;grid-row:1;min-width:0}
 .page-dock .fab-switch{grid-column:3;grid-row:1}
@@ -2758,7 +2758,7 @@ h2.vec-record__title { font-size: var(--step--1); }
 .dl-bar__txt strong{font-size:clamp(10px,1.6vw,14px);font-weight:800;white-space:normal}
 .dl-bar__txt small{font-size:10px;font-weight:450;color:var(--muted)}
 .dl-bar__open{color:var(--accent-strong);font-size:10px;line-height:1.2;font-weight:750}
-@media(max-width:559px){.page-dock{grid-template-columns:44px minmax(0,1fr) 48px;gap:4px}.dl-bar__inner{gap:4px}.page-dock .page-dock__action{padding:4px;gap:4px}.page-dock .fab-switch{font-size:9px}.dl-bar__cover{width:18px;height:27px}.dl-bar__txt small{display:none}.dl-bar__txt strong{font-size:10px}.dl-bar__open{font-size:9px}}
+@media(max-width:559px){.page-dock{grid-template-columns:44px minmax(0,1fr);gap:4px}.dl-bar__inner{gap:4px}.page-dock .page-dock__action{padding:4px;gap:4px}.page-dock .fab-switch{font-size:9px}.dl-bar__cover{width:18px;height:27px}.dl-bar__txt small{display:none}.dl-bar__txt strong{font-size:10px}.dl-bar__open{font-size:9px}}
 
 /* ===== 90-update9: business-card tones ===== */
 /* header: orange line with an amber hairline under it, like the stripes on the card */

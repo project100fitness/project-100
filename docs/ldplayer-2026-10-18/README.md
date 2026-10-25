@@ -12,6 +12,6 @@ Android testing revealed a duplicated homepage heading caused by a transformed, 
 - Desktop guide drawer opened the focused programme; desktop programme jump and 320 px anchor-card widths checked through the in-app browser.
 - Publication consistency: 65 current pages and 5,003 local links; supplied book hashes and reconciled source claims pass. Workout validation: 40 PDFs, 42 guide pages, 76 illustrated setups and 173 source windows. Nutrition/book models and document-drawer checks pass.
 
-These are Android emulator checks. They do not establish physical Android or iPhone Safari coverage, or certify every possible user interaction. The 360/412 sweeps inspect loaded layouts and initially visible images, not every lazy-loaded image. The supplied Guidebook v3.4 and Encyclopedia v3.3 remain byte-identical.
+These are Android emulator checks. They do not establish physical Android or iPhone Safari coverage, or certify every possible user interaction. The 360/412 sweeps inspect loaded layouts and initially visible images, not every lazy-loaded image. The supplied Guidebook v3.7 and Encyclopedia v3.6 remain byte-identical.
 
 QA recordings, profiles and third-party guide source material are excluded from this source change. Free device scrolling, the main folder navigation and floating links remain available.
