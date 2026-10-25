@@ -134,7 +134,7 @@ with sync_playwright() as p:
                 page.locator('[data-kd-open="focused"]').first.click()
                 page.locator("#manualLibrary[open]").wait_for()
                 page.locator('[data-manual-filter="techniques"]').click()
-                assert page.locator('.manual-card').count()==40
+                assert page.locator('.manual-card').count()==1
                 page.locator("[data-manual-close]").click()
                 page.locator("#manualLibrary").wait_for(state="hidden")
             if path=="index.html":

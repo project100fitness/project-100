@@ -5,7 +5,7 @@ function closeReader(){if(parent!==window)notify('close');else if(history.length
 $('#closeReader').onclick=closeReader;document.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();closeReader()}});
 try{
  let catalog;try{if(parent!==window&&parent.P100Manuals)catalog=await parent.P100Manuals.catalog()}catch(_){}
- catalog||=await fetch('assets/data/manual-library.json?v=d3f4f54c6ffb').then(r=>{if(!r.ok)throw Error('Document list unavailable');return r.json()});
+ catalog||=await fetch('assets/data/manual-library.json?v=7e630d966793').then(r=>{if(!r.ok)throw Error('Document list unavailable');return r.json()});
  const doc=catalog.documents.find(x=>x.id===key)||catalog.documents.find(x=>x.id==='guide');
  if(doc.type!=='pdf')throw Error('This item is a source download');
  document.title=doc.title+' · PROJECT 100';$('#readerTitle').textContent=doc.title+(doc.version?' · '+(doc.version.startsWith('T')?doc.version:'V'+doc.version):'');

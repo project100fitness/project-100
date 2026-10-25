@@ -2738,6 +2738,7 @@ h2.vec-record__title { font-size: var(--step--1); }
 .has-dlbar { padding-bottom:var(--page-dock-clearance); }
 [data-bottom-controls] { --page-dock-clearance:calc(var(--page-dock-height,108px) + 16px + env(safe-area-inset-bottom,0px)); padding-bottom:var(--page-dock-clearance); --home-dock-duration:.42s; --home-dock-ease:cubic-bezier(.22,.8,.25,1); }
 .page-dock { position:fixed;z-index:45;bottom:calc(.6rem + env(safe-area-inset-bottom,0px));left:50%;width:min(calc(100% - 24px),960px);display:grid;grid-template-columns:52px minmax(0,1fr);align-items:stretch;gap:6px;transform:translate(-50%,calc((1 - var(--dl-p,0)) * (100% + 1.5rem)));opacity:var(--dl-p,0);visibility:hidden;transition:transform var(--home-dock-duration) var(--home-dock-ease),opacity var(--home-dock-duration) var(--home-dock-ease);}
+.page-dock[data-dock-layout="links"]{left:12px;width:52px;grid-template-columns:minmax(0,1fr);transform:translateY(calc((1 - var(--dl-p,0)) * (100% + 1.5rem)))}
 [data-bottom-visible] .page-dock {visibility:visible}
 .page-dock .fab-dock{grid-column:1;grid-row:1;min-width:0}
 .page-dock .fab-switch{grid-column:3;grid-row:1}
