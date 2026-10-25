@@ -17,7 +17,8 @@
       "encyclopedia": "V3.6",
       "technical_line": "T1.0",
       "integrated": "2026-10-25"
-    }
+    },
+    "publication_alignment": "Guidebook V3.7; Encyclopedia V3.6; both T1.0 technical manuals, reviewed 25 October 2026"
   },
   "ground_truth_rules": [
     "His physical product panels override retail listings and AI/document assumptions.",
@@ -240,9 +241,9 @@
           "use": "Keeps 1.5g daily rhythm without training"
         },
         {
-          "item": "Promise Bovine Collagen",
-          "dose": "10g",
-          "use": "Connective-tissue supply on recovery day"
+          "item": "Collagen — type unresolved",
+          "dose": "1 scoop, about 10 g",
+          "use": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
         },
         {
           "item": "Liquid L-Carnitine",
@@ -259,7 +260,8 @@
           "dose": "1/16 tsp",
           "use": "Daytime sodium only; night stays sodium-free"
         }
-      ]
+      ],
+      "source_conflict": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
     },
     "V6_Pump": {
       "state": "C only",
@@ -436,7 +438,7 @@
           "use": "Methylation-cycle micronutrients; biotin disclose-and-assay-specific rule"
         },
         {
-          "item": "Omega 800 (Pure Encapsulations)",
+          "item": "Omega 800 (California Gold Nutrition)",
           "dose": "EPA 480mg / DHA 320mg",
           "use": "Membrane and lipid-mediator substrate"
         },
@@ -517,7 +519,7 @@
     "rule": "V1 and V6 never run on the same calendar day. The firewall is quantitative.",
     "forbidden_same_day_hypothetical": {
       "citicoline": "250mg (unchanged)",
-      "alpha_GPC_inside_formulas": "500mg (300 Pump + 200 MuscleEAA)",
+      "alpha_GPC_inside_formulas": "700 mg if both full V1 and V6 mixes were combined: 300 mg Pump + two 200 mg MuscleEAA servings; forbidden hypothetical, not a scheduled intake",
       "taurine": "7-9g",
       "betaine": "5000mg",
       "citrulline": "21-24g"
@@ -553,8 +555,9 @@
   },
   "collagen_convention": {
     "marine_AM": "Promise Pure Marine Collagen, 1 scoop about 10 g, in V3",
-    "bovine_PM": "Bovine collagen, 1 scoop about 10 g, in V5 on rest afternoons and V10 at night",
-    "bone_broth": "beef bone broth sometimes in the fudge (nutritional-guide territory)"
+    "bovine_PM": "Bovine collagen, 1 scoop about 10 g, in V10. V5 type remains unresolved across the four current sources.",
+    "bone_broth": "beef bone broth sometimes in the fudge (nutritional-guide territory)",
+    "V5_source_conflict": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
   },
   "enzyme_convention": {
     "baseline": "Pure Encapsulations Digestive Enzymes Ultra, 1 cap in EVERY daily stage pill stack",
@@ -671,5 +674,8 @@
     "DMAE base conversion: 500mg DMAE bitartrate ~= 185mg DMAE base (standard ~37% conversion) — marked approximate.",
     "Tea caffeine 40-70mg and theobromine ~100mg (cocoa): estimates carried from the audit.",
     "Vega Sport, C4 Sport, KetoCuts formulas: retail-derived, NOT his-tub verified — flagged for verification."
-  ]
+  ],
+  "source_conflicts": {
+    "v5_collagen": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
+  }
 }

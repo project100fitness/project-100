@@ -75,9 +75,9 @@
     "Owner confirmed the benchmark scan date as 2 December 2025 on 10 October 2026; measurement values and planned review window are unchanged."
   ],
   "publication_review": {
-    "date": "2026-10-24",
-    "guidebook": "3.6",
-    "encyclopedia": "3.5",
+    "date": "2026-10-25",
+    "guidebook": "3.7",
+    "encyclopedia": "3.6",
     "august_body_fat_reading": {
       "percent": 13.6,
       "status": "Unverified; not a confirmed milestone"
@@ -87,6 +87,9 @@
     "goal_gap_percent": 13.4,
     "calcium_capsule": "removed",
     "tart_cherry": "Inno Nutrition 10000; label dose, not retired Organika dose",
-    "creatine_forms": "Standalone HCl 1,500 mg/day; formula-native monohydrate 1,000 mg on State C counted separately"
+    "creatine_forms": "Standalone HCl 1,500 mg/day; formula-native monohydrate 1,000 mg on State C counted separately",
+    "technical_guidebook": "T1.0",
+    "technical_encyclopedia": "T1.0",
+    "v5_collagen_status": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
   }
 }

@@ -32,3 +32,6 @@ The dated benchmark is 2 December 2025: 197.1 lb body weight, 88.2 lb SMM and 22
 
 ## Scope
 The manuals retain unresolved label, measurement and clinical questions. This brief does not independently validate efficacy, diagnoses, interactions or safety. The full structured record is in project100_canon_database.json, alongside the current supplied PDFs.
+
+
+V5 source difference: V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction.
