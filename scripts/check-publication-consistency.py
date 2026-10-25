@@ -126,3 +126,17 @@ for file in ['assets/media/gym-field/bands-session-004-mobile.mp4','assets/media
     assert at>=0 and data[at+5]==66,('Expected baseline H.264 compatibility copy',file)
 assert 'function fitBackground()' in media
 print('PASS: three baseline H.264 mobile clips and proportional background sizing.')
+
+# Current four-book reconciliation: removed products must not survive in duplicate panels.
+assert metrics['publication_review']['guidebook']=='3.7'
+assert metrics['publication_review']['encyclopedia']=='3.6'
+for name,source in pages.items():
+    parsed=Text();parsed.feed(source);visible=' '.join(parsed.parts)
+    assert not re.search(r'tart cherry.{0,16}500\s*mg',visible,re.I),(name,'retired tart-cherry dose')
+    assert 'CanPrev calcium</span>' not in source,(name,'removed calcium ingredient')
+    assert 'FIT PROTOCOL · V3.2' not in visible,(name,'stale protocol edition label')
+for name in ['guidebook.html','liquid-intake.html','fit-protocol-vectors.html','fit-protocol-vector-v5.html']:
+    assert 'data-source-conflict="v5-collagen"' in pages[name],name
+assert '341 mg is below' in pages['fit-protocol-dose.html']
+assert '300 mcg PureGenomics + 125 mcg MuscleEAA = 425 mcg' in pages['fit-protocol-dose.html']
+print('PASS: four-book versions, removed calcium/cherry rows, biotin attribution, magnesium arithmetic and unresolved V5 source difference.')

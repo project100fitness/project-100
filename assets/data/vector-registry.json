@@ -1,8 +1,10 @@
 {
-  "version": "2026-10-05-v6",
+  "version": "2026-10-25-four-book-reconciled",
   "sources": [
-    "Unified Master Vector Directory (V1–V10) october 2026.pdf",
-    "VECTOR 6 (V6) RATIFICATION & ARCHITECTURAL LOCK.pdf"
+    "Guidebook V3.7, 24 October 2026",
+    "Encyclopedia V3.6, 24 October 2026",
+    "Technical Guidebook T1.0, 24 October 2026",
+    "Technical Encyclopedia T1.0, 24 October 2026"
   ],
   "policy": "Latest sources govern numbering and branches. Existing V1–V5/V10 ingredient records retained. No physiological guarantees adopted. V7–V9 are not supplied and are not invented.",
   "vectors": [
@@ -19,7 +21,7 @@
         "Citrulline Malate 2:1 (4-6 g)",
         "Pure Taurine Powder (2-3 g). Citicoline 250 mg capsule taken separately."
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>About 373 mg total caffeine, 10.67-12 g active citrulline base, 3.2 g beta-alanine, 2 g PeakO2 mushrooms, 2.5 g betaine. Spaced about 2 hours post- breakfast tea.</dd><dt>Stack interaction</dt><dd>IGNITER about 373 mg caffeine + TeaCrine (theacrine half-life 16-20 h) + Dynamine + theobromine + Earl Grey 40-70 mg — Exposure regularly crosses the 400 mg/day guidance; sleep is the limiting organ.</dd><dt>Margin</dt><dd>IGNITER about 373 mg caffeine before tea; with tea about 413–443 mg versus Health Canada 400 mg/day guidance.</dd><dt>Monitor</dt><dd>Sleep duration and awakenings; session RPE and performance.</dd><dt>Stop rule</dt><dd>Palpitations, fainting or sleep disruption that does not resolve when caffeine is pulled earlier.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>About 373 mg total caffeine, 10.67-12 g active citrulline base, 3.2 g beta-alanine, 2 g PeakO2 mushrooms, 2.5 g betaine. The reference clock lists breakfast tea at 05:00 and V1 at 06:00.</dd><dt>Stack interaction</dt><dd>IGNITER about 373 mg caffeine + TeaCrine (theacrine half-life 16-20 h) + Dynamine + theobromine + Earl Grey 40-70 mg — Exposure regularly crosses the 400 mg/day guidance; sleep is the limiting organ.</dd><dt>Margin</dt><dd>IGNITER about 373 mg caffeine before tea; with tea about 413–443 mg versus Health Canada 400 mg/day guidance.</dd><dt>Monitor</dt><dd>Sleep duration and awakenings; session RPE and performance.</dd><dt>Stop rule</dt><dd>Palpitations, fainting or sleep disruption that does not resolve when caffeine is pulled earlier.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "Morning training only (State A)"
     },
     {
@@ -33,7 +35,7 @@
         "Kirkland Himalayan Pink Salt 1/16 tsp",
         "2-3 Medjool dates chewed solid, separately"
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>3,750 mg leucine-led BCAAs, 1,000 mg potassium, 100 mg magnesium, about 36-54 g fast carbohydrate from dates.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>3,750 mg leucine-led BCAAs, 1,000 mg potassium, 100 mg magnesium, about 36-54 g fast carbohydrate from dates.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "During the training session (States A and C)"
     },
     {
@@ -49,7 +51,7 @@
         "MegaFood C Defense Gummy (1, chewed)",
         "NAKA Platinum Vital Greens (20 mL separate flush)"
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>23 g beef protein, 10 g marine collagen, 1.5 g free carnitine, whole-food ascorbate. Canadian Carnivor panel: zero added creatine. Greens taken as separate 20 mL flush.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>23 g beef protein, 10 g marine collagen, 1.5 g free carnitine, whole-food ascorbate. Canadian Carnivor panel: zero added creatine. Greens taken as separate 20 mL flush.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "Daily anchor; optional when consumed on rest days"
     },
     {
@@ -63,7 +65,7 @@
         "Proline Pure Creatine HCl 750 mg active",
         "Kirkland Himalayan Salt 1/16 tsp"
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Scaled half-serving: 12 g protein, 19 g carbohydrate, 125 kcal. Dietary nitrates from beetroot combine with creatine HCl. R-ALA swallowed whole; emptying into the shake risks mucosal irritation and degradation.</dd><dt>Stack interaction</dt><dd>R-ALA 300 mg + glycogen- depleted training + only 19 g carbohydrate in V4 — Hypoglycaemia symptoms post- training need glucose awareness, not stimulant escalation.</dd><dt>Margin</dt><dd>R-ALA 300 mg training days; no UL established. V4 is one 36 g half-serving, with 19 g carbohydrate.</dd><dt>Monitor</dt><dd>Recurrent sweating, tremor or confusion after training.</dd><dt>Stop rule</dt><dd>Recurrent sweating, tremor or confusion after training: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Scaled half-serving: 12 g protein, 19 g carbohydrate, 125 kcal. Dietary nitrates from beetroot combine with creatine HCl. R-ALA swallowed whole; emptying into the shake risks mucosal irritation and degradation.</dd><dt>Stack interaction</dt><dd>R-ALA 300 mg + glycogen- depleted training + only 19 g carbohydrate in V4 — Hypoglycaemia symptoms post- training need glucose awareness, not stimulant escalation.</dd><dt>Margin</dt><dd>R-ALA 300 mg training days; no UL established. V4 is one 36 g half-serving, with 19 g carbohydrate.</dd><dt>Monitor</dt><dd>Recurrent sweating, tremor or confusion after training.</dd><dt>Stop rule</dt><dd>Recurrent sweating, tremor or confusion after training: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "After the workout (States A and C); R-ALA remains separate"
     },
     {
@@ -73,13 +75,14 @@
       "base": "500 mL cold filtered water",
       "ingredients": [
         "Proline Pure Creatine HCl 750 mg",
-        "PROMISE Pure Marine Collagen 10 g",
+        "Collagen 1 scoop, about 10 g; type unresolved — see source difference",
         "ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)",
         "RapiDrem Electrolyte Powder (1 scoop)",
         "Kirkland Himalayan Salt 1/16 tsp"
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Rest-day bridge: second daily creatine pulse (750 mg), 10 g connective-tissue peptides, carnitine and electrolytes.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
-      "deployment": "Rest days only (State B)"
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Rest-day bridge: second daily creatine pulse (750 mg), 10 g connective-tissue peptides, carnitine and electrolytes.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "deployment": "Rest days only (State B)",
+      "source_conflict": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
     },
     {
       "id": "v6",
@@ -110,8 +113,11 @@
         "optional half-scoop Medi-C Plus (2.5 g)",
         "rare Niyama Hey Relax full scoop"
       ],
-      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Nocturnal recovery: second creatine pulse, 5 g glutamine, 3-5 g glycine. Optional Medi-C adds 1,000 mg vitamin C and 105 mg magnesium; Hey Relax adds 200 mg magnesium and 1,000 mg inositol. The old 60-65 degree Celsius heating rule is retired.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V2.0 · Part III · Parts IV–VI · Annex II · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
+      "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Nocturnal recovery: second creatine pulse, 5 g glutamine, 3-5 g glycine. Optional Medi-C adds 1,000 mg vitamin C and 105 mg magnesium; Hey Relax adds 200 mg magnesium and 1,000 mg inositol. The old 60-65 degree Celsius heating rule is retired.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "Night anchor across all three states"
     }
-  ]
+  ],
+  "source_conflicts": {
+    "v5_collagen": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
+  }
 }
