@@ -48,12 +48,15 @@
 .journey-blueprints img{width:100%;height:100%;object-fit:contain;}
 .journey-blueprints .art-cap{font-size:.85rem;padding:.6rem;}
 /* Day branches link directly to the existing schedule. */
-.journey-branches .hud-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
-.journey-branches .hud-node{display:block;padding:0;border:0;min-width:0;}
-.journey-branch-link{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.6rem;padding:1rem;height:100%;border:1px solid var(--line-strong);border-top:3px solid var(--signal-ink);background:var(--surface);color:var(--text);text-decoration:none;}
-.journey-branch-link .hud-node__hex{font:800 .85rem var(--font-mono);color:var(--signal-ink);}
-.journey-branch-link .hud-node__txt{display:grid;gap:.4rem;}
-.journey-branch-link__action{grid-column:2;font-size:.85rem;color:var(--accent);font-weight:750;}
+.journey-branch-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;list-style:none;margin:0;padding:0;align-items:stretch;}
+.journey-branch{display:flex;padding:0;margin:0;min-width:0;}
+.journey-branch-link{display:grid;grid-template-columns:2.25rem minmax(0,1fr);grid-template-rows:1fr auto;align-items:start;gap:.6rem .75rem;padding:.9rem;box-sizing:border-box;width:100%;min-width:0;border:1px solid var(--line-strong);border-top:3px solid var(--signal-ink);background:var(--surface);color:var(--text);text-decoration:none;}
+.journey-branch-marker{display:grid;place-items:center;grid-column:1;grid-row:1 / span 2;width:2.25rem;height:2.1rem;flex:none;background:var(--brand-orange);color:#000000;font:800 .9rem/1 var(--font-mono);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);}
+.journey-branch--rest .journey-branch-marker{background:#ffcc00;}
+.journey-branch-copy{display:grid;grid-column:2;grid-row:1;gap:.4rem;min-width:0;line-height:1.4;overflow-wrap:normal;}
+.journey-branch-copy>b{font-size:1rem;font-weight:750;line-height:1.3;}
+.journey-branch-copy>span{font-size:.95rem;}
+.journey-branch-link__action{grid-column:2;grid-row:2;font-size:.85rem;color:var(--accent);font-weight:750;line-height:1.4;}
 .journey-branch-link:hover{border-color:var(--accent);text-decoration:none;}
 /* Historical figures are grouped, with their basis retained in one disclosure. */
 .journey-fuel .nutrition-dashboard__head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;}
@@ -87,9 +90,9 @@
  .journey-steps{grid-template-columns:repeat(2,minmax(0,1fr));}
  .journey-steps li{padding:.7rem;}
  .journey-blueprints .carousel__track{grid-template-columns:1fr;}
- .journey-branches .hud-map,.journey-food-links{grid-template-columns:1fr;}
- .journey-branch-link{padding:.8rem;grid-template-columns:1.3rem minmax(0,1fr) auto;align-items:center;}
- .journey-branch-link__action{grid-column:3;font-size:.75rem;}
+ .journey-branch-list,.journey-food-links{grid-template-columns:1fr;}
+ .journey-branch-link{padding:.8rem;grid-template-columns:2.25rem minmax(0,1fr);align-items:start;}
+ .journey-branch-link__action{grid-column:2;font-size:.8rem;}
  .journey-basis dl{grid-template-columns:1fr;}
  .journey-next .hud-deep{gap:.5rem;}
  .journey-next .hud-deeplink{min-height:0;}
