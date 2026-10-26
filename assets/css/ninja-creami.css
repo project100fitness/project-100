@@ -16,4 +16,4 @@
 
 .recipe-viewport>.recipe-progress{top:0;bottom:auto;z-index:4;pointer-events:none}
 
-.recipe-viewport[data-edge-hover="previous"]>#recipes-prev,.recipe-viewport[data-edge-hover="next"]>#recipes-next,.recipe-viewport[data-edge-touch="true"]>button,.recipe-viewport>button:focus-visible{opacity:1;pointer-events:auto}.recipe-progress i:after{content:"";position:absolute;right:0;top:1px;width:6px;height:6px;background:var(--cream,#fff4be);border-radius:50%;box-shadow:0 0 7px 2px #fff4be}
+.recipe-viewport[data-edge-cycle="true"]>button,.recipe-viewport[data-edge-hover="previous"]>#recipes-prev,.recipe-viewport[data-edge-hover="next"]>#recipes-next,.recipe-viewport[data-edge-touch="true"]>button,.recipe-viewport>button:focus-visible{opacity:1;pointer-events:auto}.recipe-progress i:after{content:"";position:absolute;right:0;top:1px;width:6px;height:6px;background:var(--cream,#fff4be);border-radius:50%;box-shadow:0 0 7px 2px #fff4be}
