@@ -8,9 +8,8 @@ function sides({viewport,previous,next,touchTarget}){
  if(!viewport)return null;
  const frame=document.createElement('div');frame.className='rotation-viewport';viewport.before(frame);frame.append(viewport);
  const state={frame,touching:false};
- let revealTimer=0;
- function reveal(){clearTimeout(revealTimer);frame.dataset.edgeTouch='true'}
- function settle(){clearTimeout(revealTimer);revealTimer=setTimeout(()=>delete frame.dataset.edgeTouch,1400)}
+ function reveal(){frame.dataset.edgeTouch='true'}
+ function settle(){delete frame.dataset.edgeTouch}
  frame.addEventListener('touchstart',reveal,{passive:true});for(const name of ['touchend','touchcancel'])frame.addEventListener(name,settle,{passive:true});
  frame.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const b=frame.getBoundingClientRect(),zone=54;frame.dataset.edgeHover=e.clientX-b.left<zone?'previous':b.right-e.clientX<zone?'next':''},{passive:true});frame.addEventListener('pointerleave',()=>delete frame.dataset.edgeHover,{passive:true});
  for(const [button,direction] of [[previous,'previous'],[next,'next']])if(button){button.classList.add('rotation-edge','rotation-edge--'+direction);frame.append(button)}
@@ -50,6 +49,7 @@ function create(options){
   if((!waiting||range!==lastRange)&&progress!==lastProgress){fill.style.transform='scaleX('+progress+')';lastProgress=progress}lastRange=range;
   meter.dataset.paused=String(!!waiting);meter.hidden=!enabled||state.progress===undefined;
   if(edges&&edges.frame.dataset.rotationEnabled!==String(enabled))edges.frame.dataset.rotationEnabled=String(enabled);
+  if(edges){const cycle=state.progress===undefined||progress<=.55||paused||api.touching;edges.frame.dataset.edgeCycle=String(enabled&&cycle)}
   const key=[enabled,paused,range].join('|');if(key===signature)return;signature=key;
   const actions=saved.some(n=>n.matches('button,a')||n.querySelector('button,a'));host.hidden=!enabled&&!actions;center.hidden=!enabled;
   if(previous)previous.hidden=!enabled;if(next)next.hidden=!enabled;if(!enabled)return;

@@ -847,7 +847,7 @@
     var index=0,seen=false,paused=!P100Rotation.autoplay(),last=Date.now(),tick=last,hold=0,keys=false,changing=false,touching=false;
     function start(page){var pages=Math.ceil(items.length/4);return Math.min(((page+pages)%pages)*4,Math.max(0,items.length-4));}
     function peek(page){var target=start(page),current=start(index);return items.slice(target,target+4).find(function(x,i){return target+i<current||target+i>=current+4;})||items[target];}
-    function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/4000,remaining:4000-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
+    function feedback(){var time=Date.now(),from=start(index),waiting=!seen||document.hidden?'Auto-change when in view':document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))?'Paused while you explore':null;cues.update({enabled:items.length>4,total:items.length,range:'Cards '+(from+1)+'–'+Math.min(items.length,from+4)+' of '+items.length,progress:(time-last)/3000,remaining:3000-(time-last),resume:Math.max(0,hold-time),paused:paused||P.motionPaused,waiting:waiting,changing:changing,previous:peek(index-1),next:peek(index+1)});}
     function show(page,manual){
       if(changing)return;changing=true;if(manual)hold=0;
       var pages=Math.ceil(items.length/4);index=(page+pages)%pages;root.classList.add('is-changing');feedback();
@@ -859,7 +859,7 @@
     root.addEventListener('keydown',function(e){keys=true;if(e.target===track&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){e.preventDefault();show(index+(e.key==='ArrowRight'?1:-1),true);}});
     root.addEventListener('pointerdown',function(){keys=false;},{passive:true});root.addEventListener('touchstart',function(){touching=true;},{passive:true});['touchend','touchcancel'].forEach(function(name){root.addEventListener(name,function(){touching=false;},{passive:true});});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){seen=es[0].isIntersecting;tick=Date.now();},{threshold:.01}).observe(root);else seen=true;
-    setInterval(function(){var at=Date.now(),delta=at-tick;tick=at;if(!seen||touching||cues.touching||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last+=delta;feedback();return;}feedback();if(Date.now()-last>=4000)show(index+1,false);},100);
+    setInterval(function(){var at=Date.now(),delta=at-tick;tick=at;if(!seen||touching||cues.touching||document.hidden||paused||P.motionPaused||changing||document.querySelector('dialog[open]')||root.querySelector('.carousel__item:not([hidden]) details[open]')||(keys&&root.contains(document.activeElement))||Date.now()<hold){last+=delta;feedback();return;}feedback();if(Date.now()-last>=3000)show(index+1,false);},100);
     track.tabIndex=0;show(0,false);
   }
 
@@ -895,7 +895,7 @@
       var m = maxScroll() || 1, w = Math.max(.12, Math.min(1, track.clientWidth / track.scrollWidth)), f = Math.max(0, Math.min(1, track.scrollLeft / m));
       thumb.style.width = (w * 100) + '%'; thumb.style.left = (f * (1 - w) * 100) + '%';
       var size=step()||1,start=Math.min(items.length-1,Math.floor(track.scrollLeft/size)),end=Math.min(items.length,Math.ceil((track.scrollLeft+track.clientWidth)/size)),distance=dir>0?size-(track.scrollLeft%size):track.scrollLeft%size||size;
-      cues.update({enabled:active,total:items.length,range:'Items '+(start+1)+'–'+end+' of '+items.length,progress:1-distance/size,remaining:distance/SPEED*1000,resume:Math.max(0,hold-now()),paused:userPaused||P.motionPaused,waiting:mouseOver||keyFocus||touching?'Paused while you explore':!inView?'Auto-browse when in view':null,previous:items[Math.max(0,start-1)],next:items[end%items.length]});
+      cues.update({enabled:active,total:items.length,range:'Items '+(start+1)+'–'+end+' of '+items.length,progress:1-distance/size,remaining:distance/(step()/3)*1000,resume:Math.max(0,hold-now()),paused:userPaused||P.motionPaused,waiting:mouseOver||keyFocus||touching?'Paused while you explore':!inView?'Auto-browse when in view':null,previous:items[Math.max(0,start-1)],next:items[end%items.length]});
     }
     function playing() { return active && !P.motionPaused && !userPaused && !mouseOver && !document.documentElement.classList.contains('no-scroll') && inView && !touching && !cues.touching && !keyFocus && !document.hidden && now() > hold; }
     function label() {
@@ -912,7 +912,7 @@
         pos = track.scrollLeft;
         if (pos >= m - 1) dir = -1; else if (pos <= 1) dir = 1;          /* picked up at an end: head the other way */
       }
-      pos += dir * SPEED * dt / 1000;
+      pos += dir * (step()/3) * dt / 1000;
       if (pos >= m) { pos = m; dir = -1; hold = now() + REST; }          /* reached the last card: rest, then back */
       else if (pos <= 0) { pos = 0; dir = 1; hold = now() + REST; }       /* back at the first card: rest, then forward */
       track.scrollLeft = pos; lastAuto = track.scrollLeft; sync();
@@ -1036,7 +1036,7 @@
       if (!playing()) { pos = null; return; }
       var m = max();
       if (pos === null) { pos = row.scrollLeft; if (pos >= m - 1) dir = -1; else if (pos <= 1) dir = 1; }
-      pos += dir * SPEED * dt / 1000;
+      pos += dir * (step()/3) * dt / 1000;
       if (pos >= m) { pos = m; dir = -1; hold = now() + REST; } else if (pos <= 0) { pos = 0; dir = 1; hold = now() + REST; }
       row.scrollLeft = pos; lastAuto = row.scrollLeft; paint();
     }
@@ -1170,7 +1170,7 @@
   var thumbs = qa('[data-jr-go]'), links = qa('[data-jr-lb] a'), strip = q('[data-jr-strip]');
   var t = { n: q('[data-jr-n]'), date: q('[data-jr-date]'), place: q('[data-jr-place]'), cap: q('[data-jr-cap]'), stamp: q('[data-jr-stamp]') };
 
-  var DUR = 3500, i = 0, timer = 0, playing = P100Rotation.autoplay(), inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
+  var DUR = 3000, i = 0, timer = 0, playing = P100Rotation.autoplay(), inView = false, elapsed = 0, last = null, loading = false, loadVersion = 0, swiped = false, hovering = false;
   if (!stage || !thumbs.length) return;
   root.style.setProperty('--jr-dur', DUR + 'ms');
 
@@ -1299,14 +1299,14 @@
     function schedule() {
       seen = visiblePart();
       clearTimeout(timer); if (!P100Rotation.autoplay() || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || reading()) return;
-      var wait = Date.now() < hold ? hold - Date.now() : 3500;
+      var wait = Date.now() < hold ? hold - Date.now() : 3000;
       timer = setTimeout(function () { if (seen && !hover && !document.hidden && P100Rotation.autoplay() && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !reading() && Date.now() >= hold) flip(false); schedule(); }, wait);
     }
-    btn.addEventListener('click', function () { hold = Date.now() + 3500; flip(true); schedule(); });
+    btn.addEventListener('click', function () { hold = Date.now() + 3000; flip(true); schedule(); });
     root.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') { hover = true; clearTimeout(timer); } });
     root.addEventListener('pointerleave', function (event) { if (event.pointerType === 'mouse') { hover = false; schedule(); } });
     document.addEventListener('keydown', function (event) { if (event.key === 'Tab' || event.key.indexOf('Arrow') === 0) { keyboard = true; schedule(); } });
-    document.addEventListener('pointerdown', function (event) { var wasKeyboard = keyboard; keyboard = false; if (root.contains(event.target)) { hold = Date.now() + 3500; schedule(); } else if (wasKeyboard) schedule(); }, { passive: true });
+    document.addEventListener('pointerdown', function (event) { var wasKeyboard = keyboard; keyboard = false; if (root.contains(event.target)) { hold = Date.now() + 3000; schedule(); } else if (wasKeyboard) schedule(); }, { passive: true });
     root.addEventListener('focusin', schedule);root.addEventListener('focusout', function(){setTimeout(schedule,0)});motion.addEventListener('change', schedule);
     document.addEventListener('visibilitychange', schedule);
     document.addEventListener('close', schedule, true);
