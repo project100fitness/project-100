@@ -6,7 +6,7 @@
 .journey-next .hud-deeplink{min-height:100%;padding:.8rem 2.4rem .8rem .9rem;border-left-width:2px;border-top:2px solid var(--signal-ink);}
 .journey-next .hud-deeplink strong{font-style:normal;font-size:1rem;letter-spacing:.015em;}
 .journey-next .hud-deeplink span{font-size:.9rem;line-height:1.45;}
-.journey-context{display:block!important;padding:1rem!important;border-top:2px solid var(--signal-ink);}
+.journey-context{padding:1rem;border-top:2px solid var(--signal-ink);}
 .journey-context>div{max-width:none;}
 .journey-context .copy-facts{margin:.5rem 0;gap:.75rem;}
 .journey-context p:last-child{margin-bottom:0;}

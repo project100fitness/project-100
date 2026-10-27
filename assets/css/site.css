@@ -1582,6 +1582,17 @@ html[data-motion="paused"] .home-stats .stat.is-revealed,html[data-motion="pause
 /* stats overlap the bottom edge of the hero */
 .home-stats { position: relative; z-index: 2; margin: var(--s-4) 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .hud-wrap > .hud-intro.home-status-intro:first-child { margin-top:var(--s-3); }
+/* The desktop overview places the personal context beside its measured status. */
+@media(min-width:1440px){
+.home-status-intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1rem;align-items:stretch;}
+.home-status-intro>.home-stats{grid-column:1/-1;margin:0;}
+.home-status-intro>.personal-mission{margin:0;grid-template-columns:clamp(120px,9vw,180px) minmax(0,1fr);gap:1rem;}
+.home-status-intro>.personal-mission h2,.home-status-intro>.personal-mission>div>.eyebrow{text-align:left;}
+.home-status-intro>.personal-mission .personal-mission__portrait img{max-height:260px;}
+.home-status-intro>.goalmeter{margin:0;display:flex;flex-direction:column;justify-content:center;}
+.home-status-intro>.goalmeter .goalmeter__grid{grid-template-columns:minmax(0,1fr);}
+}
+
 .home-stats .stat { box-shadow: var(--shadow-2); }
 @media (min-width: 800px) { .home-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
