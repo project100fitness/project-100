@@ -72,7 +72,9 @@ for bundle,_,_,nominal in expected:
     row=next(line for line in purposes.splitlines() if f'/^{bundle}$/' in line)
     assert f'{nominal} lb' in row,(bundle,row)
 for name in ['fit-meals.html','fit-nutrition.html']:
-    assert 'PROJECT 100 · HISTORICAL PLAN' in pages[name]
+    parsed=Text(); parsed.feed(pages[name])
+    visible=re.sub(r'\s+', ' ', ''.join(parsed.parts)).replace('PROJECT_100', 'PROJECT 100')
+    assert 'PROJECT 100 · HISTORICAL PLAN' in visible,name
     assert 'Historical protein plan' in pages[name]
     assert 'whole-day intake unverified' in pages[name]
 
