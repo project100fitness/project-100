@@ -15,22 +15,27 @@
   /* Authored visible-motion preference; background clips explicitly opt into continuous playback. */
   // Authored embedded-reader mode keeps the host's persistent controls in charge.
   if(window.parent!==window&&new URLSearchParams(location.search).get('reader')==='1')document.documentElement.dataset.resourceReader='true';
-  P.motionPaused = P.store.get('p100-motion-paused') === 'true' || (P.reduceMotion.matches && P.store.get('p100-motion-paused') !== 'false');
+  // Playback is page-local: an earlier Pause choice must not disable every later page.
+  P.motionPaused = false;
+  P.manualMotionEnabled = false;
   function motionLabels() {
     document.documentElement.dataset.motion = P.motionPaused ? 'paused' : 'running';
     P.$$('[data-motion-toggle]').forEach(function (b) {
       var blocked = !!document.querySelector('video[data-playback="blocked"]');
       b.setAttribute('aria-pressed', String(P.motionPaused));
       b.setAttribute('aria-label', P.motionPaused || blocked ? 'Play background motion' : 'Pause background motion');
-      b.querySelector('[data-motion-label]').textContent = P.motionPaused || blocked ? 'Play motion' : 'Pause motion';
-      b.querySelector('[data-motion-symbol]').textContent = P.motionPaused || blocked ? '▶' : 'Ⅱ';
+      var label = b.querySelector('[data-motion-label]'), symbol = b.querySelector('[data-motion-symbol]');
+      var labelText = P.motionPaused || blocked ? 'Play motion' : 'Pause motion', symbolText = P.motionPaused || blocked ? '▶' : 'Ⅱ';
+      // Keep the pressed target stable: WebKit cancels clicks if its text node is replaced mid-tap.
+      if (label && label.textContent !== labelText) label.textContent = labelText;
+      if (symbol && symbol.textContent !== symbolText) symbol.textContent = symbolText;
     });
   }
-  P.setMotionPaused = function (paused) { P.motionPaused = paused; P.store.set('p100-motion-paused', String(paused)); motionLabels(); document.dispatchEvent(new CustomEvent('p100:motion')); };
+  P.setMotionPaused = function (paused) { P.motionPaused = Boolean(paused); P.manualMotionEnabled = !paused; motionLabels(); document.dispatchEvent(new CustomEvent('p100:motion')); };
   P.refreshMotionLabels = motionLabels;
   P.$$('[data-motion-toggle]').forEach(function (b) { b.addEventListener('click', function () { P.setMotionPaused(document.querySelector('video[data-playback="blocked"]') ? false : !P.motionPaused); }); });
   motionLabels();
-  P.reduceMotion.addEventListener('change', function (event) { if (event.matches) P.setMotionPaused(true); });
+  // Reduced motion controls decorative effects, not explicitly authored autoplay videos.
   /* Pages routes that older bookmarks and PDFs still use (#ch6 → fit-protocol-training.html#ch6) */
   P.legacyRoutes = {"introduction": "fit-protocol-baseline.html#introduction", "ch1": "fit-protocol-baseline.html#ch1", "ch2": "fit-protocol-history.html#ch2", "ch3": "fit-protocol-constraints.html#ch3", "ch4": "fit-protocol-fuel.html#ch4", "annex2": "fit-protocol-checklists.html#annex2", "part3-vectors": "fit-protocol-vector-reference.html#part3-vectors", "ch5": "fit-protocol-nutrition.html#ch5", "ch8": "fit-protocol-supplements.html#ch8", "part4-cascades": "fit-protocol-interactions.html#part4-cascades", "part5-margins": "fit-protocol-margins.html#part5-margins", "ch6": "fit-protocol-training.html#ch6", "ch9": "fit-protocol-progression.html#ch9", "ch10": "fit-protocol-joints.html#ch10", "ch11": "fit-protocol-monitoring.html#ch11", "part6-lab-integrity": "fit-protocol-labs.html#part6-lab-integrity", "ch7": "fit-protocol-troubleshooting.html#ch7", "guide-page-2": "fit-protocol.html#guide-page-2", "guide-page-4": "fit-protocol.html#guide-page-4", "guide-page-3": "fit-protocol-baseline.html#guide-page-3", "guide-page-11": "fit-protocol-checklists.html#guide-page-11", "guide-page-13": "fit-protocol-checklists.html#guide-page-13", "guide-page-9": "fit-protocol-vector-reference.html#guide-page-9", "guide-page-6": "fit-protocol-nutrition.html#guide-page-6", "guide-page-7": "fit-protocol-supplements.html#guide-page-7", "guide-page-8": "fit-protocol-margins.html#guide-page-8", "guide-page-5": "fit-protocol-training.html#guide-page-5", "guide-page-10": "fit-protocol-labs.html#guide-page-10", "guide-page-12": "fit-protocol-troubleshooting.html#guide-page-12", "vector-v3": "fit-protocol-vector-v3.html#vector-v3", "vector-v1": "fit-protocol-vector-v1.html#vector-v1", "vector-v2": "fit-protocol-vector-v2.html#vector-v2", "vector-v4": "fit-protocol-vector-v4.html#vector-v4", "vector-v5": "fit-protocol-vector-v5.html#vector-v5", "vector-v10": "fit-protocol-vector-v10.html#vector-v10", "vector-pump": "fit-protocol-vector-pump.html#vector-pump", "vectors": "fit-protocol-vectors.html", "today": "guidebook.html#today", "red-flags": "fit-protocol-checklists.html#annex2", "s-clock": "fit-protocol-fuel.html#ch4", "s-vectors": "fit-protocol-vectors.html", "s-fuel": "fit-protocol-nutrition.html#ch5", "s-arsenal": "fit-protocol-supplements.html#ch8", "s-origin": "fit-protocol-baseline.html#introduction", "s-metric": "fit-protocol-baseline.html#ch1", "s-patches": "fit-protocol-constraints.html#ch3", "s-training": "fit-protocol-training.html#ch6", "s-roadmap": "fit-protocol-progression.html#ch9", "s-fail": "fit-protocol-troubleshooting.html#ch7", "s-qr": "fit-protocol-checklists.html#annex2", "quickref": "fit-protocol-checklists.html#annex2", "annex1": "fit-protocol-supplements.html#ch8", "ch12": "fit-protocol-labs.html#part6-lab-integrity"};
 })();

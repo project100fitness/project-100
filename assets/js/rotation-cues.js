@@ -58,6 +58,6 @@ function create(options){
   host.dataset.rotationState=paused?'paused':'running';
  },element:host};host._rotationCues=api;return api;
 }
-function autoplay(){try{return !matchMedia('(prefers-reduced-motion: reduce)').matches||localStorage.getItem('p100-motion-paused')==='false'}catch(_){return !matchMedia('(prefers-reduced-motion: reduce)').matches}}
+function autoplay(){return !matchMedia('(prefers-reduced-motion: reduce)').matches||Boolean(window.P100&&window.P100.manualMotionEnabled)}
 window.P100Rotation={create,item,autoplay,sides,scrollEdges};
 })();
