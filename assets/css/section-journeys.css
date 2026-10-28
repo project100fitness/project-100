@@ -47,7 +47,7 @@
 
 
 
-.flipc--sequence{max-width:42rem;margin-inline:auto;gap:.4rem;}.flipc--sequence .flipc__stage{border:1px solid var(--line-strong);border-top:3px solid #ffcc00;box-sizing:border-box;}.flipc--sequence .flipc__stage:after{content:"";position:absolute;left:0;bottom:0;width:var(--flip-progress,0%);height:4px;background:#ff8a3d;pointer-events:none;}.flipc--sequence .pcap{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem .7rem;margin:0;}.flipc--sequence .pcap__t{margin-right:auto;font-size:.9rem;}.flipc--sequence .pcap__flip{padding:.4rem .65rem;letter-spacing:0;font-size:.75rem;min-height:44px;}.flipc--sequence .pcap__dl{font-size:1.25rem;min-width:44px;min-height:44px;text-align:center;}
+.flipc--sequence{max-width:42rem;margin-inline:auto;gap:.4rem;}.flipc--sequence .flipc__stage{border:1px solid var(--line-strong);border-top:3px solid #ffcc00;box-sizing:border-box;}.flipc--sequence .flipc__stage:after{content:"";position:absolute;left:0;bottom:0;width:var(--flip-progress,0%);height:4px;background:#ff8a3d;pointer-events:none;}
 /* Day branches link directly to the existing schedule. */
 .journey-branch-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;list-style:none;margin:0;padding:0;align-items:stretch;}
 .journey-branch{display:flex;padding:0;margin:0;min-width:0;}
