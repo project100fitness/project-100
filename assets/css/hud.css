@@ -71,6 +71,7 @@
 /* ---------- HERO: the top info section ---------- */
 .hud-hero {
   position: relative; isolation: isolate; overflow: hidden;
+  --hud-eyebrow-width:calc(100% - 3rem);
   margin-top: var(--s-4);
   padding: clamp(1.4rem, 3.2vw, 2.4rem) clamp(1.1rem, 3.5vw, 2.6rem) calc(clamp(1.4rem, 3.2vw, 2.4rem) + 10px);
   background: linear-gradient(115deg, var(--hud-dark-1) 0%, var(--hud-dark-2) 55%, var(--hud-dark-3) 100%);
@@ -92,8 +93,8 @@
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 7px; z-index: 1;
   background: repeating-linear-gradient(135deg, var(--hud-amber) 0 11px, #101216 11px 22px);
 }
-.hud-eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
-.hud-eyebrow::before { content: ""; width: 1.6rem; height: 3px; background: currentColor; }
+.hud-eyebrow { display: inline-flex; flex-wrap:wrap; max-width:var(--hud-eyebrow-width,100%); min-width:0; line-height:1.4; overflow-wrap:break-word; align-items: center; gap: .5rem; font-size: .75rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+.hud-eyebrow::before { content: ""; flex:none; width: 1.6rem; height: 3px; background: currentColor; }
 .hud-title {
   margin: .35rem 0 .5rem; font-size: clamp(2.3rem, 1.2rem + 5.2vw, 4.4rem); line-height: .95; font-weight: 800; font-style: italic;
   letter-spacing: -.045em; text-transform: uppercase; color:#ffffff; text-shadow:none; transform:none; transform-origin:left bottom;
