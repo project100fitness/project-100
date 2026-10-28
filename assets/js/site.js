@@ -67,6 +67,8 @@
   var lastY = Math.max(0, window.scrollY), travel = 0, direction = 0, ticking = false;
   function update() {
     var y = Math.max(0, Math.min(window.scrollY, document.documentElement.scrollHeight - innerHeight));
+    var placement = getComputedStyle(head).position;
+    if (placement !== 'sticky' && placement !== 'fixed') { head.dataset.hidden = 'false'; lastY = y; travel = 0; ticking = false; return; }
     var delta = y - lastY, next = delta > 0 ? 1 : delta < 0 ? -1 : direction;
     if (next !== direction) travel = 0;
     travel += Math.abs(delta); direction = next; lastY = y;
@@ -88,7 +90,7 @@
 
   // The shared header owns its measured geometry; responsive components consume these variables.
   function measureHeader() {
-    var root=document.documentElement,height=Math.ceil(head.getBoundingClientRect().height),offset=head.dataset.hidden==='true'?0:height;
+    var root=document.documentElement,height=Math.ceil(head.getBoundingClientRect().height),placement=getComputedStyle(head).position,offset=(placement==='sticky'||placement==='fixed')&&head.dataset.hidden!=='true'?height:0;
     if (root.style.getPropertyValue('--site-header-height') !== height+'px') root.style.setProperty('--site-header-height',height+'px');
     if (root.style.getPropertyValue('--site-header-offset') !== offset+'px') root.style.setProperty('--site-header-offset',offset+'px');
   }
