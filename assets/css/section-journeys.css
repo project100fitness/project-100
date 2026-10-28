@@ -3,7 +3,7 @@
 .journey-code{display:block;font:800 .85rem var(--font-mono);color:var(--signal-ink);margin-bottom:.6rem;}
 .journey-anchor{display:block;scroll-margin-top:var(--header-h);}
 .journey-next .hud-folder__body{padding:1rem;}
-.journey-next .hud-deeplink{min-height:100%;padding:.8rem 2.4rem .8rem .9rem;border-left-width:2px;border-top:2px solid var(--signal-ink);}
+.journey-next .hud-deeplink{min-height:100%;padding:.65rem 2.2rem .65rem .75rem;border-left-width:2px;border-top:2px solid var(--signal-ink);}
 .journey-next .hud-deeplink strong{font-style:normal;font-size:1rem;letter-spacing:.015em;}
 .journey-next .hud-deeplink span{font-size:.9rem;line-height:1.45;}
 .journey-context{padding:1rem;border-top:2px solid var(--signal-ink);}
@@ -51,13 +51,13 @@
 /* Day branches link directly to the existing schedule. */
 .journey-branch-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;list-style:none;margin:0;padding:0;align-items:stretch;}
 .journey-branch{display:flex;padding:0;margin:0;min-width:0;}
-.journey-branch-link{display:grid;grid-template-columns:2.25rem minmax(0,1fr);grid-template-rows:1fr auto;align-items:start;gap:.6rem .75rem;padding:.9rem;box-sizing:border-box;width:100%;min-width:0;border:1px solid var(--line-strong);border-top:3px solid var(--signal-ink);background:var(--surface);color:var(--text);text-decoration:none;}
-.journey-branch-marker{display:grid;place-items:center;grid-column:1;grid-row:1 / span 2;width:2.25rem;height:2.1rem;flex:none;background:var(--brand-orange);color:#000000;font:800 .9rem/1 var(--font-mono);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);}
+ .journey-branch-link{display:grid;grid-template-columns:1.75rem minmax(0,1fr) 1.25rem;align-items:center;gap:.65rem;padding:.65rem .75rem;box-sizing:border-box;width:100%;min-width:0;min-height:64px;border:1px solid var(--line-strong);border-top:2px solid var(--signal-ink);background:var(--surface);color:var(--text);text-decoration:none;}
+.journey-branch-marker{display:grid;place-items:center;width:1.75rem;height:1.75rem;background:var(--brand-orange);color:#000000;font:800 .85rem/1 var(--font-mono);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);}
 .journey-branch--rest .journey-branch-marker{background:#ffcc00;}
-.journey-branch-copy{display:grid;grid-column:2;grid-row:1;gap:.4rem;min-width:0;line-height:1.4;overflow-wrap:normal;}
+.journey-branch-copy{display:grid;gap:.15rem;min-width:0;line-height:1.4;overflow-wrap:normal;}
 .journey-branch-copy>b{font-size:1rem;font-weight:750;line-height:1.3;}
-.journey-branch-copy>span{font-size:.95rem;}
-.journey-branch-link__action{grid-column:2;grid-row:2;font-size:.85rem;color:var(--accent);font-weight:750;line-height:1.4;}
+.journey-branch-copy>span{font-size:1rem;line-height:1.4;}
+.journey-branch-link__action{font-size:1.25rem;color:var(--accent);font-weight:750;line-height:1;text-align:center;}
 .journey-branch-link:hover{border-color:var(--accent);text-decoration:none;}
 /* Historical figures are grouped, with their basis retained in one disclosure. */
 .journey-fuel .nutrition-dashboard__head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;}
@@ -77,7 +77,7 @@
 .journey-basis dt{font-weight:750;font-size:.85rem;}
 .journey-basis dd{margin:.25rem 0;font-size:.9rem;}
 .journey-food-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
-.journey-food-links a{display:grid;gap:.4rem;border:1px solid var(--line-strong);border-top:2px solid var(--signal-ink);padding:1rem;background:var(--surface);color:var(--text);text-decoration:none;}
+.journey-food-links a{display:grid;gap:.2rem;border:1px solid var(--line-strong);border-top:2px solid var(--signal-ink);padding:.65rem .75rem;background:var(--surface);color:var(--text);text-decoration:none;}
 .journey-food-links span{font-size:.9rem;color:var(--accent);}
 .journey-reference .hud-takeaway{font-size:1.05rem;line-height:1.5;max-width:70ch;}
 .record-row summary:focus-visible,.journey-branch-link:focus-visible,.journey-food-links a:focus-visible,.journey-basis summary:focus-visible{outline:3px solid var(--signal-ink);outline-offset:3px;}
@@ -92,8 +92,8 @@
  .journey-steps li{padding:.7rem;}
  
  .journey-branch-list,.journey-food-links{grid-template-columns:1fr;}
- .journey-branch-link{padding:.8rem;grid-template-columns:2.25rem minmax(0,1fr);align-items:start;}
- .journey-branch-link__action{grid-column:2;font-size:.8rem;}
+
+
  .journey-basis dl{grid-template-columns:1fr;}
  .journey-next .hud-deep{gap:.5rem;}
  .journey-next .hud-deeplink{min-height:0;}
