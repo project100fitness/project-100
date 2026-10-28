@@ -1308,3 +1308,22 @@
   window.addEventListener('hashchange',revealTerms);
   revealTerms();
 })();
+
+/* Native daily schedule routing: each day link retains its selected branch. */
+(function(){
+  var inputs=Array.from(document.querySelectorAll('.chap-branch__input[name="branch"]'));
+  if(!inputs.length)return;
+  function restore(){
+    var branch=new URL(location.href).searchParams.get('branch')||'training';
+    var input=inputs.find(function(el){return el.value===branch;})||inputs[0];
+    input.checked=true;
+  }
+  inputs.forEach(function(input){input.addEventListener('change',function(){
+    if(!input.checked)return;
+    var url=new URL(location.href);url.searchParams.set('branch',input.value);url.hash='today';
+    history.pushState(null,'',url.href);
+  });});
+  window.addEventListener('popstate',restore);
+  window.addEventListener('pageshow',restore);
+  restore();
+})();
