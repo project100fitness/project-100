@@ -1260,70 +1260,41 @@
   setPlay(playing);
 
 })();
-/* ===== 74-flipcard.js ===== */
-/* Two-sided picture card: turns over by itself every few seconds while it is on screen (random direction, now and then a long spin),
-   turns on tap of the Flip button, pauses while hovered or just used. Reduced motion: no automatic turning. Both sides open in the shared lightbox. */
+/* Two-sided artwork. A single clock preserves its remaining interval while touched,
+   off screen, keyboard-focused or covered by a reader. Both faces open originals. */
 (function () {
   'use strict';
-  var motion = window.P100.reduceMotion;
-  function all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
-  function init(root) {
-    var card = root.querySelector('.flipc__card'), btn = root.querySelector('[data-flip-btn]'),
-        dl = root.querySelector('[data-flip-dl]'), dots = all('.pcap__dots i', root),
-        faces = all('.flipc__face', root), caps = (root.dataset.caps || '').split('|'), origs = (root.dataset.origs || '').split('|'), sizes = (root.dataset.sizes || '').split('|');
-    if (!card || !btn || faces.length < 2) return;
-    var turns = 0, side = 0, timer = 0, hold = 0, seen = false, hover = false, keyboard = false;
-    function reading() { return keyboard && root.contains(document.activeElement); }
-    function visiblePart() {
-      var box = root.getBoundingClientRect(), left = 0, top = 0, right = window.innerWidth, bottom = window.innerHeight;
-      if (!root.getClientRects().length || !box.width || !box.height) return false;
-      for (var parent = root.parentElement; parent && parent !== document.documentElement; parent = parent.parentElement) {
-        var style = getComputedStyle(parent), clip = parent.getBoundingClientRect();
-        if (/auto|scroll|hidden|clip/.test(style.overflowX)) { left = Math.max(left, clip.left + parent.clientLeft); right = Math.min(right, clip.left + parent.clientLeft + parent.clientWidth); }
-        if (/auto|scroll|hidden|clip/.test(style.overflowY)) { top = Math.max(top, clip.top + parent.clientTop); bottom = Math.min(bottom, clip.top + parent.clientTop + parent.clientHeight); }
-      }
-      return Math.min(box.right, right) - Math.max(box.left, left) > Math.min(box.width, window.innerWidth) * .35 && Math.min(box.bottom, bottom) - Math.max(box.top, top) > Math.min(box.height, window.innerHeight) * .35;
+  var motion=window.P100.reduceMotion;
+  document.querySelectorAll('[data-flip]').forEach(function(root){
+    var card=root.querySelector('.flipc__card'),btn=root.querySelector('[data-flip-btn]'),dl=root.querySelector('[data-flip-dl]'),faces=Array.from(root.querySelectorAll('.flipc__face'));
+    if(!card||!btn||faces.length!==2)return;
+    var caps=(root.dataset.caps||'First style|Second style').split('|'),origs=(root.dataset.origs||'').split('|'),dots=Array.from(root.querySelectorAll('.pcap__dots i'));
+    var side=0,turns=0,remaining=3000,last=performance.now(),seen=false,hover=false,touching=false,keyboard=false;
+    function visible(){var r=root.getBoundingClientRect();return root.getClientRects().length&&r.width>0&&r.height>0&&Math.min(r.bottom,innerHeight)-Math.max(r.top,0)>Math.min(r.height,innerHeight)*.35;}
+    function show(){
+      root.dataset.side=side;btn.setAttribute('aria-label','Flip to '+(caps[1-side]||'other style'));
+      if(dl){dl.href=origs[side]||faces[side].href;dl.setAttribute('aria-label','Download '+(caps[side]||'current artwork')+' original image');}
+      dots.forEach(function(d,i){d.classList.toggle('is-on',i===side);});
+      faces.forEach(function(f,i){f.setAttribute('aria-hidden',String(i!==side));f.tabIndex=i===side?0:-1;});
     }
-    function show() {
-      root.dataset.side = side; btn.setAttribute('aria-label', 'Flip to ' + (caps[1 - side] || 'the other side')); if (dl) { dl.href = origs[side] || dl.href; var lab = 'Download the original image (PNG, ' + (sizes[side] || '') + ')'; dl.setAttribute('aria-label', lab); dl.title = 'Download original · PNG ' + (sizes[side] || ''); }
-      dots.forEach(function (d, i) { d.classList.toggle('is-on', i === side); });
-      faces.forEach(function (f, i) { if (i === side) { f.removeAttribute('aria-hidden'); f.removeAttribute('tabindex'); } else { f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1; } });
-    }
-    function flip(manual) {
-      var dir = Math.random() < .5 ? -1 : 1, spin = !manual && Math.random() < .25 ? 3 : 1;
-      side = 1 - side; turns += dir * spin;
-      card.style.setProperty('--dur', (spin > 1 ? 1.6 : .95) + 's'); card.style.setProperty('--turn', (turns * 180) + 'deg');
-      if (!motion.matches && !window.P100.motionPaused) { root.classList.remove('is-turning'); void root.offsetWidth; root.classList.add('is-turning'); }
-      show();
-    }
-    function schedule() {
-      seen = visiblePart();
-      clearTimeout(timer); if (!P100Rotation.autoplay() || window.P100.motionPaused || !seen || hover || document.hidden || document.querySelector('dialog[open]') || reading()) return;
-      var wait = Date.now() < hold ? hold - Date.now() : 3000;
-      timer = setTimeout(function () { if (seen && !hover && !document.hidden && P100Rotation.autoplay() && !window.P100.motionPaused && !document.querySelector('dialog[open]') && !reading() && Date.now() >= hold) flip(false); schedule(); }, wait);
-    }
-    btn.addEventListener('click', function () { hold = Date.now() + 3000; flip(true); schedule(); });
-    root.addEventListener('pointerenter', function (event) { if (event.pointerType === 'mouse') { hover = true; clearTimeout(timer); } });
-    root.addEventListener('pointerleave', function (event) { if (event.pointerType === 'mouse') { hover = false; schedule(); } });
-    document.addEventListener('keydown', function (event) { if (event.key === 'Tab' || event.key.indexOf('Arrow') === 0) { keyboard = true; schedule(); } });
-    document.addEventListener('pointerdown', function (event) { var wasKeyboard = keyboard; keyboard = false; if (root.contains(event.target)) { hold = Date.now() + 3000; schedule(); } else if (wasKeyboard) schedule(); }, { passive: true });
-    root.addEventListener('focusin', schedule);root.addEventListener('focusout', function(){setTimeout(schedule,0)});motion.addEventListener('change', schedule);
-    document.addEventListener('visibilitychange', schedule);
-    document.addEventListener('close', schedule, true);
-  document.addEventListener('p100:motion', schedule);
-    var viewFrame = 0;
-    function scheduleView() { if (!viewFrame) viewFrame = requestAnimationFrame(function () { viewFrame = 0; schedule(); }); }
-    document.addEventListener('click', scheduleView);
-    document.addEventListener('scroll', scheduleView, { capture: true, passive: true });
-    window.addEventListener('resize', scheduleView, { passive: true });
-    window.addEventListener('pageshow', scheduleView);
-    window.addEventListener('popstate', scheduleView);
-    window.addEventListener('hashchange', scheduleView);
-    if ('IntersectionObserver' in window) new IntersectionObserver(scheduleView, { threshold: [0, .35, .6] }).observe(root);
-    show();
-  }
-  all('[data-flip]').forEach(init);
+    function flip(){side=1-side;turns++;card.style.setProperty('--dur','.7s');card.style.setProperty('--turn',turns*180+'deg');root.classList.remove('is-turning');if(!motion.matches&&!window.P100.motionPaused){void root.offsetWidth;root.classList.add('is-turning');}remaining=3000;show();}
+    function refresh(){seen=visible();last=performance.now();}
+    btn.addEventListener('click',function(){flip();last=performance.now();});
+    root.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')hover=true;});
+    root.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')hover=false;});
+    root.addEventListener('pointerdown',function(){touching=true;keyboard=false;});
+    function release(){touching=false;last=performance.now();}
+    document.addEventListener('pointerup',release,{passive:true});document.addEventListener('pointercancel',release,{passive:true});
+    document.addEventListener('keydown',function(e){if(e.key==='Tab'||e.key.indexOf('Arrow')===0)keyboard=true;});
+    document.addEventListener('pointerdown',function(){keyboard=false;},{passive:true});
+    var frame=0;function updateView(){if(!frame)frame=requestAnimationFrame(function(){frame=0;refresh();});}
+    document.addEventListener('scroll',updateView,{capture:true,passive:true});window.addEventListener('resize',updateView,{passive:true});window.addEventListener('pageshow',refresh);document.addEventListener('visibilitychange',refresh);
+    if('IntersectionObserver' in window)new IntersectionObserver(refresh,{threshold:[0,.35,.6]}).observe(root);
+    setInterval(function(){var now=performance.now(),elapsed=Math.min(now-last,250);last=now;if(!seen||hover||touching||document.hidden||motion.matches||window.P100.motionPaused||!P100Rotation.autoplay()||(keyboard&&root.contains(document.activeElement))||document.querySelector('dialog[open]'))return;remaining-=elapsed;root.style.setProperty('--flip-progress',(100*(3000-remaining)/3000)+'%');if(remaining<=0)flip();},80);
+    show();refresh();
+  });
 })();
+
 
 /* A vocabulary link opens its native disclosure before the reader arrives. */
 (function(){
