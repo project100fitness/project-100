@@ -22,7 +22,7 @@ if(entry){
  const syncEntry=()=>{entry.classList.toggle('is-motion-active',visible&&!document.hidden&&!reduced.matches&&!window.P100?.motionPaused);if(reduced.matches)entry.classList.add('is-in-view')};
  if('IntersectionObserver' in window){
   if(!reduced.matches)entry.classList.add('creami-entry--animated');
-  new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)entry.classList.add('is-in-view');syncEntry()},{threshold:.15}).observe(entry);
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)entry.classList.add('is-in-view');syncEntry()},{threshold:.35}).observe(entry);
  }else{visible=true;entry.classList.add('is-in-view');syncEntry()}
  document.addEventListener('visibilitychange',syncEntry);document.addEventListener('p100:motion',syncEntry);
  if(reduced.addEventListener)reduced.addEventListener('change',syncEntry);else reduced.addListener(syncEntry);
