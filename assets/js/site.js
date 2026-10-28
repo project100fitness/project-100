@@ -1267,19 +1267,19 @@
   var motion=window.P100.reduceMotion;
   document.querySelectorAll('[data-flip]').forEach(function(root){
     var card=root.querySelector('.flipc__card'),btn=root.querySelector('[data-flip-btn]'),dl=root.querySelector('[data-flip-dl]'),faces=Array.from(root.querySelectorAll('.flipc__face'));
-    if(!card||!btn||faces.length!==2)return;
+    if(!card||faces.length!==2)return;
     var caps=(root.dataset.caps||'First style|Second style').split('|'),origs=(root.dataset.origs||'').split('|'),dots=Array.from(root.querySelectorAll('.pcap__dots i'));
     var side=0,turns=0,remaining=3000,last=performance.now(),seen=false,hover=false,touching=false,keyboard=false;
     function visible(){var r=root.getBoundingClientRect();return root.getClientRects().length&&r.width>0&&r.height>0&&Math.min(r.bottom,innerHeight)-Math.max(r.top,0)>Math.min(r.height,innerHeight)*.35;}
     function show(){
-      root.dataset.side=side;btn.setAttribute('aria-label','Flip to '+(caps[1-side]||'other style'));
+      root.dataset.side=side;if(btn)btn.setAttribute('aria-label','Flip to '+(caps[1-side]||'other style'));
       if(dl){dl.href=origs[side]||faces[side].href;dl.setAttribute('aria-label','Download '+(caps[side]||'current artwork')+' original image');}
       dots.forEach(function(d,i){d.classList.toggle('is-on',i===side);});
       faces.forEach(function(f,i){f.setAttribute('aria-hidden',String(i!==side));f.tabIndex=i===side?0:-1;});
     }
     function flip(){side=1-side;turns++;card.style.setProperty('--dur','.7s');card.style.setProperty('--turn',turns*180+'deg');root.classList.remove('is-turning');if(!motion.matches&&!window.P100.motionPaused){void root.offsetWidth;root.classList.add('is-turning');}remaining=3000;show();}
     function refresh(){seen=visible();last=performance.now();}
-    btn.addEventListener('click',function(){flip();last=performance.now();});
+    if(btn)btn.addEventListener('click',function(){flip();last=performance.now();});
     root.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')hover=true;});
     root.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')hover=false;});
     root.addEventListener('pointerdown',function(){touching=true;keyboard=false;});
