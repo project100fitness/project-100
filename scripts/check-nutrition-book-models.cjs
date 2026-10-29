@@ -30,7 +30,27 @@ for (const [mode,kcal,fat] of [['heavy',[456,691],[47.1,71.4]],['light',[617,865
 const mealSource=fs.readFileSync('assets/js/meal-stories.js','utf8');
 const meals=JSON.parse(mealSource.match(/const meals=(\[.*?\]);/s)[1]);
 assert.equal(meals.length,9);
+// Keep the dated reference snapshot immutable. Apply only owner-confirmed ingredient
+// corrections when comparing current caption stories; every other field remains exact.
+const ownerConfirmedIngredientCorrections = {
+ 'Chocolate PB Fudge Jars': [['1 scoop hydrolyzed marine collagen','1 scoop hydrolyzed bovine collagen']],
+ 'Chocolate & Cacao Fudge Bowl': [['Marine collagen — optional 1 scoop from the related jar baseline; presence in each bowl is inferred','Bovine collagen — optional 1 scoop from the related jar baseline; presence in each bowl is inferred']],
+ 'Vanilla & Peanut Powder Fudge Bowl': [['Marine collagen — optional 1 scoop from the related jar baseline; presence in each bowl is inferred','Bovine collagen — optional 1 scoop from the related jar baseline; presence in each bowl is inferred']],
+ 'Chocolate Cacao & Peanut Rice-Cake Sandwiches': [['Optional collagen, pinch of xanthan gum and salt from the related fudge recipe; not confirmed in this photographed batch','Optional bovine collagen, pinch of xanthan gum and salt from the related fudge recipe; not confirmed in this photographed batch']]
+};
 meals.forEach((meal,i)=>{
- for(const key of ['name','basis','macros','ingredients','notes'])assert.deepEqual(meal[key],reference.meal_stories[i][key],`${i}/${key}`);
+ const saved=reference.meal_stories[i];
+ for(const key of ['name','basis','macros','ingredients','notes']){
+  let expectedValue=saved[key];
+  if(key==='ingredients' && ownerConfirmedIngredientCorrections[meal.name]){
+   const replacements=ownerConfirmedIngredientCorrections[meal.name];
+   expectedValue=expectedValue.map(item=>{
+    const correction=replacements.find(([from])=>from===item);
+    return correction ? correction[1] : item;
+   });
+   for(const [from] of replacements)assert.ok(saved.ingredients.includes(from),`missing archived source value for ${meal.name}: ${from}`);
+  }
+  assert.deepEqual(meal[key],expectedValue,`${i}/${key}`);
+ }
 });
-console.log('PASS: 14 salad ranges, both whole-batch dressings, egg rules and nine caption story bases remain preserved in the dated reference dataset. These legacy salad models are retired from current book content.');
+console.log('PASS: 14 salad ranges, both whole-batch dressings, egg rules and nine caption stories match the dated reference plus the four explicit owner-confirmed collagen corrections.');
