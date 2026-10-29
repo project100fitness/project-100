@@ -138,14 +138,40 @@ for name,source in pages.items():
     assert 'CanPrev calcium</span>' not in source,(name,'removed calcium ingredient')
     assert 'FIT PROTOCOL · V3.2' not in visible,(name,'stale protocol edition label')
 for name in ['guidebook.html','liquid-intake.html','fit-protocol-vectors.html','fit-protocol-vector-v5.html']:
-    assert 'data-source-conflict="v5-collagen"' in pages[name],name
+    assert 'PROMISE Pure Marine Collagen Peptan' in pages[name],name
+    assert 'data-source-conflict="v5-collagen"' not in pages[name],name
+    assert 'type unresolved' not in pages[name].lower(),name
 assert '341 mg is below' in pages['fit-protocol-dose.html']
 assert '300 mcg PureGenomics + 125 mcg MuscleEAA = 425 mcg' in pages['fit-protocol-dose.html']
-print('PASS: four-book versions, removed calcium/cherry rows, biotin attribution, magnesium arithmetic and unresolved V5 source difference.')
-
-assert "V5 type unresolved; bovine 10 g in V10" in pages["fit-protocol-pathways.html"]
-assert "V5, marine" not in pages["fit-protocol-pathways.html"]
-assert "V10 (marine)" not in pages["fit-protocol-pathways.html"]
+print('PASS: book versions, retired ingredient rows, attribution, arithmetic and owner-confirmed V5 source.')
 
 vector_registry=json.loads((ROOT/"assets/data/vector-registry.json").read_text(encoding="utf8"))
-assert any("Bovine collagen 1 scoop, about 10 g" in v["ingredients"] for v in vector_registry["vectors"] if v["id"]=="v10")
+for vector_id in ("v3","v5","v10"):
+    vector=next(v for v in vector_registry["vectors"] if v["id"]==vector_id)
+    assert any("PROMISE" in ingredient and "Marine Collagen Peptan" in ingredient for ingredient in vector["ingredients"]),vector_id
+    assert not any("bovine collagen" in ingredient.lower() or "type unresolved" in ingredient.lower() for ingredient in vector["ingredients"]),vector_id
+v1=next(v for v in vector_registry["vectors"] if v["id"]=="v1")
+assert not any("collagen" in ingredient.lower() for ingredient in v1["ingredients"]), "V1 has no collagen ingredient in its current record"
+assert "v5_collagen" not in vector_registry.get("source_conflicts",{})
+assert "PROMISE Pure Marine Collagen Peptan" in pages["fit-protocol-vector-v5.html"]
+assert "PROMISE Pure Marine Collagen Peptan" in pages["fit-protocol-vector-v10.html"]
+assert '<span class="ing__name">PROMISE Pure Marine Collagen Peptan</span>' in pages["fit-protocol-vector-v10.html"]
+assert "PROMISE Pure Marine Collagen Peptan" in pages["fit-protocol-vectors.html"]
+assert "PROMISE Pure Marine Collagen Peptan" in pages["guidebook.html"]
+assert "type unresolved" not in pages["fit-protocol-pathways.html"].lower()
+for name in ("fit-meals.html","fit-nutrition.html","fit-protocol-meals.html","fit-protocol-nutrition.html"):
+    assert "1 scoop bovine collagen" in pages[name],name
+for name in ("fit-meals.html","fit-nutrition.html"):
+    assert "fudge and chocolate-blueberry captions name bovine collagen." in pages[name],name
+meal_stories=(ROOT/"assets/js/meal-stories.js").read_text(encoding="utf8")
+assert "1 scoop hydrolyzed bovine collagen" in meal_stories
+assert "Bovine collagen — optional" in meal_stories
+assert "Optional bovine collagen" in meal_stories
+purpose=(ROOT/"assets/js/item-purpose.js").read_text(encoding="utf8")
+assert "marine collagen|promise.*collagen" in purpose
+assert "/bovine collagen/i" in purpose
+assert "ingredient-info" in purpose
+assert "Peptan type I collagen peptides" in purpose
+assert '<span class="ing__name">PROMISE Pure Marine Collagen Peptan</span>' in pages["fit-protocol-vector-v5.html"]
+assert "Owner-confirmed" in metrics["publication_review"]["v5_collagen_status"]
+print("PASS: all vector collagen is owner-confirmed marine; fudge/smoothie records are bovine; ingredient info-dot support remains enabled.")

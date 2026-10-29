@@ -75,14 +75,13 @@
       "base": "500 mL cold filtered water",
       "ingredients": [
         "Proline Pure Creatine HCl 750 mg",
-        "Collagen 1 scoop, about 10 g; type unresolved — see source difference",
+        "PROMISE Pure Marine Collagen Peptan 1 scoop, about 10 g",
         "ALLMAX Liquid L-Carnitine 1500 (15 mL / 1,500 mg)",
         "RapiDrem Electrolyte Powder (1 scoop)",
         "Kirkland Himalayan Salt 1/16 tsp"
       ],
       "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Rest-day bridge: second daily creatine pulse (750 mg), 10 g connective-tissue peptides, carnitine and electrolytes.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
-      "deployment": "Rest days only (State B)",
-      "source_conflict": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
+      "deployment": "Rest days only (State B)"
     },
     {
       "id": "v6",
@@ -110,15 +109,12 @@
         "SD Pharmaceuticals Creatine HCl 750 mg",
         "North Coast Naturals Fermented L-Glutamine 5 g",
         "AOR Pure Glycine Powder 3-5 g",
-        "Bovine collagen 1 scoop, about 10 g",
+        "PROMISE Pure Marine Collagen Peptan 1 scoop, about 10 g",
         "optional half-scoop Medi-C Plus (2.5 g)",
         "rare Niyama Hey Relax full scoop"
       ],
       "clinical_html": "<details class=\"clinical-card\"><summary>Clinical notes · five lenses</summary><dl><dt>Mechanism</dt><dd>Nocturnal recovery: second creatine pulse, 5 g glutamine, 3-5 g glycine. Optional Medi-C adds 1,000 mg vitamin C and 105 mg magnesium; Hey Relax adds 200 mg magnesium and 1,000 mg inositol. The old 60-65 degree Celsius heating rule is retired.</dd><dt>Stack interaction</dt><dd>Magnesium 341-646 mg + high- dose vitamin C + continuous bile trickle — Loose stools are predictable system output; log and moderate fat bolus before blaming single foods.</dd><dt>Margin</dt><dd>Magnesium from products: training baseline 341 mg; up to 646 mg with options, versus 350 mg/day UL for products and medicines. Rest totals are lower and not fully quantified.</dd><dt>Monitor</dt><dd>Stool, pain, weakness, sleep and performance noted; options marked as taken or skipped.</dd><dt>Stop rule</dt><dd>Recurrent watery stools with weight loss, oily stools or significant abdominal pain: stop and seek assessment.</dd></dl><p class=\"clinical-source\">Encyclopedia V3.6 · vectors and dose accounting · <a href=\"fit-protocol-interactions.html#part4-cascades\">Read the source cascades</a></p></details>",
       "deployment": "Night anchor across all three states"
     }
-  ],
-  "source_conflicts": {
-    "v5_collagen": "V5 collagen type is unresolved: Guidebook V3.7 and the summary card say bovine; the Encyclopedia V3.6 detailed card and T1.0 gap log G-V5 say marine. The recorded amount is 1 scoop, about 10 g. Owner confirmation is pending; neither type is presented as a settled current instruction."
-  }
+  ]
 }
